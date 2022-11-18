@@ -1,0 +1,36 @@
+created: 20220609104442242
+difficulty: 1.0785098781342142
+due: 20220929081940080
+grade: 1
+history: [{"due":"20220613143649936","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612143649936"},{"due":"20220702000116198","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616000116198"}]
+interval: 20
+lapses: 0
+modified: 20220706081940080
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706081940079
+stability: 84.72864024381416
+tags: kafka ?
+title: kafka中log CleanUp
+type: text/vnd.tiddlywiki
+
+''kafka中log CleanUp''
+
+kafka中清理日志的方式有两种：delete和compact。
+
+删除的阈值有两种：过期的时间和分区内总日志大小。
+
+在kafka中，因为数据是存储在本地磁盘中，并没有像hdfs的那样的分布式存储，就会产生磁盘空间不足的情况，可以采用删除或者合并的方式来进行处理
+
+```
+可以通过时间来删除、合并：默认7天（log.retention.hours）
+还可以通过字节大小、合并：默认-1 无限制（log.retention.bytes）
+```
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_31_03.png]]
+
+相同的key，保存oﬀset值大的（最新的消息记录）
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+_e86444712022-06-09 18_31_07.png]]
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_31_46.png]]

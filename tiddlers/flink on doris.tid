@@ -1,0 +1,9 @@
+created: 20220728081644538
+modified: 20220728081718320
+tags: ? flink
+title: flink on doris
+type: text/vnd.tiddlywiki
+
+```
+目前connector只支持flinkCDC写入doris, 因此doris只能作为sink
+```

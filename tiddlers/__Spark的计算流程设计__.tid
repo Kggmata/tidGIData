@@ -1,0 +1,49 @@
+created: 20220519134536655
+difficulty: 2.335785901700291
+due: 20221231052811045
+grade: 2
+history: [{"due":"20220523011055709","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011055709"},{"due":"20220529000858098","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523000858098"},{"due":"20220621103315087","interval":9,"difficulty":4.14195525232829,"stability":20.395966063619362,"retrievability":0.8419552523282889,"grade":2,"lapses":0,"reps":3,"review":"20220601103315087"},{"due":"20220811144126168","interval":20,"difficulty":3.2437980528424033,"stability":50.69718274897497,"retrievability":0.9018428005141127,"grade":2,"lapses":0,"reps":4,"review":"20220621144126168"}]
+interval: 55
+lapses: 0
+modified: 20220815052811045
+reps: 5
+retrievability: 0.8919878488578872
+review: 20220815052811045
+stability: 138.06941640872827
+tags: spark ?
+title: **Spark的计算流程设计**
+type: text/vnd.tiddlywiki
+
+- **step1：读取数据**
+
+  - 根据分片的规则，将数据源进行分片，每个分片作为一个数据分区
+
+  - 整个数据的所有分区从逻辑上合并为一个整体，Spark中称之为RDD
+
+  - 一个RDD就代表读取到的数据，这个数据由多个分区组成，每个分区数据存储在不同的机器的内存中
+
+  - RDD可以理解为一个分布式的列表集合：list
+
+  - |
+
+  - **==将所有数据读取放入一个分布式列表：RDD【一个RDD中包含多个分区】==**
+
+- **step2：处理数据**
+
+  - 对RDD调用函数进行处理，Spark底层就会启动多个Task【线程】对这个RDD的每个分区来进行并行处理
+
+  - 处理流程由代码中的函数决定，可以有多个Map和多个
+
+Reduce阶段
+
+  - 如果不经过Shuffle，上一步处理后的结果可以存储在内存中，直接供下一步进行计算
+
+  - |
+
+  - ==RDD.map.reduce.map.reduce.map.map：对分布式列表通过代码定义处理逻辑，底层这个RDD每个分区会用一个Task来实现转换==
+
+- **step3：保存结果**
+
+  - 将每个Task计算的结果进行输出保存
+
+[img[image-20210708162805466.png]]

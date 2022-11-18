@@ -1,0 +1,96 @@
+created: 20220623055026103
+difficulty: 1.3233245108100216
+due: 20221003034302299
+grade: 1
+history: [{"due":"20220625233216367","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624233216367"},{"due":"20220630011902823","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629011902823"},{"due":"20220717101902424","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":1,"lapses":1,"reps":2,"review":"20220704101902424"},{"due":"20220722144307752","interval":17,"difficulty":2.070463901503343,"stability":0.054881225761675624,"retrievability":0.8704639015033426,"grade":0,"lapses":2,"reps":1,"review":"20220721144307752"},{"due":"20220808024549010","interval":9,"difficulty":1.2704639328510623,"stability":8.605765523044708,"retrievability":3.1347719722603765e-8,"grade":1,"lapses":2,"reps":2,"review":"20220730024549010"}]
+interval: 13
+lapses: 2
+modified: 20220812034302299
+reps: 3
+retrievability: 0.8528605779589593
+review: 20220812034302298
+stability: 52.346701562216296
+tags: 用户画像 ?
+title: Hadoop集群重要命令
+type: text/vnd.tiddlywiki
+
+初始化
+
+hadoop namenode –format
+启动dfs
+
+start-dfs.sh
+启动yarn
+
+start-yarn.sh
+启动任务历史服务器
+
+mr-jobhistory-daemon.sh start historyserver
+一键启动
+
+start-all.sh
+启动成功后：
+
+```
+NameNode 
+http://nn_host:port/ 默认hadoop2.x 50070 hadoop3.x 9870.
+
+ResourceManager
+http://rm_host:port/ 默认 8088
+```
+
+```
+选项名称	使用格式	含义
+
+-ls	-ls <路径>	查看指定路径的当前目录结构
+
+-lsr	-lsr <路径>	递归查看指定路径的目录结构
+
+-du	-du <路径>	统计目录下个文件大小
+
+-dus	-dus <路径>	汇总统计目录下文件(夹)大小
+
+-count	-count [-q] <路径>	统计文件(夹)数量
+
+-mv	-mv <源路径> <目的路径>	移动
+
+-cp	-cp <源路径> <目的路径>	复制
+
+-rm	-rm [-skipTrash] <路径>	删除文件/空白文件夹
+
+-rmr	-rmr [-skipTrash] <路径>	递归删除
+
+-put	-put <多个linux上的文件> <hdfs路径>	上传文件
+
+-copyFromLocal	-copyFromLocal <多个linux上的文件> <hdfs路径>	从本地复制
+
+-moveFromLocal	-moveFromLocal <多个linux上的文件> <hdfs路径>	从本地移动
+
+-getmerge	-getmerge <源路径> <linux路径>	合并到本地
+
+-cat	-cat <hdfs路径>	查看文件内容
+
+-text	-text <hdfs路径>	查看文件内容
+
+-copyToLocal	-copyToLocal [-ignoreCrc] [-crc] [hdfs源路径] [linux目的路径]	从本地复制
+
+-moveToLocal	-moveToLocal [-crc] <hdfs源路径> <linux目的路径>	从本地移动
+
+-mkdir	-mkdir <hdfs路径>	创建空白文件夹
+
+-setrep	-setrep [-R] [-w] <副本数> <路径>	修改副本数量
+
+-touchz	-touchz <文件路径>	创建空白文件
+
+-stat	-stat [format] <路径>	显示文件统计信息
+
+-tail	-tail [-f] <文件>	查看文件尾部信息
+
+-chmod	-chmod [-R] <权限模式> [路径]	修改权限
+
+-chown	-chown [-R] [属主][:[属组]] 路径	修改属主
+
+-chgrp	-chgrp [-R] 属组名称 路径	修改属组
+
+-help	-help [命令选项]	帮助
+```

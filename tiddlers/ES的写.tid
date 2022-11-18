@@ -1,0 +1,34 @@
+created: 20220617102113880
+difficulty: 1
+due: 20220913093134800
+grade: 2
+history: [{"due":"20220620090333535","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619090333535"},{"due":"20220704025615369","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621025615369"},{"due":"20220709062504668","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708062504668"},{"due":"20220722234939507","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":2,"lapses":1,"reps":2,"review":"20220710234939506"},{"due":"20220731040119396","interval":19,"difficulty":2.0436992347740257,"stability":0.0548811791474709,"retrievability":0.8436992347740256,"grade":0,"lapses":2,"reps":1,"review":"20220730040119396"},{"due":"20220815072810365","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":2,"lapses":2,"reps":2,"review":"20220805072810365"},{"due":"20220822112017390","interval":16,"difficulty":2.0471882396225025,"stability":0.040656966333775045,"retrievability":0.8471882396225026,"grade":0,"lapses":3,"reps":1,"review":"20220821112017390"}]
+interval: 15
+lapses: 3
+modified: 20220905093134800
+reps: 2
+retrievability: 1.312835246871398e-17
+review: 20220905093134800
+stability: 7.99407159520789
+tags: 用户画像 ?
+title: ES的写
+type: text/vnd.tiddlywiki
+
+[img[image-20220617174930147.png]]
+
+```
+1.	当客户端选择任意一个node发送请求，例如：node2.itcast.cn。此时，node2.itcast.cn就成为一个coordinating node（协调节点）
+
+2.	协调节点根据数据计算得到文档要写入的分片
+`shard_id = hash(routing) % number_of_primary_shards`
+routing 是一个可变值，默认是文档的 _id
+注意：routing代表每条文档提交时的参数，该值是可以变的，用户可以自定义，在默认情况下使用的是文档的_id值，number_of_primary_shards是文档中主分片的数量。
+
+3.	获取分片ID之后，根据分片-节点路由表获取该分片的主/副分片节点列表，然后在转发请求进行分片内的数据写入。
+coordinating node(协调节点)会进行路由，将请求转发给对应的primary shard所在的DataNode（假设primary shard在node1.itcast.cn、replica shard在node2.itcast.cn）
+
+4.	node1.itcast.cn节点上的Primary Shard处理请求，写入数据到索引库中，并将数据同步到Replica shard
+
+5.	Primary Shard和Replica Shard都保存好了文档，返回client
+```
+

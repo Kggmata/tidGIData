@@ -1,0 +1,9 @@
+created: 20220831010755684
+modified: 20220831010911008
+tags: ? flink
+title: package 和directory的区别
+type: text/vnd.tiddlywiki
+
+package当中有一个__init__.py文件, 当把package导入时, 实际上导入的是__init__.py
+
+package和directory的区别就是这个__init__.py文件

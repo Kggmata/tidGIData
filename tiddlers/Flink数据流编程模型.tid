@@ -1,0 +1,39 @@
+created: 20220714063909485
+difficulty: 1
+due: 20221129132306449
+grade: 2
+history: [{"due":"20220720151330085","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719151330084"},{"due":"20220815013925872","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":1,"lapses":0,"reps":2,"review":"20220730013925872"}]
+interval: 23
+lapses: 0
+modified: 20220822132306449
+reps: 3
+retrievability: 0.8629435913626122
+review: 20220822132306449
+stability: 99.20795668530575
+tags: ?
+title: Flink数据流编程模型
+type: text/vnd.tiddlywiki
+
+[img[image-20220713143545476.png]]
+[img[BillfishsUcKwC2022-07-16 16_09_15.PNG]]
+
+```
+1.12之前 datastream进行流批处理, dataset做批处理
+
+1.12开始dataset逐渐被废弃
+```
+```
+Table API 是一种集成在 Java、Scala 和 Python 语言中的查询 API，简单理解就是用 Java、Scala、Python 按照 SQL 的查询接口封装了一层 lambda 表达式的查询 API，它允许以强类型接口的方式组合各种关系运算符（如选择、筛选和联接）的查询操作，然后生成一个 Flink 任务运行。
+```
+```
+最顶层：SQL/Table API 提供了操作关系表、执行SQL语句分析的API库，供我们方便的开发SQL相关程序
+    官方推荐的开发方式
+    大势所趋
+    table api:相当于spark的dsl语义, sql相当于sparkSQL
+    灵活性欠佳, 适合结构化数据
+
+- 中层：流和批处理API层，提供了一系列流和批处理的API和算子供我们对数据进行处理和分析
+- 最底层：运行时层，提供了对Flink底层关键技术的操纵，如对Event、state、time、window等进行精细化控制的操作API
+```
+
+> 随着FlinkSQL的成熟，同时开发效率运维效率的考虑，企业越来越多的采用最顶层的FlinkSQL进行业务的开发，因此课程的讲解以FlinkSQL为主

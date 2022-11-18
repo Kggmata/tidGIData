@@ -1,0 +1,17 @@
+created: 20220609005446925
+difficulty: 1
+due: 20221001051909330
+grade: 2
+history: [{"due":"20220613131631272","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612131631272"},{"due":"20220701021036774","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615021036774"}]
+interval: 20
+lapses: 0
+modified: 20220705051909330
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705051909330
+stability: 88.3647639214822
+tags: zookeeper ?
+title: 同一个zk客户端对某一个节点注册相同的watch,会收到几次通知
+type: text/vnd.tiddlywiki
+
+同一个zk客户端对某一个节点注册相同的watch，只会收到一次通知。

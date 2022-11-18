@@ -1,0 +1,17 @@
+created: 20220523065431143
+difficulty: 1
+due: 20221106074556299
+grade: 2
+history: [{"due":"20220526133045277","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133045277"},{"due":"20220628142828800","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531142828800"}]
+interval: 31
+lapses: 0
+modified: 20220701074556299
+reps: 3
+retrievability: 0.8885518728545304
+review: 20220701074556299
+stability: 128.3109886232779
+tags: spark ?
+title: spark shuffle分区数如何定
+type: text/vnd.tiddlywiki
+
+可以自己设定,默认为父rdd的分区数

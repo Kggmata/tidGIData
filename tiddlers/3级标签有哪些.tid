@@ -1,0 +1,23 @@
+created: 20220614075500632
+difficulty: 1
+due: 20220907085957567
+grade: 2
+history: [{"due":"20220617071749485","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616071749484"},{"due":"20220626004834365","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617004834365"},{"due":"20220628020334117","interval":10,"difficulty":2.087536890874819,"stability":0.07408450676555052,"retrievability":0.8875368908748189,"grade":0,"lapses":1,"reps":1,"review":"20220627020334117"},{"due":"20220711142051130","interval":2,"difficulty":1,"stability":11.778612134693832,"retrievability":0.05817303643692872,"grade":2,"lapses":1,"reps":2,"review":"20220629142051130"}]
+interval: 12
+lapses: 1
+modified: 20220711085957567
+reps: 3
+retrievability: 0.8982194665518624
+review: 20220711085957566
+stability: 58.01459275560992
+tags: 用户画像web界面 ?
+title: 3级标签有哪些
+type: text/vnd.tiddlywiki
+
+标签体系中有很多的标签，标签分为很多中，
+
+```
+诸如：人口属性标签----性别标签---男女属性取值
+
+诸如：商业属性标签----用户购物性别标签----购物性别为男或者女
+```

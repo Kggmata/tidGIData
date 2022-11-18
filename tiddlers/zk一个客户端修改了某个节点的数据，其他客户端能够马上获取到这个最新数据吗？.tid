@@ -1,0 +1,21 @@
+created: 20220521060142108
+difficulty: 3.4384103113438895
+due: 20220915014312205
+grade: 1
+history: [{"due":"20220524032117248","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032117248"},{"due":"20220621030542856","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531030542856"},{"due":"20220624015351332","interval":23,"difficulty":4.912185197386786,"stability":0.07408719146292923,"retrievability":0.889754085535843,"grade":0,"lapses":1,"reps":1,"review":"20220623015351332"},{"due":"20220630234643219","interval":2,"difficulty":3.170364230033395,"stability":5.293069219398316,"retrievability":0.05817903264660851,"grade":2,"lapses":1,"reps":2,"review":"20220625234643218"},{"due":"20220728091924744","interval":9,"difficulty":3.2063460985565966,"stability":23.236466483234384,"retrievability":0.8359818685232012,"grade":1,"lapses":1,"reps":3,"review":"20220705091924744"},{"due":"20220806063257394","interval":31,"difficulty":4.27521545127481,"stability":0.054881171378436774,"retrievability":0.8688693527182134,"grade":0,"lapses":2,"reps":1,"review":"20220805063257394"},{"due":"20220813074706825","interval":4,"difficulty":3.4756778079368837,"stability":4.279027808082007,"retrievability":0.00046235666207404937,"grade":1,"lapses":2,"reps":2,"review":"20220809074706824"}]
+interval: 11
+lapses: 2
+modified: 20220820014312205
+reps: 3
+retrievability: 0.7627325034070056
+review: 20220820014312205
+stability: 25.93388916461841
+tags: zookeeper ?
+title: zk一个客户端修改了某个节点的数据，其他客户端能够马上获取到这个最新数据吗？
+type: text/vnd.tiddlywiki
+
+ZooKeeper不能确保任何客户端能够获取（即Read Request）到一样的数据，除非客户端自己要求，方法是客户端在获取数据之前调用org.apache.zookeeper.AsyncCallbac k.VoidCallback, java.lang.Object) sync。
+
+通常情况下（这里所说的通常情况满足：1. 对获取的数据是否是最新版本不敏感，2. 一个客户端修改了数据，其它客户端是否需要立即能够获取最新数据），可以不关心这点。
+
+在其它情况下，最清晰的场景是这样：ZK客户端A对 /my_test 的内容从 v1->v2, 但是ZK客户端B对 /my_test的内容获取，依然得到的是 v1. 请注意，这个是实际存在的现象，当然延时很短。解决的方法是客户端B先调用 sync(),再调用 getData()。

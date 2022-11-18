@@ -1,0 +1,20 @@
+created: 20220521095114133
+difficulty: 1.5093288574651564
+due: 20221004130559079
+grade: 2
+history: [{"due":"20220524063256856","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522063256856"},{"due":"20220611081915653","interval":6,"difficulty":3.9290000000000003,"stability":14.477344517323703,"retrievability":0.7290000000000001,"grade":2,"lapses":0,"reps":2,"review":"20220528081915653"},{"due":"20220725233056494","interval":16,"difficulty":3.019081886203402,"stability":41.76374471765233,"retrievability":0.8900818862034015,"grade":2,"lapses":0,"reps":3,"review":"20220613233056494"},{"due":"20220803141223268","interval":49,"difficulty":4.102801048166571,"stability":0.07408184304237006,"retrievability":0.8837191619631688,"grade":0,"lapses":1,"reps":1,"review":"20220802141223268"},{"due":"20220809081757084","interval":6,"difficulty":4.3029978512735605,"stability":0.054881164580531924,"retrievability":0.00019680310698987739,"grade":0,"lapses":2,"reps":1,"review":"20220808081757083"},{"due":"20220817083008382","interval":4,"difficulty":2.5034602074958467,"stability":5.369695722409712,"retrievability":0.00046235622228624413,"grade":2,"lapses":2,"reps":2,"review":"20220812083008382"}]
+interval: 11
+lapses: 2
+modified: 20220823130559079
+reps: 3
+retrievability: 0.8058686499693096
+review: 20220823130559078
+stability: 42.34355596497898
+tags: linux ?
+title: linux do循环
+type: text/vnd.tiddlywiki
+
+while 条件
+do
+    循环体
+done

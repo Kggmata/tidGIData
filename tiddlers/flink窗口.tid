@@ -1,0 +1,60 @@
+created: 20220717080238561
+difficulty: 1
+due: 20220825032518663
+grade: 2
+history: [{"due":"20220731040802909","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730040802909"},{"due":"20220807111615832","interval":7,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806111615832"}]
+interval: 6
+lapses: 1
+modified: 20220812032518663
+reps: 2
+retrievability: 0.00019680286925510766
+review: 20220812032518663
+stability: 12.92339166423087
+tags: ?
+title: flink窗口
+type: text/vnd.tiddlywiki
+
+1. Group Window: 按照时间
+
+```
+1 TUMBLE
+```
+[img[BillfishJFPulE2022-07-17 15_59_45.PNG]]
+
+```
+2 Hop(size必须是slide整数倍)
+```
+[img[BillfishbRDZyP2022-07-17 16_57_01.PNG]]
+
+```
+3 session
+```
+[img[BillfishZUNozW2022-07-17 17_16_50.PNG]]
+
+```
+4 渐进窗口
+```
+[img[BillfishnUIVhZ2022-07-17 17_47_24.PNG]]
+
+2 over window: 按照行
+
+```
+Over 聚合定义（支持 Batch\Streaming）：可以理解为是一种特殊的滑动窗口聚合函数。
+那这里我们拿 Over 聚合 与 窗口聚合 做一个对比，其之间的最大不同之处在于：
+	窗口聚合：不在 group by 中的字段，不能直接在 select 中拿到
+	Over 聚合：能够保留原始字段
+
+注意：
+其实在生产环境中，Over 聚合的使用场景还是比较少的。在 Hive 中也有相同的聚合，但是可以想想你在离线数仓经常使用嘛？
+应用场景：计算最近一段滑动窗口的聚合结果数据。
+实际案例：查询每个产品最近一小时订单的金额总和：
+
+时间区间聚合
+
+按照时间区间聚合就是时间区间的一个滑动窗口，比如下面案例 1 小时的区间，最新输出的一条数据的 sum 聚合结果就是最近一小时数据的 amount 之和。
+
+行数聚合
+
+按照行数聚合就是数据行数的一个滑动窗口，比如下面案例，最新输出的一条数据的 sum 聚合结果就是最近 5 行数据的 amount 之和。
+```
+

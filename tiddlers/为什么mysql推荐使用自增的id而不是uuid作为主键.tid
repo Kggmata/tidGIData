@@ -1,0 +1,9 @@
+created: 20220726032904819
+modified: 20220726033008034
+tags: ? flink
+title: 为什么mysql推荐使用自增的id而不是uuid作为主键
+type: text/vnd.tiddlywiki
+
+```
+因为uuid是无序的, 且占用空间大, 磁盘每页能放的索引会变少. 导致IO次数增加, 效率变慢
+```

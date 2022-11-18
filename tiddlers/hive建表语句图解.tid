@@ -1,0 +1,17 @@
+created: 20220522001559019
+difficulty: 3.3344742511779417
+due: 20220921023411651
+grade: 1
+history: [{"due":"20220524114911992","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114911992"},{"due":"20220529033541298","interval":6,"difficulty":5.929,"stability":0.16205398577412577,"retrievability":0.7290000000000001,"grade":0,"lapses":1,"reps":1,"review":"20220528033541297"},{"due":"20220610132743237","interval":5,"difficulty":4.167743803026746,"stability":8.48189993445585,"retrievability":0.03874380302674565,"grade":2,"lapses":1,"reps":2,"review":"20220602132743237"},{"due":"20220711065816839","interval":11,"difficulty":3.240028111655123,"stability":28.335264272310244,"retrievability":0.8722843086283765,"grade":2,"lapses":1,"reps":3,"review":"20220613065816839"}]
+interval: 30
+lapses: 1
+modified: 20220713023411651
+reps: 4
+retrievability: 0.8944461395228188
+review: 20220713023411651
+stability: 70.0692971117172
+tags: hive ?
+title: hive建表语句图解
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_08-15-52.jpg]]

@@ -1,0 +1,18 @@
+created: 20220614141750709
+difficulty: 1
+due: 20220917051017951
+grade: 2
+history: [{"due":"20220617121632356","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121632356"},{"due":"20220619100858078","interval":2,"difficulty":1.0563323768792874,"stability":0.07416773238429089,"retrievability":0.12217091235547979,"grade":0,"lapses":1,"reps":1,"review":"20220618100858077"},{"due":"20220702000318095","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":2,"lapses":1,"reps":2,"review":"20220620000318095"}]
+interval: 16
+lapses: 1
+modified: 20220706051017951
+reps: 3
+retrievability: 0.8667230800994952
+review: 20220706051017951
+stability: 73.33888037161877
+tags: 用户画像 ?
+title: 用户画像资源调度平台
+type: text/vnd.tiddlywiki
+
+* Yarn
+* 基于Spark On Yarn

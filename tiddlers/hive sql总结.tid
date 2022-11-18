@@ -1,0 +1,17 @@
+created: 20220718122837949
+difficulty: 1
+due: 20220905045155156
+grade: 2
+history: [{"due":"20220813035530248","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115705316"}]
+interval: 20
+lapses: 0
+modified: 20220820045155156
+reps: 2
+retrievability: 7.055121199210829e-10
+review: 20220820045155156
+stability: 16.43976274691851
+tags: ?
+title: hive sql总结
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/491458662

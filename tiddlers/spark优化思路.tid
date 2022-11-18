@@ -1,0 +1,91 @@
+created: 20220528023238846
+difficulty: 1
+due: 20220925115015866
+grade: 2
+history: [{"due":"20220601033905655","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531033905655"},{"due":"20220622134450544","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603134450543"}]
+interval: 21
+lapses: 0
+modified: 20220624115015866
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624115015865
+stability: 92.52384777796357
+tags: spark ?
+title: spark优化思路
+type: text/vnd.tiddlywiki
+
+*思路一：RDD的构建**
+
+```
+避免创建重复的RDD：同样的一份数据只构建一个RDD
+
+- 尽可能复用同一个RDD：尽量使用已有的RDD构建得到想要的数据，减少RDD个数
+```
+
+- *思路二：RDD的缓存**
+
+```
+对多次使用的RDD进行persist持久化缓存
+
+  - persist后及时unpersist
+```
+
+*思路二：RDD的并行度**
+
+```
+读取数据后数据量大提高RDD分区数
+
+- 聚合数据后数据量小降低RDD分区数
+```
+- 分区个数由什么决定？
+
+```
+读取数据：由读取规则决定
+
+    - 读文件：如果指定了就按照指定的划分最小分区，实际分区按块的个数决定，没有指定最大为2
+
+      `python
+      minPartitions = minPartitions or min(self.defaultParallelism, 2)`
+
+    - 读列表：如果指定了就生成指定的分区个数，如果没有指定就为默认的并行度
+
+     `python
+      numSlices = int(numSlices) if numSlices is not None else self.defaultParallelism`
+
+    - 默认并行度：spark.default.parallelism
+
+     `For distributed shuffle operations like reduceByKey and join, the largest number of partitions in a parent RDD. For operations like parallelize with no parent RDDs, it depends on the cluster manager:
+      Local mode: number of cores on the local machine
+      Mesos fine grained mode: 8
+      Others: total number of cores on all executor nodes or 2, whichever is large
+```
+
+  - 处理数据
+
+```
+不经过shuffle：默认为父RDD的分区个数
+
+    - 经过shuffle但未指定分区个数：默认为父RDD的分区个数
+
+    - 经过shuffle但指定了分区个数：就是指定的分区个数
+
+    - 如果调用repartition或者coalesce：就是调整后的分区个数
+```
+
+*思路四：选择性能更好的算子**
+
+```
+尽量避免使用shuffle类的宽依赖算子
+
+- 优先使用map-side预聚合的shuffle操作
+
+- 优先使用高性能的算子：分区操作算子xxxxPartition，repartitionAndSortWithinPartitions算子代替repartition+sort
+```
+
+*思路五：使用广播变量
+
+```
+将较大的数据变量进行广播，减少网络IO
+
+- Join数据时，实现Broadcast Join
+```

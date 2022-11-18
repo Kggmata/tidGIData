@@ -1,0 +1,26 @@
+created: 20220716024201788
+difficulty: 1
+due: 20221211063001590
+grade: 2
+history: [{"due":"20220722112006201","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721112006201"},{"due":"20220801063851010","interval":10,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000026561715818525218,"grade":0,"lapses":1,"reps":1,"review":"20220731063851010"},{"due":"20220819125236695","interval":6,"difficulty":1,"stability":12.923393125053918,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220806125236695"}]
+interval: 24
+lapses: 1
+modified: 20220830063001590
+reps: 3
+retrievability: 0.8222878674257905
+review: 20220830063001589
+stability: 103.31552109431634
+tags: ?
+title: Flink概述
+type: text/vnd.tiddlywiki
+
+Flink是一个分布式, 高性能, 高可用及准确的流处理应用程序及开源流处理引擎
+
+flink既是计算引擎, 也是存储引擎, 存储依赖于flink的state机制.
+
+flink的每一个算子都是有状态的, 每个算子都可以将当前算子的结果保存到当前算子的state当中, 目的是为了容错
+
+checkpoint机制周期性的将state数据持久化保存到分布式文件系统当中(HDFS, S3)等
+
+Flink可以实时或者批的方式消费数据, 将消费到的数据进行数据处理分析后, 实时写入到存储介质中(Hbase, Mysql, Es, Doris)
+

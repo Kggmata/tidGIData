@@ -1,0 +1,24 @@
+created: 20220523052500344
+difficulty: 1
+due: 20221106081118391
+grade: 2
+history: [{"due":"20220526132106742","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132106742"},{"due":"20220628143110830","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531143110830"}]
+interval: 31
+lapses: 0
+modified: 20220701081118391
+reps: 3
+retrievability: 0.8885518728545304
+review: 20220701081118391
+stability: 128.3109886232779
+tags: spark ?
+title: Spark中的Spark Shuffle详解
+type: text/vnd.tiddlywiki
+
+Shuffle描述着数据从map task输出到reduce task输入的这段过程。shuffle是连接Map和Reduce之间的桥梁，Map的输出要用到Reduce中必须经过shuffle这个环节，shuffle的性能高低直接影响了整个程序的性能和吞吐量。因为在分布式情况下，reduce task需要跨节点去拉取其它节点上的map task结果。这一过程将会产生网络资源消耗和内存，磁盘IO的消耗。通常shuffle分为两部分：Map阶段的数据准备和Reduce阶段的数据拷贝处理。一般将在map端的Shuffle称之为Shuffle Write，在Reduce端的Shuffle称之为Shuffle Read.
+
+DAG当中
+
+[img[image-20211201200336066.png]]
+
+从一个stage到另一个stage是shuffle过程
+

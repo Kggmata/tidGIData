@@ -1,0 +1,18 @@
+created: 20220609104838603
+difficulty: 1
+due: 20221002074916520
+grade: 2
+history: [{"due":"20220614100334004","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100334004"},{"due":"20220702051859987","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616051859987"}]
+interval: 20
+lapses: 0
+modified: 20220706074916520
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706074916520
+stability: 88.3647639214822
+tags: kafka ?
+title: kafka的broker中数据不丢失
+type: text/vnd.tiddlywiki
+
+在broker中，保证数据不丢失主要是通过副本因子（冗余），防止数据丢失
+

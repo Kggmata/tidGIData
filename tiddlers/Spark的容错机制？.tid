@@ -1,0 +1,25 @@
+created: 20220617020154754
+difficulty: 1
+due: 20220923121007480
+grade: 2
+history: [{"due":"20220620002902440","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619002902440"},{"due":"20220704140658251","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621140658251"}]
+interval: 17
+lapses: 0
+modified: 20220708121007480
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708121007480
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: Spark的容错机制？
+type: text/vnd.tiddlywiki
+
+* 1-首先去内存中找是否有rdd的cache或persist操作
+  ** 回顾：cache底层调用的是persist默认的memery_only方法，除此之后缓存磁盘，序列化，副本(本地磁盘)
+  ** cache或persist将依赖链保存
+  ** 缓存弊端：无法保证缓存数据的可靠请，引入了可靠的存储介质HDFS
+* 2-查看是否有Checkpoint检查点机制
+  ** 回顾：主要将依赖链切断，数据和元数据保存在Checkpoint的hdfs目录中
+* 3-从父rdd重建RDD(lineage血统/血缘机制)
+** 面试：如果checkpoint的hdfs的文件块被删除了或者因为一些原因丢失了，会报什么错？
+** 答案：**一定是文件不存在异常**FileNotFound

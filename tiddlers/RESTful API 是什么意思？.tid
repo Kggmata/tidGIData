@@ -1,0 +1,29 @@
+created: 20220617030306996
+difficulty: 1.075606407978934
+due: 20220920102952889
+grade: 1
+history: [{"due":"20220620003034792","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619003034792"},{"due":"20220704082144066","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621082144066"}]
+interval: 17
+lapses: 0
+modified: 20220708102952889
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708102952889
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: RESTful API 是什么意思？
+type: text/vnd.tiddlywiki
+
+如何理解 REST 的含义？
+
+```
+REST API 也称为 RESTful API，是遵循 REST 架构规范的应用编程接口（API 或 Web API），支持与 RESTful Web 服务进行交互。REST 是表述性状态传递的英文缩写，由计算机科学家 Roy Fielding 创建。
+```
+
+```
+REST 是一组架构规范，并非协议或标准。API 开发人员可以采用各种方式实施 REST。
+
+当客户端通过 RESTful API 提出请求时，它会将资源状态表述传递给请求者或终端。该信息或表述通过 HTTP 以下列某种格式传输：JSON（Javascript 对象表示法）、HTML、XLT、Python、PHP 或纯文本。JSON 是最常用的编程语言，尽管它的名字英文原意为“JavaScript 对象表示法”，但它适用于各种语言，并且人和机器都能读。 
+
+还有一些需要注意的地方：头和参数在 RESTful API HTTP 请求的 HTTP 方法中也很重要，因为其中包含了请求的元数据、授权、统一资源标识符（URI）、缓存、cookie 等重要标识信息。有请求头和响应头，每个头都有自己的 HTTP 连接信息和状态码。
+```

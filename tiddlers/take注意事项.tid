@@ -1,0 +1,17 @@
+created: 20220523100105481
+difficulty: 1
+due: 20230518064613281
+grade: 2
+history: [{"due":"20220529140823626","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528140823626"},{"due":"20220603135055090","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602135055090"},{"due":"20220618124842438","interval":4,"difficulty":1.4878375526797638,"stability":11.844090543980142,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606124842438"},{"due":"20220820075039235","interval":13,"difficulty":1,"stability":61.862779836214365,"retrievability":0.8907931390324411,"grade":2,"lapses":1,"reps":3,"review":"20220619075039235"}]
+interval: 72
+lapses: 1
+modified: 20220830064613281
+reps: 4
+retrievability: 0.884594841015869
+review: 20220830064613280
+stability: 260.84804026312753
+tags: spark ?
+title: take注意事项
+type: text/vnd.tiddlywiki
+
+不能take太多数据,因为take使用的是driver的内存,可能会内存溢出

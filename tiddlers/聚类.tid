@@ -1,0 +1,29 @@
+created: 20220625004747797
+difficulty: 1.071305136947512
+due: 20221020020538197
+grade: 1
+history: [{"due":"20220630084309380","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629084309380"},{"due":"20220719135441949","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703135441948"}]
+interval: 21
+lapses: 0
+modified: 20220724020538197
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724020538197
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 聚类
+type: text/vnd.tiddlywiki
+
+无监督学习的聚类分析
+
+* 清楚：聚类是在没有标签列的情况下另外一种分类的思想，样本的特征的相似度聚类
+
+聚类思想：物以类聚，人以群分
+
+引入KMeans聚类：KMeans单词----K(K个聚类中心)+Means(根据均值迭代聚类中心)
+
+如何衡量样本的相似度？
+
+距离公式：欧式距离Euclidean distance
+
+[img[image-20220624164410584.png]]

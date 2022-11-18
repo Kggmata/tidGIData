@@ -1,0 +1,10 @@
+created: 20220727011225936
+modified: 20220727011249944
+tags: ? flink
+title: Hudi支持的文件系统
+type: text/vnd.tiddlywiki
+
+```
+1 操作系统文件系统
+2 分布式文件系统hdfs
+```

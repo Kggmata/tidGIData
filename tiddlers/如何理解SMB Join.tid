@@ -1,0 +1,44 @@
+created: 20220524224433767
+difficulty: 1
+due: 20221003104324564
+grade: 2
+history: [{"due":"20220529145602270","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528145602270"},{"due":"20220624051255983","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602051255983"}]
+interval: 23
+lapses: 0
+modified: 20220625104324564
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625104324564
+stability: 100.35422359618087
+tags: hive ?
+title: 如何理解SMB Join
+type: text/vnd.tiddlywiki
+
+全称Sort Merge Bucket Join。
+
+2.1.1.6.1 作用
+
+大表对小表应该使用MapJoin来进行优化，但是如果是大表对大表，如果进行shuffle，那就非常可怕，第一个慢不用说，第二个容易出异常，此时就可以使用SMB Join来提高性能。SMB Join基于bucket-mapjoin的有序bucket，可实现在map端完成join操作，可以有效地减少或避免shuffle的数据量。SMB join的条件和Map join类似但又不同。
+[img[Snipaste_2022-05-25_06-45-29.jpg]]
+
+2.1.1.6.3 注意事项
+
+hive并不检查两个join的表是否已经做好bucket且sorted，需要用户自己去保证join的表数据sorted，否则可能数据不正确。
+
+有两个办法：
+
+1）hive.enforce.sorting 设置为 true。开启强制排序时，插数据到表中会进行强制排序，默认false。
+
+2）插入数据时通过在sql中用distributed c1 sort by c1 或者 cluster by c1
+`
+综上，涉及到分桶表操作的齐全配置为：
+--写入数据强制分桶
+set hive.enforce.bucketing=true;
+--写入数据强制排序
+set hive.enforce.sorting=true;
+--开启bucketmapjoin
+set hive.optimize.bucketmapjoin = true;
+--开启SMB Join
+set hive.auto.convert.sortmerge.join=true;
+set hive.auto.convert.sortmerge.join.noconditionaltask=true;`
+

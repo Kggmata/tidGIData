@@ -1,0 +1,18 @@
+created: 20220711140835822
+difficulty: 1.0740635389832212
+due: 20221107102041698
+grade: 1
+history: [{"due":"20220713101142947","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712101142947"},{"due":"20220806052939699","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721052939699"}]
+interval: 21
+lapses: 0
+modified: 20220811102041699
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811102041698
+stability: 88.36477030765694
+tags: ?
+title: select * from employees;
+type: text/vnd.tiddlywiki
+
+This is an example of HDFS get request. In this case, neither map nor reduce jobs are triggered, since Hive needs to get the data, as is, without applying any computations whatsoever. So Hive executes an equivalent of the dfs fs -get command to get the results.
+直接fetch

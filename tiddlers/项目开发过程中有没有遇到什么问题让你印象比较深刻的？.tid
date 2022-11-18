@@ -1,0 +1,27 @@
+created: 20220521080456432
+difficulty: 3.200038941363643
+due: 20220927061718068
+grade: 1
+history: [{"due":"20220524061917499","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522061917499"},{"due":"20220602124917782","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525124917782"},{"due":"20220707120226527","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606120226527"}]
+interval: 34
+lapses: 0
+modified: 20220710061718068
+reps: 4
+retrievability: 0.8895462481526426
+review: 20220710061718067
+stability: 78.5325857917982
+tags: 项目 ?
+title: 项目开发过程中有没有遇到什么问题让你印象比较深刻的？
+type: text/vnd.tiddlywiki
+
+''内存溢出的问题''
+    原因:map join,数据量太大
+    可以采取按照年份一年一年导入
+
+''join的选择''
+	因为需求里两个事实表 线索表和客户关系表 
+	这俩数据尽量都保留,因此直接使用fulljoin连接,其他表关联选择left join过滤掉不需要的数据
+
+''grouping sets怎么选''
+	把固定的那几个维度包括时间,按年月日小时依次递减,然后还要线上线下维度和新老维度
+	剩下的根据不同的需求选择

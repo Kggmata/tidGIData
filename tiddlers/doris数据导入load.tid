@@ -1,0 +1,36 @@
+created: 20220727134433697
+modified: 20220728013412602
+tags: ? flink
+title: doris数据导入load
+type: text/vnd.tiddlywiki
+
+```
+broker load
+通过broker进程访问并读取外部数据源(默认hdfs)导入Doris, 用户通过Mysql提交并导入作业, 异步执行, 通过show load查看导入结果. 
+LOAD LABEL load_label
+(
+data_desc1[, data_desc2, ...]
+)
+WITH BROKER broker_name
+[broker_properties]
+[opt_properties];
+
+```
+[img[BillfishHvGwRm2022-07-27 21_52_14.PNG]]
+
+```
+stream load
+使用HTTP提交请求并携带原始数据导入, 用于将本地文件或者数据流导入doris, 导入命令同步返回结果
+
+Insert into
+类似mysql中的insert 表
+
+multi load
+http协议提交多个导入作业, 可以保证多个作业的atomicity
+
+routine load
+通过mysql协议提交例行导入作业, 生成一个常驻进程, 不间断的从数据源(比如kafka)中读取数据并导入doris
+
+S3协议
+通过S3协议导入数据, 和broker协议类似
+```

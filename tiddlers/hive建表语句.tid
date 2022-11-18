@@ -1,0 +1,29 @@
+created: 20220712034728579
+difficulty: 1.0684790324894466
+due: 20221117120444354
+grade: 1
+history: [{"due":"20220718070316134","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717070316134"},{"due":"20220811081724276","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220726081724276"}]
+interval: 22
+lapses: 0
+modified: 20220817120444354
+reps: 3
+retrievability: 0.8684790324894467
+review: 20220817120444353
+stability: 92.04422656680089
+tags: ?
+title: hive建表语句
+type: text/vnd.tiddlywiki
+
+create [external] table [if not exists] aaa()
+
+partitioned by 
+
+clustered by sorted by into num_buckets
+
+row format delimited by  field terminated by 
+
+stored as 
+
+location 
+
+tblproperties

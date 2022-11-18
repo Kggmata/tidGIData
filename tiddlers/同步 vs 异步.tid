@@ -1,0 +1,17 @@
+created: 20220609012418809
+difficulty: 1
+due: 20221001051904688
+grade: 2
+history: [{"due":"20220613131639584","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612131639584"},{"due":"20220701021031632","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615021031631"}]
+interval: 20
+lapses: 0
+modified: 20220705051904688
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705051904688
+stability: 88.3647639214822
+tags: kafka ?
+title: 同步 vs 异步
+type: text/vnd.tiddlywiki
+
+同步就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去； 异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。 当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率

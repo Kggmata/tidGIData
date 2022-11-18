@@ -1,0 +1,37 @@
+created: 20220522045716395
+difficulty: 1
+due: 20230109125016402
+grade: 2
+history: [{"due":"20220524021024421","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523021024421"},{"due":"20220527010905749","interval":3,"difficulty":4.524919168615612,"stability":0.2500261494800798,"retrievability":0.5771188593881783,"grade":0,"lapses":1,"reps":1,"review":"20220526010905748"},{"due":"20220614145220148","interval":5,"difficulty":2.8465226200444427,"stability":13.641392161828916,"retrievability":0.121603451428831,"grade":2,"lapses":1,"reps":2,"review":"20220531145220148"},{"due":"20220617030910109","interval":16,"difficulty":3.930275825381942,"stability":0.055135739319504856,"retrievability":0.883753205337499,"grade":0,"lapses":2,"reps":1,"review":"20220616030910109"},{"due":"20220624101040868","interval":2,"difficulty":2.152162896480158,"stability":5.786327338297253,"retrievability":0.021887071098215714,"grade":2,"lapses":2,"reps":2,"review":"20220618101040867"},{"due":"20220728114335536","interval":7,"difficulty":1.2324917792746317,"stability":32.62490802118082,"retrievability":0.8803288827944741,"grade":2,"lapses":2,"reps":3,"review":"20220625114335536"}]
+interval: 40
+lapses: 2
+modified: 20220804125016402
+reps: 4
+retrievability: 0.8788175151551137
+review: 20220804125016402
+stability: 158.23099545784288
+tags: spark ?
+title: Driver和Executor是什么，它们的功能是什么？
+type: text/vnd.tiddlywiki
+
+**程序组成：任何一个Spark程序都由两种进程构成**
+
+- 程序提交后会先启动Driver进程
+
+- Driver进程
+
+  - 向主节点申请Executor资源，让主节点在从节点上根据需求配置启动对应的Executor
+
+  - 解析代码逻辑：将代码中的逻辑转换为Task
+
+  - 将Task分配给Executor去运行
+
+  - 监控每个Executor运行的Task状态
+
+- Executor进程
+
+  - 运行在Worker上，使用Worker分配的资源等待运行Task
+
+  - 所有Executor启动成功以后会向Driver进行注册
+
+  - Executor收到分配Task任务，运行Task

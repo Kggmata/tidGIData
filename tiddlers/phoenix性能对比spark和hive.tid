@@ -1,0 +1,28 @@
+created: 20220608004607255
+difficulty: 1
+due: 20220909031229054
+grade: 2
+history: [{"due":"20220612000123177","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611000123177"},{"due":"20220615150359527","interval":3,"difficulty":1.5162196541321282,"stability":0.07476910459712456,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220614150359526"},{"due":"20220628103441727","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":1,"lapses":1,"reps":2,"review":"20220616103441726"}]
+interval: 15
+lapses: 1
+modified: 20220701031229054
+reps: 3
+retrievability: 0.8750061694178737
+review: 20220701031229054
+stability: 69.51693628111174
+tags: hbase ?
+title: phoenix性能对比spark和hive
+type: text/vnd.tiddlywiki
+
+这是官方做的性能测试，在COUNT(*)的聚合查询中，性能比Hive要强
+
+> 查询是限定条的。在多数查询的场景下。
+>
+> Phoenix其实没有Hive 更加方便和性能好（更不用说Spark）
+>
+> 因为Hive、Spark在HDFS的存储格式更加通用（ORC、Parquet、CSV）
+>
+> HBase是专用的HFile，Phoenix在专用的HFile提供通用分析能力，会受到一定的限制。
+
+在特定条件下（利用了Rowkey的特性），Phoenix性能甚至可以超过Spark，在大多数场景下是不如Spark的Hive的
+

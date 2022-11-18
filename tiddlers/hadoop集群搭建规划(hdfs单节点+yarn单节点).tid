@@ -1,0 +1,17 @@
+created: 20220521141918794
+difficulty: 2.187648325255764
+due: 20221013005026370
+grade: 2
+history: [{"due":"20220524073408287","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522073408287"},{"due":"20220605093255895","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526093255895"},{"due":"20220709015223706","interval":12,"difficulty":3.0941541016100915,"stability":31.809656917503407,"retrievability":0.8841541016100911,"grade":2,"lapses":0,"reps":3,"review":"20220607015223706"}]
+interval: 34
+lapses: 0
+modified: 20220711005026370
+reps: 4
+retrievability: 0.893494223645672
+review: 20220711005026370
+stability: 93.88512859234598
+tags: hadoop ?
+title: hadoop集群搭建规划(hdfs单节点+yarn单节点)
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-21_22-19-09.jpg]]

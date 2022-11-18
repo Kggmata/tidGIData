@@ -1,0 +1,65 @@
+created: 20220711130527807
+difficulty: 2.2471882396225027
+due: 20220917132044572
+grade: 0
+history: [{"due":"20220713071522596","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712071522596"},{"due":"20220722014759068","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721014759068"},{"due":"20220731032145895","interval":9,"difficulty":1.200002760952549,"stability":0.0548811791474709,"retrievability":0.0000027609525491324836,"grade":0,"lapses":2,"reps":1,"review":"20220730032145895"},{"due":"20220815080611694","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":1,"lapses":2,"reps":2,"review":"20220805080611694"},{"due":"20220822115747816","interval":16,"difficulty":2.0471882396225025,"stability":0.040656966333775045,"retrievability":0.8471882396225026,"grade":0,"lapses":3,"reps":1,"review":"20220821115747816"}]
+interval: 26
+lapses: 4
+modified: 20220916132044572
+reps: 1
+retrievability: 5.473070746999386e-30
+review: 20220916132044571
+stability: 0.03011942145770373
+tags: ?
+title: 常见数据库引擎
+type: text/vnd.tiddlywiki
+
+```
+MyISAM：
+
+用途：访问的速度快，以 SELECT、INSERT 为主的应用
+
+索引：B tree，FullText，R-tree
+
+锁：表锁
+
+事务：不支持事务
+
+其他：不支持外键。每个 MyISAM 在磁盘上存储成三个文件。第一个文件的名字以表的名字开始，扩展名指出文件类型。.frm文件存储表定义。数据文件的扩展名为 .MYD (MYData)。索引文件的扩展名是 .MYI (MYIndex)。
+
+InnoDB：
+
+用途：大部分情况下选择 InnoDB，除非需要用到某些 InnoDB不具备的特性，并且没有其他办法可以替代，否则都应该优先选择 InnoDB 引擎。
+
+索引：B+ tree，hash(引擎自适应，无法人为干预)，FullText(5.6开始)
+
+锁：行锁
+
+事务：支持
+
+其他：对比 MyISAM 的存储引擎，InnoDB 写的处理效率差一些，并且会占用更多的磁盘空间以保存数据和索引。InnoDB 所有的表都保存在同一个数据文件中，InnoDB 表的大小只受限于操作系统文件的大小限制。MyISAM 只缓存索引，不缓存真实数据；InnoDB 不仅缓存索引还要缓存真实数据，对内存要求较高，而且内存大小对性能有决定性的影响。
+
+MEMORY：
+
+用途：存储引擎使用存在于内存中的内容来创建表。主要用于那些内容变化不频繁的代码表或者作为统计操作的中间结果表。
+
+索引：hash，B tree
+
+锁：表
+
+事务：不支持
+
+其他：MEMORY 类型的表访问非常的快，因为它的数据是放在内存中的，并且默认使用 HASH 索引，但是一旦服务关闭，表中的数据就会丢失。
+```
+
+[img[img_009790b51a88771c9d9d3a4ebd52022-07-12 12_48_05.png]]
+
+```
+如果要提供提交、回滚、崩溃恢复能力的事物安全（ACID兼容）能力，并要求实现并发控制，InnoDB是一个好的选择
+
+如果数据表主要用来插入和查询记录，则MyISAM引擎能提供较高的处理效率
+
+如果只是临时存放数据，数据量不大，并且不需要较高的数据安全性，可以选择将数据保存在内存中的Memory引擎，MySQL中使用该引擎作为临时表，存放查询的中间结果
+
+如果只有INSERT和SELECT操作，可以选择Archive，Archive支持高并发的插入操作，但是本身不是事务安全的。Archive非常适合存储归档数据，如记录日志信息可以使用Archive
+```

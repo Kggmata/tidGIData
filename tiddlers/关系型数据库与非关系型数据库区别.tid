@@ -1,0 +1,17 @@
+created: 20220711142611879
+difficulty: 1
+due: 20221115075802594
+grade: 2
+history: [{"due":"20220713102826673","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712102826673"},{"due":"20220722014953076","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721014953076"},{"due":"20220812032436494","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":1,"lapses":1,"reps":2,"review":"20220730032436494"}]
+interval: 20
+lapses: 1
+modified: 20220819075802594
+reps: 3
+retrievability: 0.8495878483672744
+review: 20220819075802594
+stability: 88.38668379609271
+tags: ?
+title: 关系型数据库与非关系型数据库区别
+type: text/vnd.tiddlywiki
+
+关系型数据库采用了关系模型（可以简单理解为二维表格类型）组织数据，一般可以遵守事务的ACID特性 不是由关系模型进行存储的均可视作非关系型数据库，比如以键值对的redis，图数据库等。

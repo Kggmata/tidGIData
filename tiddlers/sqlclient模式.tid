@@ -1,0 +1,38 @@
+created: 20220716123832424
+difficulty: 2.0464951521155363
+due: 20220829143746570
+grade: 0
+history: [{"due":"20220725072750543","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220724072750543"},{"due":"20220818142115289","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220802142115289"}]
+interval: 26
+lapses: 1
+modified: 20220828143746570
+reps: 1
+retrievability: 0.846495152115536
+review: 20220828143746569
+stability: 0.07408182272361549
+tags: ?
+title: sqlclient模式
+type: text/vnd.tiddlywiki
+
+```
+**默认情况下输出默认采用的是表格模式**，在上面的演示中该查询不需要 **table source**，因为只产生一行结果。CLI 将从集群中检索结果并将其可视化。按 Q 键退出结果视图。
+```
+CLI 为维护和可视化结果提供三种模式：
+
+- 表格模式（table mode）在内存中实体化结果，并将结果用规则的分页表格可视化展示出来。执行如下命令启用：
+
+```
+    SET sql-client.execution.result-mode=table;
+```
+
+- 变更日志模式（changelog mode）不会实体化和可视化结果，而是由插入（+）和撤销（-）组成的持续查询产生结果流。
+
+```
+SET sql-client.execution.result-mode=changelog;
+```
+
+- Tableau模式（tableau mode）更接近传统的数据库，会将执行的结果以制表的形式直接打在屏幕之上。具体显示的内容会取决于作业 执行模式的不同(execution.type)：
+
+```
+    SET sql-client.execution.result-mode=tableau;
+```

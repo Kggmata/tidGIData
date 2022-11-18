@@ -1,0 +1,32 @@
+created: 20220609020144456
+difficulty: 1.3171790142440398
+due: 20220915070227238
+grade: 1
+history: [{"due":"20220613135924472","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612135924472"},{"due":"20220616062613115","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615062613115"},{"due":"20220629002420193","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":2,"lapses":1,"reps":2,"review":"20220617002420193"},{"due":"20220703113116234","interval":15,"difficulty":2.0750061694178736,"stability":0.054882158045770235,"retrievability":0.8750061694178737,"grade":0,"lapses":2,"reps":1,"review":"20220702113116234"},{"due":"20220716001414268","interval":5,"difficulty":1.275073979824035,"stability":8.583314998389223,"retrievability":0.00006781040616137007,"grade":1,"lapses":2,"reps":2,"review":"20220707001414268"}]
+interval: 14
+lapses: 2
+modified: 20220721070227238
+reps: 3
+retrievability: 0.842105034420005
+review: 20220721070227238
+stability: 55.836350532531775
+tags: kafka ?
+title: kafka的主要应用场景
+type: text/vnd.tiddlywiki
+
+''指标分析''
+
+```
+kafka通常用于操作监控数据。用于接收、聚合来自多种应用程序的统计信息， 以便于向产生环境中的数据集中反馈数据
+```
+
+''日志聚合解决方法''
+
+```
+kafka可用于跨组织从多个服务器收集日志，并使他们以标准的合适提供给多个服务器。
+```
+''流式处理''
+
+```
+流式处理框架（spark，storm，ﬂink）从主题中读取数据，对齐进行处理，并将处理后的数据写入新的主题，供用户和应用程序使用，kafka的强耐久性在流处理的上下文中也非常的有用。
+```

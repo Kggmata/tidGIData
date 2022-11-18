@@ -1,0 +1,50 @@
+created: 20220718033615905
+difficulty: 1.8675388548145344
+due: 20221009120128562
+grade: 0
+history: [{"due":"20220731041738124","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041738124"},{"due":"20220822115821853","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806115821853"}]
+interval: 63
+lapses: 1
+modified: 20221008120128562
+reps: 1
+retrievability: 0.6675388548145345
+review: 20221008120128561
+stability: 0.07408182272361549
+tags: ?
+title: flink checkpoint过程
+type: text/vnd.tiddlywiki
+
+[img[BillfishwByKTc2022-07-18 11_36_27.PNG]]
+
+```
+Flink 的数据可以粗略分为以下三类：
+	第一种是元信息，相当于一个 Flink 作业运行起来所需要的最小信息集合，包括比如 Checkpoint 地址、Job Manager、Dispatcher、Resource Manager 等等，这些信息的容错是由 Kubernetes/Zookeeper 等系统的高可用性来保障的，不在我们讨论的容错范围内。
+	Flink 作业运行起来以后，会从数据源读取数据写到 Sink 里，中间流过的数据称为处理的中间数据 Inflight Data (第二类)。
+	对于有状态的算子比如聚合算子，处理完输入数据会产生算子状态数据 (第三类)。
+Flink 会周期性地对所有算子的状态数据做快照，上传到持久稳定的海量存储中 (Durable Bulk Store)，这个过程就是做 Checkpoint。Flink 作业发生错误时，会回滚到过去的一个快照检查点 Checkpoint 恢复。
+我们当前有非常多的工作是针对提升 Checkpointing 效率来做的，因为在实际工作中，引擎层大部分 Oncall 或工单问题基本上都与 Checkpoint 相关，各种原因会造成 Checkpointing 超时。
+Checkpointing 的流程分为以下几步：
+
+```
+[img[BillfishfHVYAS2022-07-18 11_36_49.PNG]]
+
+```
+第一步：Checkpoint Coordinate 从 Source 端插入 Checkpoint Barrier (上图黄色的竖条)。
+```
+[img[BillfishoskBck2022-07-18 11_37_16.PNG]]
+
+```
+第二步：Barrier 会随着中间数据处理向下游流动，流过算子的时候，系统会给算子的当前状态做一个同步快照，并将这个快照数据异步上传到远端存储。这样一来，Barrier 之前所有的输入数据对算子的影响都已反映在算子的状态中了。如果算子状态很大，会影响完成 Checkpointing 的时间。
+```
+[img[BillfishGXdzFv2022-07-18 11_37_31.PNG]]
+
+```
+第三步：当一个算子有多个输入的时候，需要算子拿到所有输入的 Barrier 之后才能开始做快照，也就是上图蓝色框的部分。可以看到，如果在对齐过程中有反压，造成中间处理数据流动缓慢，没有反压的那些线路也会被堵住，Checkpoint 会做得很慢，甚至做不出来。
+```
+[img[BillfishnsROWg2022-07-18 11_37_49.PNG]]
+
+```
+第四步：所有算子的中间状态数据都成功上传到远端稳定存储之后， 一个完整的 Checkpoint 才算真正完成。
+从这 4 个步骤中可以看到，影响快速稳定地做 Checkpoint 的因素主要有 2 个，一个是处理的中间数据流动缓慢，另一个是算子状态数据过大，造成上传缓慢，下面来讲一讲如何来解决这两个因素。
+
+```

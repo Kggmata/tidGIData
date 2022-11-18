@@ -1,0 +1,25 @@
+created: 20220729065151172
+modified: 20220729065612080
+tags: ? flink
+title: Doris query引擎
+type: text/vnd.tiddlywiki
+
+[img[origin_img_v2_cee507bd-d6ed-43592022-07-29 14_51_43.png]]
+
+```
+查询引擎, 使用MPP模型, 节点间节点内并行执行, 支持多个大表的分布式shuffle join, 更好的应对复杂查询
+```
+```
+Doris查询引擎是向量化的查询引擎, 内存结构按照列式布局
+1 减少函数调用
+2 提高cache命中率
+3 高效利用SIMD(Single Instruction Multiple Data)指令的效果
+```
+[img[origin_img_v2_ad65aae9-9ed0-463e2022-07-29 14_53_03.png]]
+
+```
+采用AQE(adaptive query execution)技术, 根据runtime statistics动态调整执行计划. 
+```
+```
+optimizer方面使用CBO结合RBO的优化策略, 支持constant folding, 子查询改写, PPD等, CBO支持join recorder. 
+```

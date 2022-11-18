@@ -1,0 +1,27 @@
+created: 20220724140318830
+difficulty: 0.02337100302925359
+due: 20220906004610487
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220905004610487
+reps: 1
+retrievability: 1
+review: 20220905004610487
+stability: 0.10000000088475645
+tags: flink ?
+title: JVM vs JDK vs JRE
+type: text/vnd.tiddlywiki
+
+```
+JVM java virtual machine
+是运行java字节码的虚拟机, jvm有针对不同系统特定实现(windows, linux, macOS). 使用相同的字节码, 出相同的结果
+JVM不止有一种, 只要满足JVM规范, 每个个体都可以开发自己的JVM. 平时接触最多的HotSpot VM仅仅是JVM的一种实现而已
+还有J9 VM, ZingVM, JRockit VM等等
+```
+```
+JDK&JRE 
+Java Development Kit. 是功能齐全的Java SDK(Software Development Kit). 用于JRE(java runtime environment)的一切. 还有编译器和工具(如javac和jdb). 能够创建和编译程序.
+jre是java runtime environment. 是运行已编译java程序所需的所有内容的集合. 包括JVM, java类库, java命令和其他的一些基础构件. 但是它无法用于创建新程序.
+```

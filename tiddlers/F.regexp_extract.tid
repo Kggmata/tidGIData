@@ -1,0 +1,47 @@
+created: 20220628033417028
+difficulty: 1.0674977020971539
+due: 20221026105112595
+grade: 1
+history: [{"due":"20220630133203617","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629133203617"},{"due":"20220720095953875","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":1,"lapses":0,"reps":2,"review":"20220704095953875"}]
+interval: 22
+lapses: 0
+modified: 20220726105112595
+reps: 3
+retrievability: 0.8674977020971539
+review: 20220726105112595
+stability: 92.07922912361714
+tags: 用户画像 ?
+title: F.regexp_extract
+type: text/vnd.tiddlywiki
+
+```
+语法:    regexp_extract(string subject,  string pattern,  int index)
+
+返回值: string
+
+说明：  将字符串subject按照pattern正则表达式的规则拆分，返回index指定的字符。
+
+第一参数：   要处理的字段
+
+第二参数:    需要匹配的正则表达式
+
+第三个参数:
+
+0是显示与之匹配的整个字符串
+1 是显示第一个括号里面的
+2 是显示第二个括号里面的字段...
+```
+
+Extract a specific group matched by a Java regex, from the specified string column. If the regex did not match, or the specified group did not match, an empty string is returned.
+
+```
+>>> df = spark.createDataFrame([('100-200',)], ['str'])
+>>> df.select(regexp_extract('str', r'(\d+)-(\d+)', 1).alias('d')).collect()
+[Row(d=u'100')]
+>>> df = spark.createDataFrame([('foo',)], ['str'])
+>>> df.select(regexp_extract('str', r'(\d+)', 1).alias('d')).collect()
+[Row(d=u'')]
+>>> df = spark.createDataFrame([('aaaac',)], ['str'])
+>>> df.select(regexp_extract('str', '(a+)(b)?(c)', 2).alias('d')).collect()
+[Row(d=u'')]
+```

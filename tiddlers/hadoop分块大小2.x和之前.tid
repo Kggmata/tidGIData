@@ -1,0 +1,18 @@
+created: 20220521112704919
+difficulty: 2.187648325255764
+due: 20221013004915729
+grade: 2
+history: [{"due":"20220524064409237","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522064409237"},{"due":"20220605013229567","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526013229567"},{"due":"20220709014904249","interval":12,"difficulty":3.0941541016100915,"stability":31.809656917503407,"retrievability":0.8841541016100911,"grade":2,"lapses":0,"reps":3,"review":"20220607014904249"}]
+interval: 34
+lapses: 0
+modified: 20220711004915729
+reps: 4
+retrievability: 0.893494223645672
+review: 20220711004915728
+stability: 93.88512859234598
+tags: hdfs ?
+title: hadoop分块大小2.x和之前
+type: text/vnd.tiddlywiki
+
+2.x 128
+之前 64

@@ -1,0 +1,21 @@
+created: 20220726095420616
+modified: 20220726095943925
+tags: ? flink
+title: hive的索引
+type: text/vnd.tiddlywiki
+
+```
+原始索引, 1.x和2.x有,但是不推荐使用, 因为不支持自动更新, 每次数据发生变化.都需要手动更新
+3.x之后已经废弃
+```
+```
+row group index和bloom filter index基于强大的ORC格式
+row group index: 只支持数值类型, 支持where<>=操作, 原理是在每个orc script的index当中存储最大值最小值
+1 存储类型为orc
+2 指定索引列
+3 索引列必须排序
+bloom filter index: 等值查询时, 判断数据是否在script当中. 只能判断一定不在可能在
+1 orc存储
+2 指定哪些列
+3 仅适用于等值判断
+```

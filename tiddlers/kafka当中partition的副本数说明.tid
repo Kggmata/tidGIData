@@ -1,0 +1,48 @@
+created: 20220609064901920
+difficulty: 1.0731304672290258
+due: 20220928072731211
+grade: 1
+history: [{"due":"20220613141304329","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612141304329"},{"due":"20220701062236921","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615062236920"}]
+interval: 20
+lapses: 0
+modified: 20220705072731212
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705072731211
+stability: 84.8538234387497
+tags: kafka ?
+title: kafka当中partition的副本数说明
+type: text/vnd.tiddlywiki
+
+kafka分区副本数（kafka Partition Replicas)
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 14_49_17.png]]
+副本数（replication-factor）：控制消息保存在几个broker（服务器）上，一般情况下''小于等于broker的个数''
+
+例如：一个broker服务下，是否可以创建多个副本因子？
+
+ 不可以；创建主题时，副本因子应该小于等于可用的broker数。 副本因子过程图
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 14_50_07.png]]
+
+副本因子操作以分区为单位的。每个分区都有各自的主副本和从副本；
+
+ 主副本叫做leader，从副本叫做 follower（在有多个副本的情况下，kafka会为同一个分区下的所有分区，设定角色关系：一个leader和N个 follower），处于同步状态的副本叫做in-sync-replicas(ISR);
+
+```
+follower通过拉的方式从leader同步数据。
+
+消费者和生产者都是从leader读写数据，不与follower交互。
+```
+
+副本因子的作用：让kafka读取数据和写入数据时的可靠性。
+
+''副本因子是包含本身，同一个副本因子不能放在同一个Broker中。''
+
+如果某一个分区有三个副本因子，就算其中一个挂掉，那么只会剩下的两个中，选择一个leader，但不会在其他的broker中，另启动一个副本（因为在另一台启动的话，存在数据传递，只要在机器之间有数据传递，就会长时间占用网络IO，kafka是一个高吞吐量的消息系统，这个情况不允许发生）所以不会在零个broker中启动。
+
+如果所有的副本都挂了，生产者如果生产数据到指定分区的话，将写入不成功。
+
+```
+lsr表示：当前可用的副本（是一个列表，表示数据副本在那几个节点上）
+In-Sync Replica set (ISR) 
+```

@@ -1,0 +1,21 @@
+created: 20220618232947397
+difficulty: 1.0436992347740255
+due: 20221021035650154
+grade: 1
+history: [{"due":"20220621005254286","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005254286"},{"due":"20220705043603050","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622043603050"},{"due":"20220710112024033","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709112024033"},{"due":"20220723013635494","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":2,"lapses":1,"reps":2,"review":"20220711013635494"}]
+interval: 19
+lapses: 1
+modified: 20220730035650154
+reps: 3
+retrievability: 0.8436992347740256
+review: 20220730035650153
+stability: 82.63191247371151
+tags: 用户画像 ?
+title: curl full form
+type: text/vnd.tiddlywiki
+
+```
+client url是一个命令行工具,可以让开发者通过给定url地址和数据向服务端传输数据
+```
+
+cURL, which stands for client URL, is a command line tool that developers use to transfer data to and from a server. At the most fundamental, cURL lets you talk to a server by specifying the location (in the form of a URL) and the data you want to send.

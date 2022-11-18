@@ -1,0 +1,17 @@
+created: 20220529053137843
+difficulty: 1
+due: 20220920141250724
+grade: 2
+history: [{"due":"20220601061909678","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531061909678"},{"due":"20220622130119838","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130119838"}]
+interval: 20
+lapses: 0
+modified: 20220623141250724
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623141250724
+stability: 89.0394510841741
+tags: spark ?
+title: persist缓存时会保留RDD的血缘关系但是checkpoint并不会
+type: text/vnd.tiddlywiki
+
+正确：persist缓存可能会丢失，需要血缘恢复，checkpoint是可靠存储系统，不需要血缘

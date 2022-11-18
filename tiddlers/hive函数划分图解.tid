@@ -1,0 +1,17 @@
+created: 20220522001756714
+difficulty: 2.102801048166571
+due: 20221209135759520
+grade: 2
+history: [{"due":"20220524115036305","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522115036305"},{"due":"20220611025320717","interval":6,"difficulty":3.9290000000000003,"stability":14.477344517323703,"retrievability":0.7290000000000001,"grade":2,"lapses":0,"reps":2,"review":"20220528025320717"},{"due":"20220725230919151","interval":16,"difficulty":3.019081886203402,"stability":41.76374471765233,"retrievability":0.8900818862034015,"grade":2,"lapses":0,"reps":3,"review":"20220613230919150"}]
+interval: 49
+lapses: 0
+modified: 20220802135759520
+reps: 4
+retrievability: 0.8837191619631688
+review: 20220802135759519
+stability: 128.82700584986458
+tags: hive ?
+title: hive函数划分图解
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_08-17-50.jpg]]

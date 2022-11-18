@@ -1,0 +1,34 @@
+created: 20220605060647240
+difficulty: 1
+due: 20220924035022772
+grade: 2
+history: [{"due":"20220609003545261","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608003545261"},{"due":"20220628114609099","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220612114609099"}]
+interval: 19
+lapses: 0
+modified: 20220701035022772
+reps: 3
+retrievability: 0.8855725047529949
+review: 20220701035022772
+stability: 84.89445269363044
+tags: hbase ?
+title: Region范围的确定原则
+type: text/vnd.tiddlywiki
+
+有2个region：
+
+- region1：范围是100~300
+- region2的范围是：300~无穷大
+
+问题：20000应该去region1还是region2
+
+答案：去region1
+
+''原则：HBase的Rowkey，完全按照字符串（ASCII）码来进行比较大小''
+
+我们可以将这个比较规则总结如下：
+
+1 从左到右逐个字节进行比较，以第一个不同字节的比较结果作为两个byte[]的比较结果
+
+2 字节的比较是按无符号数方式进行的
+
+3 “不存在”比“存在”小

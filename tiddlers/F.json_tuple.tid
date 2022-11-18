@@ -1,0 +1,25 @@
+created: 20220628003807873
+difficulty: 2.6579240784575493
+due: 20220909131642060
+grade: 0
+history: [{"due":"20220630132905304","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132905304"},{"due":"20220705095710992","interval":5,"difficulty":1,"stability":0.07408249324251646,"retrievability":0.005154267178780677,"grade":0,"lapses":1,"reps":1,"review":"20220704095710992"},{"due":"20220722132719166","interval":5,"difficulty":1,"stability":12.910898599543607,"retrievability":0.0008160568173319206,"grade":1,"lapses":1,"reps":2,"review":"20220709132719166"},{"due":"20220731024524530","interval":21,"difficulty":2.042507820642196,"stability":0.0548811791474709,"retrievability":0.8425078206421959,"grade":0,"lapses":2,"reps":1,"review":"20220730024524530"},{"due":"20220806072959326","interval":6,"difficulty":2.2425177624734576,"stability":0.04065697172950195,"retrievability":0.00000994183126152159,"grade":0,"lapses":3,"reps":1,"review":"20220805072959326"},{"due":"20220815042345233","interval":4,"difficulty":1.4425492537301239,"stability":6.194417311546241,"retrievability":0.0000314912566663105,"grade":1,"lapses":3,"reps":2,"review":"20220809042345233"},{"due":"20220822112131062","interval":12,"difficulty":2.457924078457549,"stability":0.03011942145770373,"retrievability":0.8153748247274253,"grade":0,"lapses":4,"reps":1,"review":"20220821112131061"}]
+interval: 18
+lapses: 5
+modified: 20220908131642060
+reps: 1
+retrievability: 4.511914554568202e-28
+review: 20220908131642060
+stability: 0.02231301621225883
+tags: 用户画像 ?
+title: F.json_tuple
+type: text/vnd.tiddlywiki
+
+```
+data = [("1", '''{"f1": "value1", "f2": "value2"}'''), ("2", '''{"f1": "value12"}''')]
+
+df = spark.createDataFrame(data, ("key", "jstring"))
+
+df.select(df.key, json_tuple(df.jstring, 'f1', 'f2')).collect()
+
+[Row(key=u'1', c0=u'value1', c1=u'value2'), Row(key=u'2', c0=u'value12', c1=None)]
+```

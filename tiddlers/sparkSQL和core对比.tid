@@ -1,0 +1,29 @@
+created: 20220528064108297
+difficulty: 1.0855192381046468
+due: 20221015082313085
+grade: 1
+history: [{"due":"20220601052849928","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052849928"},{"due":"20220628004019493","interval":5,"difficulty":1,"stability":22.531244498588748,"retrievability":0.03668351005467044,"grade":2,"lapses":0,"reps":2,"review":"20220605004019493"}]
+interval: 26
+lapses: 0
+modified: 20220701082313085
+reps: 3
+retrievability: 0.8855192381046468
+review: 20220701082313085
+stability: 105.56639026094608
+tags: spark ?
+title: sparkSQL和core对比
+type: text/vnd.tiddlywiki
+
+[img[image-20220513110238256.png]]
+
+|   对比   |     SparkCore     |            SparkSQL             |
+| :------: | :---------------: | :-----------------------------: |
+| 处理场景 |       离线        |           离线、实时            |
+| 处理类型 | 结构化、非结构化  |             结构化              |
+| 数据来源 |   文件、数据库    |       结构化文件、数据库        |
+| 开发语言 | Python/Scala/Java |    Python/Scala/Java/SQL/DSL    |
+| 驱动对象 |   SparkContext    |          SparkSession           |
+| 数据抽象 |        RDD        |        DataFrame/DataSet        |
+| 抽象设计 | 分布式的数据集合  |         分布式的数据表          |
+| 设计差异 |   数据【Data】    | 数据【Data】+字段信息【Schema】 |
+

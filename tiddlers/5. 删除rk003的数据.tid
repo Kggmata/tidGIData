@@ -1,0 +1,9 @@
+created: 20220908133325174
+modified: 20220908133337385
+tags: ? flink
+title: 5. 删除rk003的数据
+type: text/vnd.tiddlywiki
+
+```
+deleteall 'user','rk003'
+```

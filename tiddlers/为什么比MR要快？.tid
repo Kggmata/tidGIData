@@ -1,0 +1,17 @@
+created: 20220519134610730
+difficulty: 1.8675387108762613
+due: 20220915103256582
+grade: 2
+history: [{"due":"20220523011205890","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011205890"},{"due":"20220524002142471","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523002142471"},{"due":"20220526112915430","interval":2,"difficulty":7.062693749691563,"stability":0.18522392718173394,"retrievability":0.7626937496915629,"grade":0,"lapses":2,"reps":1,"review":"20220525112915430"},{"due":"20220601140257666","interval":6,"difficulty":7.295637072276313,"stability":0.06479703952115799,"retrievability":0.032943322584749635,"grade":0,"lapses":3,"reps":1,"review":"20220531140257666"},{"due":"20220607090738682","interval":3,"difficulty":5.503249108961178,"stability":3.522716774457247,"retrievability":0.007612036684864706,"grade":2,"lapses":3,"reps":2,"review":"20220603090738682"},{"due":"20220623011523705","interval":6,"difficulty":4.538976100774536,"stability":13.697115587548687,"retrievability":0.8357269918133581,"grade":2,"lapses":3,"reps":3,"review":"20220609011523705"},{"due":"20220802061750617","interval":16,"difficulty":3.6231737204268137,"stability":37.97430623834024,"retrievability":0.8841976196522777,"grade":2,"lapses":3,"reps":4,"review":"20220625061750617"},{"due":"20220807123704102","interval":42,"difficulty":4.713177216469045,"stability":0.03011942332308837,"retrievability":0.8900034960422315,"grade":0,"lapses":4,"reps":1,"review":"20220806123704102"},{"due":"20220812080543726","interval":3,"difficulty":2.9132049109837936,"stability":2.9897957499460737,"retrievability":0.000027694514747846997,"grade":2,"lapses":4,"reps":2,"review":"20220809080543725"}]
+interval: 8
+lapses: 4
+modified: 20220817103256582
+reps: 3
+retrievability: 0.7543337998924678
+review: 20220817103256582
+stability: 28.905226899060196
+tags: spark ?
+title: 为什么比MR要快？
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-19_21-49-40.jpg]]

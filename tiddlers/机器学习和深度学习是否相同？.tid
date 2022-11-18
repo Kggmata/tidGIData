@@ -1,0 +1,17 @@
+created: 20220625021533189
+difficulty: 1
+due: 20221019145419771
+grade: 2
+history: [{"due":"20220630103915361","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629103915361"},{"due":"20220719090613594","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703090613593"}]
+interval: 20
+lapses: 0
+modified: 20220723145419771
+reps: 3
+retrievability: 0.8770398141193532
+review: 20220723145419771
+stability: 88.42116896412756
+tags: 用户画像 ?
+title: 机器学习和深度学习是否相同？
+type: text/vnd.tiddlywiki
+
+深度学习是机器学习的子集。深度学习算法可以看作是机器学习算法的精巧、复杂的数学进化。

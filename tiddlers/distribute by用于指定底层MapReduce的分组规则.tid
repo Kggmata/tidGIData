@@ -1,0 +1,23 @@
+created: 20220522045335053
+difficulty: 1
+due: 20230308064132376
+grade: 2
+history: [{"due":"20220524020259548","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020259548"},{"due":"20220606010736801","interval":3,"difficulty":2.524919168615612,"stability":11.181919693641438,"retrievability":0.5771188593881783,"grade":2,"lapses":0,"reps":2,"review":"20220526010736801"},{"due":"20220729004533570","interval":14,"difficulty":1.6013358877257884,"stability":50.346949805680694,"retrievability":0.8764167191101764,"grade":2,"lapses":0,"reps":3,"review":"20220609004533570"}]
+interval: 57
+lapses: 0
+modified: 20220805064132376
+reps: 4
+retrievability: 0.8875563367470857
+review: 20220805064132376
+stability: 214.52321365463524
+tags: hive ?
+title: distribute by用于指定底层MapReduce的分组规则
+type: text/vnd.tiddlywiki
+
+- - 错误：distribute by用于执行底层的分区规则，按照谁分区
+
+    ```
+    distribute by rand：实现随机分区，避免数据倾斜
+    ```
+
+- 

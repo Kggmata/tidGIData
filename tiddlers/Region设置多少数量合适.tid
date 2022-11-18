@@ -1,0 +1,33 @@
+created: 20220606114742761
+difficulty: 1
+due: 20220909070304132
+grade: 2
+history: [{"due":"20220611003749171","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003749171"},{"due":"20220614234658103","interval":3,"difficulty":1.5162196541321282,"stability":0.07545638712607733,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220613234658103"},{"due":"20220628104516582","interval":2,"difficulty":1,"stability":11.893042580287498,"retrievability":0.061260488376822686,"grade":2,"lapses":1,"reps":2,"review":"20220616104516582"}]
+interval: 15
+lapses: 1
+modified: 20220701070304132
+reps: 3
+retrievability: 0.8755657195794483
+review: 20220701070304132
+stability: 69.52009216729171
+tags: hbase ?
+title: Region设置多少数量合适
+type: text/vnd.tiddlywiki
+
+1台RegionServer能托管多少region和CPU的线程数有一定关系。
+
+比如，RegioNServer的服务器有32核CPU，那么这个RegionServer
+
+比较合适托管：32~320之间的RegionServer
+
+集群10个RegionServer，每个RegionServer32核
+
+那么，我们整个集群最佳的region数量大体是：320~3200个之间
+
+> 当然你也可以超出一些，比如320~6400之间，或者320~12800之间都是可以的
+>
+> 但是不要太过分，给个10W个region，100W个region就不合适了
+
+
+
+> 一般最大就是CPU核心数的10倍、20倍、30倍这样

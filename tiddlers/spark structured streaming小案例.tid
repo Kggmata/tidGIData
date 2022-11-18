@@ -1,0 +1,242 @@
+created: 20220612113919404
+difficulty: 1.0494739488250409
+due: 20221008024526828
+grade: 1
+history: [{"due":"20220617031603332","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031603332"},{"due":"20220622140414993","interval":3,"difficulty":1.079169344090665,"stability":0.07412477722623134,"retrievability":0.04301436359277706,"grade":0,"lapses":1,"reps":1,"review":"20220619004956576"},{"due":"20220711070839259","interval":5,"difficulty":1,"stability":12.91673461051365,"retrievability":0.0008193738239399371,"grade":1,"lapses":1,"reps":2,"review":"20220624004746957"}]
+interval: 20
+lapses: 1
+modified: 20220714024526828
+reps: 3
+retrievability: 0.8494739488250409
+review: 20220714024526828
+stability: 85.87948484041016
+tags: [[structed streaming]] ?
+title: spark structured streaming小案例
+type: text/vnd.tiddlywiki
+
+案例需求：
+
+- 通过数据模拟器，向Kafak写数据
+
+- 通过Spark结构化流，从kafka中`读取`数据
+
+- 通过Spark结构化流，将读取的数据进行分析完成3个需求的计算
+
+*准备kafka的主题
+
+创建一个主题(search-log-topic)用于案例
+
+1
+
+```
+bin/kafka-topics.sh --create --zookeeper node1:2181,node2:2181,node3:2181 --topic search-log-topic --partitions 1 --replication-factor 1
+```
+
+
+
+*准备数据模拟器
+
+代码，直接复制粘贴用：
+
+```python
+import json
+import random
+import sys
+import time
+import os
+from kafka import KafkaProducer
+from kafka.errors import KafkaError
+
+# 锁定远端操作环境, 避免存在多个版本环境的问题
+os.environ['SPARK_HOME'] = '/export/server/spark'
+os.environ["PYSPARK_PYTHON"] = "/root/anaconda3/bin/python"
+os.environ["PYSPARK_DRIVER_PYTHON"] = "/root/anaconda3/bin/python"
+
+# 快捷键:  main 回车
+if __name__ == '__main__':
+    print("模拟物联网数据")
+
+    # 1- 构建一个kafka的生产者:
+    producer = KafkaProducer(
+        bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092'],
+        acks='all',
+        value_serializer=lambda m: json.dumps(m).encode("utf-8")
+    )
+    # 2- 物联网设备类型
+    deviceTypes = ["洗衣机", "油烟机", "空调", "窗帘", "灯", "窗户", "煤气报警器", "水表", "燃气表"]
+
+    while True:
+        index = random.choice(range(0, len(deviceTypes)))
+        deviceID = f'device_{index}_{random.randrange(1, 20)}'
+        deviceType = deviceTypes[index]
+        deviceSignal = random.choice(range(10, 100))
+
+        # 组装数据集
+        print({'deviceID': deviceID, 'deviceType': deviceType, 'deviceSignal': deviceSignal,
+               'time': time.strftime('%s')})
+
+        # 发送数据
+        producer.send(topic='search-log-topic',
+                      value={'deviceID': deviceID, 'deviceType': deviceType, 'deviceSignal': deviceSignal,
+                                       'time': time.strftime('%s')}
+        )
+
+        # 间隔时间 5s内随机
+        time.sleep(random.choice(range(1, 5)))
+
+```
+
+
+
+> 检查38行：topic的设置
+>
+> 检查20行：kafka的broker地址设置
+
+就可以运行模拟器，可以看到输出：
+
+
+[img[20220612183419.png]]
+
+找一个kafka的模拟消费者，可以看到写入kafka的内容：
+
+```
+bin/kafka-console-consumer.sh --bootstrap-server node1:9092,node2:9092,node3:9092 --topic search-log-topic
+```
+*编码Spark结构化流，完成需求
+
+sql风格
+
+```
+# coding:utf8
+"""
+综合案例：SQL风格
+"""
+from pyspark.sql import SparkSession
+import pyspark.sql.functions as F
+
+import os
+# PYSPARK_PYTHON告诉Spark，Worker（Executor）应该用哪个Python
+os.environ['PYSPARK_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+# 告诉Driver应该用哪个Python
+os.environ['PYSPARK_DRIVER_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+os.environ['JAVA_HOME'] = "/export/server/jdk"
+
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+# 读取kafka数据
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "search-log-topic").\
+    option("startingOffsets", "earliest").\
+    load()
+
+# 处理数据，原始数据是json，长这样：{'deviceID': 'device_5_15', 'deviceType': '窗户', 'deviceSignal': 71, 'time': '1655058993'}
+# 从json中取出一个个字段
+# 先将kafka的byte字节数组转换为字符串
+# msg_df内就是一条条的json字符串：{'deviceID': 'device_5_15', 'deviceType': '窗户', 'deviceSignal': 71, 'time': '1655058993'}
+msg_df = kafka_df.selectExpr("CAST(value AS STRING) AS value")
+# 将msg_df的字段取出来
+data_df = msg_df.select(
+    # Spark提供了get_json_object的方法，从JSON中取出key的value
+    # $.deviceID固定写法，取json中的deviceID这个key的value
+    F.get_json_object("value", "$.deviceID").alias("device"),
+    F.get_json_object("value", "$.deviceType").alias("deviceType"),
+    F.get_json_object("value", "$.deviceSignal").alias("deviceSignal"),
+    F.get_json_object("value", "$.time").alias("time")
+)
+# data_df内有4个字段，分别是device deviceType deviceSignal time
+# 开始分析，将其注册为临时视图表
+data_df.createTempView("kafka_data")
+
+# 通过SQL去分析了
+result_df = spark.sql("""
+    SELECT 
+        deviceType,
+        COUNT(*) AS counts,
+        AVG(deviceSignal) avg_signal
+    FROM kafka_data 
+    WHERE deviceSignal > 30
+    GROUP BY deviceType
+""")
+
+result_df.writeStream.\
+    format("console").\
+    outputMode("complete").\
+    option("truncate", False).\
+    start().awaitTermination()
+
+```
+
+dsl风格
+
+```
+# coding:utf8
+"""
+综合案例：DSL风格
+"""
+from pyspark.sql import SparkSession
+import pyspark.sql.functions as F
+
+import os
+# PYSPARK_PYTHON告诉Spark，Worker（Executor）应该用哪个Python
+os.environ['PYSPARK_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+# 告诉Driver应该用哪个Python
+os.environ['PYSPARK_DRIVER_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+os.environ['JAVA_HOME'] = "/export/server/jdk"
+
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+# 读取kafka数据
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "search-log-topic").\
+    option("startingOffsets", "earliest").\
+    load()
+
+# 处理数据，原始数据是json，长这样：{'deviceID': 'device_5_15', 'deviceType': '窗户', 'deviceSignal': 71, 'time': '1655058993'}
+# 从json中取出一个个字段
+# 先将kafka的byte字节数组转换为字符串
+# msg_df内就是一条条的json字符串：{'deviceID': 'device_5_15', 'deviceType': '窗户', 'deviceSignal': 71, 'time': '1655058993'}
+msg_df = kafka_df.selectExpr("CAST(value AS STRING) AS value")
+# 将msg_df的字段取出来
+data_df = msg_df.select(
+    # Spark提供了get_json_object的方法，从JSON中取出key的value
+    # $.deviceID固定写法，取json中的deviceID这个key的value
+    F.get_json_object("value", "$.deviceID").alias("device"),
+    F.get_json_object("value", "$.deviceType").alias("deviceType"),
+    F.get_json_object("value", "$.deviceSignal").alias("deviceSignal"),
+    F.get_json_object("value", "$.time").alias("time")
+)
+# data_df内有4个字段，分别是device deviceType deviceSignal time
+
+# 通过SQL去分析了
+result_df = data_df.where("deviceSignal > 30").\
+    groupBy("deviceType").\
+    agg(
+        F.count("deviceType").alias("counts"),
+        F.avg("deviceSignal").alias("avg_signal")
+    ).select("deviceType", "counts", "avg_signal")
+
+result_df.writeStream.\
+    format("console").\
+    outputMode("complete").\
+    option("truncate", False).\
+    start().awaitTermination()
+
+```

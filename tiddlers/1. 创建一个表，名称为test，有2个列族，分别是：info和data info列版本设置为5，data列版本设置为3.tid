@@ -1,0 +1,9 @@
+created: 20220908133223645
+modified: 20220908133230161
+tags: ? flink
+title: 1. 创建一个表，名称为test，有2个列族，分别是：info和data info列版本设置为5，data列版本设置为3
+type: text/vnd.tiddlywiki
+
+```
+create 'test',{NAME=>'info',VERSIONS=>5},{NAME=>'data',VERSIONS=>3}
+```

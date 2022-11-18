@@ -1,0 +1,11 @@
+created: 20220728055930257
+modified: 20220728060334750
+tags: ? flink
+title: CG, CGS full form
+type: text/vnd.tiddlywiki
+
+```
+colocation group: a CG contains one or more tables. Tables within the same group have the same CGS and the same data fragmentation distribution.
+
+colocation group schema: Used to describe table in a CG and general Schema information related to Colocation. Including bucket column type, bucket number and copy number.
+```

@@ -1,0 +1,26 @@
+created: 20220525110647828
+difficulty: 1
+due: 20221003124743617
+grade: 2
+history: [{"due":"20220529152308876","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528152308876"},{"due":"20220624133348297","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602133348297"}]
+interval: 23
+lapses: 0
+modified: 20220625124743618
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625124743617
+stability: 100.35422359618087
+tags: spark ?
+title: Join关联算子
+type: text/vnd.tiddlywiki
+
+*算子**：join / fullOuterJoin / leftOuterJoin / rightOuterJoin
+
+- **功能**：实现两个KV类型的RDD之间按照K实现关联，将两个RDD的关联结果放入一个新的RDD中
+
+- **语法**
+
+`python
+  def join(self: RDD[Tuple[K,V]], otherRdd: RDD[Tuple[K,W]]) -> RDD[Tuple[K,(V,W)]]`
+
+会经过shuffle

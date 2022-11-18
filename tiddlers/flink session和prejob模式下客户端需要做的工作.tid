@@ -1,0 +1,21 @@
+created: 20220719033525780
+difficulty: 1
+due: 20230604121043705
+grade: 1
+history: [{"due":"20220801131611731","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131611731"},{"due":"20220822124915629","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806124915629"}]
+interval: 63
+lapses: 0
+modified: 20221008121043705
+reps: 3
+retrievability: 0.6670417314969249
+review: 20221008121043705
+stability: 238.50969519476618
+tags: ?
+title: flink session和prejob模式下客户端需要做的工作
+type: text/vnd.tiddlywiki
+
+获取作业所需依赖项
+
+streamGraph/datastreamGraph到job Graph
+
+将依赖性和job graph发送到集群

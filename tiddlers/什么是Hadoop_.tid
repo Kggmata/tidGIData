@@ -1,0 +1,41 @@
+created: 20220622060547064
+difficulty: 1.0456936856236088
+due: 20221003054158842
+grade: 1
+history: [{"due":"20220625131016535","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624131016535"},{"due":"20220709060333395","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220626060333395"},{"due":"20220711132356834","interval":14,"difficulty":2.096356723988689,"stability":0.07408215765534414,"retrievability":0.8963567239886889,"grade":0,"lapses":1,"reps":1,"review":"20220710132356834"},{"due":"20220713013046584","interval":2,"difficulty":2.3545245138926454,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712013046584"},{"due":"20220721072933507","interval":8,"difficulty":2.554524727680737,"stability":0.04065705806113247,"retrievability":2.1378809139958575e-7,"grade":0,"lapses":3,"reps":1,"review":"20220720072933507"},{"due":"20220729103025587","interval":8,"difficulty":2.7545247286724797,"stability":0.030119438246165517,"retrievability":9.917429036741347e-10,"grade":0,"lapses":4,"reps":1,"review":"20220728103025586"},{"due":"20220811063926692","interval":8,"difficulty":1,"stability":6.2864997657523745,"retrievability":7.020844944109744e-13,"grade":2,"lapses":4,"reps":2,"review":"20220805063926691"}]
+interval: 10
+lapses: 4
+modified: 20220815054158842
+reps: 3
+retrievability: 0.8456936856236087
+review: 20220815054158842
+stability: 48.51609326060108
+tags: 用户画像 ?
+title: 什么是Hadoop?
+type: text/vnd.tiddlywiki
+
+1:什么是Hadoop?
+
+```
+广义上讲，Hadoop是一个生态系统（圈），可以接入很多三方服务
+狭义上讲分布的开源框架，实现了数据的存储、计算、资源调度功能
+Hadoop HDFS:分布式文件系统。解决了海量数据存储问题。
+Hadoop MapReduce:分布式计算框架。解决海量数据计算问题。
+Hadoop YARN:集群资源管理和任务调度。解决资源调度问题
+```
+2:Hadoop有哪些特性？(你们为什么选择Hadoop)
+
+```
+扩容能力(Scalable)::Hadoop是在可用的计算机集群间分配数据并完成计算任务的，这些集群可用方便的扩
+展到数以千计的节点中。
+成本低(Economica):Hadoop通过普通廉价的机器组成服务器集群来分发以及处理数据，以至于成本很低。
+高效率(Efficient)：通过并发数据，Hadoop可以在节点之间动态并行的移动数据，使得速度非常快。
+可靠性(Rellable)：副本机制，可以将数据在多台电脑上存储多份
+```
+3、Hadoop适用哪些场景？
+
+```
+1、适合存储大量的文件
+2、一次写入，多次读取的业务场景
+3、对数据实时性要求不高
+```

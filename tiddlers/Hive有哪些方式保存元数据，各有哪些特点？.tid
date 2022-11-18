@@ -1,0 +1,21 @@
+created: 20220524074917571
+difficulty: 2.1618411710009635
+due: 20230414002002724
+grade: 1
+history: [{"due":"20220529142711403","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142711403"},{"due":"20220603133114039","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602133114038"},{"due":"20220618123616783","interval":4,"difficulty":1.4878375526797638,"stability":11.844090543980142,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606123616783"},{"due":"20220620021901374","interval":13,"difficulty":2.5786306917122053,"stability":0.05491298557316543,"retrievability":0.8907931390324411,"grade":0,"lapses":2,"reps":1,"review":"20220619021901374"},{"due":"20220628035940759","interval":2,"difficulty":1.8001810573679051,"stability":6.531765430823941,"retrievability":0.021550365655700003,"grade":1,"lapses":2,"reps":2,"review":"20220621035940758"},{"due":"20220701023235316","interval":9,"difficulty":2.86505256815452,"stability":0.04065770267064033,"retrievability":0.8648715107866144,"grade":0,"lapses":3,"reps":1,"review":"20220630023235315"},{"due":"20220706072504832","interval":5,"difficulty":3.065054927755979,"stability":0.030119557630782685,"retrievability":0.000002359601458918098,"grade":0,"lapses":4,"reps":1,"review":"20220705072504832"},{"due":"20220714044513594","interval":5,"difficulty":2.2650549531086357,"stability":3.560076283598846,"retrievability":2.5352656472624633e-8,"grade":1,"lapses":4,"reps":2,"review":"20220710044513594"},{"due":"20220824052009853","interval":11,"difficulty":2.187188507114739,"stability":34.248080185997445,"retrievability":0.7221335540061032,"grade":1,"lapses":4,"reps":3,"review":"20220721052009853"}]
+interval: 83
+lapses: 4
+modified: 20221012002002724
+reps: 4
+retrievability: 0.7746526638862244
+review: 20221012002002724
+stability: 183.59219050813456
+tags: hive ?
+title: Hive有哪些方式保存元数据，各有哪些特点？
+type: text/vnd.tiddlywiki
+
+1）Single User Mode：默认安装hive，hive是使用derby内存数据库保存hive的元数据，这样是不可以并发调用hive的。
+
+2）User Mode：通过网络连接到一个数据库中，是最经常使用到的模式。假设使用本机mysql服务器存储元数据。这种存储方式需要在本地运行一个mysql服务器，可并发调用
+
+3）Remote Server Mode：在服务器端启动一个 MetaStoreServer，客户端利用 Thrift 协议通过MetaStoreServer 访问元数据库。

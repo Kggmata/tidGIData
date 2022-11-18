@@ -1,0 +1,49 @@
+created: 20220525005216861
+difficulty: 1.0744428820825005
+due: 20220913135228539
+grade: 1
+history: [{"due":"20220529150158832","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150158832"},{"due":"20220621104836794","interval":4,"difficulty":1.3310647873439139,"stability":19.873133781910397,"retrievability":0.14564366571177542,"grade":2,"lapses":0,"reps":2,"review":"20220601104836793"},{"due":"20220622145808441","interval":20,"difficulty":2.4304596499519797,"stability":0.07409256085768667,"retrievability":0.8993948626080656,"grade":0,"lapses":1,"reps":1,"review":"20220621145808440"},{"due":"20220705031735599","interval":2,"difficulty":1,"stability":11.779292992662073,"retrievability":0.0581910256162679,"grade":2,"lapses":1,"reps":2,"review":"20220623031735598"}]
+interval: 15
+lapses: 1
+modified: 20220708135228540
+reps: 3
+retrievability: 0.8744428820825005
+review: 20220708135228539
+stability: 66.68395835418892
+tags: spark ?
+title: 常用转换算子
+type: text/vnd.tiddlywiki
+
+*map算子
+
+- 功能：对RDD中每个元素调用一次参数中的函数，并将每次调用的返回值放入一个新的RDD中
+
+- 分类：转换算子
+
+- 场景：一对一的转换，需要返回值
+
+- 语法
+
+`def map(self , f: T -> U ) -> RDD[U]`
+
+*flatMap算子
+
+- 功能：将两层嵌套集合中的每个元素取出，扁平化处理，放入一层集合中返回，类似于SQL中explode函数
+
+- 分类：转换算子
+
+- 场景：多层集合元素展开，一个集合对应多个元素
+
+`def flatMap(self , f : T -> Iterable[U]) -> RDD[U]`
+
+*filter算子
+
+- 功能：对RDD集合中的每个元素调用一次参数中的表达式对数据进行过滤，符合条件就保留，不符合就过滤
+
+- 分类：转换算子
+
+- 场景：行的过滤，类似于SQL中where或者having
+
+- 语法
+
+`def filter(self, f: T -> bool ) -> RDD[T]`

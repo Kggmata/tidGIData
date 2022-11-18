@@ -1,0 +1,102 @@
+created: 20220612113718199
+difficulty: 1.0667230800994951
+due: 20220914055938885
+grade: 1
+history: [{"due":"20220617031544982","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031544981"},{"due":"20220618072615630","interval":1,"difficulty":1.3865337910179913,"stability":0.07416773238429089,"retrievability":0.35037881052010367,"grade":0,"lapses":1,"reps":1,"review":"20220617072615630"},{"due":"20220701020934883","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":1,"lapses":1,"reps":2,"review":"20220619020934883"}]
+interval: 16
+lapses: 1
+modified: 20220705055938885
+reps: 3
+retrievability: 0.8667230800994952
+review: 20220705055938885
+stability: 70.61779235057139
+tags: [[structed streaming]] ?
+title: 写数据到kafka
+type: text/vnd.tiddlywiki
+
+前置要求：写数据到Kafka要求被写的`DataFrame`中，需要包含如下的列：
+
+| 列     | 类型   |
+| key (可选)       | string or binary |
+| value (`必填`)   | string or binary |
+| headers (可选)   | array            |
+| topic (*可选)    | string           |
+| partition (可选) | int              |
+
+> - key 给数据设置key，可以填可不填，填了就按key hash
+> - headers 数据的标头，一般不用
+> - topic，数据写入哪个主题
+> - partition，这条数据写入哪个分区
+
+
+
+
+
+option配置
+
+必填：
+
+|选项          | 价值           | 意义                 |
+| kafka.bootstrap.servers | 逗号分隔的主机列表：端口 | Kafka“bootstrap.servers”配置。 |
+
+选填：
+
+| 选项| 值 | 默认 | 查询类型 | 意义                                               |
+| topic          | string       | 没有任何       | 流式传输和批处理   | 设置将在 Kafka 中写入所有行的主题。此选项会覆盖数据中可能存在的任何主题列。 |
+| includeHeaders | boolean      | 错误的         | 流式传输和批处理   | 是否在行中包含 Kafka 标头。                                  |
+
+> topic可以在2个地方设置：
+>
+> 1. 在DataFrame中作为一列存在，每一条数据都可以设置不同的topic
+> 2. 在option中设置，那么整个DataFrame就只能去这个topic
+
+*代码
+
+```python
+# coding:utf8
+"""
+演示向kafka写入数据
+"""
+
+from pyspark.sql import SparkSession
+import pyspark.sql.functions as F
+
+import os
+# PYSPARK_PYTHON告诉Spark，Worker（Executor）应该用哪个Python
+os.environ['PYSPARK_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+# 告诉Driver应该用哪个Python
+os.environ['PYSPARK_DRIVER_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+os.environ['JAVA_HOME'] = "/export/server/jdk"
+
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+line_df = spark.readStream.\
+    format("socket").\
+    option("host", "node1").\
+    option("port", 9999).\
+    load()
+
+# 将socket中取到的数据，直接写入kafka中
+line_df.writeStream.\
+    format("kafka").\
+    outputMode("append").\
+    option("truncate", False).\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("topic", "spark-kafka").\
+    option("checkpointLocation", "../data/ck3").\
+    start().awaitTermination()
+
+
+```
+
+> 注意，必须设置CheckPoint的路径
+
+> 注意，Socket Source读取到的数据的列，就叫value，所以我们没有单独的设置一个叫value的列在DataFrame中。
+

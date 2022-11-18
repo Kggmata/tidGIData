@@ -1,0 +1,12 @@
+created: 20220727114316054
+modified: 20220727114440955
+tags: ? flink
+title: Doris特点
+type: text/vnd.tiddlywiki
+
+```
+1 支持mysql协议, 支持表结构变更, 不依赖外部存储系统
+2 架构简洁: FE, BE
+3 高可用: 多副本, 元数据高可用
+4 丰富的数据同步方式
+```

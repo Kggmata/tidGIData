@@ -1,0 +1,17 @@
+created: 20220521040320019
+difficulty: 2.210762220839748
+due: 20221003021216650
+grade: 2
+history: [{"due":"20220524023129471","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023129471"},{"due":"20220602002051405","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525002051405"},{"due":"20220704063653688","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605063653688"}]
+interval: 32
+lapses: 0
+modified: 20220707021216650
+reps: 4
+retrievability: 0.8891545006575367
+review: 20220707021216650
+stability: 87.88943039453798
+tags: hadoop ?
+title: 联邦机制解决什么
+type: text/vnd.tiddlywiki
+
+内存满了或接近满了,磁盘还有剩余

@@ -1,0 +1,23 @@
+created: 20220719132201419
+difficulty: 1
+due: 20220828052432122
+grade: 2
+history: [{"due":"20220802033952208","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801033952208"},{"due":"20220809085029799","interval":7,"difficulty":1,"stability":0.07408182337905919,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220808085029799"}]
+interval: 7
+lapses: 1
+modified: 20220815052432122
+reps: 2
+retrievability: 0.000047464560219457106
+review: 20220815052432121
+stability: 12.9264266018794
+tags: ?
+title: update和append区别
+type: text/vnd.tiddlywiki
+
+```
+	第一个查询（group by user），即（Update）查询：会更新先前输出的结果，即结果表流数据中包含 INSERT 和 UPDATE 数据。
+	可以理解为 group by user 这条语句当中，输入源的数据是一直有的，源源不断的，同一个 user 的数据之后可能还是会有的，因此可以认为此 SQL 的每次的输出结果都是一个中间结果，
+	当同一个 user 下一条数据到来的时候，就要用新结果把上一次的产出中间结果（旧结果）给 UPDATE 了。所以这就是 UPDATE 查询的由来（其中 INSERT 就是第一条数据到来的时候，没有之前的中间结果，所以是 INSERT）。
+	第二个查询（group by user, tumble(xxx)），即（Append）查询：只追加到结果表，即结果表流数据中只包含 INSERT 的数据。
+	可以理解为虽然 group by user, tumble(xxx) 上游也是一个源源不断的数据，但是这个查询本质上是对时间上的划分，而时间都是越变越大的，当前这个滚动窗口结束之后，后面来的数据的时间都会比这个滚动窗口的结束时间大，都归属于之后的窗口了，当前这个滚动窗口的结果数据就不会再改变了，因此这条查询只有 INSERT 数据，即一个 Append 查询。
+```

@@ -1,0 +1,53 @@
+created: 20220529145141523
+difficulty: 1
+due: 20220920072143050
+grade: 2
+history: [{"due":"20220601082307458","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531082307458"},{"due":"20220622091410059","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603091410059"}]
+interval: 20
+lapses: 0
+modified: 20220623072143050
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623072143050
+stability: 89.0394510841741
+tags: spark ?
+title: DSL开发使用API函数
+type: text/vnd.tiddlywiki
+
+*DSL方式**：类似于RDD中调用算子的方式，实现对数据的处理
+
+*DSL函数**
+
+- API函数：类似于RDD中的算子，用法基本一致，但是支持的算子不多，支持一些缓存、调整分区、简单的算子
+
+- SQL函数：将SQL语句中的关键词转换成函数：select、groupBy、orderBy、where
+
+# 1、选择函数select：选取某些列或者某些函数表达式的值
+	def select(self, *cols: Union[Column, str]) -> DataFrame
+	
+# 2、过滤函数filter/where：设置过滤条件，类似SQL中WHERE语句
+	def filter(self, condition: Union[Column, str]) -> DataFrame
+	
+# 3、分组函数groupBy/rollup/cube：对某些字段分组，在进行聚合统计
+	def groupBy(self, *cols: Union[Column, str]) -> GroupedData
+
+# 4、聚合函数agg：通常与分组函数连用，使用一些count、max、sum等聚合函数操作
+	def agg(self, *exprs: Union[Column, Dict[str, str]]) -> DataFrame
+    
+# 5、排序函数sort/orderBy：按照某写列的值进行排序（升序ASC或者降序DESC）
+	def sort(self,
+         *cols: Union[str, Column, List[Union[str, Column]]],
+         ascending: Union[bool, List[bool]] = ...) -> DataFrame
+
+# 6、限制函数limit：获取前几条数据，类似RDD中take函数
+	def limit(self, num: int) -> DataFrame
+    
+# 7、重命名函数withColumnRenamed：将某列的名称重新命名
+	def withColumnRenamed(self, existing: str, new: str) -> DataFrame
+    
+# 8、删除函数drop：删除某些列
+	def drop(self, cols: Union[Column, str]) -> DataFrame
+
+# 9、增加列函数withColumn：当某列存在时替换值，不存在时添加此列
+	def withColumn(self, colName: str, col: Column) -> DataFrame
+

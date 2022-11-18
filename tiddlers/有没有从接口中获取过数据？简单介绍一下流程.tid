@@ -1,0 +1,21 @@
+created: 20220710121905659
+difficulty: 1
+due: 20221101123550854
+grade: 2
+history: [{"due":"20220713032943610","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712032943609"},{"due":"20220805141100172","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220720141100172"}]
+interval: 19
+lapses: 0
+modified: 20220808123550854
+reps: 3
+retrievability: 0.8853163826700388
+review: 20220808123550854
+stability: 84.88710990001034
+tags: 用户画像 ?
+title: 有没有从接口中获取过数据？简单介绍一下流程
+type: text/vnd.tiddlywiki
+
+```
+​	【在工作中】如果你要使用接口的话，一定会给你一个接口文档 ，这个文档就是告诉你
+
+​	如何通过方法调用来获取数据
+```

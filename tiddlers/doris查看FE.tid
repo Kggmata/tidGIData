@@ -1,0 +1,13 @@
+created: 20220731010415848
+modified: 20220731010510758
+tags: ? flink
+title: doris查看FE
+type: text/vnd.tiddlywiki
+
+```
+node1:8030/System?path=//backends
+```
+```
+mysql当中
+show '/backends'\G
+```

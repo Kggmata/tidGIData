@@ -1,0 +1,36 @@
+created: 20220609102104167
+difficulty: 1
+due: 20221001063757656
+grade: 2
+history: [{"due":"20220613142710531","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612142710531"},{"due":"20220701023653395","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615023653395"}]
+interval: 20
+lapses: 0
+modified: 20220705063757656
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705063757656
+stability: 88.3647639214822
+tags: kafka ?
+title: consumer消费者消费数据流程
+type: text/vnd.tiddlywiki
+
+流程描述
+
+ Consumer连接指定的Topic partition所在leader broker，采用pull方式从kafkalogs中获取消息。对于不同的消费模式，会将offset保存在不同的地方
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_21_22.png]]
+
+```
+1、	Consumer连接指定的Topic partition所在leader broker
+2、	采用pull方式从kafkalogs中获取消息。
+
+高阶API: 隐藏Consumer与Broker细节,封装好的接口。工程师直接使用，无需关注细节。
+低阶API:使用灵活，用户自己维护连接Controller Broker，存储，更新offset。
+
+
+实时计算：实时成产-实时传递-实时计算-实时存储-实时展现
+```
+
+官网关于high level API 以及low level API的简介
+
+http://kafka.apache.org/0100/documentation.html#impl_consumer

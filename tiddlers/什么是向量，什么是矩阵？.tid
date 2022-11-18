@@ -1,0 +1,19 @@
+created: 20220627043820081
+difficulty: 1
+due: 20221109143601110
+grade: 2
+history: [{"due":"20220630105431734","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105431734"},{"due":"20220719143904264","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703143904264"},{"due":"20220725022455029","interval":21,"difficulty":2.071305136947512,"stability":0.07408190596496488,"retrievability":0.871305136947512,"grade":0,"lapses":1,"reps":1,"review":"20220724022455029"},{"due":"20220815093253881","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":2,"lapses":1,"reps":2,"review":"20220802093253880"}]
+interval: 18
+lapses: 1
+modified: 20220820143601110
+reps: 3
+retrievability: 0.8635498340859799
+review: 20220820143601110
+stability: 80.89456403737913
+tags: 用户画像 ?
+title: 什么是向量，什么是矩阵？
+type: text/vnd.tiddlywiki
+
+将一行数据当做向量，灌入算法中，SparkMl中Vector向量通过VectorAssemble形成Vector类型
+
+多行向量构成就是''m行n列的矩阵''

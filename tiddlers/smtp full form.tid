@@ -1,0 +1,17 @@
+created: 20220715013233575
+difficulty: 1
+due: 20221219134609459
+grade: 2
+history: [{"due":"20220722090549680","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090549680"},{"due":"20220817105347381","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":2,"lapses":0,"reps":2,"review":"20220801105347381"}]
+interval: 27
+lapses: 0
+modified: 20220828134609459
+reps: 3
+retrievability: 0.8411020839292245
+review: 20220828134609458
+stability: 113.47759365239038
+tags: ?
+title: smtp full form
+type: text/vnd.tiddlywiki
+
+Simple Mail Transfer Protocol

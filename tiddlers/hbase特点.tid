@@ -1,0 +1,21 @@
+created: 20220601011750789
+difficulty: 1.5905573960968489
+due: 20220927000007880
+grade: 1
+history: [{"due":"20220603145128559","interval":0,"difficulty":1.7275095844283441,"stability":0.1296875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220602145128559"},{"due":"20220625121708881","interval":4,"difficulty":1,"stability":19.03598280903463,"retrievability":0.03878686052566552,"grade":2,"lapses":0,"reps":2,"review":"20220606121708881"},{"due":"20220627142027942","interval":20,"difficulty":2.095210703053972,"stability":0.07408450676555052,"retrievability":0.895210703053972,"grade":0,"lapses":1,"reps":1,"review":"20220626142027942"},{"due":"20220709075923799","interval":3,"difficulty":1.3092415084030018,"stability":10.483688054023538,"retrievability":0.014030805349029462,"grade":1,"lapses":1,"reps":2,"review":"20220629075923799"},{"due":"20220712005554907","interval":12,"difficulty":2.395630509772091,"stability":0.05488141221849455,"retrievability":0.8863890013690889,"grade":0,"lapses":2,"reps":1,"review":"20220711005554907"},{"due":"20220724083623503","interval":6,"difficulty":1.5956404520896987,"stability":7.344830795819152,"retrievability":0.000009942317607937474,"grade":1,"lapses":2,"reps":2,"review":"20220717083623502"}]
+interval: 16
+lapses: 2
+modified: 20220802000007880
+reps: 3
+retrievability: 0.7949169440071504
+review: 20220802000007879
+stability: 55.99405985469582
+tags: hbase ?
+title: hbase特点
+type: text/vnd.tiddlywiki
+
+随机访问能力
+
+海量存储能力
+
+分布式, KV型, NOsql数据库

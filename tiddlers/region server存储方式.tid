@@ -1,0 +1,23 @@
+created: 20220605233603570
+difficulty: 1
+due: 20220915232101625
+grade: 2
+history: [{"due":"20220609132858852","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608132858852"},{"due":"20220628073121499","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220612073121499"}]
+interval: 17
+lapses: 0
+modified: 20220629232101625
+reps: 3
+retrievability: 0.8969732251810375
+review: 20220629232101625
+stability: 77.72097465547871
+tags: hbase ?
+title: region server存储方式
+type: text/vnd.tiddlywiki
+
+Region是按照hbase逻辑上表的行进行划分的,一般按照rowkey的范围(字典序比较大小)
+
+一个region包含多个列族,一个列族会存储为一个store.一个store包含内存部分一个memstore,和硬盘部分多个Hfiles(也叫storefiles).
+
+memstore的主要作用是将数据按照rowkey进行排序并建立索引,排序和索引可以大大提高数据查询的速度.
+
+一个regionserver有一个WAL(write ahead log file存储在hdfs,防止内存丢失数据),和多个region.

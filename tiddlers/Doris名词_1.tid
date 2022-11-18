@@ -1,0 +1,19 @@
+created: 20220727122831031
+modified: 20220727124000526
+tags: ? flink
+title: Doris名词
+type: text/vnd.tiddlywiki
+
+```
+FE frontend, 即Doris的前端节点, 使用java为主, 负责接受和返回客户端请求, 元数据以及集群管理, 查询计划生成等
+
+BE backend, 后端, C++为主, 负责数据的存储管理.查询计划执行
+
+Tablet 一张表的实际物理存储单元, 一张表按照分区分桶后在BE构成分布式存储层以Tablet为单位进行存储, 包含元信息以及若干个连续的rowset
+
+version 由start,end两个属性构成, 用来标识rowset的版本范围
+
+segment 表示rowset的数据分段, 多个segment组成一个rowset
+
+compaction rowset的合并过程, 合并过程会进行压缩操作
+```

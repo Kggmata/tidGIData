@@ -1,0 +1,30 @@
+created: 20220718032637714
+difficulty: 1.8675388548145344
+due: 20221009115919198
+grade: 0
+history: [{"due":"20220731041542366","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041542366"},{"due":"20220822111106527","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806111106527"}]
+interval: 63
+lapses: 1
+modified: 20221008115919198
+reps: 1
+retrievability: 0.6675388548145345
+review: 20221008115919197
+stability: 0.07408182272361549
+tags: ?
+title: flink checkpoint
+type: text/vnd.tiddlywiki
+
+flink提供了检查点机制 checkpoint
+
+通过检查点机制, flink定期在数据流上生成checkpoint barrier, 当某个算子收到barrier, 会基于当前状态生成一份快照, 然后将barrier传递到下游算子, 一次传递到最后的sink算子, 出现异常后, 根据最近一次快照数据将所有算子恢复到先前的状态
+
+[img[BillfishuIUuFS2022-07-18 11_28_59.PNG]]
+
+```
+	CheckpointCoordinator周期性的向该流应用的所有source算子发送barrier。 
+	当某个source算子收到一个barrier时，便暂停数据处理过程，然后将自己的当前状态制作成快照，并保存到指定的持久化存储中，最后向CheckpointCoordinator报告 自己快照制作情况，同时向自身所有下游算子广播该barrier，恢复数据处理 
+	下游算子收到barrier之后，会暂停自己的数据处理过程，然后将自身的相关状态制作成快照，并保存到指定的持久化存储中，最后向CheckpointCoordinator报告自身 快照情况，同时向自身所有下游算子广播该barrier，恢复数据处理。 
+	每个算子按照步骤3不断制作快照并向下游广播，直到最后barrier传递到sink算子，快照制作完成。 
+	当CheckpointCoordinator收到所有算子的报告之后，认为该周期的快照制作成功; 否则，如果在规定的时间内没有收到所有算子的报告，则认为本周期快照制作失败 
+
+```

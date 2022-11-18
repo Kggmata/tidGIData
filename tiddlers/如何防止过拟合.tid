@@ -1,0 +1,27 @@
+created: 20220711233316667
+difficulty: 2.2495877227437417
+due: 20220902114653343
+grade: 0
+history: [{"due":"20220716055955609","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715055955609"},{"due":"20220722141936492","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721141936492"},{"due":"20220812033323516","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730033323516"},{"due":"20220820080856225","interval":20,"difficulty":2.049587722729248,"stability":0.05488116409496729,"retrievability":0.8495877227292477,"grade":0,"lapses":2,"reps":1,"review":"20220819080856225"}]
+interval: 13
+lapses: 3
+modified: 20220901114653343
+reps: 1
+retrievability: 1.4493530897507229e-11
+review: 20220901114653343
+stability: 0.040656966333775045
+tags: ?
+title: 如何防止过拟合
+type: text/vnd.tiddlywiki
+
+1 根本性方法 - 获取和使用更多的数据
+
+2 控制模型的复杂度 - 根据奥卡姆剃刀法则：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。
+
+3 降低特征复杂度 - 删除冗余的特征
+
+4 L1/L2正则化
+
+5 Dropout
+
+6 Early stopping

@@ -1,0 +1,20 @@
+created: 20220731011125957
+modified: 20220731011134887
+tags: ? flink
+title: flinkCDC doris connector
+type: text/vnd.tiddlywiki
+
+```
+'fenodes' = '192.168.88.161:8030'
+    ,'table.identifier' = 'ods.ods_bxg_oe_course'
+    ,'sink.enable-delete' = 'true'
+    ,'sink.properties.strip_outer_array' = 'true'
+    ,'sink.batch.size' = '2000'
+    ,'password' = '123456'
+    ,'connector' = 'doris'
+    ,'sink.batch.interval' = '10s'
+    ,'sink.max-retries' = '5'
+    ,'sink.properties.format' = 'json'
+    ,'username' = 'root'
+
+```

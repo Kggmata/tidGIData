@@ -1,0 +1,57 @@
+created: 20220524073242600
+difficulty: 1.096056915197644
+due: 20230228042715467
+grade: 1
+history: [{"due":"20220529141618011","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141618011"},{"due":"20220602060003190","interval":4,"difficulty":3.331064787343914,"stability":0.11806790392114878,"retrievability":0.14564366571177542,"grade":0,"lapses":1,"reps":1,"review":"20220601060003190"},{"due":"20220613120308318","interval":2,"difficulty":1.6989047413718972,"stability":9.847915401014053,"retrievability":0.16783995402798293,"grade":2,"lapses":1,"reps":2,"review":"20220603120308318"},{"due":"20220807004547160","interval":11,"difficulty":1,"stability":53.759603500938304,"retrievability":0.888974794904411,"grade":2,"lapses":1,"reps":3,"review":"20220614004547160"}]
+interval: 56
+lapses: 1
+modified: 20220809042715467
+reps: 4
+retrievability: 0.8960569151976442
+review: 20220809042715467
+stability: 203.1060753743037
+tags: hadoop yarn ?
+title: Hadoop的调度器总结
+type: text/vnd.tiddlywiki
+
+Apache Hadoop-1.x默认调度器是FIFO；
+Apache hadoop-2.7.2之后默认调度器是容量调度器Capacity Scheduler，也称计算能力调度器；
+Apache hadoop-3.2.2默认调度器是公平调度器Fair Scheduler。
+
+https://blog.csdn.net/FunnyPrince_/article/details/120244552
+
+1）先进先出调度器（FIFO）
+[img[6993ab3f75c24dfbb5ff829a1079bff7.png]]
+优点： 简单易懂；
+缺点： 不支持多队列，生产环境很少使用。
+
+2）容量调度器（Capacity Scheduler）
+[img[d6abae6101ec4c08b7571f3f94e7ed5d.png]]
+`多队列 ：每个队列可配置一定的资源量，每个队列内部采用FIFO调度策略；
+容量保证：管理员可为每个队列设置资源最低保证和资源使用上线；
+灵活性：如果一个队列中的资源有剩余，可以暂时共享给那些需要资源的队列，而一旦该队列有新的应用程序提交，则其他队列借调的资源会归还给该队列；
+多租户：
+a. 支持多用户共享集群和多应用程序同时运行；
+b. 为了防止同一个用户的作业独占队列中的资源，该调度器会对同一用户提交的作业所占资源进行限定。`
+
+3）公平调度器（Fair Scheduler）
+
+[img[995a52c90d664522b5b38d669915bb8f.png]]
+[img[cff069fee70f4795930fe4bb10b99160 (1).png]]
+与容量调度器相同点:
+
+`多队列 ：每个队列可配置一定的资源量，每个队列内部采用FIFO调度策略；
+容量保证：管理员可为每个队列设置资源最低保证和资源使用上线；
+灵活性：如果一个队列中的资源有剩余，可以暂时共享给那些需要资源的队列，而一旦该队列有新的应用程序提交，则其他队列借调的资源会归还给该队列；
+多租户：
+a. 支持多用户共享集群和多应用程序同时运行；
+b. 为了防止同一个用户的作业独占队列中的资源，该调度器会对同一用户提交的作业所占资源进行限定。
+与容量调度器不同点:
+
+核心调度策略不同
+容量调度器： 优先选择资源利用率低的队列；
+公平调度器：优先选择对资源缺额比例大的。
+
+每个队列可以单独设置资源分配方式
+容量调度器：FIFO、DRF(内存+CPU)；
+公平调度器：FIFO、FAIR、DRF。`

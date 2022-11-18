@@ -1,0 +1,35 @@
+created: 20220713024749262
+difficulty: 1
+due: 20221108075757714
+grade: 2
+history: [{"due":"20220718085836234","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085836234"},{"due":"20220808093900388","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":1,"lapses":0,"reps":2,"review":"20220723093900388"}]
+interval: 20
+lapses: 0
+modified: 20220812075757714
+reps: 3
+retrievability: 0.8793782966670416
+review: 20220812075757714
+stability: 88.46564825524128
+tags: ?
+title: 队列
+type: text/vnd.tiddlywiki
+
+队列是一个数据集合, 一头进一头出
+
+插入的一端为队尾rear, 插入动作为进队或者入队
+
+删除的一端为队头front, 删除动作为出队
+
+队列的性质 FIFO
+
+实现: 环形队列
+
+队首指针前进1: front=(front+1)%MaxSize
+
+队尾指针前进1: rear=(rear+1)%MaxSize
+
+对空条件: rear==front
+
+队满条件: (rear+1)%MaxSize==front
+
+[img[Snipaste_2022-07-13_11-08-34.jpg]]

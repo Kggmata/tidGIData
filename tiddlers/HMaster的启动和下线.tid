@@ -1,0 +1,48 @@
+created: 20220606060722230
+difficulty: 2.722158283144369
+due: 20221013002256589
+grade: 0
+history: [{"due":"20220610121648123","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609121648123"},{"due":"20220629070404428","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220613070404428"},{"due":"20220711091830425","interval":19,"difficulty":2.085572504752995,"stability":0.07408316441686115,"retrievability":0.8855725047529949,"grade":0,"lapses":1,"reps":1,"review":"20220702103658558"},{"due":"20220724051537820","interval":11,"difficulty":1.2855726653903068,"stability":10.85494589432552,"retrievability":1.6063731178214745e-7,"grade":1,"lapses":1,"reps":2,"review":"20220713051537820"},{"due":"20220803000153710","interval":20,"difficulty":2.309128078514493,"stability":0.0548811791474709,"retrievability":0.823555413124186,"grade":0,"lapses":2,"reps":1,"review":"20220802000153710"},{"due":"20220816081719210","interval":6,"difficulty":1.5091380203457543,"stability":7.6348477758845075,"retrievability":0.00000994183126152159,"grade":1,"lapses":2,"reps":2,"review":"20220808081719210"},{"due":"20220824092040857","interval":15,"difficulty":2.522158283144369,"stability":0.040656966333775045,"retrievability":0.8130202627986145,"grade":0,"lapses":3,"reps":1,"review":"20220823092040857"}]
+interval: 50
+lapses: 4
+modified: 20221012002256589
+reps: 1
+retrievability: 5.33786304754419e-57
+review: 20221012002256589
+stability: 0.03011942145770373
+tags: hbase ?
+title: HMaster的启动和下线
+type: text/vnd.tiddlywiki
+
+*上线
+
+大白话：1. 确定自己active的身份，2和下属RegionServer沟通信息
+
+```
+1. 启动master，会在ZK中抢注一个临时节点，确保自己活跃master的身份不被占有
+2. 从ZK中取得RegionServer的信息，和RegionServer们进行同学，核对它们的信息
+3. 从.META.Region表中获得未分配的region信息，加入待分配列表（待办事项）
+4. 正常工作
+```
+*下线
+
+Master不负责任务负载，下线不影响正在读写的任务，但是无法做新任务。
+
+短时间没有master不影响，长时间没有很多功能就缺失了
+
+```
+1. master一旦下线，和ZK沟通元数据的角色就没了，那么无法做以下事情：
+   1. 创建表
+   2. 删除表
+   3. 修改表
+   4. 合并HFile
+   5. region的负载均衡（将一个region从某个RegionServer移动到另一个RegionServer）
+   6. RegionServer的上下线维护
+   7. `注意：region的split不受到影响，这个是RegionServer自己完成的`
+2. master不在线，不影响RegionServer上数据的读写
+```
+
+> Master可以短暂的下线，如果长时间没有master，影响比较大
+
+
+

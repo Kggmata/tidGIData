@@ -1,0 +1,24 @@
+created: 20220602002101053
+difficulty: 1.0847461089172605
+due: 20220922024625702
+grade: 1
+history: [{"due":"20220605080613787","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604080613787"},{"due":"20220626003931104","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609003931104"}]
+interval: 20
+lapses: 0
+modified: 20220629024625702
+reps: 3
+retrievability: 0.8847461089172606
+review: 20220629024625701
+stability: 84.65017621113839
+tags: hbase ?
+title: HregionServer的作用
+type: text/vnd.tiddlywiki
+
+HRegion Server
+HRegion server维护HMaster分配给它的region，处理对这些region的IO请求
+
+HRegion server负责切分在运行过程中变得过大的region
+
+从图中可以看到，Client访问HBase上数据的过程并不需要HMaster参与（寻址访问Zookeeper和HRegion server，数据读写访问HRegione server）
+
+HMaster仅仅维护者table和HRegion的元数据信息，负载很低。

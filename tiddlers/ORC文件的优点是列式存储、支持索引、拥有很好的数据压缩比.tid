@@ -1,0 +1,19 @@
+created: 20220529052841222
+difficulty: 1
+due: 20220920141021596
+grade: 2
+history: [{"due":"20220601054838816","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531054838816"},{"due":"20220622130051315","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130051315"}]
+interval: 20
+lapses: 0
+modified: 20220623141021596
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623141021596
+stability: 89.0394510841741
+tags: hive ?
+title: ORC文件的优点是列式存储、支持索引、拥有很好的数据压缩比
+type: text/vnd.tiddlywiki
+
+正确
+
+optimized row columnar

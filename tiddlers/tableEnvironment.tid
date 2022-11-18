@@ -1,0 +1,33 @@
+created: 20220719121633628
+difficulty: 1
+due: 20220826111015746
+grade: 1
+history: [{"due":"20220801132401495","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731132401495"},{"due":"20220808002808092","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002808092"}]
+interval: 6
+lapses: 1
+modified: 20220813111015746
+reps: 2
+retrievability: 0.00019680269095417443
+review: 20220813111015746
+stability: 12.923390568613549
+tags: ?
+title: tableEnvironment
+type: text/vnd.tiddlywiki
+
+table API的环境接口
+
+包含功能
+
+```
+catalog管理
+
+表管理
+
+SQL查询
+
+UDF管理
+
+UDF拓展
+
+Datastream table之间转换: 1.13版本只有流任务支持, 批任务不支持
+```

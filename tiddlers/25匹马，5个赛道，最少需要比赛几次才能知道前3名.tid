@@ -1,0 +1,26 @@
+created: 20220721125546100
+difficulty: 1
+due: 20220824090257745
+grade: 2
+history: [{"due":"20220803110509135","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110509135"}]
+interval: 6
+lapses: 0
+modified: 20220808090257745
+reps: 2
+retrievability: 0.0017970135161932011
+review: 20220808090257745
+stability: 16.39335325161452
+tags: ?
+title: 25匹马，5个赛道，最少需要比赛几次才能知道前3名
+type: text/vnd.tiddlywiki
+
+```
+由于场地只有5个赛道，每次最多5匹马比赛，将25匹马分为5组（A、B、C、D、E），每组5匹（编号1、2、3、4、5）。
+首先，进行5场比赛，每场比赛给每组排名。
+
+选出每个赛道第一名,再比一次, 得出前三名A1, B1, C1
+```
+```
+然后A2,A3,B1,B2,C1比
+```
+7次

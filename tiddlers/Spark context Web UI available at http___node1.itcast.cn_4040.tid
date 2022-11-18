@@ -1,0 +1,17 @@
+created: 20220519135442573
+difficulty: 2.229344411327985
+due: 20220919074208870
+grade: 2
+history: [{"due":"20220523011536146","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011536146"},{"due":"20220529003442430","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003442429"},{"due":"20220628134333819","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602134333819"}]
+interval: 29
+lapses: 0
+modified: 20220701074208870
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701074208870
+stability: 80.25328821558121
+tags: spark ?
+title: Spark context Web UI available at http://node1.itcast.cn:4040
+type: text/vnd.tiddlywiki
+
+Spark为每个程序都提供了一个Web监控界面，端口从4040开始，如果被占用就不断+1

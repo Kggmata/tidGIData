@@ -1,0 +1,30 @@
+created: 20220718022529686
+difficulty: 1
+due: 20230617133444835
+grade: 2
+history: [{"due":"20220731041353440","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041353440"},{"due":"20220822122606908","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806122606908"}]
+interval: 66
+lapses: 0
+modified: 20221011133444835
+reps: 3
+retrievability: 0.6548145031221182
+review: 20221011133444835
+stability: 248.53042151389508
+tags: ?
+title: Watermark解决的问题
+type: text/vnd.tiddlywiki
+
+```
+上面的问题在于如何将迟来的EventTime 为11的元素正确处理？
+当Watermark的时间戳等于Event中携带的EventTime时候，上面场景（Watermark=EventTime)的计算结果如下：
+```
+[img[BillfishnBpCJR2022-07-18 10_25_52.PNG]]
+
+```
+如果想正确处理迟来的数据可以定义Watermark生成策略为 Watermark = EventTime -5s， 如下：
+```
+[img[BillfishSIFvMa2022-07-18 10_26_20.PNG]]
+
+```
+watermark就是再原来的数据基础上根据eventTime-延迟时间=水位时间, 根据水印时间作为是否满足endtime的条件, 仅仅是作为触发窗口条件, 而不会打乱原有顺序
+```

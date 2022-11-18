@@ -1,0 +1,17 @@
+created: 20220521055704268
+difficulty: 1.4543765074856678
+due: 20221020075203768
+grade: 2
+history: [{"due":"20220524024200908","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522024200908"},{"due":"20220605093718071","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526093718071"},{"due":"20220608015422941","interval":12,"difficulty":5.0941541016100915,"stability":0.07683095218398285,"retrievability":0.8841541016100911,"grade":0,"lapses":1,"reps":1,"review":"20220607015422941"},{"due":"20220618063840006","interval":5,"difficulty":3.2952065403650215,"stability":5.810511312430495,"retrievability":0.0010524387549298876,"grade":2,"lapses":1,"reps":2,"review":"20220612063840006"},{"due":"20220712021140683","interval":7,"difficulty":2.376002562453955,"stability":22.748528211030216,"retrievability":0.8807960220889333,"grade":2,"lapses":1,"reps":3,"review":"20220619021140683"}]
+interval: 28
+lapses: 1
+modified: 20220717075203769
+reps: 4
+retrievability: 0.8783739450317126
+review: 20220717075203768
+stability: 95.45032324435125
+tags: hadoop ?
+title: Hadoop中job和Tasks之间的区别是什么？
+type: text/vnd.tiddlywiki
+
+编写好的一个程序，我们称为Mapreduce程序，一个Mapreduce程序就是一个Job，而一个Job里面可以有一个或多个Task，Task又可以区分为Map Task和Reduce Task.

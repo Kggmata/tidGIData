@@ -1,0 +1,17 @@
+created: 20220520045730364
+difficulty: 2.229344411327985
+due: 20220919080449638
+grade: 2
+history: [{"due":"20220523061313423","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521061313423"},{"due":"20220529003521443","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003521443"},{"due":"20220628134850289","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602134850289"}]
+interval: 29
+lapses: 0
+modified: 20220701080449639
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701080449638
+stability: 80.25328821558121
+tags: spark ?
+title: Spark比MapReduce快是因为Spark都是在内存中的计算
+type: text/vnd.tiddlywiki
+
+错误：Spark整体有很多设计层面导致了Spark比MR要快，Spark的Shuffle也经过磁盘

@@ -1,0 +1,56 @@
+created: 20220609102256226
+difficulty: 1
+due: 20221002082256662
+grade: 2
+history: [{"due":"20220613143055960","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612143055960"},{"due":"20220702000151326","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616000151325"}]
+interval: 20
+lapses: 0
+modified: 20220706082256662
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706082256662
+stability: 88.44814121809115
+tags: kafka ?
+title: kafka中log日志目录及组成
+type: text/vnd.tiddlywiki
+
+kafka在我们指定的log.dir目录下，会创建一些文件夹；名字是【主题名字-分区名】所组成的文件夹。 在【主题名字-分区名】的目录下，会有两个文件存在，如下所示：
+
+```
+#索引文件
+00000000000000000000.index
+#日志内容
+0000000000000000000.log
+#时间索引
+.timeIndex
+```
+
+在目录下的文件，会根据log日志的大小进行切分，.log文件的大小为1G的时候，就会进行切分文件；
+
+>在kafka的设计中，将oﬀset值作为了文件名的一部分
+
+比如：topic的名字为：test，有三个分区，生成的目录如下如下所示：
+
+```
+test-0
+test-1
+test-2
+```
+
+kafka日志的组成
+
+```
+segment ﬁle组成：由两个部分组成，分别为index ﬁle和data ﬁle，此两个文件一一对应且成对出现； 后缀.index和.log分别表示为segment的索引文件、数据文件。
+```
+```
+segment文件命名规则：partion全局的第一个segment从0开始，后续每个segment文件名为上一个全局 partion的最大oﬀset（偏移message数）。数值最大为64位long大小，19位数字字符长度，没有数字就用0 填充。
+```
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_26_54.png]]
+通过索引信息可以快速定位到message。通过index元数据全部映射到memory，可以避免segment ﬁle的IO磁盘操作；
+
+通过索引文件稀疏存储，可以大幅降低index文件元数据占用空间大小。 稀疏索引：为了数据创建索引，但范围并不是为每一条创建，而是为某一个区间创建；
+
+```
+好处：就是可以减少索引值的数量。
+不好的地方：找到索引区间之后，要得进行第二次处理。
+```

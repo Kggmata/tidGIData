@@ -1,0 +1,48 @@
+created: 20220525093047283
+difficulty: 1
+due: 20221003103246729
+grade: 2
+history: [{"due":"20220529152125520","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528152125520"},{"due":"20220624004249322","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602004249322"}]
+interval: 23
+lapses: 0
+modified: 20220625103246729
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625103246729
+stability: 100.35422359618087
+tags: spark ?
+title: 其他聚合算子
+type: text/vnd.tiddlywiki
+
+*fold算子
+
+- 功能：将RDD中的每个元素按照给定的聚合函数进行聚合，返回聚合的结果
+
+- 分类：触发算子,转换算子叫做foldByKey
+
+- 特点：**==有初始值==**，每个分区在计算时都会计算上初始值，分区间计算时也会计算1次初始值
+
+  - 初始值一共会被聚合N+1次，N代表分区数
+
+- 语法：zeroValue就是tmp第一次的值
+
+`def fold(self, zeroValue: T, f:(T,T) -> T) -> T`
+
+*aggregate算子
+
+- 功能：将RDD中的每个元素进行聚合，返回聚合的结果
+
+- 分类：触发算子
+
+- 特点：有初始值，并且可以单独指定分区内聚合逻辑和分区间聚合逻辑
+
+- 语法
+
+`python
+  def aggregate(self, zeroValue: T, f1:(T,T) -> T, f2:(T,T) -> T) -> T`
+
+*区别
+
+`- reduce：不支持初始值，分区内聚合逻辑与分区间聚合逻辑一致
+- fold：支持初始值，分区内聚合逻辑与分区间聚合逻辑一致
+- aggregate：支持初始值，分区内聚合逻辑与分区间聚合逻辑可以不一致`

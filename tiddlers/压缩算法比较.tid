@@ -1,0 +1,71 @@
+created: 20220524061754457
+difficulty: 2.073196879901413
+due: 20220903055718118
+grade: 0
+history: [{"due":"20220529141158834","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141158834"},{"due":"20220624052748585","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052748585"},{"due":"20220626113249717","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625113249717"},{"due":"20220629233634947","interval":3,"difficulty":2.5872713285758855,"stability":0.05488315248213783,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220628233634946"},{"due":"20220710145413716","interval":4,"difficulty":1.7877338134178744,"stability":6.782590611822643,"retrievability":0.0004624848419891039,"grade":1,"lapses":2,"reps":2,"review":"20220703145413716"},{"due":"20220821013433913","interval":8,"difficulty":1,"stability":41.18248566493979,"retrievability":0.883139851432101,"grade":2,"lapses":2,"reps":3,"review":"20220711013433912"}]
+interval: 53
+lapses: 3
+modified: 20220902055718118
+reps: 1
+retrievability: 0.8731968799014128
+review: 20220902055718118
+stability: 0.040656966333775045
+tags: hadoop ?
+title: 压缩算法比较
+type: text/vnd.tiddlywiki
+
+```
+Algorithm	% remaining	Encoding	Decoding
+GZIP	13.4%	21 MB/s	118 MB/s
+LZO	20.5%	135 MB/s	410 MB/s
+Zippy/Snappy	22.2%	172 MB/s	409 MB/s
+```
+
+gzip 压缩
+
+```
+不需要安装
+不支持split
+压缩率仅次于bzip2
+压缩\解压速度稍快于bzip2
+```
+
+bzip2 压缩
+
+```
+不需要安装
+支持split
+压缩率最高
+压缩解压缩速度最慢
+适合少读取,长期储存的文件
+```
+
+lzo 压缩
+
+```
+需要安装
+支持split
+压缩率稍好于snappy
+压缩\解压速度仅次于snappy
+```
+
+snappy 压缩
+
+```
+需要安装
+不支持split
+适合作为mapreduce作业的中间压缩
+压缩率最低
+压缩解压缩速度最快
+```
+snappy不可split,为什么能用在orc?
+
+```
+1、snappy压缩格式本身是不可切分的；
+
+2、snappy压缩格式作用在文本类文件格式上不可切分；
+
+3、snappy压缩格式作用在Sequence、Avro、parquet、orc等这些容器类的文件格式上，能够支持切分。但这里的切分并不是因为snappy变的可切分了，而是因为这些容器类的文件格式牛逼~~
+```
+
+

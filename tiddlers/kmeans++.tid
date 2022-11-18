@@ -1,0 +1,42 @@
+created: 20220627001418763
+difficulty: 1.0674977020971539
+due: 20221026114738872
+grade: 1
+history: [{"due":"20220630104908447","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629104908447"},{"due":"20220720141147058","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":2,"lapses":0,"reps":2,"review":"20220704141147058"}]
+interval: 22
+lapses: 0
+modified: 20220726114738872
+reps: 3
+retrievability: 0.8674977020971539
+review: 20220726114738872
+stability: 92.07922912361714
+tags: 用户画像 ?
+title: kmeans++
+type: text/vnd.tiddlywiki
+
+接下来分析KMneans++思路， k-means++算法选择初始选择聚类中心的基本思想就是：初始的聚类中心之间的相互距离要尽可能的远。
+[img[BillfishduopoH2022-06-27 08_17_24.PNG]]
+
+```
+*	从输入的数据点集合中随机选择一个点作为第一个聚类中心
+*	对于数据集中的每一个点x，计算它与最近聚类中心(指已选择的聚类中心)的距离D(x)
+*	选择一个新的数据点作为新的聚类中心，选择的原则是：D(x)较大的点，被选取作为聚类中心的概率较大
+*	重复2和3直到k个聚类中心被选出来
+*	利用这k个初始的聚类中心来运行标准的k-means算法
+```
+接下来继续SparkMLLIb中实现KMeans的参数：
+
+K-means是最常用的聚类算法之一，它将数据点聚类为预定义数量的聚类。该spark.mllib实现包括一个名为kmeans ||的k-means ++方法的并行变体 。实现中包含以下参数：
+
+```
+*	k是所需簇的数量。
+*	maxIterations是要运行的最大迭代次数。
+*	initializationMode指定随机初始化或通过k-means ++初始化。
+*	runs是运行k-means算法的次数（k-means不保证找到全局最优解，并且当在给定数据集上多次运行时，算法返回最佳聚类结果）。
+*	initializationSteps确定k-means ||中的步数。
+*	epsilon确定我们认为k-means已收敛的距离阈值。
+*	initialModel是一组用于初始化的可选集群中心。如果提供此参数，则仅执行一次运行。
+```
+
+评估聚类算法的时候，使用平方误差的集合和（WSSSE）内计算。算法可以通过增加k来减少此错误度量。实际上，最优k通常是WSSE图中存在“肘(elbow)”的K。
+

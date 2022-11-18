@@ -1,0 +1,17 @@
+created: 20220521063221778
+difficulty: 2.1232955306413137
+due: 20221203030236999
+grade: 2
+history: [{"due":"20220524053353493","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522053353493"},{"due":"20220608120934524","interval":5,"difficulty":3.9684334714209166,"stability":12.372217148638658,"retrievability":0.7684334714209162,"grade":2,"lapses":0,"reps":2,"review":"20220527120934523"},{"due":"20220722070245745","interval":16,"difficulty":3.04105413555829,"stability":40.364930277688956,"retrievability":0.8726206641373735,"grade":2,"lapses":0,"reps":3,"review":"20220612070245745"}]
+interval: 48
+lapses: 0
+modified: 20220730030236999
+reps: 4
+retrievability: 0.8822413950830236
+review: 20220730030236999
+stability: 125.64780207164452
+tags: spark ?
+title: hdfs高可用下有sn吗?
+type: text/vnd.tiddlywiki
+
+[img[腾讯会议图片_20220521143145.png]]

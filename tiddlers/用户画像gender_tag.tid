@@ -1,0 +1,100 @@
+created: 20220620130300428
+difficulty: 1.0706168098837028
+due: 20221028060109076
+grade: 1
+history: [{"due":"20220625121727555","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121727554"},{"due":"20220713135207236","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626061903223"},{"due":"20220721090809211","interval":24,"difficulty":2.0289696920145737,"stability":0.07408198986175796,"retrievability":0.8289696920145737,"grade":0,"lapses":1,"reps":1,"review":"20220720090809211"},{"due":"20220811144240098","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":2,"lapses":1,"reps":2,"review":"20220729144240098"}]
+interval: 17
+lapses: 1
+modified: 20220815060109076
+reps: 3
+retrievability: 0.8706168098837029
+review: 20220815060109076
+stability: 74.14705774544377
+tags: 用户画像 ?
+title: 用户画像gender_tag
+type: text/vnd.tiddlywiki
+
+1 读取mysql当中的4级标签rule,解析得到metadict
+
+2 通过metadict从ES当中取数据
+
+3 读取mysql5级标签体系
+
+4 结合5级标签规则和ES业务数据, 计算出用户的5级标签
+
+5 将结果写入ES
+
+```
+#!/usr/bin/env python
+# @desc :gender_tag
+__coding__ = "utf-8"
+__author__ = "yangqing_qu"
+
+import os
+from pyspark import SparkContext, RDD
+from pyspark.sql.types import StructType, StructField, LongType, StringType, TimestampType
+from pyspark.sql import SparkSession, DataFrame, functions as F
+from cn.itcast.tags.bean.ESMeta import ESMeta
+from cn.test.pysparkEStest.parameter import tableName
+from cn.test.pysparkTest.parameters import url, change_to_dict
+
+os.environ['SPARK_HOME'] = 'D:\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+# 2-服务器路径
+# os.environ['SPARK_HOME'] = '/export/servers/spark'
+# PYSPARK_PYTHON = "/root/anaconda3/envs/pyspark_env/bin/python"
+# 当存在多个版本时，不指定很可能会导致出错
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+os.environ["PYSPARK_DRIVER_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == "__main__":
+    spark = SparkSession.builder. \
+        appName("age_tag"). \
+        master("local[*]"). \
+        config("spark.sql.shuffle.partitions", 10). \
+        getOrCreate()
+
+    # TODO mysql读取解析4级rule
+    print("mysql读取解析4级标签rule------------------------------------------------------------------")
+    tbl_basic_tag_df = spark.read.jdbc(url=f"{url}", table=f"{tableName}")
+    tag4_df: DataFrame = tbl_basic_tag_df.select("rule").where(tbl_basic_tag_df["id"] == 4)
+    tag4_dict = change_to_dict(tag4_df.collect()[0]['rule'])
+    esMeta = ESMeta.fromDictToEsMeta(tag4_dict)
+    print(tag4_dict)
+    # TODO 根据4级标签读取ES
+    print("根据4级标签读取ES------------------------------------------------------------------")
+    es_df: DataFrame = spark.read.format("es"). \
+        option("es.nodes", f"{esMeta.esNodes}"). \
+        option("es.query", "?q=*"). \
+        option("es.resource", f"{esMeta.esIndex}/{esMeta.esType}"). \
+        option("es.index.read.missing.as.empty", 'yes'). \
+        option("es.write.operation", "upsert"). \
+        option("es.read.field.include", f"{esMeta.selectFields}"). \
+        load()
+    es_df.show()
+    # TODO 读取5级标签
+    print("读取5级标签------------------------------------------------------------------")
+    tag5_df: DataFrame = tbl_basic_tag_df.select(tbl_basic_tag_df['id'], tbl_basic_tag_df['rule']).where(
+        tbl_basic_tag_df["pid"] == 4)
+    tag5_df.show()
+    # TODO 处理es数据
+    print("处理es数据------------------------------------------------------------------")
+    rule_dict = {i['rule']: i['id'] for i in tag5_df.rdd.collect()}
+    broad = spark.sparkContext.broadcast(rule_dict)
+    print(rule_dict)
+    mf_to_12_udf = F.udf(lambda x: broad.value['1'] if 'M' else broad.value['2'], StringType())
+    # TODO 匹配5级标签
+    print("匹配5级标签------------------------------------------------------------------")
+    res_df = es_df.select(es_df['user_id'].alias("userId"), mf_to_12_udf(es_df['sex']).alias('tagsId'))
+    # TODO 写入ES
+    print("写入ES------------------------------------------------------------------")
+    res_df.write.format("es") \
+        .option("es.nodes", f'{esMeta.esNodes}') \
+        .option("es.resource", f"insurance-profile-result/{esMeta.inType}") \
+        .option("es.mapping.id", f"userId") \
+        .option("es.mapping.name", f"userId:userId,tagsId:tagsId") \
+        .option("es.write.operation", "upsert") \
+        .mode("append") \
+        .save()
+
+```

@@ -1,0 +1,25 @@
+created: 20220614075951586
+difficulty: 1
+due: 20230318115337068
+grade: 2
+history: [{"due":"20220617073215359","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616073215359"},{"due":"20220626000001194","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617000001194"},{"due":"20220816020221885","interval":10,"difficulty":1,"stability":49.62797382038931,"retrievability":0.8875368908748189,"grade":2,"lapses":0,"reps":3,"review":"20220627020221884"}]
+interval: 55
+lapses: 0
+modified: 20220821115337069
+reps: 4
+retrievability: 0.8897939475573553
+review: 20220821115337068
+stability: 208.51507007027075
+tags: 用户画像web界面 ?
+title: 标签存储结构
+type: text/vnd.tiddlywiki
+
+[img[image-20220614152121904.png]]
+[img[image-20220614144758213-165519368088210.png]]
+[img[image-20220614153006774.png]]
+
+神策网站补充：
+https://family.demo.sensorsdata.cn/sts/usertag/?id=22065&project=InsuranceDirectSaleDemo&product=sensors_analysis
+[img[image-20220614153434509.png]]
+[img[image-20220614153349248.png]]
+[img[image-20220614153420929.png]]

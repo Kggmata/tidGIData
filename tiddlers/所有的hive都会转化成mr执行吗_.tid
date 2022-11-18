@@ -1,0 +1,20 @@
+created: 20220521022140178
+difficulty: 2.236638523698894
+due: 20220913234834475
+grade: 2
+history: [{"due":"20220523083241011","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521083241011"},{"due":"20220529002038694","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002038694"},{"due":"20220628051300439","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602051300439"}]
+interval: 27
+lapses: 0
+modified: 20220629234834476
+reps: 4
+retrievability: 0.8954610068311251
+review: 20220629234834475
+stability: 76.39463248400195
+tags: hive ?
+title: 所有的hive都会转化成mr执行吗?
+type: text/vnd.tiddlywiki
+
+不是
+select *全表扫描不会转化
+
+执行时间短一般就没有mr过程

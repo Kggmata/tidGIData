@@ -1,0 +1,19 @@
+created: 20220727024548106
+modified: 20220727025915113
+tags: ? flink
+title: doris配置文件
+type: text/vnd.tiddlywiki
+
+```
+fe.conf
+  meta_dir元数据存储的目录
+  JAVA_OPTS默认java最大堆内存
+be.conf
+  storage_root_path数据存放目录
+  priority_networks节点的IP
+  
+```
+```
+FE的磁盘空间主要用于存储元数据包括image和edits
+BE用于存储用户数据, 按照数据量*3副本计算, 然后预留40%空间用作后台compaction以及一些中间数据的存放
+```

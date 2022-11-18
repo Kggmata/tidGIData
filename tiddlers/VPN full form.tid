@@ -1,0 +1,17 @@
+created: 20220711042026364
+difficulty: 1
+due: 20221111103110716
+grade: 2
+history: [{"due":"20220713035406432","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035406432"},{"due":"20220806053140907","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721053140907"}]
+interval: 21
+lapses: 0
+modified: 20220811103110716
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811103110716
+stability: 92.05363191623492
+tags: ?
+title: VPN full form
+type: text/vnd.tiddlywiki
+
+virtual private network

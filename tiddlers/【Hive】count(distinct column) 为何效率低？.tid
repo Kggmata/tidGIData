@@ -1,0 +1,23 @@
+created: 20220711143120963
+difficulty: 1.0850482664204824
+due: 20221029074738580
+grade: 1
+history: [{"due":"20220716022828416","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715022828416"},{"due":"20220806071403754","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":1,"lapses":0,"reps":2,"review":"20220721071403754"}]
+interval: 19
+lapses: 0
+modified: 20220809074738580
+reps: 3
+retrievability: 0.8850482664204823
+review: 20220809074738580
+stability: 81.07614175380795
+tags: ?
+title: 【Hive】count(distinct column) 为何效率低？
+type: text/vnd.tiddlywiki
+
+又进行查询，发现reducer还是1，为什么？
+
+原来因为加入distinct，map阶段不能用combine消重，数据输出为（key，value）形式然后在reduce阶段进行消重。
+重点是，Hive在处理COUNT这种“全聚合(full aggregates)”计算时，它会忽略用户指定的Reduce Task数，而强制使用1。
+————————————————
+版权声明：本文为CSDN博主「一个写湿的程序猿」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_32727095/article/details/120352543

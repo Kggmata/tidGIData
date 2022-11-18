@@ -1,0 +1,10 @@
+created: 20220819062427208
+modified: 20220819062517915
+tags: ? flink
+title: strided convolution步长卷积
+type: text/vnd.tiddlywiki
+
+```
+之前的filter一次移动一格, 现在自定义移动的步长
+```
+[img[Snipaste_2022-08-19_14-25-02.jpg]]

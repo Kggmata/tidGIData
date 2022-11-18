@@ -1,0 +1,21 @@
+created: 20220523081522109
+difficulty: 1
+due: 20221106080538315
+grade: 2
+history: [{"due":"20220526133855622","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133855622"},{"due":"20220628142934266","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531142934266"}]
+interval: 31
+lapses: 0
+modified: 20220701080538316
+reps: 3
+retrievability: 0.8885518728545304
+review: 20220701080538315
+stability: 128.3109886232779
+tags: spark ?
+title: spark两类算子
+type: text/vnd.tiddlywiki
+
+spark中的数据都是抽象为RDD的，它支持两种类型的算子操作：Transformation和Action。Transformation算子的代码不会真正被执行。只有当我们的程序里面遇到一个action算子的时候，代码才会真正的被执行。
+
+Transformation算子主要包括：map、mapPartitions、flatMap、filter、union、groupByKey、repartition、cache等。
+
+Action算子主要包括：reduce、collect、show、count、foreach、saveAsTextFile等。

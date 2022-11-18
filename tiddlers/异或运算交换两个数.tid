@@ -1,0 +1,80 @@
+created: 20220610051928140
+difficulty: 1.3080381294784418
+due: 20221009144219999
+grade: 1
+history: [{"due":"20220614103625869","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613103625869"},{"due":"20220702025130220","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616025130219"},{"due":"20220707040330158","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706040330158"},{"due":"20220721062132151","interval":4,"difficulty":1.2765139590113368,"stability":10.850433613439773,"retrievability":0.0033834917823108,"grade":1,"lapses":1,"reps":2,"review":"20220710062132151"}]
+interval: 19
+lapses: 1
+modified: 20220729144219999
+reps: 3
+retrievability: 0.8315241704671053
+review: 20220729144219999
+stability: 72.29872534912465
+tags: kafka ?
+title: 异或运算交换两个数
+type: text/vnd.tiddlywiki
+
+0^1=1
+1^1=0
+1^0=1
+0^0=0
+
+可以理解成无进位相加
+
+0^N=N
+N^N=0
+a^b=b^a
+(a^b)^c=a^(b^c)
+
+所以a^b^b=a^0=a
+a^b^a=b^0=b
+
+```
+def swap(a,b):
+    a=a^b
+    b=a^b #b=a
+    a=a^a #a=b
+    return a,b
+```
+
+*例题1
+
+一个数组,一个数字出现奇数次,其他数字出现偶数次,找哪个出现奇数次的数字
+
+```
+用一个变量0,和其他所有数字异或一遍,结果一定是那个奇数次的数字
+
+假设[a,a,b,b,b]
+则 0^a^a^b^b^b=b
+```
+
+*例题2
+
+一个数组,两个数字出现奇数次,其他数字出现偶数次,找哪两个出现奇数次的数字a,b
+
+```
+还是eor遍历一遍,eor最后等于a^b
+那么eor此时必有一位为1,因为a不等于b
+
+那么如何取到这一位, 根据2's compliment, 二进制的反+1正好为
+最右侧位数不变然后从那开始左侧的都反过来, 因此最右侧那位为eor&(~eor+1)
+比如7: 111 
+       ~7+1: 001
+       111&001=1
+```
+
+```
+def eor_find(li):
+    eor = 0
+    for i in li:
+        eor ^= i
+    right_one = eor & (~ eor+1)
+    eor_2 = 0
+    for i in li:
+        print(right_one & i,i)
+        if right_one & i == 0:
+            eor_2 ^= i
+    a = eor ^ eor_2
+    b = a ^ eor
+    return a, b
+```

@@ -1,0 +1,17 @@
+created: 20220615082635490
+difficulty: 1.0824986202593607
+due: 20220914115356892
+grade: 1
+history: [{"due":"20220619063149039","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618063149039"},{"due":"20220703000518400","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620000518400"}]
+interval: 16
+lapses: 0
+modified: 20220706115356892
+reps: 3
+retrievability: 0.8824986202593608
+review: 20220706115356892
+stability: 70.2115090436281
+tags: 用户画像 ?
+title: elastic stack核心组件
+type: text/vnd.tiddlywiki
+
+[img[Beats Platform2022-06-19 15_04_42.png]]

@@ -1,0 +1,17 @@
+created: 20220605010907195
+difficulty: 1.0563723176366648
+due: 20221016124456922
+grade: 1
+history: [{"due":"20220607130028226","interval":0,"difficulty":1.2687524673440806,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606130028226"},{"due":"20220629010329167","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612010329167"},{"due":"20220703114825963","interval":20,"difficulty":2.085535437739404,"stability":0.07408316441686115,"retrievability":0.8855354377394037,"grade":0,"lapses":1,"reps":1,"review":"20220702114825962"},{"due":"20220720002220296","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220707002220295"}]
+interval: 19
+lapses: 1
+modified: 20220726124456922
+reps: 3
+retrievability: 0.8563723176366649
+review: 20220726124456921
+stability: 81.94240172718725
+tags: hbase ?
+title: Spark中ThriftServer、HiveServer2、MetaStore、Beeline之间的关系
+type: text/vnd.tiddlywiki
+
+[img[0315aaa60a4d479c8eec5c8b8d8fcfcf.png]]

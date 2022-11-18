@@ -1,0 +1,9 @@
+- 强大的库包管理机制，自安装全面的Python库
+
+  - conda list：列举所有的包
+  - conda install 包名：安装库包
+  - conda remove 包名：移除库包
+
+- 具有资源环境隔离功能，方便基于不同版本不同环境进行测试开发
+
+- base：Anaconda自带的基础环境

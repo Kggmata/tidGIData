@@ -1,0 +1,205 @@
+created: 20220612113509888
+difficulty: 1
+due: 20220924091420013
+grade: 2
+history: [{"due":"20220616070101338","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615070101338"},{"due":"20220701004602333","interval":2,"difficulty":1,"stability":13.526011926209534,"retrievability":0.12395450234099842,"grade":1,"lapses":0,"reps":2,"review":"20220617004602333"}]
+interval: 18
+lapses: 0
+modified: 20220705091420013
+reps: 3
+retrievability: 0.8691752299029826
+review: 20220705091420012
+stability: 80.90041734593629
+tags: [[structed streaming]] ?
+title: spark structed streaming从Kafka中读取数据
+type: text/vnd.tiddlywiki
+
+基础API
+
+```python
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "MOMO").\
+    option("startingOffsets", "earliest").\
+    load()
+```
+
+通过format选择kafka，通过option设置属性即可
+
+
+
+必选属性：
+
+| 选项                     | 值                                                           | 说明                                                         |
+| ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| assign(和subscribe二选1) | 通过一个Json 字符串的方式来表示: {"topicA":[0,1],"topicB":[2,4]} | 设置使用特定的TopicPartitions,Kafka源代码只能指定一个"assign"， "subscribe"或"subscribePattern"选项。 |
+| subscribe(和assign二选1) | 以逗号分隔的主题列表                                         | 要订阅的主题列表,Kafka源代码只能指定一个"assign"， "subscribe"或"subscribePattern"选项。 |
+| subscribePattern         | 正则表达式字符串                                             | 订阅匹配符合条件的Topic。Kafka源代码只能指定一个“assign”，“subscribe”或“subscribePattern”选项。 |
+| kafka.bootstrap.servers  | 以逗号分隔的host:port列表                                    | 指定kafka服务的地址                                          |
+
+
+
+可选属性：
+
+| ***\*选项\****              | ***\*值\****                                                 | ***\*默认值\****                       | ***\*支持查询类型\**** | ***\*说明\****                                               |
+| --------------------------- | ------------------------------------------------------------ | -------------------------------------- | ---------------------- | ------------------------------------------------------------ |
+| startingOffsetsByTimestamp  | 通过Json字符串来配置:  """ {"topicA":{"0": 1000, "1": 1000}, "topicB": {"0": 2000, "1": 2000}} """ | 无（startingOffsets将应用的值）        | streaming and batch    | 查询开始时间戳的起始点，一个json字符串，指定每个TopicPartition的起始时间戳。每个分区返回的偏移量是对应分区中时间戳大于或等于给定时间戳的最早偏移量。如果匹配的偏移量不存在，查询将立即失败，以防止从该分区进行意外读取。注意：对于流式查询，这仅适用于新查询开始时，并且恢复将始终从查询停止的地方开始。查询期间新发现的分区将最早开始。 |
+| startingOffsets             | "earliest", "latest" , or 通过json字符串 """ {"topicA":{"0":23,"1":-1},"topicB":{"0":-2}} """ | "latest" 表示流, "earliest" 表示批处理 | streaming and batch    | 查询开始时的起始点，可以是“最早的”(从最早的偏移量开始)，也可以是“最新的”(从最近的偏移量开始)，或者是为每个TopicPartition指定起始偏移量的json字符串。在json中，-2作为偏移量可以用来指代最早的，-1到最新的。注意:对于批量查询，latest(隐式或在json中使用-1)是不允许的。对于流查询，这只适用于新查询开始时，而恢复将总是从查询停止的地方开始。查询期间新发现的分区将最早启动。 |
+| endingOffsetsByTimestamp    | json 字符串 """ {"topicA":{"0": 1000, "1": 1000}, "topicB": {"0": 2000, "1": 2000}} """ | latest                                 | batch query            | 批量查询结束时的结束点，为每个TopicPartition指定结束时间戳的json字符串。每个分区返回的偏移量是其时间戳大于或等于对应分区中给定时间戳的最早偏移量。如果匹配的偏移量不存在，则将偏移量设置为latest。 注:endingOffsetsByTimestamp优先于endingOffsets。 |
+| endingOffsets               | latest or json string {"topicA":{"0":23,"1":-1},"topicB":{"0":-1}} | latest                                 | batch query            | 批量查询结束时的结束点，可以是“latest”(仅引用最新的)，也可以是为每个TopicPartition指定结束偏移量的json字符串。在json中，-1作为偏移量可以用来引用latest， -2(最早的)作为偏移量是不允许的。 |
+| failOnDataLoss              | true or false                                                | true                                   | streaming and batch    | 当数据可能丢失(例如，主题被删除，或者偏移量超出范围)时，查询是否失败。当它不像期望的那样工作时，您可以禁用它。 |
+| kafkaConsumer.pollTimeoutMs | long                                                         | 120000                                 | streaming and batch    | 在执行器中从Kafka轮询数据的超时时间(毫秒)。如果没有定义，则返回spark.network.timeout。 |
+| fetchOffset.numRetries      | int                                                          | 3                                      | streaming and batch    | 在放弃取回Kafka偏移量之前重试的次数。                        |
+| fetchOffset.retryIntervalMs | long                                                         | 10                                     | streaming and batch    | 在重新尝试获取Kafka偏移量之前等待的毫秒数                    |
+| maxOffsetsPerTrigger        | long                                                         | none                                   | streaming and batch    | 每个触发间隔处理的最大偏移量的速率限制。指定的偏移量总数将在不同卷的topicPartitions上按比例分割。 |
+| minPartitions               | int                                                          | none                                   | streaming and batch    | 从Kafka读取所需的最小分区数。默认情况下，Spark有一个1-1的topicPartitions到Spark分区的映射，从Kafka消费。如果你设置这个选项的值大于你的topicPartitions, Spark会把大的Kafka分区划分成小块。请注意，这个配置就像一个提示:Spark任务的数量将大约为minPartitions。它可以更少或更多，取决于舍入错误或Kafka分区没有接收任何新数据。 |
+| groupIdPrefix               | string                                                       | spark-kafka-source                     | streaming and batch    | 由结构化流查询生成的消费者组标识符(group.id)的前缀。如果“kafka.group。Id "被设置时，此选项将被忽略。 |
+| kafka.group.id              | string                                                       | none                                   | streaming and batch    | 当从Kafka中读取时，在Kafka消费者中使用的Kafka组id            |
+| includeHeaders              | boolean                                                      | false                                  | streaming and batch    | 是否在行中包含卡夫卡头。                                     |
+
+ 
+
+使用assign：
+
+```python
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("assign", "{'topicA': [0 ,1], 'topicB': [1, 3]}").\
+    option("startingOffsets", "earliest").\
+    load()
+# option("assign", "{'topicA': [0 ,1], 'topicB': [1, 3]}").\
+# 表示读取topicA的0和1分区，和topicB的1和3分区
+```
+
+使用`subscribe`
+
+```shell
+# 订阅一个主题 MOMO
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "MOMO").\
+    option("startingOffsets", "earliest").\
+    load()
+# 订阅多个主题
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "topic1, topic2").\
+    option("startingOffsets", "earliest").\
+    load()
+# 多个主题以逗号分隔
+```
+
+使用subscribePattern
+
+```shell
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribePattern", "topic-*").\
+    option("startingOffsets", "earliest").\
+    load()
+# 使用正则，订阅所有以topic-开头的主题
+```
+
+
+
+
+
+
+
+#### 完整示例代码
+
+```python
+# coding:utf8
+"""
+演示从kafka中读取数据
+"""
+
+from pyspark.sql import SparkSession
+
+import os
+# PYSPARK_PYTHON告诉Spark，Worker（Executor）应该用哪个Python
+os.environ['PYSPARK_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+# 告诉Driver应该用哪个Python
+os.environ['PYSPARK_DRIVER_PYTHON'] = "/export/server/anaconda3/envs/pyspark/bin/python"
+os.environ['JAVA_HOME'] = "/export/server/jdk"
+
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+# 通过spark入口对象读取kafka
+# 通过format为kafka即可读取
+# 订阅单个主题，名字叫MOMO
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "MOMO").\
+    option("startingOffsets", "earliest").\
+    load()
+
+kafka_df.writeStream.\
+    format("console").\
+    outputMode("append").\
+    start().awaitTermination()
+```
+
+```
+如下图，从kafka中获取的数据是一个DataFrame，字段信息是：
+
+- key，消息的key（二进制的byte数组）（需要自行解码）
+- `value`，消息的内容（二进制的byte数组）（需要自行解码）
+- topic，主题名称
+- `partition`：当前消息的分区
+- `offset`：当前消息的offset
+- timestamp：当前数据获取的时间
+- timestampType：时间戳类型，0表示当前
+```
+
+[img[20220612180148.png]]
+
+#### 如何解码消费的value呢？
+
+spark内置函数：CAST，可以完成byte数组到字符串的转换
+
+```python
+# 订阅单个主题，名字叫MOMO
+kafka_df = spark.readStream.\
+    format("kafka").\
+    option("kafka.bootstrap.servers", "node1:9092,node2:9092,node3:9092").\
+    option("subscribe", "MOMO").\
+    option("startingOffsets", "earliest").\
+    load()
+
+# 取出kafka的消息，转码为字符串
+msg_df = kafka_df.selectExpr("CAST(value AS STRING) AS value")
+
+msg_df.writeStream.\
+    format("console").\
+    outputMode("append").\
+    option("truncate", False).\
+    start().awaitTermination()
+
+```
+
+>注意：每一次运行，都会自动更换消费者组（无法设置）
+>
+>同时我设置了earliest
+>
+>每一次运行都去到了数据
+
+> 因为对于流计算程序来说，一旦启动，很少会停，会源源不断的处理
+>
+> Spark默认每次运行换组
+
+
+

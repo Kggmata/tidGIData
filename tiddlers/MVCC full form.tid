@@ -1,0 +1,10 @@
+created: 20220726030835105
+modified: 20220726030856456
+tags: ? flink
+title: MVCC full form
+type: text/vnd.tiddlywiki
+
+```
+multiversion cocurrent control
+ is a concurrency control method commonly used by database management systems to provide concurrent access to the database and in programming languages to implement transactional memory.
+```

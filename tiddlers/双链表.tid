@@ -1,0 +1,19 @@
+created: 20220713034145557
+difficulty: 1
+due: 20221121103048279
+grade: 2
+history: [{"due":"20220719063309684","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718063309684"},{"due":"20220811103632757","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220726103632757"}]
+interval: 22
+lapses: 0
+modified: 20220817103048279
+reps: 3
+retrievability: 0.8684516258848127
+review: 20220817103048279
+stability: 95.6320335377201
+tags: ?
+title: 双链表
+type: text/vnd.tiddlywiki
+
+每个链表两个指针, 一个指向后一个节点, 一个指向前一个节点
+
+[img[Snipaste_2022-07-13_11-42-22.jpg]]

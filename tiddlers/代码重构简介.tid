@@ -1,0 +1,32 @@
+created: 20220621122642685
+difficulty: 1
+due: 20220914123249154
+grade: 2
+history: [{"due":"20220625123757991","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624123757991"},{"due":"20220709005908872","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626005908872"}]
+interval: 14
+lapses: 0
+modified: 20220710123249154
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220710123249154
+stability: 65.98229464323742
+tags: 用户画像 ?
+title: 代码重构简介
+type: text/vnd.tiddlywiki
+
+* 代码重构
+
+```
+什么是代码重构？
+主要就是抽取和封装一些公共代码，形成项目整体框架
+为什么进行代码重构？
+代码或多或少出现很多冗余，或者设计的不合理的地方
+代码重构原则：不能够影响之前业务
+```
+
+* 为什么做**模板代码**？
+
+```
+因为希望能够更加关注业务实现
+而不是spark整合es，es写入，es读取等都可以抽取出来作为公共方法
+```

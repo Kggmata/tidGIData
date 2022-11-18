@@ -1,0 +1,34 @@
+created: 20220618015342784
+difficulty: 1
+due: 20220921070320759
+grade: 2
+history: [{"due":"20220620150154045","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619150154045"},{"due":"20220622132446350","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621132446350"},{"due":"20220707002506562","interval":3,"difficulty":1,"stability":12.64542427740461,"retrievability":0.014037314090908812,"grade":2,"lapses":1,"reps":2,"review":"20220624002506562"}]
+interval: 16
+lapses: 1
+modified: 20220710070320759
+reps: 3
+retrievability: 0.8751932735073741
+review: 20220710070320758
+stability: 73.36367300546706
+tags: 用户画像 ?
+title: spark execution内存解析
+type: text/vnd.tiddlywiki
+
+```
+executor-memory MEM        Memory per executor (e.g. 1000M, 2G) (Default: 1G).
+--num-executors NUM             Number of executors to launch (Default: 2).
+--executor-cores NUM             Number of cores per executor. (Default: 1 in YARN mode,
+                                                  or all available cores on the worker in standalone mode)
+
+Execution内存解析：
+Spark在一个Executor中的内存分为三块，一块是execution内存，一块是storage内存，一块是other内存。
+execution和storage是Spark  Executor中内存的大户，other占用内存相对少很多，这里就不说了。
+在spark-1.6.0以前的版本，execution和storage的内存分配是固定的，（称作静态内存模型），使用的参数配置分别是
+spark.shuffle.memoryFraction（execution内存占Executor总内存大小，default 0.2）和
+spark.storage.memoryFraction （storage内存占Executor内存大小，default 0.6），因为是1.6.0以前这两块内存是互相隔离的，这就导致了Executor的内存利用率不高，而且需要根据Application的具体情况，使用者自己来调节这两个参数才能优化Spark的内存使用。
+在spark2.x及以后的版本，execution内存和storage内存可以相互借用，（称作动态内存模型），提高了内存的Spark中内存的使用率，同时也减少了OOM的情况。
+spark.memory.storageFraction (default 0.5)
+这个参数设置内存表示 Executor内存中 storage/(storage+execution)，虽然spark-1.6.0+的版本内存storage和execution的内存已经是可以互相借用的了，但是借用和赎回也是需要消耗性能的，所以如果明知道程序中storage是多是少就可以调节一下这个参数。
+
+上述spark-submit提交命令是spark2.x的。
+```

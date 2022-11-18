@@ -1,0 +1,17 @@
+created: 20220711233505018
+difficulty: 1
+due: 20221115081518086
+grade: 2
+history: [{"due":"20220716055959254","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715055959254"},{"due":"20220722144122153","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721144122153"},{"due":"20220812035635185","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":2,"lapses":1,"reps":2,"review":"20220730035635185"}]
+interval: 20
+lapses: 1
+modified: 20220819081518086
+reps: 3
+retrievability: 0.8495877227292477
+review: 20220819081518085
+stability: 88.38668519086654
+tags: ?
+title: CNN
+type: text/vnd.tiddlywiki
+
+convolutional nerual network

@@ -1,0 +1,40 @@
+created: 20220708101700644
+difficulty: 2.238455179577059
+due: 20220905143923637
+grade: 0
+history: [{"due":"20220712072618475","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072618475"},{"due":"20220719065430570","interval":7,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220718065430569"},{"due":"20220727090822823","interval":8,"difficulty":1.2000114480166408,"stability":0.05488119468553914,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220726090822823"},{"due":"20220813124236545","interval":8,"difficulty":1,"stability":10.165653873028125,"retrievability":2.137750772920513e-7,"grade":1,"lapses":2,"reps":2,"review":"20220803124236545"},{"due":"20220821013231732","interval":17,"difficulty":2.038455179577059,"stability":0.040656966333775045,"retrievability":0.8384551795770587,"grade":0,"lapses":3,"reps":1,"review":"20220820013231732"}]
+interval: 15
+lapses: 4
+modified: 20220904143923637
+reps: 1
+retrievability: 1.312835246871398e-17
+review: 20220904143923636
+stability: 0.03011942145770373
+tags: 用户画像 ?
+title: presto coordinator作用
+type: text/vnd.tiddlywiki
+
+```
+从用户获得 SQL 语句
+解析 SQL 语句
+规划查询的执行计划
+管理 worker 节点状态
+```
+
+```
+Coordinator 是 Presto 集群的大脑，并且是负责和客户端沟通。用户通过 PrestoCLI、JDBC、ODBC 驱动、其他语言工具库等工具和 coordinator 进行交互。Coordinator 从客户端接受 SQL 语句，例如 select 语句，才能进行计算。
+
+每个 Presto 集群必须有一个 coordinator，可以有一个或多个 worker。在开发和测试环境中，一个 Presto 进程可以同时配置成两种角色。
+
+Coordinator 追踪每个 worker 上的活动，并且协调查询的执行过程。
+
+Coordinator 给查询创建了一个包含多阶段的逻辑模型，一旦接受了 SQL 语句，Coordinator 就负责解析、分析、规划、调度查询在多个 worker 节点上的执行过程，语句被翻译成一系列的任务，跑在多个 worker 节点上。
+
+worker 一边处理数据，结果会被 coordinator 拿走并且放到 output 缓存区上，暴露给客户端。
+
+一旦输出缓冲区被客户完全读取，coordinator 会代表客户端向 worker 读取更多数据。
+
+worker 节点，和数据源打交道，从数据源获取数据。因此，客户端源源不断的读取数据，数据源源源不断的提供数据，直到查询执行结束。
+
+Coordinator 通过基于 HTTP 的协议和 worker、客户端之间进行通信
+```

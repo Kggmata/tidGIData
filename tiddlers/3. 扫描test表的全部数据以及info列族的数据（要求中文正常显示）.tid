@@ -1,0 +1,9 @@
+created: 20220908133256404
+modified: 20220908133307219
+tags: ? flink
+title: 3. 扫描test表的全部数据以及info列族的数据（要求中文正常显示）
+type: text/vnd.tiddlywiki
+
+```
+scan 'test', {FORMATTER=>'toString'}
+```

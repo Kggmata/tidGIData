@@ -1,0 +1,22 @@
+created: 20220615234340420
+difficulty: 1.075606407978934
+due: 20220920073603251
+grade: 1
+history: [{"due":"20220619233523461","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618233523461"},{"due":"20220704061926160","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621061926160"}]
+interval: 17
+lapses: 0
+modified: 20220708073603251
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708073603251
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: linux创建账户es
+type: text/vnd.tiddlywiki
+
+创建es普通账户，root账户下执行
+
+```
+useradd es 
+passwd es
+```

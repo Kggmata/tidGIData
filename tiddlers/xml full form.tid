@@ -1,0 +1,19 @@
+created: 20220713081908963
+difficulty: 1.0574307099240627
+due: 20221130092435571
+grade: 1
+history: [{"due":"20220720035043127","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719035043127"},{"due":"20220815021647784","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":2,"lapses":0,"reps":2,"review":"20220730021647784"}]
+interval: 24
+lapses: 0
+modified: 20220823092435571
+reps: 3
+retrievability: 0.8574307099240628
+review: 20220823092435571
+stability: 99.47047643806039
+tags: ?
+title: xml full form
+type: text/vnd.tiddlywiki
+
+Extensible Markup Language
+
+XML stands for extensible markup language. A markup language is a set of codes, or tags, that describes the text in a digital document. The most famous markup language is hypertext markup language (HTML), which is used to format Web pages.

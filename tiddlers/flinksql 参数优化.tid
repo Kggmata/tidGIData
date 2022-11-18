@@ -1,0 +1,21 @@
+created: 20220723075136562
+difficulty: 1
+due: 20221012142039651
+grade: 0
+history: [{"due":"20220823055947898","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822055947897"}]
+interval: 50
+lapses: 1
+modified: 20221011142039652
+reps: 1
+retrievability: 1.3220714356875621e-23
+review: 20221011142039651
+stability: 0.07408182272361549
+tags: ?
+title: flinksql 参数优化
+type: text/vnd.tiddlywiki
+
+```
+运行时参数
+优化器参数
+表参数
+```

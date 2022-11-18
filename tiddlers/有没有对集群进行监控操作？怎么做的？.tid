@@ -1,0 +1,17 @@
+created: 20220710122109255
+difficulty: 1
+due: 20221101123602649
+grade: 2
+history: [{"due":"20220713033704334","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712033704334"},{"due":"20220805141107821","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220720141107821"}]
+interval: 19
+lapses: 0
+modified: 20220808123602649
+reps: 3
+retrievability: 0.8853163826700388
+review: 20220808123602649
+stability: 84.88710990001034
+tags: 用户画像 ?
+title: 有没有对集群进行监控操作？怎么做的？
+type: text/vnd.tiddlywiki
+
+因为我们用的是cm平台 、所以我们这里是通过cm提供的界面去关注磁盘的读写、cpu、内存的使用情况

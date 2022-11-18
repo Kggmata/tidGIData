@@ -1,0 +1,38 @@
+created: 20220602130830479
+difficulty: 1.0901797860786495
+due: 20220919020521374
+grade: 1
+history: [{"due":"20220607063813581","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063813581"},{"due":"20220628020351822","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220611020351822"}]
+interval: 19
+lapses: 0
+modified: 20220630020521374
+reps: 3
+retrievability: 0.8901797860786494
+review: 20220630020521373
+stability: 81.06922570303745
+tags: hbase ?
+title: HBase的ImportTSV工具
+type: text/vnd.tiddlywiki
+
+bulk load
+
+使用方式
+
+```shell
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator="," -Dimporttsv.columns=HBASE_ROW_KEY,C1:code,C2:monry,C3:xxx,C4:yyy table_name HDFS路径
+
+-Dimporttsv.separator 用来指定分隔符
+-Dimporttsv.columns 用来指定列的匹配，按照顺序，如果某一个CSV的列要作为Rowkey使用，那么填入HBASE_ROW_KEY占位即可
+
+比如：
+-Dimporttsv.columns=HBASE_ROW_KEY,C1:code,C2:money,C3:xxx,C4:yyy
+表示：
+- CSV的第1个列：是rowkey
+- CSV的第2个列：是C1列族的code二级列
+- CSV的第3个列：是C2列族的money列
+......
+
+如果，假设，第二个列是rowkey可以：
+-Dimporttsv.columns=C1:code,HBASE_ROW_KEY,C2:money,C3:xxx,C4:yyy
+```
+

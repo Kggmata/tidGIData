@@ -1,0 +1,28 @@
+created: 20220728033213134
+modified: 20220728033849888
+tags: ? flink
+title: doris动态分区
+type: text/vnd.tiddlywiki
+
+```
+0.12版本增加的新功能, 对表级别的分区实现TTL
+```
+```
+ddl指定在properties
+运行时指定alter table
+```
+```
+动态分区规则参数
+dynamic_partition.enable是否开启动态分区特性
+dynamic_partition.time_unit
+dynamic_partition.start
+dynamic_partition.end
+dynamic_partition.prefix
+dynamic_partition.buckets
+dynamic_partition.replication_num
+dynamic_partition.start_day_of_week
+dynamic_partition.start_day_of_month
+```
+```
+动态分区使用过程中，如果因为一些意外情况导致dynamic_partition.start和dynamic_partition.end 之间的某些分区丢失，那么当前时间与 dynamic_partition.end 之间的丢失分区会被重新创建，dynamic_partition.start与当前时间之间的丢失分区不会重新创建。
+```

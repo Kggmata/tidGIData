@@ -1,0 +1,38 @@
+created: 20220614075257980
+difficulty: 1
+due: 20220826000308047
+grade: 2
+history: [{"due":"20220617071327765","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616071327765"},{"due":"20220626133915461","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617133915461"}]
+interval: 12
+lapses: 0
+modified: 20220629000308047
+reps: 3
+retrievability: 0.8666100007084099
+review: 20220629000308047
+stability: 57.73879881757744
+tags: 用户画像web界面 ?
+title: 用户画像数据来源
+type: text/vnd.tiddlywiki
+
+来源于数据仓库平台
+
+```
+基于Lambda架构
+离线数据：Sqoop从业务数据库导入
+实时数据：Flume从业务数据库采集，Flume的实时采集后落到Kafka，同时落地到HDFS中
+```
+
+比如：如下案例
+
+[img[image-20220614115251962.png]]
+
+总结：
+
+```
+1-用户画像是什么？**打标签
+2-用户画像标签有哪些分类？**基础,规则,统计挖掘组合
+3-用户画像数据源？**数仓-保险数仓，电商数仓
+4-用户画像有哪些应用场景？**搜索，推荐，金融风控
+虚拟机使用老师提供的up01即可
+课程设计思路：基础课使用一套完整虚拟机，项目课需要使用单独的虚拟机
+```

@@ -1,0 +1,32 @@
+created: 20220608062733983
+difficulty: 1
+due: 20220924091541238
+grade: 2
+history: [{"due":"20220613130255724","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130255724"},{"due":"20220617003110639","interval":4,"difficulty":1.3144367952260434,"stability":0.07442546333264817,"retrievability":0.015960348310605277,"grade":0,"lapses":1,"reps":1,"review":"20220616003110638"},{"due":"20220702005026646","interval":3,"difficulty":1,"stability":12.68548238892933,"retrievability":0.014307743666556244,"grade":2,"lapses":1,"reps":2,"review":"20220619005026646"},{"due":"20220707100054129","interval":17,"difficulty":2.0683198303981505,"stability":0.05488141221849455,"retrievability":0.8683198303981502,"grade":0,"lapses":2,"reps":1,"review":"20220706100054128"},{"due":"20220711071003706","interval":4,"difficulty":2.268782202641478,"stability":0.04065715014820503,"retrievability":0.0004623722433273712,"grade":0,"lapses":3,"reps":1,"review":"20220710071003706"},{"due":"20220715133227462","interval":4,"difficulty":2.4688136953306827,"stability":0.030119557630782685,"retrievability":0.00003149268920435674,"grade":0,"lapses":4,"reps":1,"review":"20220714133227462"},{"due":"20220722061005599","interval":7,"difficulty":2.6688136953538906,"stability":0.022313041284071456,"retrievability":2.320774054291401e-11,"grade":0,"lapses":5,"reps":1,"review":"20220721061005598"},{"due":"20220731031615464","interval":9,"difficulty":2.8688136953538907,"stability":0.016529893502134876,"retrievability":3.4965908900849533e-19,"grade":0,"lapses":6,"reps":1,"review":"20220730031615464"},{"due":"20220809080132150","interval":6,"difficulty":1.0688136953538907,"stability":3.7116646832709934,"retrievability":2.4603874181491804e-17,"grade":2,"lapses":6,"reps":2,"review":"20220805080132150"}]
+interval: 8
+lapses: 6
+modified: 20220813091541238
+reps: 3
+retrievability: 0.7968485919789908
+review: 20220813091541238
+stability: 42.30269736982275
+tags: hbase ?
+title: splline插入数据
+type: text/vnd.tiddlywiki
+
+插入数据
+
+Phoenix不使用`INSERT`来插入数据，使用Upsert
+
+Upsert是：
+
+- Insert
+- Update
+- 的集合体
+
+Upsert表示：
+
+- 如果主键不重复，插入
+- 如果主键重复，覆盖
+
+[img[20220608105757.png]]

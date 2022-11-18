@@ -1,0 +1,25 @@
+created: 20220521053141603
+difficulty: 3.210762220839748
+due: 20220919024921645
+grade: 1
+history: [{"due":"20220524023544775","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023544775"},{"due":"20220602112133828","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112133828"},{"due":"20220704070730564","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605070730563"}]
+interval: 32
+lapses: 0
+modified: 20220707024921645
+reps: 4
+retrievability: 0.8891545006575367
+review: 20220707024921645
+stability: 74.28196043432669
+tags: mapreduce ?
+title: 请描述mapReduce中combiner的作用是什么，一般使用情景，哪些情况不需要，及和reduce的区 别？
+type: text/vnd.tiddlywiki
+
+1）Combiner的意义就是对每一个maptask的输出进行局部汇总，以减小网络传输量。
+
+2）Combiner能够应用的前提是不能影响最终的业务逻辑，而且，Combiner的输出kv应该跟reducer的输入kv类型要对应起来。
+
+3）Combiner和reducer的区别在于运行的位置。
+
+Combiner是在每一个maptask所在的节点运行；
+
+Reducer是接收全局所有Mapper的输出结果。

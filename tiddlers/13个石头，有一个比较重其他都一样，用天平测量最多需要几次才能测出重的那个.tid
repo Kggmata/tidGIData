@@ -1,0 +1,30 @@
+created: 20220721130458144
+difficulty: 1
+due: 20220824090200780
+grade: 2
+history: [{"due":"20220803110547655","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110547655"}]
+interval: 6
+lapses: 0
+modified: 20220808090200780
+reps: 2
+retrievability: 0.0017970135161932011
+review: 20220808090200780
+stability: 16.39335325161452
+tags: ?
+title: 13个石头，有一个比较重其他都一样，用天平测量最多需要几次才能测出重的那个
+type: text/vnd.tiddlywiki
+
+```
+作者：Yasu0
+链接：https://www.nowcoder.com/discuss/526897
+来源：牛客网
+
+4 4 5
+1) 如果 4 == 4 在 5 里面 分为 2 2 1
+1.1) 如果 2 == 2 在 1 那 ok 两次
+1.2) 如果 2 != 2 称 1 1 ，那个沉就是答案，三次
+2) 4 != 4 在 沉的那堆里面
+2.1) 称2 2 排除 2个 再称1 1 ，那个沉就是答案，三次
+
+ps 评论提醒，最好是1次，直接 6 6 1 ，如果平衡那个1就是答案，但是不确保能测出
+```

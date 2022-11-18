@@ -1,0 +1,7 @@
+created: 20220904143954223
+modified: 20220904144020362
+tags: ? flink
+title: 为什么rdd无法自动优化, 而dataframe可以
+type: text/vnd.tiddlywiki
+
+因为rdd没有元数据字段信息

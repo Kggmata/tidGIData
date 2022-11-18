@@ -1,0 +1,39 @@
+created: 20220608063108284
+difficulty: 1.0471764359245868
+due: 20221005114917147
+grade: 1
+history: [{"due":"20220613130646796","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130646796"},{"due":"20220617002804684","interval":4,"difficulty":1.3144367952260434,"stability":0.07442546333264817,"retrievability":0.015960348310605277,"grade":0,"lapses":1,"reps":1,"review":"20220616002804683"},{"due":"20220630142231515","interval":2,"difficulty":1,"stability":11.807341106012368,"retrievability":0.05893601498010052,"grade":2,"lapses":1,"reps":2,"review":"20220618142231515"},{"due":"20220705235730442","interval":16,"difficulty":2.066950937005835,"stability":0.05488166082758644,"retrievability":0.8669509370058347,"grade":0,"lapses":2,"reps":1,"review":"20220704235730442"},{"due":"20220720044741263","interval":5,"difficulty":1,"stability":10.164641955856537,"retrievability":0.00006780450939486909,"grade":2,"lapses":2,"reps":2,"review":"20220710044741262"}]
+interval: 16
+lapses: 2
+modified: 20220726114917147
+reps: 3
+retrievability: 0.8471764359245868
+review: 20220726114917147
+stability: 71.485623322982
+tags: hbase ?
+title: Phoenix中关联已经存在的HBase表
+type: text/vnd.tiddlywiki
+
+我们前面演示的，都是`基于Phoenix`去创建新表，这些表都是Phoenix所创建维护的。
+
+
+
+HBase自身可能也有一些表存在，我们能够通过Phoenix去关联他们使用呢？
+
+可以。
+
+这个就叫在Phoenix中创建：`视图`
+
+[img[20220608120004.png]]
+
+如图，WATER_BILL表是我们在学习Phoenix之前就一直使用的，和Phoenix没啥关系。
+
+我们来尝试用Phoenix去关联它，查询它的数据
+
+```
+create view if not exists "WATER_BILL" (pk varchar primary key, c1.address varchar, c1.latest_date varchar, c1.name varchar, c1.num_current unsigned_double, c1.num_usage unsigned_double, c1.pay_date varchar, c1.record_date varchar, c1.sex varchar, c1.total_money unsigned_double);
+
+# pk就是HBase的Rowkey在映射到Phoenix中，起个名字叫pk而已
+
+#按照名称匹配
+```

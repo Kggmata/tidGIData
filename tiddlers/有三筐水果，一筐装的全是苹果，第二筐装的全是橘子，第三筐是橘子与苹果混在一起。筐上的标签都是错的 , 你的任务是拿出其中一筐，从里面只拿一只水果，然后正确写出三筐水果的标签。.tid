@@ -1,0 +1,17 @@
+created: 20220721135337707
+difficulty: 1
+due: 20220824123712862
+grade: 2
+history: [{"due":"20220804022740180","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803022740180"}]
+interval: 5
+lapses: 0
+modified: 20220808123712862
+reps: 2
+retrievability: 0.005153779050734244
+review: 20220808123712862
+stability: 16.30688294756679
+tags: ?
+title: 有三筐水果，一筐装的全是苹果，第二筐装的全是橘子，第三筐是橘子与苹果混在一起。筐上的标签都是错的 , 你的任务是拿出其中一筐，从里面只拿一只水果，然后正确写出三筐水果的标签。
+type: text/vnd.tiddlywiki
+
+从标着“混合”标签的筐里拿一只水果，就可以知道另外两筐装的是什么水果了。

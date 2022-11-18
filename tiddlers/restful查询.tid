@@ -1,0 +1,73 @@
+created: 20220617101601516
+difficulty: 1.075606407978934
+due: 20220920120547334
+grade: 1
+history: [{"due":"20220620041839070","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619041839070"},{"due":"20220704082349112","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621082349112"}]
+interval: 17
+lapses: 0
+modified: 20220708120547334
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708120547334
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: restful查询
+type: text/vnd.tiddlywiki
+
+1. 根据ID检索指定的职位
+
+```
+需求：用户提交有一个文档的ID，ES将id对应的文档直接返回给用户
+
+实现：在es中通过发送Get请求的方式实现文档的查询
+```
+
+```
+GET /job_idx/_search
+{
+"query":{
+"ids":{"values":["46318"]}
+}
+}
+```
+
+2. 根据关键字进行检索
+
+```
+需求：找工作过程中搜索一下[销售]的关键字岗位,日常的对岗位检索中需要从jd中发现或挖掘出有用信息
+```
+实现：
+
+```
+GET  /job_idx/_search 
+{
+    "query": {
+        "match": {
+            "jd": "销售"
+        }
+    }
+}
+```
+根据关键字分页检索
+
+1-需求：在搜索引擎中，一般会分页查询，因为返回的内容不止一页
+
+2-如何理解？
+
+```
+from=(page-1)*size，from指定从第几条数据开始查起，size指的是每页返回多少条数据，就可以完成分页
+```
+3-如何操作
+
+```
+GET  /job_idx/_search 
+{
+    "from":0,
+    "size":5,
+     "query": {
+        "match": {
+            "jd": "淘宝店、天猫店的营销推广"
+        }
+    } 
+}
+```

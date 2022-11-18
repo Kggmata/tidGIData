@@ -1,0 +1,26 @@
+created: 20220623055245527
+difficulty: 1
+due: 20221016014500576
+grade: 1
+history: [{"due":"20220625233251429","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624233251429"},{"due":"20220630023809093","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629023809093"},{"due":"20220705115354701","interval":5,"difficulty":1.200816109392723,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704115354701"},{"due":"20220711012749691","interval":6,"difficulty":1.400826052229122,"stability":0.04065715014820503,"retrievability":0.00000994283639911803,"grade":0,"lapses":3,"reps":1,"review":"20220710012749690"},{"due":"20220721020103244","interval":3,"difficulty":1,"stability":7.9888121820151765,"retrievability":0.00042039477576221086,"grade":2,"lapses":3,"reps":2,"review":"20220713020103244"}]
+interval: 17
+lapses: 3
+modified: 20220730014500576
+reps: 3
+retrievability: 0.7991515785668928
+review: 20220730014500576
+stability: 78.35254250669495
+tags: 用户画像 ?
+title: HDFS的垃圾桶机制
+type: text/vnd.tiddlywiki
+
+修改core-site.xml
+
+```
+<property>
+        <name>fs.trash.interval</name>
+        <value>1440</value>
+   </property>
+```
+
+这个时间以分钟为单位，例如1440=24h=1天。HDFS的垃圾回收的默认配置属性为 0，也就是说，如果你不小心误删除了某样东西，那么这个操作是不可恢复的。

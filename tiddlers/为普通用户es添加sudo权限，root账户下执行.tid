@@ -1,0 +1,23 @@
+created: 20220615234408513
+difficulty: 1.332043362063655
+due: 20221004104130195
+grade: 1
+history: [{"due":"20220619234025630","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618234025630"},{"due":"20220704015941481","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621015941481"},{"due":"20220708060457586","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707060457586"},{"due":"20220721074338587","interval":3,"difficulty":1.2965041360164287,"stability":10.55493417531687,"retrievability":0.014028907268038276,"grade":1,"lapses":1,"reps":2,"review":"20220710074338587"}]
+interval: 18
+lapses: 1
+modified: 20220728104130195
+reps: 3
+retrievability: 0.8355392260472262
+review: 20220728104130195
+stability: 68.36675935204953
+tags: 用户画像 ?
+title: 为普通用户es添加sudo权限，root账户下执行
+type: text/vnd.tiddlywiki
+
+为什么？因为es用户下需要基本操作权限，所以赋予es权限
+
+```
+visudo
+# 第100行,在root ALL=(ALL) ALL后一行
+es      ALL=(ALL)       ALL
+```

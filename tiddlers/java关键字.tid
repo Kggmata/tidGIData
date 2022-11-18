@@ -1,0 +1,40 @@
+created: 20220724115209765
+difficulty: 0.025386988635295055
+due: 20220827143250575
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143250575
+reps: 1
+retrievability: 1
+review: 20220826143250575
+stability: 0.10000000088475645
+tags: flink ?
+title: java关键字
+type: text/vnd.tiddlywiki
+
+```
+keyword
+
+accessControl: 
+private私有, protected保护, public公共的, default默认
+
+class, method, varibleSpecifiers: 
+abstract抽象, class类, extends扩充,继承, final最终值不可变的, implements实现(接口), interface接口, native本地原生方法, new新建, static静态, strictfp严格, synchronized线程同步, transient短暂, volatile易失
+
+program control: 
+break跳出, case和switch搭配, continue, default, do, else, for, if, instanceof, return, switch, while, assert, catch, finally, throw, throws, try
+
+package:
+import, package
+
+basicType: 
+boolean, byte, char, double, float, int, long, short
+
+variableReference:
+super, this, void
+
+reservedKeywords:
+goto, const
+```

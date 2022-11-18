@@ -1,0 +1,35 @@
+created: 20220724080157276
+difficulty: 0.025386988635295055
+due: 20220827134922640
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826134922640
+reps: 1
+retrievability: 1
+review: 20220826134922640
+stability: 0.10000000088475645
+tags: flink ?
+title: 常见的CDC方案
+type: text/vnd.tiddlywiki
+
+[img[BillfishlXnvOR2022-07-24 16_02_06.PNG]]
+
+```
+	对比全量同步能力:
+1)	基于查询或者日志的 CDC 方案基本都支持，除了 Canal(仅支持增量)。
+2)	对比全量 + 增量同步的能力，只有 Flink CDC、Debezium、Oracle Goldengate 支持较好。
+	对比增量同步能力:
+1)	基于日志的方式，可以很好的做到增量同步；
+2)	而基于查询的方式是很难做到增量同步的。
+	从架构角度去看：
+该表将架构分为单机和分布式，这里的分布式架构不单纯体现在数据读取能力的水平扩展上，更重要的是在大数据场景下分布式系统接入能力。例如 Flink CDC 的数据入湖或者入仓的时候，下游通常是分布式的系统，如 Hive、HDFS、Iceberg、Hudi 等，那么从对接入分布式系统能力上看，Flink CDC 的架构能够很好地接入此类系统。
+	在数据转换 / 数据清洗能力上：
+当数据进入到 CDC 工具的时候是否能较方便的对数据做一些过滤或者清洗，甚至聚合。
+1)	在 Flink CDC 上操作相当简单，可以通过 Flink SQL 去操作这些数据；
+2)	DataX、Debezium 等则需要通过脚本或者模板去做，所以用户的使用门槛会比较高。
+	在生态扩展方面:
+这里指的是下游的一些数据库或者数据源的支持。Flink CDC 下游有丰富的 Connector，例如写入到 TiDB、MySQL、Pg、HBase、Kafka、ClickHouse 等常见的一些系统，也支持各种自定义 connector。
+
+```

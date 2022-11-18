@@ -1,0 +1,17 @@
+created: 20220529053209042
+difficulty: 1
+due: 20220920132503616
+grade: 2
+history: [{"due":"20220601062823399","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531062823399"},{"due":"20220622112347212","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603112347212"}]
+interval: 20
+lapses: 0
+modified: 20220623132503616
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623132503616
+stability: 89.0394510841741
+tags: spark ?
+title: foreachPartition与foreach的功能一样，可以直接替换使用
+type: text/vnd.tiddlywiki
+
+错误：使用场景不同：资源充足想要更高的性能或者构建比较紧张的资源时，才使用xxxPartition算子

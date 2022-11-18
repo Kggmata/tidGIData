@@ -1,0 +1,17 @@
+created: 20220521053230122
+difficulty: 2.210762220839748
+due: 20221003025158223
+grade: 2
+history: [{"due":"20220524023653682","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023653682"},{"due":"20220602112339531","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112339531"},{"due":"20220704070804178","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605070804178"}]
+interval: 32
+lapses: 0
+modified: 20220707025158223
+reps: 4
+retrievability: 0.8891545006575367
+review: 20220707025158222
+stability: 87.88943039453798
+tags: mapreduce ?
+title: 如果没有定义partitioner，那数据在被送达reducer前是如何被分区的？
+type: text/vnd.tiddlywiki
+
+如果没有自定义的 partitioning，则默认的 partition 算法，即根据每一条数据的 key的 hashcode 值摸运算（%）reduce 的数量，得到的数字就是“分区号”。

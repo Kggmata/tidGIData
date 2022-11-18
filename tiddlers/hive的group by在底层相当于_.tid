@@ -1,0 +1,33 @@
+created: 20220523054911792
+difficulty: 1
+due: 20230129072326658
+grade: 2
+history: [{"due":"20220526132630997","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132630997"},{"due":"20220601142143738","interval":6,"difficulty":3.33907145297699,"stability":0.11806790392114878,"retrievability":0.15365033134485093,"grade":0,"lapses":1,"reps":1,"review":"20220531142143738"},{"due":"20220604125446479","interval":3,"difficulty":3.607832586571291,"stability":0.06302758633267336,"retrievability":0.06876113359430071,"grade":0,"lapses":2,"reps":1,"review":"20220603125446479"},{"due":"20220615011749346","interval":4,"difficulty":1.8090800679963837,"stability":7.506787386619799,"retrievability":0.0012474814250930959,"grade":2,"lapses":2,"reps":2,"review":"20220607011749346"},{"due":"20220617070749011","interval":9,"difficulty":2.890414339107277,"stability":0.04075126313635327,"retrievability":0.8813342711108931,"grade":0,"lapses":3,"reps":1,"review":"20220616070749010"},{"due":"20220625102659528","interval":2,"difficulty":1.0960937488543439,"stability":7.446289671085932,"retrievability":0.005679409747066861,"grade":2,"lapses":3,"reps":2,"review":"20220618102659528"},{"due":"20220806142545251","interval":8,"difficulty":1,"stability":41.22399118189453,"retrievability":0.8929763489100201,"grade":2,"lapses":3,"reps":3,"review":"20220626142545251"}]
+interval: 44
+lapses: 3
+modified: 20220809072326658
+reps: 4
+retrievability: 0.8936371532093967
+review: 20220809072326658
+stability: 173.15969199139226
+tags: hive ?
+title: hive的group by在底层相当于?
+type: text/vnd.tiddlywiki
+
+相当于map端的key值
+
+https://blog.csdn.net/u013668852/article/details/79866931
+
+group by多字段
+select rank, isonline, count(*) from city group by rank, isonline;
+
+将GroupBy的字段组合为map的输出key值，利用MapReduce的排序，在reduce阶段保存LastKey区分不同的key。MapReduce的过程如下（当然这里只是说明Reduce端的非Hash聚合过程）
+
+[img[Snipaste_2022-05-23_13-50-18.jpg]]
+
+group by单字段
+
+group by 单字段和多字段时的不同在于key上，以如下例子为例（出处太多）：
+SELECT uid, SUM(COUNT) FROM logs GROUP BY uid;
+
+[img[Snipaste_2022-05-23_13-50-47.jpg]]

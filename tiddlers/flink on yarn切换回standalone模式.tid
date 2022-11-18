@@ -1,0 +1,25 @@
+created: 20220716023303122
+difficulty: 1.7538962568525311
+due: 20221009120650466
+grade: 0
+history: [{"due":"20220722111804468","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721111804468"},{"due":"20220731040442910","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220730040442910"},{"due":"20220807111242730","interval":7,"difficulty":1.200047464685643,"stability":0.054881171378436774,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220806111242730"},{"due":"20220822032001260","interval":6,"difficulty":1,"stability":10.165494815347634,"retrievability":0.000009941815050312982,"grade":1,"lapses":2,"reps":2,"review":"20220812032001260"}]
+interval: 57
+lapses: 3
+modified: 20221008120650466
+reps: 1
+retrievability: 0.5538962568525312
+review: 20221008120650465
+stability: 0.040656966333775045
+tags: ?
+title: flink on yarn切换回standalone模式
+type: text/vnd.tiddlywiki
+
+```
+如果使用的是flink on yarn方式，想切换回standalone模式的话，需要删除文件：【/tmp/.yarn-properties-root】
+
+因为默认查找当前yarn集群中已有的yarn-session信息中的jobmanager
+
+如果是分离模式运行的YARN\JOB后，其运行完成会自动删除这个文件
+
+但是会话模式的话，如果是kill掉任务，其不会执行自动删除这个文件的步骤，所以需要我们手动删除这个文件。
+```

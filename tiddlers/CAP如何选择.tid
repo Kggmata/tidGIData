@@ -1,0 +1,19 @@
+created: 20220711233140723
+difficulty: 1.0495877227292476
+due: 20221113081406722
+grade: 1
+history: [{"due":"20220716023646818","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715023646818"},{"due":"20220722143906051","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721143906051"},{"due":"20220812035128402","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730035128402"}]
+interval: 20
+lapses: 1
+modified: 20220819081406722
+reps: 3
+retrievability: 0.8495877227292477
+review: 20220819081406722
+stability: 85.87307661876953
+tags: ?
+title: CAP如何选择
+type: text/vnd.tiddlywiki
+
+CP 比如zookeeper
+
+AP 比如Eureka

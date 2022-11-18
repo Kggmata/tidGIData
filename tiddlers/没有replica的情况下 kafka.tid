@@ -1,0 +1,17 @@
+created: 20220627134546031
+difficulty: 1
+due: 20221024020907770
+grade: 2
+history: [{"due":"20220630130136273","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629130136273"},{"due":"20220719141006298","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703141006298"}]
+interval: 21
+lapses: 0
+modified: 20220724020907770
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724020907770
+stability: 92.01798815217393
+tags: 用户画像 ?
+title: 没有replica的情况下 kafka
+type: text/vnd.tiddlywiki
+
+的消息都不能被消费

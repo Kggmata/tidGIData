@@ -1,0 +1,43 @@
+created: 20220619130000995
+difficulty: 1.0436992347740255
+due: 20221021034229704
+grade: 1
+history: [{"due":"20220621015632583","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620015632583"},{"due":"20220705025841626","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622025841626"},{"due":"20220710082748839","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709082748838"},{"due":"20220723013329236","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":2,"lapses":1,"reps":2,"review":"20220711013329236"}]
+interval: 19
+lapses: 1
+modified: 20220730034229704
+reps: 3
+retrievability: 0.8436992347740256
+review: 20220730034229704
+stability: 82.63191247371151
+tags: 用户画像 ?
+title: 为什么开头会有__coding__一系列东西?
+type: text/vnd.tiddlywiki
+
+http://web.archive.org/web/20111010053227/http://jaynes.colorado.edu/PythonGuidelines.html#module_formatting
+
+代码规范
+
+```
+The first line of each file shoud be #!/usr/bin/env python. This makes it possible to run the file as a script invoking the interpreter implicitly, e.g. in a CGI context.
+
+Next should be the docstring with a description. If the description is long, the first line should be a short summary that makes sense on its own, separated from the rest by a newline.
+
+All code, including import statements, should follow the docstring. Otherwise, the docstring will not be recognized by the interpreter, and you will not have access to it in interactive sessions (i.e. through obj.__doc__) or when generating documentation with automated tools.
+
+Import built-in modules first, followed by third-party modules, followed by any changes to the path and your own modules. Especially, additions to the path and names of your modules are likely to change rapidly: keeping them in one place makes them easier to find.
+
+Next should be authorship information. This information should follow this format:
+
+__author__ = "Rob Knight, Gavin Huttley, and Peter Maxwell"
+__copyright__ = "Copyright 2007, The Cogent Project"
+__credits__ = ["Rob Knight", "Peter Maxwell", "Gavin Huttley",
+                    "Matthew Wakefield"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Rob Knight"
+__email__ = "rob@spot.colorado.edu"
+__status__ = "Production"
+		
+Status should typically be one of "Prototype", "Development", or "Production". __maintainer__ should be the person who will fix bugs and make improvements if imported. __credits__ differs from __author__ in that __credits__ includes people who reported bug fixes, made suggestions, etc. but did not actually write the code.
+```

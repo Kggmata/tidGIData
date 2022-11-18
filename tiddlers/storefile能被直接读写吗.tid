@@ -1,0 +1,17 @@
+created: 20220608001910229
+difficulty: 1
+due: 20221001091721415
+grade: 2
+history: [{"due":"20220611235206185","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610235206185"},{"due":"20220701010527219","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220615010527219"}]
+interval: 20
+lapses: 0
+modified: 20220705091721415
+reps: 3
+retrievability: 0.8799265997952923
+review: 20220705091721415
+stability: 88.47732139046299
+tags: hbase ?
+title: storefile能被直接读写吗
+type: text/vnd.tiddlywiki
+
+StoreFiles are immutable

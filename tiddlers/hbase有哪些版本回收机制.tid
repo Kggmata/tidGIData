@@ -1,0 +1,22 @@
+created: 20220602001356962
+difficulty: 1
+due: 20220926023656968
+grade: 2
+history: [{"due":"20220605072003018","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604072003017"},{"due":"20220626002933515","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002933515"}]
+interval: 20
+lapses: 0
+modified: 20220629023656968
+reps: 3
+retrievability: 0.8847461089172606
+review: 20220629023656968
+stability: 88.60191707719252
+tags: hbase ?
+title: hbase有哪些版本回收机制
+type: text/vnd.tiddlywiki
+
+为了避免数据存在过多版本造成的的管理 (包括存贮和索引)负担，hbase提供了两种数据版本回收方式：
+
+`保存数据的最后n个版本
+保存最近一段时间内的版本（设置数据的生命周期TTL）。`
+
+TTL: time to live

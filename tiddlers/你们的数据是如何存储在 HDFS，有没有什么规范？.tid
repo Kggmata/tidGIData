@@ -1,0 +1,24 @@
+created: 20220710122117144
+difficulty: 1
+due: 20221028120240868
+grade: 2
+history: [{"due":"20220713033715849","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712033715849"},{"due":"20220721015000857","interval":8,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220720015000857"},{"due":"20220729102139211","interval":8,"difficulty":1.2000114477216277,"stability":0.05488119468553914,"retrievability":0.000011447721627644813,"grade":0,"lapses":2,"reps":1,"review":"20220728102139211"},{"due":"20220806063824172","interval":8,"difficulty":1.4000116614967049,"stability":0.04065697172950195,"retrievability":2.137750772920513e-7,"grade":0,"lapses":3,"reps":1,"review":"20220805063824172"},{"due":"20220817040453077","interval":4,"difficulty":1,"stability":7.993676224554618,"retrievability":0.0000314912566663105,"grade":2,"lapses":3,"reps":2,"review":"20220809040453077"}]
+interval: 14
+lapses: 3
+modified: 20220823120240868
+reps: 3
+retrievability: 0.8314976840422987
+review: 20220823120240867
+stability: 66.07785429168774
+tags: 用户画像 ?
+title: 你们的数据是如何存储在 HDFS，有没有什么规范？
+type: text/vnd.tiddlywiki
+
+```
+有，我们是按照不同数据源去划分的。以月维度进行存储！
+
+​	mysql/业务数据/支付/7月
+​	mysql/业务数据/支付/8月
+
+​	接口数据/业务数据/商品/8
+```

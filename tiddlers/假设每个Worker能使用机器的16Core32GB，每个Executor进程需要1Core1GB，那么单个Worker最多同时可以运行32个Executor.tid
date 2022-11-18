@@ -1,0 +1,17 @@
+created: 20220522045447809
+difficulty: 1
+due: 20221112091937658
+grade: 2
+history: [{"due":"20220524020502946","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020502946"},{"due":"20220528002158574","interval":1,"difficulty":2.780372221787294,"stability":4.00825033798033,"retrievability":0.8325719125598604,"grade":2,"lapses":0,"reps":2,"review":"20220524002158574"},{"due":"20220630015124131","interval":8,"difficulty":1.7907236235956276,"stability":29.311545151768094,"retrievability":0.8103514018083336,"grade":2,"lapses":0,"reps":3,"review":"20220601015124130"}]
+interval: 32
+lapses: 0
+modified: 20220703091937658
+reps: 4
+retrievability: 0.8913445892482964
+review: 20220703091937658
+stability: 132.02832995238515
+tags: spark ?
+title: 假设每个Worker能使用机器的16Core32GB，每个Executor进程需要1Core1GB，那么单个Worker最多同时可以运行32个Executor
+type: text/vnd.tiddlywiki
+
+错误：32个Executor需要32Core32GB资源，CPU不够，遵循木桶原理

@@ -1,0 +1,39 @@
+created: 20220618132420632
+difficulty: 1.7267904998048123
+due: 20220914032441432
+grade: 1
+history: [{"due":"20220621005148074","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005148074"},{"due":"20220705074854930","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622074854930"},{"due":"20220710131110772","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709131110772"},{"due":"20220712035248099","interval":2,"difficulty":2.3337741978828905,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220711035248099"},{"due":"20220718063123235","interval":6,"difficulty":2.5337841402004986,"stability":0.04065715014820503,"retrievability":0.000009942317607937474,"grade":0,"lapses":3,"reps":1,"review":"20220717063123235"},{"due":"20220727045733221","interval":5,"difficulty":1.7337864993865078,"stability":5.451396856257389,"retrievability":0.000002359186009207673,"grade":1,"lapses":3,"reps":2,"review":"20220722045733220"}]
+interval: 12
+lapses: 3
+modified: 20220803032441432
+reps: 3
+retrievability: 0.7930040004183047
+review: 20220803032441432
+stability: 42.00880259355786
+tags: 用户画像 ?
+title: es master node
+type: text/vnd.tiddlywiki
+
+Master-eligible node
+
+```
+The master node is responsible for lightweight cluster-wide actions such as creating or deleting an index, tracking which nodes are part of the cluster, and deciding which shards to allocate to which nodes. It is important for cluster health to have a stable master node.
+
+Any master-eligible node that is not a voting-only node may be elected to become the master node by the master election process.
+```
+
+Dedicated master-eligible node
+
+```
+It is important for the health of the cluster that the elected master node has the resources it needs to fulfill its responsibilities. If the elected master node is overloaded with other tasks then the cluster will not operate well. The most reliable way to avoid overloading the master with other tasks is to configure all the master-eligible nodes to be dedicated master-eligible nodes which only have the master role, allowing them to focus on managing the cluster. Master-eligible nodes will still also behave as coordinating nodes that route requests from clients to the other nodes in the cluster, but you should not use dedicated master nodes for this purpose.
+
+A small or lightly-loaded cluster may operate well if its master-eligible nodes have other roles and responsibilities, but once your cluster comprises more than a handful of nodes it usually makes sense to use dedicated master-eligible nodes.
+```
+
+Voting-only master-eligible node
+
+```
+A voting-only master-eligible node is a node that participates in master elections but which will not act as the cluster’s elected master node. In particular, a voting-only node can serve as a tiebreaker in elections.
+
+It may seem confusing to use the term "master-eligible" to describe a voting-only node since such a node is not actually eligible to become the master at all. This terminology is an unfortunate consequence of history: master-eligible nodes are those nodes that participate in elections and perform certain tasks during cluster state publications, and voting-only nodes have the same responsibilities even if they can never become the elected master.
+```

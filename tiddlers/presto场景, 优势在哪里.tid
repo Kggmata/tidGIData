@@ -1,0 +1,29 @@
+created: 20220708090051866
+difficulty: 2.0127681787299663
+due: 20220829134550938
+grade: 0
+history: [{"due":"20220719065452360","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072012861"},{"due":"20220727101923455","interval":15,"difficulty":1,"stability":0.07408186401656833,"retrievability":1.3690127966249522e-7,"grade":0,"lapses":1,"reps":1,"review":"20220726101923455"},{"due":"20220804124452668","interval":8,"difficulty":1.2000114475003718,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220803124452668"},{"due":"20220818112804340","interval":5,"difficulty":1,"stability":10.16456942996506,"retrievability":0.00006779870516182631,"grade":2,"lapses":2,"reps":2,"review":"20220808112804339"}]
+interval: 20
+lapses: 3
+modified: 20220828134550938
+reps: 1
+retrievability: 0.8127681787299662
+review: 20220828134550938
+stability: 0.040656966333775045
+tags: 用户画像 ?
+title: presto场景, 优势在哪里
+type: text/vnd.tiddlywiki
+
+```
+Presto 的应用场景非常广泛，接下来我们主要介绍几种使用比较广泛的场景进行介绍。
+
+（1）交互式分析：交互式查询是 Presto 主打的应用场景，Presto 的即席计算特性和内部设计机制就是为了能够更好地支持用户进行交互式分析。可以类比用户基于 Hive 交互式查询 HDFS 中的数据，用户可以基于 Presto 查询各种不同的数据源的数据。
+（2）批量 ETL。
+（3）Facebook 的 A/B Test 基础架构也是基于 Presto 构建的。
+
+Presto 之所以能在各个内存计算型数据库中脱颖而出，在于以下几点：
+
+1 清晰的架构，是一个能够独立运行的系统，不依赖于任何其他外部系统。例如调度，presto 自身提供了对集群的监控，可以根据监控信息完成调度。
+2 简单的数据结构，列式存储，逻辑行，大部分数据都可以轻易的转化成 presto 所需要的这种数据结构。
+3 丰富的插件接口，完美对接外部存储系统，或者添加自定义的函数。
+```

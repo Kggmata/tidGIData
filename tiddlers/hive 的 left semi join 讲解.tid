@@ -1,0 +1,29 @@
+created: 20220524081719402
+difficulty: 2.7404973491644657
+due: 20220829142451401
+grade: 0
+history: [{"due":"20220529142855317","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142855317"},{"due":"20220624074110107","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602074110107"},{"due":"20220626124026168","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625124026168"},{"due":"20220708023841418","interval":4,"difficulty":1.5766231536640938,"stability":9.370230736253992,"retrievability":0.003384799839695139,"grade":1,"lapses":1,"reps":2,"review":"20220629023841418"},{"due":"20220819091109343","interval":11,"difficulty":1.6602804841207186,"stability":40.46389295890693,"retrievability":0.883657330456625,"grade":1,"lapses":1,"reps":3,"review":"20220710091109343"}]
+interval: 49
+lapses: 2
+modified: 20220828142451401
+reps: 1
+retrievability: 0.8802168650437469
+review: 20220828142451401
+stability: 0.05488116409496729
+tags: hive ?
+title: hive 的 left semi join 讲解
+type: text/vnd.tiddlywiki
+
+LEFT SEMI JOIN （左半连接）是 IN/EXISTS 子查询的一种更高效的实现。
+
+特点
+
+1、left semi join 的限制是， JOIN 子句中右边的表只能在 ON 子句中设置过滤条件，在 WHERE 子句、SELECT 子句或其他地方过滤都不行。
+
+2、left semi join 是只传递表的 join key 给 map 阶段，因此left semi join 中最后 select 的结果只许出现左表。
+
+3、因为 left semi join 是 in(keySet) 的关系，遇到右表重复记录，左表会跳过，而 join 则会一直遍历。这就导致右表有重复值得情况下 left semi join 只产生一条，join 会产生多条，也会导致 left semi join 的性能更高。 
+
+比如以下A表和B表进行 join 或 left semi join，然后 select 出所有字段，结果区别如下
+
+[img[20190606172133369.png]]

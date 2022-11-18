@@ -1,0 +1,11 @@
+created: 20220726064059554
+modified: 20220726064455667
+tags: ? flink
+title: hudi 2types of storage
+type: text/vnd.tiddlywiki
+
+```
+COW(copy on write), 使用parquet历史存储格式. 写入过程中执行同步合并, 并重写文件
+MOR(merge on read), 使用parquet列存储+基于行arvo的文件格式存储文件. 更新记录到increment. 然后同步或者异步压缩以生成文件的新版本
+```
+[img[Snipaste_2022-07-26_14-43-00.jpg]]

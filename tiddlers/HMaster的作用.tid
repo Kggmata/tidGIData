@@ -1,0 +1,47 @@
+created: 20220605060248455
+difficulty: 1
+due: 20220929103724469
+grade: 2
+history: [{"due":"20220608060402994","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220607060402994"},{"due":"20220629071251043","interval":5,"difficulty":1,"stability":16.761683814178046,"retrievability":0.006222847464917221,"grade":2,"lapses":0,"reps":2,"review":"20220612071251043"}]
+interval: 20
+lapses: 0
+modified: 20220702103724469
+reps: 3
+retrievability: 0.881865341412669
+review: 20220702103724469
+stability: 88.52257450657113
+tags: hbase ?
+title: HMaster的作用
+type: text/vnd.tiddlywiki
+
+作用：
+
+1 监控RegionServer，处理RegionServer的故障转移
+
+`RegionServer并不是100%稳定的，如果某个RegionServer出现问题。
+  Master会将出问题的RegionServer的工作（数据、Region）转移到其它正常的RegionServer身上`
+  
+  # 通俗理解
+  一个小弟出问题了，领导将这个小弟的活，分配给其它小弟了。
+
+2 处理元数据的变更，比如Region（数据块）的分配和移除。
+
+`shell
+  Master和 Zookeeper通讯，去对整个HBase的元数据进行增删改查的操作
+  # HBase的元数据是存在Zookeeper中的，路径是： /hbase`
+
+3 数据的负载均衡
+
+`Master会在空闲的时候，将任务的负载均衡的分配给各个RegionServer
+  # 其实就是做Region（数据块）的平衡分配`
+  > 只有Master有权限去管理哪个RegionServer应该处理的数据块（Region）
+
+4 和Zookeeper通讯，去暴露自身的存在
+
+
+`维护和临时节点的关系
+  如果Master在某个时间 T 内，没有和ZK通讯
+  Zk会认为这个Master宕机，解除它和临时节点的关系
+  
+  # T：超时时间，可以配置（默认15秒）`
+

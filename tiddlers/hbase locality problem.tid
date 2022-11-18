@@ -1,0 +1,39 @@
+created: 20220608001058329
+difficulty: 1
+due: 20220928042810136
+grade: 2
+history: [{"due":"20220611235138081","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610235138081"},{"due":"20220615005411836","interval":3,"difficulty":1.5162196541321282,"stability":0.07476910459712456,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220614005411836"},{"due":"20220628070709994","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":2,"lapses":1,"reps":2,"review":"20220616070709994"},{"due":"20220701002014022","interval":14,"difficulty":2.082829914631413,"stability":0.054882158045770235,"retrievability":0.8828299146314128,"grade":0,"lapses":2,"reps":1,"review":"20220630002014022"},{"due":"20220715065237532","interval":5,"difficulty":1,"stability":10.164715632813108,"retrievability":0.00006781040616137007,"grade":2,"lapses":2,"reps":2,"review":"20220705065237532"},{"due":"20220722054611812","interval":16,"difficulty":2.0471774543198196,"stability":0.040657012017596195,"retrievability":0.8471774543198195,"grade":0,"lapses":3,"reps":1,"review":"20220721054611811"},{"due":"20220806024801385","interval":9,"difficulty":1.2471774543941108,"stability":6.854690100465863,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220730024801384"}]
+interval: 10
+lapses: 3
+modified: 20220809042810136
+reps: 3
+retrievability: 0.857524326224007
+review: 20220809042810136
+stability: 49.70832800958649
+tags: hbase ?
+title: hbase locality problem
+type: text/vnd.tiddlywiki
+
+https://product.hubspot.com/blog/healing-hbase-locality-at-scale
+
+HBase data is stored in HDFS, which by default replicates your data 3 ways: 
+
+`The first replica is written locally to the client (an HBase RegionServer), if possible.
+The second replica is written to a host in a different rack from the first.
+The third replica is written to a different host in that second rack.`
+
+Locality can take a dip for a variety of reasons, all stemming from regions moving:
+
+`1 A RegionServer might crash, so all its regions get randomly distributed across the cluster.
+2 The balancer might move some regions to better distribute request load.
+3 You might scale up or down the cluster, resulting in regions moving around to account for the new scale.`
+
+For us, all three of these reasons are relatively common. When locality dips, you have two options:
+
+`1 Utilize the balancer to move the regions back to where they had good locality. This is rarely a good option.
+2 Rewrite the data locally, using a “major compaction.”`
+
+There are some tools can help with locality problem like LocalityHealer
+
+
+

@@ -1,0 +1,23 @@
+created: 20220627120325403
+difficulty: 1.0674977020971539
+due: 20221026104404525
+grade: 1
+history: [{"due":"20220630125832222","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629125832221"},{"due":"20220720074222054","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":1,"lapses":0,"reps":2,"review":"20220704074222054"}]
+interval: 22
+lapses: 0
+modified: 20220726104404525
+reps: 3
+retrievability: 0.8674977020971539
+review: 20220726104404524
+stability: 92.07922912361714
+tags: 用户画像 ?
+title: 用户画像实时etl规则
+type: text/vnd.tiddlywiki
+
+```
+1-创建SPark流式任务环境
+2-整合Spark结构化流和Kafka
+3-使用spark的dsl完成数据etl
+4-将处理之后数据写入控制台测试
+5-将处理之后数据写入kafka
+```

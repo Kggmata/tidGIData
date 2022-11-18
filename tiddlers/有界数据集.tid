@@ -1,0 +1,19 @@
+created: 20220612013954994
+difficulty: 1.0731304672290258
+due: 20220929053841869
+grade: 1
+history: [{"due":"20220614124010638","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613124010638"},{"due":"20220702025328577","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616025328577"}]
+interval: 20
+lapses: 0
+modified: 20220706053841869
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706053841869
+stability: 84.8538234387497
+tags: [[structed streaming]] ?
+title: 有界数据集
+type: text/vnd.tiddlywiki
+
+有界数据集对开发者来说都很熟悉，在常规的处理中我们都会从Mysql，文本等获取数据进行计算分析。我们在处理此类数据时，特点就是数据是静止不动的。也就是说，没有再进行追加。又或者说再处理的当时时刻不考虑追加写入操作。所以有界数据集又或者说是有时间边界。在某个时间内的结果进行计算。那么这种计算称之为批计算，批处理。Batch Processing
+
+例如:计算当前订单量。又或者是把当前mysql的数据读取到文件中等。

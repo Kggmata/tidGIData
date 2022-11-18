@@ -1,0 +1,26 @@
+created: 20220624054013083
+difficulty: 1
+due: 20221023031235874
+grade: 2
+history: [{"due":"20220626003813893","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625003813893"},{"due":"20220710144321122","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220627144321122"},{"due":"20220712012549992","interval":14,"difficulty":2.096356723988689,"stability":0.07408215765534414,"retrievability":0.8963567239886889,"grade":0,"lapses":1,"reps":1,"review":"20220711012549992"},{"due":"20220727025856159","interval":5,"difficulty":1.2971727545192382,"stability":10.773429611966149,"retrievability":0.0008160305305493356,"grade":1,"lapses":1,"reps":2,"review":"20220716025856158"}]
+interval: 18
+lapses: 1
+modified: 20220803031235874
+reps: 3
+retrievability: 0.8385895195741053
+review: 20220803031235874
+stability: 81.15960259638426
+tags: 用户画像 ?
+title: 机器学习三次浪潮
+type: text/vnd.tiddlywiki
+
+```
+1-跳棋：IBM程序击败了人类高手
+专家系统，人工智能雏形
+
+2-国际象棋：IBM深蓝系统战胜了人类高手
+跳棋：SVM等一些列算法突出
+
+3-围棋：Alpha Go击败了李世石，19*19，围棋状态数目比宇宙中原子数目多，棋类非常复杂
+深度学习，模拟人的大脑，神经元，神经递质，目的：提取出大量的有用信息
+```

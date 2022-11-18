@@ -1,0 +1,18 @@
+created: 20220721110350433
+difficulty: 1
+due: 20220824082529880
+grade: 1
+history: [{"due":"20220802092603037","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092603037"}]
+interval: 7
+lapses: 0
+modified: 20220808082529880
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808082529880
+stability: 16.423571292705216
+tags: ?
+title: slot的资源占用
+type: text/vnd.tiddlywiki
+
+每个worker(taskmanager)是一个JVM进程, 可以单独的执行一个或者多个task, slot是最小的执行单元
+slot会分离托管内存,但是cpu是无隔离的

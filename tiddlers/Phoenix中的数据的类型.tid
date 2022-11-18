@@ -1,0 +1,17 @@
+created: 20220608063131649
+difficulty: 1
+due: 20220702002721647
+grade: 2
+history: [{"due":"20220613130655128","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130655128"}]
+interval: 4
+lapses: 0
+modified: 20220706095156991
+reps: 2
+retrievability: 0.015960348310605277
+review: 20220616002721647
+stability: 16.268360859893896
+tags: hbase
+title: Phoenix中的数据的类型
+type: text/vnd.tiddlywiki
+
+[img[20220608120517-16546698985279.png]]

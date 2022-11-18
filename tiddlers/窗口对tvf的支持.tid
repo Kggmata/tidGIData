@@ -1,0 +1,21 @@
+created: 20220720030210371
+difficulty: 1.8585224129237503
+due: 20221012133947875
+grade: 0
+history: [{"due":"20220802040351093","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801040351093"},{"due":"20220823004903228","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220807004903228"}]
+interval: 65
+lapses: 1
+modified: 20221011133947875
+reps: 1
+retrievability: 0.6585224129237505
+review: 20221011133947875
+stability: 0.07408182272361549
+tags: ?
+title: 窗口对tvf的支持
+type: text/vnd.tiddlywiki
+
+tumble, hop支持两种写法
+
+session不支持
+
+cumulate只支持

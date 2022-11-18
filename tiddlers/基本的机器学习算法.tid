@@ -1,0 +1,81 @@
+created: 20220711102251907
+difficulty: 1.0495878483672743
+due: 20221113080340290
+grade: 1
+history: [{"due":"20220713040548640","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040548640"},{"due":"20220722020530901","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721020530901"},{"due":"20220812032624401","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":1,"lapses":1,"reps":2,"review":"20220730032624400"}]
+interval: 20
+lapses: 1
+modified: 20220819080340290
+reps: 3
+retrievability: 0.8495878483672744
+review: 20220819080340289
+stability: 85.87306954888896
+tags: ?
+title: 基本的机器学习算法
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/33794257
+https://www.infoq.cn/article/5xzsbyetzsmwic3oymup
+
+```
+线性回归算法 Linear Regression
+使用数据点找最佳拟合线
+```
+[img[_2022-07-21 09_53_41.png]]
+
+```
+支持向量机算法 (Support Vector Machine,SVM)
+属于分类算法, 使用一条线分割数据点, 仅适用于两分类
+```
+[img[_2022-07-21 09_55_07.png]]
+
+```
+最近邻居/k-近邻算法 (K-Nearest Neighbors,KNN)
+根据邻居的分类确定数据点的分类, 较近的邻居有更高的权重
+```
+[img[_2022-07-21 09_56_43.jpg]]
+
+```
+逻辑回归算法 Logistic Regression
+```
+[img[_2022-07-21 09_58_17.jpg]]
+
+```
+决策树算法 Decision Tree
+是一种预测模型, 点代表对象, 每个分叉路径代表某个可能的属性值, 决策树仅有单一输出, 通常用来解决分类问题
+一般包含三类节点:
+决策节点, 机会节点, 终结点
+```
+[img[_2022-07-21 10_00_09.png]]
+
+```
+k-平均算法 K-Means
+无监督机器学习算法, 
+选择聚类中心->对数据点按照最佳的聚类中心分类->使用数据点的均值更新聚类中心,
+循环直到聚类中心稳定
+```
+[img[_2022-07-21 10_00_36.png]]
+
+```
+随机森林算法 Random Forest
+random decision forests ,可以看作一个决策树的集合, 每颗决策树估计一个分类, 也就是投票, 选择投票最多的分类
+```
+[img[_2022-07-21 10_02_51.jpg]]
+
+```
+朴素贝叶斯算法 Naive Bayes
+朴素贝叶斯用于特征直接相互独立的场景,比如使用花瓣的长度宽度预测花瓣类型. naive可以理解为特征之间独立性强
+```
+[img[__88b1745e2022-07-21 10_03_22.jpg]]
+
+```
+降维算法 Dimensional Reduction
+在机器学习和统计学领域，降维是指在限定条件下，降低随机变量个数，得到一组“不相关”主变量的过程，并可进一步细分为特征选择和特征提取两大方法。
+```
+
+```
+梯度增强算法 Gradient Boosting
+梯度增强算法（Gradient Boosting）使用多个弱算法来创建更强大的精确算法。它与使用单个估计量不同，而是使用多个估计量创建一个更稳定和更健壮的算法。梯度增强算法有几种：
+XGBoost  — 使用线性和树算法
+LightGBM  — 只使用基于树的算法
+```

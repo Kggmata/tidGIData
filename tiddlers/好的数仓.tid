@@ -1,0 +1,33 @@
+created: 20220713085441600
+difficulty: 1.0629302061394925
+due: 20221124020308162
+grade: 1
+history: [{"due":"20220720035120706","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719035120706"},{"due":"20220813091157690","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220728091157690"}]
+interval: 23
+lapses: 0
+modified: 20220820020308162
+reps: 3
+retrievability: 0.8629302061394925
+review: 20220820020308162
+stability: 95.74638756489234
+tags: ?
+title: 好的数仓
+type: text/vnd.tiddlywiki
+
+https://juejin.cn/post/7030994909704224775
+
+- 好的数仓
+
+```
+1 清晰的数据结构
+
+2 数据血缘追踪
+
+3 减少重复开发
+
+4 数据关系条理化
+
+5 屏蔽原始数据的影响
+```
+
+[img[数据分层架构2022-07-13 17_01_20.webp]]

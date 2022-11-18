@@ -1,0 +1,33 @@
+created: 20220627234911536
+difficulty: 1.071305136947512
+due: 20221020022611506
+grade: 1
+history: [{"due":"20220630132125980","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132125980"},{"due":"20220719144324749","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":1,"lapses":0,"reps":2,"review":"20220703144324749"}]
+interval: 21
+lapses: 0
+modified: 20220724022611506
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724022611505
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 什么是hive，你们用的是什么版本的？
+type: text/vnd.tiddlywiki
+
+```
+Hive 是基于 Hadoop 的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供类 SQL 查询功能。 
+本质是将 SQL 转换为 MapReduce 程序。 
+主要用途：用来做离线数据分析，比直接用 MapReduce 开发效率更高。
+我们使用的是3.1.2版本
+
+为什么使用 Hive 
+直接使用 Hadoop MapReduce 处理数据所面临的问题：  
+人员学习成本太高  
+MapReduce 实现复杂查询逻辑开发难度太大  
+使用 Hive ： 
+操作接口采用类 SQL 语法，提供快速开发的能力  
+避免了去写 MapReduce，减少开发人员的学习成本  
+功能扩展很方便
+
+Hive 利用 HDFS 存储数据，利用 MapReduce 查询分析数据。
+```

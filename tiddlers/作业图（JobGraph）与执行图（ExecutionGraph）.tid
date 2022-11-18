@@ -1,0 +1,57 @@
+created: 20220716130911861
+difficulty: 1
+due: 20230528114704202
+grade: 1
+history: [{"due":"20220727050227238","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726050227238"},{"due":"20220805124911512","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220804124911511"},{"due":"20220822041125952","interval":5,"difficulty":1,"stability":12.91080740451933,"retrievability":0.000816005065809079,"grade":2,"lapses":1,"reps":2,"review":"20220809041125952"}]
+interval: 60
+lapses: 1
+modified: 20221008114704202
+reps: 3
+retrievability: 0.6128477767568244
+review: 20221008114704201
+stability: 232.48115038966722
+tags: ?
+title: 作业图（JobGraph）与执行图（ExecutionGraph）
+type: text/vnd.tiddlywiki
+
+```
+至此，我们已经彻底了解了由代码生成任务的过程，现在来做个梳理总结。
+
+由 Flink 程序直接映射成的数据流图（dataflow graph），也被称为逻辑流图（logicalStreamGraph），因为它们表示的是计算逻辑的高级视图。到具体执行环节时，我们还要考虑并行子任务的分配、数据在任务间的传输，以及合并算子链的优化。为了说明最终应该怎样执行一个流处理程序，Flink 需要将逻辑流图进行解析，转换为物理数据流图。
+
+在这个转换过程中，有几个不同的阶段，会生成不同层级的图，其中最重要的就是作业图（JobGraph）和执行图（ExecutionGraph）。Flink 中任务调度执行的图，按照生成顺序可以分成
+
+四层：**逻辑流图（StreamGraph）→ 作业图（JobGraph）→ 执行图（ExecutionGraph）→ 物理图（Physical Graph）**
+
+我们可以回忆一下之前处理 socket 文本流的 StreamWordCount 程序：
+
+如果提交时设置并行度为 2：
+
+那么根据之前的分析，除了 socketTextStream()是非并行的 Source 算子，它的并行度始终为 1，其他算子的并行度都为 2。
+
+接下来我们分析一下程序对应四层调度图的演变过程，如下图所示。
+```
+[img[image-20220713190552471.png]]
+
+```
+- 逻辑流图（StreamGraph）
+  - 这是根据用户通过 DataStream API 编写的代码生成的最初的 DAG 图，用来表示程序的拓扑结构。**这一步一般在客户端完成**。
+  - 我们可以看到，逻辑流图中的节点，完全对应着代码中的四步算子操作：
+  - 源算子 Source（socketTextStream()）→扁平映射算子 Flat Map(flatMap()) →分组聚合算子Keyed Aggregation(keyBy/sum()) →输出算子 Sink(print())。
+
+- 作业图（JobGraph）
+  - StreamGraph 经过**优化后**生成的就是作业图（JobGraph），这是提交给 JobManager 的数据结构，确定了当前作业中所有任务的划分。
+  - 主要的优化为: **将多个符合条件的节点链接在一起，合并成一个任务节点，形成算子链**，这样可以减少数据交换的消耗。**JobGraph 一般也是在客户端生成的**，在作业提交时传递给 JobMaster。
+  - 在上图中，分组聚合算子（Keyed Aggregation）和输出算子 Sink(print)并行度都为 2，而且是***\*一对一\****的关系，满足算子链的要求，所以会合并在一起，成为一个任务节点。
+
+- 执行图（ExecutionGraph）
+  - JobMaster 收到 JobGraph 后，会根据它来生成执行图（ExecutionGraph）。ExecutionGraph是 JobGraph 的**并行化版本**，是**调度层最核心的数据结构**。
+  - 从上图中可以看到，**与JobGraph最大的区别就是按照并行度对并行子任务进行了拆分**，并明确了任务间数据传输的方式。
+
+- 物理图（Physical Graph）
+  - JobMaster 生成执行图后， 会将它分发给 TaskManager；各个 TaskManager 会根据执行图部署任务，最终的物理执行过程也会形成一张“图”，一般就叫作物理图（Physical Graph）。这只是具体执行层面的图，并不是一个具体的数据结构。
+
+对应在上图中，物理图主要就是在执行图的基础上，进一步确定**数据存放的位置和收发的具体方式**。有了物理图，TaskManager 就可以对传递来的数据进行处理计算了。
+
+所以我们可以看到，程序里定义了四个算子操作：源（Source）->转换（flatMap）->分组聚合（keyBy/sum）->输出（print）；合并算子链进行优化之后，就只有三个任务节点了；再考虑并行度后，一共有 5 个并行子任务，最终需要 5 个线程来执行。
+```

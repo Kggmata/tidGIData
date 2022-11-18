@@ -1,0 +1,25 @@
+created: 20220610042713968
+difficulty: 1.0731304672290258
+due: 20220929074021368
+grade: 1
+history: [{"due":"20220614103426507","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613103426506"},{"due":"20220702035328009","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616035328009"}]
+interval: 20
+lapses: 0
+modified: 20220706074021368
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706074021368
+stability: 84.8538234387497
+tags: kafka ?
+title: HBase META Table
+type: text/vnd.tiddlywiki
+
+META Table is a special HBase Catalog Table. Basically, it holds the location of the regions in the HBase Cluster.
+
+```
+It keeps a list of all Regions in the system.
+Structure of the .META. table is as follows:
+Key: region start key, region id
+Values: RegionServer
+It is like a binary tree.
+```

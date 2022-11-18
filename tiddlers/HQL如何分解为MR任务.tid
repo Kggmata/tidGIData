@@ -1,0 +1,67 @@
+created: 20220711135108946
+difficulty: 1
+due: 20221116045414248
+grade: 2
+history: [{"due":"20220713101033299","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712101033299"},{"due":"20220722052347768","interval":9,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721052347768"},{"due":"20220813100528021","interval":10,"difficulty":1,"stability":12.927389712074403,"retrievability":6.658736516034294e-7,"grade":1,"lapses":1,"reps":2,"review":"20220731100528021"}]
+interval: 20
+lapses: 1
+modified: 20220820045414248
+reps: 3
+retrievability: 0.8495881790842005
+review: 20220820045414247
+stability: 88.38668012468219
+tags: ?
+title: HQL如何分解为MR任务
+type: text/vnd.tiddlywiki
+
+Join的实现原理
+[img[在这里插入图片描述2022-07-11 21_54_41.png]]
+
+```
+select u.name, o.orderid from order o join user u on o.uid = u.uid;
+
+在map的输出value中为不同表的数据打上tag标记，在reduce阶段根据tag判断数据来源。MapReduce的过程如下（这里只是说明最基本的Join的实现，还有其他的实现方式）
+```
+
+Group By的实现原理
+
+[img[在这里插入图片描述2022-07-11 21_55_52.png]]
+
+```
+将GroupBy的字段组合为map的输出key值，利用MapReduce的排序，在reduce阶段保存LastKey区分不同的key。MapReduce的过程如下（当然这里只是说明Reduce端的非Hash聚合过程）
+```
+Distinct实现原理
+情况1
+SQL语句如下
+
+```
+select dealid, count(distinct uid) num from order group by dealid;
+```
+
+[img[在这里插入图片描述2022-07-11 21_56_31.png]]
+
+```
+当只有一个distinct字段时，如果不考虑Map阶段的Hash GroupBy，只需要将GroupBy字段和Distinct字段组合为map输出key，利用mapreduce的排序，同时将GroupBy字段作为reduce的key，在reduce阶段保存LastKey即可完成去重
+```
+
+情况2
+
+```
+SQL语句如下
+
+select dealid, count(distinct uid), count(distinct date) from order group by dealid;
+第二种实现方式，可以对所有的distinct字段编号，每行数据生成n行数据，那么相同字段就会分别排序，这时只需要在reduce阶段记录LastKey即可去重。这种实现方式很好的利用了MapReduce的排序，节省了reduce阶段去重的内存消耗，但是缺点是增加了shuffle的数据量。需要注意的是，在生成reduce value时，除第一个distinct字段所在行需要保留value值，其余distinct数据行value字段均可为空
+```
+[img[在这里插入图片描述2022-07-11 21_57_00.png]]
+
+```
+【2】SQL转化为MapReduce的过程
+了解了MR实现SQL基本操作之后，我们来看看Hive是如何将SQL转化为MapReduce任务的，整个编译过程分为六个阶段：
+
+1、Antlr定义SQL的语法规则，完成SQL词法，语法解析，将SQL转化为抽象语法树AST Tree
+2、遍历AST Tree，抽象出查询的基本组成单元QueryBlock
+3、遍历QueryBlock，翻译为执行操作树OperatorTree
+4、逻辑层优化器进行OperatorTree变换，合并不必要的ReduceSinkOperator，减少shuffle数据量
+5、遍历OperatorTree，翻译为MapReduce任务
+6、物理层优化器进行MapReduce任务的变换，生成最终的执行计划
+```

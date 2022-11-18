@@ -1,0 +1,18 @@
+created: 20220602055139572
+difficulty: 1.8966092697721801
+due: 20220910133754210
+grade: 1
+history: [{"due":"20220607063339238","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063339238"},{"due":"20220612063322196","interval":5,"difficulty":1.682183313336022,"stability":0.07683095218398285,"retrievability":0.007416462463435239,"grade":0,"lapses":1,"reps":1,"review":"20220611063322196"},{"due":"20220627005615852","interval":3,"difficulty":1,"stability":12.970977028956497,"retrievability":0.016342485160406536,"grade":2,"lapses":1,"reps":2,"review":"20220614005615852"},{"due":"20220630080251837","interval":15,"difficulty":2.0852883727929887,"stability":0.054882158045770235,"retrievability":0.8852883727929887,"grade":0,"lapses":2,"reps":1,"review":"20220629080251836"},{"due":"20220714115828228","interval":5,"difficulty":1,"stability":10.164715632813108,"retrievability":0.00006781040616137007,"grade":2,"lapses":2,"reps":2,"review":"20220704115828227"},{"due":"20220722051637293","interval":17,"difficulty":2.038441543588717,"stability":0.040657012017596195,"retrievability":0.8384415435887168,"grade":0,"lapses":3,"reps":1,"review":"20220721051637293"},{"due":"20220806030735395","interval":9,"difficulty":1.238441543663008,"stability":6.888300725336932,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220730030735395"},{"due":"20220810072528037","interval":10,"difficulty":2.2966092444215196,"stability":0.030119421724187252,"retrievability":0.8581677007585113,"grade":0,"lapses":4,"reps":1,"review":"20220809072528037"},{"due":"20220815082838728","interval":5,"difficulty":2.4966092697721756,"stability":0.02231301621225883,"retrievability":2.5350655691687196e-8,"grade":0,"lapses":5,"reps":1,"review":"20220814082838728"},{"due":"20220822113353792","interval":7,"difficulty":2.69660926977218,"stability":0.016529888968407916,"retrievability":4.41612089212157e-15,"grade":0,"lapses":6,"reps":1,"review":"20220821113353792"}]
+interval: 18
+lapses: 6
+modified: 20220908133754210
+reps: 2
+retrievability: 1.4893501934311727e-50
+review: 20220908133754209
+stability: 2.489831546737823
+tags: hive ?
+title: hive读写hdfs
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-06-02_13-51-36.jpg]][img[Snipaste_2022-06-02_13-51-32.jpg]]
+[img[Snipaste_2022-06-02_13-52-01.jpg]]

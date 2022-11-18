@@ -1,0 +1,19 @@
+created: 20220724134617046
+difficulty: 0.025386988635295055
+due: 20220827143656539
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143656539
+reps: 1
+retrievability: 1
+review: 20220826143656539
+stability: 0.10000000088475645
+tags: flink ?
+title: NIO full form
+type: text/vnd.tiddlywiki
+
+```
+nio (NIO stands for non-blocking I/O) is a collection of Java programming language APIs that offer features for intensive I/O operations. It was introduced with the J2SE 1.4 release of Java by Sun Microsystems to complement an existing standard I/O.
+```

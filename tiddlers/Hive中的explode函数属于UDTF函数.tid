@@ -1,0 +1,17 @@
+created: 20220519125306990
+difficulty: 2.232984010198816
+due: 20220915140521229
+grade: 2
+history: [{"due":"20220522001549594","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001549594"},{"due":"20220528011453593","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522011453593"},{"due":"20220627063512224","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601063512224"}]
+interval: 28
+lapses: 0
+modified: 20220629140521229
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629140521229
+stability: 78.32227625296495
+tags: hadoop ?
+title: Hive中的explode函数属于UDTF函数
+type: text/vnd.tiddlywiki
+
+正确：实现一对多函数，都是UDTF函数，将一个列表类型的值中每个元素变成一行

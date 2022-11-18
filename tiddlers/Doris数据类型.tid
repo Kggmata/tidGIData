@@ -1,0 +1,23 @@
+created: 20220727124501273
+modified: 20220727124758375
+tags: ? flink
+title: Doris数据类型
+type: text/vnd.tiddlywiki
+
+```
+tinyint
+smallint
+int 
+bigint
+largeint
+float
+double
+decimal(p,s)
+date
+datetime
+char
+varchar
+HLL
+bitmap
+agg_type
+```

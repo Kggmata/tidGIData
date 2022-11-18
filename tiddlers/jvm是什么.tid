@@ -1,0 +1,15 @@
+created: 20220802123240090
+modified: 20220802135747437
+tags: ? flink
+title: jvm是什么
+type: text/vnd.tiddlywiki
+
+https://segmentfault.com/a/1190000023271470
+https://zhuanlan.zhihu.com/p/494698762
+
+```
+java virtual mechine.
+1 支持java program运行在各类设备和操作系统上
+2 manage and optimize程序内存
+```
+[img[2022年完全最全JVM讲解（最新版2W字总结） - 知乎2022-08-02 20_39_03.jpg]]

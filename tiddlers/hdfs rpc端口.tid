@@ -1,0 +1,17 @@
+created: 20220614085413913
+difficulty: 1
+due: 20220920065645531
+grade: 2
+history: [{"due":"20220617115938903","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616115938903"},{"due":"20220701102542650","interval":2,"difficulty":1,"stability":13.492063749360467,"retrievability":0.12217091235547979,"grade":2,"lapses":0,"reps":2,"review":"20220618102542650"}]
+interval: 17
+lapses: 0
+modified: 20220705065645531
+reps: 3
+retrievability: 0.8756802665476839
+review: 20220705065645531
+stability: 77.17592011363428
+tags: 用户画像web界面 ?
+title: hdfs rpc端口
+type: text/vnd.tiddlywiki
+
+8020

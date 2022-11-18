@@ -1,0 +1,31 @@
+created: 20220709003413538
+difficulty: 2.263550597042559
+due: 20220829135138863
+grade: 0
+history: [{"due":"20220712074538310","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711074538310"},{"due":"20220721012924296","interval":9,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220720012924296"},{"due":"20220812021107706","interval":10,"difficulty":1,"stability":12.927424897987283,"retrievability":6.659058267886301e-7,"grade":1,"lapses":1,"reps":2,"review":"20220730021107705"},{"due":"20220818121509961","interval":18,"difficulty":2.0635505963685183,"stability":0.05488116409496729,"retrievability":0.863550596368518,"grade":0,"lapses":2,"reps":1,"review":"20220817121509960"}]
+interval: 11
+lapses: 3
+modified: 20220828135138863
+reps: 1
+retrievability: 6.740402982969234e-10
+review: 20220828135138862
+stability: 0.040656966333775045
+tags: 用户画像 ?
+title: sqoop和flume
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/news/424538
+
+```
+sqoop最开始是hadoop的一个第三方模块, 后来独立成为apache的独立项目
+
+sqoop主要应用于hadoop和RDBMS之间的数据传递, 比如HDFS和MySQL, Oracle, DB2
+
+sqoop底层是基于MR
+
+sqoop和flume, 定位不一样. flume是分布式的, 有集群的概念, 主要用于etl日志数据. 
+
+sqoop是用于在hadoop和其他数据库之间转移数据
+
+两者可以做相同的工作, 但是擅长的领域不同
+```

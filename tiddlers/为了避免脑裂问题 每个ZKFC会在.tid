@@ -1,0 +1,17 @@
+created: 20220530050832953
+difficulty: 1
+due: 20220918055617615
+grade: 2
+history: [{"due":"20220601083429282","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083429282"},{"due":"20220622090711372","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603090711372"},{"due":"20220624071321939","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623071321939"},{"due":"20220707105259173","interval":2,"difficulty":1,"stability":11.77883909930856,"retrievability":0.05817903264660851,"grade":2,"lapses":1,"reps":2,"review":"20220625105259173"}]
+interval: 15
+lapses: 1
+modified: 20220710055617615
+reps: 3
+retrievability: 0.8744383611129658
+review: 20220710055617615
+stability: 69.51406026274908
+tags: spark ?
+title: 为了避免脑裂问题 每个ZKFC会在
+type: text/vnd.tiddlywiki
+
+每个ZKFC会在Zookeeper中创建两个节点

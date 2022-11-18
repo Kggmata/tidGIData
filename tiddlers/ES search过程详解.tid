@@ -1,0 +1,44 @@
+created: 20220618010848441
+difficulty: 1
+due: 20221114001959492
+grade: 1
+history: [{"due":"20220620144048480","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619144048480"},{"due":"20220709065535150","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621033617230"},{"due":"20220712004616188","interval":20,"difficulty":2.0553190686350757,"stability":0.07408215765534414,"retrievability":0.8553190686350756,"grade":0,"lapses":1,"reps":1,"review":"20220711004616188"},{"due":"20220718070152084","interval":6,"difficulty":2.255515878874211,"stability":0.05488141221849455,"retrievability":0.00019681023913521717,"grade":0,"lapses":2,"reps":1,"review":"20220717070152084"},{"due":"20220723114744171","interval":5,"difficulty":2.455583680435375,"stability":0.040657012017596195,"retrievability":0.00006780156116384973,"grade":0,"lapses":3,"reps":1,"review":"20220722114744171"},{"due":"20220805035954151","interval":8,"difficulty":1.6555836814270946,"stability":5.629066451336969,"retrievability":9.91719619591007e-10,"grade":1,"lapses":3,"reps":2,"review":"20220730035954150"},{"due":"20220810035309146","interval":10,"difficulty":2.6848845402410664,"stability":0.030119421724187252,"retrievability":0.8293008588139716,"grade":0,"lapses":4,"reps":1,"review":"20220809035309146"},{"due":"20220820081834878","interval":5,"difficulty":1,"stability":6.286496752787149,"retrievability":2.5350655691687196e-8,"grade":2,"lapses":4,"reps":2,"review":"20220814081834878"}]
+interval: 16
+lapses: 4
+modified: 20220830001959492
+reps: 3
+retrievability: 0.7647876828801821
+review: 20220830001959492
+stability: 75.53567878123704
+tags: 用户画像 ?
+title: ES search过程详解
+type: text/vnd.tiddlywiki
+
+著作权归https://pdai.tech所有。
+链接：https://pdai.tech/md/db/nosql-es/elasticsearch-y-th-4.html
+
+```
+查询是query then fetch
+
+1 coordinating node吧query请求广播到索引的每一个分片拷贝(根据ARS选择primary或者replica都可)
+
+2 每个分片在本地执行搜索, 构建匹配文档大小为from+size的优先队列, 搜索的时候会查询os cashe和segment file
+
+3 返回id和排序值给协调节点
+
+4 fetch阶段, 协调节点根据id, 发送get请求到对应的shard
+
+5 所有文档被取回, 结果返回客户端
+```
+
+>所有的搜索系统一般都是两阶段查询，第一阶段查询到匹配的DocID，第二阶段再查询DocID对应的完整文档，这种在Elasticsearch中称为query_then_fetch。（这里主要介绍最常用的2阶段查询，其它方式可以参考这里  (opens new window)）。
+
+[img[es-th-2-32.jpeg]]
+
+```
+在初始查询阶段时，查询会广播到索引中每一个分片拷贝（主分片或者副本分片）。 每个分片在本地执行搜索并构建一个匹配文档的大小为 from + size 的优先队列。PS：在2. 搜索的时候是会查询Filesystem Cache的，但是有部分数据还在Memory Buffer，所以搜索是近实时的。 
+
+每个分片返回各自优先队列中 所有文档的 ID 和排序值 给协调节点，它合并这些值到自己的优先队列中来产生一个全局排序后的结果列表。 
+
+接下来就是 取回阶段，协调节点辨别出哪些文档需要被取回并向相关的分片提交多个 GET 请求。每个分片加载并丰富文档，如果有需要的话，接着返回文档给协调节点。一旦所有的文档都被取回了，协调节点返回结果给客户端。
+```

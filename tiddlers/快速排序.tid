@@ -1,0 +1,43 @@
+created: 20220528110236589
+difficulty: 1
+due: 20220920033805058
+grade: 2
+history: [{"due":"20220601052932803","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052932803"},{"due":"20220622062236426","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603062236426"}]
+interval: 20
+lapses: 0
+modified: 20220623033805058
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623033805058
+stability: 89.0394510841741
+tags: 数据结构 ?
+title: 快速排序
+type: text/vnd.tiddlywiki
+
+`def partition(li, left, right):
+    tmp = li[left]
+    while left < right:
+        while tmp <= li[right] and left < right:
+            right -= 1
+        li[left] = li[right]
+        while li[left] <= tmp and left < right:
+            left += 1
+        li[right] = li[left]
+    li[left] = tmp
+    return left
+
+
+def quick_sort(li, left, right):
+    if left < right:
+        mid = partition(li, left, right)
+        quick_sort(li, left, mid - 1)
+        quick_sort(li, mid + 1, right)
+    return li
+
+li = [4, 2, 13, 2, 5]
+partition(li, 0, 3)
+print(quick_sort(li,0,4))`
+
+时间复杂度O(n*log(n))
+
+最坏情况下,每次partition都只排抽出来的那个数.可以通过加入随机化来避免

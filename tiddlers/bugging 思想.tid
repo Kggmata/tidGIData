@@ -1,0 +1,21 @@
+created: 20220820065501550
+modified: 20220820070529698
+tags: ? flink
+title: bugging 思想
+type: text/vnd.tiddlywiki
+
+https://segmentfault.com/a/1190000040546655
+https://cloud.tencent.com/developer/article/1859124
+
+```
+Bootstrap aggregating自举汇聚法
+在原始数据通过有放回的重新抽样, 多次重复选取n个新数据集, 来分别训练n个分类器classifier. 允许训练数据存在重复
+```
+```
+比如随机森林 random forest
+随机森林是在Bagging策略的基础上进行修改后的一种算法，方法如下：
+(1) 使用Bootstrap策略从样本集中进行数据采样；
+(2) 从所有特征中随机选择K个特征，构建正常决策树；
+(3) 重复1，2多次，构建多棵决策树；
+(4) 集成多棵决策树，形成随机森林，通过投票表决或取平均值对数据进行决策。
+```

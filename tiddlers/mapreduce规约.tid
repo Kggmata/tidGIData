@@ -1,0 +1,17 @@
+created: 20220521034355720
+difficulty: 3.218383417446928
+due: 20221004134435457
+grade: 1
+history: [{"due":"20220524023007283","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023007283"},{"due":"20220615015812802","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529015812802"},{"due":"20220802091036208","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616091036208"},{"due":"20220807235428833","interval":51,"difficulty":4.074818608778473,"stability":0.07408182731172136,"retrievability":0.8913241313900776,"grade":0,"lapses":1,"reps":1,"review":"20220806235428832"},{"due":"20220818035953863","interval":5,"difficulty":3.2756346134335645,"stability":5.668403264646537,"retrievability":0.0008160046550921422,"grade":1,"lapses":1,"reps":2,"review":"20220812035953863"}]
+interval: 16
+lapses: 1
+modified: 20220828134435457
+reps: 3
+retrievability: 0.7427488040133634
+review: 20220828134435456
+stability: 36.78478271974974
+tags: spark ?
+title: mapreduce规约
+type: text/vnd.tiddlywiki
+
+[img[微信图片_20220521114330.png]]

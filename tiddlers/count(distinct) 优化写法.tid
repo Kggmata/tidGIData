@@ -1,0 +1,10 @@
+created: 20220802072733209
+modified: 20220802072813438
+tags: ? flink
+title: count(distinct) 优化写法
+type: text/vnd.tiddlywiki
+
+```
+使用group by代替
+因为count distinct会把数据读进一个reducer当中, 容易造成数据倾斜
+```

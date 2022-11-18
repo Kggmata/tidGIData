@@ -1,0 +1,48 @@
+created: 20220526133116549
+difficulty: 1.5080444161014233
+due: 20220827111750762
+grade: 1
+history: [{"due":"20220531130626857","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130626857"},{"due":"20220604015927808","interval":4,"difficulty":2.7187326055546124,"stability":0.08507834253141604,"retrievability":0.07105206550140858,"grade":0,"lapses":1,"reps":1,"review":"20220603015927808"},{"due":"20220608005342289","interval":4,"difficulty":2.925790727214314,"stability":0.058954374971038004,"retrievability":0.007058121659701603,"grade":0,"lapses":2,"reps":1,"review":"20220607005342289"},{"due":"20220622013513908","interval":5,"difficulty":1.1259223240824332,"stability":9.910676682534941,"retrievability":0.00013159686811918498,"grade":2,"lapses":2,"reps":2,"review":"20220612013513908"},{"due":"20220810071542408","interval":11,"difficulty":1.2155598938816652,"stability":48.16644910978258,"retrievability":0.8896375697992318,"grade":1,"lapses":2,"reps":3,"review":"20220623071542407"},{"due":"20220815081132861","interval":52,"difficulty":2.308044402863147,"stability":0.040656966333775045,"retrievability":0.8924845089814819,"grade":0,"lapses":3,"reps":1,"review":"20220814081132861"}]
+interval: 7
+lapses: 3
+modified: 20220821111750762
+reps: 2
+retrievability: 1.32382762586235e-8
+review: 20220821111750762
+stability: 6.006388720257761
+tags: spark ?
+title: Accumulators累加器
+type: text/vnd.tiddlywiki
+
+*功能**：实现分布式的计算，在每个Task内部构建一个副本进行累加，**并且返回每个Task的结果最后进行合并
+
+- step1：定义一个累加器
+
+- step2：在需要进行累加的地方进行累加即可
+
+`**场景**
+
+  - a. 实现分布式的累加计数
+  - b. 实现分区内部的计算并且返回结果
+
+- **特点**：累加器必须由触发算子触发才会生效`
+
+累加器的流程
+
+```
+Driver端
+1 Driver端初始化构建Accumulator并初始化
+同时完成了Accumulator注册：Accumulators.register(this)
+同时Accumulator会在序列化后发送到Executor端
+2 Driver接收到ResultTask完成的状态更新后，会去更新Value的值
+然后在Action操作执行后就可以获取到Accumulator的值了
+
+Executor端
+1 Executor端接收到Task之后会进行反序列化操作，反序列化得到RDD和function
+同时在反序列化的同时也去反序列化Accumulator（在readObject方法中完成）
+同时也会向TaskContext完成注册
+2 完成任务计算之后，随着Task结果一起返回给Driver
+```
+————————————————
+版权声明：本文为CSDN博主「疯狂呼呼呼」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lemonZhaoTao/article/details/81273243

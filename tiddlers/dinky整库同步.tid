@@ -1,0 +1,16 @@
+created: 20220731081759604
+modified: 20220731082306341
+tags: ? flink
+title: dinky整库同步
+type: text/vnd.tiddlywiki
+
+```
+面对建立的数据库连接过多，Binlog 重复读取会造成源库的巨大压力，上文分享采用了 source 合并的优化，尝试合并同一作业中的 source，如果都是读的同一数据源，则会被合并成一个 source 节点。
+Dinky 采用的是只构建一个 source，然后根据 schema、database、table 进行分流处理，分别 sink 到对应的表。
+```
+[img[source_merge.png]]
+
+```
+元数据映射
+Dinky 是通过自身的数据源中心的元数据功能捕获源库的元数据信息，并同步构建 sink 阶段 datastream 或 tableAPI 所使用的 FlinkDDL。
+```

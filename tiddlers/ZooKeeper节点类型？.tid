@@ -1,0 +1,31 @@
+created: 20220521060801925
+difficulty: 5.199660036483145
+due: 20220905150700045
+grade: 0
+history: [{"due":"20220524045936530","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522045936530"},{"due":"20220621102414520","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531102414520"},{"due":"20220813015654206","interval":23,"difficulty":3.912185197386786,"stability":51.190821615656525,"retrievability":0.889754085535843,"grade":1,"lapses":0,"reps":3,"review":"20220623015654206"},{"due":"20220821014433480","interval":58,"difficulty":4.999660035939798,"stability":0.07408182272361549,"retrievability":0.8874748385530122,"grade":0,"lapses":1,"reps":1,"review":"20220820014433480"}]
+interval: 15
+lapses: 2
+modified: 20220904150700045
+reps: 1
+retrievability: 5.433470770278863e-10
+review: 20220904150700045
+stability: 0.05488116409496729
+tags: zookeeper ?
+title: ZooKeeper节点类型？
+type: text/vnd.tiddlywiki
+
+1）Znode有两种类型：
+
+短暂（ephemeral）：客户端和服务器端断开连接后，创建的节点自己删除 。
+
+持久（persistent）：客户端和服务器端断开连接后，创建的节点不删除 。
+
+2）Znode有四种形式的目录节点（默认是persistent ）
+
+（1）持久化目录节点（PERSISTENT）客户端与zookeeper断开连接后，该节点依旧存在 。
+
+（2）持久化顺序编号目录节点（PERSISTENT_SEQUENTIAL）客户端与zookeeper断开连接后，该节点依旧存在，只是Zookeeper给该节点名称进行顺序编号 。
+
+（3）临时目录节点（EPHEMERAL）客户端与zookeeper断开连接后，该节点被删除 。
+
+（4）临时顺序编号目录节点（EPHEMERAL_SEQUENTIAL）客户端与zookeeper断开连接后，该节点被删除，只是Zookeeper给该节点名称进行顺序编号。

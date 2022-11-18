@@ -1,0 +1,42 @@
+created: 20220724090219748
+difficulty: 0.025386988635295055
+due: 20220827143128216
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143128216
+reps: 1
+retrievability: 1
+review: 20220826143128216
+stability: 0.10000000088475645
+tags: flink ?
+title: FlinkCDC2.x
+type: text/vnd.tiddlywiki
+
+```
+5.2 	Flink CDC 2.x 设计 (以MySQL为例)
+通过上面的分析，可以知道  Flink CDC 2.0.0 的设计方案，核心要解决上述的三个问题，即支持无锁、水平扩展、checkpoint。
+	对于大部分用户来讲，其实无需过于关注如何无锁算法和分片的细节，了解整体的流程就好。
+	整体流程可以概括为，首先通过主键对表进行 Snapshot Chunk 划分，再将 Snapshot Chunk 分发给多个 SourceReader，每个 Snapshot Chunk 读取时通过算法实现无锁条件下的一致性读，SourceReader 读取时支持 chunk 粒度的 checkpoint，在所有 Snapshot Chunk 读取完成后，下发一个 binlog chunk 进行增量部分的 binlog 读取，这便是 Flink CDC 2.0 的整体流程，如下图2.10所示：
+
+```
+[img[Billfishwaqbup2022-07-24 17_02_39.PNG]]
+
+```
+	Flink CDC 2.0.0 版本于 21 年 8 月 10 日正式发布，此次的核心改进和提升包括：
+1)	并发读取，全量数据的读取性能可以水平扩展；
+2)	全程无锁，不对线上业务产生锁的风险；
+3)	断点续传，支持全量阶段的 checkpoint。
+4)	搭建文档网站，提供多版本文档支持，文档支持关键词搜索
+
+	Flink CDC 2.２.0 版本于 22 年 3 月 30 日正式发布，此次的重大改进和核心特性：
+1)	2.2 版本新增 OceanBase，PolarDB-X，SqlServer，TiDB 四种数据源接入，均支持全量和增量一体化同步。至此，Flink CDC 已支持 12 种数据源。
+2)	Flink CDC 兼容 Flink 1.13 和 Flink 1.14 两个大版本，2.2 版本的所有 Connector 都支持跑在 Flink 1.13.* 或 Flink 1.14.* 的集群上。
+3)	提供增量快照读取框架，方便其他连接器接入，其他连接器采用该框架后，便可以提供无锁算法，并发读取，断点续传等功能。
+4)	MySQL CDC 支持动态加表，该功能可以在无需重新读取已有表的基础上，增加需要监控的表，添加的表会自动先同步该表的全量数据再无缝切换到同步增量数据。
+5)	MongoDB CDC 支持正则表达式过滤集合，该功能可以让用户在作业中指定所需监控的库名和集合名，用户可以用一个作业中监控多个数据库或多个集合。
+官方测试效果:
+用 TPC-DS 数据集中的 customer 表进行了测试，Flink 版本是 1.13.1，customer 表的数据量是 6500 万条，Source 并发为 8，全量读取阶段：Flink CDC 2.0 用时 13 分钟；Flink CDC 1.4 用时 89 分钟；读取性能提升 6.8 倍。
+
+```

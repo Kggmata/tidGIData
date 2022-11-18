@@ -1,0 +1,28 @@
+created: 20220724132812725
+difficulty: 0.025386988635295055
+due: 20220827143628743
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143628743
+reps: 1
+retrievability: 1
+review: 20220826143628743
+stability: 0.10000000088475645
+tags: flink ?
+title: java数据结构
+type: text/vnd.tiddlywiki
+
+```
+枚举enumeration
+位集合BitSet
+向量Vector
+栈Stack
+字典Dictionary
+哈希表Hashtable
+属性Properties
+```
+```
+java2当中引入collections
+```

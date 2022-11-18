@@ -1,0 +1,17 @@
+created: 20220522110105322
+difficulty: 1.0565403300512635
+due: 20221111114330520
+grade: 1
+history: [{"due":"20220524021250242","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523021250241"},{"due":"20220602125005825","interval":2,"difficulty":2.640976298811018,"stability":7.587419783831714,"retrievability":0.6931759895835838,"grade":2,"lapses":0,"reps":2,"review":"20220525125005825"},{"due":"20220719120348860","interval":12,"difficulty":1.6874852207351265,"stability":42.50129829954656,"retrievability":0.8465089219241088,"grade":2,"lapses":0,"reps":3,"review":"20220606120348860"},{"due":"20220725081252188","interval":48,"difficulty":2.775300327357829,"stability":0.07408190596496488,"retrievability":0.8878151066227022,"grade":0,"lapses":1,"reps":1,"review":"20220724081252188"},{"due":"20220815093439548","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":2,"lapses":1,"reps":2,"review":"20220802093439548"}]
+interval: 19
+lapses: 1
+modified: 20220821114330520
+reps: 3
+retrievability: 0.8565403300512635
+review: 20220821114330520
+stability: 81.93425659098293
+tags: spark ?
+title: spark修改运行模式为集群
+type: text/vnd.tiddlywiki
+
+conf=SparkConf().setMaster("spark://node1:7077").setAppName("pysparkTest")

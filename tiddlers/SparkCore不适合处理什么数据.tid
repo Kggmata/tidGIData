@@ -1,0 +1,37 @@
+created: 20220528023816711
+difficulty: 1
+due: 20230207122111695
+grade: 2
+history: [{"due":"20220601033907093","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531033907093"},{"due":"20220604134909460","interval":3,"difficulty":2.78530084968259,"stability":0.07958008229979391,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603134909460"},{"due":"20220608013358688","interval":4,"difficulty":2.990313335039256,"stability":0.05691776929022033,"retrievability":0.005012485356665834,"grade":0,"lapses":2,"reps":1,"review":"20220607013358687"},{"due":"20220621073051005","interval":5,"difficulty":1.190408919251799,"stability":9.269703096613117,"retrievability":0.00009558421254334971,"grade":2,"lapses":2,"reps":2,"review":"20220612073051005"},{"due":"20220804133338690","interval":10,"difficulty":1.2829692638843164,"stability":43.21317226993607,"retrievability":0.8925603446325172,"grade":1,"lapses":2,"reps":3,"review":"20220622133338690"}]
+interval: 47
+lapses: 2
+modified: 20220808122111695
+reps: 4
+retrievability: 0.8917286491215403
+review: 20220808122111695
+stability: 182.8116422622992
+tags: spark ?
+title: SparkCore不适合处理什么数据
+type: text/vnd.tiddlywiki
+
+**问题**：在大数据业务场景中，经常处理结构化的数据，数据来源往往是一些结构化数据，结构化的文件，对于结构化的数据处理最方便的开发接口就是SQL接口
+
+- SparkCore类似于MapReduce的编程方式，写代码，提交运行
+
+- 构建对象实例RDD，调用函数来处理
+
+- SparkCore处理结构化的数据非常不方便
+
+SparkCore计算方式
+
+- step1：读取数据
+
+  - RDD【String】：分布式集合【数据】
+
+  - 每个员工的信息变成一个String对象
+
+- step2：处理数据：统计每个部门的人数
+
+  - 对RDD而言，只知道这一条数据的内容
+
+  - 每次操作都需要对每条数据分割

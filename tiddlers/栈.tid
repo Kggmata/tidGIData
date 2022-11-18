@@ -1,0 +1,30 @@
+created: 20220712135333026
+difficulty: 1
+due: 20221114120341541
+grade: 2
+history: [{"due":"20220718085216489","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085216488"},{"due":"20220725081558001","interval":7,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220724081558001"},{"due":"20220815122056362","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":2,"lapses":1,"reps":2,"review":"20220802122056362"}]
+interval: 19
+lapses: 1
+modified: 20220821120341541
+reps: 3
+retrievability: 0.8565403300512635
+review: 20220821120341540
+stability: 84.64281452601793
+tags: ?
+title: 栈
+type: text/vnd.tiddlywiki
+
+栈是一个数据集合, 只能在一端进行插入和删除操作的列表
+
+特点: LIFO
+
+概念: 栈底, 栈顶
+
+栈的操作
+
+进栈 push
+
+出栈 pop
+
+取栈顶 gettop
+[img[Snipaste_2022-07-13_11-09-11.jpg]]

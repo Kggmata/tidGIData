@@ -1,0 +1,33 @@
+created: 20220615082846653
+difficulty: 1
+due: 20220917115405473
+grade: 2
+history: [{"due":"20220619063657438","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618063657438"},{"due":"20220703000707039","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620000707039"}]
+interval: 16
+lapses: 0
+modified: 20220706115405473
+reps: 3
+retrievability: 0.8824986202593608
+review: 20220706115405473
+stability: 73.448178202157
+tags: 用户画像 ?
+title: elasticsearch 和rdbms
+type: text/vnd.tiddlywiki
+
+[img[image-20220615160453141.png]]
+[img[image-20220615161245383.png]]
+
+注意:
+
+```
+1-关系型数据库中的索引是为了加速查询的速度，和Es中索引库没有关系的
+2-ES的索引库，底层是基于倒排索引机制实现的
+```
+
+类比：
+
+```
+ES全文检索工具，存储和分析
+1-从ES中查询出数据，需要先找到Index索引库，在找_type表，在找document文档(一行数据)，filed字段
+```
+[img[image-20220615162211121.png]]

@@ -1,0 +1,24 @@
+created: 20220521032635587
+difficulty: 3.200038941363643
+due: 20220927050239481
+grade: 1
+history: [{"due":"20220524022738522","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522022738521"},{"due":"20220602112425185","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112425185"},{"due":"20220707013903941","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606013903941"}]
+interval: 34
+lapses: 0
+modified: 20220710050239481
+reps: 4
+retrievability: 0.8895462481526426
+review: 20220710050239480
+stability: 78.5325857917982
+tags: mapreduce ?
+title: 如何决定一个job的map和reduce的数量?
+type: text/vnd.tiddlywiki
+
+map数量
+
+splitSize=max{minSize,min{maxSize,blockSize}}
+map数量由处理的数据分成的block数量决定default_num = total_size / split_size;
+
+reduce数量
+
+reduce的数量job.setNumReduceTasks(x);x 为reduce的数量。不设置的话默认为 1。或者根据分区的数量而定

@@ -1,0 +1,34 @@
+created: 20220609111020266
+difficulty: 1
+due: 20221002081908993
+grade: 2
+history: [{"due":"20220614102224581","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102224581"},{"due":"20220702052955502","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616052955502"}]
+interval: 20
+lapses: 0
+modified: 20220706081908994
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706081908993
+stability: 88.3647639214822
+tags: kafka ?
+title: kafka指定分区发送数据
+type: text/vnd.tiddlywiki
+
+指定分区发送数据
+
+```python
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092']
+)
+producer.send(
+    "testpython",
+    f"Im handsome{i}".encode("UTF-8"),
+    partition=i % 3
+)
+# partition参数，就是你要发送的分区数据，要注意，写死了就是可劲怼1个分区了。
+
+producer.flush()
+```
+

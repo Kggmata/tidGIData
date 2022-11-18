@@ -1,0 +1,94 @@
+created: 20220619234155669
+difficulty: 1.7267904998048123
+due: 20220914032025709
+grade: 1
+history: [{"due":"20220621045955106","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620045955105"},{"due":"20220705015921125","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622015921125"},{"due":"20220710003244421","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709003244420"},{"due":"20220712013101299","interval":2,"difficulty":2.3337741978828905,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220711013101298"},{"due":"20220718062254029","interval":6,"difficulty":2.5337841402004986,"stability":0.04065715014820503,"retrievability":0.000009942317607937474,"grade":0,"lapses":3,"reps":1,"review":"20220717062254028"},{"due":"20220727030406624","interval":5,"difficulty":1.7337864993865078,"stability":5.451396856257389,"retrievability":0.000002359186009207673,"grade":1,"lapses":3,"reps":2,"review":"20220722030406624"}]
+interval: 12
+lapses: 3
+modified: 20220803032025709
+reps: 3
+retrievability: 0.7930040004183047
+review: 20220803032025709
+stability: 42.00880259355786
+tags: 用户画像 ?
+title: 结构化数据 半结构化数据 非结构化数据
+type: text/vnd.tiddlywiki
+
+https://k21academy.com/microsoft-azure/dp-900/structured-data-vs-unstructured-data-vs-semi-structured-data/
+
+```
+结构化数据存储为预定义的格式, 常见的比如各种数据库
+
+半结构化数据是将不同类型的数据按照自定义的形式存储, 比如K:V
+
+非结构化数据是没有预先定义的数据模型和结构, 比如图片, 多媒体文件.
+```
+
+What Is Data?
+
+```
+Data is a set of facts such as descriptions, observations, and numbers used in decision making.
+We can classify data as structured, unstructured, or semi-structured data.
+```
+What is structured data?
+
+```
+*Structured data is generally tabular data that is represented by columns and rows in a database.
+*Databases that hold tables in this form are called relational databases.
+*The mathematical term “relation” specify to a formed set of data held as a table.
+*In structured data, all row in a table has the same set of columns.
+*SQL (Structured Query Language) programming language used for structured data.
+```
+What is Semi-structured Data
+
+```
+*Semi-structured data is information that doesn’t consist of Structured data (relational database) but still has some structure to it.
+*Semi-structured data consist of documents held in JavaScript Object Notation (JSON) format. It also includes key-value stores and graph databases.
+```
+What is Unstructured Data
+
+```
+*Unstructured data is information that either does not organize in a pre-defined manner or not have a pre-defined data model.
+*Unstructured information is a set of text-heavy but may contain data such as numbers, dates, and facts as well.
+*Videos, audio, and binary data files might not have a specific structure. They’re assigned to as unstructured data.
+```
+Summary
+
+```
+''Structured data'' is stored is predefined format and is highly specific; whereas ''unstructured data'' is a collection of many varied data types which are stored in their native formats; while ''semi structured data ''that does not follow the tabular data structure models associated with relational databases or other data table forms.
+```
+Difference between Structured and Unstructured data
+
+```
+1) Defined Vs Undefined Data
+
+Structured data is undoubtedly a defined type of data in a structure.
+
+Structured data lives in columns and rows and it can be mapped into pre-defined fields.
+
+Unstructured data does not have a predefined data format, it is a collection of many types of varied data that are stored in their native formats.
+
+2)Quantitative Vs Qualitative Data
+
+Structured data is generally quantitative data, it usually consists of hard numbers or things that can be counted.
+
+Methods for analysis include classification, regression, and clustering of data.
+
+Unstructured data is generally categorized as qualitative data, and cannot be analyzed and processed using conventional tools and methods.
+
+Understanding qualitative data requires advanced analytics techniques like data stacking and data mining.
+
+3) Storage In Data Lakes Vs Data Houses
+
+Structured data is generally stored in data warehouses.
+
+Unstructured data is stored in data lakes.
+
+Unstructured data requires more storage space, while structured data requires less storage space.
+
+4) Ease Of Analysis
+
+Structured data is easy to search, both for algorithms and for humans.
+
+Unstructured data is more difficult to search and requires processing to become understandable.
+```

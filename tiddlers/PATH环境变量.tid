@@ -1,0 +1,76 @@
+created: 20220608021325213
+difficulty: 1.0785098781342142
+due: 20220929094759581
+grade: 1
+history: [{"due":"20220613122122146","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612122122146"},{"due":"20220702000728806","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616000728806"}]
+interval: 20
+lapses: 0
+modified: 20220706094759581
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706094759581
+stability: 84.72864024381416
+tags: 基础概念 ?
+title: PATH环境变量
+type: text/vnd.tiddlywiki
+
+*Linux系统为例
+
+```
+在系统中，你所输入的每一个命令，本质上都是一个具体的程序。
+
+比如：
+
+- ls，是一个程序
+- vim是一个程序
+- cd 也是一个程序
+- ...你用的系统带的命令都是程序
+
+
+
+为什么我们可以在Linux系统中，的任意地方，输入ls、cd命令都能够正常的用
+
+这就是环境变量的作用。
+```
+
+
+*系统识别你输入的命令的识别顺序
+
+```
+以ls命令为例，当我们输入ls这个字符的时候，Linux系统，会按照如下的顺序去查找ls命令的所在：
+
+- /usr/bin 中看一看有没有ls
+- /bin 中看一看有没有ls
+- 去PATH这个环境变量中看一看有没有ls
+```
+
+[img[20220608101800.png]]
+
+```
+如图，提示未找到命令，就是：
+
+- /usr/bin没找到
+- /bin没找到
+- PATH环境变量中记录的目录中都没找到
+
+会提示你找不到这个命令
+```
+
+
+
+
+
+为了能够在任意地方输入命令，都能够识别，所以将命令所在的文件夹
+
+注册到系统的PATH中。
+
+比如：
+
+```shell
+export PATH=$HADOOP_HOME/bin:$HBASE_HOME/bin:$PATH
+# 注意，最后的$PATH是将系统自带的PATH也保留，不要删除了。
+```
+
+[img[20220608104117.png]]
+
+系统自带的PATH不要清楚，不然系统很多命令无法用了。

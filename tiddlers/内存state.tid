@@ -1,0 +1,36 @@
+created: 20220718070310254
+difficulty: 1
+due: 20220825054009904
+grade: 1
+history: [{"due":"20220731042310430","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042310430"},{"due":"20220806080845748","interval":6,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220805080845747"},{"due":"20220810075643015","interval":4,"difficulty":1.2033834073148748,"stability":0.054881164580531924,"retrievability":0.003383407314874798,"grade":0,"lapses":2,"reps":1,"review":"20220809075643015"}]
+interval: 6
+lapses: 2
+modified: 20220815054009904
+reps: 2
+retrievability: 0.000009941800865523385
+review: 20220815054009904
+stability: 10.165493806888515
+tags: ?
+title: 内存state
+type: text/vnd.tiddlywiki
+
+[img[BillfishQzDdaF2022-07-18 15_02_19.PNG]]
+
+```
+MemoryStateBackend内部将状态（state）数据作为对象保存在java堆内存中（taskManager），通过checkpoint机制，MemoryStateBackend将状态（state）进⾏快照并保存Jobmanager（master）的堆内存中。
+MemoryStateBackend可以通过配置来使⽤异步快照（asynchronous snapshots）。通过异步快照可以避免阻塞管道（blockingpipelines），⽬前是默认开启，当然也可以通过MemoryStateBackend的构造函数配置进⾏关闭：
+以前的MemoryStateBackend相当于使用HashMapStateBackend和JobManagerCheckpointStorage
+使用 MemoryStateBackend 时的注意点：
+	默认情况下，每一个状态的大小限制为 5 MB。可以通过 MemoryStateBackend 的构造函数增加这个大小。
+	状态大小受到 akka 帧大小的限制，所以无论怎么调整状态大小配置，都不能大于 akka 的帧大小。
+	状态的总大小不能超过 JobManager 的内存。
+何时使用 MemoryStateBackend：
+	本地开发或调试时建议使用 MemoryStateBackend，因为这种场景的状态大小的是有限的。
+	MemoryStateBackend 最适合小状态的应用场景。例如 Kafka Consumer，或者一次仅一记录的函数 （Map, FlatMap，或 Filter）。
+在debug模式下使用，不建议在生产模式下应用。
+	全局配置 flink-conf.yaml
+state.backend: hashmap
+# 可选，当不指定 checkpoint 路径时，默认自动使用 JobManagerCheckpointStorage
+state.checkpoint-storage: jobmanager
+
+```

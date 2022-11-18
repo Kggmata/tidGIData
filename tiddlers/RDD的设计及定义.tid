@@ -1,0 +1,43 @@
+created: 20220523051918162
+difficulty: 1.3767994636196013
+due: 20220909135454251
+grade: 2
+history: [{"due":"20220524082212681","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523082212681"},{"due":"20220619054025032","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529054025032"}]
+interval: 22
+lapses: 0
+modified: 20220620135454251
+reps: 3
+retrievability: 0.8959329765306554
+review: 20220620135454251
+stability: 81.39969753492974
+tags: spark ?
+title: RDD的设计及定义
+type: text/vnd.tiddlywiki
+
+Resilient Distributed Dataset (RDD)
+
+https://spark.apache.org/docs/3.1.2/rdd-programming-guide.html#resilient-distributed-datasets-rdds
+
+Spark revolves around the concept of a resilient distributed dataset (RDD), which is a fault-tolerant collection of elements that can be operated on in parallel. There are two ways to create RDDs: parallelizing an existing collection in your driver program, or referencing a dataset in an external storage system, such as a shared filesystem, HDFS, HBase, or any data source offering a Hadoop InputFormat.
+
+*理解
+
+- 本质：一个抽象的逻辑上的数据集合的概念，类似于Python中的list，但RDD是分布式的
+
+  - Python中的list：单节点，列表中直接就是元素
+
+  - Spark中的RDD：分布式，RDD中有分区、每个分区中有这个RDD的一部分数据【分区辅助实现了分布式】
+
+- 功能：实现分布式的数据存储，是一个对应多个物理分区的数据集合，每个分区的数据可以存储在不同的节点上
+
+  - 列表：就是用于存储数据的
+
+  - RDD：实现分布式存储的列表
+
+*实现
+
+- step1：SparkCore中所有的数据读取到程序中以后都会存储在一个RDD中，将数据划分到多个分区中
+
+- step2：所有的数据转换处理，都直接在代码中对RDD进行处理，底层会对RDD的每个分区进行并行处理
+
+[img[image-20211201154645981.png]]

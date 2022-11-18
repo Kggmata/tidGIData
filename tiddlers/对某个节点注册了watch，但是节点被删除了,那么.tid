@@ -1,0 +1,17 @@
+created: 20220609005426138
+difficulty: 1
+due: 20221001050530122
+grade: 2
+history: [{"due":"20220613131617204","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612131617204"},{"due":"20220701010957502","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615010957502"}]
+interval: 20
+lapses: 0
+modified: 20220705050530122
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705050530121
+stability: 88.3647639214822
+tags: zookeeper ?
+title: 对某个节点注册了watch，但是节点被删除了,那么
+type: text/vnd.tiddlywiki
+
+对某个节点注册了watch，但是节点被删除了，那么注册在这个节点上的watches都会被移除。

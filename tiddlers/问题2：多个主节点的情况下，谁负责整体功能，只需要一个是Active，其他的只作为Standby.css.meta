@@ -1,0 +1,15 @@
+created: 20220521005837944
+difficulty: 2.540826597275277
+due: 20221213000836658
+grade: 1
+history: [{"due":"20220523073154246","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521073154246"},{"due":"20220529002228519","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002228519"},{"due":"20220628052015636","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602052015636"},{"due":"20220701000810295","interval":28,"difficulty":4.232984010198816,"stability":0.07408316441686115,"retrievability":0.8918064933310472,"grade":0,"lapses":1,"reps":1,"review":"20220630000810294"},{"due":"20220712055222547","interval":5,"difficulty":2.433800119591539,"stability":6.961573391804018,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220705055222547"},{"due":"20220820062359597","interval":12,"difficulty":2.467722453958227,"stability":34.16247436854578,"retrievability":0.833922334366688,"grade":1,"lapses":1,"reps":3,"review":"20220717062359596"}]
+interval: 44
+lapses: 1
+modified: 20220830000836658
+reps: 4
+retrievability: 0.8731041433170493
+review: 20220830000836658
+stability: 105.4152948564282
+tags: spark ?
+title: 问题2：多个主节点的情况下，谁负责整体功能，只需要一个是Active，其他的只作为Standby
+type: text/css

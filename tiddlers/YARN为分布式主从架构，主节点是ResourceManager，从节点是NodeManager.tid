@@ -1,0 +1,17 @@
+created: 20220519125023234
+difficulty: 2.232984010198816
+due: 20220915141835855
+grade: 2
+history: [{"due":"20220522001243904","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001243904"},{"due":"20220528012408761","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522012408760"},{"due":"20220627102724071","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601102724071"}]
+interval: 28
+lapses: 0
+modified: 20220629141835855
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629141835855
+stability: 78.32227625296495
+tags: hadoop ?
+title: YARN为分布式主从架构，主节点是ResourceManager，从节点是NodeManager
+type: text/vnd.tiddlywiki
+
+正确：主从架构，主是RM，从是NM

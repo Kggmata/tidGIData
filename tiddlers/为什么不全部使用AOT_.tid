@@ -1,0 +1,21 @@
+created: 20220724143916183
+difficulty: 0.02337100302925359
+due: 20220906004833963
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220905004833963
+reps: 1
+retrievability: 1
+review: 20220905004833963
+stability: 0.10000000088475645
+tags: flink ?
+title: 为什么不全部使用AOT?
+type: text/vnd.tiddlywiki
+
+```
+AOT可以提前编译节省启动时间, 
+
+为什么不全部使用AOT, 这和Java的动态特性有关. 举个例子, CGLIB动态代理使用的是ASM技术, 大概原理就是运行时直接在内存生成并加载修改后的字节码文件.class. 如果全部使用AOT提前编译, 那么就无法使用ASM技术. 为了支持类似的动态特性, 因此选择JIT.
+```

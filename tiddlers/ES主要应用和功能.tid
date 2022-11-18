@@ -1,0 +1,20 @@
+created: 20220615082714847
+difficulty: 1
+due: 20220917121750101
+grade: 2
+history: [{"due":"20220619063237667","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618063237667"},{"due":"20220703000834565","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620000834565"}]
+interval: 16
+lapses: 0
+modified: 20220706121750101
+reps: 3
+retrievability: 0.8824986202593608
+review: 20220706121750101
+stability: 73.448178202157
+tags: 用户画像 ?
+title: ES主要应用和功能
+type: text/vnd.tiddlywiki
+
+```
+ElasticSearch 主要做全文检索，主要应用于搜索领域，功能：数据的存储和数据的查询
+但是现在ELK生态，所以ES不仅仅支持全文检索，对于数据存储和数据分析都可以实现，ElasticSearchSQL
+```

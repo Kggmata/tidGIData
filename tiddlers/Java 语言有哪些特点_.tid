@@ -1,0 +1,29 @@
+created: 20220724135954615
+difficulty: 0.025386988635295055
+due: 20220827143705760
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143705760
+reps: 1
+retrievability: 1
+review: 20220826143705760
+stability: 0.10000000088475645
+tags: flink ?
+title: Java 语言有哪些特点?
+type: text/vnd.tiddlywiki
+
+```
+1 面向对象(封装, 继承, 多态)
+2 平台无关性
+3 多线程(c++没有内置的多线程机制, 因此必须要调用系统的多线程机制)
+4 可靠
+5 安全
+6 支持网络编程
+7 编译与解释并存
+```
+```
+Write Once, Run Anywhere
+跨平台现在不止java能实现, 比如通过docker就可以很容易实现跨平台. java现在仍然占有率如此高, 主要是因为java的生态
+```

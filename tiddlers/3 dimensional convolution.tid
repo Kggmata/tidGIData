@@ -1,0 +1,12 @@
+created: 20220819062705144
+modified: 20220819062941194
+tags: ? flink
+title: 3 dimensional convolution
+type: text/vnd.tiddlywiki
+
+```
+在gray image, 每个像素点是1dimension
+
+在rgb image, 每个像素点包含颜色, rgb信息, 因此需要三维filter, 每个channel对应起来
+```
+[img[Snipaste_2022-08-19_14-29-31.jpg]]

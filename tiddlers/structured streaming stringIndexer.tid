@@ -1,0 +1,23 @@
+created: 20220628003100994
+difficulty: 1.05157013370948
+due: 20221110021535797
+grade: 1
+history: [{"due":"20220630132139473","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132139473"},{"due":"20220721022020524","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705022020524"}]
+interval: 25
+lapses: 0
+modified: 20220730021535797
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730021535797
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: structured streaming stringIndexer
+type: text/vnd.tiddlywiki
+
+String Indexer -
+
+```
+使用它,如果你想要机器学习算法识别列作为分类变量,或者想要将文本数据转换为数字数据,保持分类上下文。e,g转换天(星期一,星期二…)到数字表示。
+```
+
+ Use it if you want the Machine Learning algorithm to identify column as categorical variable or if want to convert the textual data to numeric data keeping the categorical context. e,g converting days (Monday, Tuesday...) to numeric representation.

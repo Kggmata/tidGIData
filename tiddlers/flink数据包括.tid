@@ -1,0 +1,21 @@
+created: 20220718073528557
+difficulty: 1
+due: 20220825033409920
+grade: 1
+history: [{"due":"20220731042655001","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042655001"},{"due":"20220807115739090","interval":7,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806115739090"}]
+interval: 6
+lapses: 1
+modified: 20220812033409920
+reps: 2
+retrievability: 0.00019680286925510766
+review: 20220812033409920
+stability: 12.92339166423087
+tags: ?
+title: flink数据包括
+type: text/vnd.tiddlywiki
+
+1 元数据 包括checkpoint地址, jobmanager, dispatcher, task manager, 这些信息的容错由kubernetes/zookeeper保证
+
+2 inflight data, flink作业运行时, 处于source, sink之间的数据
+
+3 对于有状态的算子比如聚合算子, 处理完输入数据会产生算子状态数据

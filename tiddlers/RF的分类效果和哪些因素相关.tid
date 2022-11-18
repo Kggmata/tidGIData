@@ -1,0 +1,11 @@
+created: 20220820070824258
+modified: 20220820070941813
+tags: ? flink
+title: RF的分类效果和哪些因素相关
+type: text/vnd.tiddlywiki
+
+```
+1. RF当中任意两棵树的相关性, 相关性越大代表错误率越大
+
+2. 每棵树的分类能力, 分类能力越强, 整个forest的错误率越低
+```

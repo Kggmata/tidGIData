@@ -1,0 +1,31 @@
+created: 20220616044704560
+difficulty: 1.2974617264812263
+due: 20221013064431481
+grade: 1
+history: [{"due":"20220619234642275","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618234642275"},{"due":"20220709073408926","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621060821777"},{"due":"20220712010049057","interval":20,"difficulty":2.0553190686350757,"stability":0.07408215765534414,"retrievability":0.8553190686350756,"grade":0,"lapses":1,"reps":1,"review":"20220711010049056"},{"due":"20220729010111895","interval":7,"difficulty":1.2553665353275318,"stability":11.034940136309137,"retrievability":0.00004746669245620781,"grade":1,"lapses":1,"reps":2,"review":"20220718010111895"}]
+interval: 18
+lapses: 1
+modified: 20220805064431481
+reps: 3
+retrievability: 0.8420951911536942
+review: 20220805064431480
+stability: 69.42462042388443
+tags: kafka ?
+title: kafka存储架构 及 每个部分作用
+type: text/vnd.tiddlywiki
+
+http://dockone.io/article/2434664
+
+```
+从上图可以看出来，Kafka 是基于「主题 + 分区 + 副本 + 分段 + 索引」的结构：
+
+*Kafka 中消息是以主题 Topic 为基本单位进行归类的，这里的 Topic 是逻辑上的概念，实际上在磁盘存储是根据分区 Partition 存储的, 即每个 Topic 被分成多个 Partition，分区 Partition 的数量可以在主题 Topic 创建的时候进行指定。
+
+*Partition 分区主要是为了解决 Kafka 存储的水平扩展问题而设计的，如果一个 Topic 的所有消息都只存储到一个 Kafka Broker 上的话， 对于 Kafka 每秒写入几百万消息的高并发系统来说，这个 Broker 肯定会出现瓶颈， 故障时候不好进行恢复，所以 Kafka 将 Topic 的消息划分成多个 Partition，然后均衡的分布到整个 Kafka Broker 集群中。
+
+*Partition 分区内每条消息都会被分配一个唯一的消息 id，即我们通常所说的 偏移量 Offset，因此 Kafka 只能保证每个分区内部有序性，并不能保证全局有序性。
+
+*然后每个 Partition 分区又被划分成了多个 LogSegment，这是为了防止 Log 日志过大，Kafka 又引入了日志分段（LogSegment）的概念，将 Log 切分为多个 LogSegement，相当于一个巨型文件被平均分割为一些相对较小的文件，这样也便于消息的查找、维护和清理。这样在做历史数据清理的时候，直接删除旧的 LogSegement 文件就可以了。
+
+*Log 日志在物理上只是以文件夹的形式存储，而每个 LogSegement 对应磁盘上的一个日志文件和两个索引文件，以及可能的其他文件(比如以".snapshot"为后缀的快照索引文件等)
+```

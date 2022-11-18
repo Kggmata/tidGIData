@@ -1,0 +1,48 @@
+created: 20220605093122992
+difficulty: 1.6336254700556123
+due: 20221122082910132
+grade: 1
+history: [{"due":"20220609132716107","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608132716107"},{"due":"20220613074228453","interval":4,"difficulty":1.4859391209733,"stability":0.07545638712607733,"retrievability":0.01718665362921924,"grade":0,"lapses":1,"reps":1,"review":"20220612074228453"},{"due":"20220616025718889","interval":3,"difficulty":1.701101616372913,"stability":0.055390315029607076,"retrievability":0.01516249539961304,"grade":0,"lapses":2,"reps":1,"review":"20220615025718889"},{"due":"20220624112849709","interval":1,"difficulty":1,"stability":8.007071752227509,"retrievability":0.1492478557873414,"grade":2,"lapses":2,"reps":2,"review":"20220616112849709"},{"due":"20220626123809976","interval":9,"difficulty":2.0883176417377025,"stability":0.04065991276038159,"retrievability":0.8883176417377022,"grade":0,"lapses":3,"reps":1,"review":"20220625123809976"},{"due":"20220630023635374","interval":4,"difficulty":2.2883491566148537,"stability":0.030119966949470094,"retrievability":0.0000315148771511753,"grade":0,"lapses":4,"reps":1,"review":"20220629023635373"},{"due":"20220709114802464","interval":5,"difficulty":1.4883491819735368,"stability":4.766383288904045,"retrievability":2.5358683198950755e-8,"grade":1,"lapses":4,"reps":2,"review":"20220704114802464"},{"due":"20220809005511688","interval":7,"difficulty":1.5449918263588993,"stability":28.55534850552475,"retrievability":0.8566426443853625,"grade":1,"lapses":4,"reps":3,"review":"20220711005511688"}]
+interval: 32
+lapses: 4
+modified: 20220812082910132
+reps: 4
+retrievability: 0.8886336436967128
+review: 20220812082910131
+stability: 101.77974309311846
+tags: hbase ?
+title: HBase删除数据的原理
+type: text/vnd.tiddlywiki
+
+```
+HBase 的删除操作并不会立即将数据从磁盘上删除，删除操作主要是对要被删除的数据打上标记。
+
+当执行删除操作时，HBase 新插入一条相同的 KeyValue 数据，但是使 keytype=Delete，这便意味着数据被删除了，直到发生 Major compaction 操作时，数据才会被真正的从磁盘上删除，删除标记也会从StoreFile删除。
+```
+
+```
+Time To Live (TTL)
+ColumnFamilies可以设置TTL长度（以秒为单位），HBase将在到期时间后自动删除行。这适用于行的所有版本，包括当前版本。
+当Minor compaction操作时，仅删除包含过期行的存储文件。设置hbase.store.delete.expired.storefile为false禁用此功能。将最小版本数设置为0以外也会禁用此功能。
+HBase还支持按每个单元格设置生存时间（TTL）。
+```
+
+Cell TTL处理和ColumnFamily TTL之间存在两个显着差异：
+• Cell TTL以毫秒而不是秒为单位表示。
+• Cell TTL的TTL不能超过ColumnFamily 的TTL。
+
+*补充：HBase的数据删除
+
+> HBase的数据不是物理删除，当你删除一条数据的时候
+>
+> 只是这一条数据被HBase `标记`为删除了 （当它不存在，实际上还在）
+>
+> 当你查询的时候，这条数据不会被查询出来
+>
+> 但是它的物理实体，已经在HDFS存储着。
+
+> HBase的多版本也是，比如设置了5个版本，你写入了6个版本
+>
+> 最早的版本就无效了。
+>
+> 这个无效版本依旧是被标记清理了，但是物理实体还在。

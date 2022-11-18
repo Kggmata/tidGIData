@@ -1,0 +1,31 @@
+created: 20220710013825042
+difficulty: 1.0853405116014387
+due: 20221029073133292
+grade: 1
+history: [{"due":"20220713030512712","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030512712"},{"due":"20220806013732069","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721013732069"}]
+interval: 19
+lapses: 0
+modified: 20220809073133292
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809073133291
+stability: 81.07421184688711
+tags: 用户画像 ?
+title: metastore三种配置方式
+type: text/vnd.tiddlywiki
+
+有了metastore服务, 可以实现多客户端连接, 而且这些客户端不需要知道mysql的用户密码.
+
+1 embedded
+
+hive和metastore服务运行在一个进程, 使用内嵌的derby数据库存储元数据
+
+一次只能连接一个客户端
+
+2 Local
+
+使用mysql代替derby, 支持多客户端访问, 每个客户端需要有mysql的访问权力
+
+3 Remote
+
+远程安装mysql, 替代derby存储元数据, 需要把hive.metastore.local设置为false. metastore作为单独进程, 所有客户端,远程连接这个metastore, 不需要知道rdbms的密码

@@ -1,0 +1,21 @@
+created: 20220618060152331
+difficulty: 1.5599699048363516
+due: 20220906024042657
+grade: 1
+history: [{"due":"20220620152913218","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619152913217"},{"due":"20220704020713058","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621020713058"},{"due":"20220708060724502","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707060724501"},{"due":"20220711074750770","interval":3,"difficulty":2.296504136016429,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220710074750770"},{"due":"20220719014113652","interval":2,"difficulty":1.518006978696581,"stability":7.3499090752694975,"retrievability":0.02150284268015211,"grade":1,"lapses":2,"reps":2,"review":"20220712014113651"}]
+interval: 12
+lapses: 2
+modified: 20220724024042657
+reps: 3
+retrievability: 0.8419629261397705
+review: 20220724024042657
+stability: 44.462700486006746
+tags: 用户画像 ?
+title: 为什么整合PySpark和ES？
+type: text/vnd.tiddlywiki
+
+```
+1-关键原因：项目中使用Spark读取ES的业务数据，必须学习
+2-Spark是计算框架，通过和ES整合发挥两者优势
+3-官方提供了非常友好的Spark和ES的整合方案
+```

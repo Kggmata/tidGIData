@@ -1,0 +1,11 @@
+created: 20220726033113022
+modified: 20220726035841371
+tags: ? flink
+title: innoDB索引原理
+type: text/vnd.tiddlywiki
+
+```
+索引是一个单独的 存储在磁盘上的数据结构
+
+innoDB支持B+tree索引, 一个节点存储一个磁盘页的数据. 先找到数据所在的页, 然后把页读进内存, 在内存中查找
+```

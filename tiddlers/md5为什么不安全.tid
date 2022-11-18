@@ -1,0 +1,68 @@
+created: 20220616131058603
+difficulty: 1.4400086415478224
+due: 20221022082135870
+grade: 1
+history: [{"due":"20220619235257997","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618235257997"},{"due":"20220704062357436","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621062357436"},{"due":"20220709073752491","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708073752491"},{"due":"20220712010228582","interval":3,"difficulty":2.2896353152469726,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220711010228582"},{"due":"20220803142029772","interval":7,"difficulty":1.4896367731732758,"stability":7.704303036382615,"retrievability":0.000001457926303174977,"grade":1,"lapses":2,"reps":2,"review":"20220718025028781"}]
+interval: 21
+lapses: 2
+modified: 20220808082135870
+reps: 3
+retrievability: 0.7503718683745467
+review: 20220808082135870
+stability: 75.20511257199914
+tags: 用户画像 ?
+title: md5为什么不安全
+type: text/vnd.tiddlywiki
+
+https://www.bilibili.com/video/BV1S541127qR?spm_id_from=333.851.b_7265636f6d6d656e64.2&vd_source=4f6d50d66170c924d3ffac39bc223c45
+
+md5流程:
+
+```
+1. 填充对齐
+
+[img[Snipaste_2022-06-16_21-14-55.jpg]]
+
+将数据补成512bit的整数倍, 末尾加上64bit表示原始长度的数据
+
+2. 分块
+
+分成若干512bit的块
+md5是128bit的二进制, 32位16进制
+分为四段,设置四个幻数.
+将数据块用四个幻术进行四轮压缩(与或非循环位移)
+最后得到a,b,c,d,返回到md5四段上
+[img[Snipaste_2022-06-16_21-18-59.jpg]]
+
+对所有数据库相同操作
+
+3. 最后合起来
+```
+
+问题在哪里?
+
+1.能从md5恢复原数据吗?
+
+```
+不能,因为信息在转换过程损失严重,不可逆
+```
+
+2.理论上md5的一个值对应无穷原始数据
+
+```
+原象攻击: 找到任意一个消息,产生和此消息相同的md5
+
+第二原象攻击:找到一个消息,产生和此消息相同的md5
+```
+
+3. 抗碰撞性
+
+```
+hash碰撞就是构造两个相同hash的消息
+```
+
+选择前缀碰撞: 自由选择前缀消息内容,md5相同
+
+''解决方法:
+
+加盐, 用多个hash综合判断''

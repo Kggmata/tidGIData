@@ -1,0 +1,19 @@
+created: 20220624073854845
+difficulty: 1
+due: 20221025055011836
+grade: 2
+history: [{"due":"20220626030749483","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625030749483"},{"due":"20220715024632314","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":2,"lapses":0,"reps":2,"review":"20220629024632313"}]
+interval: 22
+lapses: 0
+modified: 20220721055011836
+reps: 3
+retrievability: 0.865612726934808
+review: 20220721055011836
+stability: 95.61179776281308
+tags: 用户画像 ?
+title: Is MLlib deprecated?
+type: text/vnd.tiddlywiki
+
+```
+No. MLlib includes both the RDD-based API and the DataFrame-based API. The RDD-based API is now in maintenance mode. But neither API is deprecated, nor MLlib as a whole.
+```

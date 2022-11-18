@@ -1,0 +1,32 @@
+created: 20220716105222920
+difficulty: 1
+due: 20221125120123811
+grade: 2
+history: [{"due":"20220722115937280","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721115937280"},{"due":"20220815032245737","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220730032245737"}]
+interval: 22
+lapses: 0
+modified: 20220821120123811
+reps: 3
+retrievability: 0.8684786995977097
+review: 20220821120123811
+stability: 95.63227532116423
+tags: ?
+title: 复杂链表的复制
+type: text/vnd.tiddlywiki
+
+方法一：哈希表
+
+遍历两次
+
+第一次把原链表的每个node放在字典中, 格式为{node:复制的node}
+
+第二次复制原链表的next和random, dict[node].next=dict.get(node.next), 用get是为了key为None的情况
+
+方法二:拼接+拆分
+
+[img[Snipaste_2022-07-16_19-32-26.jpg]]
+
+作者：jyd
+链接：https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/solution/jian-zhi-offer-35-fu-za-lian-biao-de-fu-zhi-ha-xi-/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

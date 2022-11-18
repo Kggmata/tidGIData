@@ -1,0 +1,38 @@
+created: 20220627044246393
+difficulty: 1.071305136947512
+due: 20221020020837433
+grade: 1
+history: [{"due":"20220630115317608","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629115317608"},{"due":"20220719140833001","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703140833001"}]
+interval: 21
+lapses: 0
+modified: 20220724020837433
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724020837433
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 流式技术发展
+type: text/vnd.tiddlywiki
+
+
+流式技术发展
+
+```
+Storm--->sparkstreaming--->结构化流----->flink
+```
+  * sparkstreaming 近实时计算
+
+    ```
+* 需要开发自己处理offset， 将offset提交到mysql或redis
+    * spark的一个线程对接kafka的topic的partition
+```
+  * 结构化流，Flink 实时计算
+    ```
+* 引入了流处理Streaming和批处理Batch
+    * 隐藏了更多实现细节，开发只需要关注业务逻辑
+```
+  * 岗位更多离线开发
+    ```
+* SparkSQL+Hive
+```
+JStorm向开源社区---->Flink(19年收购)

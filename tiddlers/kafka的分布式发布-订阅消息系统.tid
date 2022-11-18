@@ -1,0 +1,21 @@
+created: 20220609020114732
+difficulty: 1
+due: 20221001074054646
+grade: 2
+history: [{"due":"20220613135816780","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612135816780"},{"due":"20220701062323058","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615062323058"}]
+interval: 20
+lapses: 0
+modified: 20220705074054646
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705074054646
+stability: 88.3647639214822
+tags: kafka ?
+title: kafka的分布式发布-订阅消息系统
+type: text/vnd.tiddlywiki
+
+apache kafka是一个分布式发布-订阅消息系统和一个强大的队列，可以处理大量的数据，并使能够将消息从一个端点传递到另一个端点，kafka适合离线和在线消息消费。
+
+kafka消息保留在磁盘上，并在集群内复制以防止数据丢失。
+
+kafka构建在zookeeper同步服务之上。它与apache和spark非常好的集成，应用于实时流式数据分析

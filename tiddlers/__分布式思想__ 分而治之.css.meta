@@ -1,0 +1,15 @@
+created: 20220519125655578
+difficulty: 2.2968933941393876
+due: 20230220150709590
+grade: 2
+history: [{"due":"20220522001821892","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001821892"},{"due":"20220528005246298","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522005246298"},{"due":"20220623005611393","interval":10,"difficulty":4.126014725196352,"stability":22.07656732651434,"retrievability":0.826014725196352,"grade":2,"lapses":0,"reps":3,"review":"20220601005611392"},{"due":"20220822054308054","interval":24,"difficulty":3.21779089675283,"stability":58.054925025422094,"retrievability":0.8917761715564773,"grade":2,"lapses":0,"reps":4,"review":"20220625054308054"}]
+interval: 71
+lapses: 0
+modified: 20220904150709590
+reps: 5
+retrievability: 0.8791024973865574
+review: 20220904150709590
+stability: 169.063943780605
+tags: hadoop ?
+title: **分布式思想** 分而治之
+type: text/css

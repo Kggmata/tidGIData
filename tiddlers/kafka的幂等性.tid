@@ -1,0 +1,24 @@
+created: 20220714133358550
+difficulty: 2.0411020839292244
+due: 20220829133843824
+grade: 0
+history: [{"due":"20220722090331199","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090331199"},{"due":"20220817101332516","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":2,"lapses":0,"reps":2,"review":"20220801101332516"}]
+interval: 27
+lapses: 1
+modified: 20220828133843824
+reps: 1
+retrievability: 0.8411020839292245
+review: 20220828133843824
+stability: 0.07408182272361549
+tags: ?
+title: kafka的幂等性
+type: text/vnd.tiddlywiki
+
+Producer 需要做的只有两件事：
+
+```
+1）初始化时像向 Broker 申请一个 ProducerID
+2）为每条消息绑定一个 SequenceNumber
+```
+
+Kafka Broker 收到消息后会以 ProducerID 为单位存储 SequenceNumber，也就是说即时 Producer 重复发送了， Broker 端也会将其过滤掉。

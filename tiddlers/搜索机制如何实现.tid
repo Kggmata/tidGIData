@@ -1,0 +1,48 @@
+created: 20220615082805899
+difficulty: 1
+due: 20230405140151123
+grade: 2
+history: [{"due":"20220619063652454","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618063652454"},{"due":"20220628094515443","interval":1,"difficulty":1,"stability":8.830737998739787,"retrievability":0.34910423292122506,"grade":2,"lapses":0,"reps":2,"review":"20220619094515443"},{"due":"20220818234806949","interval":10,"difficulty":1,"stability":49.62793133237176,"retrievability":0.887531637452929,"grade":2,"lapses":0,"reps":3,"review":"20220629234806949"}]
+interval: 59
+lapses: 0
+modified: 20220828140151123
+reps: 4
+retrievability: 0.8822696921770092
+review: 20220828140151123
+stability: 220.01477714325816
+tags: 用户画像 ?
+title: 搜索机制如何实现
+type: text/vnd.tiddlywiki
+
+```
+id   content
+1001   i am a teacher!!!
+1002   i am a big data programer!!!
+
+如果做数据查询？如何实现？
+1：如果查询id，直接基于主键查询
+select * from table where id=1001
+2：问题：如果想查询content内容？如何实现？
+正排索引：
+content 						id
+i am a teacher!!!  				1001
+i am a big data programer!!!	1002
+倒排索引：
+关键词key    文章id  
+i      1001,1002
+am	   1001,1002
+teacher 1001
+bigdata 1002
+将上述的内容简单理解为根据am查询在1001和1002的文章中出现过
+直接返回1001和1002的文章内容即可
+
+分词：中文分词最好用的jieba和Hanlp
+i am a teacher!!!   英文有空格可以间隔分词，但是中文
+我爱黑马一万年！！  我/爱/黑马/一万年 我爱/黑马/一万年 我/爱/黑马一万年
+```
+
+```
+总结：ES全文检索基于倒排索引实现
+当用户查询的时候，将用户输入的关键词分词后，到索引库中根据分词后的数据寻找相关列表信息，**找到对应内容
+```
+[img[image-20220615154708418.png]]

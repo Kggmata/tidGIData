@@ -1,0 +1,17 @@
+created: 20220617060104468
+difficulty: 2.0185858596322306
+due: 20221012134346954
+grade: 0
+history: [{"due":"20220620003500955","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619003500955"},{"due":"20220629142403124","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220620142403123"},{"due":"20220824131036060","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":3,"review":"20220701131036059"}]
+interval: 102
+lapses: 1
+modified: 20221011134346954
+reps: 1
+retrievability: 0.8185858596322304
+review: 20221011134346954
+stability: 0.07408182272361549
+tags: 用户画像 ?
+title: 经典的使用最广泛的RestFulAPi格式是
+type: text/vnd.tiddlywiki
+
+json

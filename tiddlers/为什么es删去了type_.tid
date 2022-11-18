@@ -1,0 +1,62 @@
+created: 20220619093002775
+difficulty: 1.075606407978934
+due: 20220921093243381
+grade: 1
+history: [{"due":"20220621015620762","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620015620762"},{"due":"20220705041320526","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622041320526"}]
+interval: 17
+lapses: 0
+modified: 20220709093243381
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709093243380
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: 为什么es删去了type?
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/7.17/removal-of-types.html
+
+```
+最开始是想让index和rdbms当中进行对应.
+index对应数据库, type对应数据库表.但是实际上是完全不同的概念.
+rdbms当中的表是相互隔离的.而ES当中的type并不是.
+Es当中是以field作为基准.相同field不同type都是存在一个相同的lucene field当中
+```
+
+What are mapping types?
+
+```
+Since the first release of Elasticsearch, each document has been stored in a single index and assigned a single mapping type. A mapping type was used to represent the type of document or entity being indexed, for instance a twitter index might have a user type and a tweet type.
+
+Each mapping type could have its own fields, so the user type might have a full_name field, a user_name field, and an email field, while the tweet type could have a content field, a tweeted_at field and, like the user type, a user_name field.
+
+Each document had a _type metadata field containing the type name, and searches could be limited to one or more types by specifying the type name(s) in the URL:
+
+GET twitter/user,tweet/_search
+{
+  "query": {
+    "match": {
+      "user_name": "kimchy"
+    }
+  }
+}
+
+The _type field was combined with the document’s _id to generate a _uid field, so documents of different types with the same _id could exist in a single index.
+
+Mapping types were also used to establish a parent-child relationship between documents, so documents of type question could be parents to documents of type answer.
+```
+Why are mapping types being removed?
+
+```
+Initially, we spoke about an “index” being similar to a “database” in an SQL database, and a “type” being equivalent to a “table”.
+
+This was a bad analogy that led to incorrect assumptions. In an SQL database, tables are independent of each other. The columns in one table have no bearing on columns with the same name in another table. This is not the case for fields in a mapping type.
+
+In an Elasticsearch index, fields that have the same name in different mapping types are backed by the same Lucene field internally. In other words, using the example above, the user_name field in the user type is stored in exactly the same field as the user_name field in the tweet type, and both user_name fields must have the same mapping (definition) in both types.
+
+This can lead to frustration when, for example, you want deleted to be a date field in one type and a boolean field in another type in the same index.
+
+On top of that, storing different entities that have few or no fields in common in the same index leads to sparse data and interferes with Lucene’s ability to compress documents efficiently.
+
+For these reasons, we have decided to remove the concept of mapping types from Elasticsearch.
+```

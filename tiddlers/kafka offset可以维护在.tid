@@ -1,0 +1,19 @@
+created: 20220712080504804
+difficulty: 1
+due: 20221121120600414
+grade: 2
+history: [{"due":"20220718085207369","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085207369"},{"due":"20220811082553030","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220726082553030"}]
+interval: 22
+lapses: 0
+modified: 20220817120600414
+reps: 3
+retrievability: 0.8684790324894467
+review: 20220817120600414
+stability: 95.63227829996887
+tags: ?
+title: kafka offset可以维护在
+type: text/vnd.tiddlywiki
+
+mysql
+
+有一个consumer_offset主题

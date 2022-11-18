@@ -1,0 +1,17 @@
+created: 20220723075854211
+difficulty: 1
+due: 20221027140447973
+grade: 2
+history: [{"due":"20220823055952413","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822055952413"}]
+interval: 50
+lapses: 0
+modified: 20221011140447973
+reps: 2
+retrievability: 1.3220714356875621e-23
+review: 20221011140447973
+stability: 16.439759152464664
+tags: ?
+title: flink cdc full form
+type: text/vnd.tiddlywiki
+
+change data capture

@@ -1,0 +1,37 @@
+created: 20220724005833654
+difficulty: 1
+due: 20221012141442330
+grade: 0
+history: [{"due":"20220824132133054","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220823132133054"}]
+interval: 49
+lapses: 1
+modified: 20221011141442331
+reps: 1
+retrievability: 3.791663812033409e-23
+review: 20221011141442330
+stability: 0.07408182272361549
+tags: flink ?
+title: flink函数类型
+type: text/vnd.tiddlywiki
+
+```
+system function和catalog function
+1 system没有命名空间, 只能通过名称引用
+2 catalog函数属于catalog和数据库, 因此拥有catalog和数据库命名空间, 可以通过catalog.db.func或者db.func引用
+```
+```
+临时函数, 永久函数
+临时函数由用户创建, 易改变且仅在对话的生命周期内有效. 
+持久化函数不是由系统提供. 存储在catalog当中, 在会话的整个生命周期有效
+```
+```
+函数引用
+1 精确: catalog.db.func或者db.func 允许跨库引用函数
+2 模糊: func()引用
+```
+```
+总共四类: 
+解析顺序:
+临时系统, 系统, 
+临时catalog, catalog(在当前的catalog和数据库当中)
+```

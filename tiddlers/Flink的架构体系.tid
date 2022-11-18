@@ -1,0 +1,88 @@
+created: 20220714014025178
+difficulty: 2.0223256960228704
+due: 20220831062918235
+grade: 0
+history: [{"due":"20220720113507443","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719113507443"},{"due":"20220731012826845","interval":11,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730012826844"},{"due":"20220819115132152","interval":7,"difficulty":1,"stability":12.926432277358748,"retrievability":0.00004746481942846522,"grade":2,"lapses":1,"reps":2,"review":"20220806115132151"}]
+interval: 24
+lapses: 2
+modified: 20220830062918235
+reps: 1
+retrievability: 0.8223256960228704
+review: 20220830062918235
+stability: 0.05488116409496729
+tags: ?
+title: Flink的架构体系
+type: text/vnd.tiddlywiki
+
+[img[image-20220713141338436.png]]
+
+JobManager处理器：
+
+```
+**也称之为Master**，用于协调分布式执行，它们用来调度task，协调检查点，协调失败时恢复等。Flink运行时至少存在一个master处理器，如果配置高可用模式则会存在多个master处理器，它们其中有一个是leader，而其他的都是standby。
+```
+
+TaskManager处理器：
+
+```
+**也称之为Worker**，用于执行一个dataflow的**task**(或者特殊的**subtask**)、数据缓冲和data stream的交换，Flink运行时至少会存在一个worker处理器。
+```
+
+Slot 任务执行槽位：
+
+```
+物理概念，一个TM(TaskManager)内会划分出多个Slot，1个Slot内最多**可以运行1个**Task(Subtask)或一组由Task(Subtask)组成的任务链。
+- 多个Slot之间会共享平分当前TM的内存空间
+- Slot是对一个TM的资源进行固定分配的工具，每个Slot在TM启动后，可以获得固定的资源
+- 比如1个TM是一个JVM进程，如果有6个Slot，那么这6个Slot平分这一个JVM进程的资源
+- 但是因为在同一个进程内，所以线程之间共享TCP连接、内存数据等，效率更高（Slot之间交流方便）
+slot是运行任务的最小单元
+```
+
+Task
+
+```
+任务，每一个Flink的Job会根据情况（并行度、算子类型）将一个整体的Job划分为多个Task
+```
+Subtask：
+
+```
+- 子任务，一个Task可以由一个或者多个Subtask组成，一个Task有多少个Subtask取决于这个Task的并行度
+- 也就是，每一个Subtask就是当前Task任务并行的一个线程
+- 如，当前Task并行度为8，那么这个Task会有8个Subtask（8个线程并行执行这个Task）
+```
+并行度：
+
+```
+- - 并行度就是一个Task可以分成多少个Subtask并行执行的一个参数
+  - 这个参数是动态的，可以在任务执行前进行分配，而非Slot分配，TM启动就固定了
+  - 一个Task可以获得的最大并行度取决于整个Flink环境的可用Slot数量，也就是如果有8个Slot，那么最大并行度也就是8，**设置的再大也没有意义**
+
+- 
+```
+```
+如下图：
+
+- 一个Job分为了3个Task来运行，分别是TaskA TaskB TaskC
+- 其中TaskA设置为了6个并行度，也就是TaskA可以有6个Subtask，如图可见，TaskA的6个Subtask各自在一个Slot内执行
+- 其中在Slot的时候说过，Slot可以运行由Task（或Subtask）组成的任务链，如图可见，最左边的Slot运行了TaskA TaskB TaskC 3个Task各自的1个Subtask组成的一个Subtask执行链
+```
+[img[image-20220713143442124.png]]
+
+并行度是一个动态的概念，可以在多个地方设置并行度：
+
+```
+配置文件默认并行度：conf/flink-conf.yaml的parallelism.default
+- 启动Flink任务，动态提交参数：比如：bin/flink run -p 3
+- 在代码中设置全局并行度：env.setParallelism(3);　
+- 针对每个算子进行单独设置：sum(1).setParallelism(3)
+```
+优先级：算子 > 代码全局 > 命令行参数 > 配置文件
+
+```
+slot的数量决定可以并行执行的最大的处理能力，并行度决定了实际的并行数（实际占用的solt数量）
+
+在生产环境一般slot数量是可用vcore的2倍，并行度不要超过slot的数量，如果并行度等于slot的数量，可以充分利用服务器的处理能力，反之会导致资源浪费。
+
+一个服务器集群一定会运行多个作业，这里的并行度是所有作业并行度的累加值不能超过服务器集群总的slot数量
+```

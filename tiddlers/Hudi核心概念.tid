@@ -1,0 +1,17 @@
+created: 20220725071739488
+modified: 20220725071958230
+tags: ? flink
+title: Hudi核心概念
+type: text/vnd.tiddlywiki
+
+总述
+
+```
+Hudi提供了Hudi表的概念, 支持CURD, 可以利用现有的大数据集群比如HDFS作数据文件存储, 然后使用SparkSQL或者Hive作数据分析
+```
+```
+三大组件:
+1 有序的Timeline
+2 分层的数据文件
+3 index索引
+```

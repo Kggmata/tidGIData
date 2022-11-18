@@ -1,0 +1,35 @@
+created: 20220529150141218
+difficulty: 1
+due: 20221008102308774
+grade: 2
+history: [{"due":"20220601083319617","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083319617"},{"due":"20220625114916648","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220604114916648"},{"due":"20220628013500001","interval":23,"difficulty":2.092506306429746,"stability":0.07408450676555052,"retrievability":0.892506306429746,"grade":0,"lapses":1,"reps":1,"review":"20220627013500000"},{"due":"20220712082202252","interval":4,"difficulty":1.2958904085980383,"stability":10.737650192490841,"retrievability":0.003384102168292236,"grade":1,"lapses":1,"reps":2,"review":"20220701082202252"},{"due":"20220721012210426","interval":19,"difficulty":2.3258047693173616,"stability":0.05488141221849455,"retrievability":0.8299143607193233,"grade":0,"lapses":2,"reps":1,"review":"20220720012210426"},{"due":"20220807020921422","interval":10,"difficulty":1.5258047739144132,"stability":7.576937865408861,"retrievability":4.597051696255256e-9,"grade":1,"lapses":2,"reps":2,"review":"20220730020921422"}]
+interval: 12
+lapses: 2
+modified: 20220811102308774
+reps: 3
+retrievability: 0.8463138056231116
+review: 20220811102308773
+stability: 57.9479810015443
+tags: spark ?
+title: SparkSQL读写Hive
+type: text/vnd.tiddlywiki
+
+场景：Hive底层默认是MR引擎，计算性能特别差，一般用Hive作为数据仓库，使用SparkSQL对Hive中的数据进行计算
+
+SparkSQL怎么能访问到Hive中有哪些表，以及如何知道Hive中表对应的HDFS的地址？
+
+[img[image-20220514100521915.png]]
+
+本质上：SparkSQL访问了Metastore服务获取了Hive元数据，基于元数据提供的地址进行计算
+
+step1：第一台机器启动HDFS和Hive的Metastore
+
+step2：在Spark中构建配置文件指定metastore地址
+
+step3：启动Spark Shell命令行查看
+
+step4：方式一：直接测试SQL读写Hive
+
+step5：方式二：加载Hive表的数据变成DF，可以调用DSL或者SQL的方式来实现计算
+
+规则：==Pycharm工具集成Hive开发SparkSQL，必须申明Metastore的地址和启用Hive的支持==

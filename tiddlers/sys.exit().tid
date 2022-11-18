@@ -1,0 +1,21 @@
+created: 20220602030339744
+difficulty: 1
+due: 20221019124644349
+grade: 2
+history: [{"due":"20220607061715097","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606061715097"},{"due":"20220629010337065","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612010337065"},{"due":"20220703114837059","interval":20,"difficulty":2.085535437739404,"stability":0.07408316441686115,"retrievability":0.8855354377394037,"grade":0,"lapses":1,"reps":1,"review":"20220702114837058"},{"due":"20220720002229702","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220707002229702"}]
+interval: 19
+lapses: 1
+modified: 20220726124644349
+reps: 3
+retrievability: 0.8563723176366649
+review: 20220726124644349
+stability: 84.6439353142043
+tags: hbase ?
+title: sys.exit()
+type: text/vnd.tiddlywiki
+
+默认参数为0,意思是success
+
+1为failure
+
+也可以传对象,会打印对象,然后1failure

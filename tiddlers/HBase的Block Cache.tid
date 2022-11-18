@@ -1,0 +1,51 @@
+created: 20220605085259380
+difficulty: 1.6509461339059983
+due: 20220928132511731
+grade: 1
+history: [{"due":"20220609131745094","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608131745094"},{"due":"20220628074209664","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220612074209664"},{"due":"20220701003359035","interval":18,"difficulty":2.091254635735458,"stability":0.07408316441686115,"retrievability":0.8912546357354577,"grade":0,"lapses":1,"reps":1,"review":"20220630003359035"},{"due":"20220718065323040","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220705065323040"},{"due":"20220724062840910","interval":18,"difficulty":2.0633893610356058,"stability":0.054881225761675624,"retrievability":0.8633893610356056,"grade":0,"lapses":2,"reps":1,"review":"20220723062840910"},{"due":"20220802235841541","interval":9,"difficulty":2.2633893923833255,"stability":0.04065697748494399,"retrievability":3.1347719722603765e-8,"grade":0,"lapses":3,"reps":1,"review":"20220801235841540"},{"due":"20220808030734051","interval":5,"difficulty":2.4633917514395196,"stability":0.030119421724187252,"retrievability":0.0000023590561938593084,"grade":0,"lapses":4,"reps":1,"review":"20220807030734051"},{"due":"20220816034913751","interval":5,"difficulty":1.6633917767901754,"stability":4.411659097265143,"retrievability":2.5350655691687196e-8,"grade":1,"lapses":4,"reps":2,"review":"20220812034913751"}]
+interval: 10
+lapses: 4
+modified: 20220822132511731
+reps: 3
+retrievability: 0.787554357115823
+review: 20220822132511731
+stability: 37.192190738954004
+tags: hbase ?
+title: HBase的Block Cache
+type: text/vnd.tiddlywiki
+
+Block Cache
+
+```
+HBase提供了两种不同的BlockCache实现，用于缓存从HDFS读出的数据。这两种分别为：
+
+默认的，存在于堆内存的（on-heap）LruBlockCache(least recent used)
+
+包含: 
+1 meta数据块catalog表(index及bloom块) 具有in-memory优先级
+2 常用的Hfile索引
+3 bloom过滤器
+
+三个优先级: 
+1 single access代表数据块第一次被读取, 清除优先级高于multi access
+2 multi access代表single access的数据块被再次访问后,清除优先级次于single access
+3 In-memory access,优先级与访问次数无关,代表清除时最后被考虑
+```
+```
+存在堆外内存的（off-heap）BucketCache
+data block数据块
+```
+```
+number of region servers * heap size * hfile.block.cache.size * 0.99
+
+block.cache的默认值是0.4，表示可用堆内存的40%''。最后一个值（99%）是：在缓存内存收回开始后，默认可被回收的比率（这里若是值是100%，则不太现实，因为在置换时也会有新块写入？）
+
+指示数据块如何在它们之间移动的策略，由CombinedBlockCache完成。
+
+BlockCache 压缩lazy BlockCache decompression。在开启此功能后，DATA（以及ENCODED_DATA）数据块会以它们on-disk的形式缓存到BlockCache。与默认的模式不同点在于：默认情况下，在缓存一个数据块时，会先解压缩、解密，然后存入缓存（因为数据块是从HDFS取）。而lazy BlockCache decompression 直接将数据块存入缓存。
+
+默认情况下，这个功能是关闭的，若要开启，可以在所有的RegionServer中的hbase-site.xml文件里设置 hbase.block.data.cachecompressed 为 true
+场景: RS的数据过多,无法将大部分数据存储缓存
+```
+
+ 

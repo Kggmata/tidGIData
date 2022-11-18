@@ -1,0 +1,43 @@
+created: 20220526132708961
+difficulty: 1.0952562399448285
+due: 20220827105719048
+grade: 1
+history: [{"due":"20220531130507735","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130507735"},{"due":"20220604020125890","interval":4,"difficulty":2.7187326055546124,"stability":0.08507834253141604,"retrievability":0.07105206550140858,"grade":0,"lapses":1,"reps":1,"review":"20220603020125889"},{"due":"20220621013003746","interval":4,"difficulty":1,"stability":14.2835505337834,"retrievability":0.007058121659701603,"grade":2,"lapses":1,"reps":2,"review":"20220607013003746"}]
+interval: 15
+lapses: 1
+modified: 20220622105719048
+reps: 3
+retrievability: 0.8952562399448285
+review: 20220622105719048
+stability: 66.45473146777009
+tags: spark ?
+title: RDD容错机制：checkpoint
+type: text/vnd.tiddlywiki
+
+- **问题：为了避免重复构建RDD，可以将RDD进行persist缓存，但是如果缓存丢失，还是会重新构建RDD，怎么解决？**
+
+- **checkpoint**：检查点
+
+  - 功能：将==**RDD的数据**==【不包含RDD依赖关系】存储在HDFS上
+
+  - 语法
+
+`python
+        # 设置一个检查点目录
+        sc.setCheckpointDir("../datas/chk/chk1")
+        # 将RDD的数据持久化存储在HDFS
+        rs_rdd.checkpoint()`
+
+- 注意：在代码中会专门多一个job，用于构建数据，
+
+- **测试**：开启以后的结果
+
+[img[image-20220526153731987.png]]
+
+- **场景**：高安全性
+
+  - 适合：对RDD的数据安全性要求比较高，对性能要求不是特别高的情况下
+
+- **思考**：**==RDD的persist和checkpoint有什么区别？==**
+
+**==RDD的弹性==**：RDD提供多种数据保障的容错机制，血脉机制、缓存机制、检查点机制，用于满足不同场景下的性能和安全性的需求

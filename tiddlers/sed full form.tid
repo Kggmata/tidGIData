@@ -1,0 +1,17 @@
+created: 20220712013157916
+difficulty: 1
+due: 20221125143509091
+grade: 2
+history: [{"due":"20220716060011599","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715060011599"},{"due":"20220723015533480","interval":7,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220722015533480"},{"due":"20220803013501985","interval":11,"difficulty":1.2000001605946278,"stability":0.0548811791474709,"retrievability":1.6059462786757528e-7,"grade":0,"lapses":2,"reps":1,"review":"20220802013501985"},{"due":"20220818113213507","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":2,"lapses":2,"reps":2,"review":"20220808113213507"}]
+interval: 20
+lapses: 2
+modified: 20220828143509091
+reps: 3
+retrievability: 0.81278353636389
+review: 20220828143509091
+stability: 89.13978961303398
+tags: ?
+title: sed full form
+type: text/vnd.tiddlywiki
+
+stream editor 字符串替换

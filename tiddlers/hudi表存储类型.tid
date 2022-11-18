@@ -1,0 +1,38 @@
+created: 20220725072917464
+modified: 20220729014843800
+tags: ? flink
+title: hudi表存储类型
+type: text/vnd.tiddlywiki
+
+```
+hudi table类型定义了
+- 数据如何indexed,
+- 在DFS上的组织形式, 
+- 如何写入
+- query types如何读
+```
+```
+COW: snapshot queries+incremental queries
+数据使用列存储, parquet. update数据写入时同步的.
+
+MOR: snapshot queries+incremental queries+read optimized queries
+数据是columnar(parquet)和rowbased(avro)混合的. update是先写入delta log(avro), 然后synchronously/asynchronously合并产生新版本的columnar files
+```
+```
+COW
+写入时延迟较高
+query速度快
+update cost高(重写parquet)
+parquet大小较小
+write amplification放大更高
+
+MOR
+延迟更低
+query延迟高
+update的cost更小(追加到delta log)
+文件体积更大
+写入放大小
+
+```
+[img[Billfishxdorpm2022-07-25 15_29_32.PNG]]
+[img[Snipaste_2022-07-29_09-48-32.jpg]]

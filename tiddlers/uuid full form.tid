@@ -1,0 +1,17 @@
+created: 20220606023622680
+difficulty: 1.0766816954676914
+due: 20220910114852358
+grade: 1
+history: [{"due":"20220610112949016","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609112949016"},{"due":"20220614111151052","interval":4,"difficulty":1.4859391209733,"stability":0.07545638712607733,"retrievability":0.01718665362921924,"grade":0,"lapses":1,"reps":1,"review":"20220613111151052"},{"due":"20220629065059884","interval":3,"difficulty":1,"stability":12.80868935150994,"retrievability":0.01516249539961304,"grade":2,"lapses":1,"reps":2,"review":"20220616065059884"}]
+interval: 16
+lapses: 1
+modified: 20220702114852358
+reps: 3
+retrievability: 0.8766816954676916
+review: 20220702114852357
+stability: 70.32285194505825
+tags: hbase ?
+title: uuid full form
+type: text/vnd.tiddlywiki
+
+Universally Unique Identifier

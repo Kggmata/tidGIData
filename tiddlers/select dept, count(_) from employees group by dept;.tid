@@ -1,0 +1,19 @@
+created: 20220711140947210
+difficulty: 1
+due: 20221111102051624
+grade: 2
+history: [{"due":"20220713102601163","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712102601163"},{"due":"20220806053014432","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721053014432"}]
+interval: 21
+lapses: 0
+modified: 20220811102051624
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811102051624
+stability: 92.05363191623492
+tags: ?
+title: select dept, count(*) from employees group by dept;
+type: text/vnd.tiddlywiki
+
+```
+This will trigger 1 Map and 1 Reduce job. Map job will do the counting of the employees per department, by creating (key, value) pairs for each department where the key is the department name and the value is 1. E.g. - (SALES, 1), (HR, 1), (SALES, 1), (ENGINEERING, 1), (ENGINEERING, 1), etc. The Reduce job will aggregate all of the (key, value) pairs based on the keys to return the final result i.e. (SALES, 2), (HR, 1), (ENGINEERING, 2), etc.
+```

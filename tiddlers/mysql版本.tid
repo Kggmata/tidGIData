@@ -1,0 +1,21 @@
+created: 20220710121457791
+difficulty: 1
+due: 20221102073344062
+grade: 2
+history: [{"due":"20220713030712084","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030712084"},{"due":"20220806013742148","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721013742148"}]
+interval: 19
+lapses: 0
+modified: 20220809073344062
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809073344062
+stability: 84.88779656040188
+tags: 用户画像 ?
+title: mysql版本
+type: text/vnd.tiddlywiki
+
+5.7版本
+
+8.0版本
+
+8.0多了窗口函数

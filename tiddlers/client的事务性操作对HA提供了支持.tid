@@ -1,0 +1,17 @@
+created: 20220521024110017
+difficulty: 1.5408265972752766
+due: 20230112001228998
+grade: 2
+history: [{"due":"20220523111314053","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521111314053"},{"due":"20220529002425492","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002425492"},{"due":"20220628053026845","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602053026844"},{"due":"20220701001155879","interval":28,"difficulty":4.232984010198816,"stability":0.07408316441686115,"retrievability":0.8918064933310472,"grade":0,"lapses":1,"reps":1,"review":"20220630001155879"},{"due":"20220712061038732","interval":5,"difficulty":2.433800119591539,"stability":6.961573391804018,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220705061038732"},{"due":"20220820062748547","interval":12,"difficulty":2.467722453958227,"stability":34.16247436854578,"retrievability":0.833922334366688,"grade":1,"lapses":1,"reps":3,"review":"20220717062748547"}]
+interval: 44
+lapses: 1
+modified: 20220830001228998
+reps: 4
+retrievability: 0.8731041433170493
+review: 20220830001228998
+stability: 135.28710365609845
+tags: hadoop ?
+title: client的事务性操作对HA提供了支持
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-21_10-41-16.jpg]]

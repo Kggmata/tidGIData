@@ -1,0 +1,17 @@
+created: 20220521235733448
+difficulty: 2.5629073702779004
+due: 20221118022923129
+grade: 1
+history: [{"due":"20220524073418784","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522073418784"},{"due":"20220524232952065","interval":1,"difficulty":6.148683298050514,"stability":0.4259704768919878,"retrievability":0.9486832980505138,"grade":0,"lapses":1,"reps":1,"review":"20220523232952064"},{"due":"20220525231350364","interval":0,"difficulty":5.348683298050514,"stability":0.4259704768919878,"retrievability":1,"grade":2,"lapses":1,"reps":2,"review":"20220524231350364"},{"due":"20220529010203365","interval":1,"difficulty":4.329556656232493,"stability":3.0884784691743716,"retrievability":0.780873358181979,"grade":2,"lapses":1,"reps":3,"review":"20220526010203365"},{"due":"20220614144827164","interval":5,"difficulty":3.3727405009191154,"stability":13.809761576778843,"retrievability":0.8431838446866217,"grade":2,"lapses":1,"reps":4,"review":"20220531144827164"},{"due":"20220723230942153","interval":13,"difficulty":2.4783179242784588,"stability":39.52147704251996,"retrievability":0.9055774233593434,"grade":2,"lapses":1,"reps":5,"review":"20220613230942153"}]
+interval: 46
+lapses: 1
+modified: 20220730022923129
+reps: 6
+retrievability: 0.8845894459994414
+review: 20220730022923129
+stability: 111.47504856084991
+tags: 基础概念 hadoop hdfs ?
+title: 如何实现分布式文件系统
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_07-57-51.jpg]]

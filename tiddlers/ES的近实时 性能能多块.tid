@@ -1,0 +1,17 @@
+created: 20220619134402863
+difficulty: 1
+due: 20220924131336828
+grade: 2
+history: [{"due":"20220621021317437","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620021317437"},{"due":"20220705075241903","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622075241903"}]
+interval: 17
+lapses: 0
+modified: 20220709131336828
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709131336828
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: ES的近实时 性能能多块
+type: text/vnd.tiddlywiki
+
+When a document is stored, it is indexed and fully searchable in near real-time--within 1 second. Elasticsearch uses a data structure called an inverted index that supports very fast full-text searches. An inverted index lists every unique word that appears in any document and identifies all of the documents each word occurs in.

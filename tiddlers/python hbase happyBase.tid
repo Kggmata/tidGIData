@@ -1,0 +1,137 @@
+created: 20220602045711179
+difficulty: 1.0855354377394038
+due: 20220925113559535
+grade: 1
+history: [{"due":"20220607063155579","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063155579"},{"due":"20220629004726306","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612004726306"}]
+interval: 20
+lapses: 0
+modified: 20220702113559535
+reps: 3
+retrievability: 0.8855354377394037
+review: 20220702113559535
+stability: 84.64594355987899
+tags: hbase ?
+title: python hbase happyBase
+type: text/vnd.tiddlywiki
+
+建立连接
+
+`import happybase
+
+connection = happybase.Connection('somehost')
+
+# 常用参数
+happybase.Connection(host="", port=9090, timeout=60000, autoconnect=True, protocol="binary")
+# host 主机名
+# port ThriftServer端口，默认9090
+# timeout 超时（毫秒）
+# autoconnect 是否自动连接，默认True
+# protocol 协议，默认binary，可选binary和compact
+# table_prefix 前缀，基于此链接的操作，所有表都会带上此前缀
+
+# 如果不想自动连接可以，设置autoconnect为False
+conn = happybase.Connection(host="", port=9090, timeout=60000, autoconnect=False, protocol="binary")
+# 通过open来手动打开链接
+conn.open()
+
+# 关闭链接
+conn.close()`
+
+列出表
+
+`print(conn.tables())`
+
+创建表
+
+`connection.create_table(
+    'mytable',						# 表名
+    {'cf1': dict(max_versions=10),	# 列族1
+     'cf2': dict(max_versions=1, block_cache_enabled=False),	# 列族2
+     'cf3': dict(),  # use defaults	# 列族3
+    }
+)
+
+# 通常，管理HBase，建议使用HBase Shell，因为HappyBase使用的Thrift接口仅有有限功能。`
+
+获得表对象
+
+`table = connection.table('mytable')	# 传入表名
+# 表不存在也不会报错，本步骤不会真的链接到HBase，只是在代码内创建一个table对象`
+
+查询行
+
+`row = table.row(b'rk0001')
+print(row[b'info:name'])   # prints the value of info:name
+# 返回值：b'zhangsan'，注意是二进制<class 'bytes'>类型
+# 转换字符串：
+print(str(row[b'info:name'], encoding="utf-8"))
+# 即
+str(bytes对象, encoding="编码格式，通常使用utf-8")`
+
+查询多行
+
+`rows = table.rows([b'rk0001', b'rk0002'])
+for key, data in rows:
+    print(key, data)
+
+"""
+返回值：
+b'rk0001' {b'data:pic': b'picture', b'info:age': b'20', b'info:gender': b'female', b'info:name': b'zhangsan'}
+b'rk0002' {b'data:pic': b'picture', b'info:age': b'11', b'info:gender': b'male', b'info:name': b'wangwu'}
+
+注意哦，key是bytes对象
+data是字典对象，字典中key和value都是bytes
+"""`
+
+基于时间戳查询
+
+`row = table.row(b'rk0001', timestamp=123456789)`
+
+获取多版本数据
+
+`table = connection.table('tv')
+# 获取1个版本（默认最新咯）
+values = table.cells(b'rk0001', b'info:name', versions=1)
+print(type(values))
+print(values)
+
+"""
+返回值：
+<class 'list'>
+[b'heiheihei']
+"""
+# 获取2个版本
+values = table.cells(b'rk0001', b'info:name', versions=2)
+print(type(values))
+print(values)
+
+"""
+返回值：
+<class 'list'>
+[b'heiheihei', b'hahaha']
+可见，2个版本都获取了，按照顺序，第一个最新
+"""
+
+# 获取多版本并附带时间戳信息
+values = table.cells(b'rk0001', b'info:name', versions=2, include_timestamp=True)
+print(type(values))
+print(values)
+
+"""
+返回值：
+<class 'list'>
+[(b'heiheihei', 1641836267655), (b'hahaha', 1641836263534)]
+"""`
+
+scan表
+
+`rows = table.scan()
+print(type(rows))	# <class 'generator'>
+print(rows)			# <generator object Table.scan at 0x0000024E8AA2CD60>
+print(list(rows))	# 将generator类型强转为list: [(b'rk0001', {b'info:name': b'heiheihei'})]
+
+rows = table.scan()
+for row in rows:
+    print(type(row))	# <class 'tuple'>
+    print(row)			# (b'rk0001', {b'info:name': b'heiheihei'})`
+

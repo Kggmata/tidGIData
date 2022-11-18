@@ -1,0 +1,30 @@
+created: 20220602023316477
+difficulty: 1.0925086686397398
+due: 20220828061243411
+grade: 1
+history: [{"due":"20220607061659626","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606061659626"},{"due":"20220610011244323","interval":3,"difficulty":1.7275041739949726,"stability":0.07683095218398285,"retrievability":0.05273732312238567,"grade":0,"lapses":1,"reps":1,"review":"20220609011244323"},{"due":"20220625120840912","interval":3,"difficulty":1,"stability":12.970977028956497,"retrievability":0.016342485160406536,"grade":1,"lapses":1,"reps":2,"review":"20220612120840912"}]
+interval: 14
+lapses: 1
+modified: 20220626061243411
+reps: 3
+retrievability: 0.8925086686397399
+review: 20220626061243411
+stability: 62.69381746337607
+tags: hbase ?
+title: 网络协议讲解
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1753834
+
+[img[v2-2d62ba265be486cb94ab531912aa3b9c_720w.jpg]]
+[img[bjszpq1srg.png]]
+
+`第一层：应用层。定义了用于在网络中进行通信和传输数据的接口。
+第二层：表示层。定义不同的系统中数据的传输格式，编码和解码规范等。
+第三层：会话层。管理用户的会话，控制用户间逻辑连接的建立和中断。
+第四层：传输层。管理着网络中的端到端的数据传输。
+第五层：网络层。定义网络设备间如何传输数据。
+第六层：链路层。将上面的网络层的数据包封装成数据帧，便于物理层传输。
+第七层：物理层。这一层主要就是传输这些二进制数据。`
+
+[img[ltxfksscc4.png]]

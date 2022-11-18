@@ -1,0 +1,35 @@
+created: 20220723142143743
+difficulty: 1
+due: 20221027134354793
+grade: 2
+history: [{"due":"20220824092836294","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220823092836294"}]
+interval: 49
+lapses: 0
+modified: 20221011134354793
+reps: 2
+retrievability: 3.791663812033409e-23
+review: 20221011134354793
+stability: 16.439759152464664
+tags: flink ?
+title: 什么是表值函数
+type: text/vnd.tiddlywiki
+
+```
+就是table value function
+意思就是返回值是一张表的函数
+```
+```
+举个栗子，在1.13之前，我们需要写如下的Flink SQL语句来做10秒的滚动窗口聚合：
+
+SELECT TUMBLE_START(procTime, INTERVAL '10' SECONDS) AS window_start,merchandiseId,COUNT(1) AS sellCount
+FROM rtdw_dwd.kafka_order_done_log
+GROUP BY TUMBLE(procTime, INTERVAL '10' SECONDS),merchandiseId;
+在1.13版本中，则可以改写成如下的形式：
+
+SELECT window_start,window_end,merchandiseId,COUNT(1) AS sellCount
+FROM TABLE( TUMBLE(TABLE rtdw_dwd.kafka_order_done_log, DESCRIPTOR(procTime), INTERVAL '10' SECONDS) )
+GROUP BY window_start,window_end,merchandiseId;
+```
+————————————————
+版权声明：本文为CSDN博主「LittleMagics」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/nazeniwaresakini/article/details/120400115

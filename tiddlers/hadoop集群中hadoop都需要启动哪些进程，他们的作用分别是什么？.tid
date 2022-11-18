@@ -1,0 +1,31 @@
+created: 20220623054728270
+difficulty: 1
+due: 20221006050927143
+grade: 2
+history: [{"due":"20220625143621752","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624143621751"},{"due":"20220627063218634","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220626063218634"},{"due":"20220630075117611","interval":3,"difficulty":1.2140308053490294,"stability":0.054882158045770235,"retrievability":0.014030805349029462,"grade":0,"lapses":2,"reps":1,"review":"20220629075117611"},{"due":"20220714101525919","interval":5,"difficulty":1,"stability":10.164715632813108,"retrievability":0.00006781040616137007,"grade":2,"lapses":2,"reps":2,"review":"20220704101525919"}]
+interval: 17
+lapses: 2
+modified: 20220721050927143
+reps: 3
+retrievability: 0.8384415435887168
+review: 20220721050927143
+stability: 77.41766241866176
+tags: 用户画像 ?
+title: hadoop集群中hadoop都需要启动哪些进程，他们的作用分别是什么？
+type: text/vnd.tiddlywiki
+
+```
+namenode =>HDFS的守护进程，负责维护整个文件系统，存储着整个文件系统的元数据信息，image+edit log
+
+datanode =>是具体文件系统的工作节点，当我们需要某个数据，namenode告诉我们去哪里找，就直接和那个DataNode对应的服务器的后台进程进行通信，由DataNode进行数据的检索，然后进行具体的读/写操作
+
+secondarynamenode =>一个守护进程，相当于一个namenode的元数据的备份机制，定期的更新，和namenode进行通信，将namenode上的image和edits进行合并，可以作为namenode的备份使用
+
+resourcemanager =>是yarn平台的守护进程，负责所有资源的分配与调度，client的请求由此负责，监控nodemanager
+
+nodemanager => 是单个节点的资源管理，执行来自resourcemanager的具体任务和命令
+
+DFSZKFailoverController高可用时它负责监控NN的状态，并及时的把状态信息写入ZK。它通过一个独立线程周期性的调用NN上的一个特定接口来获取NN的健康状态。FC也有选择谁作为Active NN的权利，因为最多只有两个节点，目前选择策略还比较简单（先到先得，轮换）。
+
+7）JournalNode 高可用情况下存放namenode的editlog文件
+```

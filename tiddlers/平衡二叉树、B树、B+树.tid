@@ -1,0 +1,25 @@
+created: 20220623024940239
+difficulty: 1.0830511314746853
+due: 20221003075739123
+grade: 1
+history: [{"due":"20220625142856852","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624142856851"},{"due":"20220709060211026","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220626060211026"},{"due":"20220713011517264","interval":14,"difficulty":2.096356723988689,"stability":0.07408215765534414,"retrievability":0.8963567239886889,"grade":0,"lapses":1,"reps":1,"review":"20220710132232959"},{"due":"20220721015708861","interval":10,"difficulty":2.296357389894516,"stability":0.054881287913948605,"retrievability":6.659058267886301e-7,"grade":0,"lapses":2,"reps":1,"review":"20220720015708861"},{"due":"20220807102704088","interval":8,"difficulty":1,"stability":10.165667706554727,"retrievability":2.137806546823325e-7,"grade":2,"lapses":2,"reps":2,"review":"20220728102704088"}]
+interval: 12
+lapses: 2
+modified: 20220809075739123
+reps: 3
+retrievability: 0.8830511314746854
+review: 20220809075739123
+stability: 55.16896349639632
+tags: 用户画像 ?
+title: 平衡二叉树、B树、B+树
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/27700617
+
+平衡二叉树就是根节点带2个叶子节点, 然后左孩子,小于根, 小于右孩子. 左右子树相差不超过2
+
+B树是平衡多叉树
+
+B+树和B树的区别是, B树的非叶子节点也会保存数据, 而b+树只有叶子节点保存数据
+
+B+树的稳定性更好, 同时因为非叶子节点不保存数据, 可以把更多的索引放入内存

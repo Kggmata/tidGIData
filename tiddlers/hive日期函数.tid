@@ -1,0 +1,60 @@
+created: 20220521080436661
+difficulty: 3.3344742511779417
+due: 20220921023506329
+grade: 1
+history: [{"due":"20220524061910415","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522061910414"},{"due":"20220529033655303","interval":6,"difficulty":5.929,"stability":0.16205398577412577,"retrievability":0.7290000000000001,"grade":0,"lapses":1,"reps":1,"review":"20220528033655303"},{"due":"20220610132828139","interval":5,"difficulty":4.167743803026746,"stability":8.48189993445585,"retrievability":0.03874380302674565,"grade":2,"lapses":1,"reps":2,"review":"20220602132828139"},{"due":"20220711065913274","interval":11,"difficulty":3.240028111655123,"stability":28.335264272310244,"retrievability":0.8722843086283765,"grade":2,"lapses":1,"reps":3,"review":"20220613065913274"}]
+interval: 30
+lapses: 1
+modified: 20220729062726849
+reps: 4
+retrievability: 0.8944461395228188
+review: 20220713023506329
+stability: 70.0692971117172
+tags: hive ?
+title: hive日期函数
+type: text/vnd.tiddlywiki
+
+select to_date('2015-04-02 13:34:12');
+输出：2015-04-02
+
+select from_unixtime(1323308943,’yyyyMMdd’);
+输出：20111208
+
+select unix_timestamp();
+输出：1430816254
+select unix_timestamp('2015-04-30 13:51:20');
+输出：1430373080
+
+select year('2015-04-02 11:32:12');
+输出：2015
+
+select month('2015-12-02 11:32:12');
+输出：12
+
+select day('2015-04-13 11:32:12');
+输出：13
+
+select hour('2015-04-13 11:32:12');
+输出：11
+
+select minute('2015-04-13 11:32:12');
+输出：32
+
+select second('2015-04-13 11:32:56');
+输出：56
+
+select weekofyear('2015-05-05 12:11:1');
+输出：19
+
+select datediff('2015-04-09','2015-04-01');
+输出：8
+
+select date_sub('2015-04-09',4);
+输出：2015-04-05
+
+select date_add('2015-04-09',4);
+输出：2015-04-13
+
+date_format
+
+str_to_date

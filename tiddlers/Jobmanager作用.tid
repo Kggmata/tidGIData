@@ -1,0 +1,21 @@
+created: 20220719021937002
+difficulty: 1.6008162184283394
+due: 20220916010102031
+grade: 0
+history: [{"due":"20220801122946000","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731122946000"},{"due":"20220807235216044","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806235216044"},{"due":"20220813083002865","interval":5,"difficulty":1.2008160046550922,"stability":0.05488116409496729,"retrievability":0.0008160046550921422,"grade":0,"lapses":2,"reps":1,"review":"20220812083002865"},{"due":"20220821045514919","interval":8,"difficulty":1.4008162184283395,"stability":0.040656966333775045,"retrievability":2.13773247238443e-7,"grade":0,"lapses":3,"reps":1,"review":"20220820045514919"}]
+interval: 26
+lapses: 4
+modified: 20220915010102031
+reps: 1
+retrievability: 5.473070746999386e-30
+review: 20220915010102030
+stability: 0.03011942145770373
+tags: ?
+title: Jobmanager作用
+type: text/vnd.tiddlywiki
+
+调度task
+
+协调检查点
+
+协调失败时恢复

@@ -1,0 +1,25 @@
+created: 20220617102008883
+difficulty: 1.0361858131137267
+due: 20221025024045786
+grade: 1
+history: [{"due":"20220620062404236","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619062404236"},{"due":"20220704025537649","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621025537648"},{"due":"20220709012346786","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708012346786"},{"due":"20220722133534091","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":2,"lapses":1,"reps":2,"review":"20220710133534091"}]
+interval: 20
+lapses: 1
+modified: 20220730024045786
+reps: 3
+retrievability: 0.8361858131137268
+review: 20220730024045786
+stability: 86.70278997406365
+tags: 用户画像 ?
+title: ES的两套主从
+type: text/vnd.tiddlywiki
+
+两套主从机制，主分片(primary shard)和副本分片(Replicate Shard)机制
+
+shard副本数有上限 为1024
+
+查看分片和副本的数据：
+
+```
+GET /_cat/indices
+```

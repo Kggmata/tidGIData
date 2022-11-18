@@ -1,0 +1,11 @@
+created: 20220801235330037
+modified: 20220801235400801
+tags: ? flink
+title: 访问hbase的行的三种方式
+type: text/vnd.tiddlywiki
+
+```
+单个rowkey访问
+rowkey范围扫描
+全表扫描
+```

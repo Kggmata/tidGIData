@@ -1,0 +1,12 @@
+created: 20220819064602998
+modified: 20220819064707308
+tags: ? flink
+title: notation in CNN
+type: text/vnd.tiddlywiki
+
+```
+f filter size
+p padding
+s stride
+nc number of filters
+```

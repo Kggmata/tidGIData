@@ -1,0 +1,17 @@
+created: 20220711140815941
+difficulty: 1.0740635389832212
+due: 20221107074658868
+grade: 1
+history: [{"due":"20220713101106912","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712101106912"},{"due":"20220806024157854","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721024157853"}]
+interval: 21
+lapses: 0
+modified: 20220811074658868
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811074658867
+stability: 88.36477030765694
+tags: ?
+title: describe formatted employees;  show tables in emp_db;  底层
+type: text/vnd.tiddlywiki
+
+These are metadata request queries. In these cases, Hive performs a lookup on the metadata server, which is itself a SQL database (MySQL in most production scenarios).

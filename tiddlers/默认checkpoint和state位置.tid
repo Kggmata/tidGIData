@@ -1,0 +1,17 @@
+created: 20220718071204840
+difficulty: 1
+due: 20230111003700652
+grade: 2
+history: [{"due":"20220731042519267","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042519267"},{"due":"20220821080809438","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220805080809438"}]
+interval: 31
+lapses: 0
+modified: 20220905003700652
+reps: 3
+retrievability: 0.8193550100995021
+review: 20220905003700652
+stability: 127.70184983018511
+tags: ?
+title: 默认checkpoint和state位置
+type: text/vnd.tiddlywiki
+
+JM和TM

@@ -1,0 +1,23 @@
+created: 20220719033813782
+difficulty: 1.867041731496925
+due: 20221009115705622
+grade: 0
+history: [{"due":"20220801131833034","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131833034"},{"due":"20220822124646445","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806124646445"}]
+interval: 63
+lapses: 1
+modified: 20221008115705622
+reps: 1
+retrievability: 0.6670417314969249
+review: 20221008115705622
+stability: 0.07408182272361549
+tags: ?
+title: flink 图之间的转化
+type: text/vnd.tiddlywiki
+
+根据代码结构->datastream graph
+
+根据算子依赖关系\优化合并相关任务->job graph
+
+根据并行度拆分->execution graph
+
+实际运行时的图->physical grapgh

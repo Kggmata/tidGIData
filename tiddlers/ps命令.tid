@@ -1,0 +1,23 @@
+created: 20220627232300609
+difficulty: 1.0356604393141842
+due: 20221103104823584
+grade: 1
+history: [{"due":"20220630131704878","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629131704878"},{"due":"20220706000118775","interval":6,"difficulty":1,"stability":0.07408249324251646,"retrievability":0.001797216149689106,"grade":0,"lapses":1,"reps":1,"review":"20220705000118775"},{"due":"20220723044855895","interval":5,"difficulty":1,"stability":12.910898599543607,"retrievability":0.0008160568173319206,"grade":2,"lapses":1,"reps":2,"review":"20220710044855895"}]
+interval: 22
+lapses: 1
+modified: 20220801104823584
+reps: 3
+retrievability: 0.8356604393141842
+review: 20220801104823584
+stability: 93.85419115292933
+tags: 用户画像 ?
+title: ps命令
+type: text/vnd.tiddlywiki
+
+ps = process status
+
+在Linux当中, 展示当前运行的进程active process
+
+```
+In most Unix and Unix-like operating systems, the ps program displays the currently-running processes. A related Unix utility named top provides a real-time view of the running processes
+```

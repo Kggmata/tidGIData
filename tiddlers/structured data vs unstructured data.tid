@@ -1,0 +1,8 @@
+created: 20220528034032931
+history: []
+modified: 20220605060448994
+tags: spark !
+title: structured data vs unstructured data
+type: text/vnd.tiddlywiki
+
+Structured data is highly specific and is stored in a predefined format, where unstructured data is a conglomeration of many varied types of data that are stored in their native formats. This means that structured data takes advantage of schema-on-write and unstructured data employs schema-on-read.

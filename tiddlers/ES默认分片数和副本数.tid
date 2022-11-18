@@ -1,0 +1,37 @@
+created: 20220618004614215
+difficulty: 1.075606407978934
+due: 20220920065228386
+grade: 1
+history: [{"due":"20220620143049642","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619143049642"},{"due":"20220704032455782","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621032455781"}]
+interval: 17
+lapses: 0
+modified: 20220708065228386
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708065228385
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: ES默认分片数和副本数
+type: text/vnd.tiddlywiki
+
+1分片1副本
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules.html
+
+''index.number_of_shards''
+
+```
+The number of primary shards that an index should have. Defaults to 1. This setting can only be set at index creation time. It cannot be changed on a closed index.
+
+NOTE: The number of shards are limited to 1024 per index. This limitation is a safety limit to prevent accidental creation of indices that can destabilize a cluster due to resource allocation. The limit can be modified by specifying export ES_JAVA_OPTS="-Des.index.max_number_of_shards=128" system property on every node that is part of the cluster.
+```
+
+''index.number_of_replicas''
+
+```
+The number of replicas each primary shard has. Defaults to 1.
+
+WARNING: Configuring it to 0 may lead to temporary availability loss
+during node restarts or permanent data loss in case of data corruption.
+```
+

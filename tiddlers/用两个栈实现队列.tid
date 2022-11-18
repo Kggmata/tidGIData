@@ -1,0 +1,42 @@
+created: 20220716001001705
+difficulty: 1
+due: 20221125120308712
+grade: 2
+history: [{"due":"20220722092231933","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721092231933"},{"due":"20220815034831994","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220730034831994"}]
+interval: 22
+lapses: 0
+modified: 20220821120308712
+reps: 3
+retrievability: 0.8684786995977097
+review: 20220821120308711
+stability: 95.63227532116423
+tags: ?
+title: 用两个栈实现队列
+type: text/vnd.tiddlywiki
+
+```
+栈无法实现队列功能： 栈底元素（对应队首元素）无法直接删除，需要将上方所有元素出栈。
+
+双栈可实现列表倒序： 设有含三个元素的栈 A = [1,2,3]A=[1,2,3] 和空栈 B = []B=[]。若循环执行 AA 元素出栈并添加入栈 BB ，直到栈 AA 为空，则 A = []A=[] , B = [3,2,1]B=[3,2,1] ，即 栈 BB 元素实现栈 AA 元素倒序 。
+
+利用栈 BB 删除队首元素： 倒序后，BB 执行出栈则相当于删除了 AA 的栈底元素，即对应队首元素。
+```
+```
+函数设计：
+题目只要求实现 加入队尾appendTail() 和 删除队首deleteHead() 两个函数的正常工作，因此我们可以设计栈 A 用于加入队尾操作，栈 B 用于将元素倒序，从而实现删除队首元素。
+
+加入队尾 appendTail()函数： 将数字 val 加入栈 A 即可。
+删除队首deleteHead()函数： 有以下三种情况。
+当栈 B 不为空： B中仍有已完成倒序的元素，因此直接返回 B 的栈顶元素。
+否则，当 A 为空： 即两个栈都为空，无元素，因此返回 -1−1 。
+否则： 将栈 A 元素全部转移至栈 B 中，实现元素倒序，并返回栈 B 的栈顶元素。
+```
+```
+时间复杂度： appendTail()函数为 O(1)O(1) ；deleteHead() 函数在 NN 次队首元素删除操作中总共需完成 NN 个元素的倒序。
+空间复杂度 O(N)O(N) ： 最差情况下，栈 A 和 B 共保存 NN 个元素。
+```
+
+作者：jyd
+链接：https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/solution/mian-shi-ti-09-yong-liang-ge-zhan-shi-xian-dui-l-2/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

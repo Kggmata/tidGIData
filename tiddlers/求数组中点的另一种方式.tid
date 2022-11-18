@@ -1,0 +1,30 @@
+created: 20220613031005001
+difficulty: 1
+due: 20230420140703626
+grade: 2
+history: [{"due":"20220617031726224","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031726224"},{"due":"20220626011730124","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617011730124"},{"due":"20220821000522801","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628000522801"}]
+interval: 63
+lapses: 0
+modified: 20220830140703626
+reps: 4
+retrievability: 0.8836990753649101
+review: 20220830140703626
+stability: 232.79842690147777
+tags: [[structed streaming]] ?
+title: 求数组中点的另一种方式
+type: text/vnd.tiddlywiki
+
+假设两端为l,r
+
+`传统方式 mid=(l+r)//2`
+
+```
+问题:
+l+r有可能溢出,导致结果为负数
+
+可以这样mid=l+(r-l)//2
+
+这是因为已知l不溢出,r不溢出,那么r-l一定不溢出
+
+还可以优化 mid=l+(r-l)>>1, 这是因为位运算比除法要快
+```

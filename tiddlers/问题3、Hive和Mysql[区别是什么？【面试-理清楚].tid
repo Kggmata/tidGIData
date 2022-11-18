@@ -1,0 +1,30 @@
+created: 20220630013814617
+difficulty: 1
+due: 20221029235155100
+grade: 2
+history: [{"due":"20220707024255045","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706024255045"},{"due":"20220711060216408","interval":4,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.014781165126568838,"grade":0,"lapses":1,"reps":1,"review":"20220710060216408"},{"due":"20220724015158569","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":2,"lapses":1,"reps":2,"review":"20220712015158569"}]
+interval: 20
+lapses: 1
+modified: 20220801235155101
+reps: 3
+retrievability: 0.8361858131137268
+review: 20220801235155100
+stability: 88.59048662801926
+tags: 用户画像 ?
+title: 问题3、Hive和Mysql[区别是什么？【面试-理清楚]
+type: text/vnd.tiddlywiki
+
+1、从外表和形式模模型和语法层面来，
+
+```
+hive和数据库(mysql)很类似
+```
+2、<底层的应用场景完全不一样！！！
+
+```
+[hive的底层？？]-MR
+```
+
+3、Hive属于olap（联机分析系统）系统面向分析侧重与数据分析！！(select)
+
+4、数据库(mysql、oracle)oltp（联机事务处理）系统，面向事务，侧重于数据时间交互(CRUD)

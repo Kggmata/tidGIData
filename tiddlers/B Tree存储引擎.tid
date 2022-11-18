@@ -1,0 +1,21 @@
+created: 20220610005252611
+difficulty: 1
+due: 20221002054446913
+grade: 2
+history: [{"due":"20220614103406676","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613103406676"},{"due":"20220702030843981","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616030843981"}]
+interval: 20
+lapses: 0
+modified: 20220706054446913
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706054446913
+stability: 88.3647639214822
+tags: kafka ?
+title: B Tree存储引擎
+type: text/vnd.tiddlywiki
+
+https://www.cnblogs.com/yanghuahui/p/3483047.html
+
+```
+B树是为磁盘存储而专门设计的一类平衡搜索树，B树的高度仅随着它所包含的节点数按对数增长，不过因为单个节点可以包含多个关键字，所以对数的底数可以比较大，实际应用中一般是50~2000，给个直观的数字，一棵分支因子为1001、高度为2（不包含根节点）的B树，可以存储超过10亿个关键字！
+```

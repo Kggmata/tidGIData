@@ -1,0 +1,23 @@
+created: 20220609101722371
+difficulty: 1
+due: 20220917051630014
+grade: 2
+history: [{"due":"20220613142132909","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612142132909"},{"due":"20220616062135564","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615062135563"},{"due":"20220625112924673","interval":1,"difficulty":1,"stability":8.582608156494905,"retrievability":0.2443520960981822,"grade":2,"lapses":1,"reps":2,"review":"20220616112924672"},{"due":"20220627144726847","interval":10,"difficulty":2.0844754806146786,"stability":0.05488315248213783,"retrievability":0.8844754806146786,"grade":0,"lapses":2,"reps":1,"review":"20220626144726846"},{"due":"20220711063513913","interval":3,"difficulty":1.2876292005794185,"stability":8.483854520966679,"retrievability":0.0031537199647398966,"grade":1,"lapses":2,"reps":2,"review":"20220629140946078"}]
+interval: 14
+lapses: 2
+modified: 20220713051630014
+reps: 3
+retrievability: 0.8404101618468242
+review: 20220713051630014
+stability: 65.91484753440136
+tags: kafka ?
+title: kafka当中的partition的offset
+type: text/vnd.tiddlywiki
+
+任何发布到此partition的消息都会被直接追加到log文件的尾部，每条消息在文件中的位置称为offset（偏移量），
+
+ offset是一个long类型数字，它唯一标识了一条消息，消费者通过（offset，partition，topic）跟踪记录。
+
+offset是以consumer group为依据建立的
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_17_45.png]]

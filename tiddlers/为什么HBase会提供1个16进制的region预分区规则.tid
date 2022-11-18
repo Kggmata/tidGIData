@@ -1,0 +1,17 @@
+created: 20220609111534549
+difficulty: 1
+due: 20220928101314393
+grade: 2
+history: [{"due":"20220614102840325","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102840324"},{"due":"20220702024230520","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024230520"}]
+interval: 19
+lapses: 0
+modified: 20220705101314393
+reps: 3
+retrievability: 0.8790734948134195
+review: 20220705101314393
+stability: 84.74278121619727
+tags: kafka ?
+title: 为什么HBase会提供1个16进制的region预分区规则
+type: text/vnd.tiddlywiki
+
+因为很多的算法，比如sha、md5、uuid等，它们生成的数据都是16进制的组合体

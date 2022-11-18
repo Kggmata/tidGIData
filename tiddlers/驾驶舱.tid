@@ -1,0 +1,17 @@
+created: 20220707081258837
+difficulty: 1
+due: 20221102122650586
+grade: 2
+history: [{"due":"20220712065644246","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711065644246"},{"due":"20220802062221004","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":2,"lapses":0,"reps":2,"review":"20220717062221004"}]
+interval: 20
+lapses: 0
+modified: 20220806122650586
+reps: 3
+retrievability: 0.8793782966670416
+review: 20220806122650586
+stability: 88.46564825524128
+tags: 用户画像 ?
+title: 驾驶舱
+type: text/vnd.tiddlywiki
+
+bi大屏

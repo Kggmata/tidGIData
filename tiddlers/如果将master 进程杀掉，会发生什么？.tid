@@ -1,0 +1,19 @@
+created: 20220607054032795
+difficulty: 1.0861675498643524
+due: 20220916132734757
+grade: 1
+history: [{"due":"20220611042613602","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610042613602"},{"due":"20220629112252448","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613112252448"}]
+interval: 18
+lapses: 0
+modified: 20220701132734757
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701132734756
+stability: 77.46728430369387
+tags: hbase ?
+title: 如果将master 进程杀掉，会发生什么？
+type: text/vnd.tiddlywiki
+
+首先看是否配置了backup master,如果配置了的话,会在十几秒之后切换到backup master.
+
+如果未配置高可用,那么短时间内不会有问题,因为数据的读写都可以由client直接和regionServer直接完成.但是无法更改表的元数据,无法创建删除表,无法分配region.

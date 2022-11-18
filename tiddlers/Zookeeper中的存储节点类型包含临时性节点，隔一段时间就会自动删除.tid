@@ -1,0 +1,17 @@
+created: 20220520043720058
+difficulty: 2.613753188160164
+due: 20221122120913072
+grade: 2
+history: [{"due":"20220523040240846","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040240846"},{"due":"20220524005347277","interval":2,"difficulty":6.1000000000000005,"stability":0.4259704768919878,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523005347277"},{"due":"20220615102426201","interval":8,"difficulty":4.438243540132741,"stability":15.030100194821534,"retrievability":0.1382435401327402,"grade":2,"lapses":1,"reps":2,"review":"20220531102426201"},{"due":"20220725105924315","interval":16,"difficulty":3.532145225139139,"stability":39.29870940738085,"retrievability":0.893901685006398,"grade":2,"lapses":1,"reps":3,"review":"20220616105924314"}]
+interval: 47
+lapses: 1
+modified: 20220802120913072
+reps: 4
+retrievability: 0.8816079630210247
+review: 20220802120913072
+stability: 111.88477980110521
+tags: zookeeper ?
+title: Zookeeper中的存储节点类型包含临时性节点，隔一段时间就会自动删除
+type: text/vnd.tiddlywiki
+
+错误：临时性生命周期由客户端来决定，创建该临时节点的客户端断开，临时节点会自动删除

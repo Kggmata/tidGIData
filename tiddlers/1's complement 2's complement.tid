@@ -1,0 +1,39 @@
+created: 20220610111706943
+difficulty: 1
+due: 20220928092036766
+grade: 2
+history: [{"due":"20220614103646054","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613103646054"},{"due":"20220702021901334","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616021901334"}]
+interval: 19
+lapses: 0
+modified: 20220705092036766
+reps: 3
+retrievability: 0.8790734948134195
+review: 20220705092036766
+stability: 84.74278121619727
+tags: kafka ?
+title: 1's complement 2's complement
+type: text/vnd.tiddlywiki
+
+''1's complement''
+
+[img[Snipaste_2022-06-10_19-17-25.jpg]]
+[img[Snipaste_2022-06-10_19-18-37.jpg]]
+
+''2's complement''
+
+```
+Conversion from Two's Complement
+Use the number 0xFFFFFFFF as an example. In binary, that is:
+
+1111 1111 1111 1111 1111 1111 1111 1111
+What can we say about this number? It's first (leftmost) bit is 1, which means that this represents a number that is negative. That's just the way that things are in two's complement: a leading 1 means the number is negative, a leading 0 means the number is 0 or positive.
+
+To see what this number is a negative of, we reverse the sign of this number. But how to do that? The class notes say (on 3.17) that to reverse the sign you simply invert the bits (0 goes to 1, and 1 to 0) and add one to the resulting number.
+
+The inversion of that binary number is, obviously:
+
+0000 0000 0000 0000 0000 0000 0000 0000
+Then we add one.
+0000 0000 0000 0000 0000 0000 0000 0001
+So the negative of 0xFFFFFFFF is 0x00000001, more commonly known as 1. So 0xFFFFFFFF is -1.
+```

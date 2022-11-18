@@ -1,0 +1,114 @@
+created: 20220529145715257
+difficulty: 1.3258047693173614
+due: 20220930004727336
+grade: 1
+history: [{"due":"20220601083024345","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083024345"},{"due":"20220625114850475","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220604114850475"},{"due":"20220628004143337","interval":23,"difficulty":2.092506306429746,"stability":0.07408450676555052,"retrievability":0.892506306429746,"grade":0,"lapses":1,"reps":1,"review":"20220627004143336"},{"due":"20220712081644853","interval":4,"difficulty":1.2958904085980383,"stability":10.737650192490841,"retrievability":0.003384102168292236,"grade":1,"lapses":1,"reps":2,"review":"20220701081644853"}]
+interval: 19
+lapses: 1
+modified: 20220720004727337
+reps: 3
+retrievability: 0.8299143607193233
+review: 20220720004727336
+stability: 71.72890740438707
+tags: spark ?
+title: SparkSQL读写数据的方式
+type: text/vnd.tiddlywiki
+
+https://spark.apache.org/docs/latest/sql-data-sources.html
+
+输入Source
+
+类型：text / csv / json / orc / parquet / jdbc / table
+
+- - 方式一：给定读取数据源的类型和地址
+
+`python
+    spark.read.format("json").load(path)
+    spark.read.format("csv").load(path)
+    spark.read.format("parquet").load(path)`
+
+  - 方式二：直接调用对应数据源类型的方法
+
+`python
+    spark.read.json(path)
+    spark.read.csv(path)
+    spark.read.parquet(path)`
+
+  - 特殊参数：option，用于指定读取时的一些配置选项
+
+`python
+    spark.read.format("csv").option("sep", "\t").load(path)
+    
+    jdbcDF = spark.read \
+        .format("jdbc") \
+        .option("url", "jdbc:postgresql:dbserver") \
+        .option("dbtable", "schema.tablename") \
+        .option("user", "username") \
+        .option("password", "password") \
+        .load()`
+
+读取文件，不指定类型：默认就是parquet类型文件
+
+*输出Sink
+
+类型：text / csv / json / orc / parquet / jdbc / table
+
+- - 方式一：给定输出数据源的类型和地址
+
+`python
+    df.write.format("json").save(path)
+    df.write.format("csv").save(path)
+    df.write.format("parquet").save(path)`
+
+  - 方式二：直接调用对应数据源类型的方法
+
+`python
+    df.write.json(path)
+    df.write.csv(path)
+    df.write.parquet(path)`
+
+  - 特殊参数：option，用于指定输出时的一些配置选项
+
+`python
+    df.write \
+    .format("jdbc") \
+    .option("url", "jdbc:postgresql:dbserver") \
+    .option("dbtable", "schema.tablename") \
+    .option("user", "username") \
+    .option("password", "password") \
+    .save()`
+
+输出模式：OutputMode
+
+- 功能：用于保存时指定怎么将数据写入目标数据源
+
+- 类别
+
+[img[image-20220513201655578.png]]
+
+`append: 追加模式，当数据存在时，继续追加
+overwrite: 覆写模式，当数据存在时，覆写以前数据，存储当前最新数据；
+error/errorifexists: 如果目标存在就报错，默认的模式
+ignore: 忽略，数据存在时不做任何操作`
+
+`# 调用类型函数将DataFrame的数据写入textfile文件中
+df.write.text("/export/data/testfile.txt")
+
+# 指定文件类型将DataFrame的数据写入textfile文件中
+df.write.format("text").save("/export/data/testfile.txt")
+
+# 指定文件类型以及配置将DataFrame的数据写入parquet文件中
+df.write.format("parquet")
+    .option("parquet.bloom.filter.enabled#favorite_color", "true")
+    .option("parquet.bloom.filter.expected.ndv#favorite_color", "1000000")
+    .option("parquet.enable.dictionary", "true")
+    .option("parquet.page.write-checksum.enabled", "false")
+    .save("users_with_options.parquet")
+    
+# 指定文件类型以及配置将DataFrame的数据追加写入parquet文件中
+df.write.mode("append").format("parquet")
+    .option("parquet.bloom.filter.enabled#favorite_color", "true")
+    .option("parquet.bloom.filter.expected.ndv#favorite_color", "1000000")
+    .option("parquet.enable.dictionary", "true")
+    .option("parquet.page.write-checksum.enabled", "false")
+    .save("users_with_options.parquet")`

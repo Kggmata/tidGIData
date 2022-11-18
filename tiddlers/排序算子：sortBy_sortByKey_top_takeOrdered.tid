@@ -1,0 +1,83 @@
+created: 20220525035450267
+difficulty: 1.08989421166474
+due: 20220913011314062
+grade: 1
+history: [{"due":"20220529150709192","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150709192"},{"due":"20220624004238425","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602004238425"},{"due":"20220626093006350","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625093006350"},{"due":"20220711000446965","interval":3,"difficulty":1,"stability":12.644777089702036,"retrievability":0.01403297475148654,"grade":2,"lapses":1,"reps":2,"review":"20220628000446965"}]
+interval: 14
+lapses: 1
+modified: 20220712011314062
+reps: 3
+retrievability: 0.8898942116647401
+review: 20220712011314061
+stability: 62.700049031816626
+tags: spark ?
+title: 排序算子：sortBy/sortByKey/top/takeOrdered
+type: text/vnd.tiddlywiki
+
+*sortBy算子**
+
+- 功能：对RDD中的所有元素进行整体排序，可以指定排序规则
+
+- 分类：转换算子
+
+- 场景：适用于所有对数据排序的场景，一般用于对大数据量非KV类型的RDD的数据排序
+
+- 特点：经过Shuffle，可以指定排序后新RDD的分区个数
+
+- 语法
+
+`python
+  def sortBy(self,keyFunc:(T) -> 0, asc, numPartitions) -> RDD`
+
+*sortByKey算子**
+
+- 功能：对RDD中的所有元素按照Key进行整体排序，可以指定排序规则
+
+- 要求：只有KV类型的RDD才能调用
+
+- 分类：转换算子
+
+- 场景：适用于大数据量的KV类型的RDD按照Key排序的场景
+
+- 特点：经过Shuffle，可以指定排序后新RDD的分区个数
+
+- 语法：
+
+`python
+  def sortByKey(self, asc, numPartitions) -> RR[Tuple[K,V]]`
+
+*top算子
+
+- 功能：对RDD中的所有元素降序排序，并返回前N个元素，即返回RDD中最大的前N个元数据
+
+- 分类：触发算子
+
+- 场景：取RDD数据中的最大的TopN个元素
+
+- 特点：不经过Shuffle，将所有元素放入Driver内存中排序，只能适合处理小数据量
+
+- 语法
+
+`python
+  def top(self,num) -> List[0]`
+
+*takeOrdered算子**
+
+- 功能：对RDD中的所有元素升序排序，并返回前N个元素，即返回RDD中最小的前N个元数据
+
+- 分类：触发算子
+
+- 场景：取RDD数据中的最小的TopN个元素
+
+- 特点：不经过Shuffle，将所有元素放入Driver内存中排序，只能适合处理小数据量
+
+- 语法
+
+`python
+  def takeOrdered(self,num) -> List[0]`
+
+  
+
+  
+
+  

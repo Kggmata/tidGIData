@@ -1,0 +1,74 @@
+created: 20220618060219768
+difficulty: 1
+due: 20220923121253464
+grade: 2
+history: [{"due":"20220620152933989","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619152933989"},{"due":"20220704142431419","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621142431419"}]
+interval: 17
+lapses: 0
+modified: 20220708121253464
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708121253464
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: spark读取csv
+type: text/vnd.tiddlywiki
+
+```
+spark.read.format("csv")
+.option("header",True)
+.option("inferSchema",True)
+.option("sep",";")
+.load(path)
+```
+
+```
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadCSV") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 2-读取csv的数据
+    # inferSchema spark读取数据的时候默认读取内置的scheme(解析器认为字段的类型)
+    irisDF = spark.read.format("csv") \
+        .option("sep", ",") \
+        .option("inferSchema", "true") \
+        .option("header", "true") \
+        .load("F:\\ProgramCJ\\InsuranceUserProfileVersion2\\cn\\test59Scripts\\data\\iris.csv")
+    # 3-对csv的数据基本信息查看，printSchema，show
+    irisDF.printSchema()
+    irisDF.show()
+    # 4-做一些简单的操作
+    spark.stop()
+
+```

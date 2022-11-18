@@ -1,0 +1,17 @@
+created: 20220609005402591
+difficulty: 1
+due: 20221001051650576
+grade: 2
+history: [{"due":"20220613131610818","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612131610818"},{"due":"20220701012904087","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615012904087"}]
+interval: 20
+lapses: 0
+modified: 20220705051650576
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705051650576
+stability: 88.3647639214822
+tags: hbase ?
+title: 数据的什么变化会触发NodeDataChanged
+type: text/vnd.tiddlywiki
+
+节点数据的版本变化会触发NodeDataChanged，注意，这里特意说明了是版本变化。存在这样的情况，只要成功执行了setData()方法，无论内容是否和之前一致，都会触发NodeDataChanged。

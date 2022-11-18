@@ -1,0 +1,30 @@
+created: 20220611014156750
+difficulty: 1.0731304672290258
+due: 20220929075314539
+grade: 1
+history: [{"due":"20220614105711779","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613105711779"},{"due":"20220702052135957","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616052135957"}]
+interval: 20
+lapses: 0
+modified: 20220706075314540
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706075314539
+stability: 84.8538234387497
+tags: kafka ?
+title: kafka机架策略
+type: text/vnd.tiddlywiki
+
+Balancing Replicas Across Racks
+
+https://kafka.apache.org/documentation/#basic_ops_racks
+
+尽可能把副本分配不同的机架上
+
+```
+The rack awareness feature spreads replicas of the same partition across different racks. This extends the guarantees Kafka provides for broker-failure to cover rack-failure, limiting the risk of data loss should all the brokers on a rack fail at once. The feature can also be applied to other broker groupings such as availability zones in EC2.
+You can specify that a broker belongs to a particular rack by adding a property to the broker config:
+  broker.rack=my-rack-id
+When a topic is created, modified or replicas are redistributed, the rack constraint will be honoured, ensuring replicas span as many racks as they can (a partition will span min(#racks, replication-factor) different racks).
+The algorithm used to assign replicas to brokers ensures that the number of leaders per broker will be constant, regardless of how brokers are distributed across racks. This ensures balanced throughput.
+However if racks are assigned different numbers of brokers, the assignment of replicas will not be even. Racks with fewer brokers will get more replicas, meaning they will use more storage and put more resources into replication. Hence it is sensible to configure an equal number of brokers per rack.
+```

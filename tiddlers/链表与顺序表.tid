@@ -1,0 +1,21 @@
+created: 20220713034723270
+difficulty: 1
+due: 20220910135759571
+grade: 2
+history: [{"due":"20220719063317745","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718063317745"},{"due":"20220811103038526","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220726103038526"},{"due":"20220818094615449","interval":22,"difficulty":2.068451625884813,"stability":0.07408182272361549,"retrievability":0.8684516258848127,"grade":0,"lapses":1,"reps":1,"review":"20220817094615449"}]
+interval: 11
+lapses: 1
+modified: 20220828135759571
+reps: 2
+retrievability: 1.6059180485330127e-7
+review: 20220828135759571
+stability: 12.927388349058411
+tags: ?
+title: 链表与顺序表
+type: text/vnd.tiddlywiki
+
+链表在插入删除的操作上明显快于顺序表
+
+链表的内存可以更灵活的配
+
+对树和图有很大的启发性

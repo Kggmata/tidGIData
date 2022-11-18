@@ -1,0 +1,41 @@
+created: 20220606114702872
+difficulty: 1.0861675498643524
+due: 20220916143151257
+grade: 1
+history: [{"due":"20220611003714811","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003714811"},{"due":"20220629113308081","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613113308081"}]
+interval: 18
+lapses: 0
+modified: 20220701143151257
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701143151257
+stability: 77.46728430369387
+tags: hbase ?
+title: HBase的TTL设计
+type: text/vnd.tiddlywiki
+
+TTL数据的过期时间（Time To Live）
+
+*实例
+
+有一个做车联网的公司，用HBase存储汽车的`行驶轨迹`，在HBase中就设置的TTL为8个月。
+
+这样的话，HBase始终只保留最近8个月的数据，确保预分区不用在后续更改了，同时数据量固定，性能一直稳定。
+
+实现方式，就是TTL
+
+> 我们要注意：在HBase中设置TTL不代表数据过期了就不要了。
+>
+> 一般使用TTL，都会配置备份存储，也就是数据在写入HBase之前，已经写入到其它地方做长期备份了。
+
+*设置TTL
+
+```shell
+# 针对列族设置TTL，单位是秒
+create 't1', {NAME => 'f1', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
+
+# 针对一行数据设置，单位是毫秒
+put 't', 'r4', 't:t1', 'asd', {TTL=> 10000}
+```
+
+

@@ -1,0 +1,53 @@
+created: 20220613232930856
+difficulty: 1.068971512253249
+due: 20220922054635500
+grade: 1
+history: [{"due":"20220617033338519","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616033338519"},{"due":"20220702100954859","interval":2,"difficulty":1,"stability":13.503436503233734,"retrievability":0.1227653108614827,"grade":1,"lapses":0,"reps":2,"review":"20220618100954859"}]
+interval: 18
+lapses: 0
+modified: 20220706054635500
+reps: 3
+retrievability: 0.8689715122532491
+review: 20220706054635500
+stability: 77.82539154345864
+tags: hive ?
+title: bukcet map join和smbjoin 条件
+type: text/vnd.tiddlywiki
+
+1 bucket mapjoin
+
+```
+1.1 条件
+1） set hive.optimize.bucketmapjoin = true;
+2） 一个表的bucket数是另一个表bucket数的整数倍
+3） bucket列 == join列
+4） 必须是应用在map join的场景中
+
+1.2 注意
+1）如果表不是bucket的，只是做普通join。
+```
+2 SMB join （针对bucket mapjoin 的一种优化）
+
+```
+2.1 条件
+1）
+set hive.auto.convert.sortmerge.join=true;
+set hive.optimize.bucketmapjoin = true;
+set hive.optimize.bucketmapjoin.sortedmerge = true;
+set hive.auto.convert.sortmerge.join.noconditionaltask=true;
+2） 小表的bucket数=大表bucket数
+3） Bucket 列 == Join 列 == sort 列
+4） 必须是应用在bucket mapjoin 的场景中
+
+2.2 注意
+hive并不检查两个join的表是否已经做好bucket且sorted，需要用户自己去保证join的表，否则可能数据不正确。有两个办法
+
+1）hive.enforce.sorting 设置为true。
+2）手动生成符合条件的数据，通过在sql中用distributed c1 sort by c1 或者 cluster by c1
+表创建时必须是CLUSTERED且SORTED，如下
+create table test_smb_2(mid string,age_id string)
+CLUSTERED BY(mid) SORTED BY(mid) INTO 500 BUCKETS;
+```
+————————————————
+版权声明：本文为CSDN博主「wisgood」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/wisgood/article/details/80068834

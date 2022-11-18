@@ -1,0 +1,17 @@
+created: 20220711095454975
+difficulty: 1
+due: 20221102075952987
+grade: 2
+history: [{"due":"20220713040311755","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040311755"},{"due":"20220806022607266","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721022607266"}]
+interval: 19
+lapses: 0
+modified: 20220809075952987
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809075952987
+stability: 84.88779656040188
+tags: ?
+title: 非同质化代币英文
+type: text/vnd.tiddlywiki
+
+NFT英文全称为Non-Fungible Token,翻译为中文即为：非同质化代币，具有不可分割，不可替代，独一无二的特点。例如加密猫，token化的数字门票或艺术品等等

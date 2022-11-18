@@ -1,0 +1,18 @@
+created: 20220624054238778
+difficulty: 1
+due: 20221030080754147
+grade: 2
+history: [{"due":"20220626014734807","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625014734807"},{"due":"20220713015357677","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":2,"lapses":0,"reps":2,"review":"20220628015357677"},{"due":"20220721071544917","interval":22,"difficulty":2.0599913309188924,"stability":0.07408198986175796,"retrievability":0.8599913309188922,"grade":0,"lapses":1,"reps":1,"review":"20220720071544917"},{"due":"20220810102729862","interval":8,"difficulty":1,"stability":12.92718220768524,"retrievability":0.000011447721627644813,"grade":2,"lapses":1,"reps":2,"review":"20220728102729862"}]
+interval: 17
+lapses: 1
+modified: 20220814080754147
+reps: 3
+retrievability: 0.8706151616802995
+review: 20220814080754147
+stability: 77.14213693682709
+tags: 用户画像 ?
+title: 深度学习和机器学习有什么区别？
+type: text/vnd.tiddlywiki
+
+* 深度学习是机器学习的一种方法
+* 这个方法主要解决图像识别，语音识别，文本识别问题

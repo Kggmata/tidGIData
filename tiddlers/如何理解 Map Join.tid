@@ -1,0 +1,51 @@
+created: 20220524223858466
+difficulty: 1.7288271648490683
+due: 20230211003810129
+grade: 1
+history: [{"due":"20220529144955103","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528144955103"},{"due":"20220624051206612","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602051206612"},{"due":"20220626103617298","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625103617297"},{"due":"20220707004615426","interval":3,"difficulty":1.5872713285758853,"stability":9.171193984225875,"retrievability":0.01403297475148654,"grade":1,"lapses":1,"reps":2,"review":"20220628004615425"},{"due":"20220822054344104","interval":12,"difficulty":1.6584933710119258,"stability":43.243199607880435,"retrievability":0.8712220424360404,"grade":1,"lapses":1,"reps":3,"review":"20220710054344104"}]
+interval: 57
+lapses: 1
+modified: 20220905003810129
+reps: 4
+retrievability: 0.8703337938371427
+review: 20220905003810128
+stability: 158.5213686273193
+tags: hive ?
+title: 如何理解 Map Join
+type: text/vnd.tiddlywiki
+
+MapJoin顾名思义，就是在Map阶段进行表之间的连接。而不需要进入到Reduce阶段才进行连接。这样就节省了在Shuffle阶段时要进行的大量数据传输。从而起到了优化作业的作用。
+
+一般是大小表关联
+
+现在可以通过如下配置参数来进行控制：
+
+set hive.auto.convert.join=true;
+
+set hive.auto.convert.join.noconditionaltask.size=512000000
+
+（1）大小表关联
+
+（2）不等连接
+
+mapjoin还有一个很大的好处是能够进行不等连接的join操作，如果将不等条件写在where中，那么mapreduce过程中会进行笛卡尔积，运行效率特别低，如果使用mapjoin操作，在map的过程中就完成了不等值的join操作，效率会高很多。
+
+（3）使用限制
+
+LEFT OUTER JOIN的左表必须是大表；
+
+RIGHT OUTER JOIN的右表必须是大表；
+
+INNER JOIN左表或右表均可以作为大表；
+
+FULL OUTER JOIN不能使用MAPJOIN；
+
+MAPJOIN支持小表为子查询；
+
+使用MAPJOIN时需要引用小表或是子查询时，需要引用别名；
+
+在MAPJOIN中，可以使用不等值连接或者使用OR连接多个条件；
+
+在MAPJOIN中最多支持指定6张小表，否则报语法错误；
+
+如果使用MAPJOIN，则所有小表占用的内存总和不得超过设置的内存（解压后的逻辑数据量）

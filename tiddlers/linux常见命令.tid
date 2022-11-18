@@ -1,0 +1,53 @@
+created: 20220521024727733
+difficulty: 4.447654309008099
+due: 20221116130635249
+grade: 1
+history: [{"due":"20220524021009308","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021009308"},{"due":"20220612015216592","interval":7,"difficulty":4.8915901242788244,"stability":14.421632209922258,"retrievability":0.6915901242788246,"grade":1,"lapses":0,"reps":2,"review":"20220529015216591"},{"due":"20220615005802896","interval":16,"difficulty":5.981271717497867,"stability":0.07476910459712456,"retrievability":0.8896815932190423,"grade":0,"lapses":1,"reps":1,"review":"20220614005802896"},{"due":"20220620085728977","interval":2,"difficulty":5.240979664365442,"stability":3.7634221857850174,"retrievability":0.05970794686757527,"grade":1,"lapses":1,"reps":2,"review":"20220616085728977"},{"due":"20220708001619509","interval":5,"difficulty":4.310355578004275,"stability":12.45612986111481,"retrievability":0.869375913638833,"grade":2,"lapses":1,"reps":3,"review":"20220621061908395"},{"due":"20220817091940152","interval":19,"difficulty":4.361892839085817,"stability":38.21576905840096,"retrievability":0.8515372610815417,"grade":1,"lapses":1,"reps":4,"review":"20220710091940152"}]
+interval: 44
+lapses: 1
+modified: 20220823130635249
+reps: 5
+retrievability: 0.8857614699222823
+review: 20220823130635249
+stability: 85.32531670361365
+tags: linux ?
+title: linux常见命令
+type: text/vnd.tiddlywiki
+
+df(disk format)查看磁盘
+
+ll查看目录下文件=ls -l
+
+ls(list)查看目录下文件
+
+rm -rf删除
+
+mkdir创建目录
+
+vim文件编辑
+
+netstat查看端口
+
+top: shows a real-time view of running processes in Linux and displays kernel-managed tasks.
+
+lsof(list open files)是一个列出当前系统打开文件的工具。
+
+pwd(print working directory)查看工作目录
+
+cd(change directory)改变目录
+
+grep该命令常用于分析一行的信息，若当中有我们所需要的信息，就将该行显示出来
+
+find是一个基于查找的功能非常强大的命令，相对而言，它的使用也相对较为复杂，参数也比较多，所以在这里将给把它们分类列出
+
+cp复制
+
+init 0关机
+
+tar压缩
+
+cat查看文件信息
+
+touch创建文件
+
+jps类似资源管理器

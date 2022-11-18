@@ -1,0 +1,32 @@
+created: 20220530051257647
+difficulty: 1.0553619171894362
+due: 20220915033845753
+grade: 1
+history: [{"due":"20220601083943409","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083943409"},{"due":"20220604130223423","interval":3,"difficulty":2.78530084968259,"stability":0.07958008229979391,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603130223423"},{"due":"20220621012933715","interval":4,"difficulty":1,"stability":13.5828925316948,"retrievability":0.005012485356665834,"grade":2,"lapses":1,"reps":2,"review":"20220607012933715"},{"due":"20220623105215165","interval":15,"difficulty":2.090161108780166,"stability":0.054885141354873004,"retrievability":0.8901611087801659,"grade":0,"lapses":2,"reps":1,"review":"20220622105215165"},{"due":"20220705080854446","interval":3,"difficulty":1,"stability":10.11586518785958,"retrievability":0.0031543781993985842,"grade":2,"lapses":2,"reps":2,"review":"20220625080854445"}]
+interval: 15
+lapses: 2
+modified: 20220710033845753
+reps: 3
+retrievability: 0.8553619171894363
+review: 20220710033845752
+stability: 67.37458029068222
+tags: spark ?
+title: PySpark中UDF定义的方式
+type: text/vnd.tiddlywiki
+
+[img[image-20220514155704452.png]]
+
+SparkSQL中register方式定义UDF函数
+
+`UDF变量名 = spark.udf.register(UDF函数名, 函数的处理逻辑)
+
+定义：spark.udf.register()
+UDF变量名：DSL中调用UDF使用的
+UDF函数名：SQL中调用UDF使用`
+
+SparkSQL中udf注册方式定义UDF函数
+
+`# 导包：DSL函数库
+import pyspark.sql.functions as F
+# 定义
+UDF变量名 = F.udf(函数的处理逻辑, 返回值类型)`

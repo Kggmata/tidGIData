@@ -1,0 +1,122 @@
+created: 20220618060306794
+difficulty: 1.075606407978934
+due: 20220921131528432
+grade: 1
+history: [{"due":"20220621002623082","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620002623082"},{"due":"20220705080427136","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622080427136"}]
+interval: 17
+lapses: 0
+modified: 20220709131528433
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709131528432
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: ES的数据源接入Spark
+type: text/vnd.tiddlywiki
+
+```
+df = spark\
+    .read\
+    .format("es")\
+    .option("es.nodes", "192.168.88.166:9200")\
+    .option("es.resource", "insurance-profile-result/_doc")\
+    .option("es.index.read.missing.as.empty", "yes")\
+    .option("es.query", "?q=*") \
+    .option("es.write.operation","upsert")\
+    .schema(schema)\
+    .load()
+```
+
+```
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext
+from pyspark.sql.types import StructField, StructType, StringType
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadCSV") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 可以使用StructType和StructField完成动态增加scheme，userid的scheme和tagsid的scheme
+    # 什么是scheme：字段的类型和字段名称
+    schema = StructType([StructField("userId", StringType(), True), StructField("tagsId", StringType(), False)])
+    # 2-读取es的数据
+    # inferSchema spark读取数据的时候默认读取内置的scheme(解析器认为字段的类型)
+    esDF = spark.read.format("es") \
+        .option("es.nodes", "192.168.88.166:9200") \
+        .option("es.resource", "insurance-profile-result/_doc") \
+        .option("es.index.read.missing.as.empty", "yes") \
+        .option("es.query", "?q=*") \
+        .option("es.write.operation", "upsert") \
+        .schema(schema) \
+        .load()
+    # 3-对csv的数据基本信息查看，printSchema，show
+    esDF.printSchema()
+
+    esDF.show()
+
+    # 4-做一些简单的操作
+    spark.stop()
+```
+
+```
+es.index.auto.create (default yes)
+Whether elasticsearch-hadoop should create an index (if its missing) when writing data to Elasticsearch or fail.
+---------------------------------------------------------------
+es.index.read.missing.as.empty (default no)
+Whether elasticsearch-hadoop will allow reading of non existing indices (and return an empty data set) or not (and throw an exception)
+---------------------------------------------------------------
+es.query (default none)
+Holds the query used for reading data from the specified es.resource. By default it is not set/empty, meaning the entire data under the specified index/type is returned. es.query can have three forms:
+
+uri query
+using the form ?uri_query, one can specify a query string. Notice the leading ?.
+
+query dsl
+using the form query_dsl - note the query dsl needs to start with { and end with } as mentioned here
+
+external resource
+if none of the two above do match, elasticsearch-hadoop will try to interpret the parameter as a path within the HDFS file-system. If that is not the case, it will try to load the resource from the classpath or, if that fails, from the Hadoop DistributedCache. The resource should contain either a uri query or a query dsl.
+保存用于从指定es读取数据的查询。资源默认情况下，它不设置/为空，这意味着返回指定索引/类型下的整个数据。锿。查询可以
+uri query 作为上述的参数
+using the form ?uri_query, one can specify a query string. Notice the leading ?.
+----------------------------------------------------------------------
+es.write.operation (default index)
+The write operation elasticsearch-hadoop should perform - can be any of:
+
+index (default)
+new data is added while existing data (based on its id) is replaced (reindexed).
+create
+adds new data - if the data already exists (based on its id), an exception is thrown.
+update
+updates existing data (based on its id). If no data is found, an exception is thrown.
+upsert
+known as merge or insert if the data does not exist, updates if the data exists (based on its id).
+```

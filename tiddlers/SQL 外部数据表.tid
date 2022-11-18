@@ -1,0 +1,50 @@
+created: 20220717022526338
+difficulty: 1
+due: 20220825074345858
+grade: 2
+history: [{"due":"20220805134405970","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726065231404"}]
+interval: 14
+lapses: 0
+modified: 20220809074345858
+reps: 2
+retrievability: 3.9260748606056117e-7
+review: 20220809074345858
+stability: 16.439763804276993
+tags: ?
+title: SQL 外部数据表
+type: text/vnd.tiddlywiki
+
+```
+由于目前在实时数据的场景中多以消息队列作为数据表。此处就以 Kafka 为例创建一个外部数据表。
+	SQL 创建外部数据表
+
+```
+```
+settings = EnvironmentSettings
+        .newInstance()
+        .useBlinkPlanner()
+        .inStreamingMode()
+        .build();
+
+tEnv = StreamTableEnvironment.create(env, settings);
+
+// SQL API 执行 create table 创建表
+tEnv.executeSql(
+        "CREATE TABLE KafkaSourceTable (\n"
+                + "  `f0` STRING,\n"
+                + "  `f1` STRING\n"
+                + ") WITH (\n"
+                + "  'connector' = 'kafka',\n"
+                + "  'topic' = 'topic',\n"
+                + "  'properties.bootstrap.servers' = 'localhost:9092',\n"
+                + "  'properties.group.id' = 'testGroup',\n"
+                + "  'format' = 'json'\n"
+                + ")"
+);
+
+t = tEnv.sqlQuery("SELECT * FROM KafkaSourceTable");
+
+```
+```
+具体的创建方式就是使用 Create Table xxx DDL 定义一个 Kafka 数据源（输入）表（也可以是 Kafka 数据汇（输出）表）。
+```

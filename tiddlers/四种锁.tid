@@ -1,0 +1,25 @@
+created: 20220713060009156
+difficulty: 1.2684517864766176
+due: 20220908140139971
+grade: 1
+history: [{"due":"20220719082314501","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718082314501"},{"due":"20220811104018933","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726104018933"},{"due":"20220818103204851","interval":22,"difficulty":2.068451625884813,"stability":0.07408182272361549,"retrievability":0.8684516258848127,"grade":0,"lapses":1,"reps":1,"review":"20220817103204851"}]
+interval: 11
+lapses: 1
+modified: 20220828140139971
+reps: 2
+retrievability: 1.6059180485330127e-7
+review: 20220828140139971
+stability: 10.956441845223141
+tags: ?
+title: 四种锁
+type: text/vnd.tiddlywiki
+
+数据库角度: 
+
+共享锁 read locks 不允许修改, 可读, 一般select的时候
+
+排他锁 write lock 只允许上锁的程序使用, 其他操作均不可, 一般insert, update, delete的时候
+
+乐观锁 optimistic lock: 认为不会发生并发问题, 不上锁, 使用version方式
+
+悲观锁 pessimistic lock: 认为一直是最坏情况, 总是加锁

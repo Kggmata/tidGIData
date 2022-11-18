@@ -1,0 +1,28 @@
+created: 20220711143821089
+difficulty: 1
+due: 20221106121705400
+grade: 2
+history: [{"due":"20220716022848917","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715022848917"},{"due":"20220722071352632","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721071352632"},{"due":"20220812031825632","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730031825632"}]
+interval: 18
+lapses: 1
+modified: 20220817121705400
+reps: 3
+retrievability: 0.8635498340859799
+review: 20220817121705400
+stability: 80.89456403737913
+tags: ?
+title: 【Hive SQL 新算法】求任意时间段连续登录N天用户数/用户明细/最长连续登陆天数/用户留存率问题总结
+type: text/vnd.tiddlywiki
+
+```
+-- 第二段 根据登陆时间减去排列顺序 得出用户连续登陆的分组
+SELECT user_id,date_sub(login_date,rank) as login_group,min(login_date) as start_login_time
+    ,max(login_date) as end_login_time,count(1) as continuous_days
+FROM (
+	-- 第一段首先根据用户分组，登陆时间排序，结果按照登陆时间升序排列
+    SELECT DISTINCT user_id,login_date,dense_rank() OVER(PARTITION BY user_id order by login_date) as rank
+    FROM tmp.user_login_table ORDER BY user_id,rank
+) a
+GROUP BY user_id,date_sub(login_date,rank);
+
+```

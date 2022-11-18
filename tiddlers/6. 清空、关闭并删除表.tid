@@ -1,0 +1,11 @@
+created: 20220908133345178
+modified: 20220908133353216
+tags: ? flink
+title: 6. 清空、关闭并删除表
+type: text/vnd.tiddlywiki
+
+```
+truncate 'test'
+disable 'test'
+drop 'test'
+```

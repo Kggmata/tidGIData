@@ -1,0 +1,17 @@
+created: 20220711142540446
+difficulty: 1
+due: 20221117114001455
+grade: 2
+history: [{"due":"20220713102756841","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712102756841"},{"due":"20220722052813992","interval":9,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721052813992"},{"due":"20220814101749704","interval":11,"difficulty":1,"stability":12.92739998623949,"retrievability":1.6059462786757528e-7,"grade":2,"lapses":1,"reps":2,"review":"20220801101749704"}]
+interval: 20
+lapses: 1
+modified: 20220821114001455
+reps: 3
+retrievability: 0.8495882891470834
+review: 20220821114001455
+stability: 88.38667890285025
+tags: ?
+title: MySQL与Redis区别
+type: text/vnd.tiddlywiki
+
+mysql是关系型数据库，并且其将数据存储在硬盘中，读取速度较慢。 redis是非关系型数据库，并且其将数据存储在内存中，读取速度较快。

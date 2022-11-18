@@ -1,0 +1,22 @@
+created: 20220709111309991
+difficulty: 1.2706251034801517
+due: 20220829143629059
+grade: 1
+history: [{"due":"20220713030013575","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030013575"},{"due":"20220721073303879","interval":8,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220720073303878"},{"due":"20220810103243738","interval":8,"difficulty":1,"stability":12.92718220768524,"retrievability":0.000011447721627644813,"grade":1,"lapses":1,"reps":2,"review":"20220728103243738"},{"due":"20220815080835505","interval":17,"difficulty":2.0706151616802995,"stability":0.05488116409496729,"retrievability":0.8706151616802995,"grade":0,"lapses":2,"reps":1,"review":"20220814080835505"}]
+interval: 6
+lapses: 2
+modified: 20220820143629059
+reps: 2
+retrievability: 0.00000994179985232475
+review: 20220820143629059
+stability: 8.604864474847238
+tags: 用户画像 ?
+title: 什么是hash表
+type: text/vnd.tiddlywiki
+
+```
+就是根据关键码值key访问数据的数据结构
+他把关键码值映射到表中的一个位置
+映射法叫做访问函数
+```
+[img[Snipaste_2022-07-09_19-13-19.jpg]]

@@ -1,0 +1,17 @@
+created: 20220524125744978
+difficulty: 1
+due: 20221003105251982
+grade: 2
+history: [{"due":"20220529144824527","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528144824527"},{"due":"20220624051313146","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602051313146"}]
+interval: 23
+lapses: 0
+modified: 20220625105251982
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625105251982
+stability: 100.35422359618087
+tags: hive ?
+title: 所有的Hive任务都会有MapReduce的执行吗？
+type: text/vnd.tiddlywiki
+
+不是，从Hive0.10.0版本开始，`对于简单的不需要聚合的类似SELECT <col> from <table> LIMIT n语句，不需要起MapReduce job，直接通过Fetch task获取数据。`

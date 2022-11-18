@@ -1,0 +1,43 @@
+created: 20220612112914975
+difficulty: 1.0691752299029826
+due: 20220921074442381
+grade: 1
+history: [{"due":"20220616065358880","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615065358880"},{"due":"20220701004405590","interval":2,"difficulty":1,"stability":13.526011926209534,"retrievability":0.12395450234099842,"grade":1,"lapses":0,"reps":2,"review":"20220617004405589"}]
+interval: 18
+lapses: 0
+modified: 20220705074442381
+reps: 3
+retrievability: 0.8691752299029826
+review: 20220705074442380
+stability: 77.8185726124576
+tags: [[structed streaming]] ?
+title: spark structed streaming sink检查点路径设置
+type: text/vnd.tiddlywiki
+
+设置检查点路径的目的是告诉Spark，要做快照的一堆元数据，给存到哪里？
+
+有2种方式：
+
+```shell
+方式一: 基于DataStreamWrite设置
+streamDF.writeStream.option("checkpointLocation", "path")
+
+方式二: SparkConf设置
+sparkConf.set("spark.sql.streaming.checkpointLocation", "path")
+```
+
+方式1：
+
+[img[20220612172956.png]]
+在输出的地方去设置检查点的位置。
+
+方式2：
+
+[img[20220612173050.png]]
+
+在构建入口对象的时候，通过config方法去设置
+
+> 2种方式不可以同时使用，只能二选一
+
+
+

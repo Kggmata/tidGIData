@@ -1,0 +1,25 @@
+created: 20220718125954848
+difficulty: 1.9205227050402993
+due: 20220927010107138
+grade: 0
+history: [{"due":"20220801121127510","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121127510"},{"due":"20220822123549332","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806123549331"}]
+interval: 51
+lapses: 1
+modified: 20220926010107138
+reps: 1
+retrievability: 0.7205227050402994
+review: 20220926010107138
+stability: 0.07408182272361549
+tags: ?
+title: 数据倾斜的现象
+type: text/vnd.tiddlywiki
+
+```
+当发现如下现象时，十有八九是发生数据倾斜了:
+
+绝大多数 task 执行得都非常快，但个别 task 执行极慢，整体任务卡在某个阶段不能结束。
+原本能够正常执行的 Spark 作业，某天突然报出 OOM（内存溢出）异常，观察异常栈，是我们写的业务代码造成的。这种情况比较少见。
+TIPS
+
+在 Spark streaming 程序中，数据倾斜更容易出现，特别是在程序中包含一些类似 sql 的 join、group 这种操作的时候。因为 Spark Streaming 程序在运行的时候，我们一般不会分配特别多的内存，因此一旦在这个过程中出现一些数据倾斜，就十分容易造成 OOM。
+```

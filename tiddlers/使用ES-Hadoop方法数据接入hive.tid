@@ -1,0 +1,228 @@
+created: 20220618074133505
+difficulty: 1.075606407978934
+due: 20220921081241144
+grade: 1
+history: [{"due":"20220621003141883","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003141883"},{"due":"20220705023515592","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622023515592"}]
+interval: 17
+lapses: 0
+modified: 20220709081241144
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709081241143
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: 使用ES-Hadoop方法数据接入hive
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/hadoop/7.10/hive.html#hive
+
+这里使用hive中穿件外部表将数据导入到es中，首先分析hive和es整合的内容，上述连接就是官网文档
+
+[img[image-20220618144738348.png]]
+
+1-连接HIve的服务器在客户端进行操作，本质上上传了es-hadoop的jar包
+
+```
+hdfs dfs -mkdir -p /libs/es-hadoop
+hadoop fs -put /export/software/elasticsearch-hadoop-7.10.2.jar /libs/es-hadoop
+```
+[img[image-20220618145953879.png]]
+
+之后的操作均在datagrip中操作
+
+启动hive服务
+
+```
+### hive服务启动命令 ###
+nohup /export/server/hive-2.1.0/bin/hive --service metastore & 2>&1 >> /export/server/hive/logs/hive-metastore.log
+nohup /export/server/hive-2.1.0/bin/hive --service hiveserver2 & 2>&1 >> /export/server/hive/logs/hive-hiveserver2.log
+```
+[img[image-20220618150306004.png]]
+[img[image-20220618150449515.png]]
+
+* 2-加载es-hadoop的jar包
+
+```
+官网告知：
+add jar hdfs:///libs/es-hadoop
+```
+
+测试：
+
+
+
+* 3-创建外部表
+
+> 问题1：外部表和内部表的区别和联系
+>
+> 答：
+>
+> 0-内部表创建的时候不需要指定external，外部制定external关键字
+>
+> 1-如果删除表，内部表删除元数据和数据本身，外部表仅仅删除元数据，数据不会被删除
+>
+> 2-内部表load加载数据的时候会指定路径，外部表不会吧数据移动到自己的数据仓库目录下
+>
+> 问题2：如何选择内部表和外部表？ 新零售和教育项目
+>
+> 答：1.做etl处理时，通常会选择内部表做中间表，因为清理时，会将HDFS上的文件同时删除
+> 2.如果怕误删数据，可以选择外部表，因为不会删除文件，方便恢复数据
+> 3.如果对数据的处理都是通过hql语句完成，选择内部表，***\*如果有其他工具一同处理，选择外部表\****
+>
+> 在没有其他限制的情况下，优先使用外部表，因为：
+>
+> （1）.不会加载数据到hive，减少数据传输，还能共享
+>
+> （2）.不会对HDFS中的数据修改，不用担心数据损坏，删除表时只删除表结构，不删除数据
+
+* 如何建立外部表？
+
+  > https://www.elastic.co/guide/en/elasticsearch/hadoop/7.10/hive.html#hive
+  >
+  > 下面的mapping就是es和hive外部表的整合示例
+
+[img[image-20220618151901066.png]]
+
+接下来通过datagrip导入4张外部表
+
+```
+show databases;
+
+show tables in insurance_ods;
+show tables in insurance_userprofile;
+-- 因为虚拟机中已经导入四张业务表，这里如果想呈现出完整的导入过程，需要删除insurance_userprofile数据库的表、
+create database if not exists insurance_userprofile;
+-- hive-es表
+drop table if exists insurance_userprofile.claim_info;
+drop table if exists insurance_userprofile.policy_benefit;
+drop table if exists insurance_userprofile.policy_client;
+drop table if exists insurance_userprofile.policy_surrender;
+---验证，该数据库下没有任何表数据
+show tables in insurance_userprofile;
+-- 创建hive的外部表
+-- es.resource 代表的是 index/type uprofile-claim_info/_doc
+-- es.nodes 代表的是es运行在ip：port
+-- es.index.auto.create 代表的是索引是否自动创建
+-- es.index.refresh_interval ？？
+-- es.index.number_of_replicas 索引副本个数
+-- es.batch.write.retry.count 这里es分批次写入，每批次写入重试次数
+-- es.batch.write.retry.wait  这里es分批次写入，每批次写入等待60s
+-- es.mapping.name 指的是hive的字段和es的字段对应关系，es官网建议我们所有字段最好做映射
+-- 理赔信息
+    create external table insurance_userprofile.claim_info(
+        pol_no string comment '保单号',
+        user_id string comment '用户号',
+        buy_datetime string comment '购买日期',
+        insur_code string comment '保险代码',
+        claim_date string comment '理赔日期',
+        claim_item string comment '理赔责任',
+        claim_mnt decimal(35,6) comment '理赔金额'
+    )stored by 'org.elasticsearch.hadoop.hive.EsStorageHandler'
+    tblproperties('es.resource'='uprofile-claim_info/_doc',
+    'es.nodes'='192.168.88.166:9200',
+    'es.index.auto.create'='TRUE',
+    'es.index.refresh_interval' = '-1',
+    'es.index.number_of_replicas' = '0',
+    'es.batch.write.retry.count' = '6',
+    'es.batch.write.retry.wait' = '60s',
+    'es.mapping.name' = 'pol_no:pol_no,user_id:user_id,buy_datetime:buy_datetime,insur_code:insur_code,claim_date:claim_date,claim_item:claim_item,claim_mnt:claim_mnt'
+);
+--这里外部表，在hive维护映射关系，在后续插入数据是存放在es集群中
+show tables in insurance_userprofile;
+desc insurance_userprofile.claim_info;
+
+-- 客户投保
+    create external table insurance_userprofile.policy_client(
+        user_id STRING COMMENT '用户号',
+        name STRING COMMENT '姓名',
+        id_card STRING COMMENT '身份证号',
+        phone STRING COMMENT '手机号',
+        sex STRING COMMENT '性别',
+        birthday STRING COMMENT '出生日期',
+        province STRING COMMENT '省份',
+        city STRING COMMENT '城市',
+        direction STRING COMMENT '区域',
+        income INT COMMENT '收入'
+    )stored by 'org.elasticsearch.hadoop.hive.EsStorageHandler'
+    tblproperties('es.resource'='uprofile-policy_client/_doc',
+    'es.nodes'='192.168.88.166:9200',
+    'es.index.auto.create'='TRUE',
+    'es.index.refresh_interval' = '-1',
+    'es.index.number_of_replicas' = '0',
+    'es.batch.write.retry.count' = '6',
+    'es.batch.write.retry.wait' = '60s',
+    'es.mapping.name' = 'user_id:user_id,name:name,id_card:id_card,phone:phone,sex:sex,birthday:birthday,province:province,city:city,direction:direction,income:income'
+    );
+--这里外部表，在hive维护映射关系，在后续插入数据是存放在es集群中
+show tables in insurance_userprofile;
+desc insurance_userprofile.policy_client;
+
+-- 客户投保详情
+    create external table insurance_userprofile.policy_benefit(
+        pol_no STRING COMMENT '保单号',
+        user_id STRING COMMENT '用户号',
+        ppp STRING COMMENT '缴费期',
+        age_buy BIGINT COMMENT '投保年龄',
+        buy_datetime STRING COMMENT '购买日期',
+        insur_name STRING COMMENT '保险名称',
+        insur_code STRING COMMENT '保险代码',
+        pol_flag smallint COMMENT '保单状态，1有效，0失效',
+        elapse_date STRING COMMENT '保单失效时间'
+    )stored by 'org.elasticsearch.hadoop.hive.EsStorageHandler'
+    tblproperties('es.resource'='uprofile-policy_benefit/_doc',
+    'es.nodes'='192.168.88.166:9200',
+    'es.index.auto.create'='TRUE',
+    'es.index.refresh_interval' = '-1',
+    'es.index.number_of_replicas' = '0',
+    'es.batch.write.retry.count' = '6',
+    'es.batch.write.retry.wait' = '60s',
+    'es.mapping.name' = 'pol_no:pol_no,user_id:user_id,ppp:ppp,age_buy:age_buy,buy_datetime:buy_datetime,insur_name:insur_name,insur_code:insur_code,pol_flag:pol_flag,elapse_date:elapse_date'
+    );
+--这里外部表，在hive维护映射关系，在后续插入数据是存放在es集群中
+show tables in insurance_userprofile;
+desc insurance_userprofile.policy_benefit;
+
+-- 退保记录
+    create external table insurance_userprofile.policy_surrender(
+        pol_no string comment '保单号',
+        user_id string comment '用户号',
+        buy_datetime string comment '投保日期',
+        keep_days smallint comment '退保前的保单持有天数',
+        elapse_date string comment '保单失效日期'
+    )stored by 'org.elasticsearch.hadoop.hive.EsStorageHandler'
+    tblproperties('es.resource'='uprofile-policy_surrender/_doc',
+    'es.nodes'='192.168.88.166:9200',
+    'es.index.auto.create'='TRUE',
+    'es.index.refresh_interval' = '-1',
+    'es.index.number_of_replicas' = '0',
+    'es.batch.write.retry.count' = '6',
+    'es.batch.write.retry.wait' = '60s',
+    'es.mapping.name' = 'pol_no:pol_no,user_id:user_id,buy_datetime:buy_datetime,keep_days:keep_days,elapse_date:elapse_date'
+    );
+
+--这里外部表，在hive维护映射关系，在后续插入数据是存放在es集群中
+show tables in insurance_userprofile;
+desc insurance_userprofile.policy_surrender;
+```
+
+4-插入数据到es的Hive表中
+
+[img[image-20220618152719094.png]]
+[img[image-20220618152937587.png]]
+
+```
+add jar hdfs:///libs/es-hadoop/elasticsearch-hadoop-7.10.2.jar;
+--通过导入hive表 全量导入方式
+--建议不采用select * 方式，因为ods层的表数据的字段需要和画像平台外部表的字段进行对应
+insert overwrite table insurance_userprofile.claim_info select pol_no, user_id, buy_datetime, insur_code, claim_date, claim_item, claim_mnt from insurance_ods.claim_info;
+insert overwrite table insurance_userprofile.policy_client select user_id, name, id_card, phone, sex, birthday, province, city, direction, income from insurance_ods.policy_client;
+insert overwrite table insurance_userprofile.policy_benefit select pol_no, user_id, ppp, age_buy, buy_datetime, insur_name, insur_code, pol_flag, elapse_date from insurance_ods.policy_benefit;
+insert overwrite table insurance_userprofile.policy_surrender select pol_no, user_id, buy_datetime, keep_days, elapse_date from insurance_ods.policy_surrender;
+
+```
+5-验证数据是否导入成功
+方式1:
+[img[image-20220618153554697.png]]
+方式2：
+[img[image-20220618153643032.png]]
+建议大家采用方式2直接查看即可

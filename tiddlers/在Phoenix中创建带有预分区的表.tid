@@ -1,0 +1,57 @@
+created: 20220608063008039
+difficulty: 2.1010587412954798
+due: 20221012135702956
+grade: 0
+history: [{"due":"20220613130609975","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130609975"},{"due":"20220616023428830","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615023428829"},{"due":"20220617112351521","interval":1,"difficulty":1.7877322064110335,"stability":0.05500845146445375,"retrievability":0.2443520960981822,"grade":0,"lapses":2,"reps":1,"review":"20220616112351521"},{"due":"20220628100754309","interval":2,"difficulty":1,"stability":9.840634550347355,"retrievability":0.02169436257811349,"grade":2,"lapses":2,"reps":2,"review":"20220618100754309"},{"due":"20220824000906558","interval":12,"difficulty":1.0794310203119402,"stability":55.23616926296597,"retrievability":0.8794310203119402,"grade":1,"lapses":2,"reps":3,"review":"20220630000906558"}]
+interval: 103
+lapses: 3
+modified: 20221011135702956
+reps: 1
+retrievability: 0.8216277209835395
+review: 20221011135702956
+stability: 0.040656966333775045
+tags: hbase ?
+title: 在Phoenix中创建带有预分区的表
+type: text/vnd.tiddlywiki
+
+方式1，手动分区
+
+```
+# 语法
+
+create table if not exists 表名（
+	列定义
+	...
+	...
+)
+conpression='GZ' split on ('3', '5', '7')
+# conpression 表示压缩算法
+# split on 表示手动分区规则等同于HBase： {SPLITS=>['3', '5', '7']}
+
+# 测试，删除前期用的order_dtl表
+drop table if exists order_dtl;
+
+# 创建带有分区规则的，order_dtl表格
+create table if not exists order_dtl(id varchar primary key, c1.status varchar, c1.money float, c1.pay_way integer, c1.user_id varchar, c1.operation_time varchar, c1.category varchar) conpression='GZ' split on ('3', '5', '7');
+```
+
+方式2，自动分区
+
+```
+# 语法
+
+create table if not exists 表名（
+	列定义
+	...
+	...
+) conpression='GZ', salt_buckets=10;
+# salt_buckets 加盐的分区数（加盐就是随机的意思）
+# 注意：conpression和salt_buckets之间是逗号
+
+
+# 测试，删除表
+drop table if exists order_dtl;
+
+# 建表
+create table if not exists order_dtl(id varchar primary key, c1.status varchar, c1.money float, c1.pay_way integer, c1.user_id varchar, c1.operation_time varchar, c1.category varchar) conpression='GZ', salt_buckets=10;
+```

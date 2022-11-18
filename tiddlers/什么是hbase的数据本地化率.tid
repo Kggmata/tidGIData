@@ -1,0 +1,19 @@
+created: 20220605235107421
+difficulty: 1
+due: 20220915233617234
+grade: 2
+history: [{"due":"20220610112025051","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609112025051"},{"due":"20220628120807300","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220612120807300"}]
+interval: 17
+lapses: 0
+modified: 20220629233617234
+reps: 3
+retrievability: 0.8921371599187098
+review: 20220629233617234
+stability: 77.52610262038272
+tags: hbase ?
+title: 什么是hbase的数据本地化率
+type: text/vnd.tiddlywiki
+
+Data Locality用来衡量region服务的数据即region的HFile位于本地的百分比。
+
+   在hadoop生产环境中， hdfs通常为设置为三个副本，假如当前RegionA处于datanode1，当数据a通过从Memstore中Flush到HFile时,三副本为(datanode1,datanode2,datanode3),数据b写入三副本是(datanode1,datanode3,datanode5),数据c写入三副本(datanode1,datanode4,datanode6),可以看出来a、b、c三份数据写入的时候肯定会在本地datanode1上写入一份，其他两份按照datanode的写入机制进行分配;数据都在本地可以读到，因此数据本地率是100%。现在假设RegionA被迁移到了datanode2上，只有数据a有一份数据在该节点上，其他数据(b和c)读取只能远程跨节点读，本地率就为33%(假设a，b和c的数据大小相同)。

@@ -1,0 +1,17 @@
+created: 20220519125457323
+difficulty: 2.2905347733446986
+due: 20230303133652718
+grade: 2
+history: [{"due":"20220522001614482","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001614482"},{"due":"20220528011431971","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522011431971"},{"due":"20220623061706761","interval":10,"difficulty":4.126014725196352,"stability":22.07656732651434,"retrievability":0.826014725196352,"grade":2,"lapses":0,"reps":3,"review":"20220601061706760"},{"due":"20220822080321360","interval":24,"difficulty":3.21779089675283,"stability":58.054925025422094,"retrievability":0.8917761715564773,"grade":2,"lapses":0,"reps":4,"review":"20220625080321360"}]
+interval: 75
+lapses: 0
+modified: 20220908133652718
+reps: 5
+retrievability: 0.8727438765918681
+review: 20220908133652717
+stability: 175.50997415259855
+tags: hadoop ?
+title: Hive底层只能基于MR实现分布式计算
+type: text/vnd.tiddlywiki
+
+错误：Hive底层支持三种计算引擎：MR、Tez、Spark

@@ -1,0 +1,17 @@
+created: 20220521060615356
+difficulty: 1.9963197508155812
+due: 20230221064619476
+grade: 2
+history: [{"due":"20220524032302630","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032302629"},{"due":"20220621102418647","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531102418647"},{"due":"20220820015700266","interval":23,"difficulty":2.912185197386786,"stability":58.17902333688221,"retrievability":0.889754085535843,"grade":2,"lapses":0,"reps":3,"review":"20220623015700266"}]
+interval: 68
+lapses: 0
+modified: 20220830064619476
+reps: 4
+retrievability: 0.8841345534287951
+review: 20220830064619476
+stability: 175.4417594977558
+tags: zookeeper ?
+title: ZooKeeper是否会自动进行日志清理？如何进行日志清理？
+type: text/vnd.tiddlywiki
+
+zk自己不会进行日志清理，需要运维人员进行日志清理。

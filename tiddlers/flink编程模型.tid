@@ -1,0 +1,17 @@
+created: 20220716080456309
+difficulty: 1.062939784909897
+due: 20221127123120895
+grade: 1
+history: [{"due":"20220722112024544","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721112024544"},{"due":"20220816063228326","interval":10,"difficulty":1,"stability":16.43908736440644,"retrievability":0.000026561715818525218,"grade":2,"lapses":0,"reps":2,"review":"20220731063228326"}]
+interval: 23
+lapses: 0
+modified: 20220823123120895
+reps: 3
+retrievability: 0.862939784909897
+review: 20220823123120895
+stability: 95.74597156924388
+tags: ?
+title: flink编程模型
+type: text/vnd.tiddlywiki
+
+[img[BillfishlqRfgn2022-07-16 16_05_34.PNG]]

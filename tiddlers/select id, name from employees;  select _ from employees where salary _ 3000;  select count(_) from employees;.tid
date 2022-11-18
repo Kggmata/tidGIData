@@ -1,0 +1,21 @@
+created: 20220711140903594
+difficulty: 1
+due: 20221111102105373
+grade: 2
+history: [{"due":"20220713102539560","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712102539560"},{"due":"20220806053035020","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721053035019"}]
+interval: 21
+lapses: 0
+modified: 20220811102105374
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811102105373
+stability: 92.05363191623492
+tags: ?
+title: select id, name from employees;  select * from employees where salary > 3000;  select count(*) from employees;
+type: text/vnd.tiddlywiki
+
+第一个select 列需要filter, 需要map
+
+第二个需要filter, 需要map
+
+The 3rd query has aggregate operation to be applied, which can be done by a MR.

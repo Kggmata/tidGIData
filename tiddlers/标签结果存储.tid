@@ -1,0 +1,17 @@
+created: 20220614083959746
+difficulty: 1
+due: 20230318115432134
+grade: 2
+history: [{"due":"20220617115932572","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616115932572"},{"due":"20220626004934984","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617004934983"},{"due":"20220816020404929","interval":10,"difficulty":1,"stability":49.62797382038931,"retrievability":0.8875368908748189,"grade":2,"lapses":0,"reps":3,"review":"20220627020404929"}]
+interval: 55
+lapses: 0
+modified: 20220821115432134
+reps: 4
+retrievability: 0.8897939475573553
+review: 20220821115432134
+stability: 208.51507007027075
+tags: 用户画像web界面 ?
+title: 标签结果存储
+type: text/vnd.tiddlywiki
+
+ElasticSearch

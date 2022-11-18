@@ -1,0 +1,110 @@
+created: 20220608074907768
+difficulty: 1
+due: 20221002120759556
+grade: 2
+history: [{"due":"20220613130801752","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130801752"},{"due":"20220617002037186","interval":4,"difficulty":1.3144367952260434,"stability":0.07442546333264817,"retrievability":0.015960348310605277,"grade":0,"lapses":1,"reps":1,"review":"20220616002037186"},{"due":"20220630141431664","interval":2,"difficulty":1,"stability":11.807341106012368,"retrievability":0.05893601498010052,"grade":1,"lapses":1,"reps":2,"review":"20220618141431664"},{"due":"20220705235601168","interval":16,"difficulty":2.066950937005835,"stability":0.05488166082758644,"retrievability":0.8669509370058347,"grade":0,"lapses":2,"reps":1,"review":"20220704235601168"},{"due":"20220719044623031","interval":5,"difficulty":1.2670187415152296,"stability":8.621170841692912,"retrievability":0.00006780450939486909,"grade":1,"lapses":2,"reps":2,"review":"20220710044623031"},{"due":"20220727090620448","interval":16,"difficulty":2.2894106669854426,"stability":0.04065698899582806,"retrievability":0.8223919254702129,"grade":0,"lapses":3,"reps":1,"review":"20220726090620448"},{"due":"20220804123909518","interval":8,"difficulty":2.489410667977151,"stability":0.03011942545495654,"retrievability":9.917079777346664e-10,"grade":0,"lapses":4,"reps":1,"review":"20220803123909517"},{"due":"20220812112729337","interval":5,"difficulty":1.6894106933278612,"stability":4.364313056882837,"retrievability":2.535071061321876e-8,"grade":1,"lapses":4,"reps":2,"review":"20220808112729337"}]
+interval: 9
+lapses: 4
+modified: 20220817120759556
+reps: 3
+retrievability: 0.8047107604518877
+review: 20220817120759555
+stability: 46.423290475548924
+tags: hbase ?
+title: phoenix二级索引
+type: text/vnd.tiddlywiki
+
+https://developer.aliyun.com/article/536850
+
+https://cloud.tencent.com/developer/article/1779521
+
+目前HBASE只有基于字典序的主键索引，对于非主键过滤条件的查询都会变成扫全表操作，为了解决这个问题Phoenix引入了二级索引功能。然而此二级索引又有别于传统关系型数据库的二级索引，本文将详细描述了Phoenix中二级索引功能、用法和原理。
+
+*''1. 全局索引''
+全局索引更多的应用在读较多的场景。它对应一张独立的HBASE表。对于全局索引，在''查询中检索的列如果不在索引表中，默认的索引表将不会被使用''，除非使用hint。
+
+创建全局索引：
+
+```
+CREATE INDEX IDX_COL1 ON TEST(COL1)
+```
+通过HBASE SHELL观察生成的索引表IDX_COL1。我们发现全局索引表的RowKey存储了索引列的值和原表RowKey的值，这样编码更有利于提高查询的性能。
+
+```
+hbase(main):001:0> scan 'IDX_COL1'
+ROW                        COLUMN+CELL
+ 2\x001                    column=0:_0, timestamp=1520935113031, value=x
+1 row(s) in 0.1650 seconds
+```
+
+实际上全局索引的RowKey将会按照如下格式进行编码。
+[img[Screen_Shot_2018_03_13_at_18_04_2022-06-16 08_15_30.png]]
+
+`1 SALT BYTE: 全局索引表和普通phoenix表一样，可以在创建索引时指定SALT_BUCKETS或者split key。此byte正是存储着salt。
+2 TENANT_ID: 当前数据对应的多租户ID。
+3 INDEX VALUE: 索引数据。
+4 PK VALUE: 原表的RowKey。`
+
+2. 本地索引
+
+因为本地索引和原数据是存储在同一个表中的，所以更适合写多的场景。对于本地索引，''查询中无论是否指定hint或者是查询的列是否都在索引表中，都会使用索引表''。
+
+创建本地索引：
+
+```
+create local index LOCAL_IDX_COL1 ON TEST(COL1);
+通过HBASE SHELL观察表'TEST', 我们可以看到表中多了一行column为L#0:_0的索引数据。
+```
+
+```
+hbase(main):001:0> scan 'TEST'
+ROW                        COLUMN+CELL
+ \x00\x002\x001            column=L#0:_0, timestamp=1520935997600, value=_0
+ 1                         column=0:COL1, timestamp=1520935997600, value=2
+ 1                         column=0:COL2, timestamp=1520935997600, value=3
+ 1                         column=0:_0, timestamp=1520935997600, value=x
+2 row(s) in 0.1680 seconds
+```
+本地索引的RowKey将会按照如下格式进行编码：
+[img[Screen_Shot_2018_03_13_at_20_16_2022-06-16 08_16_58.png]]
+
+`1 REGION START KEY : 当前row所在region的start key。加上这个start key的好处是，可以让索引数据和原数据尽量在同一个region, 减小IO，提升性能。
+2 INDEX ID : 每个ID对应不同的索引表。
+3 TENANT ID :当前数据对应的多租户ID。
+4 INDEX VALUE: 索引数据。
+5 PK VALUE: 原表的RowKey。`
+
+3 覆盖索引
+
+特点是把原数据存储在索引数据表中，这样在查询到索引数据时就不需要再次返回到原表查询，可以直接拿到查询结果。
+
+创建覆盖索引：
+
+```
+create  index IDX_COL1_COVER_COL2 on TEST(COL1) include(COL2);
+```
+通过HBASE SHELL 查询表IDX_COL1_COVER_COL2, 我们发现include的列的值被写入到了value中。
+
+```
+hbase(main):003:0> scan 'IDX_COL1_COVER_COL2'
+ROW                   COLUMN+CELL
+ 2\x001               column=0:0:COL2, timestamp=1520943893821, value=3
+ 2\x001               column=0:_0, timestamp=1520943893821, value=x
+1 row(s) in 0.0180 seconds
+```
+
+4. 函数索引
+
+函数索引的特点是能根据表达式创建索引，适用于对查询表，过滤条件是表达式的表创建索引。例如：
+
+创建函数索引
+
+```
+CREATE INDEX CONCATE_IDX ON TEST (UPPER(COL1||COL2))
+```
+
+查询函数索引
+
+```
+SELECT * FROM TEST WHERE UPPER(COL1||COL2)='23'
+```

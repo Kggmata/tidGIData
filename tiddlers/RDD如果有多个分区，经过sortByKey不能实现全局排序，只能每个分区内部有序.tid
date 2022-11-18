@@ -1,0 +1,17 @@
+created: 20220529052922038
+difficulty: 1
+due: 20220920142313967
+grade: 2
+history: [{"due":"20220601054852816","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531054852815"},{"due":"20220622130345300","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130345300"}]
+interval: 20
+lapses: 0
+modified: 20220623142313967
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623142313967
+stability: 89.0394510841741
+tags: spark ?
+title: RDD如果有多个分区，经过sortByKey不能实现全局排序，只能每个分区内部有序
+type: text/vnd.tiddlywiki
+
+错误：sortByKey，不仅仅实现分区内部有序，也实现了整体有序

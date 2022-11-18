@@ -1,0 +1,17 @@
+created: 20220628003458736
+difficulty: 1.05157013370948
+due: 20221110020224680
+grade: 1
+history: [{"due":"20220630132623057","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132623057"},{"due":"20220721011733072","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705011733072"}]
+interval: 25
+lapses: 0
+modified: 20220730020224680
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730020224680
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: spark和kafka整合需要
+type: text/vnd.tiddlywiki
+
+如果显示failed to find data source: kafka, 需要导入jar包

@@ -1,0 +1,15 @@
+created: 20220802062841405
+modified: 20220802083111343
+tags: ? flink
+title: on heap vs off heap
+type: text/vnd.tiddlywiki
+
+```
+on heap 是内存当中动态分配内存对象的地方. 一般情况下, java分配的非空对象有jvm的GC收集器管理
+jvm定期对garbage进行回收, 在某些特定时间点会进行彻底的gc
+```
+```
+off-heap意味着把内存对象分配到jvm heap以外的地方, 这些内存收到操作系统的直接管理. 这样做能够保持一个较小的堆. 以减少gc对应用的影响
+
+off-heap的问题在于数据结构不直观, 如果数据结构比较复杂, 就需要进行serialization, 这会影响性能
+```

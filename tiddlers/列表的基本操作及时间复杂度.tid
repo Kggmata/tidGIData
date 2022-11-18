@@ -1,0 +1,20 @@
+created: 20220711121536914
+difficulty: 1
+due: 20220909072353510
+grade: 2
+history: [{"due":"20220713040729473","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040729473"},{"due":"20220722020707955","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721020707955"},{"due":"20220812032846126","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":1,"lapses":1,"reps":2,"review":"20220730032846126"},{"due":"20220820080648537","interval":20,"difficulty":2.0495878483672745,"stability":0.05488116409496729,"retrievability":0.8495878483672744,"grade":0,"lapses":2,"reps":1,"review":"20220819080648537"}]
+interval: 11
+lapses: 2
+modified: 20220830072353510
+reps: 2
+retrievability: 6.740402982969234e-10
+review: 20220830072353509
+stability: 10.165652742423738
+tags: ?
+title: 列表的基本操作及时间复杂度
+type: text/vnd.tiddlywiki
+
+按下标查找, 插入元素, 删除元素
+
+O(1), 因为内存是有地址的, 
+

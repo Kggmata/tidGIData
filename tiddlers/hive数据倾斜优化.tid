@@ -1,0 +1,69 @@
+created: 20220627150039868
+difficulty: 1
+due: 20221125025555891
+grade: 2
+history: [{"due":"20220630131123469","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629131123469"},{"due":"20220720115927796","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":1,"lapses":0,"reps":2,"review":"20220704115927795"},{"due":"20220727112828162","interval":22,"difficulty":2.067497702097154,"stability":0.07408186401656833,"retrievability":0.8674977020971539,"grade":0,"lapses":1,"reps":1,"review":"20220726112828162"},{"due":"20220804073819016","interval":8,"difficulty":2.267509149597526,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220803073819014"},{"due":"20220818112013178","interval":5,"difficulty":1,"stability":10.16456942996506,"retrievability":0.00006779870516182631,"grade":2,"lapses":2,"reps":2,"review":"20220808112013178"}]
+interval: 20
+lapses: 2
+modified: 20220828025555891
+reps: 3
+retrievability: 0.8127681787299662
+review: 20220828025555891
+stability: 89.14020776059589
+tags: 用户画像 ?
+title: hive数据倾斜优化
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1011039
+
+现象
+
+```
+MR执行过程当中,reduce大部分执行完成, 但是一个或几个reduce运行很慢
+```
+原因
+
+```
+因为一个或几个key的数量比其他key多很多, 然后MR默认为hash partitioner, 因此会导致几个reducer的数据过大
+```
+根据数据分类
+
+```
+数据频率倾斜
+数据大小倾斜
+```
+解决思路
+
+```
+1 在map端解决
+2 对key操作, 减少reduce压力
+```
+解决流程
+
+```
+1 去19888或者8088resource manager看那个reduce慢, 看日志
+2 看倾斜的key能否过滤, 能的话直接过滤
+3 看是join还是group by
+```
+join
+
+```
+1 MapJoin、Bucket-Map join、SMB join；
+倾斜(Join skew in)
+a.对于skewjoin.key，在执行job时，将它们存入临时的HDFS目录，其它数据正常
+        执行
+b.对倾斜数据开启map join操作（多个map并行处理），对非倾斜值采取普通join
+        操作
+c.将倾斜数据集和非倾斜数据集进行合并Union操作。
+```
+group by
+
+```
+分组统计数据倾斜(Groupby skew in)
+    (1)Map阶段聚合
+    (2)新MRJob——通过随机数将key打散，以达到负载均衡
+    当sql中出现多个distinct时，会报错：1、关闭groupbyskew；2、将distinct拆分到多个sql中。
+```
+```
+自定义partitioner
+```

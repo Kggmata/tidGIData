@@ -1,0 +1,10 @@
+created: 20220727023855424
+modified: 20220727024010850
+tags: ? flink
+title: TPC是什么
+type: text/vnd.tiddlywiki
+
+```
+TPC benchmark是大数据的性能测试
+是一个OLTP基准
+```

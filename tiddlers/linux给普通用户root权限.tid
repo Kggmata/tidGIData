@@ -1,0 +1,72 @@
+created: 20220618233644418
+difficulty: 1
+due: 20221014064453995
+grade: 2
+history: [{"due":"20220621005417790","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005417790"},{"due":"20220705103503737","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622103503734"},{"due":"20220711032438644","interval":18,"difficulty":2.068791051258356,"stability":0.07408215765534414,"retrievability":0.8687910512583555,"grade":0,"lapses":1,"reps":1,"review":"20220710032438644"},{"due":"20220714092911916","interval":3,"difficulty":2.282819958526394,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220713092911916"},{"due":"20220729052644748","interval":8,"difficulty":1.4828201723144854,"stability":7.728916550600323,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220721052644748"}]
+interval: 15
+lapses: 2
+modified: 20220805064453995
+reps: 3
+retrievability: 0.8150711614351703
+review: 20220805064453995
+stability: 70.30757427426808
+tags: 用户画像 ?
+title: linux给普通用户root权限
+type: text/vnd.tiddlywiki
+
+2、赋予root权限
+
+方法一： 修改 /etc/sudoers 文件，找到下面一行，把前面的注释（#）去掉
+
+```
+## Allows people in group wheel to run all commands
+ %wheel ALL=(ALL) ALL
+```
+ 
+
+然后修改用户，使其属于root组（wheel），命令如下：
+
+```
+#usermod -g root tommy
+```
+ 
+
+修改完毕，现在可以用tommy帐号登录，然后用命令 su – ，即可获得root权限进行操作。
+
+方法二： 修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行，如下所示：
+
+```
+## Allow root to run any commands anywhere
+ root ALL=(ALL) ALL
+ tommy ALL=(ALL) ALL
+```
+ 
+
+修改完毕，现在可以用tommy帐号登录，然后用命令 su – ，即可获得root权限进行操作。
+
+方法三： 修改 /etc/passwd 文件，找到如下行，把用户ID修改为 0 ，如下所示：
+
+```
+tommy:x:500:500:tommy:/home/tommy:/bin/bash 
+
+修改后如下
+
+tommy:x:0:500:tommy:/home/tommy:/bin/bash 
+
+保存，用tommy账户登录后，直接获取的就是root帐号的权限。
+```
+
+友情提醒：虽然方法三看上去简单方便，但一般不推荐使用，推荐使用方法二。 
+
+linux如何为用户添加root权限
+
+```
+## Allow root to run any commands anywhere
+ root ALL=(ALL) ALL
+ tommy ALL=(ALL) ALL
+```
+ 
+
+修改完毕后，现在可以用tommy账号登录。
+
+然后用命令 su ，即可获得root权限进行操作。

@@ -1,0 +1,17 @@
+created: 20220716235409019
+difficulty: 1
+due: 20230528114528648
+grade: 1
+history: [{"due":"20220727063534627","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726063534627"},{"due":"20220805124659149","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220804124659149"},{"due":"20220822041113477","interval":5,"difficulty":1,"stability":12.91080740451933,"retrievability":0.000816005065809079,"grade":1,"lapses":1,"reps":2,"review":"20220809041113477"}]
+interval: 60
+lapses: 1
+modified: 20221008114528648
+reps: 3
+retrievability: 0.6128477767568244
+review: 20221008114528648
+stability: 232.48115038966722
+tags: ?
+title: flink指定slot共享
+type: text/vnd.tiddlywiki
+
+slotSharingGroup('group_id')

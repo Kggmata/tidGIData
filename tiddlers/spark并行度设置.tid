@@ -1,0 +1,23 @@
+created: 20220618014646862
+difficulty: 1.075606407978934
+due: 20220920120925185
+grade: 1
+history: [{"due":"20220620145714548","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619145714548"},{"due":"20220704140524064","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621140524063"}]
+interval: 17
+lapses: 0
+modified: 20220708120925185
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708120925185
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: spark并行度设置
+type: text/vnd.tiddlywiki
+
+spark.default.parallelism
+
+```
+该参数用户设置每个stage的默认task数量，这个参数及其重要，如果不设置可能会直接影响你的spark作业性能。来分析以下默认的task数量是有什么导致的？当然是由block块导致的，默认的情况下，一个block对应一个task任务，如果你上面的参数都设置了很多，这里不设置，那么相当于，你申请了资源还不用，这就是耍流氓，所以设置原则为num-executors&executor-cors的2-3倍较为合适。如果executor 的总cpu core数量为300个，那么设置1000个task是可以的，此时可以充分的利用spark集群的资源。
+http://spark.apache.org/docs/latest/configuration.html
+对于诸如reduceByKey和join之类的分布式混洗操作，父RDD中的分区数量最多的个数，分区数量就是并行任务的数量。 对于没有父RDD的并行化操作，它取决于集群管理器：本地模式：本地计算机上的内核数，Mesos细颗粒模式：8 其他：所有执行程序节点上的核心总数或2，以较大者为准
+```

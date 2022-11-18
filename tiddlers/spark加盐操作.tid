@@ -1,0 +1,35 @@
+created: 20220718133148183
+difficulty: 1.716455716201446
+due: 20221119063306181
+grade: 0
+history: [{"due":"20220801121914521","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121914521"},{"due":"20220823001011154","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220807001011153"}]
+interval: 103
+lapses: 1
+modified: 20221118063306181
+reps: 1
+retrievability: 0.516455716201446
+review: 20221118063306181
+stability: 1.4816364413634358
+tags: ?
+title: spark加盐操作
+type: text/vnd.tiddlywiki
+
+https://blog.csdn.net/appleyuchi/article/details/107640841
+
+```
+如果出现数据倾斜的 Key 比较多，上一种方法将这些大量的倾斜 Key 分拆出来，意义不大。此时更适合直接对存在数据倾斜的数据集全部加上随机前缀，然后对另外一个不存在严重数据倾斜的数据集整体与随机前缀集作笛卡尔乘积(即将数据量扩大N倍)。
+
+其实就是上一个方法的特例或者简化。少了拆分，也就没有 union。
+
+(1)适用场景
+
+一个数据集存在的倾斜 Key 比较多，另外一个数据集数据分布比较均匀。
+
+(2)优势
+
+对大部分场景都适用，效果不错。
+
+(3)劣势
+
+需要将一个数据集整体扩大 N 倍，会增加资源消耗。
+```

@@ -1,0 +1,19 @@
+created: 20220712141046785
+difficulty: 1
+due: 20221114080843767
+grade: 2
+history: [{"due":"20220718085225034","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085225034"},{"due":"20220809023600767","interval":7,"difficulty":1,"stability":16.42362666911943,"retrievability":0.0006265996821383716,"grade":2,"lapses":0,"reps":2,"review":"20220724023600767"}]
+interval: 21
+lapses: 0
+modified: 20220814080843767
+reps: 3
+retrievability: 0.8739616589731285
+review: 20220814080843767
+stability: 92.05212560775539
+tags: ?
+title: 树的bfs和dfs
+type: text/vnd.tiddlywiki
+
+breadth first search 广度优先搜索
+
+depth first search 深度优先搜索

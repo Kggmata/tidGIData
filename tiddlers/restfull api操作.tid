@@ -1,0 +1,23 @@
+created: 20220617031222365
+difficulty: 1.075606407978934
+due: 20220920120709185
+grade: 1
+history: [{"due":"20220620003451773","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619003451773"},{"due":"20220704132319330","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621132319330"}]
+interval: 17
+lapses: 0
+modified: 20220708120709185
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708120709184
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: restfull api操作
+type: text/vnd.tiddlywiki
+
+GET 用来获取资源，
+
+POST 用来新建资源（也可以用于更新资源），
+
+PUT 用来更新资源，
+
+DELETE 用来删除资源

@@ -1,0 +1,19 @@
+created: 20220724144951802
+difficulty: 0.02337100302925359
+due: 20220906004856044
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220905004856044
+reps: 1
+retrievability: 1
+review: 20220905004856044
+stability: 0.10000000088475645
+tags: flink ?
+title: 为什么说 Java 语言“编译与解释并存”？
+type: text/vnd.tiddlywiki
+
+```
+这是因为 Java 语言既具有编译型语言的特征，也具有解释型语言的特征。因为 Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，生成字节码（.class 文件），这种字节码必须由 Java 解释器来解释执行
+```

@@ -1,0 +1,41 @@
+created: 20220528135213083
+difficulty: 1.0953239134772894
+due: 20220916070852095
+grade: 1
+history: [{"due":"20220601052949924","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052949924"},{"due":"20220622081818375","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603081818374"}]
+interval: 20
+lapses: 0
+modified: 20220623070852095
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623070852095
+stability: 84.71832744247013
+tags: spark ?
+title: 什么是Row，有什么用?
+type: text/vnd.tiddlywiki
+
+- - Row是一个数据类型，类似于str/int/boolean，用于存储DataFrame中的每条数据的内容
+
+  - DataFrame中每条数据就是一个Row对象，类似于str等数据类型一样
+
+Row怎么用？**
+
+- - 获取
+
+`python
+    # 方式一：通过引用属性名称获取对应的值
+    name = row['name']
+    salary = row['salary']
+    print(name,salary)
+    
+    # 方式二：通过点调用方法获取对应的值
+    name = row.name
+    salary = row.salary
+    print(name,salary)`
+
+  - **==创建==**
+
+  `python
+    row = Row(name="周杰伦", music="我的地盘")
+    print(row.name, row.music)`
+

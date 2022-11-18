@@ -1,0 +1,17 @@
+created: 20220522045259453
+difficulty: 1.688892224472874
+due: 20230116064049982
+grade: 1
+history: [{"due":"20220524011027026","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523011027026"},{"due":"20220606010601066","interval":3,"difficulty":2.524919168615612,"stability":11.181919693641438,"retrievability":0.5771188593881783,"grade":2,"lapses":0,"reps":2,"review":"20220526010601065"},{"due":"20220729004226487","interval":14,"difficulty":1.6013358877257884,"stability":50.346949805680694,"retrievability":0.8764167191101764,"grade":2,"lapses":0,"reps":3,"review":"20220609004226487"}]
+interval: 57
+lapses: 0
+modified: 20220805064049982
+reps: 4
+retrievability: 0.8875563367470857
+review: 20220805064049981
+stability: 164.10680035953874
+tags: mapreduce ?
+title: Combiner是MR中的配置，Hive中无法使用
+type: text/vnd.tiddlywiki
+
+错误：hive中也有配置，hive.map.aggr 中也有

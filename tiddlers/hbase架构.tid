@@ -1,0 +1,47 @@
+created: 20220601074614622
+difficulty: 2.2349416234975434
+due: 20220831100503890
+grade: 1
+history: [{"due":"20220605023030043","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023030043"},{"due":"20220626002725506","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002725506"},{"due":"20220630023004523","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629023004522"},{"due":"20220705114530109","interval":5,"difficulty":2.2855622183099835,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704114530108"},{"due":"20220711012723960","interval":6,"difficulty":2.485572161146383,"stability":0.04065715014820503,"retrievability":0.00000994283639911803,"grade":0,"lapses":3,"reps":1,"review":"20220710012723960"},{"due":"20220714010450806","interval":3,"difficulty":2.6859925559221454,"stability":0.030119557630782685,"retrievability":0.00042039477576221086,"grade":0,"lapses":4,"reps":1,"review":"20220713010450805"},{"due":"20220722051319650","interval":8,"difficulty":2.8859925559228476,"stability":0.022313041284071456,"retrievability":7.021623759020026e-13,"grade":0,"lapses":5,"reps":1,"review":"20220721051319650"},{"due":"20220731025223727","interval":9,"difficulty":3.085992555922848,"stability":0.016529893502134876,"retrievability":3.4965908900849533e-19,"grade":0,"lapses":6,"reps":1,"review":"20220730025223727"},{"due":"20220807075022654","interval":6,"difficulty":2.285992555922848,"stability":2.1867776892979416,"retrievability":2.4603874181491804e-17,"grade":1,"lapses":6,"reps":2,"review":"20220805075022654"}]
+interval: 6
+lapses: 6
+modified: 20220811100503890
+reps: 3
+retrievability: 0.7489490675746953
+review: 20220811100503890
+stability: 20.42260162841271
+tags: hbase ?
+title: hbase架构
+type: text/vnd.tiddlywiki
+
+[img[64b66b06b6790d89a8e0eb9a8e933f68.webp]]
+
+https://cloud.tencent.com/developer/news/758459
+
+''Client''
+包含访问hbase的接口，Client维护着一些cache来加快对hbase的访问，比如regione的位置信息.
+
+''Zookeeper''
+HBase可以使用内置的Zookeeper，也可以使用外置的，在实际生产环境，为了保持统一性，一般使用外置Zookeeper。
+
+''Zookeeper''在HBase中的作用：
+
+`1保证任何时候，集群中只有一个master
+2存贮所有Region的寻址入口
+3实时监控Region Server的状态，将Region server的上线和下线信息实时通知给Master`
+
+''HMaster''
+`为Region server分配region
+负责region server的负载均衡
+发现失效的region server并重新分配其上的region
+HDFS上的垃圾文件回收
+处理schema更新请求`
+
+''HRegion Server''
+`HRegion server维护HMaster分配给它的region，处理对这些region的IO请求
+
+HRegion server负责切分在运行过程中变得过大的region
+
+从图中可以看到，Client访问HBase上数据的过程并不需要HMaster参与（寻址访问Zookeeper和HRegion server，数据读写访问HRegione server）`
+
+''HMaster仅仅维护者table和HRegion的元数据信息，负载很低。''

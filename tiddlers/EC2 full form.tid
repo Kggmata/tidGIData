@@ -1,0 +1,17 @@
+created: 20220714013953463
+difficulty: 1
+due: 20220908055732817
+grade: 2
+history: [{"due":"20220720113251219","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719113251219"},{"due":"20220730144745526","interval":10,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.0000265626666297211,"grade":0,"lapses":1,"reps":1,"review":"20220729144745526"},{"due":"20220806072629649","interval":7,"difficulty":1.2000474648194284,"stability":0.054881171378436774,"retrievability":0.00004746481942846522,"grade":0,"lapses":2,"reps":1,"review":"20220805072629649"},{"due":"20220812074724957","interval":6,"difficulty":1.4000574066344786,"stability":0.04065696669349018,"retrievability":0.000009941815050312982,"grade":0,"lapses":3,"reps":1,"review":"20220811074724957"},{"due":"20220820081536869","interval":8,"difficulty":1.6000574076261753,"stability":0.03011942145770373,"retrievability":9.916966998040911e-10,"grade":0,"lapses":4,"reps":1,"review":"20220819081536869"}]
+interval: 14
+lapses: 4
+modified: 20220902055732817
+reps: 2
+retrievability: 5.384799817548322e-22
+review: 20220902055732817
+stability: 6.286496959144383
+tags: ?
+title: EC2 full form
+type: text/vnd.tiddlywiki
+
+Amazon Elastic Compute Cloud (Amazon EC2) is a web-based service that allows businesses to run application programs in the Amazon Web Services (AWS) public cloud.

@@ -1,0 +1,75 @@
+created: 20220529145600435
+difficulty: 1.0936110638580405
+due: 20230124051255802
+grade: 1
+history: [{"due":"20220601082817220","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531082817220"},{"due":"20220604023107361","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603023107361"},{"due":"20220620125035388","interval":3,"difficulty":1.009651852725937,"stability":13.804311527500568,"retrievability":0.024351003043347287,"grade":2,"lapses":1,"reps":2,"review":"20220606125035388"},{"due":"20220620234115192","interval":13,"difficulty":2.1151938161596564,"stability":0.05491298557316543,"retrievability":0.9055419634337191,"grade":0,"lapses":2,"reps":1,"review":"20220619234115192"},{"due":"20220627144156438","interval":1,"difficulty":1.461994244141662,"stability":6.134073090860633,"retrievability":0.14680042798200557,"grade":1,"lapses":2,"reps":2,"review":"20220621144156438"},{"due":"20220809062406077","interval":8,"difficulty":1,"stability":41.21329164009491,"retrievability":0.8716126293692288,"grade":2,"lapses":2,"reps":3,"review":"20220629062406077"}]
+interval: 44
+lapses: 2
+modified: 20220812051255802
+reps: 4
+retrievability: 0.8936110638580407
+review: 20220812051255802
+stability: 165.14441698673016
+tags: spark ?
+title: *Catalyst优化器
+type: text/vnd.tiddlywiki
+
+[img[image-20220513175406448.png]]
+
+- 1）、SQL语句首先通过**Parser**模块被解析为语法树，此棵树称为`Unresolved Logical Plan`；
+
+- 2）、`Unresolved Logical Plan`通过**Analyzer**模块借助于数据元数据解析为`Logical Plan`；
+
+- 3）、此时再通过各种基于规则Rule的**Optimizer**进行深入优化，得到`Optimized Logical Plan`；
+
+- 4）、优化后的逻辑执行计划依然是逻辑的，需要将逻辑计划转化为`Physical Plan`。
+
+*答案：不论是SQL还是DSL，只要计算的逻辑是一样的，经过优化器，最终的实现也是一样的，所以相同执行逻辑的代码性能上没有区别
+
+```
+为了解决过多依赖 Hive 的问题, SparkSQL 使用了一个新的 SQL 优化器替代 Hive 中的优化器, 这个优化器就是 Catalyst, 整个 SparkSQL 的架构大致如下：
+```
+[img[BillfishxtcSeX2022-06-18 09_37_34.PNG]]
+
+```
+1.API 层简单的说就是 Spark 会通过一些 API 接受 SQL 语句
+2.收到 SQL 语句以后, 将其交给 Catalyst, Catalyst 负责解析 SQL, 生成执行计划等
+3.Catalyst 的输出应该是 RDD 的执行计划
+4.最终交由集群运行
+```
+[img[BillfishGfrGGm2022-06-18 09_37_59.PNG]]
+Step 1 : 解析 SQL, 并且生成 AST (抽象语法树)
+[img[Billfishdmbdhk2022-06-18 09_38_15.PNG]]
+Step 2 : 在 AST 中加入元数据信息, 做这一步主要是为了一些优化, 例如 col = col 这样的条件, 下图是一个简略图, 便于理解
+[img[BillfishVnzqDA2022-06-18 09_39_24.PNG]]
+
+```
+	score.id → id#1#L 为 score.id 生成 id 为 1, 类型是 Long
+	score.math_score → math_score#2#L 为 score.math_score 生成 id 为 2, 类型为 Long
+	people.id → id#3#L 为 people.id 生成 id 为 3, 类型为 Long
+	people.age → age#4#L 为 people.age 生成 id 为 4, 类型为 Long
+```
+
+Step 3 : 对已经加入元数据的 AST, 输入优化器, 进行优化, 从两种常见的优化开始, 简单介绍：
+[img[BillfishikpctK2022-06-18 09_39_56.PNG]]
+谓词下推 Predicate Pushdown, 将 Filter 这种可以减小数据集的操作下推, 放在 Scan 的位置, 这样可以减少操作时候的数据量。
+[img[BillfishxBxOOw2022-06-18 09_41_33.PNG]]
+
+```
+	列值裁剪 Column Pruning, 在谓词下推后, people 表之上的操作只用到了 id 列, 所以可以把其它列裁剪掉, 这样可以减少处理的数据量, 从而优化处理速度
+	还有其余很多优化点, 大概一共有一二百种, 随着 SparkSQL 的发展, 还会越来越多, 感兴趣的同学可以继续通过源码了解, 源码在 org.apache.spark.sql.catalyst.optimizer.Optimizer
+```
+
+Step 4 : 上面的过程生成的 AST 其实最终还没办法直接运行, 这个 AST 叫做 逻辑计划, 结束后, 需要生成 物理计划, 从而生成 RDD 来运行 
+
+在生成`物理计划`的时候, 会经过`成本模型`对整棵树再次执行优化, 选择一个更好的计划
+在生成`物理计划`以后, 因为考虑到性能, 所以会使用代码生成, 在机器中运行
+可以使用 queryExecution 方法查看逻辑执行计划, 使用 explain 方法查看物理执行计划
+
+[img[BillfishWkPYjl2022-06-18 09_42_23.PNG]]
+
+也可以使用 Spark WebUI 进行查看
+[img[BillfishVeXsJl2022-06-18 09_44_38.PNG]]
+SparkSQL 和 RDD 不同的主要点是在于其所操作的数据是结构化的, 提供了对数据更强的感知和分析能力, 能够对代码进行更深层的优化, 而这种能力是由一个叫做 Catalyst 的优化器所提供的
+Catalyst 的主要运作原理是分为三步, 先对 SQL 或者 Dataset 的代码解析, 生成逻辑计划, 后对逻辑计划进行优化, 再生成物理计划, 最后生成代码到集群中以 RDD 的形式运行
+[img[BillfishCjfBnD2022-06-18 09_44_57.PNG]]

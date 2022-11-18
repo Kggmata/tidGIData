@@ -1,0 +1,19 @@
+created: 20220628003354740
+difficulty: 1.05157013370948
+due: 20221110021449184
+grade: 1
+history: [{"due":"20220630132542483","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132542483"},{"due":"20220721021935104","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705021935104"}]
+interval: 25
+lapses: 0
+modified: 20220730021449184
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730021449184
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: structured streaming kmeans api
+type: text/vnd.tiddlywiki
+
+KMeans().fit()
+
+返回值为KMeansModel, 为Transformer的子类

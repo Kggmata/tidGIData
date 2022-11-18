@@ -1,0 +1,17 @@
+created: 20220602001320738
+difficulty: 1
+due: 20220926022322455
+grade: 2
+history: [{"due":"20220605071930746","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604071930746"},{"due":"20220626002533514","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002533514"}]
+interval: 20
+lapses: 0
+modified: 20220629022322455
+reps: 3
+retrievability: 0.8847461089172606
+review: 20220629022322454
+stability: 88.60191707719252
+tags: hbase ?
+title: hbase的cell的版本是按照时间升序还是降序
+type: text/vnd.tiddlywiki
+
+每个 cell中，不同版本的数据按照时间倒序排序，即最新的数据排在最前面。

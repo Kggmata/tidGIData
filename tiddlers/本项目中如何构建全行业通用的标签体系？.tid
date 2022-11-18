@@ -1,0 +1,23 @@
+created: 20220614075612113
+difficulty: 1
+due: 20230320131642484
+grade: 2
+history: [{"due":"20220617071942250","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616071942250"},{"due":"20220617235851259","interval":0,"difficulty":1,"stability":0.10023193359375,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220616235851259"},{"due":"20220618235921736","interval":0,"difficulty":1,"stability":0.10023193359375,"retrievability":1,"grade":2,"lapses":0,"reps":3,"review":"20220617235921736"},{"due":"20220628094135126","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":4,"review":"20220619094135126"},{"due":"20220818142216518","interval":10,"difficulty":1,"stability":49.62797382038931,"retrievability":0.8875368908748189,"grade":2,"lapses":0,"reps":5,"review":"20220629142216518"}]
+interval: 55
+lapses: 0
+modified: 20220823131642485
+reps: 6
+retrievability: 0.8897939475573553
+review: 20220823131642484
+stability: 208.51507007027075
+tags: 用户画像web界面 ?
+title: 本项目中如何构建全行业通用的标签体系？
+type: text/vnd.tiddlywiki
+
+答案：全行业通用的一级到五级标签
+
+[img[image-20220614144758213.png]]
+
+构建的流程分析：
+
+[img[image-20220614145633729.png]]

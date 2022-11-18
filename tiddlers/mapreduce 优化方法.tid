@@ -1,0 +1,72 @@
+created: 20220521055219338
+difficulty: 5.615084132247805
+due: 20221013003118911
+grade: 0
+history: [{"due":"20220524024125846","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522024125845"},{"due":"20220615015738328","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529015738328"},{"due":"20220727091007103","interval":18,"difficulty":3.983494477388395,"stability":41.186951489203864,"retrievability":0.8919043531095704,"grade":1,"lapses":0,"reps":3,"review":"20220616091007103"},{"due":"20220804092134266","interval":48,"difficulty":5.067944735720732,"stability":0.07408183255527093,"retrievability":0.8844502583323368,"grade":0,"lapses":1,"reps":1,"review":"20220803092134266"},{"due":"20220809112556626","interval":5,"difficulty":5.268760740786542,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220808112556625"},{"due":"20220817081427174","interval":5,"difficulty":4.468828539411092,"stability":3.5997660491679233,"retrievability":0.00006779862455024804,"grade":1,"lapses":2,"reps":2,"review":"20220813081427174"},{"due":"20220824131525424","interval":10,"difficulty":5.415084132247805,"stability":0.040656966333775045,"retrievability":0.7462555928367128,"grade":0,"lapses":3,"reps":1,"review":"20220823131525424"}]
+interval: 50
+lapses: 4
+modified: 20221012003118911
+reps: 1
+retrievability: 5.33786304754419e-57
+review: 20221012003118911
+stability: 0.03011942145770373
+tags: mapreduce ?
+title: mapreduce 优化方法
+type: text/vnd.tiddlywiki
+
+1）数据输入：
+
+1）合并小文件：在执行mr任务前将小文件进行合并，大量的小文件会产生大量的map任务，增大map任务装载次数，而任务的装载比较耗时，从而导致 mr 运行较慢。
+
+（2）采用ConbinFileInputFormat来作为输入，解决输入端大量小文件场景。
+
+2）map阶段
+
+（1）减少spill次数：通过调整io.sort.mb及sort.spill.percent参数值，增大触发spill的内存上限，减少spill次数，从而减少磁盘 IO。
+
+（2）减少merge次数：通过调整io.sort.factor参数，增大merge的文件数目，减少merge的次数，从而缩短mr处理时间。
+
+（3）在 map 之后先进行combine处理，减少 I/O。
+
+3）reduce阶段
+
+（1）合理设置map和reduce数：两个都不能设置太少，也不能设置太多。太少，会导致task等待，延长处理时间；太多，会导致 map、reduce任务间竞争资源，造成处理超时等错误。
+
+（2）设置map、reduce共存：调整slowstart.completedmaps参数，使map运行到一定程度后，reduce也开始运行，减少reduce的等待时间。
+
+（3）规避使用reduce，因为Reduce在用于连接数据集的时候将会产生大量的网络消耗。
+
+（4）合理设置reduc端的buffer，默认情况下，数据达到一个阈值的时候，buffer中的数据就会写入磁盘，然后reduce会从磁盘中获得所有的数据。也就是说，buffer和reduce是没有直接关联的，中间多个一个写磁盘->读磁盘的过程，既然有这个弊端，那么就可以通过参数来配置，使得buffer中的一部分数据可以直接输送到reduce，从而减少IO开销：mapred.job.reduce.input.buffer.percent，默认为0.0。当值大于0的时候，会保留指定比例的内存读buffer中的数据直接拿给reduce使用。这样一来，设置buffer需要内存，读取数据需要内存，reduce计算也要内存，所以要根据作业的运行情况进行调整。
+
+4）IO传输
+
+（1）采用数据压缩的方式，减少网络IO的的时间。安装Snappy和LZOP压缩编码器。
+
+（2）使用SequenceFile二进制文件
+
+5）数据倾斜问题
+
+（1）数据倾斜现象
+
+数据频率倾斜——某一个区域的数据量要远远大于其他区域。
+
+数据大小倾斜——部分记录的大小远远大于平均值。
+
+2）如何收集倾斜数据
+
+在reduce方法中加入记录map输出键的详细情况的功能。
+
+（3）减少数据倾斜的方法
+
+方法1：抽样和范围分区
+
+可以通过对原始数据进行抽样得到的结果集来预设分区边界值。
+
+方法2：自定义分区
+
+另一个抽样和范围分区的替代方案是基于输出键的背景知识进行自定义分区。例如，如果map输出键的单词来源于一本书。其中大部分必然是省略词（stopword）。那么就可以将自定义分区将这部分省略词发送给固定的一部分reduce实例。而将其他的都发送给剩余的reduce实例。
+
+方法3：Combine
+
+使用Combine可以大量地减小数据频率倾斜和数据大小倾斜。在可能的情况下，combine的目的就是聚合并
+精简数据。

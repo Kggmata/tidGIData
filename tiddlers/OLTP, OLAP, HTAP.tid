@@ -1,0 +1,22 @@
+created: 20220727020306904
+modified: 20220727052317978
+tags: ? flink
+title: OLTP, OLAP, HTAP
+type: text/vnd.tiddlywiki
+
+```
+OLTP 
+OLAP 
+  MOLAP Multi-dimensional OLAP
+
+  ROLAP rational OLAP
+ROLAP servers are placed between relational backend server and client front-end tools. It uses relational or extended DBMS to store and manage warehouse data. ROLAP has basically 3 main components: Database Server, ROLAP server, and Front-end tool.
+
+MOLAP multidimensional online analytical processing
+use optimized multidimensional array storage instead of relational database.
+
+HOLAP a combination of both ROLAP and MOLAP
+
+HTAP Hybrid transactional\Analytical 
+HTAP is used to describe the capability of a single database that can perform both online transaction processing (OLTP) and online analytical processing (OLAP) for the purpose of real-time operational intelligence processing. The term was created by Gartner in 2014.
+```

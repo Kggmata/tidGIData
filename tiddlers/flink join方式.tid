@@ -1,0 +1,31 @@
+created: 20220720084027963
+difficulty: 1
+due: 20220825081022900
+grade: 1
+history: [{"due":"20220802060433531","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060433531"},{"due":"20220808011024020","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011024020"}]
+interval: 5
+lapses: 1
+modified: 20220812081022900
+reps: 2
+retrievability: 0.0008160044497337299
+review: 20220812081022900
+stability: 12.910806318862917
+tags: ?
+title: flink join方式
+type: text/vnd.tiddlywiki
+
+```
+动态表 - 动态表(双流join 每个流有数据到达, 和另一个表的全量数据join)
+regular join
+interval join
+temporal join(temporal table): temporal需要两侧都设置watermark, 同时要把versioned table的主键包含在join on条件之内
+动态表 - 外部维表(单流join 动态表的数据到达, 和维表的数据join)
+lookup join
+动态表字段列转行
+array expansion: cross join unnest(xxx) as t(xx)
+table function: UDTF
+```
+```
+等值 hash shuffle
+非等值 global shuffle
+```

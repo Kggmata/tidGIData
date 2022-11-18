@@ -1,0 +1,28 @@
+created: 20220723135042517
+difficulty: 1
+due: 20220917132246611
+grade: 0
+history: [{"due":"20220823062421620","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062421619"}]
+interval: 25
+lapses: 1
+modified: 20220916132246612
+reps: 1
+retrievability: 3.6360300269491205e-12
+review: 20220916132246611
+stability: 0.07408182272361549
+tags: flink ?
+title: 从输入url到页面展示发生了什么
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/133906695
+
+```
+1、输入地址
+2、浏览器查找域名的 IP 地址
+3、浏览器向 web 服务器发送一个 HTTP 请求
+4、服务器的永久重定向响应
+6、服务器处理请求
+7、服务器返回一个 HTTP 响应
+8、浏览器显示 HTML
+9、浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）
+```

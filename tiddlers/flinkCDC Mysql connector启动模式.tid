@@ -1,0 +1,23 @@
+created: 20220725020722150
+difficulty: 0.02337100302925359
+due: 20220906004915423
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220905004915423
+reps: 1
+retrievability: 1
+review: 20220905004915423
+stability: 0.10000000088475645
+tags: flink ?
+title: flinkCDC Mysql connector启动模式
+type: text/vnd.tiddlywiki
+
+```
+initial: 在首次启动, 对数据库的表执行初始快照, 完成后继续读取binlog日志, 可得到历史到现在的所有数据. initial 是默认的启动模式
+```
+```
+latest-offset
+首次启动不执行快照, 只读取binlog最新日志
+```

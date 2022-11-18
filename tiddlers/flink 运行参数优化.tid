@@ -1,0 +1,33 @@
+created: 20220724013206815
+difficulty: 0.021527042662928327
+due: 20221012140441562
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221011140441562
+reps: 1
+retrievability: 1
+review: 20221011140441562
+stability: 0.10000000088475645
+tags: flink ?
+title: flink 运行参数优化
+type: text/vnd.tiddlywiki
+
+```
+	运行时参数：优化 Flink SQL 任务在执行时的任务性能
+table.exec.async-lookup.buffer-capacity: 100 最大异步数量, 指异步lookup join的时候的最大异步条数
+table.exec.mini-batch.enabled: false 开启mini batch, 满足间隔时间阈值或者最大缓冲记录数阈值, 触发状态访问
+table.exec.mini-batch.allow-latency: 0 ms 时间阈值
+table.exec.mini-batch.size: -1 缓冲区阈值
+table.exec.resource.default-parallelism: -1 flink算子并行度设置, 优先级高于代码中environment的
+table.exec.sink.not-null-enforcer: ERROR 如果插入到非空约束的字段, 当为空时保存或者DROP直接删除
+table.exec.source.cdc-events-duplicate: false 当接入CDC的数据, 上游cdc产生重复数据, 可以使用此参数在source算子去重
+table.exec.source.idle-timeout: 0 ms
+当source算子在规定时间内未收到数据, 将次数据源标记为临时空闲
+table.exec.state.ttl: 0 ms state的ttl设置, 防止state过大
+最常用:
+table.exec.mini-batch.enabled: true
+table.exec.mini-batch.allow-latency: 60 s
+table.exec.mini-batch.size: 1000000000
+```

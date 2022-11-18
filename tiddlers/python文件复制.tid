@@ -1,0 +1,13 @@
+created: 20220829132508933
+modified: 20220829132631995
+tags: ? flink
+title: python文件复制
+type: text/vnd.tiddlywiki
+
+```
+copy(source, destination)
+将元数据的内容复制到目标文件或者目录下
+
+copy2(source, destination)
+将源文件的内容复制到目标文件或者文件夹, 区别是会尝试保留元数据
+```

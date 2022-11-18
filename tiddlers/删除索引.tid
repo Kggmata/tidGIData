@@ -1,0 +1,22 @@
+created: 20220617061127270
+difficulty: 1
+due: 20220918025314142
+grade: 2
+history: [{"due":"20220620023249157","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619023249157"},{"due":"20220704012054939","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621012054939"}]
+interval: 16
+lapses: 0
+modified: 20220707025314142
+reps: 3
+retrievability: 0.8824752287483904
+review: 20220707025314142
+stability: 73.44779868247726
+tags: 用户画像 ?
+title: 删除索引
+type: text/vnd.tiddlywiki
+
+```
+delete /job_idx
+```
+
+或者
+[img[image-20220617115351315.png]]

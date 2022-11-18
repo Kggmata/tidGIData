@@ -1,0 +1,25 @@
+created: 20220608004653796
+difficulty: 1.074347896883307
+due: 20220927235307617
+grade: 1
+history: [{"due":"20220612000209882","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611000209882"},{"due":"20220630005819839","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220614005819839"}]
+interval: 20
+lapses: 0
+modified: 20220704235307618
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704235307617
+stability: 84.82124350335246
+tags: hbase ?
+title: Phoenix的定位
+type: text/vnd.tiddlywiki
+
+Phoenix提供了HBase的分析能力增强，那么是否可以认为：抛弃Hive、踹飞Spark，全面拥抱Phoenix+HBase呢？
+
+> 不可能
+
+基于HBase的定位：随机查询高效范围扫描，Phoenix受限的，比如列族的限制、Rowkey的限制、Memstore刷新HFile、split region等等机制，都是为了HBase自身而服务的，Phoenix反而被限制了。
+
+所以，我们用Phoenix的主要定位就是：`快速用SQL去操作HBase`，而不是将Phoenix作为主力的数据仓库（数据分析）
+
+Hive、Spark还是主力数仓体系的王者。

@@ -1,0 +1,18 @@
+created: 20220525043715490
+difficulty: 1
+due: 20221003113844617
+grade: 2
+history: [{"due":"20220529151718606","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528151718606"},{"due":"20220624052826707","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052826707"}]
+interval: 23
+lapses: 0
+modified: 20220625113844617
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625113844617
+stability: 100.35422359618087
+tags: spark ?
+title: 转换函数的特点是一定不会触发job的运行，返回值是RDD?
+type: text/vnd.tiddlywiki
+
+- - 错误：有的转换算子有可能会触发job：sortByKey：返回排序好的RDD，实现过程中由于实现算法会触发job
+- 

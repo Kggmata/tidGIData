@@ -1,0 +1,18 @@
+created: 20220718053214448
+difficulty: 1
+due: 20230111003747689
+grade: 2
+history: [{"due":"20220731041856401","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041856401"},{"due":"20220821080857369","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220805080857369"}]
+interval: 31
+lapses: 0
+modified: 20220905003747689
+reps: 3
+retrievability: 0.8193550100995021
+review: 20220905003747689
+stability: 127.70184983018511
+tags: ?
+title: 求连续登录n天的用户
+type: text/vnd.tiddlywiki
+
+select user_id, login_date-logindata_lag datadiff from 
+(select *, lag(2) over (partition by userid order by loginDate) logindata_lag from table ) t1

@@ -1,0 +1,69 @@
+created: 20220522110629753
+difficulty: 2.7907164146353
+due: 20220910131317695
+grade: 1
+history: [{"due":"20220524062848121","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523062848121"},{"due":"20220531002044935","interval":2,"difficulty":3.640976298811018,"stability":6.175806421831119,"retrievability":0.6931759895835838,"grade":1,"lapses":0,"reps":2,"review":"20220525002044935"},{"due":"20220629014653421","interval":9,"difficulty":2.698641183194943,"stability":25.831612907839727,"retrievability":0.8576648843839245,"grade":2,"lapses":0,"reps":3,"review":"20220603014653421"}]
+interval: 28
+lapses: 0
+modified: 20220701131317695
+reps: 4
+retrievability: 0.8920752314403567
+review: 20220701131317695
+stability: 70.77221838265807
+tags: spark ?
+title: 理解Spark程序核心概念
+type: text/vnd.tiddlywiki
+
+''- **架构组成**''
+
+*  - 主：Master：管理节点
+
+    - 接受客户端请求、管理从节点Worker节点、资源管理和任务调度
+
+*  - 从：Worker：计算节点
+
+    - 使用自己所在节点的资源运行Executor进程：给每个Executor分配一定的资源
+
+- ==**程序组成：任何一个Spark程序都由两种进程构成**==
+
+  - 程序提交后会**先启动Driver进程**
+
+  - Driver进程：驱动进程【申请资源、解析、调度、监控Task】
+
+    - 向主节点申请Executor资源，让主节点在从节点上根据需求配置启动对应的Executor
+
+    - 解析代码逻辑：将代码中的逻辑转换为Task线程
+
+    - 将Task分配给Executor去运行
+
+    - 监控每个Executor运行的Task状态
+
+  - Executor进程：执行进程【运行Task】
+
+    - 运行在Worker上，使用Worker分配的资源等待运行Task
+
+    - 所有Executor启动成功以后会向Driver进行注册
+
+    - Executor收到Driver分配Task任务，运行Task
+
+- **架构与程序关系**
+
+  - Driver进程的启动由Master负责
+
+  - Master负责管理所有Worker资源，Driver会向Master请求启动Executor
+
+  - Worker上负责运行Executor进程
+
+  - Driver负责解析、分配、监控所有Task线程在Executor中运行
+
+[img[image-20220522161954587.png]]
+[img[image-20211122202714106.png]]
+
+实际上是主: cluster manager, 从: worker node
+
+在不同模式下不同名字.
+
+cluster manager: 管理从节点, 资源分配任务调度, 接客
+
+worker node:负责自己节点的资源,任务监控,任务的运行
+[img[Snipaste_2022-05-23_09-26-37.jpg]]

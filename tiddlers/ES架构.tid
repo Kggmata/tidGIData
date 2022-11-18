@@ -1,0 +1,39 @@
+created: 20220615083945363
+difficulty: 1.0553190686350755
+due: 20221005004129881
+grade: 1
+history: [{"due":"20220619232534172","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618232534172"},{"due":"20220709065213677","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621032446402"}]
+interval: 20
+lapses: 0
+modified: 20220711004129881
+reps: 3
+retrievability: 0.8553190686350756
+review: 20220711004129880
+stability: 85.56630724019516
+tags: 用户画像 ?
+title: ES架构
+type: text/vnd.tiddlywiki
+
+[img[BillfishlvIhmT2022-06-15 16_40_16.PNG]]
+
+Data node
+
+```
+A node that has the data role. Data nodes hold data and perform data related operations such as CRUD, search, and aggregations. A node with the data role can fill any of the specialised data node roles.
+```
+
+Master node
+
+```
+The master node is responsible for lightweight cluster-wide actions such as creating or deleting an index, tracking which nodes are part of the cluster, and deciding which shards to allocate to which nodes. It is important for cluster health to have a stable master node.
+```
+
+Coordinating node
+
+```
+Requests like search requests or bulk-indexing requests may involve data held on different data nodes. A search request, for example, is executed in two phases which are coordinated by the node which receives the client request — the coordinating node.
+
+In the scatter phase, the coordinating node forwards the request to the data nodes which hold the data. Each data node executes the request locally and returns its results to the coordinating node. In the gather phase, the coordinating node reduces each data node’s results into a single global result set.
+
+Every node is implicitly a coordinating node. This means that a node that has an explicit empty list of roles via node.roles will only act as a coordinating node, which cannot be disabled. As a result, such a node needs to have enough memory and CPU in order to deal with the gather phase.
+```

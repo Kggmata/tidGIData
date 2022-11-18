@@ -1,0 +1,81 @@
+created: 20220522110212596
+difficulty: 1.1558583568871061
+due: 20220928144751351
+grade: 1
+history: [{"due":"20220524021323997","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523021323997"},{"due":"20220528000517263","interval":1,"difficulty":2.780372221787294,"stability":4.00825033798033,"retrievability":0.8325719125598604,"grade":2,"lapses":0,"reps":2,"review":"20220524000517263"},{"due":"20220630013431058","interval":8,"difficulty":1.7907236235956276,"stability":29.311545151768094,"retrievability":0.8103514018083336,"grade":2,"lapses":0,"reps":3,"review":"20220601013431058"},{"due":"20220704075828578","interval":32,"difficulty":2.882068212843924,"stability":0.07408316441686115,"retrievability":0.8913445892482964,"grade":0,"lapses":1,"reps":1,"review":"20220703075828578"},{"due":"20220719015747238","interval":4,"difficulty":1.0854519662114848,"stability":12.145736615398393,"retrievability":0.0033837533675606132,"grade":2,"lapses":1,"reps":2,"review":"20220707015747238"}]
+interval: 16
+lapses: 1
+modified: 20220723144751351
+reps: 3
+retrievability: 0.8704063906756214
+review: 20220723144751351
+stability: 67.440684107131
+tags: spark ?
+title: 工作中，我们测试完成了，代码和环境没有问题，如何让Python程序变成Linux命令每天自动提交运行呢？
+type: text/vnd.tiddlywiki
+
+- 工作中，所有程序是自动化调度运行的，一般使用Linux脚本通过任务流调度工具自动调度
+
+- 在Pycharm中开发好的程序如何在Linux中执行呢？
+
+- 类似于YARN，我们自己写好的Java类型的程序也可以放在yarn上运行
+
+  yarn jar xxxx.jar wordcount input output
+
+- Spark也提供了类似于的脚本命令
+
+官网：https://spark.apache.org/docs/latest/submitting-applications.html
+
+脚本：spark-submit
+
+# 语法
+spark-submit \
+可选参数【程序名字、运行模式、资源配置、配置信息】 \
+Python文件 \
+代码中argV参数
+
+# 示例
+spark-submit [可选参数] pyspark_core_word_args.py /spark/wordcount/input /spark/wordcount/output
+
+# 圆周率
+/export/server/spark/bin/spark-submit \
+# 参数要根据需求给定参数
+--master local[2] \
+# 文件是Pycharm中开发好的
+/export/server/spark/examples/src/main/python/pi.py \
+# 参数由Python文件代码决定
+1000
+
+[img[image-20220522150454995.png]]
+
+''--master: local[*]/standalone/yarn,运行模式
+''
+本地/standalone集群/yarn集群
+
+''--deploy-mode: client/cluster,driver运行的位置
+''
+client:在提交客户端
+
+cluster:在集群从节点
+
+''driver选项''：
+
+driver-memory：Driver进程能用多少内存，默认Driver进程会使用1G内存
+
+driver-cores：Driver进程能用多少CPU，默认使用1CoreCPU
+
+supervise: Driver故障以后自动重启，避免Driver进程故障，影响程序的运行
+
+''executor选项''
+
+executor-memory：指定每个Executor进程能使用多少内存，默认是1G
+
+executor-cores：指定每个Executor能使用多少核CPU，YANR中默认为1，Standalone中默认所有可用的
+
+total-executor-cores：指定Standalone集群中所有这个程序所有Executor总共使用多少CPU
+
+怎么计算Executor的个数：--total-executor-cores[16]  /   --executor-cores [2] = 8
+
+num-executors：指定YARN集群中，这个程序总共启动几个Executor
+
+queue：指定运行的队列名称

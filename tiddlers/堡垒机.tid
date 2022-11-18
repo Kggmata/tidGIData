@@ -1,0 +1,24 @@
+created: 20220711065509428
+difficulty: 2.2471882396225027
+due: 20220917124750909
+grade: 0
+history: [{"due":"20220713040127022","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040127022"},{"due":"20220722014500409","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721014500409"},{"due":"20220731031951959","interval":9,"difficulty":1.200002760952549,"stability":0.0548811791474709,"retrievability":0.0000027609525491324836,"grade":0,"lapses":2,"reps":1,"review":"20220730031951958"},{"due":"20220815080309857","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":1,"lapses":2,"reps":2,"review":"20220805080309856"},{"due":"20220822114937198","interval":16,"difficulty":2.0471882396225025,"stability":0.040656966333775045,"retrievability":0.8471882396225026,"grade":0,"lapses":3,"reps":1,"review":"20220821114937198"}]
+interval: 26
+lapses: 4
+modified: 20220916124750909
+reps: 1
+retrievability: 5.473070746999386e-30
+review: 20220916124750909
+stability: 0.03011942145770373
+tags: ?
+title: 堡垒机
+type: text/vnd.tiddlywiki
+
+堡垒机，也叫做运维安全审计系统，它的核心功能是 4A：
+
+```
+身份验证 Authentication
+账号管理 Account
+授权控制 Authorization
+安全审计 Audit
+```

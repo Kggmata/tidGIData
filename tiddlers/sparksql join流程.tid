@@ -1,0 +1,29 @@
+created: 20220719142956276
+difficulty: 1
+due: 20220824083645036
+grade: 1
+history: [{"due":"20220802034747941","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801034747941"}]
+interval: 7
+lapses: 0
+modified: 20220808083645036
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808083645035
+stability: 16.423571292705216
+tags: ?
+title: sparksql join流程
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1005502
+
+1 将参与join的两张表抽象为流式遍历表streamlter, 查找表buildlter, 根据join语句自动完成
+[img[Spark SQL 之 Join 实现 - 腾讯云开发者社区-腾2022-07-19 22_33_30.png]]
+
+2 基于streamlter遍历, 每次取出streamlter中的一条记录rowA, 根据join条件算出keyA, 根据keyA去buildlter查找所有满足join条件(keyB=keyA)的记录rowBs
+
+sort merge join实现
+[img[Spark SQL 之 Join 实现 - 腾讯云开发者社区-腾2022-07-19 22_36_55.png]]
+
+```
+inner join: 自动将大表设置为左表streamlter, 小表为buildlter
+```

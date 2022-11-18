@@ -1,0 +1,23 @@
+created: 20220614074432336
+difficulty: 1
+due: 20221007104414797
+grade: 2
+history: [{"due":"20220617054850427","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616054850427"},{"due":"20220619011834625","interval":2,"difficulty":1.1583258928533677,"stability":0.07416773238429089,"retrievability":0.12217091235547979,"grade":0,"lapses":1,"reps":1,"review":"20220618011834625"},{"due":"20220702000038492","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":2,"lapses":1,"reps":2,"review":"20220620000038492"},{"due":"20220707050548704","interval":16,"difficulty":2.066723080099495,"stability":0.05488141221849455,"retrievability":0.8667230800994952,"grade":0,"lapses":2,"reps":1,"review":"20220706050548704"},{"due":"20220720062150405","interval":4,"difficulty":1,"stability":10.158295607157797,"retrievability":0.0004623722433273712,"grade":2,"lapses":2,"reps":2,"review":"20220710062150404"}]
+interval: 16
+lapses: 2
+modified: 20220726104414797
+reps: 3
+retrievability: 0.8470886630670919
+review: 20220726104414797
+stability: 73.49783704363394
+tags: 用户画像web界面 ?
+title: 用户画像项目背景介绍
+type: text/vnd.tiddlywiki
+
+项目背景介绍：
+
+```
+1-项目基于外包项目，适合于全行业的用户画像指标体系构建
+2-产品最早是基于pingan和hair实现产品级别用户画像
+3-可以基于神策平台观察不同行业指标体系
+```

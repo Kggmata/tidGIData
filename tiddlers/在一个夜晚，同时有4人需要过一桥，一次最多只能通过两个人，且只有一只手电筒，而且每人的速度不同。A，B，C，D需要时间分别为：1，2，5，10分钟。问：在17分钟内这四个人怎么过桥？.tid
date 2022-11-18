@@ -1,0 +1,27 @@
+created: 20220722015216216
+difficulty: 1
+due: 20221024114507291
+grade: 2
+history: [{"due":"20220822133854350","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821133854350"}]
+interval: 48
+lapses: 0
+modified: 20221008114507291
+reps: 2
+retrievability: 1.0874385510043795e-22
+review: 20221008114507291
+stability: 16.439759152464664
+tags: ?
+title: 在一个夜晚，同时有4人需要过一桥，一次最多只能通过两个人，且只有一只手电筒，而且每人的速度不同。A，B，C，D需要时间分别为：1，2，5，10分钟。问：在17分钟内这四个人怎么过桥？
+type: text/vnd.tiddlywiki
+
+总共是17分钟
+
+第一步：A、B过花时间2分钟。
+
+第二步：B回花时间2分钟。
+
+第三步：C、D过花时间10分钟。
+
+第四步：A回花时间1分钟。
+
+第五步：A、B再过花时间2分钟。

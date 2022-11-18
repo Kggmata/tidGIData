@@ -1,0 +1,31 @@
+created: 20220726030214001
+modified: 20220729064558439
+tags: ? flink
+title: Hudi简介
+type: text/vnd.tiddlywiki
+
+https://intl.cloud.tencent.com/zh/document/product/1026/35587#.E6.97.B6.E9.97.B4.E8.BD.B4
+https://cloud.tencent.com/developer/article/1694530
+
+```
+Hudi是一个streaming data lake platform
+一个data lake的开源方案. 是hadoop updata and incremental的简写
+
+hudi能够和hive, spark, presto这类处理引擎一起工作. 
+
+Hudi具有如下基本特性/能力：
+
+- Hudi能够摄入（Ingest）和管理（Manage）基于HDFS之上的大型分析数据集，主要目的是高效的减少入库延时。
+- Hudi基于Spark来对HDFS上的数据进行更新、插入、删除等。
+- Hudi在HDFS数据集上提供如下流原语：插入更新（如何改变数据集）；增量拉取（如何获取变更的数据）。
+- Hudi可以对HDFS上的parquet格式数据进行插入/更新操作。
+- Hudi通过自定义InputFormat与Hadoop生态系统（Spark、Hive、Parquet）集成。
+- Hudi通过Savepoint来实现数据恢复。
+```
+```
+核心概念
+- timeline
+- file layout
+- table types: COW MOR
+- query types: snapshot queries, incremental queries, read-optimized queries
+```

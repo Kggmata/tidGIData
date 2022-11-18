@@ -1,0 +1,19 @@
+created: 20220720021608161
+difficulty: 1.0079811836409007
+due: 20230120133156984
+grade: 1
+history: [{"due":"20220802035859787","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801035859787"},{"due":"20220822125450002","interval":5,"difficulty":1,"stability":16.306884698294827,"retrievability":0.005153782894150152,"grade":2,"lapses":0,"reps":2,"review":"20220806125450002"}]
+interval: 33
+lapses: 0
+modified: 20220908133156984
+reps: 3
+retrievability: 0.8079811836409008
+review: 20220908133156984
+stability: 134.1593033514348
+tags: flink ?
+title: flinksql virtual
+type: text/vnd.tiddlywiki
+
+```
+标识某个元数据列不写入外部存储介质
+```

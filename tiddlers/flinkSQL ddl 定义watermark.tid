@@ -1,0 +1,34 @@
+created: 20220720025821615
+difficulty: 1.8585224129237503
+due: 20221012235730853
+grade: 0
+history: [{"due":"20220802040332243","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801040332243"},{"due":"20220823025605455","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220807025605455"}]
+interval: 65
+lapses: 1
+modified: 20221011235730853
+reps: 1
+retrievability: 0.6585224129237505
+review: 20221011235730852
+stability: 0.07408182272361549
+tags: ?
+title: flinkSQL ddl 定义watermark
+type: text/vnd.tiddlywiki
+
+```
+Watermark 是在 Create Table 中进行定义的。
+具体 SQL 语法标准是 
+WATERMARK FOR rowtime_column_name AS watermark_strategy_expression。
+其中：
+- rowtime_column_name：表的事件时间属性字段。该列必须是 TIMESTAMP(3)、TIMESTAMP_LTZ(3) 类，这个时间可以是一个计算列。
+
+- watermark_strategy_expression：定义 Watermark 的生成策略。Watermark 的一般都是由 rowtime_column_name 列减掉一段固定时间间隔。SQL 中 Watermark 的生产策略是：当前 Watermark 大于上次发出的 Watermark 时发出当前 Watermark。比如watermark for row_time as row_time - interval '5' second
+
+- 注意事项
+1.	如果你使用的是事件时间语义，那么必须要设设置事件时间属性和 WATERMARK 生成策略。
+2.	Watermark 的发出频率：可以通过pipeline.auto-watermark-interval来进行修改
+	有界无序：设置方式为 WATERMARK FOR rowtime_column AS rowtime_column - INTERVAL 'string' timeUnit。此类策略就可以用于设置最大乱序时间，假如设置为 WATERMARK FOR rowtime_column AS rowtime_column - INTERVAL '5' SECOND，则生成的是运行 5s 延迟的 Watermark。一般都用这种 Watermark 生成策略，此类 Watermark 生成策略通常用于有数据乱序的场景中，而对应到实际的场景中，数据都是会存在乱序的，所以基本都使用此类策略。
+	严格升序：设置方式为 WATERMARK FOR rowtime_column AS rowtime_column。一般基本不用这种方式。如果你能保证你的数据源的时间戳是严格升序的，那就可以使用这种方式。严格升序代表 Flink 任务认为时间戳只会越来越大，也不存在相等的情况，只要相等或者小于之前的，就认为是迟到的数据。
+	递增：设置方式为 WATERMARK FOR rowtime_column AS rowtime_column - INTERVAL '0.001' SECOND。一般基本不用这种方式。如果设置此类，则允许有相同的时间戳出现。
+	后续在“窗口聚合”知识点中进行演示
+
+```

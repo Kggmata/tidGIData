@@ -1,0 +1,10 @@
+created: 20220901115136301
+modified: 20220901115208118
+tags: ? flink
+title: CDC主要分为两大类
+type: text/vnd.tiddlywiki
+
+```
+1 主动查询
+2 基于事件接收
+```

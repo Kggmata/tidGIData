@@ -1,0 +1,15 @@
+created: 20220520054824210
+difficulty: 2.2508942029413816
+due: 20220905020307594
+grade: 2
+history: [{"due":"20220523073110520","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521073110519"},{"due":"20220529001121452","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523001121452"},{"due":"20220625111836091","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601111836091"}]
+interval: 25
+lapses: 0
+modified: 20220626020307594
+reps: 4
+retrievability: 0.8950417678954212
+review: 20220626020307594
+stability: 71.1902896812924
+tags: spark ?
+title: 分布式架构有两种
+type: text/css

@@ -1,0 +1,19 @@
+created: 20220521101221005
+difficulty: 2.0728102026507074
+due: 20221223003839352
+grade: 2
+history: [{"due":"20220524064356580","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522064356580"},{"due":"20220615073217042","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529073217042"},{"due":"20220802105716417","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616105716417"}]
+interval: 52
+lapses: 0
+modified: 20220807003839352
+reps: 4
+retrievability: 0.8893157252623122
+review: 20220807003839352
+stability: 137.99102630377573
+tags: yarn ?
+title: yarn调度策略apache和cdh
+type: text/vnd.tiddlywiki
+
+apache用的capacity scheduler
+
+cdh用的fair scheduler

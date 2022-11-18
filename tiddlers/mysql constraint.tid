@@ -1,0 +1,23 @@
+created: 20220713061334840
+difficulty: 1
+due: 20221121120634542
+grade: 2
+history: [{"due":"20220719082814086","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718082814085"},{"due":"20220811114904581","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220726114904581"}]
+interval: 22
+lapses: 0
+modified: 20220817120634542
+reps: 3
+retrievability: 0.8684516258848127
+review: 20220817120634541
+stability: 95.6320335377201
+tags: ?
+title: mysql constraint
+type: text/vnd.tiddlywiki
+
+primary key 
+
+not null
+
+unique 
+
+foreign key

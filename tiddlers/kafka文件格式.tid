@@ -1,0 +1,121 @@
+created: 20220609014444765
+difficulty: 1
+due: 20220908141005150
+grade: 2
+history: [{"due":"20220613132321631","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612132321631"},{"due":"20220616234820337","interval":3,"difficulty":1.3433801103128513,"stability":0.07442546333264817,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615234820337"},{"due":"20220619135849269","interval":2,"difficulty":1.6023161252929519,"stability":0.05491298557316543,"retrievability":0.05893601498010052,"grade":0,"lapses":2,"reps":1,"review":"20220618135849269"},{"due":"20220630130825415","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620130825415"}]
+interval: 14
+lapses: 2
+modified: 20220704141005150
+reps: 3
+retrievability: 0.8606496253758356
+review: 20220704141005150
+stability: 65.66143979122012
+tags: kafka ?
+title: kafka文件格式
+type: text/vnd.tiddlywiki
+
+```
+00000000000000000000.index 00000000000000000000.log 00000000000000000000.timeindex 00000000000000782248.snapshot leader-epoch-checkpoint
+```
+
+LogSegment
+
+```
+kafka是通过分段的方式将Log分为多个LogSegment，LogSegment是一个逻辑上的概念，
+
+LogSegment组成：一个 LogSegment对应磁盘上的一个日志文件和一个索引文件
+
+.log：日志文件，用来记录消息
+.index：索引文件，用来保存消息的索引，作用是记录具体行数的消息与partition中的实际offset
+```
+
+LogSegment作用
+
+```
+假设kafka以partition为最小存储单位，可以想象当kafka producer不断发送消息，必然会引起partition文件的无线扩张，这样对于消息文件的维护以及被消费的消息的清理带来非常大的挑战，所以kafka以segment为单位又把partition进行细分
+
+可以减少每个日志文件的大小，每个partition相当于一个巨型文件被平均分配到多个大小相等的segment数据文件中（每个segment文件中的消息不一定相等）
+方便已经被消费的消息的清理，提高磁盘的利用率。（注：清理的消息即日志中的一条记录，而不是整个日志）
+```
+
+1.segment命名规则
+
+```
+segment文件命名规则：
+
+数值最大为64位long大小，20位数字字符长度，没有数字用0填充
+partion全局的第一个segment从0开始
+后续每个segment文件名为上一个 segment文件最后一条消息的oﬀset值进行递增。
+假如第一个log文件的最后一个oﬀset为:5376，所以下一个segment的文件命名为: 00000000000000005376.log。对应的index为00000000000000005376.index
+```
+
+2.索引文件内容
+
+```
+为了提高查找消息的性能，为每一个日志文件添加2个索引索引文件
+
+索引文件分类
+
+OﬀsetIndex：对应.index文件
+TimeIndex：对应.timeindex, TimeIndex索引文件格式，它是映射时间戳和相对oﬀset
+索引文件中的内容
+
+index：当前消息在log文件的相对索引（从0开始），存储相对索引可以减小索引文件占用的空间
+
+举例，分段后的一个数据文件的offset是从20开始（文件名~~21.index），那么offset为25的Message在index文件中的相对offset就是25-20 = 5。
+
+position：物理偏移量，该消息在数据文件中的绝对位置，ByteBuﬀer的指针位置；只要打开文件并移动文件指针到这个position就可以读取对应Message
+
+注：Kafka采用了稀疏索引，即不会给所有的消息都建立索引，只会将日志文件的部分记录存储在索引文件中。
+
+以[4053,80899]为例，在log文件中，对应的是第4053条记录，（position）为80899.
+
+首先Kafka的索引是稀疏索引，这样可以避免索引文件占用过多的内存，从而可以在内存中保存更多的索引。对应的就是Broker 端参数log.index.interval.bytes 值，默认4KB，即4KB的消息建一条索引。
+
+Kafka中有三大类索引：位移索引、时间戳索引和已中止事务索引。分别对应了.index、.timeindex、.txnindex文件。
+
+作者：yes的练级攻略
+链接：https://juejin.cn/post/6845166891250499592
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+```
+
+3.日志文件内容（消息内容）
+
+```
+通过kafka提供的命令，可以查看二进制的日志文件信息
+
+sh kafka-run-class.sh kafka.tools.DumpLogSegments 
+--files /tmp/kafka-logs/test-0/00000000000000000000.log # 指定日志文件
+--print-data-log
+
+一条消息，会包含很多的字段，如下：
+
+ offset: 5371 position: 102124 CreateTime: 1531477349286 isvalid: true keysize: -1 valuesize: 12
+ magic: 2 compresscodec: NONE producerId: -1 producerEpoch: -1 sequence: -1 isTransactional: false 
+ headerKeys: [] payload: message_5371
+
+oﬀset：分区偏移量，可能因为多分区导致不连续
+position：当前消息在文件中的定位标识，如行数
+createTime：创建时间
+keysize：key的大小，指的是Producer在发送消息时指定的key（非必需），是分区依据
+valuesize：value的大小、
+compresscodec：压缩编码
+payload：消息的具体内容
+```
+
+4.索引与消息对应关系
+
+index与log对应关系如下：
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-16 07_13_17.png]]
+
+```
+文件名：当前索引文件和日志文件在整个Partition中的起始偏移量
+
+index：索引文件中的index对应日志文件中的是第几条记录。比如Message368772就可以从索引文件index=497查到偏移量为3，即在相应日志文件第三行。
+
+=> 消息在Partition的偏移量 = 文件名+index （注：由于稀疏索引，索引文件中只会有部分消息的索引）
+
+position：当前index在文件中的绝对位置，用于直接定位到消息
+```
+

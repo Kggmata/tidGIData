@@ -1,0 +1,9 @@
+created: 20220728090543830
+modified: 20220728090600953
+tags: ? flink
+title: 线程的实现分类
+type: text/vnd.tiddlywiki
+
+```
+用户级线程和内核级线程
+```

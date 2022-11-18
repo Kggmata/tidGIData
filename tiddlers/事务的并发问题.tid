@@ -1,0 +1,27 @@
+created: 20220713055308872
+difficulty: 1.2684517864766176
+due: 20220908140024080
+grade: 1
+history: [{"due":"20220719082212242","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718082212242"},{"due":"20220811103346315","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726103346315"},{"due":"20220818095108917","interval":22,"difficulty":2.068451625884813,"stability":0.07408182272361549,"retrievability":0.8684516258848127,"grade":0,"lapses":1,"reps":1,"review":"20220817095108917"}]
+interval: 11
+lapses: 1
+modified: 20220828140024080
+reps: 2
+retrievability: 1.6059180485330127e-7
+review: 20220828140024079
+stability: 10.956441845223141
+tags: ?
+title: 事务的并发问题
+type: text/vnd.tiddlywiki
+
+```
+丢失更新update lost AB更新数据库一个字段, 同时修改数据, 后提交的B会覆盖A
+
+脏读dirty read A读取了B更新的数据, 但是B回滚了, 那么A读取的是脏数据
+
+不可重复读unrepeatable read A多次读取同一数据, B在A多次读取期间, 对脏数据做了更新并提交, 导致A读取的数据不一致
+
+幻读phantom A对表所有数据进行了修改, B往表添加了一条数据, 那么A会发现, 表中存在未修改的一条数据, 和幻觉一样
+```
+
+小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表。

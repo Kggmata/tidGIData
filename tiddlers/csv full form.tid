@@ -1,0 +1,17 @@
+created: 20220528034143396
+difficulty: 1
+due: 20220920071728119
+grade: 2
+history: [{"due":"20220601052751746","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052751746"},{"due":"20220622091346783","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603091346783"}]
+interval: 20
+lapses: 0
+modified: 20220623071728119
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623071728118
+stability: 89.0394510841741
+tags: spark ?
+title: csv full form
+type: text/vnd.tiddlywiki
+
+The Full Form Of CSV is Comma Separated Value

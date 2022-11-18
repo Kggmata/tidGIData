@@ -1,0 +1,25 @@
+created: 20220721131714638
+difficulty: 1
+due: 20220824123544745
+grade: 2
+history: [{"due":"20220804020732143","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803020732143"}]
+interval: 5
+lapses: 0
+modified: 20220808123544745
+reps: 2
+retrievability: 0.005153779050734244
+review: 20220808123544745
+stability: 16.30688294756679
+tags: ?
+title: 有7克、2克砝码各一个，天平一只，如何只用这些物品三次将140克的盐分成50、90克各一份？
+type: text/vnd.tiddlywiki
+
+```
+作者：Yasu0
+链接：https://www.nowcoder.com/discuss/526897
+来源：牛客网
+
+第一步：把140克盐分成两等份，每份70克。
+第二步：把天平一边放上2+7克砝码，另一边放盐，这样就得到9克和61克分开的盐。
+第三步：将9克盐和2克砝码放在天平一边，另一边放盐，这样就得到11克和50克。于是50和90就分开了
+```

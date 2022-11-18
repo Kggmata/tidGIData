@@ -1,0 +1,22 @@
+created: 20220718070121375
+difficulty: 1
+due: 20230617133324487
+grade: 2
+history: [{"due":"20220731042219621","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042219621"},{"due":"20220822122246027","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806122246027"}]
+interval: 66
+lapses: 0
+modified: 20221011133324487
+reps: 3
+retrievability: 0.6548145031221182
+review: 20221011133324487
+stability: 248.53042151389508
+tags: ?
+title: state位置
+type: text/vnd.tiddlywiki
+
+memoryStateBackend
+
+fsStateBackend
+
+RocksDBStateBackend
+

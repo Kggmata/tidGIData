@@ -1,0 +1,30 @@
+created: 20220521075253582
+difficulty: 3.2508942029413816
+due: 20220826150405593
+grade: 1
+history: [{"due":"20220524054849265","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054849265"},{"due":"20220530073047748","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220524073047748"},{"due":"20220626140214970","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220602140214970"}]
+interval: 25
+lapses: 0
+modified: 20220810032852898
+reps: 4
+retrievability: 0.8950417678954212
+review: 20220627150405593
+stability: 60.428024634461686
+tags: hive ?
+title: 拉链表步骤
+type: text/vnd.tiddlywiki
+
+```
+1. 增量数据到ods层
+
+2. 创建和dwd层数据完全相同的临时表
+
+3. 让dwd层元数据和ods增量数据join,如果ods侧id不为null且dwd侧end_date为'9999-99-99'则代表有更新
+
+4. 有更新的,则把end_date改为dt-1
+
+5. 将临时表的数据传回dwd层
+
+6. 清空临时表,为下次增量导入做准备
+```
+[img[微信图片_20220810112747.png]]

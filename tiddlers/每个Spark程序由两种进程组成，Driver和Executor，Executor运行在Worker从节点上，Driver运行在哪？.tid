@@ -1,0 +1,27 @@
+created: 20220522110731016
+difficulty: 1
+due: 20230116022248322
+grade: 2
+history: [{"due":"20220524062958627","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523062958627"},{"due":"20220602002105325","interval":2,"difficulty":2.640976298811018,"stability":7.587419783831714,"retrievability":0.6931759895835838,"grade":2,"lapses":0,"reps":2,"review":"20220525002105324"},{"due":"20220714063713972","interval":11,"difficulty":1.6993220165605727,"stability":39.457719707153394,"retrievability":0.858345717749555,"grade":2,"lapses":0,"reps":3,"review":"20220605063713972"}]
+interval: 46
+lapses: 0
+modified: 20220721022248322
+reps: 4
+retrievability: 0.8844141792821236
+review: 20220721022248322
+stability: 178.54975820310355
+tags: spark ?
+title: 每个Spark程序由两种进程组成，Driver和Executor，Executor运行在Worker从节点上，Driver运行在哪？
+type: text/vnd.tiddlywiki
+
+- 参数：--deploy-mode
+
+- 功能：决定了Driver进程运行的位置
+
+``--deploy-mode DEPLOY_MODE   Whether to launch the driver program locally ("client") or
+                              on one of the worker machines inside the cluster ("cluster")
+                              (Default: client).``
+
+- client：默认值，表示Driver运行在客户端节点上【在哪台机器提交代码的哪台机器就是客户端】
+
+- **cluster：建议值，表示Driver可以随机运行在某台从节点上【工作中一般都用cluster模式】**

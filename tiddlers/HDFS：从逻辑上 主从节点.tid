@@ -1,0 +1,20 @@
+created: 20220519125928038
+difficulty: 2.232984010198816
+due: 20220915080007547
+grade: 2
+history: [{"due":"20220522002215336","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520002215336"},{"due":"20220528011420094","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522011420093"},{"due":"20220627060010195","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601060010195"}]
+interval: 28
+lapses: 0
+modified: 20220629080007547
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629080007547
+stability: 78.32227625296495
+tags: hadoop ?
+title: HDFS：从逻辑上 主从节点
+type: text/vnd.tiddlywiki
+
+从逻辑上将多台机器的磁盘合并为一个整体
+
+- 主节点：NameNode：负责管理从节点，负责接客，负责存储的任务分配和元数据管理
+- 从节点：DataNode：负责管理自己这台机器的硬盘，实现每个块的存储

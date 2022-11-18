@@ -1,0 +1,19 @@
+created: 20220524074105439
+difficulty: 1
+due: 20220923011737739
+grade: 2
+history: [{"due":"20220529142517742","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142517742"},{"due":"20220621123828934","interval":4,"difficulty":1.3310647873439139,"stability":19.873133781910397,"retrievability":0.14564366571177542,"grade":2,"lapses":0,"reps":2,"review":"20220601123828934"}]
+interval: 21
+lapses: 0
+modified: 20220622011737739
+reps: 3
+retrievability: 0.8946391981747235
+review: 20220622011737739
+stability: 92.73882157712833
+tags: hive ?
+title: 简要描述数据库中的 null，说出null在hive底层如何存储
+type: text/vnd.tiddlywiki
+
+null与任何值运算的结果都是null, 可以使用is null、is not null函数指定在其值为null情况下的取值。
+
+null在hive底层默认是用'\N'来存储的，可以通过alter table test SET SERDEPROPERTIES('serialization.null.format' = 'a');来修改。

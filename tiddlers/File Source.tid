@@ -1,0 +1,74 @@
+created: 20220612062140114
+difficulty: 1.0606496253758355
+due: 20220905101423601
+grade: 1
+history: [{"due":"20220614232322217","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613232322217"},{"due":"20220617070332971","interval":2,"difficulty":1.4248107190295611,"stability":0.07425364270040997,"retrievability":0.12633427211412301,"grade":0,"lapses":1,"reps":1,"review":"20220616070332971"},{"due":"20220619101625102","interval":2,"difficulty":1.6833618740070369,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618101625102"},{"due":"20220630000911434","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620000911433"}]
+interval: 14
+lapses: 2
+modified: 20220704101423601
+reps: 3
+retrievability: 0.8606496253758356
+review: 20220704101423600
+stability: 63.40697725150013
+tags: [[structed streaming]] ?
+title: File Source
+type: text/vnd.tiddlywiki
+
+功能：监听一个`文件夹`，读取`新产生`的文件的数据。
+
+>功能：监听一个`文件夹`，读取`新产生`的文件的数据。
+[img[Snipaste_2022-06-12_14-27-41.jpg]]
+
+> 这些参数就是：
+>
+> spark.readStream.format("file").option("参数名", "参数值")
+>
+> 就是在设置option的时候用
+
+代码
+
+```
+from pyspark.sql import SparkSession
+from pyspark.sql.types import StringType, IntegerType, StructType
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+# # 构建数据的Schema
+schema = StructType().\
+    add("name", StringType()).\
+    add("age", IntegerType()).\
+    add("hobby", StringType())
+
+# 读取文件获取DF
+file_df = spark.readStream.\
+    format("csv").\
+    option("path", "../data/input/csv").\
+    option("sep", ";").\
+    option("header", False).\
+    schema(schema).\
+    load()
+
+# 输出到控制台
+file_df.writeStream.\
+    outputMode("update").\
+    format("console").\
+    option("truncate", False).\
+    start().\
+    awaitTermination()
+
+# start表示启动流计算
+# awaitTermination表示，程序阻塞住，如果不阻塞，程序就运行完成了
+# 但是流计算是不会停止的，通过awaitTermination将程序阻塞到这一行。
+
+```
+[img[20220612115445.png]]
+
+代码和正常的SparkSQL读取文件是一致的。
+
+不同的在于，`read`改为`readStream`，别的都一样。

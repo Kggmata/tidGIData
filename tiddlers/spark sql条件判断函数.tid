@@ -1,0 +1,31 @@
+created: 20220621230444548
+difficulty: 1
+due: 20221027003032920
+grade: 2
+history: [{"due":"20220625125333343","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624125333343"},{"due":"20220712001141265","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":2,"lapses":0,"reps":2,"review":"20220627001141264"}]
+interval: 23
+lapses: 0
+modified: 20220720003032921
+reps: 3
+retrievability: 0.8541153584120541
+review: 20220720003032920
+stability: 99.2184412429942
+tags: 用户画像 ?
+title: spark sql条件判断函数
+type: text/vnd.tiddlywiki
+
+when(condition, value)
+
+Evaluates a list of conditions and returns one of multiple possible result expressions. If Column.otherwise() is not invoked, None is returned for unmatched conditions.
+
+See pyspark.sql.functions.when() for example usage.
+
+Parameters
+condition – a boolean Column expression.
+
+value – a literal value, or a Column expression.
+
+```
+from pyspark.sql import functions as F
+df.select(df.name, F.when(df.age > 4, 1).when(df.age < 3, -1).otherwise(0)).show()
+```

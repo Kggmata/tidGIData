@@ -1,0 +1,39 @@
+created: 20220615080826699
+difficulty: 1
+due: 20220917115511677
+grade: 2
+history: [{"due":"20220619063009611","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618063009611"},{"due":"20220703000713386","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620000713386"}]
+interval: 16
+lapses: 0
+modified: 20220706115511677
+reps: 3
+retrievability: 0.8824986202593608
+review: 20220706115511676
+stability: 73.448178202157
+tags: 用户画像 ?
+title: Elasticsearch的术语和架构
+type: text/vnd.tiddlywiki
+
+从官网的介绍我们已经知道Elasticsearch是分布式存储的，如果看过我的文章的同学，对分布式这个概念应该不陌生了。
+
+如果对分布式还不是很了解的同学，建议复看一下我以前的文章。我觉得我当时写得还不赖（哈哈哈）
+
+GitHub搜关键字：
+
+”SpringCloud“,"Zookeeper","Kafka","单点登录"
+
+在讲解Elasticsearch的架构之前，首先我们得了解一下Elasticsearch的一些常见术语。
+
+```
+Index：Elasticsearch的Index相当于数据库的Table
+
+Type：这个在新的Elasticsearch版本已经废除（在以前的Elasticsearch版本，一个Index下支持多个Type--有点类似于消息队列一个topic下多个group的概念）7.0之后只有_doc
+
+Document：Document相当于数据库的一行记录
+
+Field：相当于数据库的Column的概念
+
+Mapping：相当于数据库的Schema的概念
+
+DSL：相当于数据库的SQL（给我们读取Elasticsearch数据的API）
+```

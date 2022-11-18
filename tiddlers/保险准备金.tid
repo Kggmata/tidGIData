@@ -1,0 +1,17 @@
+created: 20220618091934610
+difficulty: 1
+due: 20220916134647052
+grade: 2
+history: [{"due":"20220621004133390","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004133390"},{"due":"20220622145404171","interval":1,"difficulty":1.1207546885009714,"stability":0.07409256085768667,"retrievability":0.348891394928074,"grade":0,"lapses":1,"reps":1,"review":"20220621145404171"},{"due":"20220705030836148","interval":2,"difficulty":1,"stability":11.779292992662073,"retrievability":0.0581910256162679,"grade":2,"lapses":1,"reps":2,"review":"20220623030836148"}]
+interval: 15
+lapses: 1
+modified: 20220708134647052
+reps: 3
+retrievability: 0.8744428820825005
+review: 20220708134647052
+stability: 69.51408187783063
+tags: 用户画像 ?
+title: 保险准备金
+type: text/vnd.tiddlywiki
+
+保险准备金是指保险人为保证其如约履行保险【赔付】或【理赔】义务，根据政府有关法律规定或业务特定需要，从【收取保费】或【投资盈余】中提取的与其所承担的保险责任相对应的一定数量的【基金】。

@@ -1,0 +1,12 @@
+created: 20220802135144625
+modified: 20220802135335120
+tags: ? flink
+title: java vs c++
+type: text/vnd.tiddlywiki
+
+```
+1 java不支持指针访问内存
+2 java的类是单继承, C++是多继承
+3 java有自动GC机制
+4 C++同时支持方法重载和操作符重载, java只支持方法重载
+```

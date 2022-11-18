@@ -1,0 +1,19 @@
+created: 20220721134803079
+difficulty: 1
+due: 20220824122519372
+grade: 2
+history: [{"due":"20220804022139195","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803022139195"}]
+interval: 5
+lapses: 0
+modified: 20220808122519372
+reps: 2
+retrievability: 0.005153779050734244
+review: 20220808122519372
+stability: 16.30688294756679
+tags: ?
+title: 两位盲人 , 他们都各自买了两对黑袜和两对白袜，八对袜子的布质、大小完全相同，而每对袜都有一张商标纸连着。两位盲人不小心将八对袜子混在一起。 他们每人怎样才能取回黑袜和白袜各两对呢？
+type: text/vnd.tiddlywiki
+
+```
+每一对分开，一人拿一只，因为袜子不分左右脚的；
+```

@@ -1,0 +1,19 @@
+created: 20220602001107839
+difficulty: 1.062880993644973
+due: 20221003075544537
+grade: 1
+history: [{"due":"20220605054908480","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604054908480"},{"due":"20220623022748062","interval":3,"difficulty":1,"stability":16.00419314059993,"retrievability":0.05273732312238567,"grade":2,"lapses":0,"reps":2,"review":"20220607022748062"},{"due":"20220626075945540","interval":18,"difficulty":2.088252237761252,"stability":0.07408719146292923,"retrievability":0.8882522377612516,"grade":0,"lapses":1,"reps":1,"review":"20220625075945539"},{"due":"20220712013403722","interval":4,"difficulty":1,"stability":12.859429240324747,"retrievability":0.003384799839695139,"grade":2,"lapses":1,"reps":2,"review":"20220629013403721"}]
+interval: 18
+lapses: 1
+modified: 20220717075544537
+reps: 3
+retrievability: 0.862880993644973
+review: 20220717075544537
+stability: 78.05261452320097
+tags: hbase ?
+title: hbase row key的长度是多少
+type: text/vnd.tiddlywiki
+
+Row Key 行键可以是任意字符串(最大长度是 64KB，实际应用中长度一般为 10-100bytes)，在hbase内部，row key保存为字节数组。
+
+rowkey尽量小,因为会占很多空间. 一行数据的每一个二级列的cell在底层物理存储的时候都会带rowkey, meta表也会存region的起始结束rowkey.包括一级索引也会存rowkey

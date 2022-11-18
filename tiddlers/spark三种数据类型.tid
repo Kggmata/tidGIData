@@ -1,0 +1,23 @@
+created: 20220528032543658
+difficulty: 1
+due: 20220925062737897
+grade: 2
+history: [{"due":"20220601033908351","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531033908351"},{"due":"20220622133333705","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603133333705"}]
+interval: 21
+lapses: 0
+modified: 20220624062737897
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624062737897
+stability: 92.52384777796357
+tags: spark ?
+title: spark三种数据类型
+type: text/vnd.tiddlywiki
+
+Data Formats
+
+RDD – It can easily and efficiently process data which is structured as well as unstructured. But like Dataframe and DataSets, RDD does not infer the schema of the ingested data and requires the user to specify it.
+
+DataFrame – It works only on structured and semi-structured data. It organizes the data in the named column. DataFrames allow the Spark to manage schema.
+
+DataSet – It also efficiently processes structured and unstructured data. It represents data in the form of JVM objects of row or a collection of row object. Which is represented in tabular forms through encoders.

@@ -1,0 +1,51 @@
+created: 20220530050848311
+difficulty: 1.0953239134772894
+due: 20220916132645898
+grade: 1
+history: [{"due":"20220601083505044","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083505044"},{"due":"20220622120756853","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603120756853"}]
+interval: 20
+lapses: 0
+modified: 20220623132645898
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623132645897
+stability: 84.71832744247013
+tags: spark ?
+title: HDFS面试核心：HA
+type: text/vnd.tiddlywiki
+
+- 脑裂，HDFS中脑裂指的HA架构中出现了两个Active的NameNode
+
+- HA：为了解决NameNode单点故障问题，启动两个NameNode，正常：一个是Active，一个是Standby
+
+- 进程
+
+  - Active NameNode：工作状态
+
+  - StandBy NameNode：备份状态
+
+  - DataNode：从节点
+
+  - ZKFC：ZKFailoverController，每个NameNode有一个，负责监控NameNode状态，与ZK进行交互
+
+  - JN：JournalNode，负责存储公共的元数据日志文件edits文件
+
+- 架构
+
+  - 没有SecondaryNameNode：SecondaryNameNode的工作交给StandbyNameNode来实现
+
+    - 工作内容：负责合并fsimage+edits
+
+  - 问题：ActiveNameNode负责接收请求，内存元数据一直在发生变化，请问Active故障，Standby的内存元数据怎么保证和Active的内存元数据保持一致？
+
+  - 解决：将edits存储在一个公共的存储位置，Active负责写，Standby负责读，保证两者内存一致
+
+[img[image-20220530102139095.png]]
+
+JN: 负责存储公共的edits
+
+HA架构使用standby的NN来替代之前SNN的作用
+
+临时节点不在,永久节点在,代表ZKFC寄了
+
+临时节点不在,永久节点也不在,NN宕机,换standby上位

@@ -1,0 +1,17 @@
+created: 20220718121144126
+difficulty: 1.9683514093598156
+due: 20220917132425802
+grade: 0
+history: [{"due":"20220801115641939","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115641939"},{"due":"20220822122714827","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806122714827"}]
+interval: 41
+lapses: 1
+modified: 20220916132425803
+reps: 1
+retrievability: 0.7683514093598156
+review: 20220916132425802
+stability: 0.07408182272361549
+tags: ?
+title: 流处理的特点
+type: text/vnd.tiddlywiki
+
+无界 实时 无需对整个数据集进行操作, 对通过系统的每个数据项执行操作, 用于实时统计

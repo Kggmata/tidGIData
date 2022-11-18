@@ -1,0 +1,29 @@
+created: 20220608062916735
+difficulty: 1
+due: 20221002094814166
+grade: 2
+history: [{"due":"20220613130439759","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130439758"},{"due":"20220702001056902","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616001056902"}]
+interval: 20
+lapses: 0
+modified: 20220706094814166
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706094814166
+stability: 88.44814121809115
+tags: hbase ?
+title: Phoenix的大小写问题
+type: text/vnd.tiddlywiki
+
+Phoenix会在创建表或视图的时候，将所有的表名和列名等，全部变成大写，如图：
+
+[img[20220608111908.png]]
+
+以小写，命名，真正出来的是大写字母。
+
+如果你非要使用小写，需要用双引号包围：
+
+如图，使用双引号包围后，才能显示的为小写。
+
+> 在Phoenix中一切默认皆大写
+>
+> 如果你用双引号写小写后，以后所有用到它的地方都要带上双引号

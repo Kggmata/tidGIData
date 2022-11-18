@@ -1,0 +1,48 @@
+created: 20220723023849111
+difficulty: 1
+due: 20221027132451491
+grade: 2
+history: [{"due":"20220822142902664","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821142902664"}]
+interval: 51
+lapses: 0
+modified: 20221011132451491
+reps: 2
+retrievability: 4.609778101934696e-24
+review: 20221011132451491
+stability: 16.439759152464664
+tags: ?
+title: flinksql explain
+type: text/vnd.tiddlywiki
+
+explain plan for 
+
+```
+查看执行计划和优化的物理计划
+
+1.	抽象语法树
+2.	== Abstract Syntax Tree ==
+3.	LogicalSink(table=[default_catalog.default_database.sink_table], fields=[user_id, name, server_timestamp])
+4.	+- LogicalProject(user_id=[$0], name=[$1], server_timestamp=[$2])
+5.	+- LogicalFilter(condition=[=($3, 1)])
+6.	+- LogicalProject(user_id=[$0], name=[$1], server_timestamp=[$2], rn=[ROW_NUMBER() OVER (PARTITION BY $0 ORDER BY PROCTIME() NULLS FIRST)])
+7.	+- LogicalTableScan(table=[[default_catalog, default_database, source_table]])
+8.	
+9.	优化后的物理计划
+10.	== Optimized Physical Plan ==
+11.	Sink(table=[default_catalog.default_database.sink_table], fields=[user_id, name, server_timestamp])
+12.	+- Calc(select=[user_id, name, server_timestamp])
+13.	+- Deduplicate(keep=[FirstRow], key=[user_id], order=[PROCTIME])
+14.	+- Exchange(distribution=[hash[user_id]])
+15.	+- Calc(select=[user_id, name, server_timestamp, PROCTIME() AS $3])
+16.	+- TableSourceScan(table=[[default_catalog, default_database, source_table]], fields=[user_id, name, server_timestamp])
+
+17.	优化后的执行计划
+18.	== Optimized Execution Plan ==
+19.	Sink(table=[default_catalog.default_database.sink_table], fields=[user_id, name, server_timestamp])
+20.	+- Calc(select=[user_id, name, server_timestamp])
+21.	+- Deduplicate(keep=[FirstRow], key=[user_id], order=[PROCTIME])
+22.	+- Exchange(distribution=[hash[user_id]])
+23.	+- Calc(select=[user_id, name, server_timestamp, PROCTIME() AS $3])
+24.	+- TableSourceScan(table=[[default_catalog, default_database, source_table]], fields=[user_id, name, server_timestamp])
+
+```

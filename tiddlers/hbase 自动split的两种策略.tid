@@ -1,0 +1,32 @@
+created: 20220615022859759
+difficulty: 1.3085564087640875
+due: 20221013014327777
+grade: 1
+history: [{"due":"20220619021626943","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618021626943"},{"due":"20220703001243550","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620001243550"},{"due":"20220707121819946","interval":16,"difficulty":2.082498620259361,"stability":0.07408215765534414,"retrievability":0.8824986202593608,"grade":0,"lapses":1,"reps":1,"review":"20220706121819946"},{"due":"20220721063148082","interval":4,"difficulty":1.2858821120416717,"stability":10.795416417371362,"retrievability":0.0033834917823108,"grade":1,"lapses":1,"reps":2,"review":"20220710063148082"}]
+interval: 20
+lapses: 1
+modified: 20220730014327777
+reps: 3
+retrievability: 0.8226742967224161
+review: 20220730014327777
+stability: 75.48500517485587
+tags: 用户画像 ?
+title: hbase 自动split的两种策略
+type: text/vnd.tiddlywiki
+
+https://www.cnblogs.com/yyy-blog/p/11887271.html
+
+HexStringSplit 
+
+```
+如果我们的row key是十六进制的字符串作为前缀的，称之为HexStringSplit就比较适合用HexStringSplit，作为pre-split的算法。例如，我们使用HexHash(prefix)作为row key的前缀，其中Hexhash为最终得到十六进制字符串的hash算法，我们通常手动指定SPLITS来指定预分区，我们也可以用我们自己的split算法。
+```
+
+UniformSplit
+
+```
+如果我们的row key使用byte来作为前缀，称之为UniformSplit，如果某个hbase的表查询只是以随机查询为主，可以用UniformSplit的方式进行，它是按照原始byte值（从0x00~0xFF）右边以00填充。以这种方式分区的表在插入的时候需要对rowkey进行一个技巧性的改造， 比如原来的rowkey为rawStr，则需要对其取hashCode，然后进行按照比特位反转后放在最初rowkey串的前面。可以充分利用Bytes这个工具类来做。
+
+create 'test', { NAME => 'f', TTL => 5184000, DATA_BLOCK_ENCODING => 'PREFIX' }, {NUMREGIONS => 128, SPLITALGO => 'UniformSplit'}
+使用SPLITALGO => 'UniformSplit'方式来建表是没有指定startKey和endKey的，也就是说采用这种方式建表就是基于ancil的256个值的范围来平均切分10个预分区的（由于anscil一共256个值，因此采用这种方式做预分区建表最多支持256个预分区，不过在写入数据后，256预分区可以再内部做二次切分），采用这种做法导致在Scan查询的时候就需要开256个Scan线程取扫描数据并返回最终的结果，好处就是统一了整个rowkey的范围，取名UniformSplit大概也是这个意思。
+```

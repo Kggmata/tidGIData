@@ -1,0 +1,22 @@
+created: 20220630014609276
+difficulty: 1
+due: 20221104131958124
+grade: 2
+history: [{"due":"20220707032215261","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706032215261"},{"due":"20220726055049906","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":1,"lapses":0,"reps":2,"review":"20220710055049906"},{"due":"20220803121634369","interval":23,"difficulty":2.059946790337357,"stability":0.07408184304237006,"retrievability":0.859946790337357,"grade":0,"lapses":1,"reps":1,"review":"20220802121634369"},{"due":"20220818005611804","interval":5,"difficulty":1.2607627962246004,"stability":10.988760049522483,"retrievability":0.0008160058872433979,"grade":1,"lapses":1,"reps":2,"review":"20220807005611804"}]
+interval: 16
+lapses: 1
+modified: 20220823131958124
+reps: 3
+retrievability: 0.857779321217242
+review: 20220823131958124
+stability: 73.37972904479
+tags: 用户画像 ?
+title: 什么是SQL？
+type: text/vnd.tiddlywiki
+
+```
+结构化查询语言(Structured Query 
+ Language)简称SQL，是一种数据库查询语言。
+作用：用于存取CURD和管理关系数据库系统。
+ddl dml dcl dql tpl ccl
+```

@@ -1,0 +1,25 @@
+created: 20220719112721771
+difficulty: 1
+due: 20220825032120791
+grade: 1
+history: [{"due":"20220801132214529","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731132214529"},{"due":"20220807125016931","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806125016931"}]
+interval: 6
+lapses: 1
+modified: 20220812032120791
+reps: 2
+retrievability: 0.00019680275038780497
+review: 20220812032120791
+stability: 12.923390933819324
+tags: ?
+title: flink state类型
+type: text/vnd.tiddlywiki
+
+```
+1、原生状态(raw state)
+由用户操作算子自己管理数据结构，当触发Checkpoint操作过程中，Flink并不知道状态数据内部的数据结构，只是将数据转换成bytes数据存储在Checkpoints中，当从Checkpoints恢复任务时，算子自己再反序列化出状态的数据结构。
+
+2、托管状态(managed state)
+由Flink Runtime控制和管理状态数据，并将状态数据转换成为内存的Hash tables或 RocksDB的对象存储，然后将这些数据通过内部的接口持久化到checkpoints中，如果任务发生异常时，可以通过这些状态数据恢复任务。
+
+下面是两种状态的比较表格，推荐使用ManagedState管理状态数据，ManagedState更好的支持状态数据的重平衡以及更加完善的内存管理
+```

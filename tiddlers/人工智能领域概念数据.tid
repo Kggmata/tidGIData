@@ -1,0 +1,17 @@
+created: 20220624054056656
+difficulty: 1
+due: 20221013080134695
+grade: 2
+history: [{"due":"20220626003818634","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625003818634"},{"due":"20220629000642294","interval":3,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.04240087022375615,"grade":0,"lapses":1,"reps":1,"review":"20220628000642294"},{"due":"20220714132050393","interval":3,"difficulty":1,"stability":12.644453482888508,"retrievability":0.014030805349029462,"grade":2,"lapses":1,"reps":2,"review":"20220701132050393"},{"due":"20220722022617881","interval":20,"difficulty":2.046495020297031,"stability":0.054881287913948605,"retrievability":0.8464950202970309,"grade":0,"lapses":2,"reps":1,"review":"20220721022617880"},{"due":"20220809022647969","interval":9,"difficulty":1,"stability":10.165670624565559,"retrievability":3.1348333116598453e-8,"grade":2,"lapses":2,"reps":2,"review":"20220730022647969"}]
+interval: 13
+lapses: 2
+modified: 20220812080134695
+reps: 3
+retrievability: 0.8739461813439561
+review: 20220812080134695
+stability: 61.69753041607147
+tags: 用户画像 ?
+title: 人工智能领域概念数据
+type: text/vnd.tiddlywiki
+
+观测值或测量值

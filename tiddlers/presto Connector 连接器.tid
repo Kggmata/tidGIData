@@ -1,0 +1,23 @@
+created: 20220708084644926
+difficulty: 1
+due: 20221028045930378
+grade: 2
+history: [{"due":"20220712070124883","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711070124883"},{"due":"20220719025414468","interval":7,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220718025414467"},{"due":"20220808090750715","interval":8,"difficulty":1,"stability":12.927205658998126,"retrievability":0.000011448016640964715,"grade":2,"lapses":1,"reps":2,"review":"20220726090750715"}]
+interval: 17
+lapses: 1
+modified: 20220812045930378
+reps: 3
+retrievability: 0.8706153805127494
+review: 20220812045930378
+stability: 77.14213779598707
+tags: 用户画像 ?
+title: presto Connector 连接器
+type: text/vnd.tiddlywiki
+
+```
+Presto通过Connector连接器来适应数据源，例如Hive或关系数据库。功能类似于数据库的驱动程序。允许Presto使用标准API与资源进行交互。
+
+Presto包含几个内置连接器：JMX连接器，可访问内置系统表的System连接器，Hive连接器和旨在提供TPC-H基准数据的TPCH连接器。许多第三方开发人员都贡献了连接器，因此Presto可以访问各种数据源中的数据，比如：ES、Kafka、MongoDB、Redis、Postgre、Druid、Cassandra等。
+
+每个Catalog都与一个特定的连接器关联。如果检查Catalog配置文件，将会看到每个都包含一个强制性属性connector.name，Catalog Manager使用此属性指定Catalog的连接器。可能有多个Catalog使用同一连接器来访问相似数据库的两个不同实例。比如，有两个Hive群集，则可以在单个Presto群集中配置两个都使用Hive连接器的Catalog，从而允许从两个不同的Hive集群中查询数据（可以在同一SQL中查询）。
+```

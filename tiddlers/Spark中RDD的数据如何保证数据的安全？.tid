@@ -1,0 +1,46 @@
+created: 20220526131845096
+difficulty: 1
+due: 20220930231810982
+grade: 2
+history: [{"due":"20220531130311530","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130311530"},{"due":"20220624021136958","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220603021136958"}]
+interval: 22
+lapses: 0
+modified: 20220625231810982
+reps: 3
+retrievability: 0.8969301616777541
+review: 20220625231810982
+stability: 96.59359316336112
+tags: spark ?
+title: Spark中RDD的数据如何保证数据的安全？
+type: text/vnd.tiddlywiki
+
+- 先有Task，还是先有RDD的数据？先有Task，Task在运行过程中会构建RDD的数据
+
+  - RDD的数据就构建在内存中
+
+- Lineage血缘机制
+
+  - RDD第三特性：每个RDD都会保留自己的血缘关系
+
+- 每个RDD在构建数据时，会根据自己来源一步步倒推到数据来源，然后再一步步开始构建RDD数据
+
+- 例如
+
+`python
+  # step1: 构建RDD
+  rdd_test = sc.textFile("HDFS上的文件")
+  
+  rs_rdd = rdd_test
+  		.filter 		# 过滤操作得到一个filter_rdd
+  		.flatmap		# 降维操作得到一个flatMap_rdd
+  		.map			# 转换操作得到一个map_rdd
+  		#.reduceByKey	# 聚合操作得到rs_rdd
+  		
+  # step2: 调用RDD
+  rs_rdd.foreach(lambda x: print(x)) # 触发job，构建Task1 - 2 ，Task结束，Task占用的内存被释放
+  rs_rdd.first # 触发job，构建Task3 - 4 ，Task结束，Task占用的内存被释放
+  rs_rdd.count # 触发job，构建Task5 - 6 ，Task结束，Task占用的内存被释放`
+
+- 当RDD的数据被触发调用时，就会根据RDD的血缘关系层层构建RDD的数据
+
+- 如果在计算过程中，RDD的数据丢失，就会通过依赖关系重新构建，彻底保证了RDD的数据安全

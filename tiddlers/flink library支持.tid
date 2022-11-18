@@ -1,0 +1,22 @@
+created: 20220714064404143
+difficulty: 1.9481089370445321
+due: 20220909131938716
+grade: 0
+history: [{"due":"20220720151421754","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719151421754"},{"due":"20220730145436487","interval":10,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.0000265626666297211,"grade":0,"lapses":1,"reps":1,"review":"20220729145436487"},{"due":"20220806073409626","interval":7,"difficulty":1.2000474648194284,"stability":0.054881171378436774,"retrievability":0.00004746481942846522,"grade":0,"lapses":2,"reps":1,"review":"20220805073409626"},{"due":"20220821085428937","interval":6,"difficulty":1,"stability":10.165494815347634,"retrievability":0.000009941815050312982,"grade":2,"lapses":2,"reps":2,"review":"20220811085428937"}]
+interval: 28
+lapses: 3
+modified: 20220908131938716
+reps: 1
+retrievability: 0.7481089370445322
+review: 20220908131938716
+stability: 0.040656966333775045
+tags: ?
+title: flink library支持
+type: text/vnd.tiddlywiki
+
+```
+1	支持机器学习（FlinkML）（Alink）
+2	支持图分析（Gelly）
+3	支持关系数据处理（Table）
+4	支持复杂事件处理（CEP）
+```

@@ -1,0 +1,21 @@
+created: 20220619002200908
+difficulty: 1
+due: 20220902133427999
+grade: 2
+history: [{"due":"20220621005525621","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005525621"},{"due":"20220623044214350","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622044214350"},{"due":"20220626075601937","interval":3,"difficulty":1.2140373140909089,"stability":0.054885141354873004,"retrievability":0.014037314090908812,"grade":0,"lapses":2,"reps":1,"review":"20220625075601937"},{"due":"20220709003230746","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":2,"lapses":2,"reps":2,"review":"20220629003230746"}]
+interval: 11
+lapses: 2
+modified: 20220710133428000
+reps: 3
+retrievability: 0.892182655006369
+review: 20220710133427999
+stability: 53.8041878481713
+tags: 用户画像 ?
+title: elasticsearch 倒排索引原理
+type: text/vnd.tiddlywiki
+
+https://www.infoq.cn/article/database-timestamp-02
+[img[时间序列数据库的秘密(2)——索引_数据库_陶文_InfoQ精选2022-06-22 12_39_53.jpg]]
+[img[elasticsearch 倒排索引原理 - 知乎2022-06-19 08_23_16.jpg]]
+
+https://developer.aliyun.com/article/38228

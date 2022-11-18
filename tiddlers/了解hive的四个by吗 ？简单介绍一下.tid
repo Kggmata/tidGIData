@@ -1,0 +1,32 @@
+created: 20220521080028502
+difficulty: 3.001696096544042
+due: 20220914080425772
+grade: 1
+history: [{"due":"20220524055009895","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522055009895"},{"due":"20220530073115685","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220524073115685"},{"due":"20220626140300189","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220602140300189"},{"due":"20220628150507240","interval":25,"difficulty":4.250894202941382,"stability":0.07408450676555052,"retrievability":0.8950417678954212,"grade":0,"lapses":1,"reps":1,"review":"20220627150507240"},{"due":"20220630144403484","interval":2,"difficulty":4.509067239378311,"stability":0.054882158045770235,"retrievability":0.05817303643692872,"grade":0,"lapses":2,"reps":1,"review":"20220629144403484"},{"due":"20220708140323285","interval":4,"difficulty":2.7095296598757246,"stability":5.083482369611643,"retrievability":0.0004624204974138748,"grade":2,"lapses":2,"reps":2,"review":"20220703140323285"},{"due":"20220731071441511","interval":7,"difficulty":2.7744807143170216,"stability":20.679000052865593,"retrievability":0.8649510544412967,"grade":1,"lapses":2,"reps":3,"review":"20220710071441511"},{"due":"20220806071522860","interval":26,"difficulty":3.8504088131468786,"stability":0.04065697172950195,"retrievability":0.8759280988298568,"grade":0,"lapses":3,"reps":1,"review":"20220805071522860"},{"due":"20220813040443010","interval":4,"difficulty":3.050440304403545,"stability":3.6838171184743564,"retrievability":0.0000314912566663105,"grade":1,"lapses":3,"reps":2,"review":"20220809040443010"}]
+interval: 10
+lapses: 3
+modified: 20220819080425772
+reps: 3
+retrievability: 0.7512557921404969
+review: 20220819080425772
+stability: 25.964020733900767
+tags: hive ?
+title: 了解hive的四个by吗 ？简单介绍一下
+type: text/vnd.tiddlywiki
+
+''- order by  全局排序，''
+  - 只有一个reduce；
+    缺点：当数据量非常大时，耗时太长，效率低下，适用于数据量较小的场景；
+    优点：数据全局排序；
+
+''- sort by  分区内有序''
+  - 对每一个reducer内部的数据进行排序，全局结果集来说不是排序的，即只能保证每一个reduce输出的文件中的数据是按照规定的字段进行排序的；
+  - 适用于数据量较大，但对排序要求不严格的场合，可以大幅度提升执行效率；
+
+''- distribute by''
+  - 控制特定的key到指定的reducer，方便后续的聚集操作，类似MR中partition（自定义分区），一般结合sort by使用；
+    这边需要设置reduces的数量为分区的数量，否则不会启动相应的reducer去进行任务的执行，这最终会导致不能完全分区；
+
+''- Cluster By''
+  - 当distribute by和sorts by字段相同时，可以使用cluster by方式。
+  - cluster by除了具有distribute by的功能外还兼具sort by的功能。但是排序只能是升序排序，不能指定排序规则为ASC或者DESC。

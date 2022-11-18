@@ -1,0 +1,101 @@
+created: 20220623233323609
+difficulty: 2.863720607969305
+due: 20220906092912956
+grade: 0
+history: [{"due":"20220626001844611","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625001844611"},{"due":"20220715003027578","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":1,"lapses":0,"reps":2,"review":"20220629003027578"},{"due":"20220722054215126","interval":22,"difficulty":2.065612726934808,"stability":0.07408190596496488,"retrievability":0.865612726934808,"grade":0,"lapses":1,"reps":1,"review":"20220721054215126"},{"due":"20220731023812330","interval":9,"difficulty":2.265615487847336,"stability":0.0548811791474709,"retrievability":0.0000027609125273187787,"grade":0,"lapses":2,"reps":1,"review":"20220730023812330"},{"due":"20220806072611738","interval":6,"difficulty":2.4656254296785973,"stability":0.04065697172950195,"retrievability":0.00000994183126152159,"grade":0,"lapses":3,"reps":1,"review":"20220805072611738"},{"due":"20220815041515878","interval":4,"difficulty":1.6656569209352636,"stability":5.605105714334633,"retrievability":0.0000314912566663105,"grade":1,"lapses":3,"reps":2,"review":"20220809041515878"},{"due":"20220822111907848","interval":12,"difficulty":2.6637206079693048,"stability":0.03011942145770373,"retrievability":0.798063687034041,"grade":0,"lapses":4,"reps":1,"review":"20220821111907847"}]
+interval: 15
+lapses: 5
+modified: 20220905092912956
+reps: 1
+retrievability: 1.6291736931048457e-23
+review: 20220905092912956
+stability: 0.02231301621225883
+tags: 用户画像 ?
+title: dsl开窗函数
+type: text/vnd.tiddlywiki
+
+https://spark.apache.org/docs/3.0.1/api/python/pyspark.sql.html#pyspark.sql.Window
+
+```
+开窗函数就是在已有的DF上加一列, partition by代表根据什么分区
+order by代表根据什么排序
+rangeBetween代表窗口大小,
+
+例子
+window = Window.partitionBy("category").orderBy("id").rangeBetween(Window.currentRow, 1)
+df.withColumn("sum", func.sum("id").over(window)).sort("id", "category").show()
++---+--------+---+
+| id|category|sum|
++---+--------+---+
+|  1|       a|  4|1+1+2
+|  1|       a|  4|1+1+2
+|  1|       b|  3|1+2
+|  2|       a|  2|2
+|  2|       b|  5|2+3
+|  3|       b|  3|3
++---+--------+---+
+rangeBetween(Window.currentRow, 1)用的是排序行数, 类似dense rank
+使用第一行的sum=1+1+2=4
+第二行的sum=1+1+2=4
+rowsBetween(start, end)代表的实际的行数
+
+例子
+window = Window.partitionBy("category").orderBy("id").rowsBetween(Window.currentRow, 1)
+df.withColumn("sum", func.sum("id").over(window)).sort("id", "category", "sum").show()
++---+--------+---+
+| id|category|sum|
++---+--------+---+
+|  1|       a|  2|1+1
+|  1|       a|  3|1+2
+|  1|       b|  3|1+2
+|  2|       a|  2|2
+|  2|       b|  5|2+3
+|  3|       b|  3|3
++---+--------+---+
+rowsBetween和rangeBetween类似,但是是实际的行数
+```
+
+class pyspark.sql.Window
+
+```
+Utility functions for defining window in DataFrames.
+```
+For example:
+
+```
+# ORDER BY date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+
+window = Window.orderBy("date").rowsBetween(Window.unboundedPreceding, Window.currentRow)
+```
+
+```
+# PARTITION BY country ORDER BY date RANGE BETWEEN 3 PRECEDING AND 3 FOLLOWING
+
+window = Window.orderBy("date").partitionBy("country").rangeBetween(-3, 3)
+```
+
+```
+Note When ordering is not defined, an unbounded window frame (rowFrame, unboundedPreceding, unboundedFollowing) is used by default. When ordering is defined, a growing window frame (rangeFrame, unboundedPreceding, currentRow) is used by default.
+```
+static orderBy(*cols)
+
+```
+Creates a WindowSpec with the ordering defined.
+```
+static partitionBy(*cols)
+
+```
+Creates a WindowSpec with the partitioning defined.
+```
+
+static rangeBetween(start, end)
+
+```
+Creates a WindowSpec with the frame boundaries defined, from start (inclusive) to end (inclusive).
+
+Both start and end are relative from the current row. For example, “0” means “current row”, while “-1” means one off before the current row, and “5” means the five off after the current row.
+
+We recommend users use Window.unboundedPreceding, Window.unboundedFollowing, and Window.currentRow to specify special boundary values, rather than using integral values directly.
+
+A range-based boundary is based on the actual value of the ORDER BY expression(s). An offset is used to alter the value of the ORDER BY expression, for instance if the current ORDER BY expression has a value of 10 and the lower bound offset is -3, the resulting lower bound for the current row will be 10 - 3 = 7. This however puts a number of constraints on the ORDER BY expressions: there can be only one expression and this expression must have a numerical data type. An exception can be made when the offset is unbounded, because no value modification is needed, in this case multiple and non-numeric ORDER BY expression are allowed
+```

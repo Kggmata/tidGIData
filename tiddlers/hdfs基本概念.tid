@@ -1,0 +1,60 @@
+created: 20220627234730730
+difficulty: 1.0674977020971539
+due: 20221026110439271
+grade: 1
+history: [{"due":"20220630131945939","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629131945939"},{"due":"20220720115435544","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":2,"lapses":0,"reps":2,"review":"20220704115435544"}]
+interval: 22
+lapses: 0
+modified: 20220726110439271
+reps: 3
+retrievability: 0.8674977020971539
+review: 20220726110439270
+stability: 92.07922912361714
+tags: 用户画像 ?
+title: hdfs基本概念
+type: text/vnd.tiddlywiki
+
+```
+主从关系（架构）
+  - 主服务角色  namenode  负责管理
+  - 从服务角色  datanode    负责干活 存储数据
+- 采用块存储（block） 
+  - hdfs使用块管理文件数据，一个块的大小是128M。文件数据的读写操作是都是按照一个块的大小进行操作
+- 名字空间（目录名）namespace  
+  - hdfs使用名字空间管理文件，本质就是一目录树形式管理文件
+  - 文件和目录的相关信息被namenode管理
+- 元数据
+  - 文件信息数据（如文件的路径，文件的大小，文件名等）
+  - datanode的信息数据 （datanode位置，datanode的运行状态等信息）
+  - 块信息数据  （块中的数据是属于哪个文件的，块是属于哪个datanode）
+- 副本机制
+  - hdfs存储数据不止一份，可以指定副本数量，默认hdfs是3个副本，那么数据就会存储3份，可以保证数据不容易丢失
+- 一次写入多次读取  
+  - 因为在实际大数据开发中更多是进行数据读取，对读取到的数据进行计算
+```
+
+```
+元数据管理
+	1、文件、目录自身的属性信息，例如文件名，目录名，修改信息等。  
+	2、文件记录的信息的存储相关的信息，例如存储块信息，分块情况，副本个数等。  
+	3、记录 HDFS 的 Datanode 的信息，用于 DataNode 的管理。
+	fsimage 镜像文件
+		是元数据的一个持久化的检查点，包含 Hadoop 文件系统中的所有
+目录和文件元数据信息，但不包含文件块位置的信息。文件块位置信息只存储在内存中，是
+在 datanode 加入集群的时候，namenode 询问 datanode 得到的，并且间断的更新。
+	Edits 编辑日志
+		存放的是 Hadoop 文件系统的所有更改操作（文件创建，删除或修改）
+的日志，文件系统客户端执行的更改操作首先会被记录到 edits 文件中
+```
+
+```
+secondary name node
+	SecondaryNameNode 就是来帮助解决上述问题的，它的职责是合并 NameNode 的 edit 
+logs 到 fsimage 文件中
+
+Checkpoint 
+每达到触发条件，会由 secondary namenode 将 namenode 上积累的所有 edits 和一个
+最新的 fsimage 下载到本地，并加载到内存进行 merge（这个过程称为 checkpoint）
+
+默认100万次或者1小时(3600秒)
+```

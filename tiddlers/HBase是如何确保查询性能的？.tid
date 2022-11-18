@@ -1,0 +1,29 @@
+created: 20220607030751809
+difficulty: 1
+due: 20220829113254337
+grade: 2
+history: [{"due":"20220611042141312","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610042141312"},{"due":"20220629124548329","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613124548329"},{"due":"20220703084358542","interval":19,"difficulty":2.0802378846142275,"stability":0.07408316441686115,"retrievability":0.8802378846142273,"grade":0,"lapses":1,"reps":1,"review":"20220702084358542"},{"due":"20220717235425961","interval":4,"difficulty":1.2836216379817882,"stability":10.808742473135482,"retrievability":0.0033837533675606132,"grade":1,"lapses":1,"reps":2,"review":"20220706235425961"},{"due":"20220724062925282","interval":16,"difficulty":2.3392121404377773,"stability":0.054881225761675624,"retrievability":0.8555905024559889,"grade":0,"lapses":2,"reps":1,"review":"20220723062925281"},{"due":"20220809235951525","interval":9,"difficulty":1.5392121717854967,"stability":7.530991969401273,"retrievability":3.1347719722603765e-8,"grade":1,"lapses":2,"reps":2,"review":"20220801235951525"},{"due":"20220815082212882","interval":12,"difficulty":2.584664844213954,"stability":0.040656966333775045,"retrievability":0.8454526724284572,"grade":0,"lapses":3,"reps":1,"review":"20220814082212882"}]
+interval: 7
+lapses: 3
+modified: 20220821113254337
+reps: 2
+retrievability: 1.32382762586235e-8
+review: 20220821113254337
+stability: 7.994071428642354
+tags: hbase ?
+title: HBase是如何确保查询性能的？
+type: text/vnd.tiddlywiki
+
+hbase的查询性能主要是指根据rowkey单条或范围查询
+
+读取的顺序是去meta表找region, 去blockcache找, 去memstore找, 去Hfile找
+
+按照rowkey范围分region存储, 这样查询的时候,直接可以过滤掉大部分数据
+
+每个region内部按照rowkey排序,提高查询速度
+
+读取的数据写入blockCache, 提高读取速度
+
+如果要找的数据在memstore,也会提高速度
+
+对于列查询, 可以使用二级索引, phoenix会自动帮忙创建

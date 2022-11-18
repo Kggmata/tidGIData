@@ -1,0 +1,17 @@
+created: 20220606023947785
+difficulty: 1.0861675498643524
+due: 20220915002024738
+grade: 1
+history: [{"due":"20220610112951663","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609112951663"},{"due":"20220628121148856","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220612121148856"}]
+interval: 18
+lapses: 0
+modified: 20220630002024739
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220630002024738
+stability: 77.46728430369387
+tags: hbase ?
+title: hbase shell输错命令后不执行命令，只换行，怎么退出
+type: text/vnd.tiddlywiki
+
+此时，我们可以输入>’，退出本次执行，再次输入正确的命令后，可重新执行

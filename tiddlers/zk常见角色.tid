@@ -1,0 +1,21 @@
+created: 20220521025120176
+difficulty: 1.2525230104706166
+due: 20221213074613767
+grade: 2
+history: [{"due":"20220524021438137","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021438137"},{"due":"20220621030426758","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531030426758"},{"due":"20220623142727803","interval":22,"difficulty":4.9167154881537805,"stability":0.07408719146292923,"retrievability":0.8942843763028374,"grade":0,"lapses":1,"reps":1,"review":"20220622142727803"},{"due":"20220701085532638","interval":3,"difficulty":3.1307484629052675,"stability":5.728732775373333,"retrievability":0.01403297475148654,"grade":2,"lapses":1,"reps":2,"review":"20220625085532638"},{"due":"20220806091910197","interval":10,"difficulty":2.162754219160202,"stability":31.573792924865298,"retrievability":0.8320057562549343,"grade":2,"lapses":1,"reps":3,"review":"20220705091910197"}]
+interval: 35
+lapses: 1
+modified: 20220809074613767
+reps: 4
+retrievability: 0.8897687913104145
+review: 20220809074613767
+stability: 126.11550973790085
+tags: zookeeper ?
+title: zk常见角色
+type: text/vnd.tiddlywiki
+
+leader: 存储元数据,广播写入,管理follower
+
+follower
+
+observer: 和follower作用一模一样,observer没选举权

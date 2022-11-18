@@ -1,0 +1,39 @@
+created: 20220530124010256
+difficulty: 2.150017156840754
+due: 20220905053039145
+grade: 1
+history: [{"due":"20220601090019837","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531090019836"},{"due":"20220604061536181","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603061536180"},{"due":"20220607125222820","interval":3,"difficulty":3.0096518527259373,"stability":0.058954374971038004,"retrievability":0.024351003043347287,"grade":0,"lapses":2,"reps":1,"review":"20220606125222820"},{"due":"20220610005651918","interval":3,"difficulty":3.214345898628073,"stability":0.042165720570753545,"retrievability":0.004694045902135523,"grade":0,"lapses":3,"reps":1,"review":"20220609005651918"},{"due":"20220618115147414","interval":3,"difficulty":1.4149011035638999,"stability":6.459039508249326,"retrievability":0.0005552049358268727,"grade":2,"lapses":3,"reps":2,"review":"20220612115147414"},{"due":"20220718012908495","interval":7,"difficulty":1.5069942578989546,"stability":29.278156706832014,"retrievability":0.8920931543350546,"grade":1,"lapses":3,"reps":3,"review":"20220619012908494"},{"due":"20220723030340729","interval":33,"difficulty":2.5950205227894445,"stability":0.030119455301110827,"retrievability":0.8880262648904897,"grade":0,"lapses":4,"reps":1,"review":"20220722030340729"},{"due":"20220731032407213","interval":8,"difficulty":2.795020522790147,"stability":0.022313022332150104,"retrievability":7.020956198471631e-13,"grade":0,"lapses":5,"reps":1,"review":"20220730032407213"},{"due":"20220806071120767","interval":6,"difficulty":2.9950205227906435,"stability":0.016529891162146766,"retrievability":4.963097005164493e-13,"grade":0,"lapses":6,"reps":1,"review":"20220805071120767"},{"due":"20220811035956406","interval":4,"difficulty":2.195020522799103,"stability":2.2493546196498175,"retrievability":8.459293582029705e-12,"grade":1,"lapses":6,"reps":2,"review":"20220809035956406"}]
+interval: 6
+lapses: 6
+modified: 20220815053039145
+reps: 3
+retrievability: 0.7549966340416504
+review: 20220815053039145
+stability: 20.893727378419232
+tags: spark ?
+title: 工作中怎么用SparkSQL？
+type: text/vnd.tiddlywiki
+
+开发测试场景**
+
+''- 方式一：启动ThriftServer，使用Beeline或者DataGrip连接ThriftServer，测试SQL语句的开发''
+
+  - 数据源主要用于对Hive表做处理
+
+  - 产生：SQL语句
+
+''- 方式二：启动Pycharm，使用Python代码在本地运行或者远程提交，测试SQL或者DSL的开发''
+
+  - 数据源多样化：Hive表、MySQL、结构化文件
+
+  - 产出：Python文件
+
+*生产场景
+
+''方式一：Pycharm中开发SparkSQL程序完毕以后，使用spark-submit脚本提交运行Python代码【SQL或者DSL】''
+
+''方式二：将测试好的SQL语句封装到一个SQL文件中，使用spark-sql运行SQL文件【仅SQL】''
+
+- SQL文件：vim /export/data/spark-app.sql
+
+spark-sql运行

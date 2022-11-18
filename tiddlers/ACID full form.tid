@@ -1,0 +1,33 @@
+created: 20220601021853323
+difficulty: 1.095210703053972
+due: 20220919062036097
+grade: 1
+history: [{"due":"20220603152037839","interval":0,"difficulty":1.7275095844283441,"stability":0.1296875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220602152037839"},{"due":"20220625120724716","interval":4,"difficulty":1,"stability":19.03598280903463,"retrievability":0.03878686052566552,"grade":2,"lapses":0,"reps":2,"review":"20220606120724716"}]
+interval: 20
+lapses: 0
+modified: 20220626062036097
+reps: 3
+retrievability: 0.895210703053972
+review: 20220626062036097
+stability: 84.71602714303364
+tags: hbase ?
+title: ACID full form
+type: text/vnd.tiddlywiki
+
+ atomicity, consistency, isolation, and durability
+
+Atomicity
+`All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are.
+For example, in an application that transfers funds from one account to another, the atomicity property ensures that, if a debit is made successfully from one account, the corresponding credit is made to the other account.`
+
+Consistency
+`Data is in a consistent state when a transaction starts and when it ends.
+For example, in an application that transfers funds from one account to another, the consistency property ensures that the total value of funds in both the accounts is the same at the start and end of each transaction.`
+
+Isolation
+`The intermediate state of a transaction is invisible to other transactions. As a result, transactions that run concurrently appear to be serialized.
+For example, in an application that transfers funds from one account to another, the isolation property ensures that another transaction sees the transferred funds in one account or the other, but not in both, nor in neither.`
+
+Durability
+`After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
+For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.`

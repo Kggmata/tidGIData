@@ -1,0 +1,39 @@
+created: 20220723030848505
+difficulty: 1
+due: 20221012142342022
+grade: 0
+history: [{"due":"20220823055557968","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822055557968"}]
+interval: 50
+lapses: 1
+modified: 20221011142342022
+reps: 1
+retrievability: 1.3220714356875621e-23
+review: 20221011142342022
+stability: 0.07408182272361549
+tags: ?
+title: flinksql 函数概述
+type: text/vnd.tiddlywiki
+
+```
+按照系统(内置)和catalog归类
+```
+```
+按照临时和持久函数分类
+```
+```
+四种函数: 临时性系统内置函数, 
+
+系统内置函数: 标量函数, 聚合函数, 时间间隔单位和标识符, 列函数
+
+ 临时性catalog函数create temporary function, catalog函数create function
+```
+```
+引用方式:
+精确函数
+模糊函数
+```
+```
+udf解析顺序
+精确函数:
+临时catalog函数>catalog函数
+```

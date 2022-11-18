@@ -1,0 +1,17 @@
+created: 20220611074412191
+difficulty: 1
+due: 20221007112849518
+grade: 2
+history: [{"due":"20220614110834884","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613110834884"},{"due":"20220617035714771","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616035714771"},{"due":"20220630102725927","interval":2,"difficulty":1,"stability":11.792887567465318,"retrievability":0.05855115497747565,"grade":2,"lapses":1,"reps":2,"review":"20220618102725927"},{"due":"20220705120952422","interval":16,"difficulty":2.0667992472295853,"stability":0.05488166082758644,"retrievability":0.866799247229585,"grade":0,"lapses":2,"reps":1,"review":"20220704120952422"},{"due":"20220720015350264","interval":6,"difficulty":1,"stability":10.165567424338107,"retrievability":0.00000994283639911803,"grade":2,"lapses":2,"reps":2,"review":"20220710015350264"}]
+interval: 16
+lapses: 2
+modified: 20220726112849518
+reps: 3
+retrievability: 0.8471892271731463
+review: 20220726112849518
+stability: 73.49643405524066
+tags: kafka ?
+title: JMX端口
+type: text/vnd.tiddlywiki
+
+9988

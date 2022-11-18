@@ -1,0 +1,22 @@
+created: 20220721023326173
+difficulty: 1
+due: 20230613135130611
+grade: 1
+history: [{"due":"20220802090929683","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801090929683"},{"due":"20220823005823488","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220807005823487"}]
+interval: 65
+lapses: 0
+modified: 20221011135130611
+reps: 3
+retrievability: 0.6585224129237505
+review: 20221011135130611
+stability: 245.22002005146214
+tags: ?
+title: 死锁和活锁
+type: text/vnd.tiddlywiki
+
+死锁是都在等待对方释放需要的资源
+
+活锁是彼此释放资源,但是又同时占用对方的资源
+
+死锁：两人互不相让，都在等对方先让开。
+活锁：两人互相礼让，却恰巧站到同一侧，再次让开，又站到同一侧，同样的情况不断重复下去导致双方都无法通过。

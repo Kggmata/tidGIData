@@ -1,0 +1,17 @@
+created: 20220529052756579
+difficulty: 1
+due: 20220920132656782
+grade: 2
+history: [{"due":"20220601053727367","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053727366"},{"due":"20220622125419215","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603125419215"}]
+interval: 20
+lapses: 0
+modified: 20220623132656782
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623132656782
+stability: 89.0394510841741
+tags: hive ?
+title: Hive不是RDBMS，所以不支持额外创建索引的功能
+type: text/vnd.tiddlywiki
+
+错误：Hive在0.7 ~ 3.0之间是支持创建索引的

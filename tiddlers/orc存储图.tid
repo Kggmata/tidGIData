@@ -1,0 +1,19 @@
+created: 20220521080255082
+difficulty: 2.2690960133347
+due: 20220925045701969
+grade: 2
+history: [{"due":"20220524061619121","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522061619120"},{"due":"20220615053815722","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529053815722"},{"due":"20220727092337840","interval":18,"difficulty":3.983494477388395,"stability":41.186951489203864,"retrievability":0.8919043531095704,"grade":1,"lapses":0,"reps":3,"review":"20220616092337840"},{"due":"20220804123455760","interval":48,"difficulty":5.067944735720732,"stability":0.07408183255527093,"retrievability":0.8844502583323368,"grade":0,"lapses":1,"reps":1,"review":"20220803123455760"},{"due":"20220814112630217","interval":5,"difficulty":3.2687607407865418,"stability":5.676635992063082,"retrievability":0.000816005065809079,"grade":2,"lapses":1,"reps":2,"review":"20220808112630217"}]
+interval: 12
+lapses: 1
+modified: 20220820045701969
+reps: 3
+retrievability: 0.8003352725481578
+review: 20220820045701968
+stability: 35.647980852057486
+tags: hive ?
+title: orc存储图
+type: text/vnd.tiddlywiki
+
+
+[img[image-20220518104032844.png]]
+[img[Snipaste_2022-06-02_13-52-30.jpg]]

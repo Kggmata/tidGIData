@@ -1,0 +1,18 @@
+created: 20220627020954849
+difficulty: 1
+due: 20221030104820466
+grade: 2
+history: [{"due":"20220630105006164","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105006164"},{"due":"20220720095454198","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":2,"lapses":0,"reps":2,"review":"20220704095454198"}]
+interval: 22
+lapses: 0
+modified: 20220726104820466
+reps: 3
+retrievability: 0.8674977020971539
+review: 20220726104820465
+stability: 95.6241135044948
+tags: 用户画像 ?
+title: answer1:如何将离散特征组合在一起构建特征向量？？使用API
+type: text/vnd.tiddlywiki
+
+ vector_assembler = VectorAssembler().setInputCols([recencyStr, frequencyStr, monetaryStr]).setOutputCol(
+            featureStr)

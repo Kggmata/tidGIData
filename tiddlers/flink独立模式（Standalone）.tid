@@ -1,0 +1,21 @@
+created: 20220716130354080
+difficulty: 1.0464951521155361
+due: 20221214143949310
+grade: 1
+history: [{"due":"20220726124838601","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220725124838601"},{"due":"20220819030623203","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220803030623203"}]
+interval: 26
+lapses: 0
+modified: 20220829143949310
+reps: 3
+retrievability: 0.846495152115536
+review: 20220829143949310
+stability: 106.98850634093834
+tags: ?
+title: flink独立模式（Standalone）
+type: text/vnd.tiddlywiki
+
+在独立模式（Standalone）下，只有会话模式和应用模式两种部署方式。两者整体来看流程是非常相似的：TaskManager 都需要手动启动，所以当 ResourceManager 收到 JobMaster 的请求时，会直接要求 TaskManager 提供资源。而 JobMaster 的启动时间点，会话模式是预先启动，应用模式则是在作业提交时启动。提交的整体流程如图所示。
+
+[img[image-20220713184317212.png]]
+
+我们发现除去**第 4 步不会启动 TaskManager**，而且直接向已有的 TaskManager 要求资源，其他步骤与上一节所讲抽象流程完全一致。

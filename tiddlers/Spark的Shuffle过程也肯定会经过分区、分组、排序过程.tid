@@ -1,0 +1,17 @@
+created: 20220530051157155
+difficulty: 1
+due: 20220925062426403
+grade: 2
+history: [{"due":"20220601083855724","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083855724"},{"due":"20220622132309788","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603132309788"}]
+interval: 21
+lapses: 0
+modified: 20220624062426403
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624062426403
+stability: 92.52384777796357
+tags: spark ?
+title: Spark的Shuffle过程也肯定会经过分区、分组、排序过程
+type: text/vnd.tiddlywiki
+
+错误：分组属于Shuffle过程中不同算子来决定的

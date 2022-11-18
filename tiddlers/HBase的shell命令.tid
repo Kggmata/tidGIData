@@ -1,0 +1,35 @@
+created: 20220601112340880
+difficulty: 1.711563775561585
+due: 20221008080949557
+grade: 1
+history: [{"due":"20220605054526861","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604054526861"},{"due":"20220626002549678","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002549678"},{"due":"20220630022435370","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629022435370"},{"due":"20220705104451936","interval":5,"difficulty":2.2855622183099835,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704104451936"},{"due":"20220711012208209","interval":6,"difficulty":2.485572161146383,"stability":0.04065715014820503,"retrievability":0.00000994283639911803,"grade":0,"lapses":3,"reps":1,"review":"20220710012208209"},{"due":"20220714005239936","interval":3,"difficulty":2.6859925559221454,"stability":0.030119557630782685,"retrievability":0.00042039477576221086,"grade":0,"lapses":4,"reps":1,"review":"20220713005239935"},{"due":"20220803114643303","interval":8,"difficulty":1.8859925559228474,"stability":4.042910522208077,"retrievability":7.021623759020026e-13,"grade":1,"lapses":4,"reps":2,"review":"20220721050949623"}]
+interval: 18
+lapses: 4
+modified: 20220808080949557
+reps: 3
+retrievability: 0.6255712196387375
+review: 20220808080949557
+stability: 61.2356347987371
+tags: hbase ?
+title: HBase的shell命令
+type: text/vnd.tiddlywiki
+
+进入HBase shell: ''hbase shell''
+
+查看HBase集群状态: ''status''
+
+查看HBase shell的帮助: ''help''
+
+简单创建表: ''create 'user', 'info', 'data'''
+
+查看表信息 ''desc 'user'''
+
+插入数据 ''put '表名', 'rowkey', '列族:二级列', '具体的值'''
+
+全表扫描 ''scan '表名''' 显示中文
+''scan '表名', {FORMATTER => 'toString'}''
+
+针对rowkey进行查询 ''get '表名', 'rowkey'''
+
+针对列族查询 ''get '表名', 'rowkey', '列族:二级列'''
+

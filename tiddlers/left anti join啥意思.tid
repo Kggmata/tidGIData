@@ -1,0 +1,9 @@
+created: 20220824133902223
+modified: 20220824133935103
+tags: ? flink
+title: left anti join啥意思
+type: text/vnd.tiddlywiki
+
+```
+查询过程中提出左表右表有交集的部分
+```

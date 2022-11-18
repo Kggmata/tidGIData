@@ -1,0 +1,12 @@
+created: 20220802072154669
+modified: 20220802072728734
+tags: ? flink
+title: count(*), count(1), count(字段)
+type: text/vnd.tiddlywiki
+
+```
+count(*)和count(1)相同
+底层是根据hdfs的偏移量计算, 不会读取数据
+
+count(字段)会忽略Null, 会逐行读取数据
+```

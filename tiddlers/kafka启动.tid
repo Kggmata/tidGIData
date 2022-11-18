@@ -1,0 +1,45 @@
+created: 20220615021533041
+difficulty: 3.0564977160174074
+due: 20220829134141593
+grade: 0
+history: [{"due":"20220618145324668","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220617145324668"},{"due":"20220702022452871","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":1,"lapses":0,"reps":2,"review":"20220619022452870"},{"due":"20220707080009306","interval":17,"difficulty":2.075631068030595,"stability":0.07408215765534414,"retrievability":0.8756310680305948,"grade":0,"lapses":1,"reps":1,"review":"20220706080009306"},{"due":"20220711063554875","interval":4,"difficulty":2.279014559812906,"stability":0.05488141221849455,"retrievability":0.0033834917823108,"grade":0,"lapses":2,"reps":1,"review":"20220710063554874"},{"due":"20220714092633428","interval":3,"difficulty":2.482167703895871,"stability":0.04065715014820503,"retrievability":0.0031531440829650446,"grade":0,"lapses":3,"reps":1,"review":"20220713092633428"},{"due":"20220727052542883","interval":8,"difficulty":1.6821677048876602,"stability":5.567112813986924,"retrievability":9.917894733222074e-10,"grade":1,"lapses":3,"reps":2,"review":"20220721052542883"},{"due":"20220804074359664","interval":13,"difficulty":2.6640650767216902,"stability":0.03011942545495654,"retrievability":0.7818973718340301,"grade":0,"lapses":4,"reps":1,"review":"20220803074359664"},{"due":"20220812112307160","interval":5,"difficulty":1.8640651020724006,"stability":4.075880425900179,"retrievability":2.535071061321876e-8,"grade":1,"lapses":4,"reps":2,"review":"20220808112307160"},{"due":"20220818120616475","interval":9,"difficulty":2.856497716017407,"stability":0.02231301621225883,"retrievability":0.7924326139450064,"grade":0,"lapses":5,"reps":1,"review":"20220817120616474"}]
+interval: 11
+lapses: 6
+modified: 20220828134141593
+reps: 1
+retrievability: 2.7682621394825676e-23
+review: 20220828134141593
+stability: 0.016529888968407916
+tags: 用户画像 ?
+title: kafka启动
+type: text/vnd.tiddlywiki
+
+```
+nohup /export/server/kafka_2.12-2.4.1/bin/kafka-server-start.sh /export/server/kafka_2.12-2.4.1/config/server.properties 2>&1 >> /export/server/kafka_2.12-2.4.1/kafka-server.log &
+
+### kafka服务启动命令 ###
+nohup /export/server/kafka/bin/kafka-server-start.sh /export/server/kafka/config/server.properties &
+```
+
+```
+The function of '&' is to make the command run in background
+
+So 2>&1 says to send standard error to where ever standard output is being redirected as well. Which since it's being sent to /dev/null is akin to ignoring any output at all.
+
+“>” overwrites an already existing file or a new file is created providing the mentioned file name isn’t there in the directory. This means that while making changes in a file you need to overwrite certain any existing data, use the “>” operator.
+
+“>>” operator appends an already present file or creates a new file if that file name doesn’t exist in the directory. 
+```
+
+https://cloud.tencent.com/developer/article/1139965#:~:text=2%3E%261%20%E6%84%8F%E6%80%9D%E6%98%AF%E6%8A%8A,%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%87%E4%BB%B6filename%E4%B8%AD%E3%80%82&text=%E4%B8%8A%E9%9D%A2%E4%BE%8B%E5%AD%90%E6%8A%8A%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA,%E5%B0%B1%E8%83%BD%E6%98%8E%E7%99%BD%E5%85%B6%E4%BD%9C%E7%94%A8%E3%80%82
+
+0 是一个文件描述符，表示标准输入(stdin)
+
+1 是一个文件描述符，表示标准输出(stdout)
+
+2 是一个文件描述符，表示标准错误(stderr)
+
+2>&1 意思是把标准错误输出重定向到标准输出
+
+#命令的末尾加上一个 & 符号的作用
+  Linux 终端命令的末尾加上一个 & 符号表示将这个任务放到后台去执行，例如以下命令表示将复制任务放到后台执行：

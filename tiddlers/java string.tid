@@ -1,0 +1,19 @@
+created: 20220724124229585
+difficulty: 0.025386988635295055
+due: 20220827143612757
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143612757
+reps: 1
+retrievability: 1
+review: 20220826143612757
+stability: 0.10000000088475645
+tags: flink ?
+title: java string
+type: text/vnd.tiddlywiki
+
+```
+java中string属于对象
+```

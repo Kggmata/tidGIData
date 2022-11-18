@@ -1,0 +1,33 @@
+created: 20220602130755522
+difficulty: 1.0901797860786495
+due: 20220919015507892
+grade: 1
+history: [{"due":"20220607063624183","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063624183"},{"due":"20220628020342014","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220611020342013"}]
+interval: 19
+lapses: 0
+modified: 20220630015507892
+reps: 3
+retrievability: 0.8901797860786494
+review: 20220630015507891
+stability: 81.06922570303745
+tags: hbase ?
+title: hbase的import命令
+type: text/vnd.tiddlywiki
+
+HBase内置了一个工具：`org.apache.hadoop.hbase.mapreduce.Import`
+
+可以完成HBase的数据导入
+
+
+
+使用方式：
+
+`hbase org.apache.hadoop.hbase.mapreduce.Import 表名 HDFS中存放数据的路径`
+
+`如果提交程序遇到了 "root is not a leaf queue"报错
+
+需要增加参数： -Dmapred.job.queue.name=root.default`
+
+为了避免出错，执行命令可以优化为：
+
+`hbase org.apache.hadoop.hbase.mapreduce.Import -Dmapred.job.queue.name=root.default WATER_BILL hdfs://node1:8020/data/water_bill/origin_10w/`

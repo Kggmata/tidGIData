@@ -1,0 +1,15 @@
+created: 20220519134336435
+difficulty: 2.5464091362087533
+due: 20220914121245751
+grade: 2
+history: [{"due":"20220522010307978","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520010307978"},{"due":"20220523011831445","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522011831445"},{"due":"20220526003658087","interval":1,"difficulty":5.231358589403242,"stability":3.3151797708337893,"retrievability":0.9313585894032408,"grade":2,"lapses":1,"reps":2,"review":"20220523003658087"},{"due":"20220601142923849","interval":8,"difficulty":6.206856570276567,"stability":0.08746685450248547,"retrievability":0.7754979808733246,"grade":0,"lapses":2,"reps":1,"review":"20220531142923849"},{"due":"20220608132113267","interval":3,"difficulty":4.433807716849063,"stability":5.0455287205147625,"retrievability":0.026951146572495664,"grade":2,"lapses":2,"reps":2,"review":"20220603132113267"},{"due":"20220704073031621","interval":9,"difficulty":3.462474117710361,"stability":22.20422346266515,"retrievability":0.8286664008612983,"grade":2,"lapses":2,"reps":3,"review":"20220612073031621"}]
+interval: 26
+lapses: 2
+modified: 20220708121245751
+reps: 4
+retrievability: 0.8839350184983921
+review: 20220708121245751
+stability: 68.04987300741507
+tags: spark ?
+title: Spark的应用场景
+type: text/css

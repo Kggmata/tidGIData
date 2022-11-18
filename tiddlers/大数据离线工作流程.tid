@@ -1,0 +1,27 @@
+created: 20220529052419438
+difficulty: 1
+due: 20230406143847595
+grade: 2
+history: [{"due":"20220601053447649","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053447649"},{"due":"20220604023246007","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603023246007"},{"due":"20220620125111287","interval":3,"difficulty":1.009651852725937,"stability":13.804311527500568,"retrievability":0.024351003043347287,"grade":2,"lapses":1,"reps":2,"review":"20220606125111287"},{"due":"20220620235751203","interval":13,"difficulty":2.1151938161596564,"stability":0.05491298557316543,"retrievability":0.9055419634337191,"grade":0,"lapses":2,"reps":1,"review":"20220619235751202"},{"due":"20220629150259567","interval":1,"difficulty":1,"stability":7.985503850095255,"retrievability":0.14680042798200557,"grade":2,"lapses":2,"reps":2,"review":"20220621150259566"},{"due":"20220820115716380","interval":10,"difficulty":1,"stability":49.59097743610505,"retrievability":0.8763938209112665,"grade":2,"lapses":2,"reps":3,"review":"20220701115716380"}]
+interval: 59
+lapses: 2
+modified: 20220829143847595
+reps: 4
+retrievability: 0.8821873462001208
+review: 20220829143847595
+stability: 220.002576343085
+tags: spark ?
+title: 大数据离线工作流程
+type: text/vnd.tiddlywiki
+
+Spark主要实现分层转换，读写Hive表，将结果写入MySQL：表
+
+- 数据来源：MySQL
+
+- 数据同步：Sqoop/Datax
+
+- 数据存储：Hive数据仓库
+
+- 数据计算：Spark/Presto/Impala/Hive
+
+- 数据应用：MySQL + FineBI

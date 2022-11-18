@@ -1,0 +1,23 @@
+created: 20220524074551704
+difficulty: 1
+due: 20221003112442474
+grade: 2
+history: [{"due":"20220529142609971","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142609971"},{"due":"20220624052613959","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052613959"}]
+interval: 23
+lapses: 0
+modified: 20220625112442474
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625112442474
+stability: 100.35422359618087
+tags: hive ?
+title: 写出hive中split、coalesce及collect_list函数的用法（可举例）？
+type: text/vnd.tiddlywiki
+
+split将字符串转化为数组，即：split('a,b,c,d' , ',') ==> ["a","b","c","d"]。
+
+coalesce(T v1, T v2, …) 返回参数中的第一个非空值；如果所有值都为 NULL，那么返回NULL。
+
+collect_list列出该字段所有的值，不去重select collect_list(id) from table。
+
+collect_list 不去重，而 collect_set 去重

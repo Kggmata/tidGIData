@@ -1,0 +1,16 @@
+created: 20220727021154593
+modified: 20220727114837998
+tags: ? flink
+title: 常见OLAP数据库
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-07-27_10-11-45.jpg]]
+
+```
+Doris对比clickhouse
+
+压缩率clickhouse更好
+ClickHouse单表性能好
+JOin性能各有优劣
+Doris对SQL支持更好
+```

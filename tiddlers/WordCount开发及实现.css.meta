@@ -1,0 +1,15 @@
+created: 20220519140122048
+difficulty: 3.229344411327985
+due: 20220907090058436
+grade: 1
+history: [{"due":"20220523040015624","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040015624"},{"due":"20220529004323349","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523004323349"},{"due":"20220628135312702","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602135312702"}]
+interval: 29
+lapses: 0
+modified: 20220701090058436
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701090058436
+stability: 67.80318173468045
+tags: spark ?
+title: WordCount开发及实现
+type: text/css

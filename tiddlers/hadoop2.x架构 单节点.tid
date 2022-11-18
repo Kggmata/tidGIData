@@ -1,0 +1,17 @@
+created: 20220521141747773
+difficulty: 2.187648325255764
+due: 20221013004812638
+grade: 2
+history: [{"due":"20220524073241473","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522073241473"},{"due":"20220605012919310","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526012919310"},{"due":"20220709014650606","interval":12,"difficulty":3.0941541016100915,"stability":31.809656917503407,"retrievability":0.8841541016100911,"grade":2,"lapses":0,"reps":3,"review":"20220607014650606"}]
+interval: 34
+lapses: 0
+modified: 20220711004812638
+reps: 4
+retrievability: 0.893494223645672
+review: 20220711004812638
+stability: 93.88512859234598
+tags: hadoop ?
+title: hadoop2.x架构 单节点
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-21_22-17-38.jpg]]

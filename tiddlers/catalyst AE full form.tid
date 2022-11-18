@@ -1,0 +1,17 @@
+created: 20220718143647014
+difficulty: 1
+due: 20230604115213117
+grade: 1
+history: [{"due":"20220801122510325","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731122510325"},{"due":"20220822123847351","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806123847351"}]
+interval: 63
+lapses: 0
+modified: 20221008115213117
+reps: 3
+retrievability: 0.6670417314969249
+review: 20221008115213116
+stability: 238.50969519476618
+tags: ?
+title: catalyst AE full form
+type: text/vnd.tiddlywiki
+
+在执行 DAG 的过程中，Adaptive Execution 根据运行时信息动态调整执行计划从而提高执行效率

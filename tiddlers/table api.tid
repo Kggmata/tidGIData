@@ -1,0 +1,60 @@
+created: 20220717022200328
+difficulty: 1.964002556332901
+due: 20220917124709642
+grade: 0
+history: [{"due":"20220727064855575","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726064855575"},{"due":"20220821063234482","interval":10,"difficulty":1,"stability":16.43908736440644,"retrievability":0.000026561715818525218,"grade":1,"lapses":0,"reps":2,"review":"20220805063234482"}]
+interval: 42
+lapses: 1
+modified: 20220916124709642
+reps: 1
+retrievability: 0.7640025563329013
+review: 20220916124709642
+stability: 0.07408182272361549
+tags: ?
+title: table api
+type: text/vnd.tiddlywiki
+
+```
+// 创建一个 TableEnvironment，为后续使用 SQL 或者 Table API 提供上线
+settings = EnvironmentSettings
+    .newInstance()
+    .inStreamingMode() // 声明为流任务
+    //.inBatchMode() // 声明为批任务
+    .build();
+
+tEnv = TableEnvironment.create(settings);
+
+// 创建一个输入表
+tableEnv.executeSql("CREATE TEMPORARY TABLE table1 ... WITH ( 'connector' = ... )");
+// 创建一个输出表
+tableEnv.executeSql("CREATE TEMPORARY TABLE outputTable ... WITH ( 'connector' = ... )");
+
+// 1. 使用 Table API 做一个查询并返回 Table
+table2 = tableEnv.from("table1").select(...);
+// 2. 使用 SQl API 做一个查询并返回 Table
+table3 = tableEnv.sqlQuery("SELECT ... FROM table1 ... ");
+
+// 将 table2 的结果使用 Table API 写入 outputTable 中，并返回结果
+tableResult = table2.executeInsert("outputTable");
+tableResult...
+
+```
+```
+总结一下上面案例使用到的一些 API，让大家先对 Table API \SQL 的能力有一个大概了解：
+	TableEnvironment：Table API 和 SQL API 的都集成在一个统一上下文（即 TableEnvironment）中，其地位等同于 DataStream API 中的 StreamExecutionEnvironment 的地位
+	TableEnvironment::executeSql：用于 SQL API 中，可以执行一段完整 DDL，DML SQL。举例，方法入参可以是 CREATE TABLE xxx，INSERT INTO xxx SELECT xxx FROM xxx。
+	TableEnvironment::from(xxx)：用于 Table API 中，可以以强类型接口的方式运行。方法入参是一个表名称。
+	TableEnvironment::sqlQuery：用于 SQL API 中，可以执行一段查询 SQL，并把结果以 Table 的形式返回。举例，方法的入参是 SELECT xxx FROM xxx
+	Table::executeInsert：用于将 Table 的结果插入到结果表中。方法入参是写入的目标表。
+无论是对于 SQL API 来说还是对于 Table API 来说，都是使用 TableEnvironment 接口承载我们的业务查询逻辑的，只是在用户的使用接口的方式上有区别。
+
+无论是对于 SQL API 来说还是对于 Table API 来说，都是使用 TableEnvironment 接口承载我们的业务查询逻辑的，只是在用户的使用接口的方式上有区别。
+以上述的 Java 代码为例：
+Table API 其实就是模拟 SQL 的查询方式封装了 Java 语言的 lambda 强类型 API，SQL 就是纯 SQL 查询。
+Table 和 SQL 很多时候都是掺杂在一起的，大家理解的时候就可以直接将 Table API 和 SQL 直接按照 SQL 进行理解，不用强行做特殊的区分。
+推荐的话，直接上 SQL API 就行，其实 Table API 在企业实战中用的不是特别多。你说 Table API 方便吧，它确实比 DataStream API 方便，但是又比 SQL 复杂。一般生产使用不多。
+
+```
+```
+由于 Table 和 SQL API 基本上属于一回事，后续如果没有特别介绍的话，直接按照 SQL API 进行介绍了。
+```

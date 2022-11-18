@@ -1,0 +1,19 @@
+created: 20220718022030034
+difficulty: 1
+due: 20220825034248423
+grade: 1
+history: [{"due":"20220731041302933","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041302933"},{"due":"20220807121119401","interval":7,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806121119401"}]
+interval: 6
+lapses: 1
+modified: 20220812034248423
+reps: 2
+retrievability: 0.00019680275038780497
+review: 20220812034248423
+stability: 12.923390933819324
+tags: ?
+title: group window和over window区别
+type: text/vnd.tiddlywiki
+
+group window是基于时间触发的窗口计算, 如果源表是处理时间
+
+over window, 分为时间区间和行数聚合, 如果时间区间聚合

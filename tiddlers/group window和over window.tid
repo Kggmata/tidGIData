@@ -1,0 +1,19 @@
+created: 20220720010410278
+difficulty: 1.8585224129237503
+due: 20221012235835115
+grade: 0
+history: [{"due":"20220802035315573","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801035315573"},{"due":"20220823030334884","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220807030334884"}]
+interval: 65
+lapses: 1
+modified: 20221011235835115
+reps: 1
+retrievability: 0.6585224129237505
+review: 20221011235835115
+stability: 0.07408182272361549
+tags: ?
+title: group window和over window
+type: text/vnd.tiddlywiki
+
+group window 不在group by的字段, 无法直接获取到
+
+over window 能够保留原始字段, 再原有基础上加一个虚拟的列

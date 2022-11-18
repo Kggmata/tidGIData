@@ -1,0 +1,43 @@
+created: 20220522111243860
+difficulty: 2.456085365444741
+due: 20230225150521685
+grade: 1
+history: [{"due":"20220524063314873","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523063314873"},{"due":"20220619072155464","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529072155464"},{"due":"20220821140059339","interval":22,"difficulty":2.3767994636196015,"stability":62.244068768873866,"retrievability":0.8959329765306554,"grade":1,"lapses":0,"reps":3,"review":"20220620140059339"}]
+interval: 76
+lapses: 0
+modified: 20220904150521685
+reps: 4
+retrievability: 0.8792859018251392
+review: 20220904150521685
+stability: 174.05740143558737
+tags: spark ?
+title: Spark on YARN时，也可以选择不同的deploy mode，但是Driver和AppMaster的功能是类似的，在不同的deploy mode下有什么区别？
+type: text/vnd.tiddlywiki
+
+`- - AppMaster的功能：解析Task、申请资源、监控Task、反馈结果
+    - 一定运行在NodeManager上
+  - Driver的功能：申请资源、解析Task、调度Task、监控Task、反馈结果
+    - deploy的client模式：Driver进程运行在客户端机器上
+    - deploy的cluster模式：Driver进程运行在从节点【NodeManager】机器上`
+
+解决
+
+*Spark on YARN client模式
+
+AppMaster与Driver共存
+
+- AppMaster运行在NodeManager上：负责申请资源，启动Executors、反馈结果
+
+- Driver运行在客户端机器上，运行在客户端进程内部：负责解析、调度和监控Task
+
+[img[image-20220522180937225.png]]
+
+*Spark on YARN cluster模式
+
+[img[image-20211129204821693.png]]
+
+AppMaster与Driver合并
+
+- Driver以子进程的方式运行在AppMaster进程内部，整体负责实现资源申请、Task的解析、调度和监控
+
+https://sujithjay.com/spark/with-yarn

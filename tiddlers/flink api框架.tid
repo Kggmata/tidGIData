@@ -1,0 +1,26 @@
+created: 20220717022022769
+difficulty: 1
+due: 20230110143231133
+grade: 2
+history: [{"due":"20220727064651709","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726064651709"},{"due":"20220820125316154","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220804125316154"}]
+interval: 31
+lapses: 0
+modified: 20220904143231133
+reps: 3
+retrievability: 0.8197965854547897
+review: 20220904143231133
+stability: 127.68971134334092
+tags: ?
+title: flink api框架
+type: text/vnd.tiddlywiki
+
+[img[BillfishYxKXnv2022-07-17 10_20_34.PNG]]
+
+```
+Apache Flink是批流统一的处理框架，具有两个关系API-Table API和SQL-用于统一流和批处理的上层API。
+	Table API 是一种集成在 Java、Scala 和 Python 语言中的查询 API，简单理解就是用 Java、Scala、Python 按照 SQL 的查询接口封装了一层 lambda 表达式的查询 API，它允许以强类型接口的方式组合各种关系运算符（如选择、筛选和联接）的查询操作，然后生成一个 Flink 任务运行
+	SQL API 是基于 SQL 标准的 Apache Calcite 框架实现的，我们可以使用纯 SQL 来开发和运行一个 Flink 任务。
+Table API 和 SQL API 也与 DataStream API 做到了无缝集成。可以轻松地在三种 API 之间灵活切换。例如，可以使用 SQL 的 MATCH_RECOGNIZE 子句匹配出异常的数据，然后使用再转为 DataStream API 去灵活的构建针对于异常数据的自定义报警机制。
+接下来直接来看看，怎么使用这两个 API 了。
+
+```

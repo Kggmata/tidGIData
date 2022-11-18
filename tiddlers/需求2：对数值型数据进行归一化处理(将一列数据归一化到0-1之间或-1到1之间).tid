@@ -1,0 +1,88 @@
+created: 20220625004624055
+difficulty: 1.071305136947512
+due: 20221020081312438
+grade: 1
+history: [{"due":"20220630081228482","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081228482"},{"due":"20220719145323624","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703145323624"}]
+interval: 21
+lapses: 0
+modified: 20220724081312438
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724081312438
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 需求2：对数值型数据进行归一化处理(将一列数据归一化到0-1之间或-1到1之间)
+type: text/vnd.tiddlywiki
+
+一种是把数变为（0，1）之间的[小数](https://baike.baidu.com/item/小数/2172615)，一种是把有量纲表达式变为[无量纲](https://baike.baidu.com/item/无量纲/10675963)表达式
+
+比如有身高1.5-2.0 米
+
+比如有体重90Kg-200kg kg
+
+原因：**为了避免量纲(单位)对模型产生影响，所以这里引入归一化，将数据归一化到(0-1)之间
+
+[img[image-20220624160754589.png]]
+
+```
+#!/usr/bin/env python
+# @desc : 演示sparkml的stringindexer将字符类型转化为数字类型
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+import os
+
+from pyspark import SparkContext
+from pyspark.ml.feature import StringIndexer, MinMaxScaler
+from pyspark.ml.linalg import Vectors
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType, StringType
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    spark = SparkSession \
+        .builder \
+        .appName("testAgeModel") \
+        .master("local[*]") \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # Vectors是向量，用于构建sparkml处理的矩阵
+    dataFrame = spark.createDataFrame([
+        (0, Vectors.dense([1.0, 0.1, -1.0]),),
+        (1, Vectors.dense([2.0, 1.1, 1.0]),),
+        (2, Vectors.dense([3.0, 10.1, 3.0]),)], ["id", "features"])
+    dataFrame.show()
+    #+---+--------------+
+    # | id|      features|
+    # +---+--------------+
+    # |  0|[1.0,0.1,-1.0]|
+    # |  1| [2.0,1.1,1.0]|
+    # |  2|[3.0,10.1,3.0]|
+    # +---+--------------+
+    dataFrame.printSchema()
+    #root
+     # |-- id: long (nullable = true)
+     # |-- features: vector (nullable = true)
+    minmacScler = MinMaxScaler().setInputCol("features").setOutputCol("minmaxFeatures")
+    model = minmacScler.fit(dataFrame)
+    reDF = model.transform(dataFrame)
+    reDF.show()
+     #+---+--------------+--------------+
+    # | id|      features|minmaxFeatures|
+    # +---+--------------+--------------+
+    # |  0|[1.0,0.1,-1.0]| [0.0,0.0,0.0]|
+    # |  1| [2.0,1.1,1.0]| [0.5,0.1,0.5]|
+    # |  2|[3.0,10.1,3.0]| [1.0,1.0,1.0]|
+    # +---+--------------+--------------+
+
+```

@@ -1,0 +1,29 @@
+created: 20220614083342672
+difficulty: 1.0667230800994951
+due: 20220914060138166
+grade: 1
+history: [{"due":"20220617114816834","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616114816834"},{"due":"20220618132431614","interval":1,"difficulty":1.2836910231529453,"stability":0.07416773238429089,"retrievability":0.3495295586291377,"grade":0,"lapses":1,"reps":1,"review":"20220617132431614"},{"due":"20220701021106341","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":2,"lapses":1,"reps":2,"review":"20220619021106340"}]
+interval: 16
+lapses: 1
+modified: 20220705060138166
+reps: 3
+retrievability: 0.8667230800994952
+review: 20220705060138165
+stability: 70.61779235057139
+tags: 用户画像web界面 ?
+title: 用户画像解决方案标签开发周期和定价 如何管理
+type: text/vnd.tiddlywiki
+
+[img[image-20220614155419795.png]]
+标签开发周期和定价：
+
+```
+*基础类、规则类、统计类：开发周期1-2天，按照2000-3000元一个
+*挖掘类标签：开发周期1-2周，按照1.2w-1.5w一个标签
+```
+
+标签如果管理
+
+```
+需要Web界面，后续讲解拥有一套完整Web界面管理标签
+```

@@ -1,0 +1,118 @@
+created: 20220621122443674
+difficulty: 1.0963567239886889
+due: 20220911122903718
+grade: 1
+history: [{"due":"20220625123645953","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624123645953"},{"due":"20220709005315866","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626005315865"}]
+interval: 14
+lapses: 0
+modified: 20220710122903718
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220710122903717
+stability: 62.708036231878836
+tags: 用户画像 ?
+title: 标签合并任务
+type: text/vnd.tiddlywiki
+
+实现的方案：
+
+* 方案1：不同类型的标签存储到不同的索引index下面的type,但是（1）es7.x之后弱化type概念，（2）如果采用了多type方案，对于同一个用户有两条及以上的记录，不符合给当前场景。
+
+>现在设立了人口属性和商业属性、行为属性三级标签
+  >
+  >index索引/_doc默认的type
+  >
+  >index索引/_person，这里有性别标签，年龄段标签，职业标签
+  >
+  >index索引/_shangyeType
+  >
+  >index索引/_actionType
+  >
+  >弊端：（1）es7.x之后弱化type概念 （2）如果采用了多type方案，对于同一个用户有两条及以上的记录
+
+* 方案2(采用方式)：
+
+ES画像结果表的历史数据和当前这一次的结果数据合并，最后将合并的结果覆盖存储
+
+[img[image-20220621145426551.png]]
+
+* 注意：
+
+```
+(1)采用leftjoin结合+形式
+(2)这里可以利用leftjoin首先将newDF的标签需要全部保留
+宗旨：既能够保留旧标签也能保留全部新标签
+```
+
+标签合并开发(代码)
+
+1-获取oldDF
+
+```
+    #  TODO 7.查询ES中的oldDF--如何从es中查询出已有的标签，使用api？
+    # 之前的读取es的数据是es的业务数据用户投保表数据，
+    # 但是在这里使用的是es的标签存储结果表insurance-profile-result/_doc
+    oldDF=spark.read.format("es") \
+        .option("es.resource", f"insurance-profile-result/{esMeta.esType}") \
+        .option("es.nodes", f"{esMeta.esNodes}") \
+        .option("es.index.read.missing.as.empty", "yes") \
+        .option("es.query", "?q=*") \
+        .option("es.read.field.include", "userId,tagsId") \
+        .load()
+    oldDF.show()
+    oldDF.printSchema()
+```
+
+2-newDF和oldDF进行合并
+
+```
+ #  TODO 8.合并newDF和oldDF
+    resultDF=newDF \
+        .join(oldDF, newDF["userId"] == oldDF["userId"], "left") \
+        .select(newDF["userId"], udf(mergeLabelUDF,StringType())(newDF["tagsId"], oldDF["tagsId"]).alias("tagsId"))
+    resultDF.show()
+    #+--------+------+
+    # |  userId|tagsId|
+    # +--------+------+
+    # |  1-3791|  5,15|
+    # |   1-501|  18,5|
+    # |   1-519|  16,6|
+    # |   1-845|  6,15|
+    # |   1-898|  18,5|
+    # | 10-1644|  17,6|
+    # | 10-1813|  5,98|
+    # | 10-2157|  5,98|
+    # | 10-2241|  17,5|
+    # | 100-299|  6,15|
+    # |101-1242|  18,5|
+    # | 101-134|  17,5|
+    # |101-2510|  17,6|
+    # |102-1140|  18,5|
+    # |102-1946|  16,6|
+    # |102-2487|  5,98|
+    # |102-2762|  17,6|
+    # |103-1091|  6,15|
+    # |103-2494|  17,6|
+    # |104-1739|  16,6|
+    # +--------+------+
+    # only showing top 20 rows
+```
+
+```
+def mergeLabelUDF(newTagsId: str, oldTagsId: str):
+    # 1-如果newTagsID为空，直接返回oldTagsId
+    if newTagsId is None:
+        return oldTagsId
+    # 2-如果oldTagsId为空，直接返回newTagsId
+    elif oldTagsId is None:
+        return newTagsId
+    # 3-直接使用+ newArr标签和oldArr标签进行合并，这里的newArr和oldArr都是list
+    else:
+        # Return a list of the words in the string
+        newArr: list = str(newTagsId).split(",")
+        oldArr: list = str(oldTagsId).split(",")
+        resultArr = newArr + oldArr
+        # 4-针对合并后的标签进行去重,各个标签通过逗号分隔
+        res = ",".join(set(resultArr))
+        return res
+```

@@ -1,0 +1,17 @@
+created: 20220521060431312
+difficulty: 2.210762220839748
+due: 20221003023550277
+grade: 2
+history: [{"due":"20220524032222165","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032222165"},{"due":"20220602060817545","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525060817545"},{"due":"20220704065505351","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605065505351"}]
+interval: 32
+lapses: 0
+modified: 20220707023550277
+reps: 4
+retrievability: 0.8891545006575367
+review: 20220707023550277
+stability: 87.88943039453798
+tags: zookeeper ?
+title: 能否为临时节点创建子节点？
+type: text/vnd.tiddlywiki
+
+ZooKeeper中不能为临时节点创建子节点，如果需要创建子节点，应该将要创建子节点的节点创建为永久性节点。

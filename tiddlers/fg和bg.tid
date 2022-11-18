@@ -1,0 +1,21 @@
+created: 20220716125354848
+difficulty: 1
+due: 20221216142125112
+grade: 2
+history: [{"due":"20220725072800474","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220724072800474"},{"due":"20220818122247372","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220802122247372"}]
+interval: 26
+lapses: 0
+modified: 20220828142125112
+reps: 3
+retrievability: 0.846495152115536
+review: 20220828142125112
+stability: 109.91547375987967
+tags: ?
+title: fg和bg
+type: text/vnd.tiddlywiki
+
+The fg command, short for the foreground, is a command that moves a background process on your current Linux shell to the foreground.
+
+On Unix-like operating systems, bg is a job control command. It resumes suspended jobs in the background, returning the user to the shell prompt while the job runs. The presence of bg is required for a shell to comply with the POSIX standard.
+
+使用jobs查看任务编号, 配合fg/bg 任务号

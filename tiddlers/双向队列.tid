@@ -1,0 +1,29 @@
+created: 20220713030710806
+difficulty: 1
+due: 20221114080900928
+grade: 2
+history: [{"due":"20220718085847391","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085847391"},{"due":"20220809023751310","interval":7,"difficulty":1,"stability":16.42362666911943,"retrievability":0.0006265996821383716,"grade":2,"lapses":0,"reps":2,"review":"20220724023751310"}]
+interval: 21
+lapses: 0
+modified: 20220814080900928
+reps: 3
+retrievability: 0.8739616589731285
+review: 20220814080900927
+stability: 92.05212560775539
+tags: ?
+title: 双向队列
+type: text/vnd.tiddlywiki
+
+双向队列两端都支持进队和出队操作
+
+基本操作包括
+
+队首进队
+
+队首出队
+
+队尾进队
+
+队尾出队
+
+[img[Snipaste_2022-07-13_11-07-53.jpg]]

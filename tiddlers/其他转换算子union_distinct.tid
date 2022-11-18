@@ -1,0 +1,36 @@
+created: 20220525021724569
+difficulty: 1
+due: 20221003103321322
+grade: 2
+history: [{"due":"20220529150353674","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150353674"},{"due":"20220624004439614","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602004439614"}]
+interval: 23
+lapses: 0
+modified: 20220625103321322
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625103321322
+stability: 100.35422359618087
+tags: spark ?
+title: 其他转换算子union/distinct
+type: text/vnd.tiddlywiki
+
+*union算子
+
+- 功能：实现两个RDD中数据的合并
+
+- 分类：转换算子
+
+- 语法
+
+`def union(self,other:RDD[U]) -> RDD[T/U]`
+
+*distinct算子
+
+- 功能：实现对RDD数据的去重
+
+- 分类：转换算子
+
+- 语法
+
+`def distinct(self) -> RDD[T]`
+

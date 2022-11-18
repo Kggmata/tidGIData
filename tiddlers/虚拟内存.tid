@@ -1,0 +1,24 @@
+created: 20220713052351478
+difficulty: 1.0358512866473792
+due: 20221128133434343
+grade: 1
+history: [{"due":"20220719063344111","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718063344111"},{"due":"20220727104215298","interval":8,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220726104215298"},{"due":"20220817124601863","interval":9,"difficulty":1,"stability":12.927341248345753,"retrievability":0.0000027608925165954863,"grade":1,"lapses":1,"reps":2,"review":"20220804124601863"}]
+interval: 22
+lapses: 1
+modified: 20220826133434343
+reps: 3
+retrievability: 0.8358512866473793
+review: 20220826133434343
+stability: 93.8406256431102
+tags: ?
+title: 虚拟内存
+type: text/vnd.tiddlywiki
+
+```
+虚拟内存是计算机系统内存管理的一种技术, 
+让应用程序认为它拥有一块连续可用的内存空间, 
+
+实际上物理内存通常被分为多个内存碎片, 还有部分暂时存储在外部存储器上
+```
+
+[img[VirtualMem01.png2022-07-13 13_25_38.png]]

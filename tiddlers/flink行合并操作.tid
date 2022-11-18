@@ -1,0 +1,34 @@
+created: 20220723015300871
+difficulty: 1
+due: 20221012132323527
+grade: 0
+history: [{"due":"20220822134438041","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821134438041"}]
+interval: 51
+lapses: 1
+modified: 20221011132323527
+reps: 1
+retrievability: 4.609778101934696e-24
+review: 20221011132323524
+stability: 0.07408182272361549
+tags: ?
+title: flink行合并操作
+type: text/vnd.tiddlywiki
+
+```
+union按照行去重
+```
+[img[BillfishccUlcU2022-07-23 22_26_53.PNG]]
+
+```
+union all不会去重
+
+intersect交集并去重
+
+intersect all 交集不去重
+
+expect差集去重
+
+expect all差集不去重
+
+in子查询, 子查询的结果集只能有一列
+```

@@ -1,0 +1,57 @@
+created: 20220526133547752
+difficulty: 1
+due: 20220925115059330
+grade: 2
+history: [{"due":"20220601033851819","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531033851819"},{"due":"20220622134619008","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603134619007"}]
+interval: 21
+lapses: 0
+modified: 20220624115059330
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624115059330
+stability: 92.52384777796357
+tags: spark ?
+title: Spark中的宽窄依赖
+type: text/vnd.tiddlywiki
+
+[img[image-20220508072005240.png]]
+
+- RDD会不断进行转换处理，得到新的RDD，每个RDD之间就产生了依赖关系
+
+- 例如：A调用转换算子产生了B，那么我们称A为父RDD，称B为子RDD
+
+ **问题2：什么是宽窄依赖？**
+
+- **窄依赖**：Narrow Dependencies
+
+  - 定义：父RDD的一个分区的数据只给了子RDD的一个分区【不用调用分区器】
+
+  - 示例
+
+[img[image-20220508072459742.png]]
+  - ==特点：一对一或者多对一，不经过Shuffle，性能相对较快，但无法实现全局分区、排序、分组等==
+
+    - 一个Stage内部的计算都是窄依赖的过程
+
+- **宽依赖**：Wide/Shuffle Dependencies
+
+  - 定义：父RDD的一个分区的数据给了子RDD的多个分区【需要调用Shuffle的分区器来实现】
+
+  - 示例
+
+[img[image-20220508072638835.png]]
+
+  - ==特点：一对多，必须经过Shuffle，性能相对较慢，可以实现全局分区、排序、分组等==
+
+    - Spark的job中按照宽依赖来划分Stage
+
+*问题3：为什么要设计对RDD的关系标记宽窄依赖？
+
+`**提高数据容错的性能**，避免分区数据丢失时，需要重新构建整个RDD
+  - 场景：如果子RDD的某个分区的数据丢失
+  - 不标记：不清楚父RDD与子RDD数据之间的关系，必须重新构建整个父RDD所有数据
+  - 标记了：父RDD一个分区只对应子RDD的一个分区，按照对应关系恢复父RDD的对应分区即可
+- **提高数据转换的性能**，将连续窄依赖操作使用同一个Task都放在内存中直接转换
+  - 场景：如果RDD需要多个map、flatMap、filter、reduceByKey、sortByKey等算子的转换操作
+  - 不标记：每个转换不知道会不会经过Shuffle，都使用不同的Task来完成，每个Task的结果要保存到磁盘
+  - 标记了：多个连续窄依赖算子放在一个Stage中，共用一套Task在内存中完成所有转换，性能更快`

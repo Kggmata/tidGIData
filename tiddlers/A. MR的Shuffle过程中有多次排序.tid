@@ -1,0 +1,21 @@
+created: 20220519124551871
+difficulty: 2.2952994088668914
+due: 20230223092521947
+grade: 2
+history: [{"due":"20220522001114312","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001114312"},{"due":"20220528005630767","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522005630767"},{"due":"20220623020145731","interval":10,"difficulty":4.126014725196352,"stability":22.07656732651434,"retrievability":0.826014725196352,"grade":2,"lapses":0,"reps":3,"review":"20220601020145731"},{"due":"20220822075246437","interval":24,"difficulty":3.21779089675283,"stability":58.054925025422094,"retrievability":0.8917761715564773,"grade":2,"lapses":0,"reps":4,"review":"20220625075246437"}]
+interval: 72
+lapses: 0
+modified: 20220905092521947
+reps: 5
+retrievability: 0.8775085121140609
+review: 20220905092521947
+stability: 170.67376197077928
+tags: hadoop ?
+title: A. MR的Shuffle过程中有多次排序
+type: text/vnd.tiddlywiki
+
+正确：3次排序
+
+MapTask和ReduceTask都会默认对数据按照key进行排序，不管逻辑上是否需要。默认是按照字典顺序排序，且实现该排序的方法是快速排序。但是map和reduce任务只能保证单个任务内部输出有序，不能保证所有输出全局有序。
+
+MapTask，当环形缓冲区使用率到达一定阈值后进行一次快速排序，将这些有序数据溢写到磁盘上，而当数据处理完毕后，它会对磁盘上所有文件进行归并排序。ReduceTask，它从每个MapTask上远程拷贝相应的数据文件，如果文件大小超过一定阈值，则溢写到磁盘上，否则存储在内存中。如果内存中文件大小或者数据超过一定阈值，则进行一次合并后将数据溢写到磁盘上。如果磁盘上文件数目达到一定阈值，则进行一次归并排序以生成一个更大的文件；当所有数据拷贝完毕后，ReduceTask统一对内存和磁盘上的所有数据进行一次归并排序。

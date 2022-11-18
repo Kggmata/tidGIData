@@ -1,0 +1,48 @@
+caption: {{||Question}}
+created: 20220519124836924
+difficulty: 1
+due: 20221025024112312
+grade: 2
+history: [{"due":"20220522001151571","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001151571"},{"due":"20220528003008395","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522003008395"},{"due":"20220624141015200","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531141015200"},{"due":"20220625002010480","interval":24,"difficulty":4.254872884385773,"stability":0.07408719146292923,"retrievability":0.8990204493398125,"grade":0,"lapses":1,"reps":1,"review":"20220624002010479"},{"due":"20220629075404284","interval":1,"difficulty":2.6960761858694147,"stability":4.317337934488496,"retrievability":0.2412033014836416,"grade":2,"lapses":1,"reps":2,"review":"20220625075404284"},{"due":"20220716063601063","interval":4,"difficulty":1.803073140998294,"stability":16.79013264690614,"retrievability":0.9069969551288792,"grade":2,"lapses":1,"reps":3,"review":"20220629063601062"}]
+interval: 22
+lapses: 1
+modified: 20220721024112312
+reps: 4
+retrievability: 0.8710523606889513
+review: 20220721024112312
+stability: 95.65969208249972
+tags: hadoop mapreduce ?
+title: C. HDFS BlockSize = 128M，MR读取1个140MB的文件会启动两个MapTask任务 这个逻辑计算方法在源码中叫
+type: text/vnd.tiddlywiki
+
+- 错误：只会有1个MapTask，块是HDFS概念【BlockSize = 128M】，分片是MR的概念
+
+- 常规的结论：一个Block块对应一个Split，一个Split对应一个MapTask
+
+- 准确的结论：if   当前数据大小 /  BlockSize > 1.1  then 按照BlockSize划分分片  else   整体作为一个分片
+
+  - 举例
+
+  - 140M文件
+
+    - 第一次判断：是否大于128M的1.1倍，不大于 =》 整体作为一个分片
+
+    - 一个Split，一个MapTask
+
+  - 150M文件
+
+    - 第一次判断：是否大于128M的1.1倍，大于 =》 按照128M来分
+
+      - 150M - 128M = 22M
+
+      - Split1:128M
+
+    - 第二次判断：22M是否大于128M的1.1倍，不大于 =》 作为一个分片
+
+      - Split2:22M
+
+    - 两个Split，2个MapTask
+
+- 思考为什么这么设计：避免启动多个MapTask处理小数据量
+
+- 记住这个计算逻辑方法在源码中叫做：getSplits

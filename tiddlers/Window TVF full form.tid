@@ -1,0 +1,17 @@
+created: 20220717080650611
+difficulty: 1
+due: 20230617133603059
+grade: 2
+history: [{"due":"20220731040807012","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730040807012"},{"due":"20220822122611753","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806122611753"}]
+interval: 66
+lapses: 0
+modified: 20221011133603059
+reps: 3
+retrievability: 0.6548145031221182
+review: 20221011133603059
+stability: 248.53042151389508
+tags: ?
+title: Window TVF full form
+type: text/vnd.tiddlywiki
+
+window table value functions

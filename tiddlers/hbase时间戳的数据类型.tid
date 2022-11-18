@@ -1,0 +1,9 @@
+created: 20220801235444478
+modified: 20220801235459514
+tags: ? flink
+title: hbase时间戳的数据类型
+type: text/vnd.tiddlywiki
+
+```
+64位整型long
+```

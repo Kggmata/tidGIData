@@ -1,0 +1,81 @@
+created: 20220612113133502
+difficulty: 1
+due: 20220921122835821
+grade: 2
+history: [{"due":"20220616070024793","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615070024793"},{"due":"20220617110732449","interval":1,"difficulty":1.5082427090268031,"stability":0.07425364270040997,"retrievability":0.3520717289715242,"grade":0,"lapses":1,"reps":1,"review":"20220616110732449"},{"due":"20220626011615059","interval":1,"difficulty":1,"stability":8.573134016480457,"retrievability":0.24197345924186736,"grade":2,"lapses":1,"reps":2,"review":"20220617011615059"},{"due":"20220628235635894","interval":10,"difficulty":2.0843554988823763,"stability":0.05488315248213783,"retrievability":0.8843554988823763,"grade":0,"lapses":2,"reps":1,"review":"20220627235635893"},{"due":"20220702131616053","interval":3,"difficulty":2.2875092188471164,"stability":0.04065770267064033,"retrievability":0.0031537199647398966,"grade":0,"lapses":3,"reps":1,"review":"20220701131616053"},{"due":"20220713093707365","interval":4,"difficulty":1,"stability":7.993791266530185,"retrievability":0.00003149712578482967,"grade":2,"lapses":3,"reps":2,"review":"20220705093707365"},{"due":"20220721014056005","interval":15,"difficulty":2.0206123873558863,"stability":0.030119557630782685,"retrievability":0.8206123873558864,"grade":0,"lapses":4,"reps":1,"review":"20220720014056005"},{"due":"20220802101859942","interval":8,"difficulty":1.2206123873565884,"stability":5.471637653256184,"retrievability":7.021623759020026e-13,"grade":1,"lapses":4,"reps":2,"review":"20220728101859941"}]
+interval: 9
+lapses: 4
+modified: 20220806122835821
+reps: 3
+retrievability: 0.8408837998649596
+review: 20220806122835820
+stability: 45.777591558962754
+tags: [[structed streaming]] ?
+title: 流计算的三种语义（一致性的语义）
+type: text/vnd.tiddlywiki
+
+不同的语义，代表不同的安全级别。
+
+
+
+1、At most once：最多一次，可能出现不消费，数据丢失；
+
+```
+数据我最多处理一次，最少可能不处理
+
+​	类似于Kafka的 ACK = 0， 非常随性，正常了处理一次，不正常漏掉就漏掉了
+```
+2、At least once：至少一次，数据至少消费一次，可能出现多次消费数据；
+
+```shell
+每一条数据我最少要处理一次
+为了达到这个要求，某些数据因为错误恢复，可能被处理多次
+但是不会漏数据
+
+# 这个级别表示：数据可能被重复处理，不会丢失
+```
+
+3、Exactly once：精确一次，数据当且仅当消费一次，不多不少。
+
+```shell
+每一条数据我都精准的处理一次
+不会重复处理也不会丢掉
+```
+
+不同的语义代表不同的处理难度和实现的要求。
+
+```
+从性能上：
+
+1. 最好的是最多一次
+2. 最差的是最少一次
+
+从安全性上：
+
+1. 最多一次 最差
+2. 最少一次和精确一次，安全性一致
+
+从一致性上
+
+1. 最多一次 可能丢数据
+2. 最少一次 可能重复数据
+3. 精确一次， 不多不少
+```
+''Spark不同组件的语义支持''
+
+| source        | 精确一致 |
+| File source   | 支持     |
+| Socket source | 不支持   |
+| rate source   | 支持     |
+| kafka source  | 支持     |
+
+| sink         | 一致性                             |
+| file         | 支持（精确一次）                   |
+| kafka        | 支持（最少一次）                   |
+| foreach      | 支持（最少一次）                   |
+| foreachBatch | 支持（取决于程序员的代码能力本身） |
+| console      | 不支持                             |
+| memory       | 不支持                             |
+
+
+

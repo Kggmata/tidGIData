@@ -1,0 +1,37 @@
+created: 20220627044448404
+difficulty: 1.483823507991225
+due: 20221017092202295
+grade: 1
+history: [{"due":"20220630121023061","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629121023061"},{"due":"20220720125608774","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":1,"lapses":0,"reps":2,"review":"20220704125608774"},{"due":"20220727114102073","interval":22,"difficulty":2.067497702097154,"stability":0.07408186401656833,"retrievability":0.8674977020971539,"grade":0,"lapses":1,"reps":1,"review":"20220726114102073"},{"due":"20220804074105142","interval":8,"difficulty":2.267509149597526,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220803074105142"},{"due":"20220816112242231","interval":5,"difficulty":1.467576948302688,"stability":7.783771536771311,"retrievability":0.00006779870516182631,"grade":1,"lapses":2,"reps":2,"review":"20220808112242230"}]
+interval: 15
+lapses: 2
+modified: 20220823092202295
+reps: 3
+retrievability: 0.8162465596885371
+review: 20220823092202294
+stability: 55.19526165620236
+tags: 用户画像 ?
+title: Kafka spark读写代码
+type: text/vnd.tiddlywiki
+
+```
+# 1-从kafka中读取数据
+# Subscribe to 1 topic
+df = spark \
+  .readStream \
+  .format("kafka") \
+  .option("kafka.bootstrap.servers", "host1:port1,host2:port2") \
+  .option("subscribe", "topic1") \
+  .load()
+df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+
+# 2-写入kafka的数据
+// Write key-value data from a DataFrame to a specific Kafka topic specified in an option
+val ds = df
+  .selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+  .writeStream
+  .format("kafka")
+  .option("kafka.bootstrap.servers", "host1:port1,host2:port2")
+  .option("topic", "topic1")
+  .start()
+```

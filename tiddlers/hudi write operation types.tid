@@ -1,0 +1,41 @@
+created: 20220729053630508
+modified: 20220729054528137
+tags: ? flink
+title: hudi write operation types
+type: text/vnd.tiddlywiki
+
+```
+upsert: insert ot update by looking up the index. 目标表不会show duplicates
+
+insert: 类似upsert, 但是跳过index look up. 用在允许重复数据的场景. 写入速度比upsert快很多
+
+bulk insert: upsert, insert都是将操作记录保存在内存, 加速storage heuristics computations. 因此对于initial loading和bootstrapping比较大cost.
+bulk insert提供和insert相同的语义, 同时使用sort-based data writing algorithm. does a best-effort job at sizing files vs guaranteeing file sizes like inserts/upserts do. 
+
+delete
+两类:
+soft delete: 保留record key, 其他fields改为null
+hard delete: 物理清除
+```
+```
+1 Deduping
+First your input records may have duplicate keys within the same batch and duplicates need to be combined or reduced by key.
+2 Index Lookup
+Next, an index lookup is performed to try and match the input records to identify which file groups they belong to.
+3 File Sizing
+Then, based on the average size of previous commits, Hudi will make a plan to add enough records to a small file to get it close to the configured maximum limit.
+4 Partitioning
+We now arrive at partitioning where we decide what file groups certain updates and inserts will be placed in or if new file groups will be created
+5 Write I/O
+Now we actually do the write operations which is either creating a new base file, appending to the log file, or versioning an existing base file.
+6 Update Index
+Now that the write is performed, we will go back and update the index.
+7 Commit
+Finally we commit all of these changes atomically. (A callback notification is exposed)
+8 Clean (if needed)
+Following the commit, cleaning is invoked if needed.
+9 Compaction
+If you are using MOR tables, compaction will either run inline, or be scheduled asynchronously
+10 Archive
+Lastly, we perform an archival step which moves old timeline items to an archive folder.
+```

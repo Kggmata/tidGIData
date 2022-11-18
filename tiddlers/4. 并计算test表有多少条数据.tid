@@ -1,0 +1,9 @@
+created: 20220908133310744
+modified: 20220908133320488
+tags: ? flink
+title: 4. 并计算test表有多少条数据
+type: text/vnd.tiddlywiki
+
+```
+count 'test'
+```

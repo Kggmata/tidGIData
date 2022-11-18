@@ -1,0 +1,23 @@
+created: 20220627145936549
+difficulty: 1.071305136947512
+due: 20221020081220987
+grade: 1
+history: [{"due":"20220630130812471","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629130812471"},{"due":"20220719145200982","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703145200982"}]
+interval: 21
+lapses: 0
+modified: 20220724081220987
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724081220987
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 行组索引
+type: text/vnd.tiddlywiki
+
+row group index
+
+```
+数值字段
+    where <>=
+    原理:文件会划分为多个script片段,每个片段保存最大最小值,默认没1万行会生成一个索引,所以索引之间的步长就是10000
+```

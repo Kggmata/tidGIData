@@ -1,0 +1,25 @@
+created: 20220612064000659
+difficulty: 1
+due: 20221008082721086
+grade: 2
+history: [{"due":"20220615144123047","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220614144123047"},{"due":"20220617085300342","interval":2,"difficulty":1.2801254823962773,"stability":0.07425364270040997,"retrievability":0.12395450234099842,"grade":0,"lapses":1,"reps":1,"review":"20220616085300342"},{"due":"20220630140918787","interval":2,"difficulty":1,"stability":11.792887567465318,"retrievability":0.05855115497747565,"grade":2,"lapses":1,"reps":2,"review":"20220618140918787"},{"due":"20220705143058323","interval":16,"difficulty":2.0667992472295853,"stability":0.05488166082758644,"retrievability":0.866799247229585,"grade":0,"lapses":2,"reps":1,"review":"20220704143058323"},{"due":"20220719032157095","interval":6,"difficulty":1.2668091900659844,"stability":8.622946989162328,"retrievability":0.00000994283639911803,"grade":1,"lapses":2,"reps":2,"review":"20220710032157094"}]
+interval: 16
+lapses: 2
+modified: 20220726082721086
+reps: 3
+retrievability: 0.8224250494497434
+review: 20220726082721086
+stability: 73.96426533127348
+tags: linux ?
+title: linux nc full form
+type: text/vnd.tiddlywiki
+
+''netcat''或者是''nc''
+
+```
+被称为网络上的瑞士军刀，因此netcat也有各个版本出现在各个系统中，而在CentOS 7 开始netcat也被整合到namp项目中。当然如果是开源系统中，如Ubuntu或Linux系统中则可以通过apt或yum来进行安装，在DOS系统下可以通过下载nc for windows获取到二进制版的netcat。因为netcat工具实际上可以通过tcp、udp或者是socket等等的方式在两台主机之间建立链接，然后通过链接读取数据流，而在接收传输数据流的过程中可以任意发挥你的想象，因此它的功能十分强大，在这里就简单的介绍说明一下。
+```
+
+————————————————
+版权声明：本文为CSDN博主「weixin_39557087」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_39557087/article/details/111727306

@@ -1,0 +1,19 @@
+created: 20220717084304164
+difficulty: 1
+due: 20230617023452385
+grade: 1
+history: [{"due":"20220731040817989","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730040817989"},{"due":"20220822115154126","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806115154125"}]
+interval: 66
+lapses: 0
+modified: 20221011023452385
+reps: 3
+retrievability: 0.6548145031221182
+review: 20221011023452385
+stability: 248.53042151389508
+tags: ?
+title: flink滚动窗口计算原则
+type: text/vnd.tiddlywiki
+
+例如5 second interval
+
+则[35,40), [40,45)...

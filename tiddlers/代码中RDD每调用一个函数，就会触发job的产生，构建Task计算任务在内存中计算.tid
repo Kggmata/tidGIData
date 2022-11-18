@@ -1,0 +1,17 @@
+created: 20220522045541729
+difficulty: 1
+due: 20221217045831984
+grade: 2
+history: [{"due":"20220524020748595","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020748595"},{"due":"20220524234337544","interval":0,"difficulty":2.947800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220523234337544"},{"due":"20220525232351014","interval":0,"difficulty":2.147800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":3,"review":"20220524232351014"},{"due":"20220707103033047","interval":6,"difficulty":1,"stability":37.118523502356865,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":4,"review":"20220531103033047"}]
+interval: 40
+lapses: 0
+modified: 20220710045831984
+reps: 5
+retrievability: 0.8926688865413943
+review: 20220710045831984
+stability: 159.59834228635742
+tags: spark ?
+title: 代码中RDD每调用一个函数，就会触发job的产生，构建Task计算任务在内存中计算
+type: text/vnd.tiddlywiki
+
+错误：RDD调用处理的函数并不会直接立即执行，只有等到真正使用RDD的数据时候才会真正运行

@@ -1,0 +1,19 @@
+created: 20220716012822769
+difficulty: 1
+due: 20221219134200936
+grade: 2
+history: [{"due":"20220722111543739","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721111543739"},{"due":"20220817101609846","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":1,"lapses":0,"reps":2,"review":"20220801101609846"}]
+interval: 27
+lapses: 0
+modified: 20220828134200936
+reps: 3
+retrievability: 0.8411020839292245
+review: 20220828134200936
+stability: 113.47759365239038
+tags: ?
+title: ln full form
+type: text/vnd.tiddlywiki
+
+link
+
+The ln command is a standard Unix command utility used to create a hard link or a symbolic link (symlink) to an existing file or directory. The use of a hard link allows multiple filenames to be associated with the same file since a hard link points to the inode of a given file, the data of which is stored on disk.

@@ -1,0 +1,19 @@
+created: 20220714022532636
+difficulty: 1
+due: 20221129132400823
+grade: 2
+history: [{"due":"20220720150407735","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719150407735"},{"due":"20220815014042202","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":1,"lapses":0,"reps":2,"review":"20220730014042202"}]
+interval: 23
+lapses: 0
+modified: 20220822132400823
+reps: 3
+retrievability: 0.8629435913626122
+review: 20220822132400822
+stability: 99.20795668530575
+tags: ?
+title: flink一句话概况
+type: text/vnd.tiddlywiki
+
+stateful computation over data stream
+
+flink既是存储引擎也是计算引擎

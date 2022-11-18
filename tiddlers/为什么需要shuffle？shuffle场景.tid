@@ -1,0 +1,35 @@
+created: 20220523065638959
+difficulty: 1.8724576732812046
+due: 20220827142504891
+grade: 1
+history: [{"due":"20220526133339756","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133339756"},{"due":"20220628140342697","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531140342697"},{"due":"20220701000559668","interval":30,"difficulty":2.4310166691941744,"stability":0.07408316441686115,"retrievability":0.8919452162171847,"grade":0,"lapses":1,"reps":1,"review":"20220630000559668"},{"due":"20220706054949835","interval":5,"difficulty":2.6318327785868973,"stability":0.05488141221849455,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220705054949835"},{"due":"20220717044139938","interval":5,"difficulty":1.831900580148061,"stability":6.672594838355014,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220710044139938"}]
+interval: 11
+lapses: 2
+modified: 20220721142504891
+reps: 3
+retrievability: 0.8405570931331439
+review: 20220721142504890
+stability: 37.19272409925766
+tags: spark ?
+title: 为什么需要shuffle？shuffle场景
+type: text/vnd.tiddlywiki
+
+```
+因为需要的数据存在不同的节点/分区上
+shuffle对计算,内存,网络,磁盘消耗都很大. 因此只在必要的时候shuffle,否则尽量避免shuffle
+
+shuffle一般在
+
+1 去重 distinct
+
+2 聚合 reduceByKey, reduceBy, groupByKey, groupBy, sortByKey
+
+3 排序 sortBy, sortByKey 
+
+4．重分区操作：repartition、repartitionAndSortWithinPartitions、coalesce(shuffle=true)等。
+
+5．集合或者表操作：join、cogroup等。
+```
+————————————————
+版权声明：本文为CSDN博主「BlackEyes_SY」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u011204487/article/details/103906770

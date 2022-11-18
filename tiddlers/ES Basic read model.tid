@@ -1,0 +1,60 @@
+created: 20220619071416175
+difficulty: 1.075606407978934
+due: 20220921123114884
+grade: 1
+history: [{"due":"20220621013359148","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620013359148"},{"due":"20220705071109489","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622071109489"}]
+interval: 17
+lapses: 0
+modified: 20220709123114885
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709123114882
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: ES Basic read model
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-replication.html
+
+```
+ES的读有两类: 轻量的根据doc_id读取
+heavysearch根据
+ES的副本机制是根据primary-backup model, 它的强大之处之一是所有的shard copies都是相同的,代表shard足以胜任读取的工作
+基本流程如下
+1. client找一个node当中coordinate node.
+2. 发送请求在coordinate node处理,决定read request应该去哪个shard
+3. 找寻related shard的active copy,默认会使用adaptive replica selection策略去选择,可以是primary或是replica
+4. 发送请求去选定的copies,这一步也叫scatter phase或者query phase.
+5. 文档获取会去os cache当中的translog,然后硬盘的translog,最后去硬盘的segment file
+query查询会去os cache当中的segment file和磁盘当中的segment file. 按照score(BM25)排序, 按照from size来返回
+6. 合并结果,按照score归并排序,根据from size得出最终结果. gather phase或者fetch phase
+```
+Basic read model
+
+Reads in Elasticsearch can be very lightweight lookups by ID or a heavy search request with complex aggregations that take non-trivial CPU power. One of the beauties of the primary-backup model is that it keeps all shard copies identical (with the exception of in-flight operations). As such, a single in-sync copy is sufficient to serve read requests.
+
+When a read request is received by a node, that node is responsible for forwarding it to the nodes that hold the relevant shards, collating the responses, and responding to the client. We call that node the coordinating node for that request. The basic flow is as follows:
+
+```
+1 Resolve the read requests to the relevant shards. Note that since most searches will be sent to one or more indices, they typically need to read from multiple shards, each representing a different subset of the data.
+
+2 Select an active copy of each relevant shard, from the shard replication group. This can be either the primary or a replica. By default, Elasticsearch uses adaptive replica selection to select the shard copies.
+
+3 Send shard level read requests to the selected copies.
+
+4 Combine the results and respond. Note that in the case of get by ID look up, only one shard is relevant and this step can be skipped.
+```
+
+Shard failures
+
+When a shard fails to respond to a read request, the coordinating node sends the request to another shard copy in the same replication group. Repeated failures can result in no available shard copies.
+
+To ensure fast responses, the following APIs will respond with partial results if one or more shards fail:
+
+```
+Search
+Multi Search
+Multi Get
+```
+
+Responses containing partial results still provide a 200 OK HTTP status code. Shard failures are indicated by the timed_out and _shards fields of the response header.

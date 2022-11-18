@@ -1,0 +1,53 @@
+created: 20220525033639923
+difficulty: 1
+due: 20220923005657618
+grade: 2
+history: [{"due":"20220529150542116","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150542116"},{"due":"20220621112036679","interval":4,"difficulty":1.3310647873439139,"stability":19.873133781910397,"retrievability":0.14564366571177542,"grade":2,"lapses":0,"reps":2,"review":"20220601112036679"}]
+interval: 21
+lapses: 0
+modified: 20220622005657618
+reps: 3
+retrievability: 0.8946391981747235
+review: 20220622005657617
+stability: 92.73882157712833
+tags: spark ?
+title: 分组聚合算子：groupByKey/reduceByKey
+type: text/vnd.tiddlywiki
+
+*groupByKey算子
+
+- 功能：对KV类型的RDD按照Key进行分组，相同K的Value让如一个集合列表中
+
+- 要求：只有KV类型的RDD才能调用
+
+- 分类：转换算子
+
+场景：**==需要对数据进行分组的场景==**，或者说分组以后的聚合逻辑比较复杂，不适合用reduce
+
+- 特点：必须经过Shuffle，可以指定新的RDD分区个数，可以指定分区规则
+
+- 语法
+
+`python
+  def groupByKey(self,numpartitions,partitionFunction) -> RDD[Tuple[K,Iterable[V]]]`
+
+*reduceByKey算子
+
+- 功能：对KV类型的RDD按照Key进行分组，并对相同Key的所有Value进行聚合
+
+- 要求：只有KV类型的RDD才能调用
+
+- 分类：转换算子
+
+- 场景：需要对数据进行分组并且聚合的场景
+
+- 特点：必须经过shuffle，可以执行新的RDD分区个数，可以指定分区规则
+
+- 语法
+
+`def reduceByKey(self,f: (T,T) -> T,numPartitions,partitionFunction) -> RDD[Tuple[K,V]]
+  `
+
+
+
+  

@@ -1,0 +1,34 @@
+created: 20220521053357154
+difficulty: 3.2810386387573844
+due: 20220903064851005
+grade: 1
+history: [{"due":"20220524023751332","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023751331"},{"due":"20220525063903429","interval":2,"difficulty":6.1000000000000005,"stability":0.4259704768919878,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220524063903429"},{"due":"20220525232611921","interval":0,"difficulty":5.300000000000001,"stability":0.4259704768919878,"retrievability":1,"grade":2,"lapses":1,"reps":2,"review":"20220524232611921"},{"due":"20220615120040765","interval":6,"difficulty":3.726716764456257,"stability":14.510698175790317,"retrievability":0.22671676445625644,"grade":2,"lapses":1,"reps":3,"review":"20220531120040765"},{"due":"20220729070207957","interval":16,"difficulty":2.817036911249467,"stability":43.1398394440297,"retrievability":0.8903201467932093,"grade":2,"lapses":1,"reps":4,"review":"20220616070207957"},{"due":"20220806063527557","interval":50,"difficulty":3.902083405546679,"stability":0.054881171378436774,"retrievability":0.885046494297212,"grade":0,"lapses":2,"reps":1,"review":"20220805063527557"},{"due":"20220814040317350","interval":4,"difficulty":3.102545762208753,"stability":4.628541484496958,"retrievability":0.00046235666207404937,"grade":1,"lapses":2,"reps":2,"review":"20220809040317350"},{"due":"20220821020805678","interval":11,"difficulty":4.081038638751819,"stability":0.040656966333775045,"retrievability":0.7784928765430662,"grade":0,"lapses":3,"reps":1,"review":"20220820020805677"}]
+interval: 10
+lapses: 3
+modified: 20220830064851005
+reps: 2
+retrievability: 5.565106570616209e-12
+review: 20220830064851005
+stability: 3.5028053904935375
+tags: hadoop ?
+title: 简述hadoop实现join的几种方法及每种方法的实现。
+type: text/vnd.tiddlywiki
+
+1）reduce side join
+
+Map端的主要工作：为来自不同表(文件)的key/value对打标签以区别不同来源的记录。然后用连接字段作为key，其余部分和新加的标志作为value，最后进行输出。
+
+Reduce端的主要工作：在reduce端以连接字段作为key的分组已经完成，我们只需要在每一个分组当中将那些来源于不同文件的记录(在map阶段已经打标志)分开，最后进行合并就ok了。
+
+2）map join
+
+在map端缓存多张表，提前处理业务逻辑，这样增加map端业务，减少reduce端数据的压力，尽可能的减少数据倾斜。
+
+具体办法：采用distributedcache
+
+（1）在mapper的setup阶段，将文件读取到缓存集合中。
+
+（2）在驱动函数中加载缓存。
+
+job.addCacheFile(new URI("file:/e:/mapjoincache/pd.txt"));// 缓存普通文件到task运行节点
+

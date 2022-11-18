@@ -1,0 +1,82 @@
+created: 20220612061626501
+difficulty: 1.076352350907104
+due: 20220915135020612
+grade: 1
+history: [{"due":"20220614231737485","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613231737484"},{"due":"20220630070232853","interval":2,"difficulty":1,"stability":13.570489504250556,"retrievability":0.12633427211412301,"grade":2,"lapses":0,"reps":2,"review":"20220616070232853"}]
+interval: 17
+lapses: 0
+modified: 20220703135020612
+reps: 3
+retrievability: 0.8763523509071041
+review: 20220703135020611
+stability: 73.98924420527824
+tags: [[structed streaming]] ?
+title: 结构化流入门案例-HelloWorld
+type: text/vnd.tiddlywiki
+
+1 将PyCharm切换到远程解释器上，将工程上传同步到Linux的系统内即可。
+
+2 2. 在node1上，安装`nc`程序：
+
+```
+   yum install -y nc
+```
+
+代码
+
+
+
+流计算入门：单词计数
+
+```
+
+# Spark的结构化流，是SparkSQL作为底层，90%API和SparkSQL一致
+from pyspark.sql import SparkSession
+from pyspark.sql import DataFrame
+import pyspark.sql.functions as F
+
+# 构建SparkSession对象，作为执行环境的入口
+# spark: SparkSession 类型标记的意思，标记spark对象的类型是SparkSession，是一种注释
+spark: SparkSession = SparkSession.builder.\
+    appName("Hello Stream").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", "1").\
+    master("local[*]").\
+    getOrCreate()
+
+line_df: DataFrame = spark.readStream.\
+    format("socket").\
+    option("host", "node1").\
+    option("port", 9999).\
+    load()
+
+# 对这个对象进行split切分，进行行转列变成一列的表格（SparkSQL中wordcount的计算是一致的）
+word_df = line_df.select(
+    F.explode(F.split(line_df.value, " ")).alias("word")
+)
+
+# group by 计算单词次数
+result_df = word_df.groupBy("word").count()
+
+# 输出，输出到控制台
+result_df.writeStream.\
+    outputMode("complete").\
+    format("console").\
+    start().\
+    awaitTermination()
+
+```
+
+*启动步骤：
+
+在node1上执行：
+
+```
+nc -lk 9999
+```
+
+在pycharm中启动代码
+
+最终，可以在node1上输入数据，被Spark结构化流接收到，然后进行计算：
+
+[img[20220612104253.png]]

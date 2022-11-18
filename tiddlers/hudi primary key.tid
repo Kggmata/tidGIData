@@ -1,0 +1,9 @@
+created: 20220729054730429
+modified: 20220729054912081
+tags: ? flink
+title: hudi primary key
+type: text/vnd.tiddlywiki
+
+```
+record key+partition path
+```

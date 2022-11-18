@@ -1,0 +1,21 @@
+created: 20220713023812490
+difficulty: 1
+due: 20221109132325052
+grade: 2
+history: [{"due":"20220718085823048","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085823048"},{"due":"20220809020621538","interval":7,"difficulty":1,"stability":16.42362666911943,"retrievability":0.0006265996821383716,"grade":1,"lapses":0,"reps":2,"review":"20220724020621538"}]
+interval: 20
+lapses: 0
+modified: 20220813132325052
+reps: 3
+retrievability: 0.8795863022851452
+review: 20220813132325052
+stability: 88.47001953971609
+tags: ?
+title: 括号匹配问题
+type: text/vnd.tiddlywiki
+
+使用栈的思想, 左括号进栈比如([
+
+右括号检测栈顶, 匹配出栈])
+
+不匹配报错

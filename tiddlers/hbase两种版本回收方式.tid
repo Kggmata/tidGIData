@@ -1,0 +1,10 @@
+created: 20220801235505755
+modified: 20220801235527842
+tags: ? flink
+title: hbase两种版本回收方式
+type: text/vnd.tiddlywiki
+
+```
+1 版本数量versionNum
+2 TTL
+```

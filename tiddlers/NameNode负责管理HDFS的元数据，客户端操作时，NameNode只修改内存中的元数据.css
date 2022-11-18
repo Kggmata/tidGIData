@@ -1,0 +1,6 @@
+正确：HDFS的元数据的位置：磁盘【fsimage：安全】 + 内存【NameNode：快】
+- 每次NameNode启动，将fsiamge文件中的元数据和edits文件中的操作进行合并，加载到内存中
+- 客户端在请求NameNode读写文件的时候，NameNode只修改内存中的元数据，将内存的变化记录在edits中
+- 每次客户端的操作，只影响了内存元数据的变化，磁盘元数据是没有变化的，内存所有变化都记录在edits文件中
+- fsiamge：元数据磁盘镜像文件
+- edits：NameNode内存元数据的操作日志文件

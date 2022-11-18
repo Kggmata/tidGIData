@@ -1,0 +1,6 @@
+普通分布式架构: HDFS, YARN, Spark, Flink, Hbase
+解决主节点单点故障问题: HA高可用架构来解决
+公平分布式架构: Zookeeper
+不存在单点故障问题,zookeeper负责帮别人解决问题
+ZK辅助实现HA,解决单点故障问题
+存储实时工具元数据

@@ -1,0 +1,19 @@
+created: 20220521053858163
+difficulty: 2.0810386387518194
+due: 20220924020645824
+grade: 2
+history: [{"due":"20220524023943985","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023943985"},{"due":"20220525002223456","interval":2,"difficulty":6.1000000000000005,"stability":0.4259704768919878,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220524002223456"},{"due":"20220525232550839","interval":0,"difficulty":5.300000000000001,"stability":0.4259704768919878,"retrievability":1,"grade":2,"lapses":1,"reps":2,"review":"20220524232550839"},{"due":"20220615103159166","interval":6,"difficulty":3.726716764456257,"stability":14.510698175790317,"retrievability":0.22671676445625644,"grade":2,"lapses":1,"reps":3,"review":"20220531103159166"},{"due":"20220729070106399","interval":16,"difficulty":2.817036911249467,"stability":43.1398394440297,"retrievability":0.8903201467932093,"grade":2,"lapses":1,"reps":4,"review":"20220616070106399"},{"due":"20220806063449759","interval":50,"difficulty":3.902083405546679,"stability":0.054881171378436774,"retrievability":0.885046494297212,"grade":0,"lapses":2,"reps":1,"review":"20220805063449759"},{"due":"20220814040210701","interval":4,"difficulty":3.102545762208753,"stability":4.628541484496958,"retrievability":0.00046235666207404937,"grade":1,"lapses":2,"reps":2,"review":"20220809040210701"}]
+interval: 11
+lapses: 2
+modified: 20220820020645824
+reps: 3
+retrievability: 0.7784928765430662
+review: 20220820020645824
+stability: 34.97341569221757
+tags: hadoop ?
+title: 简述Hadoop1与Hadoop2 的架构异同。
+type: text/vnd.tiddlywiki
+
+加入了yarn解决了资源调度的问题。
+
+加入了对zookeeper的支持实现比较可靠的高可用。

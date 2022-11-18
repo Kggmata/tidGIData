@@ -1,0 +1,256 @@
+created: 20220621122136533
+difficulty: 1
+due: 20220914131918391
+grade: 2
+history: [{"due":"20220625123504283","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624123504283"},{"due":"20220709060202486","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626060202486"}]
+interval: 14
+lapses: 0
+modified: 20220710131918391
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220710131918390
+stability: 65.98229464323742
+tags: 用户画像 ?
+title: 年龄段标签开发步骤
+type: text/vnd.tiddlywiki
+
+年龄段标签开发步骤：
+
+```
+1-准备Spark的环境
+2-读取MySQL的数据，加载四级标签
+3-根据rule去es中读取数据
+4-读取MySQL的五级标签的数据，根据当前五级标签的父标签pid
+5-结合ES的业务数据库数据表的字段和MySQL的五级标签实现打标签工作
+6-将结果数据存储ES中
+```
+
+1-准备环境
+
+```
+#!/usr/bin/env python
+# @desc :
+__coding__ = "utf-8"
+__author__ = "itcast team"
+import os
+
+from pyspark import SparkContext
+from pyspark.sql import SparkSession, DataFrame
+
+'''
+1.准备Spark开发环境
+2.读取MySQL数据
+3.读取和性别标签相关的4级标签rule并解析
+4.根据4级标签加载ES数据
+5.读取和性别标签相关的5级标签(根据4级标签的id作为pid查询)
+6.根据ES数据和5级标签数据进行匹配,得出userId,tagsId
+7.查询ES中的oldDF
+8.合并newDF和oldDF
+9.将最终结果写到ES
+'''
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # TODO 1.准备Spark开发环境
+    spark = SparkSession\
+        .builder\
+        .appName("testAgeModel")\
+        .master("local[*]")\
+        .getOrCreate()
+    # 这里的SparkContext就是返回值，为了在使用sc的时候可以直接代码提示
+    sc:SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+```
+2-读取MySQL的标签数据体系
+
+(**从tags_new数据库的tbl_basic_tag表中**)，加载4级标签
+
+代码数据：
+
+```
+    #  TODO 2.读取MySQL数据--直接从脚本文件中获取，无需重复写
+    url = "jdbc:mysql://192.168.88.166:3306/tags_new?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&user=root&password=123456"
+    tableName = "tbl_basic_tag"
+    # 问题-spark.read.jdbc读取出来的数据类型是什么？---------------DataFrame
+    # 问题2-如何查看当前的类型是什么类型，在python中？
+    mysqlDF:DataFrame = spark.read.jdbc(url, tableName)
+    print(type(mysqlDF)) #dateframe
+    mysqlDF.show()# 默认展示多少航数据？------------20行数据
+    mysqlDF.printSchema()
+```
+
+结果数据
+
+```
++---+--------+--------+--------------------+--------+-----+---+-------------------+-------------------+-----+------+
+| id|    name|industry|                rule|business|level|pid|              ctime|              utime|state|remark|
++---+--------+--------+--------------------+--------+-----+---+-------------------+-------------------+-----+------+
+|  1|    电商|    null|                null|    null|    1| -1|2019-10-25 10:31:36|2019-10-25 10:31:36| null|  null|
+|  2|  某电商|    null|                null|    null|    2|  1|2019-10-25 10:31:36|2019-10-25 10:31:36| null|  null|
+|  3|人口属性|    null|                null|    null|    3|  2|2019-10-25 10:31:36|2019-10-25 10:31:36| null|  null|
+|  4|    性别|    null|inType=Elasticsea...|    null|    4|  3|2019-10-26 02:47:32|2019-10-26 02:47:32| null|  null|
+|  5|      男|    null|                   1|    null|    5|  4|2019-10-26 02:49:33|2019-10-26 02:49:33| null|  null|
+|  6|      女|    null|                   2|    null|    5|  4|2019-10-26 02:49:44|2019-10-26 02:49:44| null|  null|
+|  7|    职业|    null|inType=HBase##zkH...|    null|    4|  3|               null|               null| null|  null|
+|  8|    学生|    null|                   1|    null|    5|  7|               null|               null| null|  null|
+|  9|  公务员|    null|                   2|    null|    5|  7|               null|               null| null|  null|
+| 10|    军人|    null|                   3|    null|    5|  7|               null|               null| null|  null|
+| 11|    警察|    null|                   4|    null|    5|  7|               null|               null| null|  null|
+| 12|    教师|    null|                   5|    null|    5|  7|               null|               null| null|  null|
+| 13|    白领|    null|                   6|    null|    5|  7|               null|               null| null|  null|
+| 14|  年龄段|    null|inType=Elasticsea...|    null|    4|  3|               null|               null| null|  null|
+| 15|    50后|    null|   19500101-19591231|    null|    5| 14|               null|               null| null|  null|
+| 16|    60后|    null|   19600101-19691231|    null|    5| 14|               null|               null| null|  null|
+| 17|    70后|    null|   19700101-19791231|    null|    5| 14|               null|               null| null|  null|
+| 18|    80后|    null|   19800101-19891231|    null|    5| 14|               null|               null| null|  null|
+| 19|    90后|    null|   19900101-19991231|    null|    5| 14|               null|               null| null|  null|
+| 20|    00后|    null|   20000101-20091231|    null|    5| 14|               null|               null| null|  null|
++---+--------+--------+--------------------+--------+-----+---+-------------------+-------------------+-----+------+
+only showing top 20 rows
+
+root
+ |-- id: long (nullable = true)
+ |-- name: string (nullable = true)
+ |-- industry: string (nullable = true)
+ |-- rule: string (nullable = true)
+ |-- business: string (nullable = true)
+ |-- level: integer (nullable = true)
+ |-- pid: long (nullable = true)
+ |-- ctime: timestamp (nullable = true)
+ |-- utime: timestamp (nullable = true)
+ |-- state: integer (nullable = true)
+ |-- remark: string (nullable = true)
+```
+3-读取和性别标签相关的4级标签
+
+rule并解析rule字段，解析成字典的形式，供ESMeta数据源使用
+
+```
+   #  TODO 3.读取和性别标签相关的4级标签rule并解析
+    # 在PySpark中没有DataSet的，只有DataFrame，因为Python是弱类型语言
+    fourRuleDF:DataFrame = mysqlDF.select("rule").where("id=4")
+    # fourRuleDF.show(truncate=False)
+    # fourRuleDF.printSchema()
+    #+------------------------------------------------------------------------------------------------------------------------+
+    # |rule                                                                                                                    |
+    # +------------------------------------------------------------------------------------------------------------------------+
+    # |inType=Elasticsearch##esNodes=192.168.88.166:9200##esIndex=uprofile-policy_client##esType=_doc##selectFields=user_id,sex|
+    # +------------------------------------------------------------------------------------------------------------------------+
+    # root
+    #  |-- rule: string (nullable = true)
+    # 解析rule
+    # 注意1：collect之后数据返回值是list，【{},{},{}】
+    # 注意2：返回值是list之后如何取出来下标0，[0]
+    fouRuleict = fourRuleDF.rdd.map(lambda row: ruleMapFuntions(row["rule"])).collect()[0]
+    # print(fouRuleict)
+    # {'inType': 'Elasticsearch', 'esNodes': '192.168.88.166:9200', 'esIndex': 'uprofile-policy_client', 'esType': '_doc', 'selectFields': 'user_id,sex'}
+    
+```
+
+```
+{'inType': 'Elasticsearch', 'esNodes': '192.168.88.166:9200', 'esIndex': 'uprofile-policy_client', 'esType': '_doc', 'selectFields': 'user_id,sex'}
+```
+
+4-【ES数据源】根据四级标签准备加载ES数据源
+
+里面ES的intype，esNodes，selectFields等字段
+
+* 加载的是uprofile-policy_client索引库中的user_id和sex字段
+
+```
+   #  TODO 4.根据4级标签加载ES数据(从hive中导入的数据，源数据)
+    #  esIndex 那个索引库？？uprofile-policy_client
+    #  selectFields 选择那些字段？？ user_id，sex
+    esMeta = ESMeta.fromDictToEsMeta(fouRuleict)
+    esDF=spark.read.format("es") \
+        .option("es.resource", f"{esMeta.esIndex}/{esMeta.esType}") \
+        .option("es.nodes", f"{esMeta.esNodes}") \
+        .option("es.index.read.missing.as.empty", "yes") \
+        .option("es.query", "?q=*") \
+        .option("es.read.field.include", f"{esMeta.selectFields}")\
+        .load()
+    esDF.show()
+    esDF.printSchema()
+```
+
+5-【5级标签】读取和性别标签相关的5级标签
+
+```
+  #  TODO 5.读取和性别标签相关的5级标签(根据4级标签的id作为pid查询)
+    fiveRuleDF:DataFrame = mysqlDF.select("id", "rule").where("pid=4")
+    fiveRuleDF.show()
+    fiveRuleDF.printSchema()
+    # +---+----+
+    # | id | rule |
+    # +---+----+
+    # | 5 | 1 |
+    # | 6 | 2 |
+    # +---+----+
+    # root
+    # | -- id: long(nullable=true)
+    # | -- rule: string(nullable=true)
+```
+
+7-将5级别标签通过反转id和rule形成字典Dict
+
+  * 形成rule在前，id在后的字典dict类型,名字fiveDict
+
+```python
+    #  TODO 5.1 将5级别标签通过反转id和rule形成字典Dict
+    # print(fiveRuleDF.rdd.map(lambda row: (row["rule"], row["id"])).collect())#[('1', 5), ('2', 6)]
+    # print(fiveRuleDF.rdd.map(lambda row: (row[1], row[0])).collect())[('1', 5), ('2', 6)]
+    # collectAsMap 返回的是字典
+    fiveRuleMap = fiveRuleDF.rdd.map(lambda row: (row["rule"], row["id"])).collectAsMap()
+    print("five rule dict:",fiveRuleMap)
+```
+
+结果：
+
+```
+five rule dict: {'1': 5, '2': 6}
+字典类型
+```
+
+6-根据ES的数据源和5级标签进行匹配，得出userid和tagsid
+
+  * 1-开发UDF函数，将ES的Sex字段的M映射为1，F映射为2
+  * 2-在UDF函数中，通过fiveDict[gender]
+    * 给一个gender=1，fiveDict[1]=5 男 tagsid
+    * 给一个gender=2，fiveDice[2]=6 女 tagsid
+
+```python
+    #  TODO 6.根据ES数据和5级标签数据进行匹配,得出userId,tagsId
+    #  TODO 6.1 定义UDF函数，实现sex=M，F映射为1或2
+    #  TODO 6.2 使用esDF.select使用udf函数打标签
+    #  后续所有的结果表的userId都是这个名称，不要随便起名 useri#id userid99id
+    #  后续的所有的结果表的标签字段都是tagsId的名称，可不要随便起名
+    def gender2Tags(sex:str)->str:
+        # 1-首先定义一个gender接受男性和女性的1和2的值
+        gender=""
+        # 2-使用if判断，如果是M，就给定gender=1，代表男性
+        # 其中str（1）表示的是强制把1转化为str类型
+        if "M"==sex:
+            gender=str(1)
+        # 3-使用if判断，如果是F，就给定gender=2，代表女性
+        # 其中str（2）表示的是强制把2转化为str类型
+        elif "F"==sex:
+            gender=str(2)
+        ##five rule dict: {'1': 5, '2': 6}
+        # 4-返回 fiveDict[gender] 如果gender=1.打上tagsid=5的标签，否则6标签
+        return fiveRuleMap[gender]
+    #  def udf(f=None, returnType=StringType())
+    # TODO 这里是常规的 udf 的写法，掌握这种写法
+    convertoTags=udf(f=gender2Tags,returnType=StringType())
+    newDF = esDF.select(esDF["user_id"].alias("userId"),convertoTags(esDF["sex"]).alias("tagsId"))
+    newDF.show()
+    newDF.printSchema()
+```
+
+

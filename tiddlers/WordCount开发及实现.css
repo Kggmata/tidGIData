@@ -1,0 +1,35 @@
+step0：上传word.txt文件到Linux本地：node1
+cd /export/data/
+rz
+
+step1：读取文件，将文件的数据变成分布式集合数据
+# 将这个文件读取到Spark中，变成一个分布式列表对象
+fileRdd = sc.textFile("file:///export/data/word.txt")
+# 输出这个数据一共有多少行
+fileRdd.count()
+# 输出这个数据前3行的内容
+fileRdd.take(3)
+
+step2：先过滤，将空行过滤掉
+# 对RDD中的数据进行过滤，取每个元素进行判断，符合条件的留下来，放入一个新的RDD中
+filterRdd = fileRdd.filter(lambda line : len(line.strip()) > 0)
+filterRdd.count()
+filterRdd.take(3)
+
+step3：将每一行多个单词转换为一行一个单词
+# 将每条数据中一行多个单词，变成一行一个单词
+wordRdd = filterRdd.flatMap(lambda line : line.strip().split(r" "))
+wordRdd.count()
+wordRdd.take(10)
+
+step4：将每个单词转换成KeyValue的二元组(word,1)
+tupleRdd = wordRdd.map(lambda word : (word,1))
+tupleRdd.take(10)
+
+step5：按照单词分组聚合
+# 按照Key进行分组并且进行聚合
+rsRdd = tupleRdd.reduceByKey(lambda tmp,item : tmp+item)
+rsRdd.foreach(lambda kv : print(kv))
+
+step6：输出结果保存到文件中
+rsRdd.saveAsTextFile("file:///export/data/wcoutput1")

@@ -1,0 +1,19 @@
+created: 20220618074052588
+difficulty: 1
+due: 20220930103533906
+grade: 2
+history: [{"due":"20220621003047056","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003047056"},{"due":"20220623025616600","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622025616600"},{"due":"20220708060423553","interval":3,"difficulty":1,"stability":12.64542427740461,"retrievability":0.014037314090908812,"grade":2,"lapses":1,"reps":2,"review":"20220625060423553"},{"due":"20220711074330054","interval":15,"difficulty":2.0825157664271754,"stability":0.05488141221849455,"retrievability":0.8825157664271754,"grade":0,"lapses":2,"reps":1,"review":"20220710074330054"},{"due":"20220720013807754","interval":2,"difficulty":1.3040186091073276,"stability":8.168599769521922,"retrievability":0.02150284268015211,"grade":1,"lapses":2,"reps":2,"review":"20220712013807753"}]
+interval: 14
+lapses: 2
+modified: 20220726103533906
+reps: 3
+retrievability: 0.8347898324278273
+review: 20220726103533905
+stability: 66.0148010920283
+tags: 用户画像 ?
+title: 数据接入到ES中三种方法
+type: text/vnd.tiddlywiki
+
+* ''方式1：使用es-hadoop的jar包，在hive窗口中创建外部表导入数据到es中**[项目中使用方式]''
+* 方式2：使用sparksql将数据从hive写入es中
+* 方式3：使用logstash采集hive的数据到es中(hive的jdbc的方式)

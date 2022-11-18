@@ -1,0 +1,17 @@
+created: 20220609015434042
+difficulty: 1.0731304672290258
+due: 20220928055309979
+grade: 1
+history: [{"due":"20220613134643998","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612134643998"},{"due":"20220701021044670","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615021044670"}]
+interval: 20
+lapses: 0
+modified: 20220705055309979
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705055309979
+stability: 84.8538234387497
+tags: kafka ?
+title: 消息队列的两种模式
+type: text/vnd.tiddlywiki
+
+消息队列包括两种模式，点对点模式（point to point， queue）和发布/订阅模式（publish/subscribe，topic）

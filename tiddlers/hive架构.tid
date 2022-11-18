@@ -1,0 +1,24 @@
+created: 20220521101122370
+difficulty: 2.614271873585677
+due: 20221027134258477
+grade: 2
+history: [{"due":"20220524064332517","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522064332517"},{"due":"20220529033128430","interval":6,"difficulty":5.929,"stability":0.16205398577412577,"retrievability":0.7290000000000001,"grade":0,"lapses":1,"reps":1,"review":"20220528033128430"},{"due":"20220603132257504","interval":5,"difficulty":6.167743803026746,"stability":0.07117400905594407,"retrievability":0.03874380302674565,"grade":0,"lapses":2,"reps":1,"review":"20220602132257504"},{"due":"20220607123258300","interval":4,"difficulty":6.370425537212709,"stability":0.04367447516744718,"retrievability":0.002681734185962407,"grade":0,"lapses":3,"reps":1,"review":"20220606123258300"},{"due":"20220614063523268","interval":5,"difficulty":4.570431311912753,"stability":2.950733204013673,"retrievability":0.000005774700043430339,"grade":2,"lapses":3,"reps":2,"review":"20220611063523268"},{"due":"20220629035655021","interval":5,"difficulty":3.6069279546888025,"stability":13.269162762284228,"retrievability":0.8364966427760494,"grade":2,"lapses":3,"reps":3,"review":"20220616035655021"},{"due":"20220808102520040","interval":16,"difficulty":3.6876228269707,"stability":37.39747517880852,"retrievability":0.8806948722818976,"grade":1,"lapses":3,"reps":4,"review":"20220702102520040"},{"due":"20220813035904693","interval":41,"difficulty":4.778534519013508,"stability":0.03011942145770373,"retrievability":0.8909116920428083,"grade":0,"lapses":4,"reps":1,"review":"20220812035904693"},{"due":"20220822013009978","interval":8,"difficulty":3.97853451901421,"stability":2.4097895375337544,"retrievability":7.020735429696087e-13,"grade":1,"lapses":4,"reps":2,"review":"20220820013009978"}]
+interval: 19
+lapses: 4
+modified: 20220908134258477
+reps: 3
+retrievability: 0.43573735457146723
+review: 20220908134258477
+stability: 49.32835070304624
+tags: hive ?
+title: hive架构
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-21_18-11-12.png]]
+
+Java Database Connectivity (JDBC)
+Relational DataBase Management Systems(RDBMS)
+
+[img[Snipaste_2022-06-02_13-50-06.jpg]]
+[img[Snipaste_2022-06-02_13-50-47.jpg]][img[Snipaste_2022-06-02_13-50-42.jpg]][img[Snipaste_2022-06-02_13-50-38.jpg]]
+[img[Snipaste_2022-06-02_13-51-05.jpg]]

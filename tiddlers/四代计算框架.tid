@@ -1,0 +1,41 @@
+created: 20220714022150285
+difficulty: 1.0629302061394925
+due: 20221124022430906
+grade: 1
+history: [{"due":"20220720150329262","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719150329262"},{"due":"20220813103915187","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220728103915186"}]
+interval: 23
+lapses: 0
+modified: 20220820022430906
+reps: 3
+retrievability: 0.8629302061394925
+review: 20220820022430905
+stability: 95.74638756489234
+tags: ?
+title: 四代计算框架
+type: text/vnd.tiddlywiki
+
+```
+1	第1代——Hadoop MapReduce
+首先第一代的计算引擎，无疑就是 Hadoop 承载的 MapReduce。它将计算分为两个阶段，分别为 Map 和 Reduce。对于上层应用来说，就不得不想方设法去拆分算法，甚至于不得不在上层应用实现多个 Job 的串联，以完成一个完整的算法，例如迭代计算。
+	批处理
+	Mapper、Reducer
+2	第2代——DAG框架（Tez） + MapReduce
+由于这样的弊端，催生了支持 DAG 框架的产生。因此，支持 DAG 的框架被划分为第二代计算引擎。如 Tez 以及更上层的 Oozie。这里我们不去细究各种 DAG 实现之间的区别，不过对于当时的 Tez 和 Oozie 来说，大多还是批处理的任务。
+	批处理
+	1个Tez = MR(1) + MR(2) + ... + MR(n)
+	相比MR效率有所提升
+```
+[img[BillfishkdKlHT2022-07-14 10_22_15.PNG]]
+
+```
+3	第3代——Spark
+接下来就是以 Spark 为代表的第三代的计算引擎。第三代计算引擎的特点主要是 Job 内部的 DAG 支持（不跨越 Job），以及强调的实时计算。在这里，很多人也会认为第三代计算引擎也能够很好的运行批处理的 Job。
+	批处理、流处理、SQL高层API支持
+	自带DAG
+	内存迭代计算、性能较之前大幅提升
+4	第4代——Flink
+随着第三代计算引擎的出现，促进了上层应用快速发展，例如各种迭代计算的性能以及对流计算和 SQL 等的支持。Flink 的诞生就被归在了第四代。这应该主要表现在 Flink 对流计算的支持，以及更一步的实时性上面。当然 Flink 也可以支持 Batch 的任务，以及 DAG 的运算。
+	批处理、流处理、SQL高层API支持
+	自带DAG
+	流式计算性能更高、可靠性更高
+```

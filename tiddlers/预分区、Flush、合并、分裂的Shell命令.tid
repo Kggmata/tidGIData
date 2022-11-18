@@ -1,0 +1,86 @@
+created: 20220605234905052
+difficulty: 2.5802466797590022
+due: 20220827133547787
+grade: 0
+history: [{"due":"20220610111738521","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609111738521"},{"due":"20220613121111344","interval":3,"difficulty":1.5162196541321282,"stability":0.07545638712607733,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220612121111343"},{"due":"20220616023238427","interval":3,"difficulty":1.7313821495317412,"stability":0.055390315029607076,"retrievability":0.01516249539961304,"grade":0,"lapses":2,"reps":1,"review":"20220615023238426"},{"due":"20220624112215423","interval":1,"difficulty":1,"stability":8.007071752227509,"retrievability":0.1492478557873414,"grade":2,"lapses":2,"reps":2,"review":"20220616112215423"},{"due":"20220807113547805","interval":9,"difficulty":1.0883176417377023,"stability":43.297995972416544,"retrievability":0.8883176417377022,"grade":1,"lapses":2,"reps":3,"review":"20220625113547804"},{"due":"20220812065719562","interval":47,"difficulty":2.180246503039612,"stability":0.04065696669349018,"retrievability":0.8919288613019096,"grade":0,"lapses":3,"reps":1,"review":"20220811065719562"},{"due":"20220818103617229","interval":6,"difficulty":2.3802466797589807,"stability":0.03011942145770373,"retrievability":1.7671936852144708e-7,"grade":0,"lapses":4,"reps":1,"review":"20220817103617229"}]
+interval: 9
+lapses: 5
+modified: 20220826133547787
+reps: 1
+retrievability: 2.1241267745989646e-14
+review: 20220826133547787
+stability: 0.02231301621225883
+tags: hbase ?
+title: 预分区、Flush、合并、分裂的Shell命令
+type: text/vnd.tiddlywiki
+
+# 手动分区
+```
+create 't', 'c1', {SPLITS => ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100']}
+```
+
+# 自动分区,16进制字符串自动分区
+```
+create 't1', 'f1', {NUMREGIONS => 15, SPLITALGO => 'HexStringSplit'}
+```
+
+# 查看某个表的region信息
+```
+hbase(main):042:0> list_regions 't'
+```
+
+# minor（小）合并
+```
+合并全部的region针对某个表:
+hbase> compact 'ns1:t1'
+hbase> compact 't1'
+Compact an entire region:
+hbase> compact 'r1'
+Compact only a column family within a region:
+hbase> compact 'r1', 'c1'
+Compact a column family within a table:
+hbase> compact 't1', 'c1'
+```
+
+# major（大）合并
+```
+Examples:
+Compact all regions in a table:
+hbase> major_compact 't1'
+hbase> major_compact 'ns1:t1'
+针对某个region，r1是表示某个region的ID:
+hbase> major_compact 'r1'
+Compact a single column family within a region:
+hbase> major_compact 'r1', 'c1'
+Compact a single column family within a table:
+hbase> major_compact 't1', 'c1'
+```
+
+# Flush
+```
+hbase> flush 'TABLENAME'
+hbase> flush 'REGIONNAME'
+hbase> flush 'ENCODED_REGIONNAME'	# REGION的编码
+hbase> flush 'REGION_SERVER_NAME'	# REGIONSERVER的名称
+```
+
+# Split
+```
+split 'tableName'		# 全表分裂
+split 'namespace:tableName'	# 全表分裂
+split 'regionName' # 单个region分裂，格式: 'tableName,startKey,id'
+# 如
+split 't,90,1654435996517.356e63b5260b3374608020fef2490757.'
+# 如果表太小（region太小）会提示太小了不合适，强制执行请给与一个rowkey从这个rowkey做分隔
+# 错误信息：Region not splittable because bestSplitPoint = null, maybe table is too small for auto split. For force split, try specifying split row
+split 't,90,1654435996517.356e63b5260b3374608020fef2490757.', '991'
+```
+
+> 为什么HBase会提供1个16进制的region预分区规则
+>
+> 因为很多的算法，比如sha、md5、uuid等，它们生成的数据都是16进制的组合体
+
+# 查看某个表的region信息
+```
+hbase(main):042:0> list_regions 't'
+```

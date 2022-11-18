@@ -1,0 +1,15 @@
+created: 20220519134109247
+difficulty: 5.453316452176386
+due: 20220829142057577
+grade: 0
+history: [{"due":"20220522005755722","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520005755722"},{"due":"20220523005542418","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522005542417"},{"due":"20220524002357326","interval":1,"difficulty":7.231358589403242,"stability":0.5762522178987278,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220523002357326"},{"due":"20220601010512312","interval":3,"difficulty":6.009167248929554,"stability":6.355602574142437,"retrievability":0.5778086595263117,"grade":2,"lapses":2,"reps":2,"review":"20220526010512312"},{"due":"20220621090817098","interval":8,"difficulty":5.084964514375774,"stability":17.51538272885496,"retrievability":0.8757972654462196,"grade":2,"lapses":2,"reps":3,"review":"20220603090817098"},{"due":"20220803041700836","interval":19,"difficulty":4.176962902216737,"stability":42.36833960651005,"retrievability":0.8919983878409626,"grade":2,"lapses":2,"reps":4,"review":"20220622041700836"},{"due":"20220808010122339","interval":46,"difficulty":5.268871485378737,"stability":0.04065696741292043,"retrievability":0.8919085831619992,"grade":0,"lapses":3,"reps":1,"review":"20220807010122339"},{"due":"20220812140758670","interval":4,"difficulty":5.468902976600746,"stability":0.030119421724187252,"retrievability":0.00003149122200878352,"grade":0,"lapses":4,"reps":1,"review":"20220811140758670"},{"due":"20220819103840247","interval":6,"difficulty":4.668902977367732,"stability":2.1576340568425514,"retrievability":7.669852925544251e-10,"grade":1,"lapses":4,"reps":2,"review":"20220817103840246"}]
+interval: 11
+lapses: 5
+modified: 20220828142057577
+reps: 1
+retrievability: 0.584413474808654
+review: 20220828142057577
+stability: 0.02231301621225883
+tags: spark ?
+title: 掌握Spark的功能及特点
+type: text/css

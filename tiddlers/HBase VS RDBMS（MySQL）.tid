@@ -1,0 +1,39 @@
+created: 20220601034552816
+difficulty: 1
+due: 20220914123250077
+grade: 2
+history: [{"due":"20220604130547361","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220603130547361"},{"due":"20220624005556655","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220607005556655"}]
+interval: 18
+lapses: 0
+modified: 20220625123250077
+reps: 3
+retrievability: 0.893696518950571
+review: 20220625123250077
+stability: 81.40525473163041
+tags: hbase ?
+title: HBase VS RDBMS（MySQL）
+type: text/vnd.tiddlywiki
+
+`架构上：
+  - HBase是分布式，扩展性能是水平扩展（加机器）
+  - RDBMS多数是单机系统,扩展性能是竖向扩展（加配置）
+- 事务上：
+  - HBase基本不支持，很难做到
+  - RDBMS支持的非常好
+- 场景上：
+  - HBase：海量数据下的：随机访问 + 海量吞吐
+  - RDBMS：关系型数据库，业务数据的CRUD（增删改查）
+- 数据量：
+  - HBase：海量级别
+  - RDBMS：少量级别（只针对业务数据）`
+
+> 注：随机访问
+>
+> 在数据集内，随机的查询某一部分，或者随机的插入到某一部分
+>
+> 比如：
+>
+> SELECT * FROM XXX WHERE id = 5; 这就是随机查询
+>
+> INSERT INTO XXX VALUES(1, 2, 3); 这就是随机插入
+

@@ -1,0 +1,15 @@
+created: 20220519134358729
+difficulty: 2.232984010198816
+due: 20220915141548870
+grade: 2
+history: [{"due":"20220522010400878","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520010400878"},{"due":"20220528012345746","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522012345746"},{"due":"20220627102646618","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601102646618"}]
+interval: 28
+lapses: 0
+modified: 20220629141548871
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629141548870
+stability: 78.32227625296495
+tags: spark ?
+title: spark运行模式
+type: text/css

@@ -1,0 +1,52 @@
+created: 20220611085202092
+difficulty: 1.0731304672290258
+due: 20220929060221504
+grade: 1
+history: [{"due":"20220614123323705","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613123323705"},{"due":"20220702035207772","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616035207772"}]
+interval: 20
+lapses: 0
+modified: 20220706060221504
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706060221504
+stability: 84.8538234387497
+tags: kafka ?
+title: Flume架构
+type: text/vnd.tiddlywiki
+
+Flume是一个实时计算框架，多用于：数据采集
+
+>它是一个可以采集`实时`数据的框架
+
+官网：flume.apache.org
+
+flume架构分为三部分
+
+```
+source E
+channel T
+sink L
+```
+[img[Snipaste_2022-06-11_16-53-46.jpg]]
+
+Source组件、Channel组件、Sink组件官方内置的有非常多的类型可以选择
+
+比如，要采集文件，通过磁盘做数据的中转（内置消息队列），最终输出到MySQL，那么可以选择：
+
+```
+- Source使用采集文件功能，TAILDIR的Source
+- Channel使用磁盘中转功能，Channel类型为File
+- Sink使用写出MySQL的功能，MySQLSink的Sink组件
+```
+
+如图，下图是官方内置的一些Source组件：
+
+[img[20220611165631.png]]
+
+内置的Sink
+[img[20220611165731-16550166647835.png]]
+
+内置Channel：
+[img[20220611165830.png]]
+
+根据需要，选择合适的三大组件，自由组合使用即可。

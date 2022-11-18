@@ -1,0 +1,108 @@
+created: 20220618004021133
+difficulty: 1.4983258192558402
+due: 20220928124311178
+grade: 1
+history: [{"due":"20220620142848901","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619142848901"},{"due":"20220704021014341","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621021014340"},{"due":"20220711075541056","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707063320820"},{"due":"20220713015017995","interval":5,"difficulty":2.28329125927894,"stability":0.05488141221849455,"retrievability":0.0008160305305493356,"grade":0,"lapses":2,"reps":1,"review":"20220712015017994"},{"due":"20220728073953088","interval":8,"difficulty":1.483291473067031,"stability":7.727209626706359,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220720073953088"}]
+interval: 15
+lapses: 2
+modified: 20220804124311178
+reps: 3
+retrievability: 0.8150343461888092
+review: 20220804124311177
+stability: 54.88134764568039
+tags: 用户画像 ?
+title: 文档索引过程详解 整体的索引流程
+type: text/vnd.tiddlywiki
+
+https://pdai.tech/md/db/nosql-es/elasticsearch-y-th-3.html
+
+[img[es-th-2-5.jpeg]]
+协调节点默认使用文档ID参与计算（也支持通过routing），以便为路由提供合适的分片
+
+shard = hash(document_id) % (num_of_primary_shards)
+
+```
+当分片所在的节点接收到来自协调节点的请求后，会将请求写入到Memory Buffer，然后定时（默认是每隔1秒）写入到Filesystem Cache，这个从Momery Buffer到Filesystem Cache的过程就叫做refresh； 当然在某些情况下，存在Momery Buffer和Filesystem Cache的数据可能会丢失，ES是通过translog的机制来保证数据的可靠性的。其实现机制是接收到请求后，同时也会写入到translog中，当Filesystem cache中的数据写入到磁盘中时，才会清除掉，这个过程叫做flush。 在flush过程中，内存中的缓冲将被清除，内容被写入一个新段，段的fsync将创建一个新的提交点，并将内容刷新到磁盘，旧的translog将被删除并开始一个新的translog。
+flush触发的时机是定时触发（默认30分钟）或者translog变得太大（默认为512M）时。
+```
+
+''write 过程''
+[img[es-th-2-6.png]]
+
+```
+一个新文档过来，会存储在 in-memory buffer 内存缓存区中，顺便会记录 Translog（Elasticsearch 增加了一个 translog ，或者叫事务日志，在每一次对 Elasticsearch 进行操作时均进行了日志记录）。 
+
+这时候数据还没到 segment ，是搜不到这个新文档的。数据只有被 refresh 后，才可以被搜索到。
+```
+
+''refresh 过程''
+[img[es-th-2-7.png]]
+
+```
+refresh 默认 1 秒钟，执行一次上图流程。ES 是支持修改这个值的，通过 index.refresh_interval 设置 refresh （冲刷）间隔时间。refresh 流程大致如下： 
+1. in-memory buffer 中的文档写入到新的 segment 中，但 segment 是存储在文件系统的缓存中。此时文档可以被搜索到 
+
+2. 最后清空 in-memory buffer。注意: Translog 没有被清空，为了将 segment 数据写到磁盘 
+
+3. 文档经过 refresh 后， segment 暂时写到文件系统缓存，这样避免了性能 IO 操作，又可以使文档搜索到。refresh 默认 1 秒执行一次，性能损耗太大。一般建议稍微延长这个 refresh 时间间隔，比如 5 s。因此，ES 其实就是准实时，达不到真正的实时。
+```
+
+''flush 过程''
+
+```
+每隔一段时间30分钟—​例如 translog 变得越来越大512mb—​索引被刷新（flush）；一个新的 translog 被创建，并且一个全量提交被执行
+```
+
+[img[es-th-2-9.png]]
+
+```
+上个过程中 segment 在文件系统缓存中，会有意外故障文档丢失。那么，为了保证文档不会丢失，需要将文档写入磁盘。那么文档从文件缓存写入磁盘的过程就是 flush。写入磁盘后，清空 translog。具体过程如下： 
+
+1. 所有在内存缓冲区的文档都被写入一个新的段。 
+
+2. 缓冲区被清空。 
+
+3. 一个Commit Point被写入硬盘。 
+
+4. 文件系统缓存通过 fsync 被刷新（flush）。 
+
+5. 老的 translog 被删除。
+```
+
+```
+上个过程中 segment 在文件系统缓存中，会有意外故障文档丢失。那么，为了保证文档不会丢失，需要将文档写入磁盘。那么文档从文件缓存写入磁盘的过程就是 flush。写入磁盘后，清空 translog。具体过程如下： 
+
+1. 所有在内存缓冲区的文档都被写入一个新的段。 
+
+2. 缓冲区被清空。 
+
+3. 一个Commit Point被写入硬盘。 
+
+4. 文件系统缓存通过 fsync 被刷新（flush）。 
+
+5. 老的 translog 被删除。
+```
+
+''merge 过程''
+
+```
+由于自动刷新流程每秒会创建一个新的段 ，这样会导致短时间内的段数量暴增。而段数目太多会带来较大的麻烦。 每一个段都会消耗文件句柄、内存和cpu运行周期。更重要的是，每个搜索请求都必须轮流检查每个段；所以段越多，搜索也就越慢。
+Elasticsearch通过在后台进行Merge Segment来解决这个问题。小的段被合并到大的段，然后这些大的段再被合并到更大的段。 
+当索引的时候，刷新（refresh）操作会创建新的段并将段打开以供搜索使用。合并进程选择一小部分大小相似的段，并且在后台将它们合并到更大的段中。这并不会中断索引和搜索。
+```
+[img[es-th-2-10.png]]
+
+```
+一旦合并结束，老的段被删除：
+
+1. 新的段被刷新（flush）到了磁盘。 ** 写入一个包含新段且排除旧的和较小的段的新提交点。
+2. 新的段被打开用来搜索。
+3. 老的段被删除。
+```
+
+[img[es-th-2-11.png]]
+
+
+```
+合并大的段需要消耗大量的I/O和CPU资源，如果任其发展会影响搜索性能。Elasticsearch在默认情况下会对合并流程进行资源限制，所以搜索仍然 有足够的资源很好地执行。
+```

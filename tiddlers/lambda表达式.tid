@@ -1,0 +1,23 @@
+created: 20220523080835599
+difficulty: 1
+due: 20221106024517907
+grade: 2
+history: [{"due":"20220526133608411","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133608411"},{"due":"20220628142147871","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531142147871"}]
+interval: 31
+lapses: 0
+modified: 20220701024517907
+reps: 3
+retrievability: 0.8885518728545304
+review: 20220701024517907
+stability: 128.3109886232779
+tags: python ?
+title: lambda表达式
+type: text/vnd.tiddlywiki
+
+lambda 参数: 处理逻辑/返回值
+
+lambda x: x + 1
+
+lambda x: print(x + 1)
+
+lambda x, y: x+1+y+1

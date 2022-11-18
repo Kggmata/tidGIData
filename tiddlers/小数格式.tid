@@ -1,0 +1,21 @@
+created: 20220718011338786
+difficulty: 1.8675388548145344
+due: 20221009115422550
+grade: 0
+history: [{"due":"20220731041201217","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041201217"},{"due":"20220822111058522","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806111058521"}]
+interval: 63
+lapses: 1
+modified: 20221008115422550
+reps: 1
+retrievability: 0.6675388548145345
+review: 20221008115422550
+stability: 0.07408182272361549
+tags: ?
+title: 小数格式
+type: text/vnd.tiddlywiki
+
+decimal(p,s)
+
+p=precision value
+
+s=scale value

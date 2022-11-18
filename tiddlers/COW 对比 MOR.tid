@@ -1,0 +1,20 @@
+created: 20220729040344949
+modified: 20220729041417150
+tags: ? flink
+title: COW 对比 MOR
+type: text/vnd.tiddlywiki
+
+https://hudi.apache.org/docs/next/table_types
+
+```
+COW在写时合并, 因此write application很高, 但是read application是0. 适合analytical
+```
+```
+MOR的base file和cow一样, 也是parquet. 但是有一个delta log日志文件, 记录增量数据. 
+增量部分定期compact到base file
+因此写入放大低(异步asynchronous merge), 但是读取放大高
+```
+```
+COW一般用在analytical
+MOR具有更低的延时, 可以达到near real time processing.
+```

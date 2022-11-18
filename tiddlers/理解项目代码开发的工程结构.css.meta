@@ -1,0 +1,15 @@
+created: 20220521010824240
+difficulty: 3.328753720220364
+due: 20221221080449743
+grade: 1
+history: [{"due":"20220523081155191","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521081155191"},{"due":"20220529001901730","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523001901730"},{"due":"20220621124912860","interval":9,"difficulty":4.14195525232829,"stability":20.395966063619362,"retrievability":0.8419552523282889,"grade":2,"lapses":0,"reps":3,"review":"20220601124912860"},{"due":"20220813022610291","interval":21,"difficulty":3.2391513681544266,"stability":52.23861120532648,"retrievability":0.8971961158261367,"grade":2,"lapses":0,"reps":4,"review":"20220622022610290"}]
+interval: 58
+lapses: 0
+modified: 20220819080449743
+reps: 5
+retrievability: 0.889602352065937
+review: 20220819080449743
+stability: 123.70474179542703
+tags: spark ?
+title: 理解项目代码开发的工程结构
+type: text/css

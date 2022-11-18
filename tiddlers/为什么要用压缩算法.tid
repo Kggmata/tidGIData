@@ -1,0 +1,25 @@
+created: 20220601112300918
+difficulty: 1
+due: 20220914061913138
+grade: 2
+history: [{"due":"20220605054450850","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604054450850"},{"due":"20220623013626885","interval":3,"difficulty":1,"stability":16.00419314059993,"retrievability":0.05273732312238567,"grade":2,"lapses":0,"reps":2,"review":"20220607013626885"}]
+interval: 18
+lapses: 0
+modified: 20220625061913138
+reps: 3
+retrievability: 0.8882522377612516
+review: 20220625061913138
+stability: 81.20737317396814
+tags: hbase ?
+title: 为什么要用压缩算法
+type: text/vnd.tiddlywiki
+
+结论：压缩算法是一种，`以CPU的计算能力`，去`换取存储空间+网络传输效率`的行为。
+
+
+
+> 只要CPU合格，一般都会带来效率提升，而非效率下降
+
+- 节省磁盘空间占用
+
+- 节省网络传输的消耗

@@ -1,0 +1,24 @@
+created: 20220708101333493
+difficulty: 1.2384551795770589
+due: 20220911143854536
+grade: 1
+history: [{"due":"20220712072515240","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072515240"},{"due":"20220719025338404","interval":7,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220718025338404"},{"due":"20220727090741247","interval":8,"difficulty":1.2000114480166408,"stability":0.05488119468553914,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220726090741247"},{"due":"20220813124159640","interval":8,"difficulty":1,"stability":10.165653873028125,"retrievability":2.137750772920513e-7,"grade":1,"lapses":2,"reps":2,"review":"20220803124159640"},{"due":"20220821013152114","interval":17,"difficulty":2.038455179577059,"stability":0.040656966333775045,"retrievability":0.8384551795770587,"grade":0,"lapses":3,"reps":1,"review":"20220820013152114"}]
+interval: 15
+lapses: 3
+modified: 20220904143854536
+reps: 2
+retrievability: 1.312835246871398e-17
+review: 20220904143854536
+stability: 6.888241748179089
+tags: 用户画像 ?
+title: Presto 的服务进程
+type: text/vnd.tiddlywiki
+
+```
+Presto 集群中有两种进程，Coordinator 服务进程和 worker 服务进程
+
+coordinator 主要作用是接收查询请求，解析查询语句，生成查询执行计划，任务调度和 worker 管理。
+
+worker 服务进程执行被分解的查询执行任务 task。
+```
+[img[硬刚Presto %7C Presto原理&调优&面试&实战全面_b4b440722022-07-08 18_13_59.png]]

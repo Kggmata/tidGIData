@@ -1,0 +1,17 @@
+created: 20220521090328239
+difficulty: 2.0748186087784726
+due: 20221220235350251
+grade: 2
+history: [{"due":"20220524063241880","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522063241880"},{"due":"20220615015347212","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529015347212"},{"due":"20220802085748007","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616085748007"}]
+interval: 51
+lapses: 0
+modified: 20220806235350251
+reps: 4
+retrievability: 0.8913241313900776
+review: 20220806235350251
+stability: 136.18234364390057
+tags: linux ?
+title: linux图标为什么是企鹅
+type: text/vnd.tiddlywiki
+
+https://web.archive.org/web/20100815081131/http://www.linux.org/info/penguin.html

@@ -1,0 +1,94 @@
+created: 20220609110926533
+difficulty: 1.18457022946853
+due: 20220923073018864
+grade: 1
+history: [{"due":"20220614102104531","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102104531"},{"due":"20220617052340998","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616052340998"},{"due":"20220619115621526","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618115621526"},{"due":"20220714092645119","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620125622235"},{"due":"20220722052559983","interval":31,"difficulty":1.9172771455975177,"stability":0.040657012017596195,"retrievability":0.7172771455975178,"grade":0,"lapses":3,"reps":1,"review":"20220721052559983"},{"due":"20220806030911500","interval":9,"difficulty":1.117277145671809,"stability":7.400039473508435,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220730030911500"}]
+interval: 10
+lapses: 3
+modified: 20220809073018864
+reps: 3
+retrievability: 0.8672930837967212
+review: 20220809073018864
+stability: 44.90381970010958
+tags: kafka ?
+title: kafka生产者代码
+type: text/vnd.tiddlywiki
+
+直接发送一条数据
+
+```
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092']
+)
+
+# 发送出去
+# 参数1.写入的topic
+# 参数2.写入的数据，注意，注意，注意：要是byte数组不能是字符串
+producer.send("testpython", "Im handsome".encode("UTF-8"))
+
+# 提交缓冲区
+producer.flush()
+```
+
+通过for循环一次性发送10条
+
+```
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092']
+)
+for i in range(0, 10):
+    producer.send("testpython", f"Im handsome{i}".encode("UTF-8"))
+
+producer.flush()
+```
+
+获取到发送的反馈信息
+
+可以获取到发送的反馈信息有：
+
+`本条发送到了哪个topic
+- 本条数据发送到了这个topic的哪个分区
+- 本条数据在当前发送的分区的offset偏移量是多少（是第几条）`
+
+```
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092']
+)
+# 1. 先获取future，异步对象
+future = producer.send("testpython", f"Im handsome{i}".encode("UTF-8"))
+# 2. 异步对象可以获得发送的反馈信息
+# timeout 等待反馈的信息，如果超过10秒还没反馈 报错，单位：秒
+record_metadata = future.get(timeout=10)
+# 3. record_metadata中就存放了反馈回来的信息
+print(f"我向kafka发送的数据是：Im handsome{i}")
+print(f"发送的topic主题是：{record_metadata.topic}")
+print(f"发送到了分区号是：{record_metadata.partition}")
+print(f"发送的offset是：{record_metadata.offset}")
+
+# 当我们使用future.get(timeout=10) 这个API后， 就不需要 producer.flush()了。
+```
+
+指定分区发送数据
+
+```
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092']
+)
+producer.send(
+    "testpython",
+    f"Im handsome{i}".encode("UTF-8"),
+    partition=i % 3
+)
+# partition参数，就是你要发送的分区数据，要注意，写死了就是可劲怼1个分区了。
+
+producer.flush()
+```
+

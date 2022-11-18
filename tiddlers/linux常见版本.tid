@@ -1,0 +1,58 @@
+created: 20220521090114666
+difficulty: 3.705347504806231
+due: 20221026113702728
+grade: 1
+history: [{"due":"20220524063213573","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522063213573"},{"due":"20220610152324995","interval":6,"difficulty":4.929,"stability":12.646047859057882,"retrievability":0.7290000000000001,"grade":1,"lapses":0,"reps":2,"review":"20220528152324995"},{"due":"20220614070009745","interval":16,"difficulty":6.004199026692798,"stability":0.07545638712607733,"retrievability":0.8751990266927976,"grade":0,"lapses":1,"reps":1,"review":"20220613070009744"},{"due":"20220617053202663","interval":3,"difficulty":6.219361522092411,"stability":0.05500845146445375,"retrievability":0.01516249539961304,"grade":0,"lapses":2,"reps":1,"review":"20220616053202663"},{"due":"20220621141010567","interval":2,"difficulty":5.441055884670525,"stability":3.0445898808859377,"retrievability":0.02169436257811349,"grade":1,"lapses":2,"reps":2,"review":"20220618141010566"},{"due":"20220702090456104","interval":4,"difficulty":4.5117859514979,"stability":10.07208949988699,"retrievability":0.8707300668273747,"grade":2,"lapses":2,"reps":3,"review":"20220622090456103"},{"due":"20220707083754493","interval":14,"difficulty":5.575555753488712,"stability":0.04065715014820503,"retrievability":0.8637698019908122,"grade":0,"lapses":3,"reps":1,"review":"20220706083754492"},{"due":"20220713063916670","interval":4,"difficulty":4.775587246177916,"stability":2.702698572146693,"retrievability":0.00003149268920435674,"grade":1,"lapses":3,"reps":2,"review":"20220710063916669"},{"due":"20220815013632055","interval":11,"difficulty":3.62686572714993,"stability":25.209733776372435,"retrievability":0.6512784809720137,"grade":2,"lapses":3,"reps":3,"review":"20220721013632054"}]
+interval: 31
+lapses: 3
+modified: 20220821113702729
+reps: 4
+retrievability: 0.8784817776563013
+review: 20220821113702728
+stability: 66.18497607348695
+tags: linux ?
+title: linux常见版本
+type: text/vnd.tiddlywiki
+
+''Red Hat Linux''
+
+Red Hat（红帽公司）创建于 1993 年，是目前世界上资深的 Linux 厂商，也是最获认可的 Linux 品牌。
+
+Red Hat 公司的产品主要包括 RHEL（Red Hat Enterprise Linux，收费版本）和 CentOS（RHEL 的社区克隆版本，免费版本）、Fedora Core（由 Red Hat 桌面版发展而来，免费版本）。
+
+Red Hat 是在我国国内使用人群最多的 Linux 版本，资料丰富，如果你有什么不明白的地方，则容易找到人来请教，而且大多数 Linux 教程是以 Red Hat 为例来讲解的（包括本教程）。
+
+本教程以我国国内互联网公司常用的 Linux 发行版本 CentOS 为例讲解，它是基于 Red Hat Enterprise Linux 源代码重新编译、去除 Red Hat 商标的产物，各种操作使用和付费版本没有区别，且完全免费。缺点是不向用户提供技术支持，也不负任何商业责任。有实力的公司可以选择付费版本。
+
+''Ubuntu Linux''
+
+Ubuntu 基于知名的 Debian Linux 发展而来，界面友好，容易上手，对硬件的支持非常全面，是目前最适合做桌面系统的 Linux 发行版本，而且 Ubuntu 的所有发行版本都免费提供。
+
+Ubuntu 的创始人 Mark Shuttleworth 是非常具有传奇色彩的人物。他在大学毕业后创建了一家安全咨询公司，1999 年以 5.75 亿美元被收购，由此一跃成为南非最年轻有为的本土富翁。作为一名狂热的天文爱好者，Mark Shuttleworth 于 2002 年自费乘坐俄罗斯联盟号飞船，在国际空间站中度过了 8 天的时光。之后，Mark Shuttleworth 创立了 Ubuntu 社区，2005 年 7 月 1 日建立了 Ubuntu 基金会，并为该基金会投资 1000 万美元。他说，太空的所见正是他创立 Ubuntu 的精神之所在。如今，他最热衷的事情就是到处为自由开源的 Ubuntu 进行宣传演讲。
+
+Debian Linux	www.debian.org	开放的开发模式，且易于进行软件包升级	apt
+
+Fedora Core	www.redhat.com	拥有数量庞人的用户，优秀的社区技术支持. 并且有许多创新	up2date（rpm），yum （rpm）
+
+CentOS	www.centos.org	CentOS 是一种对 RHEL（Red Hat Enterprise Linux）源代码再编译的产物，由于 Linux 是开发源代码的操作系统，并不排斥样基于源代码的再分发，CentOS 就是将商业的 Linux 操作系统 RHEL 进行源代码再编译后分发，并在 RHEL 的基础上修正了不少已知的漏洞	rpm
+
+SUSE Linux	www.suse.com	专业的操作系统，易用的 YaST 软件包管理系统	YaST（rpm），第三方 apt （rpm）软件库（repository）
+
+Mandriva	www.mandriva.com	操作界面友好，使用图形配置工具，有庞大的社区进行技术支持，支持 NTFS 分区的大小变更	rpm
+
+KNOPPIX	www.knoppix.com	可以直接在 CD 上运行，具有优秀的硬件检测和适配能力，可作为系统的急救盘使用	apt
+Gentoo Linux	www.gentoo.org	高度的可定制性，使用手册完整	portage
+
+Ubuntu	www.ubuntu.com	优秀已用的桌面环境，基于 Debian 构建	apt
+
+Linux 的发行版本众多，在此不逐一介绍，下面给选择 Linux 发行版本犯愁的朋友一点建议：
+
+如果你需要的是一个服务器系统，而且已经厌烦了各种 Linux 的配置，只是想要一个比较稳定的服务器系统，那么建议你选择 CentOS 或 RHEL。
+
+如果你只是需要一个桌面系统，而且既不想使用盗版，又不想花大价钱购买商业软件，不想自己定制，也不想在系统上浪费太多时间，则可以选择 Ubuntu。
+
+如果你想深入摸索一下 Linux 各个方面的知识，而且还想非常灵活地定制自己的 Linux 系统，那就选择 Gentoo 吧，尽情享受 Gentoo 带来的自由快感。
+
+如果你对系统稳定性要求很高，则可以考虑 FreeBSD。
+
+如果你需要使用数据库高级服务和电子邮件网络应用，则可以选择 SuSE

@@ -1,0 +1,29 @@
+created: 20220724121126986
+difficulty: 0.025386988635295055
+due: 20220827143256712
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143256712
+reps: 1
+retrievability: 1
+review: 20220826143256712
+stability: 0.10000000088475645
+tags: flink ?
+title: java类型转换
+type: text/vnd.tiddlywiki
+
+```
+自动类型转换
+整型 实型 字符串类型可以混合运算.
+不同类型先转化为同一类型, 然后进行运算
+
+byte,short,char—> int —> long—> float —> double
+```
+```
+强制类型转换
+```
+```
+隐含强制类型转换
+```

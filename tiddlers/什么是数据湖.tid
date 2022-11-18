@@ -1,0 +1,29 @@
+created: 20220725021253886
+difficulty: 0.02337100302925359
+due: 20220906004935222
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220905004935222
+reps: 1
+retrievability: 1
+review: 20220905004935221
+stability: 0.10000000088475645
+tags: flink ?
+title: 什么是数据湖
+type: text/vnd.tiddlywiki
+
+```
+数据仓库(data warehouse), 是一个用于存储,分析,报告的数据系统
+面向分析, 为企业提供decision support
+不产生数据,也不最终消费数据
+理论上分为三层 ODS, DW, DA
+```
+[img[BillfishCDMKEY2022-07-25 10_14_36.PNG]]
+
+```
+数据湖和数据库, 数据仓库一样, 都是数据存储的设计模式. 通过分层的方式将数据存储在文件夹和文件当中.
+可包含 结构化数据, 半结构化数据, 非结构化数据, 二进制数据
+```
+[img[BillfishIbWftK2022-07-25 10_16_02.PNG]]

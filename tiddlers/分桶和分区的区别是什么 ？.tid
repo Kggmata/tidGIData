@@ -1,0 +1,52 @@
+created: 20220521080001685
+difficulty: 3.8462053596372234
+due: 20221012134202721
+grade: 0
+history: [{"due":"20220524055007010","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522055007010"},{"due":"20220527235026910","interval":1,"difficulty":5.148683298050514,"stability":3.7467775080817907,"retrievability":0.9486832980505138,"grade":1,"lapses":0,"reps":2,"review":"20220523235026910"},{"due":"20220619005914421","interval":8,"difficulty":4.147229527778012,"stability":17.979946003359316,"retrievability":0.7985462297274974,"grade":2,"lapses":0,"reps":3,"review":"20220601005914421"},{"due":"20220620094447179","interval":18,"difficulty":5.247123771189238,"stability":0.07412477722623134,"retrievability":0.8998942434112264,"grade":0,"lapses":1,"reps":1,"review":"20220619094447179"},{"due":"20220623142038224","interval":1,"difficulty":3.688501066792572,"stability":3.481738616399311,"retrievability":0.24137729560333396,"grade":2,"lapses":1,"reps":2,"review":"20220620142038223"},{"due":"20220711055712623","interval":5,"difficulty":2.7480870167920344,"stability":15.574476833766493,"retrievability":0.8595859499994624,"grade":2,"lapses":1,"reps":3,"review":"20220625055712623"},{"due":"20220824101605665","interval":16,"difficulty":2.8454999645458123,"stability":43.61140858324126,"retrievability":0.897412947753778,"grade":1,"lapses":1,"reps":4,"review":"20220711101605665"}]
+interval: 92
+lapses: 2
+modified: 20221011134202721
+reps: 1
+retrievability: 0.8007053950914111
+review: 20221011134202721
+stability: 0.05488116409496729
+tags: hive ?
+title: 分桶和分区的区别是什么 ？
+type: text/vnd.tiddlywiki
+
+```
+分桶不创建新的字段,使用已有的字段,分桶数量固定,根据hash取余的方式,分成固定数据的文件
+
+分区使用单独的分区字段,动态分区的数量不限,根据字段将数据存储在对应分区名的目录下
+```
+
+可以同时存在,优先级为先分区,后分桶
+
+分桶的好处,
+
+```
+一个是数据随机采样,
+
+	再一个是后续可以使用bucket map join或者smbjoin提高join的效率,解决数据倾斜的问题
+
+	粒度更细,查询快一些
+```
+
+分区使用场景,
+
+```
+数据量太大,要分区存储
+```
+```
+静态分区动态分区建表时没区别
+
+静态分区要指定分区字段的值
+
+动态分区只需要动态分区字段,要开启动态分区和非严格模式,会自动把插入的最后几个当中分区字段
+
+同时使用,静态分区字段在动态分区字段前
+```
+```
+动态分区insert
+静态分区insert, load
+```

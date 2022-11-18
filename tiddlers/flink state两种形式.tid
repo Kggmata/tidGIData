@@ -1,0 +1,54 @@
+created: 20220719112830394
+difficulty: 1.600197016523635
+due: 20220909132812678
+grade: 0
+history: [{"due":"20220801132248736","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731132248736"},{"due":"20220807125103737","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806125103737"},{"due":"20220813032356892","interval":6,"difficulty":1.2001968027503878,"stability":0.05488116409496729,"retrievability":0.00019680275038780497,"grade":0,"lapses":2,"reps":1,"review":"20220812032356892"},{"due":"20220821044214835","interval":8,"difficulty":1.400197016523635,"stability":0.040656966333775045,"retrievability":2.13773247238443e-7,"grade":0,"lapses":3,"reps":1,"review":"20220820044214835"}]
+interval: 19
+lapses: 4
+modified: 20220908132812678
+reps: 1
+retrievability: 4.1342774845283596e-22
+review: 20220908132812678
+stability: 0.03011942145770373
+tags: ?
+title: flink state两种形式
+type: text/vnd.tiddlywiki
+
+1 operator state
+
+```
+operator state是task级别的state，说白了就是每个task对应一个state。
+Kafka Connector source中的每个分区（task）都需要记录消费的topic的partition和offset等信息。
+对于Operator State，我们还需进一步实现CheckpointedFunction接口。
+它经常被用在Source或Sink等算子上，用来保存流入数据的偏移量或对输出数据做缓存，以保证Flink应用的Exactly-Once语义。
+```
+[img[在这里插入图片描述2022-07-19 19_29_05.png]]
+2 keyed State(键控状态)
+
+```
+keyed State使用场景广泛，它是基于KeyedStream上的状态，这个状态是跟特定的Key 绑定的。KeyedStream流上的每一个Key，都对应一个State。Flink针对 Keyed State 提供了下面几种数据结构的（托管状态）Keyed state保存State。
+```
+[img[在这里插入图片描述2022-07-19 19_29_30.png]]
+
+```
+3.2.1、ValueState
+保存一个可以更新和检索的值（例如：每个值都对应到当前的输入数据的key，因此算子接收到的每个key都可能对应一个值）。 这个值可以通过update(T) 进行更新，通过 T value() 进行检索 。
+
+3.2.2、ListState
+保存一个元素的列表。可以往这个列表中追加数据，并在当前的列表上进行检索。可以通过 add(T) 或者 addAll(List) 进行添加元素，通过 Iterable get() 获得整个列表。还可以通过 update(List) 覆盖当前的列表 。
+
+3.2.3、MapState
+维护了一个映射列表。 你可以添加键值对到状态中，也可以获得 反映当前所有映射的迭代器。使用 put(UK，UV) 或者 putAll(Map<UK，UV>) 添加映射。 使用 get(UK) 检索特定 key。 使用 entries()，keys() 和 values() 分别检索映射、 键和值的可迭代视图。
+
+3.2.4、ReducingState
+保存一个单值，表示添加到状态的所有值的聚合。接口与ListState类似，但使用add(T) 增加元素，会使用提供的 ReduceFunction 进行聚合。
+
+3.2.5、AggregatingState
+AggregatingState<IN, OUT>: 保留一个单值，表示添加到状态的所有值的聚合。和 ReducingState 相反的是, 聚合类型可能与添加到状态的元素的类型不同。 接口与 ListState类似，但使用 add(IN) 添加的元素会用指定的 AggregateFunction 进行聚合
+
+3.2.6、上述keyedState大体的使用方法
+1、只能用于RichFunction
+2、将State 声明为实例变量
+3、在 open() 方法中为State赋值创建一个StateDescriptor利用getRuntimeContext().getXXState(…)构建不同的State
+4、调用State的方法进行读写例如 state.value()、state.update(…)等等
+```

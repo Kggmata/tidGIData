@@ -1,0 +1,42 @@
+created: 20220619065819529
+difficulty: 1.0687910512583556
+due: 20220926015319078
+grade: 1
+history: [{"due":"20220621005943622","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005943622"},{"due":"20220705090331502","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622090331502"}]
+interval: 18
+lapses: 0
+modified: 20220710015319078
+reps: 3
+retrievability: 0.8687910512583555
+review: 20220710015319077
+stability: 77.83147630042302
+tags: 用户画像 ?
+title: How documents are ranked in Elasticsearch
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/cn/blog/how-to-improve-elasticsearch-search-relevance-with-boolean-queries
+
+https://www.elastic.co/cn/blog/practical-bm25-part-1-how-shards-affect-relevance-scoring-in-elasticsearch
+
+BM25算法: https://elastic.co/cn/blog/practical-bm25-part-2-the-bm25-algorithm-and-its-variables
+
+How documents are ranked in Elasticsearch
+
+```
+Background
+In Elasticsearch 5.0, we switched to Okapi BM25 as our default similarity algorithm, which is what’s used to score results as they relate to a query. I won’t get too much into BM25 vs alternative measures in this blog, but if you want an introduction to the theoretical justification of BM25, you can hop on over and watch the BM25 Demystified presentation from Elastic{ON} 2016. Instead, I’m going to cover (and hopefully demystify) the practical usage of BM25 for you, including covering the parameters that are available and what affects scoring.
+
+Do bear in mind that this blog will largely pertain to those doing scoring of text documents. That is, it’s really focused on helping our search users. If you’re indexing logs or metrics and returning results sorted by some explicit metadata/numeric order like the timestamp, this blog may serve mostly to fill curiosity.
+```
+
+```
+In order to understand the remainder of this blog, it is helpful to have a basic understanding of how Elasticsearch calculates a score that is used to order the documents returned by a query.
+
+Before scoring documents, Elasticsearch first reduces the set of candidate documents by applying a boolean test that only includes documents that match the query. A score is then calculated for each document in this set, and this score determines how the documents are ordered. The score represents how relevant a given document is for a specific query. The default scoring algorithm used by Elasticsearch is BM25. There are three main factors that determine a document’s score:
+
+1 Term frequency (TF) — The more times that a search term appears in the field we are searching in a document, the more relevant that document is.
+
+2 Inverse document frequency (IDF) — The more documents that contain a search term in the field that we are searching, the less important that term is.
+
+3 Field length — If a document contains a search term in a field that is very short (i.e. has few words), it is more likely relevant than a document that contains a search term in a field that is very long (i.e. has many words).
+```

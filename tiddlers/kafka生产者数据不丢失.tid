@@ -1,0 +1,17 @@
+created: 20220611023616581
+difficulty: 1
+due: 20221012084315208
+grade: 2
+history: [{"due":"20220614110159113","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613110159113"},{"due":"20220617052356131","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616052356131"},{"due":"20220630115800701","interval":2,"difficulty":1,"stability":11.792887567465318,"retrievability":0.05855115497747565,"grade":2,"lapses":1,"reps":2,"review":"20220618115800700"},{"due":"20220705140740933","interval":16,"difficulty":2.0667992472295853,"stability":0.05488166082758644,"retrievability":0.866799247229585,"grade":0,"lapses":2,"reps":1,"review":"20220704140740933"},{"due":"20220720031723220","interval":6,"difficulty":1,"stability":10.165567424338107,"retrievability":0.00000994283639911803,"grade":2,"lapses":2,"reps":2,"review":"20220710031723220"},{"due":"20220727114603090","interval":16,"difficulty":2.0471892271731464,"stability":0.04065698899582806,"retrievability":0.8471892271731463,"grade":0,"lapses":3,"reps":1,"review":"20220726114603090"},{"due":"20220811074434173","interval":8,"difficulty":1,"stability":7.994075151956693,"retrievability":9.917079777346664e-10,"grade":2,"lapses":3,"reps":2,"review":"20220803074434173"}]
+interval: 12
+lapses: 3
+modified: 20220815084315208
+reps: 3
+retrievability: 0.8537149644540676
+review: 20220815084315208
+stability: 57.850173644687665
+tags: kafka ?
+title: kafka生产者数据不丢失
+type: text/vnd.tiddlywiki
+
+ack机制

@@ -1,0 +1,19 @@
+created: 20220710021831039
+difficulty: 1.0853405116014387
+due: 20221029074431385
+grade: 1
+history: [{"due":"20220713030627837","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030627836"},{"due":"20220806014204544","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721014204544"}]
+interval: 19
+lapses: 0
+modified: 20220809074431385
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809074431384
+stability: 81.07421184688711
+tags: 用户画像 ?
+title: tcp和udp
+type: text/vnd.tiddlywiki
+
+TCP是面向连接的协议，而UDP是无连接的协议。TCP和UDP之间的一个关键区别是速度，因为TCP相对比UDP慢。总体而言，UDP是一种更快、更简单、更高效的协议，然而，只有使用TCP才能重传丢失的数据包
+
+TCP is a connection-oriented protocol, whereas UDP is a connectionless protocol. A key difference between TCP and UDP is speed, as TCP is comparatively slower than UDP. Overall, UDP is a much faster, simpler, and efficient protocol, however, retransmission of lost data packets is only possible with TCP

@@ -1,0 +1,17 @@
+created: 20220715013252875
+difficulty: 2.0222878674257907
+due: 20220831064303121
+grade: 0
+history: [{"due":"20220722090559596","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090559596"},{"due":"20220801100729041","interval":10,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000026561715818525218,"grade":0,"lapses":1,"reps":1,"review":"20220731100729041"},{"due":"20220819125637471","interval":6,"difficulty":1,"stability":12.923393125053918,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220806125637470"}]
+interval: 24
+lapses: 2
+modified: 20220830064303121
+reps: 1
+retrievability: 0.8222878674257905
+review: 20220830064303121
+stability: 0.05488116409496729
+tags: ?
+title: imap full form
+type: text/vnd.tiddlywiki
+
+Internet Message Access Protocol (IMAP) is a protocol for accessing email or bulletin board messages from a (possibly shared) mail server or service. IMAP allows a client e-mail program to access remote message stores as if they were local.

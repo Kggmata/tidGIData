@@ -1,0 +1,18 @@
+created: 20220711121423953
+difficulty: 1
+due: 20221102075452372
+grade: 2
+history: [{"due":"20220713040647673","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040647673"},{"due":"20220806020714762","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721020714762"}]
+interval: 19
+lapses: 0
+modified: 20220809075452372
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809075452372
+stability: 84.88779656040188
+tags: ?
+title: 列表在内存是如何存储的
+type: text/vnd.tiddlywiki
+
+顺序存储的, 一块连续的内存
+

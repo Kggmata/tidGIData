@@ -1,0 +1,24 @@
+created: 20220602131014501
+difficulty: 1.0881338099495967
+due: 20220919003830367
+grade: 1
+history: [{"due":"20220607063915604","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063915603"},{"due":"20220627234856669","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220610234856669"}]
+interval: 19
+lapses: 0
+modified: 20220630003830367
+reps: 3
+retrievability: 0.8881338099495968
+review: 20220630003830367
+stability: 81.06494249758362
+tags: hbase ?
+title: HBase的Export命令（数据导出）
+type: text/vnd.tiddlywiki
+
+hbase org.apache.hadoop.hbase.mapreduce.Export 表名 导出的HDFS位置
+
+为了避免出错，执行命令可以优化为：
+
+```shell
+hbase org.apache.hadoop.hbase.mapreduce.Export -Dmapred.job.queue.name=root.default WATER_BILL hdfs://node1:8020/data/water_bill/10w_export
+```
+

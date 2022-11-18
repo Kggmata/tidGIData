@@ -1,0 +1,29 @@
+created: 20220718090015159
+difficulty: 1.9683514093598156
+due: 20220917143356120
+grade: 0
+history: [{"due":"20220801115359117","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115359117"},{"due":"20220822123005627","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806123005627"}]
+interval: 41
+lapses: 1
+modified: 20220916143356120
+reps: 1
+retrievability: 0.7683514093598156
+review: 20220916143356120
+stability: 0.07408182272361549
+tags: ?
+title: 幂等性引入之前的问题？
+type: text/vnd.tiddlywiki
+
+```
+Kafka在引入幂等性之前，Producer向Broker发送消息，然后Broker将消息追加到消息流中后给Producer返回Ack信号值。实现流程如下：
+```
+[img[Kafka幂等性原理及实现剖析 - 哥不是小萝莉 - 博客园2022-07-18 17_00_25.png]]
+
+```
+上图的实现流程是一种理想状态下的消息发送情况，但是实际情况中，会出现各种不确定的因素，比如在Producer在发送给Broker的时候出现网络异常。比如以下这种异常情况的出现：
+```
+[img[Kafka幂等性原理及实现剖析 - 哥不是小萝莉 - 博客园2022-07-18 17_00_47.png]]
+
+```
+上图这种情况，当Producer第一次发送消息给Broker时，Broker将消息(x2,y2)追加到了消息流中，但是在返回Ack信号给Producer时失败了（比如网络异常） 。此时，Producer端触发重试机制，将消息(x2,y2)重新发送给Broker，Broker接收到消息后，再次将该消息追加到消息流中，然后成功返回Ack信号给Producer。这样下来，消息流中就被重复追加了两条相同的(x2,y2)的消息。
+```

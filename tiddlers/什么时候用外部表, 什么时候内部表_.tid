@@ -1,0 +1,19 @@
+created: 20220711011810343
+difficulty: 1
+due: 20221102080027155
+grade: 2
+history: [{"due":"20220713035246182","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035246182"},{"due":"20220806022841493","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721022841493"}]
+interval: 19
+lapses: 0
+modified: 20220809080027155
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809080027155
+stability: 84.88779656040188
+tags: ?
+title: 什么时候用外部表, 什么时候内部表?
+type: text/vnd.tiddlywiki
+
+知道数据使用后就会删除的用内部表, 比如ETL处理的中间表
+
+其他情况用外部表

@@ -1,0 +1,20 @@
+created: 20220627021135792
+difficulty: 1.04717544933944
+due: 20221102120329150
+grade: 1
+history: [{"due":"20220630105301929","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105301929"},{"due":"20220719143526737","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703143526737"},{"due":"20220725020926478","interval":21,"difficulty":2.071305136947512,"stability":0.07408190596496488,"retrievability":0.871305136947512,"grade":0,"lapses":1,"reps":1,"review":"20220724020926478"},{"due":"20220803093107219","interval":9,"difficulty":2.27130789786004,"stability":0.0548811791474709,"retrievability":0.0000027609125273187787,"grade":0,"lapses":2,"reps":1,"review":"20220802093107218"},{"due":"20220817005432952","interval":5,"difficulty":1,"stability":10.164570581170752,"retrievability":0.00006779879728943726,"grade":2,"lapses":2,"reps":2,"review":"20220807005432952"}]
+interval: 16
+lapses: 2
+modified: 20220823120329150
+reps: 3
+retrievability: 0.8471754493394401
+review: 20220823120329150
+stability: 71.48567480714406
+tags: 用户画像 ?
+title: 如果在pyspark中遇到Can only zip RDDs with same number of elements in each partition的bug
+type: text/vnd.tiddlywiki
+
+这里就需要借助于union和map的操作，才能够实现
+
+        # step4: zip拉链
+        sortedIndexAndRFMRDD2 = sortedIndexAndRFMRDD.union(spark.sparkContext.parallelize([]))

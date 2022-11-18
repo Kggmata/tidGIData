@@ -1,0 +1,17 @@
+created: 20220522001332643
+difficulty: 2.5848853443492334
+due: 20230225003124711
+grade: 2
+history: [{"due":"20220524114703667","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114703667"},{"due":"20220530020035511","interval":7,"difficulty":5.8915901242788244,"stability":0.16205398577412577,"retrievability":0.6915901242788246,"grade":0,"lapses":1,"reps":1,"review":"20220529020035511"},{"due":"20220610141634691","interval":4,"difficulty":4.165817105522132,"stability":8.014810230509552,"retrievability":0.07422698124330701,"grade":2,"lapses":1,"reps":2,"review":"20220602141634691"},{"due":"20220711084217014","interval":11,"difficulty":3.2311828732667447,"stability":28.12571813153033,"retrievability":0.8653657677446128,"grade":2,"lapses":1,"reps":3,"review":"20220613084217013"},{"due":"20220714105306361","interval":30,"difficulty":4.324885956594957,"stability":0.05488141221849455,"retrievability":0.8937030833282122,"grade":0,"lapses":2,"reps":1,"review":"20220713105306361"},{"due":"20220722052748387","interval":8,"difficulty":4.5248861703830485,"stability":0.040657012017596195,"retrievability":2.1378809139958575e-7,"grade":0,"lapses":3,"reps":1,"review":"20220721052748387"},{"due":"20220802031007986","interval":9,"difficulty":3.7248861704573395,"stability":3.2085821505007184,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220730031007986"},{"due":"20220823235511780","interval":7,"difficulty":3.7195312837962735,"stability":17.067207483011405,"retrievability":0.7946451133389338,"grade":1,"lapses":3,"reps":3,"review":"20220806235511780"}]
+interval: 66
+lapses: 3
+modified: 20221012003124711
+reps: 4
+retrievability: 0.6653540605529595
+review: 20221012003124711
+stability: 135.76699157193485
+tags: hadoop ?
+title: metastore和metadata之间的关系图解
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_08-13-26.jpg]]

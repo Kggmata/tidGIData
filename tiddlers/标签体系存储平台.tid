@@ -1,0 +1,19 @@
+created: 20220614141739993
+difficulty: 1
+due: 20230318115443825
+grade: 2
+history: [{"due":"20220617121625901","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121625901"},{"due":"20220626005423831","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617005423830"},{"due":"20220816020535023","interval":10,"difficulty":1,"stability":49.62797382038931,"retrievability":0.8875368908748189,"grade":2,"lapses":0,"reps":3,"review":"20220627020535023"}]
+interval: 55
+lapses: 0
+modified: 20220821115443825
+reps: 4
+retrievability: 0.8897939475573553
+review: 20220821115443825
+stability: 208.51507007027075
+tags: 用户画像 ?
+title: 标签体系存储平台
+type: text/vnd.tiddlywiki
+
+* 存储在Mysql中
+* 按照1-5级别的标签存储
+* 这部分数据比较小的

@@ -1,0 +1,44 @@
+created: 20220619092025568
+difficulty: 1
+due: 20220825081618399
+grade: 2
+history: [{"due":"20220621014651840","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620014651840"},{"due":"20220705074504939","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622074504939"},{"due":"20220710123347879","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709123347879"},{"due":"20220712013857486","interval":2,"difficulty":2.3337741978828905,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220711013857485"},{"due":"20220803093517602","interval":6,"difficulty":1.5337841402004984,"stability":7.549405667298783,"retrievability":0.000009942317607937474,"grade":1,"lapses":2,"reps":2,"review":"20220717063000398"},{"due":"20220808010404179","interval":21,"difficulty":2.479747489245578,"stability":0.04065696741292043,"retrievability":0.7459633490450792,"grade":0,"lapses":3,"reps":1,"review":"20220807010404179"},{"due":"20220813025103208","interval":5,"difficulty":2.6797498482941995,"stability":0.030119421724187252,"retrievability":0.000002359048621483784,"grade":0,"lapses":4,"reps":1,"review":"20220812025103208"}]
+interval: 7
+lapses: 4
+modified: 20220819081618400
+reps: 2
+retrievability: 2.3205176471537944e-11
+review: 20220819081618399
+stability: 6.286497003464158
+tags: 用户画像 ?
+title: ES 速度为什么这么快
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html
+
+```
+json方式存储
+近实时索引和完全搜索
+对每个field使用对应的优化数据结构
+schema-less能力
+```
+
+```
+Elasticsearch是一个分布式文档存储。Elasticsearch不是将信息存储为成行的柱状数据，而是存储序列化为JSON文档的复杂数据结构。当在一个集群中有多个Elasticsearch节点时，存储的文档分布在整个集群中，可以从任何节点立即访问。
+```
+
+```
+当存储一个文档时，它几乎可以实时地被索引和完全搜索——“在1秒内”。
+
+倒排索引列出任何文档中出现的每个唯一单词，并标识每个单词出现的所有文档。
+```
+
+```
+索引可以被认为是一个优化的文档集合，每个文档都是字段的集合，字段是包含数据的键值对。
+
+默认情况下，Elasticsearch对每个字段中的所有数据进行索引，并且每个索引字段都有一个专用的、优化的数据结构。例如，文本字段存储在倒排索引中，数字和地理字段存储在BKD树中。使用每个字段数据结构来组装和返回搜索结果的能力是Elasticsearch如此之快的原因。
+```
+
+```
+Elasticsearch还具有无模式的能力，这意味着可以对文档进行索引，而无需显式地指定如何处理文档中可能出现的每个不同字段。当启用动态映射时，Elasticsearch会自动检测并向索引添加新字段。这种默认行为使索引和浏览数据变得很容易——只要开始为文档建立索引，Elasticsearch就会检测布尔值、浮点值和整型值、日期和字符串，并将其映射到适当的Elasticsearch数据类型。
+```

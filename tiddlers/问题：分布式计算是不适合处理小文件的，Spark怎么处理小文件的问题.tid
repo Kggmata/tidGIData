@@ -1,0 +1,55 @@
+created: 20220523074010104
+difficulty: 1.6641644474383501
+due: 20220913023939915
+grade: 1
+history: [{"due":"20220526133604209","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133604209"},{"due":"20220628140610852","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531140610852"},{"due":"20220701000639981","interval":30,"difficulty":2.4310166691941744,"stability":0.07408316441686115,"retrievability":0.8919452162171847,"grade":0,"lapses":1,"reps":1,"review":"20220630000639981"},{"due":"20220714055031223","interval":5,"difficulty":1.6318327785868971,"stability":9.185532708259295,"retrievability":0.0008161093927229343,"grade":1,"lapses":1,"reps":2,"review":"20220705055031222"}]
+interval: 16
+lapses: 1
+modified: 20220721023939915
+reps: 3
+retrievability: 0.8323316688514532
+review: 20220721023939915
+stability: 54.38837200984309
+tags: spark ?
+title: 问题：分布式计算是不适合处理小文件的，Spark怎么处理小文件的问题
+type: text/vnd.tiddlywiki
+
+
+
+场景：有100个小文件，每个文件不到1M的大小，需要用Spark对数据进行处理
+
+```
+# 读取数据
+file1_rdd = sc.textFile("../datas/ratings100",minPartitions=2)
+# 打印分区数
+print(f"{file1_rdd.getNumPartitions()}")
+```
+
+- 每个小文件对应1个分区，每个分区会使用1个Task来处理
+- 每个Task需要1Core CPU来计算，导致浪费大量的CPU处理很小的数据
+
+解决**：使用wholeTextFiles
+
+- 功能：将每个文件作为一条KV存储在RDD中
+
+  - K：文件名的绝对路径
+  - V：文件的内容
+
+- 场景：用于解决小文件的问题，可以将多个小文件变成多个KV，自由指定分区个数
+
+```
+# 读取数据
+file2_rdd = sc.wholeTextFiles("../datas/ratings100",minPartitions=2)
+# 打印分区数
+print(f"{file2_rdd.getNumPartitions()}")
+# 取出数据：每个文件
+file2_rdd.foreach(lambda file : print(file))
+print("===========================================")
+# 取出每个文件的每一行
+line_rdd = file2_rdd.flatMap(lambda content: content[1].split("\n"))
+# 输出前5行
+for item in line_rdd.take(5):
+    print(item)
+```
+
+注意：PySpark中在本地模式使用wholeTextFiles有Bug，会导致单进程内存不足，集群环境可以正常使用

@@ -1,0 +1,19 @@
+created: 20220623062358629
+difficulty: 1
+due: 20221016103700826
+grade: 2
+history: [{"due":"20220625233645622","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624233645622"},{"due":"20220713025250563","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":1,"lapses":0,"reps":2,"review":"20220628025250563"},{"due":"20220721072827886","interval":22,"difficulty":2.0599913309188924,"stability":0.07408198986175796,"retrievability":0.8599913309188922,"grade":0,"lapses":1,"reps":1,"review":"20220720072827886"},{"due":"20220808102914337","interval":8,"difficulty":1.26000277864052,"stability":11.007295814269082,"retrievability":0.000011447721627644813,"grade":1,"lapses":1,"reps":2,"review":"20220728102914337"}]
+interval: 14
+lapses: 1
+modified: 20220811103700826
+reps: 3
+retrievability: 0.8745845361001787
+review: 20220811103700825
+stability: 65.62897672029966
+tags: 用户画像 ?
+title: 什么是多范式
+type: text/vnd.tiddlywiki
+
+```
+多范式编程语言（Multi-paradigm programming language）是一种可以支持超过一种编程范型的编程语言。“Multi-paradigm”这个词是由比雅尼·斯特劳斯特鲁普博士在其著作中提出的，用于表述C++可以同时使用多种风格来写程序，比如面向对象和泛型编程。
+```

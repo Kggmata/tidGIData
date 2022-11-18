@@ -1,0 +1,22 @@
+created: 20220713001147169
+difficulty: 1
+due: 20221108075902192
+grade: 2
+history: [{"due":"20220718085809351","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085809351"},{"due":"20220808093918018","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":2,"lapses":0,"reps":2,"review":"20220723093918018"}]
+interval: 20
+lapses: 0
+modified: 20220812075902192
+reps: 3
+retrievability: 0.8793782966670416
+review: 20220812075902192
+stability: 88.46564825524128
+tags: ?
+title: 二叉树遍历三种方式
+type: text/vnd.tiddlywiki
+
+前序遍历 val左右
+
+中序遍历 左val右
+
+后序遍历 左右val
+

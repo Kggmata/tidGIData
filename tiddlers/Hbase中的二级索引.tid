@@ -1,0 +1,26 @@
+created: 20220607015743845
+difficulty: 1.339212140437777
+due: 20220923090558247
+grade: 1
+history: [{"due":"20220611004226392","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610004226391"},{"due":"20220629124606749","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613124606749"},{"due":"20220703084519970","interval":19,"difficulty":2.0802378846142275,"stability":0.07408316441686115,"retrievability":0.8802378846142273,"grade":0,"lapses":1,"reps":1,"review":"20220702084519970"},{"due":"20220717235446680","interval":4,"difficulty":1.2836216379817882,"stability":10.808742473135482,"retrievability":0.0033837533675606132,"grade":1,"lapses":1,"reps":2,"review":"20220706235446680"}]
+interval: 16
+lapses: 1
+modified: 20220723090558247
+reps: 3
+retrievability: 0.8555905024559889
+review: 20220723090558247
+stability: 61.82493048764494
+tags: hbase ?
+title: Hbase中的二级索引
+type: text/vnd.tiddlywiki
+
+索引是一种数据结构，为了加速查询！
+
+HBase中的一级索引指，数据在写入region时，会根据rowkey进行排序后写入，之后regionserver在加载region时，会自动为当前region的rowkey创建一个LSM树的索引！方便对当前region，rowkey的查询！
+
+HBase 里面只有 rowkey 作为一级索引， 如果要对库里的非 rowkey 字段进行数据检索和查询， 往往要通过 MapReduce/Spark 等分布式计算框架进行，硬件资源消耗和时间延迟都会比较高。为了 HBase 的数据查询更高效、适应更多的场景， 诸如使用非 rowkey 字段检索也能做到秒级响应，或者支持各个字段进行模糊查询和多字段组合查询等， 因此需要在 HBase 上面构建二级索引， 以满足现实中更复杂多样的业务需求。
+
+二级索引：如果要固定查询一个hbase表中的某些列，可以针对这些列的数据，创建索引，可以在查询指定的数据时，快速定位到列的位置！
+————————————————
+版权声明：本文为CSDN博主「大数据面壁者」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_42796403/article/details/113483022

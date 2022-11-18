@@ -1,0 +1,35 @@
+created: 20220625005737411
+difficulty: 1
+due: 20221014083834482
+grade: 2
+history: [{"due":"20220630084525828","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629084525828"},{"due":"20220717154722922","interval":3,"difficulty":1,"stability":15.367048766557211,"retrievability":0.04239358618575581,"grade":2,"lapses":0,"reps":2,"review":"20220702154722922"}]
+interval: 19
+lapses: 0
+modified: 20220721083834482
+reps: 3
+retrievability: 0.8778592709133122
+review: 20220721083834482
+stability: 84.72185768110526
+tags: 用户画像 ?
+title: 对KMeans的思考
+type: text/vnd.tiddlywiki
+
+* 1-均值的影响
+
+```
+* (1,2,3,4,5,100) 100是异常值点，求解KMenas算法的距离的时候收到影响
+  * 采用中位数的方法解决，K-Mediods
+```
+
+* 2-K个聚类中心如何选择
+
+```
+* 优先选择距离当前聚类中心较远的点作为下一个聚类中心
+  * KMeans++算法 改进K值的选择
+```
+
+* 3-KMeans算法数据有一定假设
+
+```
+* 需要符合正态分布
+```

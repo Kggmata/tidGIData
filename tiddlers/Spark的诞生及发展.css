@@ -1,0 +1,18 @@
+- **问题**：MR的计算速度太慢了，怎么解决大数据计算效率差的问题？
+
+- **诞生**
+
+  - DataBricks官网：https://databricks.com/spark/about
+
+- **发展**
+  - 2009年Spark诞生于伯克利AMPLab，伯克利大学的研究性项目
+  - 2010年通过BSD 许可协议正式对外开源发布
+  - 2012年Spark第一篇论文发布，第一个正式版（Spark 0.6.0）发布
+  - 2013年Databricks公司成立并将Spark捐献给Apache软件基金会
+  - 2014年2月成为Apache顶级项目，同年5月发布Spark 1.0正式版本
+  - 2015年引入DataFrame大数据分析的设计概念
+  - 2016年引入DataSet更强大的数据分析设计概念并正式发布Spark2.0
+  - 2017年Structured streaming 发布，统一化实时与离线分布式计算平台
+  - 2018年Spark2.4.0发布，成为全球最大的开源项目
+  - 2019年11月Spark官方发布3.0预览版
+- 2020年6月Spark发布3.0.0正式版

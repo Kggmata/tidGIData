@@ -1,0 +1,81 @@
+created: 20220627044507647
+difficulty: 1.05157013370948
+due: 20221110020158027
+grade: 1
+history: [{"due":"20220630121121386","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629121121386"},{"due":"20220721011728086","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":1,"lapses":0,"reps":2,"review":"20220705011728086"}]
+interval: 25
+lapses: 0
+modified: 20220730020158027
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730020158027
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: spark读写kafka
+type: text/vnd.tiddlywiki
+
+```
+#!/usr/bin/env python
+# @desc :
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+import os
+
+from pyspark import SparkContext
+from pyspark.sql import SparkSession
+
+'''
+* 1-创建SPark流式任务环境
+* 2-整合Spark结构化流和Kafka
+* 3-使用spark的dsl完成数据etl
+* 4-将处理之后数据写入控制台测试
+* 5-将处理之后数据写入kafka
+'''
+# Spark的Windows环境
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+if __name__ == '__main__':
+    # *1 - 创建SPark流式任务环境
+    spark = SparkSession \
+        .builder \
+        .appName("testAgeModel") \
+        .master("local[*]") \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # *2 - 整合Spark结构化流和Kafka
+    df = spark.readStream.format("kafka") \
+        .option("kafka.bootstrap.servers", "192.168.88.166:9092") \
+        .option("subscribe", "htv_insurance_user_event") \
+        .option("startingOffsets", "earliest") \
+        .load()
+    df.printSchema()
+    # 从kafka读取的key和value都是二进制类型
+    newDF = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+    # root
+    # |-- key: binary (nullable = true)
+    # |-- value: binary (nullable = true)
+    # |-- topic: string (nullable = true)
+    # |-- partition: integer (nullable = true)
+    # |-- offset: long (nullable = true)
+    # |-- timestamp: timestamp (nullable = true)
+    # |-- timestampType: integer (nullable = true)
+    # df.show()在结构化流中无法show展示数据，如果展示数据，使用写出到控制台即可
+    # *3 - 使用spark的dsl完成数据etl
+    # *4 - 将处理之后数据写入控制台测试、
+    userEventDF = newDF.writeStream \
+        .format("console") \
+        .option("truncate", False) \
+        .outputMode("append") \
+        .start() \
+        .awaitTermination()
+    # *5 - 将处理之后数据写入kafka
+
+```

@@ -1,0 +1,30 @@
+created: 20220521075900669
+difficulty: 4.148501549190189
+due: 20220913063101438
+grade: 2
+history: [{"due":"20220524054945251","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054945251"},{"due":"20220604013105798","interval":4,"difficulty":5.010000000000001,"stability":9.075440292178332,"retrievability":0.81,"grade":1,"lapses":0,"reps":2,"review":"20220526013105798"},{"due":"20220707060625415","interval":12,"difficulty":5.079955749670818,"stability":24.670223774135362,"retrievability":0.8699557496708169,"grade":1,"lapses":0,"reps":3,"review":"20220607005344175"}]
+interval: 33
+lapses: 0
+modified: 20220710063101438
+reps: 4
+retrievability: 0.868545799519371
+review: 20220710063101438
+stability: 65.12761522837927
+tags: hadoop ?
+title: hadoop常见端口号有哪些 ？
+type: text/vnd.tiddlywiki
+
+看指的是哪种hadoop,广义上,hadoop生态圈
+7180:cloudera manager
+10000:hive
+3306:mysql
+19888:jobhistory
+9870:hdfs
+8888,8889:hue
+11000:ozzie
+8088:resource manager
+8090:presto
+狭义上的化
+9870:hdfs
+8088:resource manager
+19888:jobhistory

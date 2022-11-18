@@ -1,0 +1,37 @@
+created: 20220523054143738
+difficulty: 1.4310166691941741
+due: 20221011021720097
+grade: 1
+history: [{"due":"20220526132137190","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132137190"},{"due":"20220628141937100","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531141937100"}]
+interval: 30
+lapses: 0
+modified: 20220630021720097
+reps: 3
+retrievability: 0.8919452162171847
+review: 20220630021720097
+stability: 103.45864047260883
+tags: hive ?
+title: hive当中为什么要开启enforce bucketing
+type: text/vnd.tiddlywiki
+
+因为分桶表在创建的时候只会定义Scheme，且写入数据的时候不会自动进行分桶、排序，需要人工先进行分桶、排序后再写入数据。确保目标表中的数据和它定义的分布一致。
+
+目前有两种方式往分桶表中插入数据：
+
+方法一：打开enforce bucketing开关。
+
+`SET hive.enforce.bucketing=true; 
+INSERT (INTO|OVERWRITE) TABLE <bucketed_table> SELECT <select_statement>
+[SORT BY <sort_key> [ASC|DESC], [<sort_key> [ASC|DESC], ...]]; `
+
+方法二：将reducer个数设置为目标表的桶数，并在 SELECT 语句中用 DISTRIBUTE BY <bucket_key>对查询结果按目标表的分桶键分进reducer中。
+
+`SET mapred.reduce.tasks = <num_buckets>; 
+INSERT (INTO|OVERWRITE) TABLE <bucketed_table>
+SELECT <select_statement>
+DISTRIBUTE BY <bucket_key>, [<bucket_key>, ...] 
+[SORT BY <sort_key> [ASC|DESC], [<sort_key> [ASC|DESC], ...]]; 
+`
+如果分桶表创建时定义了排序键，那么数据不仅要分桶，还要排序
+如果分桶键和排序键不同，且按降序排列，使用Distribute by … Sort by分桶排序
+如果分桶键和排序键相同，且按升序排列（默认），使用 Cluster by 分桶排序，即如下：

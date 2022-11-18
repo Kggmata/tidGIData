@@ -1,0 +1,17 @@
+created: 20220607054836172
+difficulty: 1
+due: 20221005001317789
+grade: 2
+history: [{"due":"20220611044021511","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610044021511"},{"due":"20220629234724198","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613234724198"}]
+interval: 21
+lapses: 0
+modified: 20220705001317789
+reps: 3
+retrievability: 0.8684973211750646
+review: 20220705001317789
+stability: 91.99210777408436
+tags: hbase ?
+title: RegionServer内存小、和RegionServer内存大，会带来hbase在性能上（写入）的什么不同表现？
+type: text/vnd.tiddlywiki
+
+内存小,memstore也会小, 会频繁flush, 造成的是hdfs上的hfile多, 需要更多的compaction. 内存小, blockcache小, 缓存的命中率降低

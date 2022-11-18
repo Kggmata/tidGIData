@@ -1,0 +1,29 @@
+created: 20220724103123934
+difficulty: 0.025386988635295055
+due: 20220827143143554
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143143554
+reps: 1
+retrievability: 1
+review: 20220826143143554
+stability: 0.10000000088475645
+tags: flink ?
+title: public static void main(String[] args)
+type: text/vnd.tiddlywiki
+
+```
+public 访问修饰符 access specifiers
+
+static 关键字 keyword
+
+void 返回类型 returnType
+
+main 方法名 functionName
+
+String[] String类
+
+String[] args字符串数组
+```

@@ -1,0 +1,43 @@
+created: 20220716130538535
+difficulty: 2.0464951521155363
+due: 20220830144527074
+grade: 0
+history: [{"due":"20220726125101781","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220725125101781"},{"due":"20220819032130249","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220803032130248"}]
+interval: 26
+lapses: 1
+modified: 20220829144527074
+reps: 1
+retrievability: 0.846495152115536
+review: 20220829144527074
+stability: 0.07408182272361549
+tags: ?
+title: 数据流图（Dataflow Graph）
+type: text/vnd.tiddlywiki
+
+```
+Flink 是流式计算框架。它的程序结构，其实就是定义了一连串的处理操作，每一个数据输入之后都会依次调用每一步计算。在 Flink 代码中，我们定义的每一个处理转换操作都叫作“算子”（Operator），所以我们的程序可以看作是一串算子构成的管道，数据则像水流一样有序地流过。
+
+比如在之前的 WordCount 代码中，基于执行环境调用的 socketTextStream()方法，就是一个读取文本流的算子；而后面的 flatMap()方法，则是将字符串数据进行分词、转换成二元组的算子。
+
+所有的 Flink 程序都可以归纳为由三部分构成：Source、Transformation 和 Sink。
+
+- Source 表示“源算子”，负责读取数据源。
+- Transformation 表示“转换算子”，利用各种算子进行处理加工。
+- Sink 表示“下沉算子”，负责数据的输出。
+```
+
+[img[image-20220713184950398.png]]
+
+```
+在运行时，Flink 程序会被映射成所有算子按照逻辑顺序连接在一起的一张图，这被称为“逻辑数据流”（logical dataflow），或者叫“数据流图”（dataflow graph）。我们提交作业之后，打开 Flink 自带的 Web UI，点击作业就能看到对应的 dataflow，如上图所示。在数据流图中，可以清楚地看到 Source、Transformation、Sink 三部分。
+
+- 数据流图类似于任意的有向无环图（DAG），这一点与 Spark 等其他框架是一致的。图中的每一条数据流（dataflow）以一个或多个 source 算子开始，以一个或多个 sink 算子结束。
+
+- 在大部分情况下，dataflow 中的算子，和程序中的转换运算是一一对应的关系。那是不是说，我们代码中基于 DataStream API 的每一个方法调用，都是一个算子呢？
+
+- 并非如此。除了 Source 读取数据和 Sink 输出数据，一个中间的转换算子（TransformationOperator）必须是一个转换处理的操作；而在代码中有一些方法调用，数据是没有完成转换的。
+
+- 可能只是对属性做了一个设置，也可能定义的是数据的传递方式而非转换，又或者是需要几个方法合在一起才能表达一个完整的转换操作。
+
+- 例如，在之前的代码中，我们用到了定义分组的方法 keyBy，它就只是一个数据分区操作，而并不是一个算子。事实上，代码中我们可以看到调用其他转换操作之后返回的数据类型是 SingleOutputStreamOperator，说明这是一个算子操作；而 keyBy 之后返回的数据类型是 KeyedStream。感兴趣的读者也可以自行提交任务在 WebUI 中查看。
+```

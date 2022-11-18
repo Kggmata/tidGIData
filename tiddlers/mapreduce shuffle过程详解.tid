@@ -1,0 +1,28 @@
+created: 20220523055242852
+difficulty: 1
+due: 20221106025816383
+grade: 2
+history: [{"due":"20220526132857499","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132857499"},{"due":"20220628142250505","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531142250505"}]
+interval: 31
+lapses: 0
+modified: 20220701025816383
+reps: 3
+retrievability: 0.8885518728545304
+review: 20220701025816383
+stability: 128.3109886232779
+tags: mapreduce ?
+title: mapreduce shuffle过程详解
+type: text/vnd.tiddlywiki
+
+https://blog.csdn.net/u014374284/article/details/49205885
+
+一、MapReduce计算模型
+我们知道MapReduce计算模型主要由三个阶段构成：Map、shuffle、Reduce。
+
+[img[Snipaste_2022-05-23_13-53-13.jpg]]
+
+二、Map shuffle
+
+[img[Snipaste_2022-05-23_13-53-40.jpg]]
+
+P

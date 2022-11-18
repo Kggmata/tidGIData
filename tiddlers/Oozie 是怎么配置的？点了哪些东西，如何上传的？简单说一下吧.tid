@@ -1,0 +1,17 @@
+created: 20220710122041708
+difficulty: 1
+due: 20221102114006907
+grade: 2
+history: [{"due":"20220713033441442","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712033441442"},{"due":"20220722013828837","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721013828837"},{"due":"20220731031015673","interval":9,"difficulty":1.200002760952549,"stability":0.0548811791474709,"retrievability":0.0000027609525491324836,"grade":0,"lapses":2,"reps":1,"review":"20220730031015673"},{"due":"20220815075117732","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":2,"lapses":2,"reps":2,"review":"20220805075117731"}]
+interval: 16
+lapses: 2
+modified: 20220821114006907
+reps: 3
+retrievability: 0.8471882396225026
+review: 20220821114006906
+stability: 73.49644780834625
+tags: 用户画像 ?
+title: Oozie 是怎么配置的？点了哪些东西，如何上传的？简单说一下吧
+type: text/vnd.tiddlywiki
+
+创建一个工作流 -》配置一些调度任务

@@ -1,0 +1,20 @@
+created: 20220524230133043
+difficulty: 1
+due: 20230203065649922
+grade: 2
+history: [{"due":"20220529145704884","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528145704884"},{"due":"20220603090823924","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602090823924"},{"due":"20220607122639722","interval":4,"difficulty":3.487837552679764,"stability":0.058954374971038004,"retrievability":0.012442954570255769,"grade":0,"lapses":2,"reps":1,"review":"20220606122639722"},{"due":"20220618021346146","interval":5,"difficulty":1.687969149547883,"stability":7.479108214583632,"retrievability":0.00013159686811918498,"grade":2,"lapses":2,"reps":2,"review":"20220611021346146"},{"due":"20220730021637130","interval":8,"difficulty":1,"stability":41.22771822966409,"retrievability":0.8934200037791605,"grade":2,"lapses":2,"reps":3,"review":"20220619021637130"}]
+interval: 47
+lapses: 2
+modified: 20220805065649922
+reps: 4
+retrievability: 0.8868210954909903
+review: 20220805065649922
+stability: 182.11650612939857
+tags: hive ?
+title: Hive SQL 语句的执行顺序
+type: text/vnd.tiddlywiki
+
+```
+from……where左表条件……join on......where......select……group by……having……select.......distinct……order by …… limit
+......union
+```

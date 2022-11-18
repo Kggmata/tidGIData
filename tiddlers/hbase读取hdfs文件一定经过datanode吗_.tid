@@ -1,0 +1,17 @@
+created: 20220608002827386
+difficulty: 1
+due: 20220930104508492
+grade: 2
+history: [{"due":"20220611235210348","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610235210348"},{"due":"20220630005440417","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220614005440417"}]
+interval: 20
+lapses: 0
+modified: 20220704104508492
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704104508492
+stability: 88.3800382106863
+tags: hbase ?
+title: hbase读取hdfs文件一定经过datanode吗?
+type: text/vnd.tiddlywiki
+
+不一定, 如果文件和客户端在一台机器, 可以HDFS Short-Circuit Local Reads

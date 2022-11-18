@@ -1,0 +1,70 @@
+created: 20220802014056071
+modified: 20220805065250600
+tags: ? flink
+title: 窗口函数
+type: text/vnd.tiddlywiki
+
+```
+function over(partition by order by row betweens m\unbounded proceeding and n following)
+
+	如果不指定ROWS BETWEEN,默认为从起点到当前行;
+	如果不指定ORDER BY，则将分组内所有值累加;
+	关键是理解ROWS BETWEEN含义,也叫做WINDOW子句：
+	PRECEDING：往前
+	FOLLOWING：往后
+	CURRENT ROW：当前行
+	UNBOUNDED：起点，UNBOUNDED PRECEDING 表示从前面的起点， UNBOUNDED FOLLOWING：表示到后面的终点
+	–其他AVG，MIN，MAX，和SUM用法一样。
+
+如果partition没有, 那么把整个表看作一个组
+如果没有order by,那么就是直接按照分组聚合
+如果有order by, 就是按照rows between聚合
+
+如果和group by混用, 那么先运行group by. 开窗函数作用在group by出来的表上
+```
+[img[Snipaste_2022-08-02_09-52-29.png]]
+
+```
+sum, avg, max, min
+如果分组内count, 可以使用sum(1) over (partition by)
+```
+```
+排序
+1 ntile将partition内进行排序 然后按照数量等分成几组
+2 row number() over(partition by order by)
+	1,2,3,4
+3 dense_rank()
+	1,2,2,3
+4 rank()
+	1,2,2,4
+
+不能省略order by, 不能加rownumber(因为没意义)
+```
+```
+lag(col,n,default)取窗口向上第n个值,取不到的话为default
+lead取窗口向下第n个值,取不到的话为default
+无法省略order by, 因为是基于排序的
+不支持rows between, 因为没意义
+```
+```
+first_value取第一个值
+last_value取最后一个值
+可以省略order by
+支持rows between
+```
+```
+cume_dist小于等于其值的行数占总行数的比例, 结果是百分比小数
+percent_rank 不包括自己的, 小于当前排名的百分比
+
+因为基于排序函数
+不能省略orderby
+不支持rowbetween
+```
+| 函数名                 | 是否可以省略partition by | 是否可以省略 order by | 是否可以省略 rows between | 是否可以使用rows between |
+| ---------------------- | ------------------------ | --------------------- | ------------------------- | ------------------------ |
+| 聚合                   | 是                       | 是                    | 是                        | 是                       |
+| 排序                   | 是                       | 否                    | 是                        | 否                       |
+| lead/lag               | 是                       | 否                    | 是                        | 否                       |
+| first_value/last_value | 是                       | 是                    | 是                        | 是                       |
+| 占比                   | 是                       | 否                    | 是                        | 否                       |
+

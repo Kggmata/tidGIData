@@ -1,0 +1,23 @@
+created: 20220709064728149
+difficulty: 1
+due: 20221105065931028
+grade: 2
+history: [{"due":"20220712074725165","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711074725165"},{"due":"20220731011727302","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":2,"lapses":0,"reps":2,"review":"20220715011727302"}]
+interval: 21
+lapses: 0
+modified: 20220805065931028
+reps: 3
+retrievability: 0.8713039910856882
+review: 20220805065931028
+stability: 92.01797550689716
+tags: 用户画像 ?
+title: 并发和并行
+type: text/vnd.tiddlywiki
+
+并发是一段时间内能够同时运行多个程序
+
+并行指的是同一时刻运行多个指令
+
+并行需要硬件支持,如多核处理器, 分布式计算系统
+
+操作系统引入进程和线程, 使程序能够并发运行.

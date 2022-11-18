@@ -1,0 +1,21 @@
+created: 20220721125332068
+difficulty: 1
+due: 20220824110357827
+grade: 2
+history: [{"due":"20220803110158306","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110158306"}]
+interval: 6
+lapses: 0
+modified: 20220808110357827
+reps: 2
+retrievability: 0.0017970135161932011
+review: 20220808110357827
+stability: 16.39335325161452
+tags: ?
+title: 一副牌52张,告诉瞎子里面有10张牌是正面朝上的, 要求瞎子把这52张牌分成两堆, 并且每堆牌正面朝上的张数相同，可任意翻动牌，但是一直不可以看
+type: text/vnd.tiddlywiki
+
+分成10 42
+
+10张中有x张向上,全翻则10-x张向上
+
+等于42那堆的向上牌数

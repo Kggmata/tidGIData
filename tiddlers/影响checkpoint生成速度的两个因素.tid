@@ -1,0 +1,19 @@
+created: 20220718080731122
+difficulty: 1
+due: 20230425125649368
+grade: 1
+history: [{"due":"20220731042802931","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042802931"},{"due":"20220822110619357","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806110619357"}]
+interval: 54
+lapses: 0
+modified: 20220929125649368
+reps: 3
+retrievability: 0.7072147794180235
+review: 20220929125649368
+stability: 207.93826036281
+tags: ?
+title: 影响checkpoint生成速度的两个因素
+type: text/vnd.tiddlywiki
+
+1 state过大, 造成上传缓慢
+
+2 处理的中间数据流动缓慢

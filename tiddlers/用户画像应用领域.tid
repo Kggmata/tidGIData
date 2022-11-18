@@ -1,0 +1,29 @@
+created: 20220614075219008
+difficulty: 1
+due: 20220920060310877
+grade: 2
+history: [{"due":"20220617071154677","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616071154677"},{"due":"20220701020202490","interval":2,"difficulty":1,"stability":13.492063749360467,"retrievability":0.12217091235547979,"grade":2,"lapses":0,"reps":2,"review":"20220618020202490"}]
+interval: 17
+lapses: 0
+modified: 20220705060310877
+reps: 3
+retrievability: 0.8756802665476839
+review: 20220705060310877
+stability: 77.17592011363428
+tags: 用户画像web界面 ?
+title: 用户画像应用领域
+type: text/vnd.tiddlywiki
+
+1-搜索领域
+
+```
+将具有类似兴趣爱好的归为一组，为属于不同组的用户给出不同的排序结果。
+```
+
+2-推荐领域
+
+```
+基于用户浏览过的商品或商品属性实现浏览商品推荐
+```
+
+3. 金融风控

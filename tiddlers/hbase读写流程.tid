@@ -1,0 +1,135 @@
+created: 20220602003352837
+difficulty: 1.4121283757847578
+due: 20230130064141130
+grade: 1
+history: [{"due":"20220606003824961","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220605003824961"},{"due":"20220610005151631","interval":4,"difficulty":1.694543715572514,"stability":0.07683095218398285,"retrievability":0.019776864699927257,"grade":0,"lapses":1,"reps":1,"review":"20220609005151631"},{"due":"20220613121720660","interval":3,"difficulty":1.9108862007329206,"stability":0.055899466449811495,"retrievability":0.016342485160406536,"grade":0,"lapses":2,"reps":1,"review":"20220612121720660"},{"due":"20220627141802917","interval":3,"difficulty":1,"stability":10.259733759438944,"retrievability":0.0035018479267943637,"grade":2,"lapses":2,"reps":2,"review":"20220615024801870"},{"due":"20220630075550292","interval":14,"difficulty":2.0660864780261665,"stability":0.04065770267064033,"retrievability":0.8660864780261663,"grade":0,"lapses":3,"reps":1,"review":"20220629075550292"},{"due":"20220711110414628","interval":5,"difficulty":1.2660888376276256,"stability":6.783350433557164,"retrievability":0.000002359601458918098,"grade":1,"lapses":3,"reps":2,"review":"20220704110414628"},{"due":"20220820010142260","interval":9,"difficulty":1.3356296466827147,"stability":38.36522385172733,"retrievability":0.869540809055089,"grade":1,"lapses":3,"reps":3,"review":"20220713010142259"}]
+interval: 48
+lapses: 3
+modified: 20220830064141130
+reps: 4
+retrievability: 0.8764987291020432
+review: 20220830064141130
+stability: 152.95737440014864
+tags: hbase ?
+title: hbase读写流程
+type: text/vnd.tiddlywiki
+
+1. 读请求过程：
+HRegionServer保存着meta表以及表数据，要访问表数据，首先Client先去访问zookeeper，从zookeeper里面获取meta表所在的位置信息，即找到这个meta表在哪个HRegionServer上保存着。
+
+接着Client通过刚才获取到的HRegionServer的IP来访问Meta表所在的HRegionServer，从而读取到Meta，进而获取到Meta表中存放的元数据。
+
+Client通过元数据中存储的信息，访问对应的HRegionServer，然后扫描所在HRegionServer的Memstore和Storefile来查询数据。
+
+最后HRegionServer把查询到的数据响应给Client。
+
+查看meta表信息
+
+```
+*HBase的数据读取
+
+> 前提：RegionServer的内存的使用，分成2部分：
+>
+> - 留给各个region的memstore使用（做内存排序）（默认60%）
+> - 一部分留给BlockCache（块缓存），作为查询的缓存（默认40%）
+>   - 默认不会删除，如果满了，新的数据缓存会顶替掉最老的数据缓存
+
+比如要查询Rowkey111的数据
+
+1. 通过ZK的元数据，确定哪一个Region的范围包含Rowkey111.
+
+2. 去BlockCache中去查询，如果查不到
+
+3. 去查询对应Region的Memstore区域
+
+   > 因为：数据可能还没有Flush到硬盘成为HFile，需要先看看内存有没有
+
+4. 内存Memstore查不到，那么去查询Region的HFile文件
+
+5. HFile文件可能有多个
+
+   > HFile在生成的时候，内部就是有序的，所以每一个HFile都会有自己的范围
+   >
+   > 比如：
+   >
+   > HFile1：100~123
+   >
+   > HFile2: 109~169
+   >
+   > HFile3: 133~199
+   >
+   > 我们查询111这个Rowkey，就锁定了HFile1和HFile2
+
+   > 由于HFile内部有序，可以很快的从HFile中检索到对应的数据
+
+6. 如果在HFile中查询到了：
+
+   1. 将数据返回给客户端
+   2. 将数据写入到BlockCache中
+
+7. 下一次如果再查询111，可以直接从BlockCache中取得数据
+```
+总结：
+
+1. 先锁定Region（排除了99.9999999%的数据）
+2. 看看缓存有没有，有了就ok，没有继续
+3. 看看Memstore有没有
+4. 看看HFile有没有
+
+2. 写请求过程：
+
+```
+Client也是先访问zookeeper，找到Meta表，并获取Meta表元数据。
+
+确定当前将要写入的数据所对应的HRegion和HRegionServer服务器。
+
+Client向该HRegionServer服务器发起写入数据请求，然后HRegionServer收到请求并响应。
+
+Client先把数据写入到HLog(WAL-write ahead log file)，以防止数据丢失。
+
+>wal的数据是无序的,只是作为备份使用
+>Hlog在hdfs上,防止memstore数据丢失
+
+然后将数据写入到Memstore。
+
+>作用，就是在内存中对数据进行排序，积攒了一批次的数据后，写入到Hfile
+>为什么要在内存中排序，因为内存排序效率高，硬盘排序效率低
+
+如果HLog和Memstore均写入成功，则这条数据写入成功
+
+>不是数据写入HDFS
+
+>数据写入HBase（1. WAL， 2内存排序， 3最终在HDFS形成HFile）
+
+如果Memstore达到阈值，会把Memstore中的数据flush到Storefile中。
+
+当Storefile越来越多，会触发Compact合并操作，把过多的Storefile合并成一个大的Storefile。
+
+当Storefile越来越大，Region也会越来越大，达到阈值后，会触发Split操作，将Region一分为二。
+```
+
+细节描述：
+
+HBase使用MemStore和StoreFile存储对表的更新。
+
+数据在更新时首先写入Log(WAL log)和内存(MemStore)中，MemStore中的数据是排序的，当MemStore累计到一定阈值时，就会创建一个新的MemStore，并且将老的MemStore添加到flush队列，由单独的线程flush到磁盘上，成为一个StoreFile。于此同时，系统会在zookeeper中记录一个redo point，表示这个时刻之前的变更已经持久化了。
+
+当系统出现意外时，可能导致内存(MemStore)中的数据丢失，此时使用Log(WAL log)来恢复checkpoint之后的数据。
+
+StoreFile是只读的，一旦创建后就不可以再修改。因此HBase的更新其实是不断追加的操作。当一个Store中的StoreFile达到一定的阈值后，就会进行一次合并(minor_compact, major_compact),将对同一个key的修改合并到一起，形成一个大的StoreFile，当StoreFile的大小达到一定阈值后，又会对 StoreFile进行split，等分为两个StoreFile。
+
+由于对表的更新是不断追加的，compact时，需要访问Store中全部的 StoreFile和MemStore，将他们按row key进行合并，由于StoreFile和MemStore都是经过排序的，并且StoreFile带有内存中索引，合并的过程还是比较快。
+
+*关于meta表
+
+```
+hbase:meta 表中存储了 Hbase 集群中全部表的所有的 region 信息，在 Hbase 2.x 之后新增了表的状态信息。
+
+`ROW                                                           COLUMN+CELL
+testTable,,1577522582939.b84a96d0e074272569b6fa79946e79df.    column=info:regioninfo, timestamp=1577522584346, value={ENCODED => b84a96d0e074272569b6fa79946e79df, NAME => 'testTable,,1577522582939.b84a96d0e074272569b6fa79946e79df.', STARTKEY => '', ENDKEY => '1'}
+testTable,,1577522582939.b84a96d0e074272569b6fa79946e79df.    column=info:seqnumDuringOpen, timestamp=1583992456271, value=\x00\x00\x00\x00\x00\x00\x00[
+testTable,,1577522582939.b84a96d0e074272569b6fa79946e79df.    column=info:server, timestamp=1583992456271, value=node1:16020
+testTable,,1577522582939.b84a96d0e074272569b6fa79946e79df.    column=info:serverstartcode, timestamp=1583992456271, value=1583992398626`
+
+''HBase 本质上只支持 Region 级别的事务。''
+```

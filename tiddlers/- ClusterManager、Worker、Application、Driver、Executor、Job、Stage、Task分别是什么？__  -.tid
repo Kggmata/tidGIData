@@ -1,0 +1,92 @@
+created: 20220526133219629
+difficulty: 1.4008933803544183
+due: 20220905122852227
+grade: 1
+history: [{"due":"20220601030714630","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531030714629"},{"due":"20220622021716189","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603021716189"},{"due":"20220624030654976","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623030654976"},{"due":"20220709125744887","interval":2,"difficulty":1.3535029461238979,"stability":9.54388636710972,"retrievability":0.05817903264660851,"grade":1,"lapses":1,"reps":2,"review":"20220625091557324"}]
+interval: 15
+lapses: 1
+modified: 20220710122852228
+reps: 3
+retrievability: 0.8473904342305205
+review: 20220710122852227
+stability: 57.032529607165074
+tags: spark ?
+title: - ClusterManager、Worker、Application、Driver、Executor、Job、Stage、Task分别是什么？**  -
+type: text/vnd.tiddlywiki
+
+*Cluster Manager**：分布式资源管理的主节点
+
+- YARN：ResourceManager
+
+- Standalone：Master
+
+- 负责管理所有从节点
+
+- 负责接收客户端请求
+
+- 负责资源管理和任务的调度
+
+*Worker**：分布式资源管理的从节点
+
+- YARN：NodeManager
+
+- Standalone：Worker
+
+- 负责运行利用所在节点的资源运行每个程序的Executor进程
+
+ *Application**：Spark的应用程序
+
+- 由用户所开发的Spark代码就作为一个Spark程序
+
+- 每个Spark程序在运行时都包含一个Driver进程和多个Executor进程
+
+*Driver**：Spark程序的驱动进程
+
+- 每个Spark程序都包含一个Driver进程
+
+- Driver运行以后会解析代码通过SparkContext来实现Driver功能
+
+- 负责向ClusterManager主节点申请启动Executor
+
+- 负责解析代码构建Task
+
+- 负责调度、分配以及监控Task的运行
+
+  *Executor**：Spark程序的执行进程
+
+- 每个Spark程序都包含一个或者多个Executor进程
+
+- 由Driver向ClusterManager申请启动，ClusterManager会根据资源情况将Executor分配运行在Worker节点上
+
+- 每个Spark应用程序都拥有属于自己的Executor，不同程序的Executor并不共享
+
+- Executor用于运行Task计算任务，并且将计算数据存储在内存或者磁盘中
+
+*Job**
+
+- job是执行分布式并行Task的最小单元，一个job触发多个Task的运行，一个Spark Application中可以有多个job
+
+- job由触发函数触发，当代码中遇到触发函数时，就会触发job，构建job需要的Task
+
+- |
+
+- Driver解析代码，遇到触发函数，就触发job的产生，job产生以后，构建Task实现job
+
+*Stage**
+
+- 每个job的执行会划分成多个Stage阶段，类似于将一个job中的流程划分成多个Map过程、Reduce过程
+
+- job构建以后，会通过回溯算法【倒推】构建DAG图，然后按照是否产生Shuffle来划分Stage
+
+- job中有N个Shuffle过程，就会对应这个N+1个Stage
+
+- Stage由编号从小到大开始依次执行，每个Stage由一部分Task来完成
+
+*Task
+
+- Task是Spark中执行任务的最小单元，每个Task处理RDD的1个分区的数据，占用1Core CPU
+
+- Driver解析代码，根据每个Stage生成对应Task，将Task分配到Executor中运行
+
+- 每个Stage由不同Task来实现处理，Task个数怎么决定？由这个Stage中RDD的最大分区数决定
+

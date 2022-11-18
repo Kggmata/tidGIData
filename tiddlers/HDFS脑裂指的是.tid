@@ -1,0 +1,17 @@
+created: 20220530050803567
+difficulty: 1
+due: 20220920132649754
+grade: 2
+history: [{"due":"20220601083420621","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083420621"},{"due":"20220622125414694","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603125414693"}]
+interval: 20
+lapses: 0
+modified: 20220623132649754
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623132649753
+stability: 89.0394510841741
+tags: hdfs ?
+title: HDFS脑裂指的是
+type: text/vnd.tiddlywiki
+
+HDFS集群中同时出现了两个Active的NameNode

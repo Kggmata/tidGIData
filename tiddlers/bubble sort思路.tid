@@ -1,0 +1,21 @@
+created: 20220608020101377
+difficulty: 1
+due: 20220930095610262
+grade: 2
+history: [{"due":"20220612010309824","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611010309824"},{"due":"20220630004042962","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220614004042962"}]
+interval: 20
+lapses: 0
+modified: 20220704095610262
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704095610262
+stability: 88.3800382106863
+tags: hbase ?
+title: bubble sort思路
+type: text/vnd.tiddlywiki
+
+按照左到右, 相邻数比较,满足条件换位置
+
+比如升序, 每一次大迭代将最大的数移到最右侧
+
+n2

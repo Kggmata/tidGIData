@@ -1,0 +1,17 @@
+created: 20220618132300036
+difficulty: 1
+due: 20220705044217749
+grade: 2
+history: [{"due":"20220621004927739","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004927739"}]
+interval: 2
+lapses: 0
+modified: 20220709112614138
+reps: 2
+retrievability: 0.12172520545485727
+review: 20220622044217749
+stability: 13.483496769392643
+tags: Elasticsearch
+title: elasticsearch node网站
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#:~:text=Data%20nodes%20hold%20the%20shards,nodes%20if%20they%20are%20overloaded.

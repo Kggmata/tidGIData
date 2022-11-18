@@ -1,0 +1,19 @@
+created: 20220718034913323
+difficulty: 2.019355010099502
+due: 20220906003459115
+grade: 0
+history: [{"due":"20220731041852816","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041852816"},{"due":"20220821080706668","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220805080706668"}]
+interval: 31
+lapses: 1
+modified: 20220905003459115
+reps: 1
+retrievability: 0.8193550100995021
+review: 20220905003459114
+stability: 0.07408182272361549
+tags: ?
+title: 大数据反压
+type: text/vnd.tiddlywiki
+
+```
+反压意味着数据管道中某个节点成为瓶颈，处理速率跟不上上游发送数据的速率，而需要对上游进行限速。 由于实时计算应用通常使用消息队列来进行生产端和消费端的解耦，消费端数据源是pull-based 的，所以反压通常是从某个节点传导至数据源并降低数据源（比如Kafka consumer）的摄入速率。
+```

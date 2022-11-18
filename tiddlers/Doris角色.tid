@@ -1,0 +1,17 @@
+created: 20220727114956214
+modified: 20220728085452520
+tags: ? flink
+title: Doris角色
+type: text/vnd.tiddlywiki
+
+```
+FE: follower(3个follower以上实现HA, leader是follower选举出来的), observer
+leader和follower组成一个paxos选择组
+只部署一个follower的话, 那么就成为leader
+follower必须为奇数
+
+
+BE
+
+Broker连接外部数据源, Broker是以插件的形式, 独立于Doris部署, 建议每个FE, BE都部署一个broker, broker默认是访问hdfs
+```

@@ -1,0 +1,57 @@
+created: 20220614094126869
+difficulty: 1
+due: 20221017141417274
+grade: 2
+history: [{"due":"20220617120104128","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616120104128"},{"due":"20220626062305867","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":1,"lapses":0,"reps":2,"review":"20220617062305867"},{"due":"20220816024434492","interval":10,"difficulty":1,"stability":49.62797382038931,"retrievability":0.8875368908748189,"grade":2,"lapses":0,"reps":3,"review":"20220627024434492"},{"due":"20220818094320519","interval":51,"difficulty":2.097382275767847,"stability":0.07408182272361549,"retrievability":0.8973822757678468,"grade":0,"lapses":1,"reps":1,"review":"20220817094320519"},{"due":"20220827123103120","interval":1,"difficulty":1,"stability":8.569921943565305,"retrievability":0.24117844405038483,"grade":2,"lapses":1,"reps":2,"review":"20220818123103120"}]
+interval: 10
+lapses: 1
+modified: 20220828141417274
+reps: 3
+retrievability: 0.8843147642611733
+review: 20220828141417274
+stability: 49.606728484373726
+tags: 用户画像web界面 ?
+title: 用户画像web界面
+type: text/vnd.tiddlywiki
+
+公司产品级Web项目：ssh框架完成Web项目
+
+教学层面Web项目：springboot完成
+
+疑问：PythonWeb做界面，当然可以，必须可以
+
+项目Web界面介绍
+
+用户登录界面
+[img[image-20220614171300324.png]]
+展示基础类标签，其中看到某些运行标签
+[img[image-20220614171520651.png]]
+查看五级标签
+[img[image-20220614171603145.png]]
+查看组合标签
+[img[image-20220614171716322.png]]
+如何建立组合标签？
+[img[image-20220614171800686.png]]
+[img[image-20220614171842678.png]]
+[img[image-20220614171851362.png]]
+画像的图数据展示(了解)
+[img[image-20220614171917966.png]]
+标签任务
+[img[image-20220614172015416.png]]
+用户管理
+[img[image-20220614172040061.png]]
+标签创建
+[img[image-20220614172353771.png]]
+[img[image-20220614172653204.png]]
+[img[image-20220614172841284.png]]
+项目重心
+
+```
+ 1.web平台界面不用我们管
+
+  2.4级标签,也就是具体的大数据计算任务的开发,肯定要我们开发(重中之重)
+
+  3.任务的调度执行,这个是属于大数据部分肯定也是我们开发
+
+  4.画像查询....这些是锦上添花的功能
+```

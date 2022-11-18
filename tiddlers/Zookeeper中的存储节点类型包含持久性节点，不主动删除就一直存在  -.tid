@@ -1,0 +1,17 @@
+created: 20220520043659254
+difficulty: 2.229344411327985
+due: 20220919115039718
+grade: 2
+history: [{"due":"20220523040232820","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040232820"},{"due":"20220529005333932","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523005333931"},{"due":"20220628135905679","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602135905679"}]
+interval: 29
+lapses: 0
+modified: 20220701115039718
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701115039718
+stability: 80.25328821558121
+tags: zookeeper ?
+title: Zookeeper中的存储节点类型包含持久性节点，不主动删除就一直存在  -
+type: text/vnd.tiddlywiki
+
+正确：持久性节点，持久有序节点，临时性节点，临时有序节点

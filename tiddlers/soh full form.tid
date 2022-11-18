@@ -1,0 +1,17 @@
+created: 20220611083654744
+difficulty: 1.0350522880297406
+due: 20221103105359249
+grade: 1
+history: [{"due":"20220614111115655","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613111115655"},{"due":"20220702064641768","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616064641768"},{"due":"20220707095550913","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706095550913"},{"due":"20220723070244209","interval":4,"difficulty":1,"stability":12.858755755983243,"retrievability":0.0033834917823108,"grade":2,"lapses":1,"reps":2,"review":"20220710070244208"}]
+interval: 22
+lapses: 1
+modified: 20220801105359249
+reps: 3
+retrievability: 0.8350522880297407
+review: 20220801105359248
+stability: 93.8976059867708
+tags: kafka ?
+title: soh full form
+type: text/vnd.tiddlywiki
+
+Linux上的文件以 \001 作为分隔符时，下载后用notePad++打开时看到的SOH，以 \002 作为分隔符时，下载后用notePad++打开时看到的STX，以 \003 作为分隔符时，下载后用notePad++打开时看到的ETX；"\001" “\002” "\003"分隔是程序代码中进行解析需要的。所以notePad++打开后显示的分隔

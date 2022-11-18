@@ -1,0 +1,54 @@
+created: 20220605234141645
+difficulty: 1
+due: 20220925113321172
+grade: 2
+history: [{"due":"20220610023305962","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609023305962"},{"due":"20220629070415211","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220613070415211"}]
+interval: 19
+lapses: 0
+modified: 20220702113321172
+reps: 3
+retrievability: 0.8855725047529949
+review: 20220702113321172
+stability: 84.89445269363044
+tags: hbase ?
+title: Memstore排序的作用
+type: text/vnd.tiddlywiki
+
+*对单条查询的提升
+
+- Region的范围，可以快速让我们锁定一个Region，这解决99.9999%的数据排除
+
+  > 类似：提升 从 1小时的查询时间，提升到了10秒内
+
+- Memstore的排序，可以让生成的HFile有序，有序数据的查询是非常快的
+
+  > 类似：将10秒的查询时间，提升到了10毫秒
+
+举例，HBase从10TB检索一条，不同场景下的可能反应时间：
+
+- 从BlockCache中得到结果，可能10ms
+
+- 从Memstore中得到结果，可能11ms
+
+- 从HFile中得到结果，可能500ms内（靠HFile的内部有序）
+
+*对范围扫描的提升
+
+比如，我们要查询100~150范围的Rowkey数据
+
+假设，块缓存和Memstore都没有，我们就干巴巴的从HFile中取数据。
+
+HFile1：范围100~123
+
+HFile2: 范围105~168
+
+HFile1的数据全部带走
+
+HFile2的数据从开头一直带走到150即可。
+
+没有经过乱七八糟的判断，直接按照顺序，带走数据即可。
+
+*HBase的查询性能主要体现在
+
+- 在海量的数据中，准确的找出某一条数据（随机查询能力）
+- 在海量的数据中，准确的找出某一个范围的数据（高效吞吐能力）

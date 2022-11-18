@@ -1,0 +1,74 @@
+created: 20220615070313710
+difficulty: 1.0756310680305947
+due: 20220919002059174
+grade: 1
+history: [{"due":"20220619022021249","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618022021249"},{"due":"20220703140918391","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620140918391"}]
+interval: 17
+lapses: 0
+modified: 20220707002059174
+reps: 3
+retrievability: 0.8756310680305948
+review: 20220707002059173
+stability: 74.00661040542201
+tags: 用户画像 ?
+title: spark-submit面试题
+type: text/vnd.tiddlywiki
+
+[img[image-20220614185644020-16552111774932-16552111789294-16552111804526.png]]
+
+1.这个任务需要多少cores和memory
+
+```
+cores=driver-cores 2+executor-cores 8*num-executors 20=162
+
+memory=driver-memory 30G+executor-memory 30G*num-executors 20=630G
+
+```
+2.每个executor多少storge和executor内存
+
+[img[image-20220617092332110.png]]
+[img[image-20220617092850634.png]]
+[img[image-20220617093228882.png]]
+[img[image-20220617093738687.png]]
+附录:
+
+```
+#master	yarn		
+yarn 集群模式
+
+#driver-cores	
+driver分配的核心数
+
+#driver-memory	
+driver分配的内存
+
+#spark.shuffle.service.enabled	
+Enables the external shuffle service. This service preserves the shuffle files written by executors e.g. so that executors can be safely removed, or so that shuffle fetches can continue in the event of executor failure.
+启用外部shuffle服务,会保存shuffle文件,哪怕executor被移除
+
+#spark.memory.fraction
+Fraction of (heap space - 300MB) used for execution and storage. The lower this is, the more frequently spills and cached data eviction occur. The purpose of this config is to set aside memory for internal metadata, user data structures, and imprecise size estimation in the case of sparse, unusually large records. Leaving this at the default value is recommended. For more detail, including important information about correctly tuning JVM garbage collection when increasing this value, see this description.
+
+#spark.memory.storgeFraction
+Amount of storage memory immune to eviction, expressed as a fraction of the size of the region set aside by spark.memory.fraction. The higher this is, the less working memory may be available to execution and tasks may spill to disk more often. Leaving this at the default value is recommended. For more detail, see this description.
+
+#spark.default.parallelism
+Default number of partitions in RDDs returned by transformations like join, reduceByKey, and parallelize when not set by user.Default number of partitions in RDDs returned by transformations like join, reduceByKey, and parallelize when not set by user.
+默认并行度
+
+#spark.sql.shuffle.partitions
+The default number of partitions to use when shuffling data for joins or aggregations. Note: For structured streaming, this configuration cannot be changed between query restarts from the same checkpoint location.
+spark-SQL默认分区数
+
+#spark.driver.memoryOverhead
+Amount of non-heap memory to be allocated per driver process in cluster mode, in MiB unless otherwise specified. This is memory that accounts for things like VM overheads, interned strings, other native overheads, etc. This tends to grow with the container size (typically 6-10%). This option is currently supported on YARN, Mesos and Kubernetes. 
+
+#executor-memory
+每个executor分配的内存
+
+#executor-cores
+每个executor分配的核心数
+
+#num-executors
+executor个数
+```

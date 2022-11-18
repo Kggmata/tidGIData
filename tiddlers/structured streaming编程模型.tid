@@ -1,0 +1,84 @@
+created: 20220612061908684
+difficulty: 1
+due: 20220928022115157
+grade: 2
+history: [{"due":"20220614231842935","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613231842935"},{"due":"20220630105103504","interval":2,"difficulty":1,"stability":13.570489504250556,"retrievability":0.12633427211412301,"grade":1,"lapses":0,"reps":2,"review":"20220616105103504"}]
+interval: 19
+lapses: 0
+modified: 20220705022115157
+reps: 3
+retrievability: 0.862849556630761
+review: 20220705022115157
+stability: 84.61770258190634
+tags: [[structed streaming]] ?
+title: structured streaming编程模型
+type: text/vnd.tiddlywiki
+
+[img[20220612111653.png]]
+
+结构化流，其底层使用的也是SparkSQL的`DataFrame`，和SparkSQL的略有不同。
+
+```
+SparkSQL的DataFrame是`有界数据集`
+- Spark结构化流用的DataFrame是`无界数据集`
+  - 在结构化流中，DataFrame是一个动态的表，也就是在其尾部，会不断的追加新数据
+```
+
+csv：
+
+```
+name,age,addr
+zhangsan,11,beijing
+wangwu,11,shanghai
+```
+
+在SparkSQL中读取为DataFrame
+
+| name     | age  | addr   |
+| -------- | ---- | ------ |
+| zhangsan | 11   | bej    |
+| wangwu   | 11   | shangh |
+
+这个表格是有边界的。也就是DataFrame读取完成后，数据边界就确定了。
+
+在Spark的结构化流中，一旦数据被转换读取为DataFrame后，`开始的边界被确定`，结束的边界`不确定`
+
+所以结构化流的DataFrame，我们一般也称之为：`无界表`
+
+| name     | age    | addr   |
+| -------- | ------ | ------ |
+| zhangsan | 11     | bej    |
+| wangwu   | 11     | shangh |
+| 待加入   | 待加入 | 待加入 |
+| 待加入   | 待加入 | 待加入 |
+| ...      | ...    | ...    |
+
+如表格，在结构化流中，表示这个DataFrame，可以在`底部不停的追加新数据`
+
+所以在API中可以看出：
+
+- SparkSQL使用`read`读取数据，是一次性的
+- Spark的结构化流，使用`readStream`是持续的读取流数据，追加到DataFrame的底部
+
+> Spark结构化流，借助不多的改动，将DataFrame改成无界表
+>
+> 除此以外，其余的API都可以直接套用SparkSQL
+>
+> 就可以快速从SparkSQL这个批处理框架，迭代出流计算功能。
+
+*执行原理
+
+''Spark底层是批计算，不是真正的流计算。
+''
+也就是：
+
+```
+尽管DataFrame是无界的，可以动态追加新数据
+
+- 但是，当你计算的那一刻，是将DataFrame当做有边界的数据，执行的批处理
+
+  也是因为这一点，SparkSQL的API完全兼容
+```
+
+[img[20220612112835-16550148559179.png]]
+

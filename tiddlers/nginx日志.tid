@@ -1,0 +1,23 @@
+created: 20220724023241896
+difficulty: 1
+due: 20221013003407849
+grade: 0
+history: [{"due":"20220824132634657","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220823132634657"}]
+interval: 50
+lapses: 1
+modified: 20221012003407849
+reps: 1
+retrievability: 1.3220714356875621e-23
+review: 20221012003407849
+stability: 0.07408182272361549
+tags: flink ?
+title: nginx日志
+type: text/vnd.tiddlywiki
+
+https://www.modb.pro/db/225663
+
+```
+Nginx (pronounced engine x) is open source Web server software that also performs reverse proxy, load balancing, email proxy and HTTP cache services. The software was originally created by Igor Sysoev as an answer to the challenge of handling 10,000 concurrent user connections: the C10k problem.
+
+主要包括access_log, error_log
+```

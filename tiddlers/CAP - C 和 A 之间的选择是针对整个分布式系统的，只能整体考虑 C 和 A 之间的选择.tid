@@ -1,0 +1,19 @@
+created: 20220711232303599
+difficulty: 1
+due: 20221108121039045
+grade: 2
+history: [{"due":"20220716023612913","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715023612913"},{"due":"20220722143635163","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721143635163"},{"due":"20220731034954047","interval":9,"difficulty":1.2000027609125272,"stability":0.0548811791474709,"retrievability":0.0000027609125273187787,"grade":0,"lapses":2,"reps":1,"review":"20220730034954047"},{"due":"20220816110722184","interval":7,"difficulty":1,"stability":10.16563166856288,"retrievability":0.0000014578431002339741,"grade":2,"lapses":2,"reps":2,"review":"20220806110722184"}]
+interval: 17
+lapses: 2
+modified: 20220823121039045
+reps: 3
+retrievability: 0.8384548568932255
+review: 20220823121039044
+stability: 77.41742490086217
+tags: ?
+title: CAP - C 和 A 之间的选择是针对整个分布式系统的，只能整体考虑 C 和 A 之间的选择
+type: text/vnd.tiddlywiki
+
+根据业务需求
+
+抉择并不一定是整体的, 可以是局部的, 甚至可以是对单个事件

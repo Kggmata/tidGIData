@@ -1,0 +1,19 @@
+created: 20220608020412539
+difficulty: 1
+due: 20221001074159861
+grade: 2
+history: [{"due":"20220612010315419","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611010315419"},{"due":"20220701010310422","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220615010310421"}]
+interval: 20
+lapses: 0
+modified: 20220705074159861
+reps: 3
+retrievability: 0.8799265997952923
+review: 20220705074159861
+stability: 88.47732139046299
+tags: hbase ?
+title: select sort思路
+type: text/vnd.tiddlywiki
+
+每次大迭代, 找最小的值放右侧
+
+n2

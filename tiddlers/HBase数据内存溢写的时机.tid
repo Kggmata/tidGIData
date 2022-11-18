@@ -1,0 +1,45 @@
+caption: {{||Question}}
+created: 20220606060059128
+difficulty: 1
+due: 20220915075703735
+grade: 2
+history: [{"due":"20220610113057986","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609113057986"},{"due":"20220628074309010","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220612074309010"}]
+interval: 17
+lapses: 0
+modified: 20220629075703735
+reps: 3
+retrievability: 0.8921371599187098
+review: 20220629075703735
+stability: 77.52610262038272
+tags: hbase ?
+title: HBase数据内存溢写的时机
+type: text/vnd.tiddlywiki
+
+HBase中，满的定义可以有2种
+
+- `大小`满了
+- `时间`长了
+
+HBase Memstore是否刷新到HDFS形成HFile就基于如下2个参数的控制：
+
+- ''通过Memstore的大小控制'' 参数：`hbase.hregion.memstore.flush.size` 默认值 134217728（128MB）,单位是“b"
+
+''通过RegionServer的时长来控制''
+
+`hbase.regionserver.optionalcacheflushinterval`  默认值：3600000（1小时）
+
+ > RegionServer中可以托管很多个region，每一个region可以有多个stote，每一个store都会有内存区域（Memstore）
+  >
+  > 所以，在HBase运行的时候，RegionServer的内存中会有非常多的Memstore归属不同的region
+  >
+  > 
+  >
+  > 参数的意思是，如果RegionServer中的某一个Memstore超过这个时间没有刷新，那么就刷新它的数据到HDFS形成HFile
+
+> 总结一下：
+>
+> 1. 大小超过128MB就被刷新成HFIle    （大小控制）
+> 2. 超过1小时没有刷新的，会立刻被刷新  （时间控制）
+
+
+

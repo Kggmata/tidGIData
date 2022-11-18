@@ -1,0 +1,32 @@
+created: 20220718070457746
+difficulty: 1.8548145031221182
+due: 20221012132620197
+grade: 0
+history: [{"due":"20220731042417559","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042417559"},{"due":"20220822120341809","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806120341809"}]
+interval: 66
+lapses: 1
+modified: 20221011132620198
+reps: 1
+retrievability: 0.6548145031221182
+review: 20221011132620197
+stability: 0.07408182272361549
+tags: ?
+title: FsStateBackend
+type: text/vnd.tiddlywiki
+
+[img[BillfishYzxmbS2022-07-18 15_05_10.PNG]]
+
+```
+该持久化存储主要将快照数据保存到文件系统中，目前支持的文件系统主要是 HDFS和本地文件。如果使用HDFS，则初始化FsStateBackend时，需要传入以 “hdfs://”开头的路径(即: new FsStateBackend("hdfs:///hacluster/checkpoint"))， 如果使用本地文件，则需要传入以“file://”开头的路径(即:new FsStateBackend("file:///Data"))。在分布式情况下，不推荐使用本地文件。如果某个算子在节点A上失败，在节点B上恢复，使用本地文件时，在B上无法读取节点 A上的数据，导致状态恢复失败。
+FsStateBackend适用的场景：
+	具有大状态，长窗口，大键 / 值状态的作业。
+	所有高可用性设置。
+分布式文件持久化，每次读写都会产生网络IO，整体性能不佳
+	全局配置 flink-conf.yaml
+state.backend: hashmap 
+state.checkpoints.dir: file:///checkpoint-dir/ 
+
+# 默认为FileSystemCheckpointStorage 
+state.checkpoint-storage: filesystem
+
+```

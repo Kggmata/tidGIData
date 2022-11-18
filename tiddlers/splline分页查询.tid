@@ -1,0 +1,54 @@
+created: 20220608062855163
+difficulty: 1
+due: 20220928035923443
+grade: 2
+history: [{"due":"20220613130337427","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130337427"},{"due":"20220702003121160","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616003121160"},{"due":"20220711071009783","interval":20,"difficulty":2.078509878134214,"stability":0.07408215765534414,"retrievability":0.8785098781342142,"grade":0,"lapses":1,"reps":1,"review":"20220706100105262"},{"due":"20220715133235379","interval":8,"difficulty":2.2785213261508552,"stability":0.05488141221849455,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220714133235378"},{"due":"20220722061017966","interval":7,"difficulty":2.4785227840771586,"stability":0.040657012017596195,"retrievability":0.000001457926303174977,"grade":0,"lapses":3,"reps":1,"review":"20220721061017965"},{"due":"20220805031640958","interval":9,"difficulty":1.6785227841514498,"stability":5.575495415232849,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220730031640958"}]
+interval: 10
+lapses: 3
+modified: 20220809035923443
+reps: 3
+retrievability: 0.8278107782520437
+review: 20220809035923442
+stability: 50.15249000680225
+tags: hbase ?
+title: splline分页查询
+type: text/vnd.tiddlywiki
+
+```
+# 创建表
+create table if not exists order_dtl(id varchar primary key, c1.status varchar, c1.money float, c1.pay_way integer, c1.user_id varchar, c1.operation_time varchar, c1.category varchar);
+
+# 插入数据
+UPSERT INTO "ORDER_DTL" VALUES('000002','已提交',4070,1,'4944191','2020-04-25 12:09:16','手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000003','已完成',4350,1,'1625615','2020-04-25 12:09:37','家用电器;;电脑;');
+UPSERT INTO "ORDER_DTL" VALUES('000004','已提交',6370,3,'3919700','2020-04-25 12:09:39','男装;男鞋;');
+UPSERT INTO "ORDER_DTL" VALUES('000005','已付款',6370,3,'3919700','2020-04-25 12:09:44','男装;男鞋;');
+UPSERT INTO "ORDER_DTL" VALUES('000006','已提交',9380,1,'2993700','2020-04-25 12:09:41','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000007','已付款',9380,1,'2993700','2020-04-25 12:09:46','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000008','已完成',6400,2,'5037058','2020-04-25 12:10:13','数码;女装;');
+UPSERT INTO "ORDER_DTL" VALUES('000009','已付款',280,1,'3018827','2020-04-25 12:09:53','男鞋;汽车;');
+UPSERT INTO "ORDER_DTL" VALUES('000010','已完成',5600,1,'6489579','2020-04-25 12:08:55','食品;家用电器;');
+UPSERT INTO "ORDER_DTL" VALUES('000011','已付款',5600,1,'6489579','2020-04-25 12:09:00','食品;家用电器;');
+UPSERT INTO "ORDER_DTL" VALUES('000012','已提交',8340,2,'2948003','2020-04-25 12:09:26','男装;男鞋;');
+UPSERT INTO "ORDER_DTL" VALUES('000013','已付款',8340,2,'2948003','2020-04-25 12:09:30','男装;男鞋;');
+UPSERT INTO "ORDER_DTL" VALUES('000014','已提交',7060,2,'2092774','2020-04-25 12:09:38','酒店;旅游;');
+UPSERT INTO "ORDER_DTL" VALUES('000015','已提交',640,3,'7152356','2020-04-25 12:09:49','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000016','已付款',9410,3,'7152356','2020-04-25 12:10:01','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000017','已提交',9390,3,'8237476','2020-04-25 12:10:08','男鞋;汽车;');
+UPSERT INTO "ORDER_DTL" VALUES('000018','已提交',7490,2,'7813118','2020-04-25 12:09:05','机票;文娱;');
+UPSERT INTO "ORDER_DTL" VALUES('000019','已付款',7490,2,'7813118','2020-04-25 12:09:06','机票;文娱;');
+UPSERT INTO "ORDER_DTL" VALUES('000020','已付款',5360,2,'5301038','2020-04-25 12:08:50','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000021','已提交',5360,2,'5301038','2020-04-25 12:08:53','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000022','已取消',5360,2,'5301038','2020-04-25 12:08:58','维修;手机;');
+UPSERT INTO "ORDER_DTL" VALUES('000023','已付款',6490,0,'3141181','2020-04-25 12:09:22','食品;家用电器;');
+UPSERT INTO "ORDER_DTL" VALUES('000024','已付款',3820,1,'9054826','2020-04-25 12:10:04','家用电器;;电脑;');
+UPSERT INTO "ORDER_DTL" VALUES('000025','已提交',4650,2,'5837271','2020-04-25 12:08:52','机票;文娱;');
+UPSERT INTO "ORDER_DTL" VALUES('000026','已付款',4650,2,'5837271','2020-04-25 12:08:57','机票;文娱;');
+
+
+# limit m offset n 的形式进行分页查询
+# 语法格式：select * from order_dtl limit m offset n;
+select * from order_dtl limit 10 offset 0;
+# limit 的数字表示限制几条输出结果
+# offset 的数字表示从第几行开始
+# limit 10 offset 0，表示从第0行开始，查询结果返回10条

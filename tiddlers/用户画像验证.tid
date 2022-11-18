@@ -1,0 +1,44 @@
+created: 20220614075719978
+difficulty: 1.0470886630670917
+due: 20221005104520202
+grade: 1
+history: [{"due":"20220617072420377","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616072420377"},{"due":"20220619020114631","interval":2,"difficulty":1.1583258928533677,"stability":0.07416773238429089,"retrievability":0.12217091235547979,"grade":0,"lapses":1,"reps":1,"review":"20220618020114631"},{"due":"20220702000255117","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":2,"lapses":1,"reps":2,"review":"20220620000255116"},{"due":"20220707050952504","interval":16,"difficulty":2.066723080099495,"stability":0.05488141221849455,"retrievability":0.8667230800994952,"grade":0,"lapses":2,"reps":1,"review":"20220706050952504"},{"due":"20220720062255625","interval":4,"difficulty":1,"stability":10.158295607157797,"retrievability":0.0004623722433273712,"grade":2,"lapses":2,"reps":2,"review":"20220710062255624"}]
+interval: 16
+lapses: 2
+modified: 20220726104520202
+reps: 3
+retrievability: 0.8470886630670919
+review: 20220726104520202
+stability: 71.49020630207157
+tags: 用户画像web界面 ?
+title: 用户画像验证
+type: text/vnd.tiddlywiki
+
+构建画像标签如何验证？
+
+1-最关键的指标：**能够帮助推荐系统实现商品或产品的推荐 
+
+```
+CTR (Click Through Rate): 点击率
+具体公式：CTR=点击量/展现量
+
+CVR (Click Value Rate): 转化率，衡量CPA广告效果的指标
+具体公式：CVR=转化量/点击量
+
+CPM (Cost Per Mille): 按千次展现计费（千次展现价格）
+具体公式：CPM=（消费量/展现量）*1000
+
+CPA (Cost Per Action): 按成果数计费（每次效果价格）
+具体公式：CPA=消费量/转化量=（CPC*点击量）/（CVR*点击量）=CPC/CV
+
+ROI (Return On Investment)：投资回报率
+具体公式：ROI=订单额/消费量（即广告费用）=（单均额*转化量）/（CPA*转化量）=单均额/CPA
+```
+
+2-标签本身：
+
+[img[image-20220614150504234.png]]
+
+```
+注意：标签的可靠性和完整性可以依靠外部业务专家诊断
+```

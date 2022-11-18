@@ -1,0 +1,39 @@
+created: 20220712034026320
+difficulty: 2.0000107844251294
+due: 20220909133647801
+grade: 0
+history: [{"due":"20220716081453250","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715081453250"},{"due":"20220722144437810","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721144437810"},{"due":"20220801064410073","interval":10,"difficulty":1.2000006658736515,"stability":0.0548811791474709,"retrievability":6.658736516034294e-7,"grade":0,"lapses":2,"reps":1,"review":"20220731064410073"},{"due":"20220807125625417","interval":6,"difficulty":1.400010607704913,"stability":0.04065696885178093,"retrievability":0.00000994183126152159,"grade":0,"lapses":3,"reps":1,"review":"20220806125625416"},{"due":"20220813035612443","interval":6,"difficulty":1.6000107844244273,"stability":0.03011942145770373,"retrievability":1.7671951438723688e-7,"grade":0,"lapses":4,"reps":1,"review":"20220812035612443"},{"due":"20220821045357696","interval":8,"difficulty":1.8000107844251294,"stability":0.02231301621225883,"retrievability":7.020735429696087e-13,"grade":0,"lapses":5,"reps":1,"review":"20220820045357696"}]
+interval: 19
+lapses: 6
+modified: 20220908133647801
+reps: 1
+retrievability: 1.0877766489389441e-39
+review: 20220908133647800
+stability: 0.016529888968407916
+tags: ?
+title: hive导入数据
+type: text/vnd.tiddlywiki
+
+从本地系统导入数据
+
+```
+load data local inpath '/home/hadoop/hive_test/load_data_local.txt' into table load_data_local;
+```
+
+从HDFS中导入数据
+
+```
+load data inpath 'data/load_data_hdfs.txt' into table load_data_hdfs;
+```
+从其他的Hive表中导入数据
+
+```
+insert into table load_data_local2 select * from load_data_local;
+```
+
+创建表的同时导入数据
+
+```
+create table load_data_local3 as select * from load_data_local;
+
+```

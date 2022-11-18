@@ -1,0 +1,27 @@
+created: 20220710010510649
+difficulty: 2.2635499803655743
+due: 20220827133708855
+grade: 0
+history: [{"due":"20220713030349554","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030349554"},{"due":"20220722012518563","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721012518562"},{"due":"20220812025300320","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":2,"lapses":1,"reps":2,"review":"20220730025300320"},{"due":"20220818104353530","interval":18,"difficulty":2.063549949018463,"stability":0.05488116409496729,"retrievability":0.863549949018463,"grade":0,"lapses":2,"reps":1,"review":"20220817104353529"}]
+interval: 9
+lapses: 3
+modified: 20220826133708855
+reps: 1
+retrievability: 3.134711113123891e-8
+review: 20220826133708854
+stability: 0.040656966333775045
+tags: 用户画像 ?
+title: hbase启动
+type: text/vnd.tiddlywiki
+
+启动zk
+
+```
+zkServer.sh start
+```
+
+启动hbase
+
+```
+start-hbase.sh
+```

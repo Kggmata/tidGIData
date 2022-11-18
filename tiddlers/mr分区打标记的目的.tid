@@ -1,0 +1,17 @@
+created: 20220521063606912
+difficulty: 3.269260298065778
+due: 20220829143212893
+grade: 0
+history: [{"due":"20220524053503716","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522053503716"},{"due":"20220615023306151","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529023306150"},{"due":"20220802091755929","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616091755929"},{"due":"20220807235535769","interval":51,"difficulty":4.074818608778473,"stability":0.07408182731172136,"retrievability":0.8913241313900776,"grade":0,"lapses":1,"reps":1,"review":"20220806235535768"},{"due":"20220819045840434","interval":5,"difficulty":2.2756346134335645,"stability":7.293171904562357,"retrievability":0.0008160046550921422,"grade":2,"lapses":1,"reps":2,"review":"20220812045840433"}]
+interval: 16
+lapses: 2
+modified: 20220828143212893
+reps: 1
+retrievability: 0.7936256846322132
+review: 20220828143212893
+stability: 0.05488116409496729
+tags: mapreduce ?
+title: mr分区打标记的目的
+type: text/vnd.tiddlywiki
+
+分区是为了给数据打标记, 默认标记是0, 然后不同的分区将来会被不同的ReduceTask任务拉取, 即: 有几个分区, 就有几个ReduceTask.

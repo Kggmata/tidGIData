@@ -1,0 +1,32 @@
+created: 20220727124923187
+modified: 20220729091528313
+tags: ? flink
+title: doris存储结构
+type: text/vnd.tiddlywiki
+
+```
+doris上数据以table的形式进行逻辑描述
+一张表包含row/column
+column可分为key维度列/value指标列
+如果采用聚合模型,相同key的行会聚合成一行
+table水平分为若干个tablet
+一个tablet属于一个partition, 一个partition包含若干个tablet
+tablet是数据移动, 复制等操作的最小物理单元. 
+```
+```
+两层的数据划分:
+1 分区partition(partition by range()()):
+- range partition: 按照范围分区
+- list partition: 按照枚举值分区
+2 分桶bucket(distributed by () buckets )先横向分区, 然后每个分区再分桶, 是分区内的划分规则:
+- hash取模划分
+- 分区列必须是key列
+
+tablet总数=partition_num*bucket_num
+```
+```
+复合分区场景
+1 带有时间维度护或者有序值的维度
+2 历史数据删除需求
+3 解决数据倾斜问题
+```

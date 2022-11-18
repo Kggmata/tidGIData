@@ -1,0 +1,17 @@
+created: 20220521113143002
+difficulty: 2.200038941363643
+due: 20221011054412830
+grade: 2
+history: [{"due":"20220524064725210","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522064725210"},{"due":"20220602112436966","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112436966"},{"due":"20220707013924518","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606013924518"}]
+interval: 34
+lapses: 0
+modified: 20220710054412830
+reps: 4
+retrievability: 0.8895462481526426
+review: 20220710054412830
+stability: 92.90536780574088
+tags: 基础概念 ?
+title: 什么场景不适合分布式
+type: text/vnd.tiddlywiki
+
+拆分以后任务与任务之间依赖性非常强的不能分布式.比如求平均值

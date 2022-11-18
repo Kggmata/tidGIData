@@ -1,0 +1,27 @@
+created: 20220525043022340
+difficulty: 1.062880993644973
+due: 20221003095031943
+grade: 1
+history: [{"due":"20220529150911809","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150911808"},{"due":"20220624131917053","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602131917053"},{"due":"20220626124308760","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625124308760"},{"due":"20220712023938068","interval":4,"difficulty":1,"stability":12.859429240324747,"retrievability":0.003384799839695139,"grade":2,"lapses":1,"reps":2,"review":"20220629023938068"}]
+interval: 18
+lapses: 1
+modified: 20220717095031943
+reps: 3
+retrievability: 0.862880993644973
+review: 20220717095031943
+stability: 78.05261452320097
+tags: hive ?
+title: hive的on过滤和where过滤
+type: text/vnd.tiddlywiki
+
+''在左外连接和右外连接的时候，on后面的过滤条件是不一定生效的''
+
+- 左连接中：左表的过滤条件放在on后面不生效，结果中有，但不参与关联
+
+- 右连接中：右表的过滤条件放在on后面不生效，结果中有，但不参与关联
+
+- 只有按照执行顺序，放在where后面
+
+- 面试题：Left join中，表的过滤条件放在on后面和where后面的区别是什么？
+
+- Hive中优化：PPD(predicate pushdown) ，谓词下推

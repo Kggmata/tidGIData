@@ -1,0 +1,22 @@
+created: 20220714143127479
+difficulty: 1.0222878674257905
+due: 20221210064327832
+grade: 1
+history: [{"due":"20220722090541520","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090541520"},{"due":"20220801100956536","interval":10,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000026561715818525218,"grade":0,"lapses":1,"reps":1,"review":"20220731100956536"},{"due":"20220819125737947","interval":6,"difficulty":1,"stability":12.923393125053918,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220806125737946"}]
+interval: 24
+lapses: 1
+modified: 20220830064327832
+reps: 3
+retrievability: 0.8222878674257905
+review: 20220830064327832
+stability: 101.93145937675152
+tags: ?
+title: ISR
+type: text/vnd.tiddlywiki
+
+ISR（In-Sync Replicas），副本同步队列。ISR中包括Leader和Follower。如果Leader进程挂掉，会在ISR队列中选择一个服务作为新的Leader。有replica.lag.max.messages（延迟条数）和replica.lag.time.max.ms（延迟时间）两个参数决定一台服务是否可以加入ISR副本队列，在0.10版本移除了replica.lag.max.messages参数，防止服务频繁的进去队列。
+
+任意一个维度超过阈值都会把Follower剔除出ISR，存入OSR（Outof-Sync Replicas）列表，新加入的Follower也会先存放在OSR中。
+————————————————
+版权声明：本文为CSDN博主「mischen520」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/miachen520/article/details/118207254

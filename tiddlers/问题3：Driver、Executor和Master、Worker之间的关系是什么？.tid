@@ -1,0 +1,27 @@
+created: 20220522045759826
+difficulty: 1.1038606003688256
+due: 20230221041103881
+grade: 2
+history: [{"due":"20220524021204014","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523021204014"},{"due":"20220526124834159","interval":2,"difficulty":4.640976298811018,"stability":0.2500261494800798,"retrievability":0.6931759895835838,"grade":0,"lapses":1,"reps":1,"review":"20220525124834159"},{"due":"20220614140801752","interval":6,"difficulty":2.92076384003958,"stability":14.362991858267733,"retrievability":0.07978754122856174,"grade":2,"lapses":1,"reps":2,"review":"20220531140801752"},{"due":"20220806024351420","interval":16,"difficulty":2.010020944606395,"stability":50.69522261234347,"retrievability":0.8892571045668145,"grade":2,"lapses":1,"reps":3,"review":"20220616024351420"}]
+interval: 54
+lapses: 1
+modified: 20220809041103881
+reps: 4
+retrievability: 0.8938396557624306
+review: 20220809041103881
+stability: 195.6737145041914
+tags: spark ?
+title: 问题3：Driver、Executor和Master、Worker之间的关系是什么？
+type: text/vnd.tiddlywiki
+
+**架构与程序关系**
+
+- Master负责管理所有Worker资源
+
+- Driver会向Master请求启动Executor
+
+- Worker上负责运行Executor进程
+
+- Driver负责解析、分配、监控所有Task线程在Executor中运行
+
+[img[image-20211122202714106.png]]

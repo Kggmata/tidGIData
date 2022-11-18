@@ -1,0 +1,19 @@
+created: 20220719023518903
+difficulty: 1.8548145031221182
+due: 20221013005255614
+grade: 0
+history: [{"due":"20220801123358800","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731123358800"},{"due":"20220823000332630","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220807000332630"}]
+interval: 66
+lapses: 1
+modified: 20221012005255614
+reps: 1
+retrievability: 0.6548145031221182
+review: 20221012005255614
+stability: 0.07408182272361549
+tags: ?
+title: session模式和prejob模式区别
+type: text/vnd.tiddlywiki
+
+session是一个jobmanager, 然后按需求向yarn申请启动TM, 执行完成JM的资源不会释放, 适合大量小作业. 因为只有一个JM, 因此JM会成为集群瓶颈, main方法(类似spark的driver)在客户端
+
+prejob是一个任务一个Flink集群, 也就是一个任务一个JM, 具有良好的隔离性, 但是需要多次申请资源, 适合少量的大作业. 每个任务一个JM, JM负载均衡. main在客户端

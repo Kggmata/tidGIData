@@ -1,0 +1,107 @@
+created: 20220521024443200
+difficulty: 5.027795999801074
+due: 20221005121242968
+grade: 1
+history: [{"due":"20220523111403290","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521111403290"},{"due":"20220529002658891","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523002658891"},{"due":"20220603053240536","interval":10,"difficulty":6.126014725196352,"stability":0.0960748629946603,"retrievability":0.826014725196352,"grade":0,"lapses":1,"reps":1,"review":"20220602053240536"},{"due":"20220612121602890","interval":4,"difficulty":4.338457679766608,"stability":5.650237888044585,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606121602890"},{"due":"20220615005354436","interval":8,"difficulty":5.399874525721104,"stability":0.055390315029607076,"retrievability":0.8614168459544946,"grade":0,"lapses":2,"reps":1,"review":"20220614005354436"},{"due":"20220617070436575","interval":2,"difficulty":5.622149448178223,"stability":0.04075126313635327,"retrievability":0.022274922457119053,"grade":0,"lapses":3,"reps":1,"review":"20220616070436574"},{"due":"20220621102539481","interval":2,"difficulty":4.82782885792529,"stability":2.663904870631898,"retrievability":0.005679409747066861,"grade":1,"lapses":3,"reps":2,"review":"20220618102539481"},{"due":"20220701085515689","interval":4,"difficulty":4.88150394146881,"stability":9.48820912462922,"retrievability":0.8536750835435194,"grade":1,"lapses":3,"reps":3,"review":"20220622085515689"},{"due":"20220801063954059","interval":13,"difficulty":4.947082869181976,"stability":26.54265685480882,"retrievability":0.8655789277131662,"grade":1,"lapses":3,"reps":4,"review":"20220705063954059"}]
+interval: 32
+lapses: 3
+modified: 20220806121242968
+reps: 5
+retrievability: 0.8807131306190975
+review: 20220806121242968
+stability: 60.35656156741766
+tags: hadoop ?
+title: Hadoop的联邦机制 为什么会出现联邦？
+type: text/vnd.tiddlywiki
+
+
+Hadoop1.0 单namenode架构局限性
+
+```
+NameSpace（命名空间的限制）
+由于Namenode在内存中存储所有的元数据（metadata）。NN在管理大规模的命名空间时，单个Namenode所能存储的对象（文件+块）数目受到Namenode所在JVM的堆【内存大小的限制】。
+随着数据的飞速增长，存储的需求也随之增长。50G的heap能够存储20亿个对象—>4000个datanode—>12PB的存储（假设文件平均大小为40MB）。单个datanode从4T增长到36T，集群的尺寸增长到8000个datanode。存储的需求从12PB增长到大于100PB。
+
+性能的瓶颈
+由于是单个Namenode的HDFS架构，因此整个HDFS文件系统的吞吐量受限于单个NameNode的吞吐量。这将成为下一代MapReduce的瓶颈。
+
+隔离问题
+由于仅有一个Namenode，无法隔离各个程序，因此HDFS上的一个实验程序很可能影响整个HDFS上运行的程序。 NN在内部用一把全局锁撸遍所有的元数据操作来保证数据的一致性
+
+集群的可用性
+在只有一个Namenode的HDFS中，此Namenode的宕机无疑会导致整个集群的不可用。（低可用性）
+
+Namespace和Block Management(管理)的紧密耦合
+Hadoop 1.x在Namenode中的Namespace和Block Management组合的紧密耦合关系会导致如果想要实现另外一套。Namenode方案比较困难，而且也限制了其他想要直接使用块存储的应用。
+```
+
+```
+在Hadoop2.0之前，HDFS的单NameNode设计带来诸多问题：
+单点故障、内存受限，制约集群扩展性和缺乏隔离机制（不同业务使用同一个NameNode导致业务相互影响）等
+为了解决这些问题，除了用基于共享存储的HA解决方案我们还可以用HDFS的Federation机制来解决这个问题。
+【单机namenode的瓶颈大约是在4000台集群，而后则需要使用联邦机制】
+```
+
+什么是Federation机制
+
+```
+Federation是指HDFS集群可使用多个独立的NameSpace(NameNode节点管理)来满足HDFS命名空间的水平扩展
+这些NameNode分别管理一部分数据，且共享所有DataNode的存储资源。
+```
+
+NameSpace之间在逻辑上是完全相互独立的(即任意两个NameSpace可以有完全相同的文件名)。在物理上可以完全独立(每个NameNode节点管理不同的DataNode)也可以有联系(共享存储节点DataNode)。一个NameNode节点只能管理一个Namespace
+
+Federation机制解决单NameNode存在的以下几个问题
+
+```
+（1）HDFS集群扩展性。每个NameNode分管一部分namespace，相当于namenode是一个分布式的。
+（2）性能更高效。多个NameNode同时对外提供服务，提供更高的读写吞吐率。
+（3）良好的隔离性。用户可根据需要将不同业务数据交由不同NameNode管理，这样不同业务之间影响很小。
+（4）Federation良好的向后兼容性，已有的单Namenode的部署配置不需要任何改变就可以继续工作。
+```
+
+Federation是简单鲁棒的设计
+鲁棒性（健壮和强壮）：在输入错误、磁盘故障、网络过载或有意攻击情况下，能否不死机、不崩溃
+
+由于联盟中各个Namenode之间是相互独立的：Federation整个核心设计大部分改变是在Datanode、Config和Tools，而Namenode本身的改动非常少，这样Namenode原先的鲁棒性不会受到影响。比分布式的Namenode简单，虽然扩展性比真正的分布式的Namenode要小些，但是可以迅速满足需求。
+
+另外一个原因是Federation良好的向后兼容性，可以无缝的支持目前单Namenode架构中的配置。已有的单Namenode的部署配置不需要任何改变就可以继续工作。
+
+Federation不足之处
+
+```
+HDFS Federation并没有完全解决单点故障问题。虽然namenode/namespace存在多个，但是从单个namenode/namespace看，仍然存在单点故障。因此 Federation中每个namenode配置成HA高可用集群，以便主namenode挂掉一下，用于快速恢复服务。
+```
+Block Pool(块池)
+
+```
+Block pool就是属于单个命名空间的一组block。每一个datanode为所有的block pool存储块。
+Datanode是一个物理概念，而block pool是一个重新将block划分的逻辑概念。
+Block pool允许一个命名空间在不通知其他命名空间的情况下为一个新的block创建Block ID。
+```
+
+当datanode与Namenode建立联系并开始会话后自动建立Block pool。
+每个block都有一个唯一的标识，这个标识我们称之为扩展的块ID（Extended BlockID=BlockID+BlockID）
+这个扩展的块ID在HDFS集群之间都是唯一的，这为以后集群归并创造了条件。
+Datanode中的数据结构都通过BlockPoolID索引，即datanode中的BlockMap，storage等都通过BPID索引。
+在HDFS中，所有的更新、回滚都是以Namenode和BlockPool为单元发生的。
+即同一HDFS Federation中不同的Namenode/BlockPool之间没有什么关系。
+Hadoop1.x版本中Block Pool的管理功能放在Namenode中，以后Block Pool的管理功能移动的新的功能节点中。
+
+Namespace Volume(命名空间卷)
+
+```
+一个Namespace和它的块池合并在一起称为Namespace Volume，它是一个独立完整的管理单元。
+当一个Namenode/Namespace被删除，与之相对应的块池也被删除。
+在升级时，每一个nanespace Volume也会整体作为一个单元。
+```
+
+ClusterId(节点标识)
+
+```
+在HDFS Federation中添加了ClusterID用来标示集群所有节点
+当格式化一个Namenode时，这个Cluster Id会自动生成或者手动提供。
+在格式化统一集群中其他Namenode时会用到这个ClusterID。
+```
+
+[img[Snipaste_2022-05-21_19-16-50.jpg]]

@@ -1,0 +1,19 @@
+created: 20220711232416364
+difficulty: 1
+due: 20221111074518737
+grade: 2
+history: [{"due":"20220716023622651","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715023622651"},{"due":"20220806143646223","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":1,"lapses":0,"reps":2,"review":"20220721143646223"}]
+interval: 21
+lapses: 0
+modified: 20220811074518737
+reps: 3
+retrievability: 0.8737446509856597
+review: 20220811074518737
+stability: 92.0489668106565
+tags: ?
+title: CAP 的三个特性只有是和否两种极端选择，而不是一个范围
+type: text/vnd.tiddlywiki
+
+这种二元性的理解更是极其误导人。
+
+CAP 理论的三种特性不是 Boolean 类型的，不是一致和不一致，可用和不可用，分区和没分区的这类二选一的选项。而是这三种特性都是范围类型

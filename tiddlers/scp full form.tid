@@ -1,0 +1,17 @@
+created: 20220711040427880
+difficulty: 1
+due: 20221117114042497
+grade: 2
+history: [{"due":"20220713035357751","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035357751"},{"due":"20220722052920052","interval":9,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721052920052"},{"due":"20220814105210266","interval":11,"difficulty":1,"stability":12.92739998623949,"retrievability":1.6059462786757528e-7,"grade":2,"lapses":1,"reps":2,"review":"20220801105210266"}]
+interval: 20
+lapses: 1
+modified: 20220821114042497
+reps: 3
+retrievability: 0.8495882891470834
+review: 20220821114042496
+stability: 88.38667890285025
+tags: ?
+title: scp full form
+type: text/vnd.tiddlywiki
+
+''Secure Copy'' or SCP is a means of securley transferring files between two machines on a network. SCP uses SSH for improved security and will prompt you if it needs a password or passphrase for authentication.

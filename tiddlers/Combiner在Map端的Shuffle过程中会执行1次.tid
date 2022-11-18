@@ -1,0 +1,17 @@
+created: 20220522045248349
+difficulty: 1
+due: 20221228092618776
+grade: 2
+history: [{"due":"20220524011019155","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523011019155"},{"due":"20220606010627116","interval":3,"difficulty":2.524919168615612,"stability":11.181919693641438,"retrievability":0.5771188593881783,"grade":2,"lapses":0,"reps":2,"review":"20220526010627115"},{"due":"20220729004523989","interval":14,"difficulty":1.6013358877257884,"stability":50.346949805680694,"retrievability":0.8764167191101764,"grade":2,"lapses":0,"reps":3,"review":"20220609004523989"},{"due":"20220806064104744","interval":57,"difficulty":2.688892224472874,"stability":0.07408183255527093,"retrievability":0.8875563367470857,"grade":0,"lapses":1,"reps":1,"review":"20220805064104744"},{"due":"20220822041143413","interval":4,"difficulty":1,"stability":12.858712259468588,"retrievability":0.003383407314874798,"grade":2,"lapses":1,"reps":2,"review":"20220809041143413"}]
+interval: 27
+lapses: 1
+modified: 20220905092618776
+reps: 3
+retrievability: 0.801532243725372
+review: 20220905092618776
+stability: 114.48556134374931
+tags: mapreduce ?
+title: Combiner在Map端的Shuffle过程中会执行1次
+type: text/vnd.tiddlywiki
+
+错误：Combiner在Map端执行两次：每次排序以后会有一次Combiner

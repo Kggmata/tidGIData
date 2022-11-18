@@ -1,0 +1,67 @@
+created: 20220713080203677
+difficulty: 2.0223256595695953
+due: 20220831064604797
+grade: 0
+history: [{"due":"20220720035036999","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719035036998"},{"due":"20220731015129204","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730015129204"},{"due":"20220819121824960","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806121824960"}]
+interval: 24
+lapses: 2
+modified: 20220830064604797
+reps: 1
+retrievability: 0.8223256595695952
+review: 20220830064604797
+stability: 0.05488116409496729
+tags: ?
+title: kafka实现高性能吞吐的原因
+type: text/vnd.tiddlywiki
+
+1 磁盘顺序读写
+
+2 零拷贝
+[img[在这里插入图片描述2022-07-13 16_07_06.png]]
+
+不经过cpu实现一块存储拷贝到另一块存储
+
+传统存储:
+[img[图解Kafka的零拷贝技术到底有多牛？ - 腾讯云开发者社区-腾2022-07-19 11_42_24.jpg]]
+[img[图解Kafka的零拷贝技术到底有多牛？ - 腾讯云开发者社区-腾2022-07-19 11_44_21.jpg]]
+
+```
+此时我们会发现用户态“空空如也”。数据没有来到用户态，而是直接在核心态就进行了传输，但这样依然还是有多次复制。首先数据被读取到read buffer中，然后发到socket buffer，最后才发到网卡。虽然减少了用户态和核心态的切换，但依然存在多次数据复制。
+
+如果可以进一步减少数据复制的次数，甚至没有数据复制是不是就会做到最快呢？
+```
+零拷贝:
+DMA(directed memory access)
+
+```
+别急，这里我们先介绍一个新的武器:DMA。
+
+DMA，全称叫Direct Memory Access，一种可让某些硬件子系统去直接访问系统主内存，而不用依赖CPU的计算机系统的功能。听着是不是很厉害，跳过CPU，直接访问主内存。传统的内存访问都需要通过CPU的调度来完成。如下
+```
+传统的内存访问需要cpu调度
+[img[图解Kafka的零拷贝技术到底有多牛？ - 腾讯云开发者社区-腾2022-07-19 11_45_41.png]]
+DMA绕过cpu
+[img[图解Kafka的零拷贝技术到底有多牛？ - 腾讯云开发者社区-腾2022-07-19 11_46_19.jpg]]
+
+```
+回到本文中的文件传输，有了DMA后，就可以实现绝对的零拷贝了，因为网卡是直接去访问系统主内存的。如下图：
+```
+[img[图解Kafka的零拷贝技术到底有多牛？ - 腾讯云开发者社区-腾2022-07-19 11_46_46.jpg]]
+
+```
+Java的零拷贝实现
+
+在Java中的零拷贝实现是在FileChannel中，其中有个方法transferTo(position,fsize,src)。
+
+传统的文件传输是通过java.io.DataOutputStream，java.io.FileInputStream来实现的，然后通过while循环来读取input，然后写入到output中。
+零拷贝则是通过java.nio.channels.FileChannel中的transferTo方法来实现的。transferTo方法底层是基于操作系统的sendfile这个system call来实现的（不再需要拷贝到用户态了），sendfile负责把数据从某个fd（file descriptor）传输到另一个fd。
+
+```
+
+3 分区分段加索引
+
+4 批量压缩
+
+5 批量读写
+
+6 直接操作page cache, 而不是jvm, 避免gc耗时

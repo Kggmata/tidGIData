@@ -1,0 +1,50 @@
+created: 20220727015153683
+modified: 20220729105903386
+tags: ? flink
+title: Doris简介
+type: text/vnd.tiddlywiki
+
+```
+Doris是一个基于MPP架构的高性能的real-time analytical database
+支持high-concurrent point query scenarios和high-throughout complex analysis scenarios
+场景:
+```
+[img[origin_img_v2_33e733e0-df43-4d692022-07-27 13_00_26.png]]
+
+```
+架构
+FE:
+1 接受客户端请求
+2 查询解析规划
+3 管理元数据
+3 管理节点
+
+BE
+1 存储书籍
+2 查询计划的执行
+```
+```
+接口方面:
+MySQL协议, 高度兼容mysql语法, 支持各类客户端工具访问doris, 支持与BI工具的无缝对接. 
+
+存储引擎方面:
+doris采用列存储, 按行进行数据的编码压缩和读取. 实现极高的压缩比. 更有效的利用IO和CPU资源
+```
+```
+索引结构:
+sorted compound key index
+z-order index
+min/max
+bloom filter
+invert index
+```
+```
+存储模型
+Aggregate key
+unique key
+duplicate key
+```
+```
+rollup
+物化视图materialized view
+```

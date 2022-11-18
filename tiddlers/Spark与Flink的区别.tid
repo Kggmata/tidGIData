@@ -1,0 +1,41 @@
+created: 20220714064718760
+difficulty: 1
+due: 20220825052225833
+grade: 1
+history: [{"due":"20220722085253107","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721085253107"},{"due":"20220802110923870","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261508688753902,"grade":0,"lapses":1,"reps":1,"review":"20220801110923869"},{"due":"20220809083125037","interval":7,"difficulty":1.200047464685643,"stability":0.054881164580531924,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220808083125037"}]
+interval: 7
+lapses: 2
+modified: 20220815052225833
+reps: 2
+retrievability: 0.000001457837900184362
+review: 20220815052225833
+stability: 10.165629507147264
+tags: ?
+title: Spark与Flink的区别
+type: text/vnd.tiddlywiki
+
+```
+ Flink 和 Spark 对比
+
+通过前面的学习，我们了解到，Spark和Flink都支持批处理和流处理，接下来让我们对这两种流行的数据处理框架在各方面进行对比。首先，这两个数据处理框架有很多相同点：
+
+- 都基于内存计算；
+
+- 都有统一的批处理和流处理APl，都支持类似SQL的编程接口；
+
+- 都支持很多相同的转换操作，编程都是用类似于Scala Collection APl的函数式编程模式；
+
+- 都有完善的错误恢复机制；
+
+- 都支持Exactly once的语义一致性。
+```
+当然，它们的不同点也是相当明显，我们可以从4个不同的角度来看。
+
+```
+1 spark是微批处理, 将流数据看成一个个小的批处理块, 而flink基于每个事件处理, 数据到达就立刻处理
+spark的窗口只能基于时间, 而flink不仅基于时间,也可基于数据本身
+
+SQL api上, spark更成熟, flink在sql的支持和易用性上还需要提升.
+
+从生态角度, spark的社区更成熟活跃, flink还是较新的状态, 各种库的功能也不如spark全面.
+```

@@ -1,0 +1,30 @@
+created: 20220521034807228
+difficulty: 2.3583453830753216
+due: 20221129121135054
+grade: 2
+history: [{"due":"20220524023110807","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023110806"},{"due":"20220527233317781","interval":1,"difficulty":5.148683298050514,"stability":3.7467775080817907,"retrievability":0.9486832980505138,"grade":1,"lapses":0,"reps":2,"review":"20220523233317781"},{"due":"20220616144745311","interval":7,"difficulty":4.17000359517692,"stability":16.175734178814395,"retrievability":0.8213202971264056,"grade":2,"lapses":0,"reps":3,"review":"20220531144745311"},{"due":"20220727070034113","interval":16,"difficulty":3.2710343638513812,"stability":41.418166463915014,"retrievability":0.9010307686744614,"grade":2,"lapses":0,"reps":4,"review":"20220616070034113"}]
+interval: 47
+lapses: 0
+modified: 20220802121135054
+reps: 5
+retrievability: 0.8873110192239402
+review: 20220802121135054
+stability: 118.6257713806292
+tags: hadoop hive ?
+title: 基于Hadoop上的Hive SQL的执行流程
+type: text/vnd.tiddlywiki
+
+1.Parser：将sql解析为AST（抽象语法树），会进行语法校验，AST本质还是字符串
+AST:abstract syntax tree
+
+2.Analyzer：语法解析，生成QB（query block）
+
+3.Logical Plan：逻辑执行计划解析，生成一堆Opertator Tree
+
+4.Logical optimizer:进行逻辑执行计划优化，生成一堆优化后的Opertator Tree
+
+5.Phsical plan：物理执行计划解析，生成tasktree
+
+6.Phsical Optimizer：进行物理执行计划优化，生成优化后的tasktree，该任务即是集群上的执行的作业
+
+结论：经过以上的六步，普通的字符串sql被解析映射成了集群上的执行任务，最重要的两步是 逻辑执行计划优化和物理执行计划优化（图中红线圈画）

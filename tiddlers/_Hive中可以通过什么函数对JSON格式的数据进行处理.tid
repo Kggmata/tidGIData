@@ -1,0 +1,17 @@
+created: 20220529052653805
+difficulty: 1
+due: 20230206064536367
+grade: 2
+history: [{"due":"20220601053650186","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053650186"},{"due":"20220604021731298","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603021731298"},{"due":"20220607124917247","interval":3,"difficulty":3.0096518527259373,"stability":0.058954374971038004,"retrievability":0.024351003043347287,"grade":0,"lapses":2,"reps":1,"review":"20220606124917246"},{"due":"20220618005557699","interval":3,"difficulty":1.2143458986280729,"stability":9.33556561865652,"retrievability":0.004694045902135523,"grade":2,"lapses":2,"reps":2,"review":"20220609005557699"},{"due":"20220729235805004","interval":8,"difficulty":1,"stability":41.64388252123656,"retrievability":0.9136685417665394,"grade":2,"lapses":2,"reps":3,"review":"20220617235805004"}]
+interval: 48
+lapses: 2
+modified: 20220805064536367
+reps: 4
+retrievability: 0.8856426664461692
+review: 20220805064536367
+stability: 185.2342284198401
+tags: hive ?
+title: .Hive中可以通过什么函数对JSON格式的数据进行处理
+type: text/vnd.tiddlywiki
+
+ get_json_object 和 json_tuple

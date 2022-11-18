@@ -1,0 +1,23 @@
+created: 20220718010710892
+difficulty: 1
+due: 20220825032600170
+grade: 1
+history: [{"due":"20220731040920698","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730040920698"},{"due":"20220807115446405","interval":7,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806115446405"}]
+interval: 6
+lapses: 1
+modified: 20220812032600170
+reps: 2
+retrievability: 0.00019680286925510766
+review: 20220812032600170
+stability: 12.92339166423087
+tags: ?
+title: flink几类表
+type: text/vnd.tiddlywiki
+
+永久表, 临时表, 外部表, 永久视图和临时视图
+
+永久表需要指定持久化的catalog 比如hivecatalog
+
+临时表会随着作业的结束而结束
+
+外部表, 可以指定连接器加载一张外部表, 比如kafka, filesystem, socket

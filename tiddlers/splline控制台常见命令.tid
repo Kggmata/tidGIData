@@ -1,0 +1,63 @@
+created: 20220608062556579
+difficulty: 1
+due: 20221210061057053
+grade: 1
+history: [{"due":"20220613125733720","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612125733720"},{"due":"20220715133241579","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616003549331"}]
+interval: 35
+lapses: 0
+modified: 20220721061057053
+reps: 3
+retrievability: 0.7971804435047348
+review: 20220721061057053
+stability: 141.90663026262038
+tags: hbase ?
+title: splline控制台常见命令
+type: text/vnd.tiddlywiki
+
+```
+# 查看表
+!table
+# 查看帮助
+!help
+
+# ...
+!all                Execute the specified SQL against all the current
+                    connections
+!autocommit         设置自动提交模式
+!batch              启动一个批量执行的段
+!brief              Set verbose mode off
+!call               Execute a callable statement
+!close              关闭连接
+!closeall           关闭全部已打开链接
+!columns            列出表的全部列
+!commit             Commit the current transaction (if autocommit is off)
+!connect            打开一个新连接.
+!dbinfo             Give metadata information about the database
+!describe           描述表的新消息
+!dropall            删除当前数据库的全部表
+!exportedkeys       List all the exported keys for the specified table
+!go                 Select the current connection
+!help               帮助信息
+!history            命令历史
+!importedkeys       List all the imported keys for the specified table
+!indexes            List all the indexes for the specified table
+!isolation          Set the transaction isolation for this connection
+!list               列出当前的链接
+!manual             Display the SQLLine manual
+!metadata           Obtain metadata information
+!nativesql          Show the native SQL for the specified statement
+!outputformat       Set the output format for displaying results
+                    (table,vertical,csv,tsv,xmlattrs,xmlelements)
+!primarykeys        List all the primary keys for the specified table
+!procedures         List all the procedures
+!properties         Connect to the database specified in the properties file(s)
+!quit               推出控制台
+!reconnect          Reconnect to the database
+!record             Record all output to the specified file
+!rehash             Fetch table and column names for command completion
+!rollback           回滚（仅自动提交off）
+!run                Run a script from the specified file
+!save               Save the current variabes and aliases
+!scan               扫描JDBC驱动
+!script             Start saving a script to a file
+!set                设置SQL变量

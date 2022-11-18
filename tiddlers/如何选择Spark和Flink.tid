@@ -1,0 +1,29 @@
+created: 20220714064737667
+difficulty: 2.0290556473375507
+due: 20220830144345884
+grade: 0
+history: [{"due":"20220722085406667","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721085406667"},{"due":"20220731033540202","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220730033540202"},{"due":"20220819105852861","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806105852861"}]
+interval: 23
+lapses: 2
+modified: 20220829144345884
+reps: 1
+retrievability: 0.8290556473375507
+review: 20220829144345884
+stability: 0.05488116409496729
+tags: ?
+title: 如何选择Spark和Flink
+type: text/vnd.tiddlywiki
+
+```
+对于以下场景，你可以选择 Spark：
+
+- 数据量非常大而且逻辑复杂的批数据处理，并且对计算效率有较高要求（比如用大数据分析来构建推荐系统进行个性化推荐、广告定点投放等）；
+- 基于历史数据的交互式查询，要求响应较快；
+- 基于实时数据流的数据处理，延迟性要求在在数百毫秒到数秒之间。
+
+Spark完美满足这些场景的需求，而且它可以一站式解决这些问题，无需用别的数据处理平台。
+
+由于Flink是为了提升流处理而创建的平台，所以它适用于各种需要非常低延迟（微秒到毫秒级）的实时数据处理场景，比如实时日志报表分析。而且Flink 用流处理去模拟批处理的思想，比Spark 用批处理去模拟流处理的思想扩展性更好。
+
+总之，Apache Spark和Flink都是下一代大数据工具抢占业界关注的焦点。两者都提供与Hadoop和NoSQL数据库的本机连接，并且可以处理HDFS数据。两者都是几个大数据的好方法问题。但由于其底层架构，Flink比Spark更快。Apache Spark是Apache存储库中最活跃的组件。Spark拥有非常强大的社区支持，并且拥有大量的贡献者。Spark已经在生产中部署。但就流媒体功能而言，Flink远比Spark好（因为spark以微批量形式处理流）并且具有对流的本机支持。有人认为：Spark是大数据的3G，而Flink则被视为大数据的4G，该观点仅供参考即可。
+```

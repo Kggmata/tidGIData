@@ -1,0 +1,19 @@
+created: 20220522004134208
+difficulty: 3.24269384937687
+due: 20221014080206052
+grade: 1
+history: [{"due":"20220524124524184","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522124524184"},{"due":"20220621030356674","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531030356673"},{"due":"20220623142651129","interval":22,"difficulty":4.9167154881537805,"stability":0.07408719146292923,"retrievability":0.8942843763028374,"grade":0,"lapses":1,"reps":1,"review":"20220622142651129"},{"due":"20220701085523831","interval":3,"difficulty":3.1307484629052675,"stability":5.728732775373333,"retrievability":0.01403297475148654,"grade":2,"lapses":1,"reps":2,"review":"20220625085523831"},{"due":"20220731091809972","interval":10,"difficulty":3.162754219160202,"stability":25.536556121785004,"retrievability":0.8320057562549343,"grade":1,"lapses":1,"reps":3,"review":"20220705091809972"}]
+interval: 31
+lapses: 1
+modified: 20220805080206052
+reps: 4
+retrievability: 0.8799396302166677
+review: 20220805080206052
+stability: 70.40884380144578
+tags: zookeeper ?
+title: ZAB协议
+type: text/vnd.tiddlywiki
+
+ZAB 协议， 全称（Zookeeper Atomic Broadcast）Zookeeper 原子消息广播协议。
+
+它与 Paxos 类似，也是一种数据一致性的算法

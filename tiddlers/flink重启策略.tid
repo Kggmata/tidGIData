@@ -1,0 +1,70 @@
+created: 20220718072921242
+difficulty: 1
+due: 20220825034147391
+grade: 1
+history: [{"due":"20220731042627359","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042627359"},{"due":"20220807120104957","interval":7,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806120104957"}]
+interval: 6
+lapses: 1
+modified: 20220812034147391
+reps: 2
+retrievability: 0.00019680286925510766
+review: 20220812034147391
+stability: 12.92339166423087
+tags: ?
+title: flink重启策略
+type: text/vnd.tiddlywiki
+
+```
+1.8.5 	重启策略
+实际生产作业中，我们期望Flink作业遇到错误的时候，能够自动重启恢复到正常运行状态。
+Flink支持多种作业重启策略，但默认作业重启策略为none，即不会自动重启。作业一旦出现异常，会被标记为failed直接退出。
+接下来为大家带来Flink支持的重启策略类型和配置方法。
+
+```
+```
+Flink支持的重启策略类型如下：
+	none, off, disable：无重启策略，作业遇到问题直接失败，不会重启。
+	fixeddelay, fixed-delay：作业失败后，延迟一定时间重启。但是有最大重启次数限制，超过这个限制后作业失败，不再重启。
+	failurerate, failure-rate：作业失败后，延迟一定时间重启。但是有最大失败率限制。如果一定时间内作业失败次数超过配置值，则标记为真的失败，不再重启。
+	exponentialdelay, exponential-delay：作业失败后重启延迟时间随着失败次数指数递增。没有最大重启次数限制，无限尝试重启作业。
+注意：如果启用了checkpoint并且没有显式配置重启策略，会默认使用fixeddelay策略，最大重试次数为Integer.MAX_VALUE。
+
+```
+```
+全局配置影响Flink提交的所有作业的。修改全局配置需要编辑flink-conf.yaml文件。
+配置重启策略的方式：
+restart-strategy: none, off, disable | fixeddelay, fixed-delay | failurerate, failure-rate | exponentialdelay, exponential-delay
+接下来分别列出各个重启策略专属的配置参数和含义。
+no restart
+restart-strategy: none
+fixeddelay
+restart-strategy: fixed-delay
+
+# 尝试重启次数
+restart-strategy.fixed-delay.attempts: 10
+# 两次连续重启的间隔时间
+restart-strategy.fixed-delay.delay: 20 s
+failurerate
+restart-strategy: failure-rate
+
+# 两次连续重启的间隔时间
+restart-strategy.failure-rate.delay: 10 s
+# 计算失败率的统计时间跨度
+restart-strategy.failure-rate.failure-rate-interval: 2 min
+# 计算失败率的统计时间内的最大失败次数
+restart-strategy.failure-rate.max-failures-per-interval: 10
+exponentialdelay
+restart-strategy: exponential-delay
+
+# 初次失败后重启时间间隔（初始值）
+restart-strategy.exponential-delay.initial-backoff: 1 s
+# 以后每次失败，重启时间间隔为上一次重启时间间隔乘以这个值
+restart-strategy.exponential-delay.backoff-multiplier: 2
+# 每次重启间隔时间的最大抖动值（加或减去该配置项范围内的一个随机数），防止大量作业在同一时刻重启
+restart-strategy.exponential-delay.jitter-factor: 0.1
+# 最大重启时间间隔，超过这个最大值后，重启时间间隔不再增大
+restart-strategy.exponential-delay.max-backoff: 1 min
+# 多长时间作业运行无失败后，重启间隔时间会重置为初始值（第一个配置项的值）
+restart-strategy.exponential-delay.reset-backoff-threshold: 1 h
+
+```

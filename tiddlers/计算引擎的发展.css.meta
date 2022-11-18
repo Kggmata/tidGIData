@@ -1,0 +1,15 @@
+created: 20220519133857968
+difficulty: 3.5195532191168075
+due: 20220831020721019
+grade: 1
+history: [{"due":"20220522005622860","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520005622860"},{"due":"20220528005447056","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522005447056"},{"due":"20220602015118560","interval":10,"difficulty":6.126014725196352,"stability":0.11806790392114878,"retrievability":0.826014725196352,"grade":0,"lapses":1,"reps":1,"review":"20220601015118560"},{"due":"20220611063636865","interval":4,"difficulty":4.354184975364468,"stability":6.488958967817901,"retrievability":0.028170250168115422,"grade":2,"lapses":1,"reps":2,"review":"20220605063636865"},{"due":"20220704111825856","interval":8,"difficulty":3.432372502858751,"stability":21.12375446256748,"retrievability":0.8781875274942825,"grade":2,"lapses":1,"reps":3,"review":"20220613111825856"}]
+interval: 24
+lapses: 1
+modified: 20220707020721019
+reps: 4
+retrievability: 0.8871807162580564
+review: 20220707020721018
+stability: 55.20683945934578
+tags: spark ?
+title: 计算引擎的发展
+type: text/css

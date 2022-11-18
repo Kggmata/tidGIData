@@ -1,0 +1,25 @@
+created: 20220606113235801
+difficulty: 1
+due: 20221018125619152
+grade: 2
+history: [{"due":"20220611003317157","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003317157"},{"due":"20220629113114814","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613113114813"},{"due":"20220702142926850","interval":18,"difficulty":2.0861675498643524,"stability":0.07408316441686115,"retrievability":0.8861675498643524,"grade":0,"lapses":1,"reps":1,"review":"20220701142926850"},{"due":"20220719074039156","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220706074039156"}]
+interval: 19
+lapses: 1
+modified: 20220725125619152
+reps: 3
+retrievability: 0.8563723176366649
+review: 20220725125619152
+stability: 84.6439353142043
+tags: hbase ?
+title: HBase的压缩算法
+type: text/vnd.tiddlywiki
+
+| **压缩算法**     | **压缩后占比** | **压缩** | **解压缩** |
+| ---------------- | -------------- | -------- | ---------- |
+| **GZIP**         | 13.4%          | 21 MB/s  | 118 MB/s   |
+| **LZO**          | 20.5%          | 135 MB/s | 410 MB/s   |
+| **Zippy/Snappy** | 22.2%          | 172 MB/s | 409 MB/s   |
+
+`当你对磁盘空间比较敏感的时候，选择Gzip是合适的，因为压缩后的体积最小
+- 当你对压缩的速度最敏感的时候，选择Snappy是最合适的，因为速度最快
+- LZO速度不是最快也不是最慢，压缩率不是最高也不是最低`

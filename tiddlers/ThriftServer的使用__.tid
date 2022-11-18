@@ -1,0 +1,23 @@
+created: 20220530123940164
+difficulty: 1
+due: 20220912150624843
+grade: 2
+history: [{"due":"20220601084024165","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531084024165"},{"due":"20220628063120077","interval":5,"difficulty":1,"stability":22.531244498588748,"retrievability":0.03668351005467044,"grade":2,"lapses":0,"reps":2,"review":"20220605063120077"},{"due":"20220702085409320","interval":26,"difficulty":2.085519238104647,"stability":0.07408316441686115,"retrievability":0.8855192381046468,"grade":0,"lapses":1,"reps":1,"review":"20220701085409320"},{"due":"20220719112324411","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220706112324411"},{"due":"20220727102357607","interval":20,"difficulty":2.0494123040093255,"stability":0.05488119468553914,"retrievability":0.8494123040093253,"grade":0,"lapses":2,"reps":1,"review":"20220726102357607"},{"due":"20220813125214762","interval":8,"difficulty":1,"stability":10.165653873028125,"retrievability":2.137750772920513e-7,"grade":2,"lapses":2,"reps":2,"review":"20220803125214761"},{"due":"20220821013607637","interval":17,"difficulty":2.038455179577059,"stability":0.040656966333775045,"retrievability":0.8384551795770587,"grade":0,"lapses":3,"reps":1,"review":"20220820013607637"}]
+interval: 15
+lapses: 3
+modified: 20220904150624843
+reps: 2
+retrievability: 1.312835246871398e-17
+review: 20220904150624842
+stability: 7.99407159520789
+tags: spark ?
+title: ThriftServer的使用**
+type: text/vnd.tiddlywiki
+
+Hive中可以使用Beeline或者DataGrip连接HiveServer进行测试，那SparkSQL中如何实现？
+
+**ThriftServer**
+
+- 功能：类似于HiveServer2，负责解析客户端提交的SQL语句，转换成Spark的任务进行执行
+
+- 本质：Spark中的一个特殊的程序，利用程序的资源运行所有SQL，该程序除非手动关闭，否则一直运行

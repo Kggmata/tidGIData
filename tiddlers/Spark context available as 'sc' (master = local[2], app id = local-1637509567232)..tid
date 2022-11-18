@@ -1,0 +1,18 @@
+created: 20220519135712464
+difficulty: 2.229344411327985
+due: 20220919071015481
+grade: 2
+history: [{"due":"20220523011639647","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011639646"},{"due":"20220529003420786","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003420786"},{"due":"20220628134327039","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602134327039"}]
+interval: 29
+lapses: 0
+modified: 20220701071015481
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701071015481
+stability: 80.25328821558121
+tags: spark ?
+title: Spark context available as 'sc' (master = local[2], app id = local-1637509567232).
+type: text/vnd.tiddlywiki
+
+- SparkContext是Spark程序中的一个类，**==这个类是所有Spark程序都必须有的==**，负责读取数据，调度Task等
+- 当前的程序中默认构建了一个SparkContext类的对象叫做sc

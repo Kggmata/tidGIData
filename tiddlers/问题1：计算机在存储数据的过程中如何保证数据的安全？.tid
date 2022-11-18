@@ -1,0 +1,31 @@
+created: 20220526131731406
+difficulty: 1.096930161677754
+due: 20220925105739677
+grade: 1
+history: [{"due":"20220531130242211","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130242211"},{"due":"20220624014940497","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220603014940497"}]
+interval: 22
+lapses: 0
+modified: 20220625105739677
+reps: 3
+retrievability: 0.8969301616777541
+review: 20220625105739676
+stability: 91.87261310270978
+tags: spark ?
+title: 问题1：计算机在存储数据的过程中如何保证数据的安全？
+type: text/vnd.tiddlywiki
+
+- 磁盘【容量大，安全性高，性能较差】-副本机制
+
+  - 软副本：一个数据冗余存储多份，类似于HDFS
+
+  - 硬副本：硬盘构建备份，磁盘冗余阵列RAID1
+
+- 内存【性能较高，容量小，安全性低】-操作日志
+
+  - HDFS：edits
+
+  - MySQL：binlog
+
+  - Hbase：WAL
+
+  - ES: translog

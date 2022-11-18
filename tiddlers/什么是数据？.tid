@@ -1,0 +1,22 @@
+created: 20220614073953400
+difficulty: 1
+due: 20230427114813430
+grade: 2
+history: [{"due":"20220617034101250","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034101249"},{"due":"20220626025022450","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617025022450"},{"due":"20220821034640007","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628034640007"}]
+interval: 65
+lapses: 0
+modified: 20220901114813430
+reps: 4
+retrievability: 0.8802373214018735
+review: 20220901114813430
+stability: 238.4556000078123
+tags: 用户画像web界面 ?
+title: 什么是数据？
+type: text/vnd.tiddlywiki
+
+* 最简单的接触到的数据：身高和体重
+* 提取概念：数据就是
+
+```
+观测值或测量值
+```

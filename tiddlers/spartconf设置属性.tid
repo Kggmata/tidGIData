@@ -1,0 +1,19 @@
+created: 20220528065313029
+difficulty: 1.0855192381046468
+due: 20221015084940074
+grade: 1
+history: [{"due":"20220601052916865","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052916864"},{"due":"20220628010737154","interval":5,"difficulty":1,"stability":22.531244498588748,"retrievability":0.03668351005467044,"grade":2,"lapses":0,"reps":2,"review":"20220605010737154"}]
+interval: 26
+lapses: 0
+modified: 20220701084940074
+reps: 3
+retrievability: 0.8855192381046468
+review: 20220701084940074
+stability: 105.56639026094608
+tags: spark ?
+title: spartconf设置属性
+type: text/vnd.tiddlywiki
+
+.set()
+
+相当于SparkSession.config("spark.some.config.option", "some-value")

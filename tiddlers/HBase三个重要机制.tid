@@ -1,0 +1,27 @@
+created: 20220602003835387
+difficulty: 1
+due: 20220923020652650
+grade: 2
+history: [{"due":"20220607061350265","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606061350265"},{"due":"20220628021249673","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220611021249672"}]
+interval: 19
+lapses: 0
+modified: 20220630020652650
+reps: 3
+retrievability: 0.8901797860786494
+review: 20220630020652650
+stability: 85.04800908266367
+tags: hbase ?
+title: HBase三个重要机制
+type: text/vnd.tiddlywiki
+
+''1. flush机制''
+
+
+''2. compact机制''
+
+
+''3.split机制''
+
+当HRegion达到阈值，会把过大的HRegion一分为二。
+
+默认一个HFile达到10Gb的时候就会进行切分。

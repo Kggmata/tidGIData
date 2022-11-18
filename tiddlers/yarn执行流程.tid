@@ -1,0 +1,17 @@
+created: 20220521100719887
+difficulty: 2.039547494942042
+due: 20230113052801183
+grade: 2
+history: [{"due":"20220524063928076","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522063928076"},{"due":"20220618025333772","interval":8,"difficulty":3.8561000000000005,"stability":18.669346285737497,"retrievability":0.6561,"grade":2,"lapses":0,"reps":2,"review":"20220530025333772"},{"due":"20220810075351909","interval":20,"difficulty":2.949366719934412,"stability":51.62479394535563,"retrievability":0.8932667199344116,"grade":2,"lapses":0,"reps":3,"review":"20220619075351909"}]
+interval: 57
+lapses: 0
+modified: 20220815052801183
+reps: 4
+retrievability: 0.8901807750076297
+review: 20220815052801183
+stability: 150.82390289697486
+tags: yarn ?
+title: yarn执行流程
+type: text/vnd.tiddlywiki
+
+[img[yarn-run.png]]

@@ -1,0 +1,71 @@
+created: 20220623054845703
+difficulty: 1
+due: 20221006063950352
+grade: 1
+history: [{"due":"20220625233002360","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624233002360"},{"due":"20220630013353177","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629013353177"},{"due":"20220705101912534","interval":5,"difficulty":1.200816109392723,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704101912533"},{"due":"20220710143640073","interval":5,"difficulty":1.4008839139021179,"stability":0.04065715014820503,"retrievability":0.00006780450939486909,"grade":0,"lapses":3,"reps":1,"review":"20220709143640073"},{"due":"20220712063445944","interval":2,"difficulty":1.6064957486470437,"stability":0.030119557630782685,"retrievability":0.005611834744925829,"grade":0,"lapses":4,"reps":1,"review":"20220711063445943"},{"due":"20220723075525911","interval":6,"difficulty":1,"stability":6.2865197163091,"retrievability":7.670579335945259e-10,"grade":1,"lapses":4,"reps":2,"review":"20220717075525911"}]
+interval: 14
+lapses: 4
+modified: 20220731063950352
+reps: 3
+retrievability: 0.7908582447054682
+review: 20220731063950352
+stability: 67.03368239002334
+tags: 用户画像 ?
+title: Hadoop主要的配置文件
+type: text/vnd.tiddlywiki
+
+hadoop-env.sh
+
+```
+文件中设置的是Hadoop运行时需要的环境变量。JAVA_HOME是必须设置的，即使我们当前的系统中设置了JAVA_HOME，它也是不认识的，因为Hadoop即使是在本机上执行，它也是把当前的执行环境当成远程服务器。
+```
+core-site.xml
+
+设置Hadoop的文件系统地址
+
+```
+<property>
+		<name>fs.defaultFS</name>
+		<value>hdfs://node-1:9000</value>
+</property>
+```
+hdfs-site.xml
+
+指定HDFS副本的数量
+
+secondary namenode 所在主机的ip和端口
+
+```
+<property>
+		<name>dfs.replication</name>
+		<value>2</value>
+    </property>
+
+    <property>
+ 		 <name>dfs.namenode.secondary.http-address</name>
+  		 <value>node-2:50090</value>
+    </property>
+```
+
+mapred-site.xml
+
+指定mr运行时框架，这里指定在yarn上，默认是local
+
+```
+<property>
+		<name>mapreduce.framework.name</name>
+		<value>yarn</value>
+</property>
+```
+
+yarn-site.xml
+
+指定YARN的主角色（ResourceManager）的地址
+
+```
+<property>
+		<name>yarn.resourcemanager.hostname</name>
+		<value>node-1</value>
+</property>
+```
+​

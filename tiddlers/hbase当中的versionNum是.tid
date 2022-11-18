@@ -1,0 +1,18 @@
+created: 20220602001504184
+difficulty: 1.0704639015033426
+due: 20221003144408736
+grade: 1
+history: [{"due":"20220605072340326","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604072340326"},{"due":"20220626002252215","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002252214"},{"due":"20220630021958704","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629021958704"},{"due":"20220717104312665","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220704104312665"}]
+interval: 17
+lapses: 1
+modified: 20220721144408736
+reps: 3
+retrievability: 0.8704639015033426
+review: 20220721144408736
+stability: 74.15185597590465
+tags: hbase ?
+title: hbase当中的versionNum是
+type: text/vnd.tiddlywiki
+
+版本号 VersionNum
+数据的版本号，每条数据可以有多个版本号，默认值为系统时间戳，类型为Long。

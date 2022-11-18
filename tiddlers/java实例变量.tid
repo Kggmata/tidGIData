@@ -1,0 +1,19 @@
+created: 20220711002257521
+difficulty: 1
+due: 20221111100551791
+grade: 2
+history: [{"due":"20220713034800803","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712034800803"},{"due":"20220806052420134","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721052420134"}]
+interval: 21
+lapses: 0
+modified: 20220811100551791
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811100551791
+stability: 92.05363191623492
+tags: ?
+title: java实例变量
+type: text/vnd.tiddlywiki
+
+```
+实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定
+```

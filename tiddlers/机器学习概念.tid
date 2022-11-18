@@ -1,0 +1,26 @@
+created: 20220625004028721
+difficulty: 1
+due: 20221019145351210
+grade: 2
+history: [{"due":"20220630080356297","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629080356297"},{"due":"20220719080359141","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703080359141"}]
+interval: 20
+lapses: 0
+modified: 20220723145351211
+reps: 3
+retrievability: 0.8770398141193532
+review: 20220723145351210
+stability: 88.42116896412756
+tags: 用户画像 ?
+title: 机器学习概念
+type: text/vnd.tiddlywiki
+
+```
+机器学习概念
+样本：每一行
+特征或属性：每一列
+类别表前列：特殊的特征列
+训练集：用于训练模型
+测试集：用于模型测试，测试正确率
+模型：如y=kx+b
+```
+[img[image-20220624145542811.png]]

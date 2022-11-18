@@ -1,0 +1,38 @@
+created: 20220713061736512
+difficulty: 1
+due: 20221121121207352
+grade: 2
+history: [{"due":"20220719083355828","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718083355828"},{"due":"20220811124533569","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220726124533568"}]
+interval: 22
+lapses: 0
+modified: 20220817121207352
+reps: 3
+retrievability: 0.8684516258848127
+review: 20220817121207351
+stability: 95.6320335377201
+tags: ?
+title: SQL语句分类
+type: text/vnd.tiddlywiki
+
+DDL创建和删除库或表
+CREAT TABLE;DROP TABLE
+CREAT DATABASE;DROP DATABASE
+ALTER
+
+DCL数据控制语言 DCL
+授权或者回收授权
+GRANT;REVOKE
+
+DML对数据增删改
+INSERT 插入 增
+DELETE 删除 删
+UPDATE 更新 改
+
+DQL 查询数据，用的最多
+SELECT
+
+TPL transaction processing language事务类似于脚本，由多条sql语句组成
+BEGIN;TRANSACTION;COMMIT;ROLLBACK;……
+
+CCL cursor control language声明游标,编程时候用的
+DECLARE CURSOR;FETCH INTO

@@ -1,0 +1,22 @@
+created: 20220521031046483
+difficulty: 3.100574433688263
+due: 20221119120522905
+grade: 1
+history: [{"due":"20220524021825856","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021825856"},{"due":"20220611024910188","interval":6,"difficulty":3.9290000000000003,"stability":14.477344517323703,"retrievability":0.7290000000000001,"grade":2,"lapses":0,"reps":2,"review":"20220528024910188"},{"due":"20220725130220864","interval":16,"difficulty":3.019081886203402,"stability":41.76374471765233,"retrievability":0.8900818862034015,"grade":2,"lapses":0,"reps":3,"review":"20220613130220863"}]
+interval: 50
+lapses: 0
+modified: 20220802120522905
+reps: 4
+retrievability: 0.8814925474848609
+review: 20220802120522905
+stability: 109.45220218462816
+tags: hive ?
+title: hive的优化
+type: text/vnd.tiddlywiki
+
+动态分区
+压缩
+写入时压缩
+分桶
+数据倾斜
+索引

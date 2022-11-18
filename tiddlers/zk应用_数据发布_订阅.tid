@@ -1,0 +1,17 @@
+created: 20220521141513072
+difficulty: 2.9996600359397982
+due: 20221226014321123
+grade: 2
+history: [{"due":"20220524065414474","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065414474"},{"due":"20220621030549424","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531030549424"},{"due":"20220813015403987","interval":23,"difficulty":3.912185197386786,"stability":51.190821615656525,"retrievability":0.889754085535843,"grade":1,"lapses":0,"reps":3,"review":"20220623015403987"}]
+interval: 58
+lapses: 0
+modified: 20220820014321123
+reps: 4
+retrievability: 0.8874748385530122
+review: 20220820014321123
+stability: 128.36424721745314
+tags: zookeeper ?
+title: zk应用:数据发布/订阅
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-21_22-15-04.jpg]]

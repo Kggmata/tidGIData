@@ -1,0 +1,17 @@
+created: 20220731005043046
+modified: 20220731005957771
+tags: ? flink
+title: doris和yarn混合部署的问题
+type: text/vnd.tiddlywiki
+
+https://blog.51cto.com/u_15049778/4327650
+
+```
+端口冲突
+```
+[img[Doris与Hadoop yarn混合部署遇到的坑_mapred2022-07-31 08_51_12.png]]
+[img[Doris与Hadoop yarn混合部署遇到的坑_配置项_022022-07-31 08_51_19.png]]
+
+```
+
+```

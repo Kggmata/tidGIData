@@ -1,0 +1,27 @@
+created: 20220524224312526
+difficulty: 1.0178159202046757
+due: 20221017022226230
+grade: 1
+history: [{"due":"20220529145544047","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528145544047"},{"due":"20220624051232548","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602051232548"},{"due":"20220626104306683","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625104306683"},{"due":"20220629014834054","interval":3,"difficulty":2.5872713285758855,"stability":0.05488315248213783,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220628014834053"},{"due":"20220711140814506","interval":3,"difficulty":1,"stability":10.115582029778109,"retrievability":0.0031537199647398966,"grade":2,"lapses":2,"reps":2,"review":"20220701140814506"},{"due":"20220713011748710","interval":11,"difficulty":2.0917474474731805,"stability":0.04065715014820503,"retrievability":0.8917474474731802,"grade":0,"lapses":3,"reps":1,"review":"20220712011748709"},{"due":"20220728071525917","interval":8,"difficulty":1,"stability":7.994100533111112,"retrievability":9.917894733222074e-10,"grade":2,"lapses":3,"reps":2,"review":"20220720071525917"},{"due":"20220805123500052","interval":15,"difficulty":2.020618663883727,"stability":0.03011942545495654,"retrievability":0.8206186638837268,"grade":0,"lapses":4,"reps":1,"review":"20220804123500052"},{"due":"20220814123006763","interval":4,"difficulty":1,"stability":6.2864893343222565,"retrievability":8.378998451135208e-7,"grade":2,"lapses":4,"reps":2,"review":"20220808123006763"}]
+interval: 12
+lapses: 4
+modified: 20220820022226230
+reps: 3
+retrievability: 0.8178159202046758
+review: 20220820022226229
+stability: 57.83082761332508
+tags: hive ?
+title: 如何理解Bucket-MapJoin
+type: text/vnd.tiddlywiki
+
+（1）作用
+
+两个表join的时候，小表不足以放到内存中，但是又想用map side join这个时候就要用到bucket Map join。其方法是两个join表在join key上都做hash bucket，并且把你打算复制的那个（相对）小表的bucket数设置为大表的倍数。这样数据就会按照key join，做hash bucket。小表依然复制到所有节点，Map join的时候，小表的每一组bucket加载成hashtable，与对应的一个大表bucket做局部join，这样每次只需要加载部分hashtable就可以了。
+[img[Bucket Map Join in Hive. This ar2022-06-25 18_42_11.png]]
+（2）条件
+
+`1） set hive.optimize.bucketmapjoin = true;
+2） 一个表的bucket数是另一个表bucket数的整数倍
+3） bucket列 == join列
+4） 必须是应用在map join的场景中
+注意：如果表不是bucket的，则只是做普通join。`

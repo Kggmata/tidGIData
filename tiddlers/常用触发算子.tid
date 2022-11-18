@@ -1,0 +1,100 @@
+created: 20220525005200412
+difficulty: 2.148323144540529
+due: 20220828131855092
+grade: 1
+history: [{"due":"20220529150056023","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150056023"},{"due":"20220602104740949","interval":4,"difficulty":3.331064787343914,"stability":0.11806790392114878,"retrievability":0.14564366571177542,"grade":0,"lapses":1,"reps":1,"review":"20220601104740949"},{"due":"20220618063525724","interval":4,"difficulty":1.5592350375120294,"stability":13.19171873990631,"retrievability":0.028170250168115422,"grade":2,"lapses":1,"reps":2,"review":"20220605063525724"},{"due":"20220808005712872","interval":14,"difficulty":1.6534436789511255,"stability":50.272149634652045,"retrievability":0.8942086414390964,"grade":1,"lapses":1,"reps":3,"review":"20220619005712871"},{"due":"20220812103457342","interval":53,"difficulty":2.748313026020319,"stability":0.054881164580531924,"retrievability":0.8948693470691929,"grade":0,"lapses":2,"reps":1,"review":"20220811103457341"},{"due":"20220818094501577","interval":6,"difficulty":2.9483229678211846,"stability":0.040656966333775045,"retrievability":0.000009941800865523385,"grade":0,"lapses":3,"reps":1,"review":"20220817094501577"}]
+interval: 6
+lapses: 3
+modified: 20220823131855092
+reps: 2
+retrievability: 1.7671934421049204e-7
+review: 20220823131855091
+stability: 4.697416123737398
+tags: spark ?
+title: 常用触发算子
+type: text/vnd.tiddlywiki
+
+*count算子
+
+- 功能：统计RDD集合中元素的个数，返回一个int值
+
+- 分类：触发算子
+
+- 场景：统计RDD的数据量，计算行数
+
+- 语法
+
+`def count(self) -> int`
+
+*foreach算子
+
+- 功能：对RDD中每个元素调用一次参数中的函数，没有返回值【与map场景上区别】
+
+- 分类：触发算子
+
+- 场景：对RDD中的每个元素进行输出或者保存，一般用于测试打印或者保存数据到第三方系统
+
+- 语法
+
+`def foreach(self , f : T -> None) -> None`
+
+*saveAsTextFile算子
+
+- 功能：用于将RDD的数据保存到外部文件系统中
+
+- 分类：触发算子
+
+- 场景：保存RDD的计算的结果，一般用于将结果保存到HDFS
+
+  - 文件个数 = Task个数 = 分区个数
+
+- 语法
+
+`def saveAsTextFile(self , path ) -> None`
+
+- 语法
+
+*first算子
+
+- 功能：返回RDD集合中的第一个元素
+
+- 分类：触发算子
+
+- 语法
+
+`def first(self) -> T``
+
+*take算子
+
+- 功能：返回RDD集合中的前N个元素
+
+- 分类：触发算子
+
+- 注意：take返回的结果放入Driver内存中的，take数据量不能过大
+
+- 语法
+
+`def take(self , num:int ) -> List[T]`
+
+*collect算子
+
+- 功能：将RDD转化成一个列表返回
+
+- 分类：触发算子
+
+- 注意：这个RDD的数据一定不能过大，如果RDD数据量很大，导致Driver内存溢出
+
+- 语法
+
+`def collect(self) -> List[T]`
+
+*reduce算子
+
+- 功能：将RDD中的每个元素按照给定的聚合函数进行聚合，返回聚合的结果
+
+- 分类：触发算子
+
+- 语法
+
+`# tmp用于存储每次计算临时结果，item就是RDD中的每个元素
+def reduce(self,f : (T,T) -> T) -> T`

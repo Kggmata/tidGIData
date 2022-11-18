@@ -1,0 +1,20 @@
+created: 20220720234749254
+difficulty: 1
+due: 20220825081357470
+grade: 1
+history: [{"due":"20220802090826623","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801090826622"},{"due":"20220808011207085","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011207085"}]
+interval: 5
+lapses: 1
+modified: 20220812081357470
+reps: 2
+retrievability: 0.0008160044497337299
+review: 20220812081357470
+stability: 12.910806318862917
+tags: ?
+title: flink的高可用模式
+type: text/vnd.tiddlywiki
+
+```
+在高可用模式下，ZooKeeper 主要存储最新一次 Checkpoint 成功的目录，当Flink 任务容错恢复时，会从最新成功的 Checkpoint 恢复。Zookeeper 同时也存储着 Flink 作业的元数据信息。比如在高可用模式下，Flink 会将 JobGraph 以及相关 Jar 包存储在 HDFS 上面，Zookeeper 记录着该信息。再次容错重启时，读取这些信息，进行任务启动。
+```
+[img[Flink Checkpoint 原理流程以及常见失败原因分析2022-07-21 07_48_06.png]]

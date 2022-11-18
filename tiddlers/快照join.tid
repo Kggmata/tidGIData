@@ -1,0 +1,34 @@
+created: 20220720074241196
+difficulty: 1.6008162182229808
+due: 20220906003631187
+grade: 0
+history: [{"due":"20220802050946067","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801050946067"},{"due":"20220808005344967","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807005344967"},{"due":"20220813080045754","interval":5,"difficulty":1.2008160044497336,"stability":0.05488116409496729,"retrievability":0.0008160044497337299,"grade":0,"lapses":2,"reps":1,"review":"20220812080045754"},{"due":"20220821021039656","interval":8,"difficulty":1.4008162182229809,"stability":0.040656966333775045,"retrievability":2.13773247238443e-7,"grade":0,"lapses":3,"reps":1,"review":"20220820021039655"}]
+interval: 16
+lapses: 4
+modified: 20220905003631188
+reps: 1
+retrievability: 9.834619836208002e-19
+review: 20220905003631187
+stability: 0.03011942145770373
+tags: ?
+title: 快照join
+type: text/vnd.tiddlywiki
+
+temporal join
+
+```
+类似离线数仓的拉链表, 
+flink当中有一类表叫做versioned table, 使用明细表join versioned table的过程叫做temporal join
+```
+```
+支持事件时间和处理时间
+```
+```
+语法FOR SYSTEM_TIME AS OF orders.order_time
+```
+```
+	注意事项：
+1.	事件时间的 Temporal Join 一定要给左右两张表都设置 Watermark。
+2.	事件时间的 Temporal Join 一定要把 Versioned Table 的主键包含在 Join on 的条件中。
+
+```

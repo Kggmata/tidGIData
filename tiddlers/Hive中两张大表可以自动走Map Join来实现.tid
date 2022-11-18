@@ -1,0 +1,17 @@
+created: 20220520045627419
+difficulty: 2.2548728843857733
+due: 20220902124325343
+grade: 2
+history: [{"due":"20220523041020854","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521041020854"},{"due":"20220529000503009","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000503009"},{"due":"20220625063525293","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601063525293"}]
+interval: 24
+lapses: 0
+modified: 20220625124325343
+reps: 4
+retrievability: 0.8990204493398125
+review: 20220625124325343
+stability: 69.24360400515107
+tags: hadoop hive ?
+title: Hive中两张大表可以自动走Map Join来实现
+type: text/vnd.tiddlywiki
+
+错误：走Map Join必须要有一张小表的

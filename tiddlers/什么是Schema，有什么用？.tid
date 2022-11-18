@@ -1,0 +1,55 @@
+created: 20220528135018523
+difficulty: 1
+due: 20220918055006241
+grade: 2
+history: [{"due":"20220601052941209","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052941209"},{"due":"20220622090705161","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603090705161"},{"due":"20220624071225606","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623071225606"},{"due":"20220707104429447","interval":2,"difficulty":1,"stability":11.77883909930856,"retrievability":0.05817903264660851,"grade":2,"lapses":1,"reps":2,"review":"20220625104429447"}]
+interval: 15
+lapses: 1
+modified: 20220710055006241
+reps: 3
+retrievability: 0.8744383611129658
+review: 20220710055006240
+stability: 69.51406026274908
+tags: spark ?
+title: 什么是Schema，有什么用？
+type: text/vnd.tiddlywiki
+
+- Schema是一种元数据，用于描述数据中的字段信息
+
+- 内容：字段名称、字段类型、是否为空
+
+- 基于Schema可以实现对每条数据的每列进行处理
+
+*Scheme怎么用？
+
+==**打印**==
+
+```python
+input_df.printSchema()
+```
+
+获取
+
+```
+print(input_df.schema)
+```
+
+- - **==构建==**
+
+   `python
+        """
+            需求：构建一个Schema对象，包含四列：id、name、score、gender
+            StructType：表示一个DataFrame的Schema信息，包含多列的信息
+            StructField：表示一列的Schema信息，包含列名、类型、是否允许为空
+        """
+        # 定义每一列的信息
+        col_id = StructField(name="id", dataType=StringType(), nullable=False)
+        col_name = StructField(name="name", dataType=StringType(), nullable=True)
+        col_score = StructField(name="score", dataType=DoubleType(), nullable=True)
+        col_gender = StructField(name="gender", dataType=BooleanType(), nullable=True)
+        # 构建成一个DataFrame的Schema信息
+        create_schema = StructType(fields=[col_id, col_name, col_score, col_gender])
+      # 打印Schema信息
+        print(create_schema)`
+
+

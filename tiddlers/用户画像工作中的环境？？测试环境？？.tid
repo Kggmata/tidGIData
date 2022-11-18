@@ -1,0 +1,31 @@
+created: 20220617025201247
+difficulty: 1.0824752287483903
+due: 20220915113650090
+grade: 1
+history: [{"due":"20220620003000501","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619003000501"},{"due":"20220704021729992","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621021729992"}]
+interval: 16
+lapses: 0
+modified: 20220707113650090
+reps: 3
+retrievability: 0.8824752287483904
+review: 20220707113650089
+stability: 70.21185375754096
+tags: 用户画像 ?
+title: 用户画像工作中的环境？？测试环境？？
+type: text/vnd.tiddlywiki
+
+* windows整的项目环境，如果运行项目之外的pyspark代码大家注意各个spark版本之间差异
+
+* 线上测试环境：虚拟环境(沙箱环境)
+
+* conda list 查看有哪些沙箱环境
+
+* conda create -n bigdataUserprofile python==3.7
+
+* conda create -n bigdataRecommendation python==3.8
+
+* conda activate bigdataUserprofile 
+
+* pip install -r requirements.txt安装python包
+
+* 正常使用pycharm连接

@@ -1,0 +1,49 @@
+created: 20220525233944525
+difficulty: 1
+due: 20220930112659906
+grade: 2
+history: [{"due":"20220531130124921","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130124921"},{"due":"20220624014952317","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220603014952317"}]
+interval: 22
+lapses: 0
+modified: 20220625112659906
+reps: 3
+retrievability: 0.8969301616777541
+review: 20220625112659905
+stability: 96.59359316336112
+tags: 数据结构 ?
+title: 选择排序
+type: text/vnd.tiddlywiki
+
+遍历每次找最小值取出来,然后从原列表删除这个值.升序
+
+`def select_sort(list0: list):
+    return_list = []
+    for i in range(len(list0)):
+        min_val = min(list0)
+        list0.remove(min_val)
+        return_list.append(min_val)
+    return return_list
+
+
+print(select_sort([1111, 3, 2, 1]))`
+
+缺点:
+
+1. 生成了两个列表,占内存.不是原地排序
+
+2. 复杂度是o(n^2)
+
+优化: 找到最小值,和列表开头做交换,遍历列表长度-1次
+
+`def select_sort_optimize(list0: list):
+    for i in range(len(list0) - 1):
+        index = i
+        for j in range(i + 1, len(list0)):
+            if list0[index] > list0[j]:
+                index = j
+                exchange_flag = True
+        list0[i], list0[index] = list0[index], list0[i]
+    return list0
+
+
+print(select_sort_optimize([1, 2, 3, 1, 2, 5, 1]))`

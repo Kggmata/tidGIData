@@ -1,0 +1,17 @@
+created: 20220521012045337
+difficulty: 2.2508942029413816
+due: 20220905020315314
+grade: 2
+history: [{"due":"20220523081503341","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521081503341"},{"due":"20220529001227948","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523001227948"},{"due":"20220625123741853","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601123741853"}]
+interval: 25
+lapses: 0
+modified: 20220626020315314
+reps: 4
+retrievability: 0.8950417678954212
+review: 20220626020315313
+stability: 71.1902896812924
+tags: spark ?
+title: 构建一个SparkContext对象
+type: text/vnd.tiddlywiki
+
+sc = SparkContext(conf=conf)

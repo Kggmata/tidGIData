@@ -1,0 +1,24 @@
+created: 20220709070114964
+difficulty: 2.4002014650387458
+due: 20221012133853279
+grade: 0
+history: [{"due":"20220713025331198","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712025331197"},{"due":"20220721013100787","interval":8,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220720013100787"},{"due":"20220727141701462","interval":6,"difficulty":1.2001968102391352,"stability":0.05488119468553914,"retrievability":0.00019681023913521717,"grade":0,"lapses":2,"reps":1,"review":"20220726141701462"},{"due":"20220803142400185","interval":7,"difficulty":1.400198268087782,"stability":0.04065697172950195,"retrievability":0.0000014578486469709633,"grade":0,"lapses":3,"reps":1,"review":"20220802142400185"},{"due":"20220808004449193","interval":5,"difficulty":1.6002006271396487,"stability":0.03011942225715429,"retrievability":0.000002359051866785058,"grade":0,"lapses":4,"reps":1,"review":"20220807004449193"},{"due":"20220812103307227","interval":4,"difficulty":1.800201465038249,"stability":0.022313016409674678,"retrievability":8.378986003468553e-7,"grade":0,"lapses":5,"reps":1,"review":"20220811103307227"},{"due":"20220818094415468","interval":6,"difficulty":2.0002014650387454,"stability":0.016529888968407916,"retrievability":4.963059682997557e-13,"grade":0,"lapses":6,"reps":1,"review":"20220817094415468"},{"due":"20220824131751270","interval":6,"difficulty":2.2002014650387456,"stability":0.012245642933642305,"retrievability":2.4603616106615875e-17,"grade":0,"lapses":7,"reps":1,"review":"20220823131751270"}]
+interval: 49
+lapses: 8
+modified: 20221011133853279
+reps: 1
+retrievability: 8.033683190506035e-184
+review: 20221011133853278
+stability: 0.009071795409204546
+tags: 用户画像 ?
+title: 操作系统基本功能
+type: text/vnd.tiddlywiki
+
+```
+- 设备管理。完成设备的请求或释放，以及设备启动等功能。
+- 文件管理。完成文件的读、写、创建及删除等功能。
+- 进程控制。完成进程的创建、撤销、阻塞及唤醒等功能。
+- 进程通信。完成进程之间的消息传递或信号传递等功能。
+- 内存管理。完成内存的分配、回收以及获取作业占用内存区大小及地址等功能
+```
+[img[Kernel_Layout2022-08-07 08_43_26.png]]

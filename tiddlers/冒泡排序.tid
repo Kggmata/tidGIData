@@ -1,0 +1,44 @@
+created: 20220525233634212
+difficulty: 1
+due: 20220930092622514
+grade: 2
+history: [{"due":"20220531130123248","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130123248"},{"due":"20220624014850490","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220603014850490"}]
+interval: 22
+lapses: 0
+modified: 20220625092622514
+reps: 3
+retrievability: 0.8969301616777541
+review: 20220625092622514
+stability: 96.59359316336112
+tags: 数据结构 ?
+title: 冒泡排序
+type: text/vnd.tiddlywiki
+
+升序办法,遍历列表,如果后一个比前一个小,则交换位置,这会导致每次遍历,最大的会在列表最后.
+
+`def bubble_sort(list0):
+    for i in range(len(list0) - 1):
+        for j in range(len(list0) - i - 1):
+            if list0[j] > list0[j + 1]:
+                list0[j], list0[j + 1] = list0[j + 1], list0[j]
+    return list0
+
+
+
+print(bubble_sort([11, 3, 4, 1111, 55]))`
+
+改进优化: 如果一次冒泡过程中没有发生交换,则判断已经排好序,则直接返回
+
+`def bubble_sort(list0):
+    for i in range(len(list0) - 1):
+        sort_flag = False
+        for j in range(len(list0) - i - 1):
+            if list0[j] > list0[j + 1]:
+                list0[j], list0[j + 1] = list0[j + 1], list0[j]
+                sort_flag = True
+        if sort_flag:
+            return list0
+    return list0
+
+
+print(bubble_sort([1,3,4]))`

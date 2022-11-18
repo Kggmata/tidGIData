@@ -1,0 +1,6 @@
+**功能**：提供一个交互式的命令行，用于测试开发Spark的程序代码
+
+- spark-shell：基于Scala语言开发Spark的测试命令行
+- spark-sql：基于SQL语言开发Spark的测试命令行
+- pypark：基于Python语言开发Spark的测试命令行
+- 注意：本质上是运行了一个Spark程序

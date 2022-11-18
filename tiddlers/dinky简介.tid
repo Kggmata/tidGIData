@@ -1,0 +1,15 @@
+created: 20220731072024392
+modified: 20220731072540124
+tags: ? flink
+title: dinky简介
+type: text/vnd.tiddlywiki
+
+http://www.dlink.top/
+
+```
+data integrate no knotty
+开箱即用的一站式实时计算平台, 以flink为基础, 连接olap和data lake等框架
+致力于流批一体和湖仓一体
+```
+
+[img[structure2022-07-31 15_22_15.png]]

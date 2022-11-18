@@ -1,0 +1,18 @@
+created: 20220521082607414
+difficulty: 2.665933493461095
+due: 20220912071116959
+grade: 2
+history: [{"due":"20220524063128946","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522063128945"},{"due":"20220527012704654","interval":4,"difficulty":6.010000000000001,"stability":0.2500261494800798,"retrievability":0.81,"grade":0,"lapses":1,"reps":1,"review":"20220526012704654"},{"due":"20220601145252895","interval":5,"difficulty":6.3316034514288315,"stability":0.08746685450248547,"retrievability":0.121603451428831,"grade":0,"lapses":2,"reps":1,"review":"20220531145252895"},{"due":"20220608112648515","interval":3,"difficulty":4.558554598001328,"stability":4.95015846238424,"retrievability":0.026951146572495664,"grade":2,"lapses":2,"reps":2,"review":"20220603112648514"},{"due":"20220704063831363","interval":9,"difficulty":3.584225968109629,"stability":21.75921186183319,"retrievability":0.8256713701083009,"grade":2,"lapses":2,"reps":3,"review":"20220612063831363"}]
+interval: 26
+lapses: 2
+modified: 20220708071116959
+reps: 4
+retrievability: 0.8817075253514659
+review: 20220708071116959
+stability: 66.33186105230021
+tags: hadoop ?
+title: hadoop2 3 hdfs端口号区别
+type: text/vnd.tiddlywiki
+
+hdfs9870
+50070

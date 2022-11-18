@@ -1,0 +1,24 @@
+created: 20220723020028741
+difficulty: 1
+due: 20221009120743150
+grade: 0
+history: [{"due":"20220822141008770","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821141008770"}]
+interval: 48
+lapses: 1
+modified: 20221008120743150
+reps: 1
+retrievability: 1.0874385510043795e-22
+review: 20221008120743150
+stability: 0.07408182272361549
+tags: ?
+title: flink orderby, limit
+type: text/vnd.tiddlywiki
+
+```
+order by排序
+batch/streaming都可, 但是一般streaming不怎么用
+流当中使用order by必须要有时间属性字段, 时间属性必须为升序时间属性
+
+limit
+batch/streaming都可, 但是一般streaming不怎么用
+```

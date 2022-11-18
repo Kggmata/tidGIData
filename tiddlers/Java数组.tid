@@ -1,0 +1,19 @@
+created: 20220724124637622
+difficulty: 0.025386988635295055
+due: 20220827143625584
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143625584
+reps: 1
+retrievability: 1
+review: 20220826143625584
+stability: 0.10000000088475645
+tags: flink ?
+title: Java数组
+type: text/vnd.tiddlywiki
+
+```
+dataType[size]= new dataType[size]
+```

@@ -1,0 +1,17 @@
+created: 20220628115538794
+difficulty: 1.05157013370948
+due: 20221110015800285
+grade: 1
+history: [{"due":"20220630135234952","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629135234952"},{"due":"20220721004230368","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705004230368"}]
+interval: 25
+lapses: 0
+modified: 20220730015800286
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730015800285
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: spark sql 正则提取 api
+type: text/vnd.tiddlywiki
+
+regexp_extract

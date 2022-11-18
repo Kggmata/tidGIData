@@ -1,0 +1,19 @@
+created: 20220630014700571
+difficulty: 1
+due: 20221109121514582
+grade: 2
+history: [{"due":"20220707032232822","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706032232822"},{"due":"20220726054943278","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":1,"lapses":0,"reps":2,"review":"20220710054943278"}]
+interval: 23
+lapses: 0
+modified: 20220802121514582
+reps: 3
+retrievability: 0.859946790337357
+review: 20220802121514582
+stability: 99.20238880625153
+tags: 用户画像 ?
+title: 什么是MySQL?
+type: text/vnd.tiddlywiki
+
+```
+MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。在Java企业级开发中非常常用，因为 MySQL 是开源免费的，并且方便扩展。
+```

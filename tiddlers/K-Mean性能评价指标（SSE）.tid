@@ -1,0 +1,31 @@
+created: 20220624092200016
+difficulty: 1.0471892271731462
+due: 20221005112934877
+grade: 1
+history: [{"due":"20220626052425255","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625052425255"},{"due":"20220630025022440","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629025022439"},{"due":"20220705121800351","interval":5,"difficulty":1.200816109392723,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704121800351"},{"due":"20220720015438954","interval":6,"difficulty":1,"stability":10.165567424338107,"retrievability":0.00000994283639911803,"grade":1,"lapses":2,"reps":2,"review":"20220710015438954"}]
+interval: 16
+lapses: 2
+modified: 20220726112934877
+reps: 3
+retrievability: 0.8471892271731463
+review: 20220726112934877
+stability: 71.48495588254785
+tags: 用户画像 ?
+title: K-Mean性能评价指标（SSE）
+type: text/vnd.tiddlywiki
+
+2.4.1 	K-Mean性能评价指标（SSE）
+
+[img[BillfishWZWoKZ2022-06-24 17_22_15.PNG]]
+
+```
+x	样本
+Ci	第i个簇
+ci	簇Ci的质心（该簇的均值）
+mi	第i个簇的样本个数
+K	簇的个数
+```
+
+```
+SSE (Sum of squared errors)表示数据样本与它所属的簇中心之间的距离（差异度）平方之和。直观的来说，SSE越小，表示数据点越接近它们的中心，聚类效果越好。因为对误差取了平方，更加重视那些远离中心的点。
+```

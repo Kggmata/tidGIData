@@ -1,0 +1,21 @@
+created: 20220717065409871
+difficulty: 1
+due: 20230110143526580
+grade: 2
+history: [{"due":"20220727142411648","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142411648"},{"due":"20220820132916788","interval":9,"difficulty":1,"stability":16.43779744064624,"retrievability":0.00007617775707182952,"grade":2,"lapses":0,"reps":2,"review":"20220804132916788"}]
+interval: 31
+lapses: 0
+modified: 20220904143526580
+reps: 3
+retrievability: 0.8197965116577113
+review: 20220904143526580
+stability: 127.68971336327105
+tags: ?
+title: I和U
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-07-17_14-54-03.jpg]]
+
+I = insert 
+
+u=update

@@ -1,0 +1,25 @@
+created: 20220619132802579
+difficulty: 1
+due: 20220924132618736
+grade: 2
+history: [{"due":"20220621015637956","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620015637956"},{"due":"20220705084851798","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622084851798"}]
+interval: 17
+lapses: 0
+modified: 20220709132618737
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709132618736
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: ES选举机制
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-voting.html
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-bootstrap-cluster.html
+
+Even numbers of master-eligible nodes
+
+```
+There should normally be an odd number of master-eligible nodes in a cluster. If there is an even number, Elasticsearch leaves one of them out of the voting configuration to ensure that it has an odd size.
+```

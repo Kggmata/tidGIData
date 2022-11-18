@@ -1,0 +1,17 @@
+created: 20220707091634128
+difficulty: 1
+due: 20220825083014277
+grade: 2
+history: [{"due":"20220712065655265","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711065655265"},{"due":"20220803024954933","interval":7,"difficulty":1,"stability":16.42362666911943,"retrievability":0.0006265996821383716,"grade":2,"lapses":0,"reps":2,"review":"20220718024954933"},{"due":"20220809081837307","interval":21,"difficulty":2.0739616589731287,"stability":0.07408182337905919,"retrievability":0.8739616589731285,"grade":0,"lapses":1,"reps":1,"review":"20220808081837307"}]
+interval: 4
+lapses: 1
+modified: 20220812083014277
+reps: 2
+retrievability: 0.003383404930733144
+review: 20220812083014277
+stability: 12.858711031743239
+tags: 用户画像 ?
+title: linux自带的任务调度
+type: text/vnd.tiddlywiki
+
+crontab

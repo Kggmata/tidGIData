@@ -1,0 +1,17 @@
+created: 20220629103938788
+difficulty: 1
+due: 20221030023647861
+grade: 2
+history: [{"due":"20220630135553864","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629135553864"},{"due":"20220705095448655","interval":5,"difficulty":1,"stability":0.07408249324251646,"retrievability":0.005154267178780677,"grade":0,"lapses":1,"reps":1,"review":"20220704095448655"},{"due":"20220722112010601","interval":5,"difficulty":1,"stability":12.910898599543607,"retrievability":0.0008160568173319206,"grade":2,"lapses":1,"reps":2,"review":"20220709112010601"}]
+interval: 21
+lapses: 1
+modified: 20220730023647861
+reps: 3
+retrievability: 0.8425078206421959
+review: 20220730023647861
+stability: 92.12876811271583
+tags: 用户画像 ?
+title: ANN full form
+type: text/vnd.tiddlywiki
+
+artificial neural network

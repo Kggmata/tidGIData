@@ -1,0 +1,15 @@
+created: 20220520045108843
+difficulty: 2.229344411327985
+due: 20220919071005129
+grade: 2
+history: [{"due":"20220523040811203","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040811203"},{"due":"20220529003408255","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003408255"},{"due":"20220628134150205","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602134150204"}]
+interval: 29
+lapses: 0
+modified: 20220701071005129
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701071005128
+stability: 80.25328821558121
+tags: hdfs ?
+title: SecondaryNameNode不启动也没有关系，不影响HDFS元数据的安全
+type: text/css

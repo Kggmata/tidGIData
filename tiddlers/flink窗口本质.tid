@@ -1,0 +1,7 @@
+created: 20221011022508550
+modified: 20221011022701490
+tags: ? flink
+title: flink窗口本质
+type: text/vnd.tiddlywiki
+
+窗口就是streaming到batch的桥梁, 

@@ -1,0 +1,25 @@
+created: 20220522011603813
+difficulty: 1.9009044311550263
+due: 20221105015611364
+grade: 1
+history: [{"due":"20220524005850688","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523005850688"},{"due":"20220530072406300","interval":6,"difficulty":4.280866487088946,"stability":0.16205398577412577,"retrievability":0.33306617786151194,"grade":0,"lapses":1,"reps":1,"review":"20220529072406300"},{"due":"20220603142944875","interval":4,"difficulty":4.555093468332253,"stability":0.07117400905594407,"retrievability":0.07422698124330701,"grade":0,"lapses":2,"reps":1,"review":"20220602142944875"},{"due":"20220612124345983","interval":4,"difficulty":2.757775202518216,"stability":6.164686114630763,"retrievability":0.002681734185962407,"grade":2,"lapses":2,"reps":2,"review":"20220606124345983"},{"due":"20220717010408200","interval":9,"difficulty":1.8152025724581662,"stability":32.11816839729151,"retrievability":0.8574273699399501,"grade":2,"lapses":2,"reps":3,"review":"20220615010408200"}]
+interval: 37
+lapses: 2
+modified: 20220722015611364
+reps: 4
+retrievability: 0.8857018586968602
+review: 20220722015611364
+stability: 106.48422269204838
+tags: spark ?
+title: spark standalone模式角色 以及historyserver是干什么的
+type: text/vnd.tiddlywiki
+
+''master''
+资源管理 任务调度 接客
+
+''worker''
+利用自己所在节点的资源执行master分配的任务
+
+''historyserver''
+用来记录历史程序运行信息
+日志会存在hdfs上

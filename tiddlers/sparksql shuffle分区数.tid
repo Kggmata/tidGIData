@@ -1,0 +1,42 @@
+created: 20220718131320761
+difficulty: 1.716455716201446
+due: 20221119062333173
+grade: 0
+history: [{"due":"20220801121433934","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121433934"},{"due":"20220823002004788","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220807002004788"}]
+interval: 103
+lapses: 1
+modified: 20221118062333173
+reps: 1
+retrievability: 0.516455716201446
+review: 20221118062333173
+stability: 1.4816364413634358
+tags: ?
+title: sparksql shuffle分区数
+type: text/vnd.tiddlywiki
+
+```
+spark.sql.shuffle.partitions	200	Configures the number of partitions to use when shuffling data for joins or aggregations.
+```
+```
+（3）如何去提高并行度？
+
+1、task数量，至少设置成与spark Application 的总cpu core 数量相同（最理性情况，150个core，分配150task，一起运行，差不多同一时间运行完毕）
+官方推荐，task数量，设置成spark Application 总cpu core数量的2~3倍 ，比如150个cpu core ，基本设置 task数量为 300~ 500， 与理性情况不同的，有些task 会运行快一点，比如50s 就完了，有些task 可能会慢一点，要一分半才运行完，所以如果你的task数量，刚好设置的跟cpu core 数量相同，可能会导致资源的浪费，因为 比如150task ，10个先运行完了，剩余140个还在运行，但是这个时候，就有10个cpu core空闲出来了，导致浪费。如果设置2~3倍，那么一个task运行完以后，另外一个task马上补上来，尽量让cpu core不要空闲。同时尽量提升spark运行效率和速度。提升性能。
+
+2、如何设置一个Spark Application的并行度？
+
+spark.default.parallelism 默认是没有值的，如果设置了值比如说10，是在shuffle的过程才会起作用
+（val rdd2 = rdd1.reduceByKey(_+_) //rdd2的分区数就是10，rdd1的分区数不受这个参数的影响）
+new SparkConf().set(“spark.default.parallelism”,“500”)
+
+3、如果读取的数据在HDFS上，增加block数，默认情况下split与block是一对一的，而split又与RDD中的partition对应，所以增加了block数，也就提高了并行度。
+
+4、RDD.repartition，给RDD重新设置partition的数量 [repartitions 或者 coalesce]
+
+5、reduceByKey的算子指定partition的数量
+val rdd2 = rdd1.reduceByKey(_+_ ,10) val rdd3 = rdd2.map.filter.reduceByKey(_+_)
+
+6、val rdd3 = rdd1.join（rdd2） rdd3里面partiiton的数量是由父RDD中最多的partition数量来决定，因此使用join算子的时候，增加父RDD中partition的数量。
+
+7、spark.sql.shuffle.partitions //spark sql中shuffle过程中partitions的数量
+```

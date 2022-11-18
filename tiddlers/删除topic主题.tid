@@ -1,0 +1,34 @@
+created: 20220609110644750
+difficulty: 1
+due: 20220928094337171
+grade: 2
+history: [{"due":"20220614101159143","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613101159143"},{"due":"20220702024144714","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024144713"}]
+interval: 19
+lapses: 0
+modified: 20220705094337171
+reps: 3
+retrievability: 0.8790734948134195
+review: 20220705094337171
+stability: 84.74278121619727
+tags: kafka ?
+title: 删除topic主题
+type: text/vnd.tiddlywiki
+
+```
+bin/kafka-topics.sh --delete --zookeeper zk --topic topicname
+--delete 表示删除
+--zookeeper 表示给出ZK的地址，可以给一台ZK也可以3台都给
+--topic 被删除的topic主题名称
+
+# 演示删除bj59这个topic
+bin/kafka-topics.sh --delete --zookeeper node1:2181 --topic bj59
+
+删除成功（表面成功），查看不到这个topic了。
+
+kafka默认只是`标记删除`，物理实体没有被删除。
+
+如果想通过这个命令，物理清楚它，那么需要在`config/server.properties`中配置：
+
+`delete.topic.enable=true
+```
+

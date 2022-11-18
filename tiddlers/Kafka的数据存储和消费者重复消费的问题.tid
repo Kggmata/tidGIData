@@ -1,0 +1,51 @@
+created: 20220609111146957
+difficulty: 1.0731304672290258
+due: 20220929074910329
+grade: 1
+history: [{"due":"20220614102811673","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102811673"},{"due":"20220702051853147","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616051853147"}]
+interval: 20
+lapses: 0
+modified: 20220706074910329
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706074910329
+stability: 84.8538234387497
+tags: kafka ?
+title: Kafka的数据存储和消费者重复消费的问题
+type: text/vnd.tiddlywiki
+
+`Kafka的数据是不会主动删除的`
+
+Kakfa的数据，会保存（默认）7天，也就是数据写入kafka开始，到7天后，这条数据才会被Kafka删除。
+
+在结合，消费者可以重复的消费到同一条数据，可以证实：数据确实没有删除。
+
+> 如果数据不删除，作为消费者，肯定想不消费到重复的数据。
+>
+> 你不想消费重复的数据，但是kafka数据又不删除，那么如何做到呢？
+>
+> 这就靠消费者的offset记录机制。
+
+
+''如何确保不重复消费数据''
+
+消费者在消费出来数据后，可以选择，将当前消费的数据的`offset`记录下来，
+
+有两种方式：
+
+```
+1. Kafka提供了一个内置主题：`_consumer_offsets`可以用来记录每个消费者上一次的消费位置
+2. 自己管理，自己将offset记录，比如记录到mysql，启动的时候，自行提供本次启动从哪个offset开始
+```
+
+> 方式1，Kafka的Python API内置了这个功能
+>
+> Kafka Python API的Consumer对象，默认：
+>
+> - 每隔一段时间（5秒）会向内置主题：_consumer_offsets提交当前消费到哪里
+>
+> 如果想要手动消费：参考上文代码。
+
+
+
+

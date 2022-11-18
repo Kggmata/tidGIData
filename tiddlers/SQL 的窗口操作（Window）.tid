@@ -1,0 +1,27 @@
+created: 20220717074400684
+difficulty: 1
+due: 20220824102652586
+grade: 1
+history: [{"due":"20220728064927227","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220727064927227"},{"due":"20220806064518459","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617775707182952,"grade":0,"lapses":1,"reps":1,"review":"20220805064518459"}]
+interval: 6
+lapses: 1
+modified: 20220811102652586
+reps: 2
+retrievability: 0.00019680286925510766
+review: 20220811102652585
+stability: 12.92339166423087
+tags: ?
+title: SQL 的窗口操作（Window）
+type: text/vnd.tiddlywiki
+
+```
+1.6.1 	窗口的概述
+在流处理应用中，数据是连续不断的，因此我们不可能等到所有数据都到了才开始处理。当然我们可以每来一个消息就处理一次，但是有时我们需要做一些聚合类的处理，例如：在过去的1分钟内有多少用户点击了我们的网页。在这种情况下，我们必须定义一个窗口，用来收集最近一分钟内的数据，并对这个窗口内的数据进行计算。
+Flink 认为 Batch 是 Streaming 的一个特例，所以 Flink 底层引擎是一个流式引擎，在上面实现了流处理和批处理。而窗口（window）就是从 Streaming 到 Batch 的一个桥梁。
+	一个Window代表有限对象的集合。一个窗口有一个最大的时间戳，该时间戳意味着在其代表的某时间点——所有应该进入这个窗口的元素都已经到达
+	Window就是用来对一个无限的流设置一个有限的集合，在有界的数据集上进行操作的一种机制。
+	在Table API和SQL中，主要有两种窗口：Group Windows 和 Over Windows。
+	Group Windows 根据时间或行计数间隔将组行聚合成有限的组，并对每个组计算一次聚合函数
+	Over Windows 窗口内聚合为每个输入行在其相邻行范围内计算一个聚合
+
+```

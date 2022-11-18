@@ -1,0 +1,17 @@
+created: 20220529053035846
+difficulty: 1
+due: 20220920142205664
+grade: 2
+history: [{"due":"20220601055222300","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531055222300"},{"due":"20220622130340588","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130340588"}]
+interval: 20
+lapses: 0
+modified: 20220623142205664
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623142205664
+stability: 89.0394510841741
+tags: spark ?
+title: RDD如果有多个分区，降低分区只能使用coalesce，调大分区只能使用repartition
+type: text/vnd.tiddlywiki
+
+错误：coalesce或者repartition都可以实现调大或者降低分区

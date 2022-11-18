@@ -1,0 +1,25 @@
+created: 20220601012057824
+difficulty: 1
+due: 20220923142450100
+grade: 2
+history: [{"due":"20220603145211575","interval":0,"difficulty":1.7275095844283441,"stability":0.1296875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220602145211575"},{"due":"20220625121906099","interval":4,"difficulty":1,"stability":19.03598280903463,"retrievability":0.03878686052566552,"grade":2,"lapses":0,"reps":2,"review":"20220606121906099"}]
+interval: 20
+lapses: 0
+modified: 20220626142450100
+reps: 3
+retrievability: 0.895210703053972
+review: 20220626142450100
+stability: 89.03336733877475
+tags: hbase ?
+title: hbase应用场景
+type: text/vnd.tiddlywiki
+
+[img[20220601092043.png]][img[20220601092025.png]]
+
+很广泛
+
+*数据量很大
+
+*有随机访问的需求
+
+只要满足上述两个要求,就非常适合使用hbase

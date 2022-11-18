@@ -1,0 +1,38 @@
+created: 20220609020013643
+difficulty: 1.0750061694178736
+due: 20220907111732585
+grade: 1
+history: [{"due":"20220613135142178","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612135142178"},{"due":"20220616062506444","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615062506444"},{"due":"20220629002344887","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":1,"lapses":1,"reps":2,"review":"20220617002344887"}]
+interval: 15
+lapses: 1
+modified: 20220702111732585
+reps: 3
+retrievability: 0.8750061694178737
+review: 20220702111732585
+stability: 66.66933635574435
+tags: kafka ?
+title: kafka的优势
+type: text/vnd.tiddlywiki
+
+```
+1、可靠性：分布式的，分区，复制和容错。
+2、可扩展性：kafka消息传递系统轻松缩放，无需停机。
+3、耐用性：kafka使用分布式提交日志，这意味着消息会尽可能快速的保存在磁盘上，因此它是持久的。 
+4、性能：kafka对于发布和定于消息都具有高吞吐量。即使存储了许多TB的消息，他也爆出稳定的性能。 
+kafka非常快：保证零停机和零数据丢失
+```
+
+```
+Kafka的补充说明：
+
+kafka消息保留在磁盘上，并在集群内复制以防止数据丢失（不能提高数据的读取效率）。
+消费端为拉模型来主动拉取数据。
+
+1、Consumer Group：每一个Consumer属于一个特定的Consumer Group（可以为每个Consumer指定 groupName）
+2、Broker：kafka集群中包含一个或者多个服务实例
+3、Topic：每条发布到kafka集群的消息都有一个类别，分类
+4、Partition：Partition是一个物理上的概念，每个Topic包含一个或者多个Partition
+5、segment：一个partition当中存在多个segment文件段，每个segment分为两部分，.log文件和.index文件，
+其中.index文件是索引文件，主要用于快速查询.log文件当中数据的偏移量位置
+.log存放数据文件
+```

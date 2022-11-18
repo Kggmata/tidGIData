@@ -1,0 +1,17 @@
+created: 20220719141529879
+difficulty: 1
+due: 20220902091915336
+grade: 2
+history: [{"due":"20220802034008211","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801034008211"},{"due":"20220809081546933","interval":7,"difficulty":1,"stability":0.07408182337905919,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220808081546933"},{"due":"20220815082900924","interval":6,"difficulty":1.2001968026612373,"stability":0.05488116409496729,"retrievability":0.00019680266123736466,"grade":0,"lapses":2,"reps":1,"review":"20220814082900923"}]
+interval: 9
+lapses: 2
+modified: 20220823091915336
+reps: 2
+retrievability: 3.134711113123891e-8
+review: 20220823091915336
+stability: 10.16565225180782
+tags: ?
+title: hive修改编码
+type: text/vnd.tiddlywiki
+
+alter database 库名 charset

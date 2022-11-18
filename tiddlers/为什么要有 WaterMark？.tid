@@ -1,0 +1,24 @@
+created: 20220718022439203
+difficulty: 1
+due: 20230425125449488
+grade: 1
+history: [{"due":"20220731041341912","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041341912"},{"due":"20220822110542910","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806110542910"}]
+interval: 54
+lapses: 0
+modified: 20220929125449489
+reps: 3
+retrievability: 0.7072147794180235
+review: 20220929125449488
+stability: 207.93826036281
+tags: ?
+title: 为什么要有 WaterMark？
+type: text/vnd.tiddlywiki
+
+1.7.1 	为什么要有 WaterMark？
+
+```
+当 flink 以 EventTime 模式处理流数据时，它会根据数据里的时间戳来处理基于时间的算子。但是由于网络、分布式等原因，会导致数据乱序的情况。如下图所示：
+假设在一个5秒的Tumble窗口，有一个EventTime是 11秒的数据，在第16秒时候到来了。图示第11秒的数据，在16秒到来了，如下图：该如何处理迟到数据
+
+```
+[img[BillfishCpJFoQ2022-07-18 10_25_05.PNG]]

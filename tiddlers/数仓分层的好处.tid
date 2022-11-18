@@ -1,0 +1,25 @@
+created: 20220713064328812
+difficulty: 1.0684516258848127
+due: 20221117095134335
+grade: 1
+history: [{"due":"20220719083831456","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718083831456"},{"due":"20220811103502706","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726103502706"}]
+interval: 22
+lapses: 0
+modified: 20220817095134335
+reps: 3
+retrievability: 0.8684516258848127
+review: 20220817095134334
+stability: 92.04518386847433
+tags: ?
+title: 数仓分层的好处
+type: text/vnd.tiddlywiki
+
+1 清晰的数据结构
+
+2 数据血缘追踪
+
+3 减少重复开发
+
+4 复杂问题简单化
+
+5 屏蔽原始数据的异常

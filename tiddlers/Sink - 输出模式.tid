@@ -1,0 +1,212 @@
+created: 20220612085540043
+difficulty: 1
+due: 20220924074322317
+grade: 2
+history: [{"due":"20220616062940586","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615062940586"},{"due":"20220701002646495","interval":2,"difficulty":1,"stability":13.526011926209534,"retrievability":0.12395450234099842,"grade":2,"lapses":0,"reps":2,"review":"20220617002646495"}]
+interval: 18
+lapses: 0
+modified: 20220705074322317
+reps: 3
+retrievability: 0.8691752299029826
+review: 20220705074322317
+stability: 80.90041734593629
+tags: [[structed streaming]] ?
+title: Sink - 输出模式
+type: text/vnd.tiddlywiki
+
+总结
+
+| 模式     | 聚合   | 排序   | 说明                                                         |
+| -------- | ------ | ------ | ------------------------------------------------------------ |
+| append   | 不支持 | 支持   | 仅输出无界DF的当前批次`新数据`                               |
+| complete | 支持   | 支持   | 输出无界DF的当前批次的`全部数据`                             |
+| update   | 支持   | 不支持 | 仅输出无界DF的当前批次`新数据和更新数据`，不使用聚合等同于`append` |
+
+
+Spark结构化流支持3种输出模式
+
+```
+- append
+- complete
+- update
+```
+
+''1 Append模式''
+
+append模式，追加模式，它只会将本批次，在`无界DataFrame`中产生的`新行`进行输出
+
+以单词计数为例：
+
+[img[20220612145909.png]]
+批次1会输出：hadoop和spark。 刚启动无界DF是空的，hadoop和spark这两行都是新的
+
+批次2会输出：hadoop（第三行的），因为它是新的
+
+批次3会输出：lalala（第四行），因为它是新的
+
+注意点：
+
+> append模式，只能用于无聚合计算的场景，如：select、filter、where、join等.
+>
+> 如果带聚合不可以用，如果你使用会报错：
+>
+> `pyspark.sql.utils.AnalysisException: Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark;`
+
+代码演示
+
+```
+# coding:utf8
+"""
+输出模式：append演示
+"""
+
+from pyspark.sql import SparkSession
+import pyspark.sql.functions as F
+
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+line_df = spark.readStream.\
+    format("socket").\
+    option("host", "node1").\
+    option("port", 9999).\
+    load()
+
+# 对这个对象进行split切分，进行行转列变成一列的表格（SparkSQL中wordcount的计算是一致的）
+word_df = line_df.select(
+    F.explode(F.split(line_df.value, " ")).alias("word")
+)
+
+# append模式不支持聚合
+# result_df = word_df.groupBy("word").count()
+
+# 输出，输出到控制台，使用append模式
+word_df.writeStream.\
+    outputMode("append").\
+    format("console").\
+    start().\
+    awaitTermination()
+
+```
+> 适用场景：
+>
+> 一般用于偏ETL、数据过滤等非计算型任务（无聚合）
+>
+> 也就是用于：`无状态计算（Flink中会学习）`
+
+''2 Complete模式''
+
+complete模式，会在每一个批次，将`整个无界DataFrame`向外输出。
+
+[img[20220612151321.png]]
+
+如图：
+
+- 批次1，会输出hadoop2和spark1
+- 批次2，会输出hadoop3 spark1 和 flink1
+- 批次3，会输出hadoop4 spark1 和 flink1
+
+> 每一次批次，都将整个无界DataFrame内容输出
+
+
+
+> 注意，complete模式，`必须使用聚合`
+>
+> 否则会报错：
+>
+> `pyspark.sql.utils.AnalysisException: Complete output mode not supported when there are no streaming aggregations on streaming DataFrames/Datasets;`
+
+
+
+> 注意2：complete模式，会让无界DataFrame持续变大，总有内存扛不住的时候，会借助硬盘辅助
+>
+> 时间越久，越来越慢
+>
+> 当然这只是理论上，因为无界DF存储的是结果，比如单词计数，1个批次输入10W个hadoop，结果也只是hadoop,100000而已。
+
+''3 update模式''
+
+update模式的功能：在每一个批次，将无界DataFrame中，产生更新的数据进行输出，更新的数据是指：
+
+- 老数据被更改
+
+- 新数据的追加
+
+[img[20220612154656.png]]
+
+- 批次1会输出：hadoop2、spark1
+
+- 批次2会输出：hadoop3（老数据的修改）、flink1（新数据的追加）
+
+- 批次3会输出：hadoop4（老数据的修改）
+
+
+> update模式，支持聚合
+>
+> 如果不用聚合的场景，等同于：`append`
+
+> 注意：update模式，`不支持sort排序`
+>
+> 如果用排序，会报错：
+>
+> `pyspark.sql.utils.AnalysisException: Sorting is not supported on streaming DataFrames/Datasets, unless it is on aggregated DataFrame/Dataset in Complete output mode;`
+
+代码演示
+
+```
+# coding:utf8
+"""
+演示输出模式：update
+"""
+
+# Spark的结构化流，是SparkSQL作为底层，90%API和SparkSQL一致
+from pyspark.sql import SparkSession
+from pyspark.sql import DataFrame
+import pyspark.sql.functions as F
+
+# 如果遇到问题可以配置如下的环境变量来解决
+# import os
+# os.environ['PYSPARK_PYTHON'] = "/export/server/anaconda3/bin/python"
+# os.environ['PYSPARK_DRIVER_PYTHON'] = "/export/server/anaconda3/bin/python"
+# os.environ['JAVA_HOME'] = "/export/server/jdk"
+
+
+# 构建SparkSession对象，作为执行环境的入口
+# spark: SparkSession 类型标记的意思，标记spark对象的类型是SparkSession，是一种注释
+spark: SparkSession = SparkSession.builder.\
+    appName("Hello Stream").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", "1").\
+    master("local[*]").\
+    getOrCreate()
+
+line_df: DataFrame = spark.readStream.\
+    format("socket").\
+    option("host", "node1").\
+    option("port", 9999).\
+    load()
+
+# 对这个对象进行split切分，进行行转列变成一列的表格（SparkSQL中wordcount的计算是一致的）
+word_df = line_df.select(
+    F.explode(F.split(line_df.value, " ")).alias("word")
+)
+
+# group by 计算单词次数
+result_df = word_df.groupBy("word").count()
+
+# 输出，输出到控制台
+# 注意：不支持排序，result_df.sort("count", ascending=True).\
+result_df.\
+    writeStream.\
+    outputMode("update").\
+    format("console").\
+    start().\
+    awaitTermination()
+
+```

@@ -1,0 +1,15 @@
+created: 20220521005900771
+difficulty: 3.2922299337198906
+due: 20221210054717992
+grade: 1
+history: [{"due":"20220523080748396","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521080748396"},{"due":"20220524002304081","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523002304081"},{"due":"20220530124642568","interval":2,"difficulty":5.062693749691563,"stability":5.0012666753594,"retrievability":0.7626937496915629,"grade":2,"lapses":1,"reps":2,"review":"20220525124642567"},{"due":"20220621140321425","interval":8,"difficulty":4.10759617656605,"stability":18.572616996429506,"retrievability":0.8449024268744862,"grade":2,"lapses":1,"reps":3,"review":"20220602140321425"},{"due":"20220811041344285","interval":20,"difficulty":3.2003379474227076,"stability":49.72865698471599,"retrievability":0.892741770856658,"grade":2,"lapses":1,"reps":4,"review":"20220622041344284"}]
+interval: 54
+lapses: 1
+modified: 20220815054717992
+reps: 5
+retrievability: 0.8918919862971826
+review: 20220815054717992
+stability: 117.45197646981347
+tags: spark ?
+title: 问题2：为什么不直接安装Python，而使用Anaconda进行安装？
+type: text/css

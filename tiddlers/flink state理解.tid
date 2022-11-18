@@ -1,0 +1,19 @@
+created: 20220719112643299
+difficulty: 1
+due: 20230617022424024
+grade: 1
+history: [{"due":"20220801131952954","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131952954"},{"due":"20220822125033145","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806125033145"}]
+interval: 66
+lapses: 0
+modified: 20221011022424024
+reps: 3
+retrievability: 0.6543036435229179
+review: 20221011022424023
+stability: 248.56419911486927
+tags: ?
+title: flink state理解
+type: text/vnd.tiddlywiki
+
+```
+State一般指一个具体的 Task/Operator 的状态，State数据默认保存在 Java 的堆内存中
+```

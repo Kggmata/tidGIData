@@ -1,0 +1,18 @@
+created: 20220820065641411
+modified: 20220820065807514
+tags: ? flink
+title: 什么是集成学习
+type: text/vnd.tiddlywiki
+
+```
+ensamble learning
+集成学习
+将若干个弱分类器(分类准确率略好于随机猜想的分类器classifier) 或者 回归器组合产生一个新的分类器
+```
+```
+优势
+1 性能更好
+2 鲁棒性更强
+3 更加合理的边界
+4 适应不同的样本量
+```

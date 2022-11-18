@@ -1,0 +1,17 @@
+created: 20220719144629487
+difficulty: 1
+due: 20220824083009684
+grade: 2
+history: [{"due":"20220802034837105","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801034837105"}]
+interval: 7
+lapses: 0
+modified: 20220808083009684
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808083009684
+stability: 16.423571292705216
+tags: ?
+title: spark数据倾斜
+type: text/vnd.tiddlywiki
+
+https://www.51cto.com/article/702345.html

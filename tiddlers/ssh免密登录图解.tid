@@ -1,0 +1,17 @@
+created: 20220521140812976
+difficulty: 3.2283008632464254
+due: 20221011065324489
+grade: 1
+history: [{"due":"20220524065324972","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065324972"},{"due":"20220530073021672","interval":7,"difficulty":5.8915901242788244,"stability":0.11806790392114878,"retrievability":0.6915901242788246,"grade":0,"lapses":1,"reps":1,"review":"20220529073021672"},{"due":"20220609143123446","interval":4,"difficulty":4.11976037444694,"stability":6.740608394878824,"retrievability":0.028170250168115422,"grade":2,"lapses":1,"reps":2,"review":"20220602143123446"},{"due":"20220715133245375","interval":10,"difficulty":3.1750568367741367,"stability":25.890416996435846,"retrievability":0.8552964623271957,"grade":2,"lapses":1,"reps":3,"review":"20220612115011248"}]
+interval: 39
+lapses: 1
+modified: 20220721065324490
+reps: 4
+retrievability: 0.8532440264722886
+review: 20220721065324488
+stability: 82.28453235129918
+tags: linux ?
+title: ssh免密登录图解
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-21_22-08-04.jpg]]

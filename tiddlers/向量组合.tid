@@ -1,0 +1,87 @@
+created: 20220625004708771
+difficulty: 1.071305136947512
+due: 20221020081135421
+grade: 1
+history: [{"due":"20220630081944225","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081944225"},{"due":"20220719144749697","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703144749697"}]
+interval: 21
+lapses: 0
+modified: 20220724081135421
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724081135421
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 向量组合
+type: text/vnd.tiddlywiki
+
+[img[image-20220624163324172.png]]
+
+```
+#!/usr/bin/env python
+# @desc : 演示sparkml的stringindexer将字符类型转化为数字类型
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+import os
+
+from pyspark import SparkContext
+from pyspark.ml.feature import StringIndexer, VectorAssembler
+from pyspark.ml.linalg import Vectors
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType, StringType
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    spark = SparkSession \
+        .builder \
+        .appName("testAgeModel") \
+        .master("local[*]") \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+
+    dataset = spark.createDataFrame(
+        [(0, 18, 1.0, 1.0),(0, 18, 3.0, 1.0),(0, 18, 1.0, 2.0)],
+        ["id", "hour", "mobile", "clicked"])
+    dataset.show()
+    #+---+----+------+-------+
+    # | id|hour|mobile|clicked|
+    # +---+----+------+-------+
+    # |  0|  18|   1.0|    1.0|
+    # |  0|  18|   3.0|    1.0|
+    # |  0|  18|   1.0|    2.0|
+    # +---+----+------+-------+
+    dataset.printSchema()
+    # root
+    # | -- id: long(nullable=true)
+    # | -- hour: long(nullable=true)
+    # | -- mobile: double(nullable=true)
+
+    # | -- clicked: double(nullable=true)
+    # TODO 需求：需要将多个特征组合为一个特征向量，features=(0,18,1.0)   class label=1.0 vector类型 才能够通过向量构建矩阵
+    # setInputCols 设置的输入的列，可以有多个列，使用list包装
+    # setOutputCol 设置输出列，输出列的名字自己定义
+    vector = VectorAssembler().setInputCols(["id", "hour", "mobile"]).setOutputCol("features")
+    vecResult = vector.transform(dataset)
+    vecResult.show()
+    vecResult.printSchema()
+
+```
+
+总结：
+
+```
+SparkMl的特征工程非常多的API
+重点掌握StringIndexer和VectorAsssmber的，特别是特征组合，在项目中使用
+声明：
+有的API需要先fit在transform，有的直接transform，这里不用区别
+```

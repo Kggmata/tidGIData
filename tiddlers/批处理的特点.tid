@@ -1,0 +1,17 @@
+created: 20220718121108652
+difficulty: 1
+due: 20230226143422591
+grade: 2
+history: [{"due":"20220801115614919","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115614919"},{"due":"20220822123011973","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806123011973"}]
+interval: 41
+lapses: 0
+modified: 20220916143422592
+reps: 3
+retrievability: 0.7683514093598156
+review: 20220916143422591
+stability: 162.94395244809002
+tags: ?
+title: 批处理的特点
+type: text/vnd.tiddlywiki
+
+有界 持久 大量, 适合需要访问全部记录才能完成的计算工作

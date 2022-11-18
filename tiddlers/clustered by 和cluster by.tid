@@ -1,0 +1,36 @@
+created: 20220523053549333
+difficulty: 1
+due: 20221102001220566
+grade: 2
+history: [{"due":"20220526132122691","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132122691"},{"due":"20220628141923428","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531141923428"}]
+interval: 30
+lapses: 0
+modified: 20220630001220566
+reps: 3
+retrievability: 0.8919452162171847
+review: 20220630001220566
+stability: 125.07734333382832
+tags: spark ?
+title: clustered by 和cluster by
+type: text/vnd.tiddlywiki
+
+https://medium.com/@ntnmathur/cluster-by-and-clustered-by-in-spark-sql-9af7f8b80978#:~:text=CLUSTER%20BY%20and%20CLUSTERED%20BY%20can%20be%20used%20together%20in,finally%20stored%20on%20the%20disk.
+
+What is CLUSTER BY?
+
+CLUSTER BY is a Spark SQL syntax which is used to partition the data before writing it back to the disk. Please note that the number of partitions would depend on the value of spark parameter “spark.sql.shuffle.partitions” that define the number of partitions. To understand more about CLUSTER BY, please refer this article.
+
+What is CLUSTERED BY (Bucketing)?
+
+Bucketing is a Hive concept primarily and is used to hash-partition the data when its written on disk. To understand more about bucketing and CLUSTERED BY, please refer this article.
+
+Note:
+
+CLUSTER BY and CLUSTERED BY can be used together in SPARK SQL.
+
+CLUSTER BY (which is DISTRIBUTE BY and SORT BY in tandem) decides how many files will be created as an output of the operation while CLUSTERED BY decides how many buckets would be created and how the processed data would be finally stored on the disk.
+
+CLUSTER BY is a part of spark-sql query while CLUSTERED BY is a part of the table DDL.
+
+总结来说,clustered by是建表ddl语句
+cluster by是实际处理数据时最后生产几个文件

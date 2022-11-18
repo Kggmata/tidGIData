@@ -1,0 +1,22 @@
+created: 20220729005107935
+modified: 20220729005500940
+tags: ? flink
+title: linux top和ps的区别
+type: text/vnd.tiddlywiki
+
+```
+ps看到的是命令执行瞬间的进程信息,而top可以持续的监视
+
+ps只是查看进程,而top还可以监视系统性能,如平均负载,cpu和内存的消耗
+
+另外top还可以操作进程,如改变优先级(命令r)和关闭进程(命令k)
+
+ps主要是查看进程的，关注点在于查看需要查看的进程
+
+top主要看cpu,内存使用情况，及占用资源最多的进程由高到低排序，关注点在于资源占用情况
+————————————————
+版权声明：本文为CSDN博主「han_cui」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/han_cui/article/details/72853523
+```
+[img[Snipaste_2022-07-29_08-54-13.jpg]]
+[img[Snipaste_2022-07-29_08-49-47.jpg]]

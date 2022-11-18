@@ -1,0 +1,19 @@
+created: 20220521060340607
+difficulty: 2.210762220839748
+due: 20221003023546379
+grade: 2
+history: [{"due":"20220524032218233","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032218233"},{"due":"20220602060813913","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525060813913"},{"due":"20220704065501489","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605065501489"}]
+interval: 32
+lapses: 0
+modified: 20220707023546379
+reps: 4
+retrievability: 0.8891545006575367
+review: 20220707023546379
+stability: 87.88943039453798
+tags: zookeeper ?
+title: 能否收到每次节点变化的通知？
+type: text/vnd.tiddlywiki
+
+如果节点数据的更新频率很高的话，不能。
+
+原因在于：当一次数据修改，通知客户端，客户端再次注册watch，在这个过程中，可能数据已经发生了许多次数据修改，因此，千万不要做这样的测试：”数据被修改了n次，一定会收到n次通知”来测试server是否正常工作。

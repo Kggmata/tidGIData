@@ -1,0 +1,19 @@
+created: 20220607055011022
+difficulty: 1
+due: 20220920141145305
+grade: 2
+history: [{"due":"20220611044042925","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610044042925"},{"due":"20220629112350286","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613112350286"}]
+interval: 18
+lapses: 0
+modified: 20220701141145305
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701141145305
+stability: 81.1468944767812
+tags: hbase ?
+title: 设计1  假设Rowkey使用的数据是 数字和字母（26个都用）的组合  请设计region分区（100个），确保`单条查询`性能
+type: text/vnd.tiddlywiki
+
+''单条查询'', 第一种用hash算法加密, 或者加随机前缀, 然后hexStringSplit
+
+第二种, 0-9+A-Z+a-z, [0,2,4...]+[A, C, ..]+[a,c,...],[0]+[J]+[d]

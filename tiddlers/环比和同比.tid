@@ -1,0 +1,23 @@
+created: 20220711085241011
+difficulty: 1
+due: 20221102075052418
+grade: 2
+history: [{"due":"20220713040210657","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040210657"},{"due":"20220806015006499","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721015006499"}]
+interval: 19
+lapses: 0
+modified: 20220809075052418
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809075052417
+stability: 84.88779656040188
+tags: ?
+title: 环比和同比
+type: text/vnd.tiddlywiki
+
+同比：今年的某个时间段和去年同一个时间段相比。----year on year
+
+比如：2017年7月份 和 2016年7月份；
+
+环比：今年的某个时间段和上一个相邻时间段的比较。
+
+比如：2017年7月份 和 2017年6月份；2017年第二季度 和 2017年第一季度 month on month/quarter on quarter

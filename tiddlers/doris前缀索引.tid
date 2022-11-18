@@ -1,0 +1,14 @@
+created: 20220729090401050
+modified: 20220729090622269
+tags: ? flink
+title: doris前缀索引
+type: text/vnd.tiddlywiki
+
+```
+前缀索引就给定前缀列, 按照前缀排序, 达到快速查询的索引方式
+```
+[img[Snipaste_2022-07-29_17-06-03.jpg]]
+
+```
+建表时一个表只会有一种前缀索引, 可以使用rollup来调整列顺序,
+```

@@ -1,0 +1,14 @@
+created: 20220728032015653
+modified: 20220728032034118
+tags: ? flink
+title: doris物化视图 查询改写
+type: text/vnd.tiddlywiki
+
+```
+例如：
+广告点击明细记录表中存放哪个用户点击了什么广告，从什么渠道点击的，以及点击的时间。并且在这个Base表基础上构建了一个物化视图表，存储了不同广告不同渠道的用户Bitmap值。
+由于bitmap_union这种聚合方式本身会对相同的用户user_id进行一个去重聚合。当用户查询广告在Web端的UV的时候，就可以匹配到这个物化视图。匹配到这个物化视图表后就需要对查询进行改写，将之前的对用户id求 count(distinct) 改为对物化视图中bitmap_union列求count。
+所以最后查询取物化视图的第一和第三行求Bitmap聚合中有几个值。
+
+```
+[img[BillfishsyvnFZ2022-07-28 11_20_11.PNG]]

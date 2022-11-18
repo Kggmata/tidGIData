@@ -1,0 +1,22 @@
+created: 20220723101659499
+difficulty: 1
+due: 20221028005202078
+grade: 2
+history: [{"due":"20220823061833888","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822061833887"}]
+interval: 51
+lapses: 0
+modified: 20221012005202078
+reps: 2
+retrievability: 4.609778101934696e-24
+review: 20221012005202078
+stability: 16.439759152464664
+tags: ?
+title: python当中的self
+type: text/vnd.tiddlywiki
+
+```
+和普通数相比，在类中定义函数只有一点不同，就是第一参数永远是类的本身实例变量self，并且调用时，不用传递该参数。除此之外，类的方法(函数）和普通函数没啥区别，你既可以用默认参数、可变参数或者关键字参数（*args是可变参数，args接收的是一个tuple，**kw是关键字参数，kw接收的是一个dict）。
+————————————————
+版权声明：本文为CSDN博主「CLHugh」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/CLHugh/article/details/75000104
+```

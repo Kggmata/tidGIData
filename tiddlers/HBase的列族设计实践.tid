@@ -1,0 +1,73 @@
+created: 20220606061054694
+difficulty: 1
+due: 20220920142900870
+grade: 2
+history: [{"due":"20220611003044697","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003044697"},{"due":"20220629112918272","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613112918271"}]
+interval: 18
+lapses: 0
+modified: 20220701142900870
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701142900870
+stability: 81.1468944767812
+tags: hbase ?
+title: HBase的列族设计实践
+type: text/vnd.tiddlywiki
+
+''HBase的列族，尽量少，名字尽量短''
+
+> 前提：你是重点放在Rowkey上
+>
+> 如果你为了做数据分析而用HBase，那么列族可以多
+
+- 多列族，会带来更多的HFile的合并I/O的开销，会导致磁盘、内存、CPU等都被占用
+- Rowkey附带的数据会越来越多
+- 列族的名字越长，在HFile（Cell单元格）中要记录的数据就越多
+  - 多一个字母，每一条都多存1个字母，100W条就多存100W个字母
+
+''问题：列族是HBase的列存储的基本单位，列族多了表明了列多， 单列操作应该性能提升更好''
+
+[img[20220606115726.png]]
+
+如图，2的设计，铁定比1的设计，在操作单列的时候，性能好很多。
+
+那么2是多列族设计，为什么又建议大家使用少列族设计呢？
+
+
+
+思考一个问题：你用HBase是为了玩单列操作吗？不是。
+
+HBase的各种设计：
+
+- Region的范围
+- Memstore的排序
+- HFile的合并
+- Region的Split
+
+这一系列的目的：
+
+- 基于`Rowkey`快速随机查询
+- 基于`Rowkey`开始扫描一段范围
+
+
+
+> HBase的所有精华，都在Rowkey上
+>
+> 所以说在HBase上玩单列不是不行，就是HBase的重心都花在了Rowkey身上
+>
+> 它尽管可以单列，但不一定有别的专玩列式存储的数据库强。
+
+
+
+> 如果拿HBase去做`数据分析，基于列`的各种分析
+>
+> - HBase不是不行，只能说中规中矩，没啥强的也没啥不强的，普通的列式数据库的性能
+>
+> 如果你拿HBase玩Rowkey：
+>
+> - 不好意思，市面上的都是垃圾
+
+
+
+
+

@@ -1,0 +1,37 @@
+created: 20220720025138618
+difficulty: 2.0079811836409007
+due: 20220909131852095
+grade: 0
+history: [{"due":"20220802040228314","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801040228314"},{"due":"20220822124843476","interval":5,"difficulty":1,"stability":16.306884698294827,"retrievability":0.005153782894150152,"grade":1,"lapses":0,"reps":2,"review":"20220806124843476"}]
+interval: 33
+lapses: 1
+modified: 20220908131852095
+reps: 1
+retrievability: 0.8079811836409008
+review: 20220908131852094
+stability: 0.07408182272361549
+tags: flink ?
+title: flink ddl: create
+type: text/vnd.tiddlywiki
+
+```
+create table
+create database
+create view
+create function
+```
+
+```
+表中的列:
+1 物理列: 是数据库中所说的常规列, 其定义了物理存储介质中的字段的名称, 类型和顺序. 
+2 元数据列: 是SQL标准的扩展, 允许访问数据源本身具有的一些元数据. 元数据列由metadata关键字标识. 比如从kafka的数据源当中, 读取timestamp列
+- 元数据列可以用于后续的数据处理, 或者是写入目标表当中
+- 可以使用VIRTUAL标识某个元数据列不写入到外部存储当中(不持久化)
+3 计算列: 建表ddl的时候拿其他的列计算生成的新列
+- 计算列可以包含其他列, 常量或者函数, 但是不能写个子查询进去.
+- 计算列一般是用于定义时间属性的, 比如把输入数据的时间格式化: 
+处理时间使用proctime()函数来定义处理时间列, 
+事件时间的时间戳, 比如时间字段不是timestamp(3)类型, 或者嵌套在json当中
+- 和VIRTUAL的metadata列一样, 计算列也是只能读不能写
+- 也就是说, 我们把MyTable作为数据源输入的时候, schema当中是包含cost的, 而当作sink表的时候, 是不存在cost的
+```

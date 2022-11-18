@@ -1,0 +1,13 @@
+created: 20220812081432081
+modified: 20220812081626557
+tags: ? flink
+title: sql drop, truncate, delete的区别
+type: text/vnd.tiddlywiki
+
+```
+drop表示删除表并释放空间
+
+truncate删除表内容, 释放空间, 但是表定义不删除, 表结构还在
+
+delete可以用于删除指定数据. 删除表时同样不删除表定义
+```

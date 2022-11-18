@@ -1,0 +1,24 @@
+created: 20220614141634056
+difficulty: 1
+due: 20221006121754202
+grade: 2
+history: [{"due":"20220617121436733","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121436733"},{"due":"20220618005336313","interval":1,"difficulty":1.2836910231529453,"stability":0.07416773238429089,"retrievability":0.3495295586291377,"grade":0,"lapses":1,"reps":1,"review":"20220617005336313"},{"due":"20220701005552253","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":1,"lapses":1,"reps":2,"review":"20220619005552253"},{"due":"20220706050113219","interval":16,"difficulty":2.066723080099495,"stability":0.05488141221849455,"retrievability":0.8667230800994952,"grade":0,"lapses":2,"reps":1,"review":"20220705050113219"},{"due":"20220719035138465","interval":5,"difficulty":1.2667908816606588,"stability":8.622218139611045,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220710035138465"},{"due":"20220724091826276","interval":13,"difficulty":2.319910514447974,"stability":0.040657012017596195,"retrievability":0.8531196327873154,"grade":0,"lapses":3,"reps":1,"review":"20220723091826276"},{"due":"20220802234558623","interval":9,"difficulty":2.5199105145222656,"stability":0.030119429718692865,"retrievability":7.429122478194591e-11,"grade":0,"lapses":4,"reps":1,"review":"20220801234558622"},{"due":"20220813004012935","interval":5,"difficulty":1,"stability":6.286498089269273,"retrievability":2.5350773380812285e-8,"grade":2,"lapses":4,"reps":2,"review":"20220807004012935"}]
+interval: 10
+lapses: 4
+modified: 20220817121754202
+reps: 3
+retrievability: 0.8456936478252924
+review: 20220817121754202
+stability: 49.85775245345469
+tags: 用户画像 ?
+title: 标签数据接入平台
+type: text/vnd.tiddlywiki
+
+采用的是ES
+
+* es海量数据的插入和更新(es有两套主从分布式架构，更方便读写操作）
+* es支持和Hadoop，Hive，Spark无缝集成，集成方案较稳定
+* es-hadoop可以直接解决通过sql方式将数据从hive写入到es中
+  ** 如何写入：通过建立HIve的外部表方式(数据放在Es中，Hive中拥有映射关系)
+
+从集成方面 和平台自身的性能

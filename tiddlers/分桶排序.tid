@@ -1,0 +1,19 @@
+created: 20220709110551117
+difficulty: 1
+due: 20221101122244812
+grade: 2
+history: [{"due":"20220713025919988","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712025919988"},{"due":"20220805013215690","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220720013215689"}]
+interval: 19
+lapses: 0
+modified: 20220808122244812
+reps: 3
+retrievability: 0.8853163826700388
+review: 20220808122244812
+stability: 84.88710990001034
+tags: 用户画像 ?
+title: 分桶排序
+type: text/vnd.tiddlywiki
+
+按照范围分桶bucket
+
+将不同的数字放入对应的范围桶内, 桶内排序

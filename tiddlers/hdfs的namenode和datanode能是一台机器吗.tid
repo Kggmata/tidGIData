@@ -1,0 +1,17 @@
+created: 20220521095822679
+difficulty: 2.1589394889306277
+due: 20221109051425452
+grade: 2
+history: [{"due":"20220524063321113","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522063321113"},{"due":"20220605094136538","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526094136538"},{"due":"20220714003010204","interval":14,"difficulty":3.0761955740280102,"stability":35.4805706996717,"retrievability":0.8661955740280094,"grade":2,"lapses":0,"reps":3,"review":"20220609003010204"}]
+interval: 42
+lapses: 0
+modified: 20220721051425452
+reps: 4
+retrievability: 0.8827439149026175
+review: 20220721051425452
+stability: 111.16758820629002
+tags: hdfs ?
+title: hdfs的namenode和datanode能是一台机器吗
+type: text/vnd.tiddlywiki
+
+可以,但是不推荐,会降低namenode性能

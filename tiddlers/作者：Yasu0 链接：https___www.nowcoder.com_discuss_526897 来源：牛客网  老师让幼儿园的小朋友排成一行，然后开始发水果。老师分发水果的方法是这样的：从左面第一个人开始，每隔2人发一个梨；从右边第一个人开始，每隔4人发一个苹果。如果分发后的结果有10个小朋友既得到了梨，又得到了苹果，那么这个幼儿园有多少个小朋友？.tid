@@ -1,0 +1,21 @@
+created: 20220722014557260
+difficulty: 1
+due: 20220902042609072
+grade: 2
+history: [{"due":"20220808140611011","interval":0,"difficulty":0.04223712102797944,"stability":0.1000000017695129,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220807140611011"},{"due":"20220813080512348","interval":5,"difficulty":1,"stability":0.07408182272361549,"retrievability":0.005153775687746788,"grade":0,"lapses":1,"reps":1,"review":"20220812080512348"}]
+interval: 8
+lapses: 1
+modified: 20220820042609072
+reps: 2
+retrievability: 0.000011447427772950137
+review: 20220820042609071
+stability: 12.92715884796841
+tags: ?
+title: 作者：Yasu0 链接：https://www.nowcoder.com/discuss/526897 来源：牛客网  老师让幼儿园的小朋友排成一行，然后开始发水果。老师分发水果的方法是这样的：从左面第一个人开始，每隔2人发一个梨；从右边第一个人开始，每隔4人发一个苹果。如果分发后的结果有10个小朋友既得到了梨，又得到了苹果，那么这个幼儿园有多少个小朋友？
+type: text/vnd.tiddlywiki
+
+作者：Yasu0
+链接：https://www.nowcoder.com/discuss/526897
+来源：牛客网
+
+158个小朋友。10个小朋友拿到梨和苹果最少人数是（2+1）×（4+1）×（9）+1=136人，然后从左右两端开始向外延伸，假设梨和苹果都拿到的人为“1”，左右两边的延伸数分别为：3×5－3=12人，3×5－5=10人。所以，总人数为136+12+10=158。

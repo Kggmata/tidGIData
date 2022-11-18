@@ -1,0 +1,19 @@
+created: 20220711033536028
+difficulty: 1
+due: 20221111102115451
+grade: 2
+history: [{"due":"20220713035316741","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035316741"},{"due":"20220806053048954","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721053048954"}]
+interval: 21
+lapses: 0
+modified: 20220811102115451
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811102115451
+stability: 92.05363191623492
+tags: ?
+title: SKU SPU
+type: text/vnd.tiddlywiki
+
+stock keeping unit
+
+standard product unit

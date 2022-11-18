@@ -1,0 +1,101 @@
+created: 20220717074331378
+difficulty: 1
+due: 20220825074322342
+grade: 2
+history: [{"due":"20220805134344704","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142828305"}]
+interval: 14
+lapses: 0
+modified: 20220809074322342
+reps: 2
+retrievability: 3.926042068775345e-7
+review: 20220809074322342
+stability: 16.43975634590915
+tags: ?
+title: SQL 事件时间案例
+type: text/vnd.tiddlywiki
+
+```
+来看看 Flink 中如何指定事件时间。
+Event Time时间语义使用一条数据实际发生的时间作为时间属性，在Table API & SQL中这个字段通常被称为rowtime。这种模式下多次重复计算时，计算结果是确定的。这意味着，Event Time时间语义可以保证流处理和批处理的统一
+Event Time时间语义下，我们需要设置每条数据发生时的时间戳，并提供一个Watermark。Watermark表示迟于该时间的数据都作为迟到数据对待
+	CREATE TABLE DDL 指定时间戳的方式。
+CREATE TABLE user_actions (
+  user_name STRING,
+  data STRING,
+  user_action_time TIMESTAMP(3),
+  -- 使用下面这句来将 user_action_time 声明为事件时间，并且声明 watermark 的生成规则，即 user_action_time 减 5 秒
+  -- 事件时间列的字段类型必须是 TIMESTAMP 或者 TIMESTAMP_LTZ 类型
+  WATERMARK FOR user_action_time AS user_action_time - INTERVAL '5' SECOND
+) WITH (
+  ...
+);
+在上面的DDL中，WATERMARK起到了定义Event Time时间属性的作用，在这里暂时不讲解。
+如果想使用事件时间，那么我们的时间戳类型必须是 TIMESTAMP 或者 TIMESTAMP_LTZ 类型。
+但是实际应用中时间戳一般都是秒或者是毫秒（BIGINT 类型），那这种情况怎么办？
+解决方案如下：
+CREATE TABLE user_actions (
+  user_name STRING,
+  data STRING,
+  -- 1. 这个 ts 就是常见的毫秒级别时间戳
+  ts BIGINT,
+  -- 2. 将毫秒时间戳转换成 TIMESTAMP_LTZ 类型
+  time_ltz AS TO_TIMESTAMP_LTZ(ts, 3),
+  -- 3. 使用下面这句来将 user_action_time 声明为事件时间，并且声明 watermark 的生成规则，即 user_action_time 减 5 秒
+  -- 事件时间列的字段类型必须是 TIMESTAMP 或者 TIMESTAMP_LTZ 类型
+  WATERMARK FOR time_ltz AS time_ltz - INTERVAL '5' SECOND
+) WITH (
+  ...
+);
+	使用案例
+读取order.csv'文件的数据，定义现有事件时间字段上的 watermark 生成表达式，该表达式将事件时间字段标记为事件时间属性。
+Flink SQL> create table InputTable2 (
+ `userid` varchar,
+ `timestamp` bigint,
+ `money` double,
+ `category` varchar,
+ rt AS TO_TIMESTAMP(FROM_UNIXTIME(`timestamp`))
+ ) with (
+ 'connector' = 'filesystem',
+ 'path' = 'file:///export/data/input/order.csv',
+ 'format' = 'csv'
+);
+Flink SQL> desc InputTable2;
++-----------+--------------+------+-----+---------------------------------------------+-----------+
+|      name |         type | null | key |                                      extras | watermark |
++-----------+--------------+------+-----+---------------------------------------------+-----------+
+|    userid |       STRING | TRUE |     |                                             |           |
+| timestamp |       BIGINT | TRUE |     |                                             |           |
+|     money |       DOUBLE | TRUE |     |                                             |           |
+|  category |       STRING | TRUE |     |                                             |           |
+|        rt | TIMESTAMP(3) | TRUE |     | AS TO_TIMESTAMP(FROM_UNIXTIME(`timestamp`)) |           |
++-----------+--------------+------+-----+---------------------------------------------+-----------+
+这里可以看到并没有rowtime的时间属性标记，这种方式只是增加了一个 rt 的TIMESTAMP列，因此事件时间需要结合watermark（水位线）使用，至于watermark知识点后续会讲到。
+Flink SQL> drop table InputTable2;
+[INFO] Execute statement succeed.
+
+Flink SQL> create table InputTable2 (
+`userid` varchar,
+`timestamp` bigint,
+`money` double,
+`category` varchar,
+rt AS TO_TIMESTAMP(FROM_UNIXTIME(`timestamp`)),
+watermark for rt as rt - interval '1' second
+) with (
+'connector' = 'filesystem',
+'path' = 'file:///export/data/input/order.csv',
+'format' = 'csv'
+);
+Flink SQL> desc InputTable2;
++-----------+------------------------+------+-----+---------------------------------------------+----------------------------+
+|      name  |                   type     | null | key |                                      extras |                  watermark |
++-----------+------------------------+------+-----+---------------------------------------------+----------------------------+
+|    userid  |                 STRING    | TRUE |     |                                             |                            |
+| timestamp |                 BIGINT    | TRUE |     |                                             |                            |
+|     money  |                 DOUBLE     | TRUE |     |                                             |                            |
+|  category |                 STRING     | TRUE |     |                                             |                            |
+|        rt  | TIMESTAMP(3) *ROWTIME*  | TRUE |     | AS TO_TIMESTAMP(FROM_UNIXTIME(`timestamp`)) | `rt` - INTERVAL '1' SECOND |
++-----------+------------------------+------+-----+---------------------------------------------+----------------------------+
+5 rows in set
+此时 rt 列被标记为 rowtime 的时间属性。
+
+```

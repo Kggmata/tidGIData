@@ -1,0 +1,25 @@
+created: 20220615234541982
+difficulty: 1
+due: 20220923073420536
+grade: 2
+history: [{"due":"20220619234141893","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618234141893"},{"due":"20220704061834289","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621061834289"}]
+interval: 17
+lapses: 0
+modified: 20220708073420536
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220708073420536
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: kafka日志压缩
+type: text/vnd.tiddlywiki
+
+日志压缩策略
+
+```
+Kafka还提供了“日志压缩（Log Compaction）”功能，通过这个功能可以有效的减少日志文件的大小， 缓解磁盘紧张的情况，在很多实际场景中，消息的key和value的值之间的对应关系是不断变化的，就像数据库中的数据会不断被修改一样，消费者只关心key对应的最新的value。
+
+因此，可以开启kafka 的日志压缩功能，服务端会在后台启动启动Cleaner线程池，定期将相同的key进行合并，只保留最新的 value值。日志的压缩原理是
+```
+
+[img[在这里插入图片描述2022-06-16 07_15_39.png]]

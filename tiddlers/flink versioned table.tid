@@ -1,0 +1,20 @@
+created: 20220723140635668
+difficulty: 1
+due: 20221027022451125
+grade: 1
+history: [{"due":"20220823062426101","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062426101"}]
+interval: 50
+lapses: 0
+modified: 20221011022451125
+reps: 2
+retrievability: 1.3220714356875621e-23
+review: 20221011022451125
+stability: 16.439759152464664
+tags: flink ?
+title: flink versioned table
+type: text/vnd.tiddlywiki
+
+```
+类似于hive当中的拉链表概念
+versioned table存储的数据通常存储于CDC或者会发生更新的数据. flink sql会为versioned table维护主键的历史时间版本数据
+```

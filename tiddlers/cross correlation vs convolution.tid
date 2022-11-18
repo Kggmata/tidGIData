@@ -1,0 +1,9 @@
+created: 20220819062521579
+modified: 20220819062655434
+tags: ? flink
+title: cross correlation vs convolution
+type: text/vnd.tiddlywiki
+
+狭义的textbook上的convolution, 需要将filter顺时针旋转
+
+cross correlation则省去这部分

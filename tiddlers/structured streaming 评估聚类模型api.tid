@@ -1,0 +1,19 @@
+created: 20220628003259863
+difficulty: 1
+due: 20221112092420890
+grade: 2
+history: [{"due":"20220630132517228","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132517228"},{"due":"20220721021916545","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705021916545"},{"due":"20220731021351615","interval":25,"difficulty":2.0515701337094803,"stability":0.07408184304237006,"retrievability":0.8515701337094802,"grade":0,"lapses":1,"reps":1,"review":"20220730021351615"},{"due":"20220816080147565","interval":6,"difficulty":1.2517669368164699,"stability":11.054361894149821,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220805080147564"}]
+interval: 18
+lapses: 1
+modified: 20220823092420890
+reps: 3
+retrievability: 0.8423495003259222
+review: 20220823092420889
+stability: 81.09604357941797
+tags: 用户画像 ?
+title: structured streaming 评估聚类模型api
+type: text/vnd.tiddlywiki
+
+clusteringEvaluator
+
+使用的是silhouette score

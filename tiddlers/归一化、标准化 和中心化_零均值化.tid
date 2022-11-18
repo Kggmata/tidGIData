@@ -1,0 +1,31 @@
+created: 20220624080601366
+difficulty: 1
+due: 20220923105911372
+grade: 2
+history: [{"due":"20220626050127834","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625050127834"},{"due":"20220628060947627","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220627060947627"},{"due":"20220630143538956","interval":2,"difficulty":1.2581730364369286,"stability":0.054882158045770235,"retrievability":0.05817303643692872,"grade":0,"lapses":2,"reps":1,"review":"20220629143538955"},{"due":"20220704075911888","interval":4,"difficulty":1.4586354569343425,"stability":0.04065770267064033,"retrievability":0.0004624204974138748,"grade":0,"lapses":3,"reps":1,"review":"20220703075911888"},{"due":"20220715020544582","interval":4,"difficulty":1,"stability":7.993791266530185,"retrievability":0.00003149712578482967,"grade":1,"lapses":3,"reps":2,"review":"20220707020544581"},{"due":"20220722053359373","interval":14,"difficulty":2.0314998921716847,"stability":0.030119455301110827,"retrievability":0.8314998921716845,"grade":0,"lapses":4,"reps":1,"review":"20220721053359373"},{"due":"20220804022136662","interval":9,"difficulty":1.231499892171706,"stability":5.4379026744240075,"retrievability":2.124201917654503e-14,"grade":1,"lapses":4,"reps":2,"review":"20220730022136662"}]
+interval: 9
+lapses: 4
+modified: 20220808105911372
+reps: 3
+retrievability: 0.8399802447916441
+review: 20220808105911372
+stability: 45.79139331402007
+tags: 用户画像 ?
+title: 归一化、标准化 和中心化/零均值化
+type: text/vnd.tiddlywiki
+
+https://blog.csdn.net/weixin_36604953/article/details/102652160
+
+```
+归一化(N o r m a l i z a t i o n NormalizationNormalization)：将一列数据变化到某个固定区间(范围)中，通常，这个区间是[0, 1]，广义的讲，可以是各种区间，比如映射到[0，1]一样可以继续映射到其他范围，图像中可能会映射到[0,255]，其他情况可能映射到[-1,1]；
+```
+[img[在这里插入图片描述2022-06-27 13_33_09.png]]
+
+```
+标准化(S t a n d a r d i z a t i o n StandardizationStandardization)：将数据变换为均值为0，标准差为1的分布切记，并非一定是正态的；
+```
+[img[在这里插入图片描述_fc75c16d2022-06-27 13_33_14.png]]
+
+```
+中心化：另外，还有一种处理叫做中心化，也叫零均值处理，就是将每个原始数据减去这些数据的均值。
+```

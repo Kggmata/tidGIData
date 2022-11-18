@@ -1,0 +1,59 @@
+created: 20220714083329463
+difficulty: 1.062939784909897
+due: 20221127123101603
+grade: 1
+history: [{"due":"20220722090246750","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090246750"},{"due":"20220816063157675","interval":10,"difficulty":1,"stability":16.43908736440644,"retrievability":0.000026561715818525218,"grade":1,"lapses":0,"reps":2,"review":"20220731063157674"}]
+interval: 23
+lapses: 0
+modified: 20220823123101603
+reps: 3
+retrievability: 0.862939784909897
+review: 20220823123101603
+stability: 95.74597156924388
+tags: ?
+title: flink on yarn三种部署模式
+type: text/vnd.tiddlywiki
+
+[img[image-20220713155046411.png]]
+
+Session模式
+
+```
+- 特点：需要事先申请资源，使用Flink中的yarn-session（yarn客户端），启动JobManager和TaskManger
+
+- 优点：不需要每次递交作业申请资源，而是使用已经申请好的资源，从而提高执行效率
+
+- 缺点：作业执行完成以后，资源不会被释放，因此一直会占用系统资源
+
+- 应用场景：适合作业递交比较频繁的场景，小作业比较多的场景
+```
+[img[image-20220713155125503.png]]
+Per-Job模式
+
+```
+- 特点：每次递交作业都需要申请一次资源
+
+- 优点：作业运行完成，资源会立刻被释放，不会一直占用系统资源
+
+- 缺点：每次递交作业都需要申请资源，会影响执行效率，因为申请资源需要消耗时间
+
+- 应用场景：适合作业比较少的场景、大作业的场景
+```
+application模式
+
+- 背景：**flink-1.11** 引入了一种新的部署模式，即 Application 模式。目前，flink-1.11 已经可以支持基于 Yarn 和 Kubernetes 的 Application 模式。
+[img[image-20220713155250607.png]]
+优势:
+
+```
+Session模式：所有作业共享集群资源，隔离性差，JM 负载瓶颈，main 方法在客户端执行。
+- Per-Job模式：每个作业单独启动集群，隔离性好，JM 负载均衡，main 方法在客户端执行。
+- 通过以上两种模式的特点描述，可以看出，main方法都是在客户端执行，社区考虑到在客户端执行 main() 方法来获取 flink 运行时所需的依赖项，并生成 JobGraph，提交到集群的操作都会在实时平台所在的机器上执行，那么将会给服务器造成很大的压力。尤其在大量用户共享客户端时，问题更加突出。
+- 因此，社区提出新的部署方式 Application 模式解决该问题。
+```
+
+原理
+
+```
+Application 模式下，用户程序的 main 方法将在集群中而不是客户端运行，用户将程序逻辑和依赖打包进一个可执行的 jar 包里，集群的入口程序 (ApplicationClusterEntryPoint) 负责调用其中的 main 方法来生成 JobGraph。Application 模式为每个提交的应用程序创建一个集群，该集群可以看作是在特定应用程序的作业之间共享的会话集群，并在应用程序完成时终止。在这种体系结构中，Application 模式在不同应用之间提供了资源隔离和负载平衡保证。在特定一个应用程序上，JobManager 执行 main() 可以节省所需的 CPU 周期，还可以节省本地下载依赖项所需的带宽。
+```

@@ -1,0 +1,18 @@
+created: 20220609104513666
+difficulty: 1
+due: 20221002074637950
+grade: 2
+history: [{"due":"20220614095915618","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613095915618"},{"due":"20220702044427252","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616044427251"}]
+interval: 20
+lapses: 0
+modified: 20220706074637950
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706074637949
+stability: 88.3647639214822
+tags: kafka ?
+title: kafka follower拉取leader
+type: text/vnd.tiddlywiki
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_45_32.png]]
+说明：有多少个分区，就启动多少个线程来进行同步数据

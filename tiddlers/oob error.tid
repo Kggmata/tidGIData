@@ -1,0 +1,16 @@
+created: 20220820071020840
+modified: 20220820110504511
+tags: ? flink
+title: oob error
+type: text/vnd.tiddlywiki
+
+```
+out of bag error
+构建随机森林的关键问题在于如何选择最优的m, 要解决这个问题需要依赖计算袋外错误率oob error
+
+　　1）对每个样本，计算它作为oob样本的树对它的分类情况（约1/3的树）；
+
+　　2）然后以简单多数投票作为该样本的分类结果；
+
+　　3）最后用误分个数占样本总数的比率作为随机森林的oob误分率。
+```

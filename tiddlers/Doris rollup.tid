@@ -1,0 +1,35 @@
+created: 20220728014905172
+modified: 20220729103142357
+tags: ? flink
+title: Doris rollup
+type: text/vnd.tiddlywiki
+
+```
+rollup可以理解为表的一个物化索引结构.
+物化是数据再物理上独立存储的意思, 
+索引的意思是rollup可以调整列的顺序来增加前缀索引的命中率, 也可以减少key列, 增加表的聚合度. 
+ddl方式创建的为base 表
+base表之上, 可以创建任意多个Rollup表
+```
+```
+因为建表时指定了列顺序, 那么表只有一种前缀索引
+rollup相对于认为调整列顺序
+```
+```
+查询
+再Doris里Rollup作为一份聚合物化视图:
+1 索引
+2 聚合数据
+
+```
+```
+Aggregate的roll up
+```
+[img[Snipaste_2022-07-28_10-07-42.jpg]]
+
+```
+Deplicate模型的rollup
+前缀索引
+
+```
+[img[Snipaste_2022-07-28_10-19-02.jpg]]

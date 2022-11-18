@@ -1,0 +1,17 @@
+created: 20220602054326367
+difficulty: 1.3422835747234882
+due: 20220923091654307
+grade: 1
+history: [{"due":"20220607063300710","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063300710"},{"due":"20220629010455330","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612010455330"},{"due":"20220703115103977","interval":20,"difficulty":2.085535437739404,"stability":0.07408316441686115,"retrievability":0.8855354377394037,"grade":0,"lapses":1,"reps":1,"review":"20220702115103977"},{"due":"20220718015739334","interval":5,"difficulty":1.2863515471321267,"stability":10.836471539505316,"retrievability":0.0008161093927229343,"grade":1,"lapses":1,"reps":2,"review":"20220707015739334"}]
+interval: 16
+lapses: 1
+modified: 20220723091654307
+reps: 3
+retrievability: 0.8559320275913613
+review: 20220723091654307
+stability: 61.74581538869209
+tags: hbase ?
+title: zk写入流程
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-06-02_13-43-20.jpg]]

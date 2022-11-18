@@ -1,0 +1,17 @@
+created: 20220606114245659
+difficulty: 1
+due: 20221005002503079
+grade: 2
+history: [{"due":"20220611003644169","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003644169"},{"due":"20220629235243171","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613235243171"}]
+interval: 21
+lapses: 0
+modified: 20220705002503079
+reps: 3
+retrievability: 0.8684973211750646
+review: 20220705002503078
+stability: 91.99210777408436
+tags: hbase ?
+title: SHA full form
+type: text/vnd.tiddlywiki
+
+secure hash function

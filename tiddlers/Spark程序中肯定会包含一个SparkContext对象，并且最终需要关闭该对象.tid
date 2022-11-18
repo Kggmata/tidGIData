@@ -1,0 +1,17 @@
+created: 20220522045512502
+difficulty: 1.3767994636196013
+due: 20220909141034171
+grade: 2
+history: [{"due":"20220524020614689","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020614689"},{"due":"20220619072516801","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529072516801"}]
+interval: 22
+lapses: 0
+modified: 20220620141034171
+reps: 3
+retrievability: 0.8959329765306554
+review: 20220620141034171
+stability: 81.39969753492974
+tags: spark ?
+title: Spark程序中肯定会包含一个SparkContext对象，并且最终需要关闭该对象
+type: text/vnd.tiddlywiki
+
+正确,sparksession也包含sparkcontext

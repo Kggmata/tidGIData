@@ -1,0 +1,47 @@
+created: 20220723134923453
+difficulty: 1
+due: 20221009120629025
+grade: 0
+history: [{"due":"20220823062336429","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062336429"}]
+interval: 47
+lapses: 1
+modified: 20221008120629025
+reps: 1
+retrievability: 3.118743276916041e-22
+review: 20221008120629025
+stability: 0.07408182272361549
+tags: flink ?
+title: flink group by
+type: text/vnd.tiddlywiki
+
+```
+group by按照数据分组
+group by
+dim,
+-- 将秒级别时间戳 / 60 转化为 1min
+cast((UNIX_TIMESTAMP(CAST(row_time AS STRING))) / 60 as bigint)
+
+window相当于按照时间分组
+group by
+    dim,
+    -- 按照 Flink SQL tumble 窗口写法划分窗口
+    tumble(row_time, interval '1' minute)
+```
+[img[BillfishPZspWs2022-07-23 21_50_06.PNG]]
+
+```
+窗口是具有时间语义的, 窗口结束之后, 后续的数据即便满足时间条件, 也不会再对结果有影响.(不考虑 allowLateness). 窗口是由时间推动的
+
+group by本身是没有时间语义的, 数据不管多晚, 只要到达了, 满足条件就输出. group by是由数据推动的
+```
+```
+语义:
+source
+group聚合算子: 接收到上游的一条条数据, 去state当中找这个key之前的sum/count/max/min/avg结果, 如果存在旧结果, 使用旧结果结合新结果计算newResult, 并且将它更新到state当中. 
+state当中没有旧数据, 那么直接使用新数据计算sum/count/max/min/avg
+sink
+```
+```
+group by涉及到回撤流retract
+也涉及到state的过大问题, 可以使用table.exec.state.ttl来设置state的生命周期
+```

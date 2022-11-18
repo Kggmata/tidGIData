@@ -1,0 +1,17 @@
+created: 20220529052636530
+difficulty: 1
+due: 20220920133225349
+grade: 2
+history: [{"due":"20220601053640552","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053640552"},{"due":"20220622125530247","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603125530247"}]
+interval: 20
+lapses: 0
+modified: 20220623133225349
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623133225348
+stability: 89.0394510841741
+tags: hive ?
+title: Hive中常用的字符串处理函数有：substr/split/concat_ws/length/regexp_replace/ceil/floor
+type: text/vnd.tiddlywiki
+
+错误：substr【裁剪字符串】/split【分割字符串】/concat_ws【拼接字符串】/length【求长度】/regexp_replace【替换字符串】/ceil【数值向上取整】/floor【数值向下取整】

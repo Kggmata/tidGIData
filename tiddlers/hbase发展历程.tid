@@ -1,0 +1,17 @@
+created: 20220601034440482
+difficulty: 1
+due: 20220914123552639
+grade: 2
+history: [{"due":"20220604130510046","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220603130510046"},{"due":"20220624011446107","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220607011446107"}]
+interval: 18
+lapses: 0
+modified: 20220625123552639
+reps: 3
+retrievability: 0.893696518950571
+review: 20220625123552639
+stability: 81.40525473163041
+tags: hbase ?
+title: hbase发展历程
+type: text/vnd.tiddlywiki
+
+[img[20220601092559.png]]

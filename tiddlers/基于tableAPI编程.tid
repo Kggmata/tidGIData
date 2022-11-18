@@ -1,0 +1,56 @@
+created: 20220716122356425
+difficulty: 1.8002646149698163
+due: 20220906003521780
+grade: 0
+history: [{"due":"20220725070358871","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220724070358871"},{"due":"20220803121425444","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220802121425444"},{"due":"20220809110040062","interval":6,"difficulty":1.2001968031069898,"stability":0.054881164580531924,"retrievability":0.00019680310698987739,"grade":0,"lapses":2,"reps":1,"review":"20220808110040062"},{"due":"20220814132319465","interval":5,"difficulty":1.40026460173154,"stability":0.040656966333775045,"retrievability":0.00006779862455024804,"grade":0,"lapses":3,"reps":1,"review":"20220813132319465"},{"due":"20220821143523965","interval":7,"difficulty":1.6002646149698163,"stability":0.03011942145770373,"retrievability":1.32382762586235e-8,"grade":0,"lapses":4,"reps":1,"review":"20220820143523965"}]
+interval: 16
+lapses: 5
+modified: 20220905003521780
+reps: 1
+retrievability: 4.929072597378991e-25
+review: 20220905003521780
+stability: 0.02231301621225883
+tags: ?
+title: 基于tableAPI编程
+type: text/vnd.tiddlywiki
+
+```
+if __name__ == '__main__':
+    # 1. 创建流式处理环境
+    settings = EnvironmentSettings.new_instance().in_batch_mode().build()
+    t_env = TableEnvironment.create(settings)
+
+    # 2. 设置并行度
+    t_env.get_config().get_configuration().set_string("parallelism.default", "1")
+
+    # 3. 创建数据源表
+    t_env.create_temporary_table(
+        'source',
+        TableDescriptor.for_connector('filesystem')
+            .schema(Schema.new_builder()
+                    .column('userid', DataTypes.STRING())
+                    .column('timestamp', DataTypes.BIGINT())
+                    .column('money', DataTypes.DOUBLE())
+                    .column('category', DataTypes.STRING())
+                    .build())
+            .option('path', "D:\workspace\pyflink_study\data\input\order.csv")
+            .format('csv')
+            .build())
+    tab = t_env.from_path('source')
+
+    # 4. 创建目标表
+    t_env.create_temporary_table(
+        'sink',
+        TableDescriptor.for_connector('print')
+            .schema(Schema.new_builder()
+                    .column('userid', DataTypes.STRING())
+                    .column('total_money', DataTypes.DOUBLE())
+                    .build())
+            .build())
+
+    # 5. 执行逻辑
+    tab.group_by(col('userid')) \
+        .select(col('userid'), col('money').sum) \
+        .execute_insert('sink') \
+        .wait()
+```

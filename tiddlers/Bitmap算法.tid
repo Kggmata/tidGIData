@@ -1,0 +1,9 @@
+created: 20220728032552370
+modified: 20220728085436629
+tags: ? flink
+title: Bitmap算法
+type: text/vnd.tiddlywiki
+
+```
+就是用bit数组0/1记录数据的状态, 然后将具体数据映射到比特数组的具体位置, 0表示不存在, 1表示存在
+```

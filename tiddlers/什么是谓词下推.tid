@@ -1,0 +1,59 @@
+created: 20220529052510825
+difficulty: 1.0953239134772894
+due: 20220916070635803
+grade: 1
+history: [{"due":"20220601053459664","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053459664"},{"due":"20220622081802903","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603081802903"}]
+interval: 20
+lapses: 0
+modified: 20220623070635803
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623070635803
+stability: 84.71832744247013
+tags: spark ?
+title: 什么是谓词下推
+type: text/vnd.tiddlywiki
+
+谓词下推：PPD，提前将无用的数据进行过滤，避免参加复杂的计算，影响性能
+
+举个栗子：以Hive为例
+
+- 订单表：1000M：500万订单：oid、pid、price
+
+- 商品表：200M：100万个商品：pid、pname
+
+- Hive中MapReduce Join：Map Join【128M】，Reduce Join
+
+- 正常逻辑：Reduce Join = 性能差，容易出现数据倾斜
+
+`select
+	……
+from tb_order a
+join tb_goods b on a.pid = b.pid`
+
+- 解决思考：尽量避免用Reduce Join，走Map  Join
+
+- 无用数据：是不是所有商品都会被卖出去？假设60%商品卖出去，产生了订单
+
+  - 最终只有会120M的数据能关联成功
+
+- 实现：将所有订单中卖出去的商品信息提取出来，获取商品名称，再和订单表进行关联
+
+  - step1：先提取所有卖出去的商品id：A：60M
+
+`select distinct pid from tb_order;`
+
+- - - - - step2：获取这些卖出去的商品id对应的商品名称：Map Join ： B：120M
+
+`select
+          	A.pid,
+          	pname
+          from A
+          join tb_goods on A.pid = tb_goods.pid`
+
+        - step3：再用B和订单表进行关联：Map Join
+
+`select
+          	……
+          from B
+          join tb_order c on B.pid = c.pid`

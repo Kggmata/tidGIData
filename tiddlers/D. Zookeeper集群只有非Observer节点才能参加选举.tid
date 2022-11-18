@@ -1,0 +1,21 @@
+caption: {{||Question}}
+created: 20220519124350180
+difficulty: 2.2508942029413816
+due: 20220904075412071
+grade: 2
+history: [{"due":"20220522000820409","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000820408"},{"due":"20220528004426598","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522004426598"},{"due":"20220624144958793","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531144958793"}]
+interval: 25
+lapses: 0
+modified: 20220625075412072
+reps: 4
+retrievability: 0.8950417678954212
+review: 20220625075412071
+stability: 71.1902896812924
+tags: hadoop ?
+title: D. Zookeeper集群只有非Observer节点才能参加选举
+type: text/vnd.tiddlywiki
+
+正确：Follower和Leader都可以参加选举，如果配置中标记节点为Observer节点，只是为了增加分布式读写并行度，不参加选举
+
+Observer 介绍
+在 ZooKeeper 集群服务运行的过程中，Observer 服务器与 Follow 服务器具有一个相同的功能，那就是负责处理来自客户端的诸如查询数据节点等非事务性的会话请求操作。但与 Follow 服务器不同的是，Observer 不参与 Leader 服务器的选举工作，也不会被选举为 Leader 服务器。

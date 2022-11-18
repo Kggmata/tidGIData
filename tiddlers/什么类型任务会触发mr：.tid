@@ -1,0 +1,19 @@
+created: 20220703072331608
+difficulty: 1.0650414246800164
+due: 20220929123124794
+grade: 1
+history: [{"due":"20220707034453238","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706034453238"},{"due":"20220711054626977","interval":4,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.014781165126568838,"grade":0,"lapses":1,"reps":1,"review":"20220710054626976"},{"due":"20220713012223599","interval":2,"difficulty":1.2581677899039563,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712012223599"},{"due":"20220721072803448","interval":8,"difficulty":1.4581680036920477,"stability":0.04065705806113247,"retrievability":2.1378809139958575e-7,"grade":0,"lapses":3,"reps":1,"review":"20220720072803448"},{"due":"20220805102844115","interval":8,"difficulty":1,"stability":7.994086029596748,"retrievability":9.917429036741347e-10,"grade":1,"lapses":3,"reps":2,"review":"20220728102844115"}]
+interval: 11
+lapses: 3
+modified: 20220808123124794
+reps: 3
+retrievability: 0.8650414246800164
+review: 20220808123124794
+stability: 51.750896907064316
+tags: 用户画像 ?
+title: 什么类型任务会触发mr：
+type: text/vnd.tiddlywiki
+
+```
+mr编程、mr 数据etl、hive数据聚合、hive导入导出数据、sqoop导入数据、es-hadoop导入数据、spark-hadoop导入数据、spark-hadoop导出
+```

@@ -1,0 +1,17 @@
+created: 20220718120407508
+difficulty: 1.8543036435229179
+due: 20221012132338752
+grade: 0
+history: [{"due":"20220801115430108","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115430108"},{"due":"20220822125409032","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806125409031"}]
+interval: 66
+lapses: 1
+modified: 20221011132338752
+reps: 1
+retrievability: 0.6543036435229179
+review: 20221011132338752
+stability: 0.07408182272361549
+tags: ?
+title: flink支持的编程语言
+type: text/vnd.tiddlywiki
+
+SQL, Java, Python, Scala

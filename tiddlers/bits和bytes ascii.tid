@@ -1,0 +1,19 @@
+created: 20220608062155825
+difficulty: 1
+due: 20221001060707557
+grade: 2
+history: [{"due":"20220613122512468","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612122512468"},{"due":"20220701023514776","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615023514776"}]
+interval: 20
+lapses: 0
+modified: 20220705060707557
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705060707557
+stability: 88.3647639214822
+tags: hbase ?
+title: bits和bytes ascii
+type: text/vnd.tiddlywiki
+
+Bits are usually assembled into a group of eight to form a byte. A byte contains enough information to store a single ASCII character, like "h".
+
+A kilobyte (KB) is 1,024 bytes, not one thousand bytes as might be expected, because computers use binary (base two) math, instead of a decimal (base ten) system.

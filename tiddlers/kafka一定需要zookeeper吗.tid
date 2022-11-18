@@ -1,0 +1,25 @@
+created: 20220611022429419
+difficulty: 1.4721763375396282
+due: 20220930015249125
+grade: 1
+history: [{"due":"20220614105919638","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613105919638"},{"due":"20220702052948088","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616052948088"},{"due":"20220707081850412","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706081850411"},{"due":"20220711063730329","interval":4,"difficulty":2.276513959011337,"stability":0.05488141221849455,"retrievability":0.0033834917823108,"grade":0,"lapses":2,"reps":1,"review":"20220710063730329"},{"due":"20220721092833145","interval":3,"difficulty":1.4796671030943018,"stability":7.702086141181673,"retrievability":0.0031531440829650446,"grade":1,"lapses":2,"reps":2,"review":"20220713092833145"}]
+interval: 17
+lapses: 2
+modified: 20220730015249126
+reps: 3
+retrievability: 0.7925092344453265
+review: 20220730015249125
+stability: 61.74013566577808
+tags: kafka ?
+title: kafka一定需要zookeeper吗
+type: text/vnd.tiddlywiki
+
+2.8版本之后kafka可以脱离zookeeper启动
+
+How does Apache Kafka run without Zookeeper?
+
+```
+In the latest version of Kafka 2.8.0, users are provided with a preview of how to use Kafka without Zookeeper. Usually, Kafka uses Zookeeper to store and manage all the metadata information about Kafka clusters. Kafka also uses Zookeeper as a centralized controller that manages and organizes all the Kafka brokers or servers. However, in the new Kafka version, instead of storing all server config information in Zookeeper, you can store them as a topic partition inside the Kafka server itself. To start with Kafka without Zookeeper, you should run Kafka with Kafka Raft metadata mode i.e. KRaft.
+
+The KRaft controllers collectively form a Kraft quorum, which stores all the metadata information regarding Kafka clusters. With this method, you eradicate the dependency of Zookeeper within Kafka environment architecture. Besides, you can achieve various benefits like eliminating system complexities and data redundancy while running Kafka without Zookeeper. As Kafka plans to discontinue Zookeeper as a centralized configuration service, you will have a simplified Kafka architecture without any third-party service dependencies.
+```

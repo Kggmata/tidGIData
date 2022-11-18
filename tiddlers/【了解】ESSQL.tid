@@ -1,0 +1,41 @@
+created: 20220617102223328
+difficulty: 1
+due: 20220825115122999
+grade: 2
+history: [{"due":"20220620131118922","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619131118922"},{"due":"20220620233251515","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220619233251515"},{"due":"20220630143816864","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621143816864"}]
+interval: 11
+lapses: 0
+modified: 20220702115122999
+reps: 4
+retrievability: 0.8770024421488429
+review: 20220702115122998
+stability: 53.686353537936405
+tags: 用户画像 ?
+title: 【了解】ESSQL
+type: text/vnd.tiddlywiki
+
+* 需求1：查询一条数据
+
+```
+9.3.1 	查询职位索引库中的一条数据
+GET /_sql?format=txt
+{
+"query":"select * from job_idx limit 1"
+}
+```
+*职位全文检索
+
+```
+#根据关键字或内容查询 
+#需要根据ESSQL提供的match函数完成
+GET /_sql?format=txt
+{
+"query":"select * from job_idx where match(title,'hadoop') or match(jd,'hadoop') limit 2"
+}
+```
+
+ESSQL限制
+
+```
+目前Elasticsearch SQL还存在一些限制。例如：不支持JOIN、不支持较复杂的子查询。所以，有一些相对复杂一些的功能，还得借助于DSL方式来实现。
+```

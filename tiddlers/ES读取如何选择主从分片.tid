@@ -1,0 +1,33 @@
+created: 20220619071510583
+difficulty: 1
+due: 20220907003103713
+grade: 2
+history: [{"due":"20220621013433345","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620013433344"},{"due":"20220623083721743","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622083721743"},{"due":"20220626075818568","interval":3,"difficulty":1.2140329747514864,"stability":0.054885141354873004,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220625075818568"},{"due":"20220709003611089","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":1,"lapses":2,"reps":2,"review":"20220629003611089"}]
+interval: 12
+lapses: 2
+modified: 20220711003103713
+reps: 3
+retrievability: 0.882977371088815
+review: 20220711003103713
+stability: 57.75320307451281
+tags: 用户画像 ?
+title: ES读取如何选择主从分片
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/search-shard-routing.html#search-adaptive-replica
+
+https://www.elastic.co/cn/blog/improving-response-latency-in-elasticsearch-with-adaptive-replica-selection
+
+''Adaptive replica selection (ARS)''
+
+By default, Elasticsearch uses adaptive replica selection to route search requests. This method selects an eligible node using shard allocation awareness and the following criteria:
+
+```
+Response time of prior requests between the coordinating node and the eligible node
+
+How long the eligible node took to run previous searches
+
+Queue size of the eligible node’s search threadpool
+```
+
+Adaptive replica selection is designed to decrease search latency. However, you can disable adaptive replica selection by setting cluster.routing.use_adaptive_replica_selection to false using the cluster settings API. If disabled, Elasticsearch routes search requests using a ''round-robin ''method, which may result in slower searches.

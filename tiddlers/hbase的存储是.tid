@@ -1,0 +1,17 @@
+created: 20220601071713311
+difficulty: 1
+due: 20220914123253755
+grade: 2
+history: [{"due":"20220604130756937","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220603130756937"},{"due":"20220624005645515","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220607005645515"}]
+interval: 18
+lapses: 0
+modified: 20220625123253755
+reps: 3
+retrievability: 0.893696518950571
+review: 20220625123253754
+stability: 81.40525473163041
+tags: hbase ?
+title: hbase的存储是
+type: text/vnd.tiddlywiki
+
+列族存储

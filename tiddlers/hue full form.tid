@@ -1,0 +1,17 @@
+created: 20220710035859512
+difficulty: 1
+due: 20221102072725207
+grade: 2
+history: [{"due":"20220713030645158","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030645158"},{"due":"20220806013111425","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721013111425"}]
+interval: 19
+lapses: 0
+modified: 20220809072725207
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809072725207
+stability: 84.88779656040188
+tags: 用户画像 ?
+title: hue full form
+type: text/vnd.tiddlywiki
+
+Hadoop User Experience (HUE) is an open source interface which makes Apache Hadoop's use easier. It is a web-based application. It has a job designer for MapReduce, a file browser for HDFS, an Oozie application for making workflows and coordinators, an Impala, a shell, a Hive UI, and a group of Hadoop APIs.

@@ -1,0 +1,129 @@
+created: 20220715235040691
+difficulty: 1
+due: 20220824083721573
+grade: 2
+history: [{"due":"20220802111237482","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721092207256"}]
+interval: 18
+lapses: 0
+modified: 20220808083721573
+reps: 2
+retrievability: 5.8031129902869065e-9
+review: 20220808083721573
+stability: 16.439773802836015
+tags: ?
+title: sparkSQL指定分区数
+type: text/vnd.tiddlywiki
+
+1 配置 spark.sql.shuffle.partitions，适用场景spark.sql()合并分区
+
+```
+spark.conf.set("spark.sql.shuffle.partitions", 5) #后面的数字是你希望的分区数
+```
+2、配置 coalesce(n)，适用场景spark写出数据到指定路径下合并分区，不会引起shuffle
+
+```
+df = spark.sql(sql_string).coalesce(1) #合并分区数
+df.write.format("csv")
+.mode("overwrite")
+.option("sep", ",")
+.option("header", True)
+.save(hdfs_path)
+```
+3. 配置repartition(n)， 重新分区，会引发shuffle
+
+```
+df = spark.sql(sql_string).repartition(1) #重新分区，会引发全局shuffle
+df.write.format("csv")
+.mode("overwrite")
+.option("sep", ",")
+.option("header", True)
+.save(hdfs_path)
+```
+4 文件的并行读取和写出
+
+```
+1、并行写出之 partitionBy() 指定分区列  ， 会根据分区列创建子文件夹，并行写出数据
+
+df.write.mode("overwrite")
+.partitionBy("day")
+.save("/tmp/partitioned-files.parquet")
+2、并行写出之 repartition() ，一般spark中有几个分区就会有几个并行的IO写出
+
+df.repartition(5)
+.write.format("csv")
+.save("/tmp/multiple.csv")
+3、分桶写出，好处是后续读入的时候数据就不会做shuffle了，因为相同分桶的数据会被划分到同一个物理分区中
+
+csvFile.write.format("parquet")
+.mode("overwrite")
+.bucketBy(5, "gmv") #第一个参数：分成几个桶，第二个参数：按哪列进行分桶
+.saveAsTable("bucketedFiles")
+```
+ ```
+2、DataFrame调用 .write.csv(/parquet/orc) API读取写出文件
+
+（1）spark.read.{文件类型} 读取文件的通用代码格式
+
+#1、spark.read.csv()
+spark.read.csv(path='foo.csv', mode='failfast' ,header=True).show()
+ 
+#2、spark.read.parquet()
+df.write.parquet('bar.parquet')
+ 
+#3、spark.read.orc()
+spark.read.orc('zoo.orc').show()
+（2）df.write.{文件类型}  将DataFrame中数据写入到文件的通用代码格式
+
+#1、df读写csv
+df.write.csv('foo.csv', header=True)
+ 
+#2、df读写parquet
+df.write.parquet('bar.parquet')
+ 
+#3、df读写ORC
+df.write.orc('zoo.orc')
+ 
+#4、覆盖写入
+df.write.csv(path, mode='overwrite',sep=',',header=True)
+ 
+#5、追加写入
+df.write.csv(path, mode='append',sep=',',header=True)
+注意： 不管是用format()的方式，把文件类型写在format的里面作为参数，还是用调用文件类型的读写，它们在option配置选项上是通用的。
+```
+```
+3、textFile读写
+
+（1）spark.read.textFile() 和 spark.read.wholeTextFile()
+
+#spark.read.textFile() 会忽略读入文件的分区
+spark.read.textFile("/data/flight-data/csv/2010-summary.csv")
+.selectExpr("split(value, ',') as rows").show()
+ 
+#spark.read.text() 会保留读入文件的分区
+'''
+如果有一个目录，下面按日期分了多个子目录，每个目录下存放着日期当天的一些数据，
+是否用spark.read.text()读取目录就能获取日期分区呢？
+'''
+
+
+（2）df.write.text()   写出只能有一列
+
+  当写出的不是一列的时候，否则会报错。
+
+df.select("A_COLUMN_NAME").write.text("/tmp/simple-text-file.txt")
+ 
+  但如果其他列作为分区的话，是可以选择多列的。但作为分区的列是作为分区的子路径文件名存在的，并不是输出的多列，输出还是只有一列。
+
+#指定一个分区列，文件中输出的还是只有一列
+df.select("A_COLUMN_NAME", "count")\
+.write.partitionBy("count").text("/tmp/five-csv-files2py.csv")
+如果先用concat_ws(',',col1,col2)  as col 把要输出的列进行了连接，然后再按照要分区的列（比如日期）来目录写出，岂不是很实用？
+
+#链接要输出的列，并按照日期列分区写出
+df.select("concat_ws(',',col1,col2) as col", "day")
+.write.partitionBy("day")
+.text("/tmp/five-csv-files2py.csv")
+————————————————
+版权声明：本文为CSDN博主「Just Jump」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/eylier/article/details/115660479
+```

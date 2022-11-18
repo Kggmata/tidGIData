@@ -1,0 +1,18 @@
+created: 20220716234548019
+difficulty: 1
+due: 20230110143319042
+grade: 2
+history: [{"due":"20220727063521185","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726063521185"},{"due":"20220820125720280","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220804125720280"}]
+interval: 31
+lapses: 0
+modified: 20220904143319042
+reps: 3
+retrievability: 0.8197965854547897
+review: 20220904143319041
+stability: 127.68971134334092
+tags: ?
+title: flink的图有什么
+type: text/vnd.tiddlywiki
+
+dataflow graph/logical stream graph->job graph->execution graph->physical graph
+[img[BillfishjlnDGd2022-07-17 07_47_12.PNG]]

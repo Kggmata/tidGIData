@@ -1,0 +1,37 @@
+created: 20220609104720814
+difficulty: 1.3080381294784418
+due: 20221009144347322
+grade: 1
+history: [{"due":"20220614100321142","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100321142"},{"due":"20220702025410855","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616025410854"},{"due":"20220707054432931","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706054432931"},{"due":"20220721062531319","interval":4,"difficulty":1.2765139590113368,"stability":10.850433613439773,"retrievability":0.0033834917823108,"grade":1,"lapses":1,"reps":2,"review":"20220710062531319"}]
+interval: 19
+lapses: 1
+modified: 20220729144347322
+reps: 3
+retrievability: 0.8315241704671053
+review: 20220729144347322
+stability: 72.29872534912465
+tags: kafka ?
+title: ack机制（确认机制）
+type: text/vnd.tiddlywiki
+
+生产者数据不抵事，需要服务端返回一个确认码，即ack响应码；ack的响应有三个状态值
+
+```
+0：生产者只负责发送数据，不关心数据是否丢失，响应的状态码为0（丢失的数据，需要再次发送）
+1：partition的leader收到数据，响应的状态码为1
+-1：所有的从节点都收到数据，响应的状态码为-1
+
+默认为1
+
+Minimum In-Sync Replica
+There’s one thing missing with the acks=all configuration in isolation.
+If the leader responds when all the in-sync replicas have received the write, what happens when the leader is the only in-sync replica? Wouldn’t that be equivalent to setting acks=1 ?
+
+This is where min.insync.replicas comes to shine!
+
+min.insync.replicas is a config on the broker that denotes the minimum number of in-sync replicas required to exist for a broker to allow acks=all requests. That is, all requests with acks=all won’t be processed and receive an error response if the number of in-sync replicas is below the configured minimum amount. It acts as a sort of gatekeeper to ensure scenarios like the one described above can’t happen.
+```
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_48_23.png]]
+```
+说明：如果broker端一直不给ack状态，producer永远不知道是否成功；producer可以设置一个超时时间10s，超 过时间认为失败。
+```

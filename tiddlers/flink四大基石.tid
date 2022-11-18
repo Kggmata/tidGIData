@@ -1,0 +1,23 @@
+created: 20220714021744206
+difficulty: 1
+due: 20221129132320622
+grade: 2
+history: [{"due":"20220720145738587","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719145738587"},{"due":"20220815014003691","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":2,"lapses":0,"reps":2,"review":"20220730014003691"}]
+interval: 23
+lapses: 0
+modified: 20220822132320622
+reps: 3
+retrievability: 0.8629435913626122
+review: 20220822132320622
+stability: 99.20795668530575
+tags: ?
+title: flink四大基石
+type: text/vnd.tiddlywiki
+
+checkpoint
+
+state
+
+window
+
+time

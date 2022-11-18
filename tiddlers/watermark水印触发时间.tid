@@ -1,0 +1,20 @@
+created: 20220723011946664
+difficulty: 1
+due: 20221012133555293
+grade: 0
+history: [{"due":"20220822133927805","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821133927805"}]
+interval: 51
+lapses: 1
+modified: 20221011133555293
+reps: 1
+retrievability: 4.609778101934696e-24
+review: 20221011133555293
+stability: 0.07408182272361549
+tags: ?
+title: watermark水印触发时间
+type: text/vnd.tiddlywiki
+
+```
+默认200ms
+pipeline.auto_watermark_interval可以设置触发间隔
+```

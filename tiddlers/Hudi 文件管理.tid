@@ -1,0 +1,22 @@
+created: 20220725072231566
+modified: 20220725072551674
+tags: ? flink
+title: Hudi 文件管理
+type: text/vnd.tiddlywiki
+
+```
+● Hudi将DFS上的数据集组织到基本路径（HoodieWriteConfig.BASEPATHPROP）下的目录结构中。
+● 数据集分为多个分区（DataSourceOptions.PARTITIONPATHFIELDOPT_KEY），这些分区与Hive表非常相似，是包含该分区的数据文件的文件夹。
+```
+[img[Billfishxnbtpq2022-07-25 15_22_47.PNG]]
+
+```
+● 在每个分区内，文件被组织为文件组，由文件id充当唯一标识。每个文件组包含多个文件切片，其中每个切片包含在某个即时时间的提交/压缩生成的基本列文件（.parquet）以及一组日志文件（ .log），该文件包含自生成基本文件以来对基本文件的插入/更新。
+```
+[img[BillfishorxcHL2022-07-25 15_23_02.PNG]]
+
+```
+● Hudi的base file (parquet 文件) 在footer的meta去记录了record key组成的BloomFilter，用于在file based index的实现中实现高效率的key contains检测。
+● Hudi的log（avro文件）是自己编码的，通过积攒数据buffer以LogBlock为单位写出，每个LogBlock 包含magic number、size、content、footer等信息，用于数据读、校验和过滤。
+```
+[img[BillfishzwvHun2022-07-25 15_23_46.PNG]]

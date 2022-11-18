@@ -1,0 +1,27 @@
+created: 20220612012231837
+difficulty: 1
+due: 20221002095725309
+grade: 2
+history: [{"due":"20220614123613902","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613123613902"},{"due":"20220702065038028","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616065038028"}]
+interval: 20
+lapses: 0
+modified: 20220706095725310
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706095725309
+stability: 88.3647639214822
+tags: [[structed streaming]] ?
+title: spark流计算概述
+type: text/vnd.tiddlywiki
+
+Spark有2个流计算模块：
+
+```
+Spark Streaming
+  - Spark的第一代流计算模块，比较老
+  - 底层是基于RDD构建
+- Spark `StructuredStreaming`
+  - Spark在2.0之后推出的第二代Spark流计算模块
+  - 底层基于SparkSQL构建
+```
+

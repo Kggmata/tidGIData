@@ -1,0 +1,43 @@
+created: 20220521080104589
+difficulty: 2.216468586343643
+due: 20221013135404611
+grade: 2
+history: [{"due":"20220524060920559","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522060920559"},{"due":"20220615073040417","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529073040417"},{"due":"20220802105148375","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616105148375"},{"due":"20220808003726645","interval":52,"difficulty":4.072810202650707,"stability":0.07408182468994658,"retrievability":0.8893157252623122,"grade":0,"lapses":1,"reps":1,"review":"20220807003726644"},{"due":"20220818050401133","interval":5,"difficulty":3.273626207100441,"stability":5.670805409539928,"retrievability":0.0008160044497337299,"grade":1,"lapses":1,"reps":2,"review":"20220812050401133"}]
+interval: 16
+lapses: 1
+modified: 20220828135404612
+reps: 3
+retrievability: 0.7428423792432018
+review: 20220828135404611
+stability: 46.06699586322964
+tags: hive ?
+title: UDF函数开发流程是什么？
+type: text/vnd.tiddlywiki
+
+''udf''=user defined function用户自定义函数 一对一
+	round
+
+''udaf''=user defined aggregate function多对一
+	count,sum
+
+''udtf''=user defined table generating function一对多
+	比如explode
+
+虽然说是用户自定义函数,实际上内置和自定义函数都包含在内
+比如聚合函数在官方文档中就被划为分udaf
+
+	UDF函数其实就是一个简单的函数，执行过程就是在Hive转换成MapReduce程序后，执行java方法，类似于像MapReduce执行过程中加入一个插件，方便扩展。
+
+	1. pom.xml依赖: 
+
+	2.继承UDF类或GenericUDF类
+
+	3.编译打包为jar文件（打包时的jdk版本需和hadoop的jdk版本一致）
+
+	4.复制到正确的HDFS
+
+	5.注册UDF
+
+	6.使用jar创建临时/永久函数
+
+	7.使用

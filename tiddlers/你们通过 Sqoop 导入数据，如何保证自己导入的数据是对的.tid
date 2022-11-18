@@ -1,0 +1,23 @@
+created: 20220710122012945
+difficulty: 1
+due: 20221101122710462
+grade: 2
+history: [{"due":"20220713033437620","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712033437620"},{"due":"20220805015120150","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220720015120150"}]
+interval: 19
+lapses: 0
+modified: 20220808122710462
+reps: 3
+retrievability: 0.8853163826700388
+review: 20220808122710462
+stability: 84.88710990001034
+tags: 用户画像 ?
+title: 你们通过 Sqoop 导入数据，如何保证自己导入的数据是对的
+type: text/vnd.tiddlywiki
+
+```
+**面试官是这样**： 每次导完数据之后，我们都会跑一个**验证脚本**
+
+​	1、检查一下她的条数对不对   10w     10w
+
+​	2、验证一下内容   -》拒绝全量校验  【随机抽检1% 10%】
+```

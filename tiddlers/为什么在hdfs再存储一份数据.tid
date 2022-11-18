@@ -1,0 +1,21 @@
+created: 20220711011049459
+difficulty: 1
+due: 20221102080550673
+grade: 2
+history: [{"due":"20220713035120715","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035120715"},{"due":"20220806023840018","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721023840018"}]
+interval: 19
+lapses: 0
+modified: 20220809080550673
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809080550673
+stability: 84.88779656040188
+tags: ?
+title: 为什么在hdfs再存储一份数据
+type: text/vnd.tiddlywiki
+
+是建议
+
+为了保留一份最完整的 没经过任何人之手的数据源, 供多个项目组使用
+
+每次都使用sqoop采集, 会导致资源占用和浪费, 主要是mysql的性能

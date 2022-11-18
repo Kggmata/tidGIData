@@ -1,0 +1,17 @@
+created: 20220718121233672
+difficulty: 1
+due: 20230604121128997
+grade: 2
+history: [{"due":"20220801115644052","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115644052"},{"due":"20220822125001575","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806125001575"}]
+interval: 63
+lapses: 0
+modified: 20221008121128997
+reps: 3
+retrievability: 0.6670417314969249
+review: 20221008121128997
+stability: 238.50969519476618
+tags: ?
+title: flink spark hadoop性能比较
+type: text/vnd.tiddlywiki
+
+[img[BillfishfZtNjq2022-07-18 20_12_46.PNG]]

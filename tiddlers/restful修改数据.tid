@@ -1,0 +1,28 @@
+created: 20220617101347315
+difficulty: 2.2315047366241836
+due: 20220916023422105
+grade: 0
+history: [{"due":"20220620040905344","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619040905344"},{"due":"20220622131749896","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621131749896"},{"due":"20220707002252382","interval":3,"difficulty":1,"stability":12.64542427740461,"retrievability":0.014037314090908812,"grade":1,"lapses":1,"reps":2,"review":"20220624002252382"},{"due":"20220711070239515","interval":16,"difficulty":2.075193273507374,"stability":0.05488141221849455,"retrievability":0.8751932735073741,"grade":0,"lapses":2,"reps":1,"review":"20220710070239515"},{"due":"20220723015335923","interval":4,"difficulty":1.2756556457507016,"stability":8.575178510707484,"retrievability":0.0004623722433273712,"grade":1,"lapses":2,"reps":2,"review":"20220714015335923"},{"due":"20220802105154321","interval":18,"difficulty":2.2772437996702686,"stability":0.04065697748494399,"retrievability":0.8015881539195667,"grade":0,"lapses":3,"reps":1,"review":"20220801105154321"},{"due":"20220814235946971","interval":5,"difficulty":1,"stability":7.994043669602247,"retrievability":0.0000023590561938593084,"grade":2,"lapses":3,"reps":2,"review":"20220806235946971"},{"due":"20220822114031216","interval":14,"difficulty":2.0315047366241834,"stability":0.03011942145770373,"retrievability":0.8315047366241831,"grade":0,"lapses":4,"reps":1,"review":"20220821114031215"}]
+interval: 25
+lapses: 5
+modified: 20220915023422105
+reps: 1
+retrievability: 1.0469975078034704e-38
+review: 20220915023422105
+stability: 0.02231301621225883
+tags: 用户画像 ?
+title: restful修改数据
+type: text/vnd.tiddlywiki
+
+需求：如果涉及到修改数据，需要使用POST方法
+
+```
+
+POST /job_idx/_update/29097
+{
+    "doc":{
+        "exp":"3年以下经验"
+    }
+}
+
+```

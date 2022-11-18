@@ -1,0 +1,17 @@
+created: 20220601032852431
+difficulty: 1
+due: 20221001122256812
+grade: 2
+history: [{"due":"20220603152041942","interval":0,"difficulty":1.7275095844283441,"stability":0.1296875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220602152041942"},{"due":"20220625121611444","interval":4,"difficulty":1,"stability":19.03598280903463,"retrievability":0.03878686052566552,"grade":2,"lapses":0,"reps":2,"review":"20220606121611444"},{"due":"20220627141820978","interval":20,"difficulty":2.095210703053972,"stability":0.07408450676555052,"retrievability":0.895210703053972,"grade":0,"lapses":1,"reps":1,"review":"20220626141820978"},{"due":"20220630075556978","interval":3,"difficulty":2.309241508403002,"stability":0.054882158045770235,"retrievability":0.014030805349029462,"grade":0,"lapses":2,"reps":1,"review":"20220629075556978"},{"due":"20220705110421087","interval":5,"difficulty":2.5093093188091635,"stability":0.04065733432235013,"retrievability":0.00006781040616137007,"grade":0,"lapses":3,"reps":1,"review":"20220704110421087"},{"due":"20220711012216116","interval":6,"difficulty":2.7093094955533794,"stability":0.030119557630782685,"retrievability":1.7674421584076485e-7,"grade":0,"lapses":4,"reps":1,"review":"20220710012216115"},{"due":"20220714010148340","interval":3,"difficulty":2.9093371913641386,"stability":0.022313117091756884,"retrievability":0.00002769581075893114,"grade":0,"lapses":5,"reps":1,"review":"20220713010148340"},{"due":"20220726050954517","interval":8,"difficulty":1.1093371913641386,"stability":4.598980409976025,"retrievability":3.9301279539508076e-17,"grade":2,"lapses":5,"reps":2,"review":"20220721050954517"}]
+interval: 12
+lapses: 5
+modified: 20220802122256812
+reps: 3
+retrievability: 0.759637104439074
+review: 20220802122256812
+stability: 59.85594485706745
+tags: hbase ?
+title: hbase端口号
+type: text/vnd.tiddlywiki
+
+16010

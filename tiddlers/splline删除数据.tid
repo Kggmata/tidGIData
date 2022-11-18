@@ -1,0 +1,20 @@
+created: 20220608062827449
+difficulty: 1
+due: 20221002102308031
+grade: 2
+history: [{"due":"20220613130309632","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130309632"},{"due":"20220702003603986","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616003603986"}]
+interval: 20
+lapses: 0
+modified: 20220706102308031
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706102308030
+stability: 88.44814121809115
+tags: hbase ?
+title: splline删除数据
+type: text/vnd.tiddlywiki
+
+```
+delete from 表 where xxx=xxx;
+# 比如
+delete from order_dtl where id='000026';

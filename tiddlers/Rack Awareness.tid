@@ -1,0 +1,41 @@
+created: 20220622060820003
+difficulty: 1.0963567239886889
+due: 20220912064324305
+grade: 1
+history: [{"due":"20220625131340981","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624131340981"},{"due":"20220709231559706","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626231559706"}]
+interval: 14
+lapses: 0
+modified: 20220711064324305
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220711064324305
+stability: 62.708036231878836
+tags: 用户画像 ?
+title: Rack Awareness
+type: text/vnd.tiddlywiki
+
+Rack Awareness
+
+[img[b539dd5917ce90c6ded94fc3a4f46352022-06-22 14_57_58.png]]
+
+''By default, Hadoop rack awareness is not enabled. ''
+
+```
+Configuring HDFS rack awareness
+
+Create a rack topology script
+
+HDFS uses topology scripts to determine the rack location of nodes and uses this information to replicate block data to redundant racks.
+
+Add the topology script property to core-site.xml
+
+Assign the name of the topology script to the net.topology.script.file.name property in core-site.xml.
+
+Restart HDFS and MapReduce services
+
+After adding the topology script property to core-site.xml, you must restart the HDFS and MapReduce services.
+
+Verify rack awareness
+
+You must perform a series of checks to verify if rack awareness is activated on the cluster.
+```

@@ -1,0 +1,21 @@
+created: 20220618010451255
+difficulty: 1.0042245282249487
+due: 20221001035727382
+grade: 1
+history: [{"due":"20220620143338418","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619143338418"},{"due":"20220622025112774","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621025112774"},{"due":"20220624130256751","interval":2,"difficulty":1.2582150137561299,"stability":0.054885141354873004,"retrievability":0.05821501375612986,"grade":0,"lapses":2,"reps":1,"review":"20220623130256751"},{"due":"20220705114445754","interval":2,"difficulty":1,"stability":9.825868732404027,"retrievability":0.021508453012793312,"grade":2,"lapses":2,"reps":2,"review":"20220625114445754"},{"due":"20220710113211302","interval":14,"difficulty":2.060605765763049,"stability":0.04065715014820503,"retrievability":0.8606057657630491,"grade":0,"lapses":3,"reps":1,"review":"20220709113211301"},{"due":"20220712013820419","interval":2,"difficulty":2.266217600507975,"stability":0.030119557630782685,"retrievability":0.005611834744925829,"grade":0,"lapses":4,"reps":1,"review":"20220711013820419"},{"due":"20220723062821920","interval":6,"difficulty":1,"stability":6.2865197163091,"retrievability":7.670579335945259e-10,"grade":2,"lapses":4,"reps":2,"review":"20220717062821920"}]
+interval: 13
+lapses: 4
+modified: 20220730035727382
+reps: 3
+retrievability: 0.8042245282249488
+review: 20220730035727381
+stability: 62.59342115679299
+tags: 用户画像 ?
+title: Elasticsearch写入请求类型
+type: text/vnd.tiddlywiki
+
+著作权归https://pdai.tech所有。
+链接：https://pdai.tech/md/db/nosql-es/elasticsearch-y-th-3.html
+
+>Elasticsearch中的写入请求类型，主要包括下列几个：Index(Create)，Update，Delete和Bulk，其中前3个是单文档操作，后一个Bulk是多文档操作，其中Bulk中可以包括Index(Create)，Update和Delete。
+

@@ -1,0 +1,21 @@
+created: 20220606113331615
+difficulty: 1
+due: 20221007030023285
+grade: 2
+history: [{"due":"20220611003330957","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003330957"},{"due":"20220629111334805","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613111334805"},{"due":"20220702115116673","interval":18,"difficulty":2.0861675498643524,"stability":0.07408316441686115,"retrievability":0.8861675498643524,"grade":0,"lapses":1,"reps":1,"review":"20220701115116673"},{"due":"20220718092043362","interval":4,"difficulty":1,"stability":12.858890454366344,"retrievability":0.0033837533675606132,"grade":2,"lapses":1,"reps":2,"review":"20220705092043362"}]
+interval: 17
+lapses: 1
+modified: 20220722030023285
+reps: 3
+retrievability: 0.869974757506569
+review: 20220722030023285
+stability: 77.13983269014095
+tags: hbase ?
+title: 不预先设置分区,手动split会有什么问题
+type: text/vnd.tiddlywiki
+
+1. 只有1个region也就是1个RegionServer在工作
+
+   假设10台RegionServer服务器，9个围观，1个干活（热点问题）
+
+2. 手动split消耗I/O，也只能1变2,2变3,3变4,4变5效率很低。

@@ -1,0 +1,25 @@
+created: 20220713054932221
+difficulty: 1
+due: 20221121103040217
+grade: 2
+history: [{"due":"20220719081927700","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718081927700"},{"due":"20220811103624737","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726103624737"}]
+interval: 22
+lapses: 0
+modified: 20220817103040217
+reps: 3
+retrievability: 0.8684516258848127
+review: 20220817103040217
+stability: 95.6320335377201
+tags: ?
+title: 数据库事务四大特性ACID
+type: text/vnd.tiddlywiki
+
+atomicity 事务开始后, 要么全部完成, 要么都不做
+
+consistency 事务开始前后 数据库的完整性约束没有被破坏
+
+isolation 同一时间, 只允许一个事务请求同一数据
+
+durability 事务完成后, 所有更新被保存在数据库, 无法回滚
+
+原子性是事务隔离的基础, 隔离性持久性是手段 最终是为了数据一致性

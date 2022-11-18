@@ -1,0 +1,31 @@
+created: 20220713035107052
+difficulty: 1
+due: 20221130133629831
+grade: 2
+history: [{"due":"20220719063326256","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718063326256"},{"due":"20220727104807722","interval":8,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220726104807722"},{"due":"20220817124641308","interval":9,"difficulty":1,"stability":12.927341248345753,"retrievability":0.0000027608925165954863,"grade":2,"lapses":1,"reps":2,"review":"20220804124641308"}]
+interval: 22
+lapses: 1
+modified: 20220826133629831
+reps: 3
+retrievability: 0.8358512866473793
+review: 20220826133629831
+stability: 95.86046372100513
+tags: ?
+title: 直接寻址表
+type: text/vnd.tiddlywiki
+
+当关键字的全域U(universe of keys)比较小时, 直接寻址是一种简单而有效的方法
+
+[img[Snipaste_2022-07-13_11-51-46.jpg]]
+
+```
+直接寻址表
+
+直接寻址表，定义了一个所有关键字的域集合U，根据这个U生成一个包含所有域值的列表T
+直接寻址技术优点：
+当数据量较小时，相对简单有效
+直接寻址技术缺点：
+当U很大时，建立列表T，所消耗的内存空间非常大
+如果U非常大，而实际出现的key非常少，这样就对空间造成了极大的浪费
+当关键字key不是数字的时候就无法处理了
+```

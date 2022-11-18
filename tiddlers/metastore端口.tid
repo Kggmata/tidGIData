@@ -1,0 +1,17 @@
+created: 20220529101450885
+difficulty: 1
+due: 20220920140838845
+grade: 2
+history: [{"due":"20220601064426816","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531064426816"},{"due":"20220622130001058","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130001058"}]
+interval: 20
+lapses: 0
+modified: 20220623140838845
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623140838845
+stability: 89.0394510841741
+tags: spark ?
+title: metastore端口
+type: text/vnd.tiddlywiki
+
+9083

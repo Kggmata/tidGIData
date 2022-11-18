@@ -1,0 +1,17 @@
+created: 20220611073817087
+difficulty: 1
+due: 20221002074426668
+grade: 2
+history: [{"due":"20220614110825197","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613110825196"},{"due":"20220702035700723","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616035700723"}]
+interval: 20
+lapses: 0
+modified: 20220706074426668
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706074426668
+stability: 88.3647639214822
+tags: kafka ?
+title: JMX full form
+type: text/vnd.tiddlywiki
+
+JMX是Java Management Extensions，它是一个Java平台的管理和监控接口。

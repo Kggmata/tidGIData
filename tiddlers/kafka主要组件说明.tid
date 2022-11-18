@@ -1,0 +1,59 @@
+created: 20220609021353031
+difficulty: 1
+due: 20221002082304973
+grade: 2
+history: [{"due":"20220613140455868","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612140455868"},{"due":"20220702000319126","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616000319125"}]
+interval: 20
+lapses: 0
+modified: 20220706082304973
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706082304972
+stability: 88.44814121809115
+tags: kafka ?
+title: kafka主要组件说明
+type: text/vnd.tiddlywiki
+
+7.1 kafka当中的生产者(Producer)说明
+
+```
+producer主要是用于生产消息，是kafka当中的消息生产者，生产的消息通过topic进行归类，保存到kafka的broker里面去
+```
+
+7.2 kafka当中的主题（Topic）说明
+
+```
+1、kafka将消息以topic为单位进行归类
+2、topic特指kafka处理的消息源（feeds of messages）的不同分类。
+3、topic是一种分类或者发布的一些列记录的名义上的名字。kafka主题始终是支持多用户订阅的；也就是说，一个主题可以有零个，一个或者多个消费者订阅写入的数据。
+4、在kafka集群中，可以有无数的主题。
+5生产者和消费者消费数据一般以主题为单位。更细粒度可以到分区级别。
+```
+
+7.3 kafka当中的分区（Partition）说明
+
+```
+kafka当中，topic是消息的归类，一个topic可以有多个分区，每个分区保存部分topic的数据，所有的partition当中的数据全部合并起来，就是一个topic当中的所有的数据，
+
+一个broker服务下，是否可以创建多个分区？
+可以的，broker数与分区数没有关系； 在kafka中，每一个分区会有一个编号：编号从0开始
+
+每一个分区的数据是有序的
+说明-数据是有序 如何保证一个主题下的数据是有序的？（生产是什么样的顺序，那么消费的时候也是什么样的顺序）
+
+多个分区时无序的.分区数在创建topic时设置，并后期可以修改。
+```
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 10_15_34.png]]
+
+```
+topic的Partition数量在创建topic时配置。
+Partition数量决定了每个Consumer group中并发消费者的最大数量 （效率最高的情况）。
+
+Partition = 并发度:  刚刚好，效率最高
+Partition > 并发度：有部分消费者消费多个分区的数据。
+
+Partition < 并发度	:有部分消费者闲置（任意时刻一个分区内的一条数据只能被消费组中的一个消费者消费）
+```
+
+例如：Consumer group A 有两个消费者来读取4个partition中数据；Consumer group B有四个消费者来读取4个 partition中的数据
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+_02ea67ac2022-06-09 10_15_36.png]]

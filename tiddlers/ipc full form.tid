@@ -1,0 +1,17 @@
+created: 20220714053017096
+difficulty: 1
+due: 20221204092111540
+grade: 2
+history: [{"due":"20220720151210442","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719151210442"},{"due":"20220815014551804","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":2,"lapses":0,"reps":2,"review":"20220730014551804"}]
+interval: 24
+lapses: 0
+modified: 20220823092111540
+reps: 3
+retrievability: 0.8574307099240628
+review: 20220823092111540
+stability: 102.78038038016865
+tags: ?
+title: ipc full form
+type: text/vnd.tiddlywiki
+
+ inter-process communication

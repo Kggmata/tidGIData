@@ -1,0 +1,26 @@
+created: 20220723132603307
+difficulty: 1
+due: 20221024121020922
+grade: 1
+history: [{"due":"20220823062108519","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062108519"}]
+interval: 47
+lapses: 0
+modified: 20221008121020922
+reps: 2
+retrievability: 3.118743276916041e-22
+review: 20221008121020922
+stability: 16.439759152464664
+tags: flink ?
+title: flink select where实际语义
+type: text/vnd.tiddlywiki
+
+```
+INSERT INTO target_table
+	SELECT PRETTY_PRINT(order_id) FROM Orders
+Where id > 3
+```
+```
+from orders: source算子从上游数据源读数据, 传递到下游算子
+where id>3, PRETTY_PRINT: 过滤id>3以及让过滤后的数据经过PRETTY_PRINT udf函数
+insert into: sink算子接受到数据, 然后写入目标表
+```

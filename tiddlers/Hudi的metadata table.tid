@@ -1,0 +1,11 @@
+created: 20220729044323749
+modified: 20220729053606498
+tags: ? flink
+title: Hudi的metadata table
+type: text/vnd.tiddlywiki
+
+```
+为什么会有metadata table
+能够极大提高queries的read/write性能. 主要目的是消除'list files'的需求
+list files就是在读写文件的时候, 拿到current view of the file system. 
+```

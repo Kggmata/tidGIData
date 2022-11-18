@@ -1,0 +1,43 @@
+created: 20220716141333646
+difficulty: 1
+due: 20220831131610627
+grade: 1
+history: [{"due":"20220727050456656","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726050456656"},{"due":"20220805134105788","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220804134105788"},{"due":"20220810073333990","interval":5,"difficulty":1.200816005065809,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220809073333990"},{"due":"20220816084432918","interval":6,"difficulty":1.4008259468666744,"stability":0.040656966333775045,"retrievability":0.000009941800865523385,"grade":0,"lapses":3,"reps":1,"review":"20220815084432918"}]
+interval: 8
+lapses: 3
+modified: 20220823131610627
+reps: 2
+retrievability: 9.91696517902932e-10
+review: 20220823131610627
+stability: 7.994071582730249
+tags: ?
+title: MPP vs SMP vs AMP
+type: text/vnd.tiddlywiki
+
+https://cloudblogs.microsoft.com/sqlserver/2014/07/30/transitioning-from-smp-to-mpp-the-why-and-the-how/
+
+```
+SMP symmetric multi processing,
+就是平等的对待处理器, 让他们并行运行. 使工作负载更为均衡
+
+AMP asymmetric multi processing
+不平等的对待处理器, 一个主处理器运行OS任务, 其他处理器处理轻量级任务
+```
+```
+MPP massively parallel processing
+和smp的区别就是处理器之间松耦合
+```
+```
+MPP的优势：
+
+
+MPP系统不共享资源，因此对它而言，资源比SMP要多，当需要处理的事务达到一定规模时，MPP的效率要比SMP好。由于MPP系统因为要在不同处理单元之间传送信息，在通讯时间少的时候，那MPP系统可以充分发挥资源的优势，达到高效率。也就是说：操作相互之间没有什么关系，处理单元之间需要进行的通信比较少，那采用MPP系统就要好。因此，MPP系统在决策支持和数据挖掘方面显示了优势。
+
+
+SMP的优势：
+
+
+MPP系统因为要在不同处理单元之间传送信息，所以它的效率要比SMP要差一点。在通讯时间多的时候，那MPP系统可以充分发挥资源的优势。因此当前使用的OTLP程序中，用户访问一个中心数据库，如果采用SMP系统结构，它的效率要比采用MPP结构要快得多。
+```
+[img[__bde335612022-08-04 21_38_43.jpg]]
+[img[__0aa713792022-08-04 21_38_53.jpg]]

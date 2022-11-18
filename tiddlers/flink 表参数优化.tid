@@ -1,0 +1,24 @@
+created: 20220724013254308
+difficulty: 1
+due: 20221012140247893
+grade: 0
+history: [{"due":"20220824132437355","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220823132437355"}]
+interval: 49
+lapses: 1
+modified: 20221011140247893
+reps: 1
+retrievability: 3.791663812033409e-23
+review: 20221011140247893
+stability: 0.07408182272361549
+tags: flink ?
+title: flink 表参数优化
+type: text/vnd.tiddlywiki
+
+```
+	表参数：用于调整 Flink SQL table 的执行行为
+table.dml-sync: false
+table.generated-code.max-length: 64000
+table.local-time-zone: default
+table.planner: BLINK 代表使用blink planner,新版本已经删去
+table.sql-dialect: default
+```

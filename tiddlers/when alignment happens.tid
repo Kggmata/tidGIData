@@ -1,0 +1,19 @@
+created: 20220721105346627
+difficulty: 1
+due: 20220824085104656
+grade: 2
+history: [{"due":"20220802092348933","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092348933"}]
+interval: 7
+lapses: 0
+modified: 20220808085104656
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808085104656
+stability: 16.423571292705216
+tags: ?
+title: when alignment happens
+type: text/vnd.tiddlywiki
+
+```
+Alignment happens only for operators with multiple predecessors (joins) as well as operators with multiple senders (after a stream repartitioning/shuffle). Because of that, dataflows with only embarrassingly parallel streaming operations (map(), flatMap(), filter(), …) actually give exactly once guarantees even in at least once mode.
+```

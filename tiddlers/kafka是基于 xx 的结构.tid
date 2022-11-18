@@ -1,0 +1,19 @@
+created: 20220711005834870
+difficulty: 1
+due: 20221102073035214
+grade: 2
+history: [{"due":"20220713035057484","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035057484"},{"due":"20220806013605246","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721013605246"}]
+interval: 19
+lapses: 0
+modified: 20220809073035214
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809073035214
+stability: 84.88779656040188
+tags: kafka ?
+title: kafka是基于 xx 的结构
+type: text/vnd.tiddlywiki
+
+主题 + 分区 + 副本 + 分段 + 索引
+
+topic + partition + replication + segment + index

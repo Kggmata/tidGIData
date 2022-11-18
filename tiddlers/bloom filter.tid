@@ -1,0 +1,31 @@
+created: 20220627145859199
+difficulty: 1.0674977020971539
+due: 20221026104846789
+grade: 1
+history: [{"due":"20220630130517229","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629130517229"},{"due":"20220720095535918","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":2,"lapses":0,"reps":2,"review":"20220704095535917"}]
+interval: 22
+lapses: 0
+modified: 20220726104846789
+reps: 3
+retrievability: 0.8674977020971539
+review: 20220726104846789
+stability: 92.07922912361714
+tags: 用户画像 ?
+title: bloom filter
+type: text/vnd.tiddlywiki
+
+布隆索引
+
+    数值,字符串,二进制都可以
+
+    where =
+
+```
+1970年由布隆提出的一种空间空间效率很高的随机数据结构
+    原理: 类似hashmap. 
+    什么是hash?将任意长度的数据映射到有限长度的域上
+  	使用bloom filter算法,能够准确判断一个元素不在集合内,但是只能判断一个元素可能在集合内
+    首先是一个空的bloom过滤器,有M个bit,都为0,假设有N个不同的hash函数,将数据的一个元素通过N个hash函数,能够得到N个位置,在M个bit上将对应的bit设置为1
+    优点是查询速度快,占用空间少
+    但是存在一定的误判率
+```

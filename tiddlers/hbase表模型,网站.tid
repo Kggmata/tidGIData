@@ -1,0 +1,93 @@
+created: 20220601082208832
+difficulty: 1
+due: 20221007104302018
+grade: 2
+history: [{"due":"20220605023500134","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023500134"},{"due":"20220623072126152","interval":3,"difficulty":1,"stability":16.00419314059993,"retrievability":0.05273732312238567,"grade":2,"lapses":0,"reps":2,"review":"20220607072126152"},{"due":"20220626080313531","interval":18,"difficulty":2.088252237761252,"stability":0.07408719146292923,"retrievability":0.8882522377612516,"grade":0,"lapses":1,"reps":1,"review":"20220625080313531"},{"due":"20220630015915300","interval":4,"difficulty":2.291637037600947,"stability":0.054882158045770235,"retrievability":0.003384799839695139,"grade":0,"lapses":2,"reps":1,"review":"20220629015915299"},{"due":"20220712102113672","interval":5,"difficulty":1.4917048480071082,"stability":7.696159649670277,"retrievability":0.00006781040616137007,"grade":1,"lapses":2,"reps":2,"review":"20220704102113672"},{"due":"20220718075828565","interval":13,"difficulty":2.528672252830055,"stability":0.04065715014820503,"retrievability":0.8369674048229466,"grade":0,"lapses":3,"reps":1,"review":"20220717075828565"},{"due":"20220724062623623","interval":6,"difficulty":2.7286724295618225,"stability":0.030119455301110827,"retrievability":1.7673176748815954e-7,"grade":0,"lapses":4,"reps":1,"review":"20220723062623622"},{"due":"20220802235558805","interval":9,"difficulty":2.928672429561844,"stability":0.022313022332150104,"retrievability":2.124201917654503e-14,"grade":0,"lapses":5,"reps":1,"review":"20220801235558805"},{"due":"20220812030604657","interval":5,"difficulty":1.1286724296176216,"stability":4.543940986856479,"retrievability":5.5777704404492805e-11,"grade":2,"lapses":5,"reps":2,"review":"20220807030604656"}]
+interval: 10
+lapses: 5
+modified: 20220817104302018
+reps: 3
+retrievability: 0.7930489407460011
+review: 20220817104302018
+stability: 50.85435216523859
+tags: hbase ?
+title: hbase表模型,网站
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/news/758459
+https://cloud.tencent.com/developer/article/1545318
+https://www.cnblogs.com/wendyw/p/12616694.html#_label1
+https://juejin.cn/post/6844903753271754759
+http://devdoc.net/
+
+逻辑模型
+[img[a5ea27dd8097742bcdcff5f8bf0cc860 (2).webp]]
+
+HBase的表结构
+
+''行键 Row Key''
+与nosql数据库一样,row key是用来检索记录的主键。访问hbase table中的行，只有三种方式：
+
+`通过单个row key访问
+通过row key的range
+全表扫描`
+Row Key 行键可以是任意字符串(最大长度是 64KB，实际应用中长度一般为 10-100bytes)，在hbase内部，row key保存为字节数组。
+
+Hbase会对表中的数据''按照rowkey排序(字典顺序)''
+
+存储时，数据按照Row key的字典序(byte order)排序存储。设计key时，要充分排序存储这个特性，将经常一起读取的行存储放到一起。(位置相关性)。
+
+注意：
+
+字典序对int排序的结果是
+
+1,10,100,11,12,13,14,15,16,17,18,19,2,20,21 … 。要保持整形的自然序，行键必须用0作左填充。
+
+行的一次读写是原子操作 (不论一次读写多少列)。这个设计决策能够使用户很容易的理解程序在对同一个行进行并发更新操作时的行为。
+
+''列族 Column Family''
+HBase表中的每个列，都归属于某个列族。列族是表的schema的一部分(而列不是)，必须在使用表之前定义。
+
+列名都以列族作为前缀。例如 courses:history ， courses:math 都属于 courses 这个列族。
+
+访问控制、磁盘和内存的使用统计都是在列族层面进行的。列族越多，在取一行数据时所要参与IO、搜寻的文件就越多，所以，如果没有必要，不要设置太多的列族。
+
+''列 Column''
+列族下面的具体列，属于某一个ColumnFamily，类似于在mysql当中创建的具体的列。
+
+''时间戳 Timestamp''
+HBase中通过row和columns确定的为一个存贮单元称为cell。每个 cell都保存着同一份数据的多个版本。版本通过时间戳来索引。时间戳的类型是 64位整型。时间戳可以由hbase(在数据写入时自动 )赋值，此时时间戳是精确到毫秒的当前系统时间。时间戳也可以由客户显式赋值。如果应用程序要避免数据版本冲突，就必须自己生成具有唯一性的时间戳。每个 cell中，不同版本的数据按照时间倒序排序，即最新的数据排在最前面。
+
+为了避免数据存在过多版本造成的的管理 (包括存贮和索引)负担，hbase提供了两种数据版本回收方式：
+
+`保存数据的最后n个版本
+保存最近一段时间内的版本（设置数据的生命周期TTL）。`
+用户可以针对每个列族进行设置。
+
+''单元 Cell''
+由{row key, column( =<family\> + <label\>), version} 唯一确定的单元。
+
+cell中的数据是没有类型的，全部是字节码形式存贮。
+
+''版本号 VersionNum''
+数据的版本号，每条数据可以有多个版本号，默认值为系统时间戳，类型为Long。
+
+物理模型
+[img[1087883-20200408093050328-301039214.png]]
+
+Table 中的所有行都按照 Row Key 的字典序排列。
+
+Table 在行的方向上分割为多个 HRegion。
+
+HRegion按''大小''分割的(''默认10G'')，每个表一开始只有一 个HRegion，随着数据不断插入表，HRegion不断增大，当增大到一个阀值的时候，HRegion就会等分会两个新的HRegion。当Table 中的行不断增多，就会有越来越多的 HRegion。
+
+HRegion 是 HBase 中分布式存储和负载均衡的最小单元。最小单元就表示不同的 HRegion 可以分布在不同的 HRegion Server 上。但一个 HRegion 是不会拆分到多个 Server 上的。
+
+HRegion 虽然是负载均衡的最小单元，但并不是物理存储的最小单元。
+
+事实上，HRegion 由一个或者多个 Store 组成，每个 Store 保存一个 Column Family。
+
+每个 Strore 又由一个 MemStore 和0至多个 StoreFile 组成。如上图。
+
+每一行数据，或者说每一个键值对包含了行键（Row）、列族名称(Column Family)和列标识符(Column Qualifier),即列名、时间戳、行键类型（Key Type）与值(Value)。
+

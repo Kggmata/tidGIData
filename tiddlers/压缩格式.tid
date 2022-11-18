@@ -1,0 +1,35 @@
+created: 20220702122838395
+difficulty: 1.059946790337357
+due: 20221106122040147
+grade: 1
+history: [{"due":"20220707033730976","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706033730976"},{"due":"20220726061817364","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":2,"lapses":0,"reps":2,"review":"20220710061817364"}]
+interval: 23
+lapses: 0
+modified: 20220802122040147
+reps: 3
+retrievability: 0.859946790337357
+review: 20220802122040147
+stability: 95.882214518606
+tags: 用户画像 ?
+title: 压缩格式
+type: text/vnd.tiddlywiki
+
+```
+gzip
+spark默认压缩方式，hadoop原生支持，压缩比率很高、压缩和解压速度很快，支持纯文本式编辑，使用方便，但是压缩后不支持分片，因此适用于1个块内大小的文件。
+
+zlib
+压缩率类似gzip, 但是速度快不少
+
+lzo
+hadoop流行的压缩方式，需要安装，压缩解压速度较快，压缩率适中，建立索引后支持分片，压缩单个大文件时可以使用。
+
+snappy
+高速压缩和解压，压缩率较低，需要安装，不支持分片，推荐作为临时数据的压缩方式。
+
+bzip2
+非常高的压缩率，但解压速度很慢，支持分片。hadoop本身支持，但本地库不支持。一般和lzo选其中一个作为数据源的压缩格式。
+```
+————————————————
+版权声明：本文为CSDN博主「拉格朗日(Lagrange)」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_43061290/article/details/124819089

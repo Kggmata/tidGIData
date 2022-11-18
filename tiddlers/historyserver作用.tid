@@ -1,0 +1,19 @@
+created: 20220522011514107
+difficulty: 1
+due: 20230427044912097
+grade: 2
+history: [{"due":"20220524005738165","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523005738164"},{"due":"20220611123341372","interval":4,"difficulty":2.4282932617626143,"stability":14.682450614631612,"retrievability":0.4804929525351808,"grade":2,"lapses":0,"reps":2,"review":"20220527123341372"},{"due":"20220814130133452","interval":17,"difficulty":1.5134494800869602,"stability":61.552636188169345,"retrievability":0.885156218324346,"grade":2,"lapses":0,"reps":3,"review":"20220613130133451"}]
+interval: 68
+lapses: 0
+modified: 20220820044912097
+reps: 4
+retrievability: 0.8901221671241359
+review: 20220820044912096
+stability: 249.71674105059552
+tags: spark ?
+title: historyserver作用
+type: text/vnd.tiddlywiki
+
+用来记录历史程序运行信息
+
+日志会存在hdfs上

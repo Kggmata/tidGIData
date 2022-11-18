@@ -1,0 +1,37 @@
+created: 20220522110915285
+difficulty: 1.0300451169534484
+due: 20221010081056909
+grade: 2
+history: [{"due":"20220524063207713","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523063207713"},{"due":"20220602112954247","interval":2,"difficulty":2.640976298811018,"stability":7.587419783831714,"retrievability":0.6931759895835838,"grade":2,"lapses":0,"reps":2,"review":"20220525112954247"},{"due":"20220719120030221","interval":12,"difficulty":1.6874852207351265,"stability":42.50129829954656,"retrievability":0.8465089219241088,"grade":2,"lapses":0,"reps":3,"review":"20220606120030221"},{"due":"20220725023947460","interval":48,"difficulty":2.775300327357829,"stability":0.07408190596496488,"retrievability":0.8878151066227022,"grade":0,"lapses":1,"reps":1,"review":"20220724023947460"},{"due":"20220810093425806","interval":9,"difficulty":1.9753030882703564,"stability":8.055312317067024,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220802093425806"}]
+interval: 12
+lapses: 1
+modified: 20220814081056909
+reps: 3
+retrievability: 0.854742028683092
+review: 20220814081056909
+stability: 56.81735315115166
+tags: spark ?
+title: 为什么要将Spark的程序运行在YARN上，不运行在自带的Standalone集群上？
+type: text/vnd.tiddlywiki
+
+*统一化资源管理
+```
+工作中的计算集群大多数情况下只有1套集群
+- 如果Hadoop生态的程序，例如MR、Hive、Sqoop、Oozie等使用YARN来计算
+- 而Spark的程序单独用Standalone集群来计算
+- 就导致了一套硬件资源被两套资源管理平台所管理，使用时会导致资源竞争冲突等问题
+- 不能充分的发挥硬件资源的性能且管理麻烦
+```
+*自由开发模式
+
+```
+使用YARN统一化管理整个硬件集群的所有计算资源：公共分布式资源平台
+- YARN支持多种类型程序的运行：MR、Tez、Spark、Flink等
+```
+
+*成熟的资源调度机制
+
+```
+支持多队列、多种调度器可以实现不同场景下的计算资源隔离和任务调度
+- YARN中Capacity、Fair调度器
+```

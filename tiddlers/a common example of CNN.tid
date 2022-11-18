@@ -1,0 +1,9 @@
+created: 20220819064838227
+modified: 20220819065121085
+tags: ? flink
+title: a common example of CNN
+type: text/vnd.tiddlywiki
+
+conv- pool- conv- pool- fc- fc- fc- softmax
+
+[img[7e24d0d75ec86e7e82f7a0b87138cce747cdae06fa04ecce62eaae2a8671fd50.png]]

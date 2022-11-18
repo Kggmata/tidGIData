@@ -1,0 +1,110 @@
+created: 20220528063947493
+difficulty: 1.0855192381046468
+due: 20221015084503949
+grade: 1
+history: [{"due":"20220601052846623","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052846623"},{"due":"20220628010721560","interval":5,"difficulty":1,"stability":22.531244498588748,"retrievability":0.03668351005467044,"grade":2,"lapses":0,"reps":2,"review":"20220605010721560"}]
+interval: 26
+lapses: 0
+modified: 20220701084503949
+reps: 3
+retrievability: 0.8855192381046468
+review: 20220701084503948
+stability: 105.56639026094608
+tags: spark ?
+title: sparkSQL介绍
+type: text/vnd.tiddlywiki
+
+- *问题**：SparkCore只能通过普通代码编程的方式来使用，对于统计分析的需求不是特别的友好
+
+
+
+- **解决**：一群大数据开发者，将Hive源码直接独立出来，将底层解析成MapReduce的代码替换成解析变成SparkCore
+
+
+
+  - MapReduce也面临同样的问题，FaceBook用MR开发数据分析程序
+
+
+
+    - 会写Java代码的不会做数据分析
+
+    - 会做数据分析的人不会写Java
+
+    - |
+
+    - 让Java工程师写一个软件，软件支持SQL，但是软件能SQL转换成Java版本的MR
+
+    - |
+
+    - Hive
+
+
+
+  - | 能不能构建一个和Hive很类似的东西，能将SQL语句转换成SparkCore代码 |
+
+    | ------------------------------------------------------------ |
+
+
+
+    - 一群开发者组件Shark项目：将Hive源代码拿过来进行修改，将翻译过程改成翻译成SparkCore程序
+
+    - |
+
+    - Shark
+
+
+
+- **发展**
+
+
+
+  - **Spark1.0**：DB团队将Shark的部分源码集成到了Spark软件中，重构了设计，更名为SparkSQL
+
+    - SparkCore：RDD
+
+    - SparkSQL：SchemaRDD：比普通的RDD多了Schema【字段的信息】
+
+  - **Spark1.3**：参考Python的Pandas设计，引入了DataFrame
+
+    - SparkSQL：DataFrame：既支持SQL，又支持类似于Pandas中的DSL【代码】分析
+
+  - **Spark1.6**：参考Flink的设计，引入了DataSet的设计
+
+    - SparkSQL：DataSet：保留了DataFrame中的特点，支持类型的变更
+
+  - **Spark2.0**：将DF作为DS的一种特殊形式，只保留了DataSet数据结构
+
+    - SparkSQL：DataFrame合并到了DataSet中，作为一种特殊的DataSet存在
+
+    - Python中只能看到DataFrame，底层是DataSet
+
+[img[image-20210713215122044.png]]
+
+- - SparkSQL是Spark中**专门为结构化数据计算**的模块，基于SparkCore之上
+
+- **功能**：提供SQL和DSL【代码】开发接口，将SQL或者DSL语句转换为SparkCore程序，实现结构化的数据处理
+
+- **特点**
+
+  - **Integrated**：集成了大多数的开发接口
+
+  - 支持Python、Java、Scala、R、SQL、DSL
+
+  - **Uniform Data Access**：统一化的数据访问
+
+    - 支持多种结构化数据：json、parquet、orc、hive、mysql、csv【每一列用逗号分隔】、tsv【每一列用制表符】
+
+  - **Hive Integration**：Hive的集成
+
+    - 支持直接对Hive表进行读写操作，用于实现对数据仓库中数据的处理，语法非常接近
+
+  - **Standard Connectivity**：标准的数据连接接口
+
+    - 支持多种连接使用的方式：JDBC、Beeline、ThriftServer、运行SQL文件、spark-submit
+
+
+- **应用**
+
+  - 应用于集成Hive实现离线数据仓库中数据计算：数据分析、分层转换
+
+  - 应用于实时数据流计算：StructStreaming：结构化流计算

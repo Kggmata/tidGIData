@@ -1,0 +1,27 @@
+created: 20220609110612473
+difficulty: 1.2910646467179603
+due: 20220910015433018
+grade: 1
+history: [{"due":"20220614100918240","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100918240"},{"due":"20220617051729688","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616051729688"},{"due":"20220619113435085","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618113435085"},{"due":"20220630001448651","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620001448651"},{"due":"20220705124421129","interval":14,"difficulty":2.0606496253758357,"stability":0.04065733432235013,"retrievability":0.8606496253758356,"grade":0,"lapses":3,"reps":1,"review":"20220704124421129"},{"due":"20220717015455656","interval":6,"difficulty":1.2606498021200514,"stability":6.8036750489187865,"retrievability":1.7674421584076485e-7,"grade":1,"lapses":3,"reps":2,"review":"20220710015455656"}]
+interval: 12
+lapses: 3
+modified: 20220722015433018
+reps: 3
+retrievability: 0.8304148445979092
+review: 20220722015433018
+stability: 49.79844008600565
+tags: kafka ?
+title: kafka创建一个自定义的主题
+type: text/vnd.tiddlywiki
+
+```
+bin/kafka-topics.sh --create --zookeeper ZK地址 --topic 要创建的Topic名 --partitions num --replication-factor num
+--create 表示新建
+--zookeeper 表示给出ZK的地址，可以给一台ZK也可以3台都给
+--topic 要创建的Topic名
+--partitions 这个主题有几个分区, 分区数量建议是broker数量的N倍，比如3台broker建议分区数是3、6、9、12、15...等
+--replication-factor 这个主题有几份副本(后面分析)，为了性能1个副本最快，2个副本安全好一点性能下降一点，3个副本安全性最好
+
+# 实战，创建一个主题名字叫做bj59
+bin/kafka-topics.sh --create --zookeeper node1:2181,node2:2181,node3:2181 --topic bj59 --partitions 3 --replication-factor 1
+```

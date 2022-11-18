@@ -1,0 +1,69 @@
+created: 20220716130416752
+difficulty: 1.041086769004015
+due: 20221219062837708
+grade: 1
+history: [{"due":"20220726125027625","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220725125027625"},{"due":"20220819033628058","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220803033628058"}]
+interval: 27
+lapses: 0
+modified: 20220830062837708
+reps: 3
+retrievability: 0.8410867690040151
+review: 20220830062837708
+stability: 110.78086640638627
+tags: ?
+title: flink on yarn执行流程
+type: text/vnd.tiddlywiki
+
+接下来我们再看一下有资源管理平台时，具体的提交流程。我们以 YARN 为例，分不同的部署模式来做具体说明。
+
+- 会话（Session）模式
+
+```
+在会话模式下，我们需要先启动一个 YARN session，这个会话会创建一个 Flink 集群
+```
+[img[image-20220713184453352.png]]
+
+```
+这里只启动了 JobManager，而 TaskManager 可以根据需要动态地启动。在 JobManager 内部，由于还没有提交作业，所以只有 ResourceManager 和 Dispatcher 在运行，如图所示。
+```
+[img[image-20220713184502765.png]]
+
+```
+- 接下来就是真正提交作业的流程，如上图所示：
+  1. 客户端通过 REST 接口，将作业提交给分发器。
+  2. 分发器启动 JobMaster，并将作业（包含 JobGraph）提交给 JobMaster。
+  3. JobMaster 向资源管理器请求资源（slots）。
+  4. 资源管理器向 YARN 的资源管理器请求 container 资源。
+  5. YARN 启动新的 TaskManager 容器。
+  6. TaskManager 启动之后，向 Flink 的资源管理器注册自己的可用任务槽。
+  7. 资源管理器通知 TaskManager 为新的作业提供 slots。
+  8. TaskManager 连接到对应的 JobMaster，提供 slots。
+  9. JobMaster 将需要执行的任务分发给 TaskManager，执行任务。
+- 可见，整个流程除了请求资源时要“上报”YARN 的资源管理器，其他与 7.2.1 节所述抽象流程几乎完全一样
+```
+
+单作业（Per-Job）模式
+
+- 在单作业模式下，Flink 集群不会预先启动，而是在提交作业时，才启动新的 JobManager。具体流程如下图所示。
+
+[img[image-20220713184624187.png]]
+
+- 提交作业的流程，如上图所示：
+
+ ```
+1. 客户端将作业提交给 YARN 的资源管理器，这一步中会同时将 Flink 的 Jar 包和配置上传到 HDFS，以便后续启动 Flink 相关组件的容器。
+  2. YARN 的资源管理器分配 Container 资源，启动 Flink JobManager，并将作业提交给JobMaster。这里省略了 Dispatcher 组件。
+  3. JobMaster 向资源管理器请求资源（slots）。
+  4. 资源管理器向 YARN 的资源管理器请求 container 资源。
+  5. YARN 启动新的 TaskManager 容器。
+  6. TaskManager 启动之后，向 Flink 的资源管理器注册自己的可用任务槽。
+  7. 资源管理器通知 TaskManager 为新的作业提供 slots。
+  8. TaskManager 连接到对应的 JobMaster，提供 slots。
+  9. JobMaster 将需要执行的任务分发给 TaskManager，执行任务。
+- 可见，区别只在于 JobManager 的启动方式，以及省去了分发器。当第 2 步作业提交给JobMaster，之后的流程就与会话模式完全一样了。
+```
+应用（Application）模式
+
+```
+应用模式与单作业模式的提交流程非常相似，只是初始提交给 YARN 资源管理器的不再是具体的作业，而是整个应用。一个应用中可能包含了多个作业，这些作业都将在 Flink 集群中启动各自对应的 JobMaster
+```

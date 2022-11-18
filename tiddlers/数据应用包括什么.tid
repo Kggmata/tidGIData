@@ -1,0 +1,21 @@
+caption: {{||Question}}
+created: 20220519092741807
+difficulty: 3.5872495921625056
+due: 20220918013905843
+grade: 2
+history: [{"due":"20220522000044269","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000044268"},{"due":"20220523002738707","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522002738707"},{"due":"20220524000349899","interval":1,"difficulty":7.231358589403242,"stability":1.097623272188053,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220523000349899"},{"due":"20220524233550455","interval":0,"difficulty":7.431358589403243,"stability":1.097623272188053,"retrievability":1,"grade":1,"lapses":2,"reps":2,"review":"20220523233550454"},{"due":"20220525231504192","interval":0,"difficulty":6.631358589403242,"stability":1.097623272188053,"retrievability":1,"grade":2,"lapses":2,"reps":3,"review":"20220524231504192"},{"due":"20220612102846527","interval":6,"difficulty":5.393535815880573,"stability":12.012930241264291,"retrievability":0.5621772264773299,"grade":2,"lapses":2,"reps":4,"review":"20220531102846527"},{"due":"20220712112629328","interval":13,"difficulty":4.485777976918002,"stability":29.45677706235634,"retrievability":0.8922421610374289,"grade":2,"lapses":2,"reps":5,"review":"20220613112629328"}]
+interval: 29
+lapses: 2
+modified: 20220712013905843
+reps: 6
+retrievability: 0.9014716152445029
+review: 20220712013905843
+stability: 67.50185703931236
+tags: spark ?
+title: 数据应用包括什么
+type: text/vnd.tiddlywiki
+
+功能：实现对数据的应用，例如构建报表等
+技术：FineBI、Tableau、PowerBI、SuperSet等
+
+ELK当中的kibana

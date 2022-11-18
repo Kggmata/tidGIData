@@ -1,0 +1,18 @@
+created: 20220714012132292
+difficulty: 1
+due: 20221211063013869
+grade: 2
+history: [{"due":"20220720081127630","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719081127629"},{"due":"20220731012847676","interval":11,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730012847676"},{"due":"20220819115141470","interval":7,"difficulty":1,"stability":12.926432277358748,"retrievability":0.00004746481942846522,"grade":2,"lapses":1,"reps":2,"review":"20220806115141469"}]
+interval: 24
+lapses: 1
+modified: 20220830063013869
+reps: 3
+retrievability: 0.8223256960228704
+review: 20220830063013868
+stability: 103.31456048336943
+tags: ?
+title: Flink官方支持编程语言
+type: text/vnd.tiddlywiki
+
+SQL、Java、Python、Scala 语言接口用以开发Flink应用程序
+

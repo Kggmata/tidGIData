@@ -1,0 +1,16 @@
+created: 20220725063634471
+modified: 20220729013903270
+tags: ? flink
+title: hudi file layout
+type: text/vnd.tiddlywiki
+
+https://hudi.apache.org/docs/next/file_layouts
+
+```
+hudi在DFS上把data tables组织成一个directory结构
+table->partitions->file groups(uniquely identified by file ID)->several file slices->a base file(parquet) produced at certain commit/compaction instant time, a set of log files contains inserts/updates since the base file was produced.
+```
+```
+Hudi采用MVCC(multiversion cocurrency control). compaction合并log和base files, 产生新的file slices, 同时清理unused/older files来释放空间
+```
+[img[Partition On HDFS2022-07-29 09_37_11.png]]

@@ -1,0 +1,17 @@
+created: 20220624054357203
+difficulty: 1.0599913309188922
+due: 20221020072838077
+grade: 1
+history: [{"due":"20220626014925890","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625014925890"},{"due":"20220713033810668","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":2,"lapses":0,"reps":2,"review":"20220628033810668"}]
+interval: 22
+lapses: 0
+modified: 20220720072838077
+reps: 3
+retrievability: 0.8599913309188922
+review: 20220720072838076
+stability: 92.39314694548874
+tags: 用户画像 ?
+title: 什么是机器学习问题？
+type: text/vnd.tiddlywiki
+
+答案：机器学习需要根据现有的数据，结合机器学习算法，有一个预测的过程

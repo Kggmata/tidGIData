@@ -1,0 +1,10 @@
+created: 20220830133805066
+modified: 20220830133905416
+tags: ? flink
+title: github fork和clone的区别
+type: text/vnd.tiddlywiki
+
+```
+git clone 是克隆一份在本地
+fork是复制到自己的github项目
+```

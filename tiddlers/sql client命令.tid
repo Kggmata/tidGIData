@@ -1,0 +1,24 @@
+created: 20220716123803707
+difficulty: 1
+due: 20221216143717742
+grade: 2
+history: [{"due":"20220725072642408","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220724072642408"},{"due":"20220818142039784","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220802142039784"}]
+interval: 26
+lapses: 0
+modified: 20220828143717742
+reps: 3
+retrievability: 0.846495152115536
+review: 20220828143717741
+stability: 109.91547375987967
+tags: ?
+title: sql client命令
+type: text/vnd.tiddlywiki
+
+```
+#### 执行 SQL 查询
+
+命令行界面启动后，你可以使用 ***\*help\****命令列出所有可用的 SQL 语句。输入第一条 SQL 查询语句并按 ***\*Enter\**** 键执行，可以验证你的设置及集群连接是否正确：
+```
+```
+SELECT 'Hello World';
+```

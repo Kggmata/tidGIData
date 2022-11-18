@@ -1,0 +1,20 @@
+created: 20220713065936113
+difficulty: 1.0684516258848127
+due: 20221117120531584
+grade: 1
+history: [{"due":"20220719144037979","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718144037979"},{"due":"20220811113130302","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726113130301"}]
+interval: 22
+lapses: 0
+modified: 20220817120531584
+reps: 3
+retrievability: 0.8684516258848127
+review: 20220817120531584
+stability: 92.04518386847433
+tags: ?
+title: Kafka 保证生产者精准一次
+type: text/vnd.tiddlywiki
+
+0.11 版本的Kafka，引入了一项重大特性：幂等性。所谓的幂等性就是指 Producer 不论向 Server 发送多少次重复数据，Server 端都只会持久化一条。幂等性结合 At Least Once 语义，就构成了 Kafka 的 Exactly Once 语义。即：At Least Once + 幂等性 = Exactly Once。
+————————————————
+版权声明：本文为CSDN博主「xy29981」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_19007169/article/details/124725585

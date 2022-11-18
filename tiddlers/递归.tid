@@ -1,0 +1,38 @@
+created: 20220525141821653
+difficulty: 1
+due: 20220915150352876
+grade: 2
+history: [{"due":"20220531130117208","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130117208"},{"due":"20220621143623960","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220602143623960"}]
+interval: 19
+lapses: 0
+modified: 20220820142011762
+reps: 3
+retrievability: 0.9002874064837764
+review: 20220621150352875
+stability: 85.55303743418845
+tags: 数据结构 ?
+title: 递归
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-25_22-17-26.png]]
+
+递归
+
+[img[Snipaste_2022-06-13_11-33-41.jpg]]
+
+```
+递归的结构图就是一个多叉树
+```
+
+估计递归时间复杂度
+
+''master公式''
+[img[Snipaste_2022-06-13_11-37-29.jpg]]
+
+要求 子问题必须是相同规模的
+
+```
+log(b,a)>d => O(N^log(b,a))
+log(b,a)=d => O(N^d*logN)
+log(b,a)<d =>O(N^d)
+```

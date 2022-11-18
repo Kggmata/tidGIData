@@ -1,0 +1,27 @@
+created: 20220723134129978
+difficulty: 1
+due: 20221012132516777
+grade: 0
+history: [{"due":"20220823062219859","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062219859"}]
+interval: 50
+lapses: 1
+modified: 20221011132516777
+reps: 1
+retrievability: 1.3220714356875621e-23
+review: 20221011132516777
+stability: 0.07408182272361549
+tags: flink ?
+title: flinksql如何判断group sets的所属
+type: text/vnd.tiddlywiki
+
+```
+使用grouping和grouping_id函数
+```
+```
+GROUPING(b), 当使用b作为分组字段, 那么返回1, 否则为0
+```
+```
+GROUPING_ID, 使用BITMAP显示
+GROUPING_ID(a,b,c)
+比如CUBE(a,b,c), GROUP_ID为7时代表按照(a,b,c)分组
+```

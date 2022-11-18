@@ -1,0 +1,72 @@
+created: 20220625004558026
+difficulty: 1
+due: 20221014083726314
+grade: 2
+history: [{"due":"20220630081205727","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081205727"},{"due":"20220717154342898","interval":3,"difficulty":1,"stability":15.367048766557211,"retrievability":0.04239358618575581,"grade":2,"lapses":0,"reps":2,"review":"20220702154342898"}]
+interval: 19
+lapses: 0
+modified: 20220721083726314
+reps: 3
+retrievability: 0.8778592709133122
+review: 20220721083726314
+stability: 84.72185768110526
+tags: 用户画像 ?
+title: 对非数值数据转化为Index索引(数值型数据)
+type: text/vnd.tiddlywiki
+
+StringIndexer
+
+```
+#!/usr/bin/env python
+# @desc : 演示sparkml的stringindexer将字符类型转化为数字类型
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+import os
+
+from pyspark import SparkContext
+from pyspark.ml.feature import StringIndexer
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType, StringType
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    spark = SparkSession \
+        .builder \
+        .appName("testAgeModel") \
+        .master("local[*]") \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+
+    df = spark.createDataFrame(
+        [(0, "a"), (1, "b"), (2, "c"), (3, "a"), (4, "a"), (5, "c")],
+        ["id", "category"])
+    df.show()
+    df.printSchema()
+
+    strIndexer = StringIndexer().setInputCol("category").setOutputCol("outputCate")
+    model = strIndexer.fit(df)
+    reDF = model.transform(df)
+    reDF.show()
+    # +---+--------+----------+
+    # | id|category|outputCate|
+    # +---+--------+----------+
+    # |  0|       a|       0.0|
+    # |  1|       b|       2.0|
+    # |  2|       c|       1.0|
+    # |  3|       a|       0.0|
+    # |  4|       a|       0.0|
+    # |  5|       c|       1.0|
+    # +---+--------+----------+
+
+```

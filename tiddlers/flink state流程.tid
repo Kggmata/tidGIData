@@ -1,0 +1,21 @@
+created: 20220714013743650
+difficulty: 1
+due: 20220828012556874
+grade: 1
+history: [{"due":"20220720113235615","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719113235615"},{"due":"20220730145334537","interval":10,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.0000265626666297211,"grade":0,"lapses":1,"reps":1,"review":"20220729145334537"},{"due":"20220806074334012","interval":7,"difficulty":1.2000474648194284,"stability":0.054881171378436774,"retrievability":0.00004746481942846522,"grade":0,"lapses":2,"reps":1,"review":"20220805074334012"},{"due":"20220812085551562","interval":6,"difficulty":1.4000574066344786,"stability":0.04065696669349018,"retrievability":0.000009941815050312982,"grade":0,"lapses":3,"reps":1,"review":"20220811085551562"}]
+interval: 9
+lapses: 3
+modified: 20220820012556874
+reps: 2
+retrievability: 7.42892932091334e-11
+review: 20220820012556874
+stability: 7.994071650927569
+tags: ?
+title: flink state流程
+type: text/vnd.tiddlywiki
+
+```
+有状态的 Flink 程序针对本地状态访问进行了优化。任务的状态始终保留在内存中，如果状态大小超过可用内存，则会保存在能高效访问的磁盘数据结构中。任务通过访问本地（通常在内存中）状态来进行所有的计算，从而产生非常低的处理延迟。Flink 通过定期和异步地对本地状态进行持久化存储来保证故障场景下精确一次的状态一致性。
+```
+
+[img[image-20220713141222072.png]]

@@ -1,0 +1,17 @@
+created: 20220714030722259
+difficulty: 1
+due: 20220914133004506
+grade: 1
+history: [{"due":"20220720151031420","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719151031420"},{"due":"20220731015907524","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730015907524"},{"due":"20220807111402995","interval":7,"difficulty":1.200047464685643,"stability":0.054881171378436774,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220806111402995"},{"due":"20220813032425489","interval":6,"difficulty":1.4000574065006932,"stability":0.040656966333775045,"retrievability":0.000009941815050312982,"grade":0,"lapses":3,"reps":1,"review":"20220812032425489"},{"due":"20220821044320598","interval":8,"difficulty":1.6000574074923897,"stability":0.03011942145770373,"retrievability":9.91696517902932e-10,"grade":0,"lapses":4,"reps":1,"review":"20220820044320597"}]
+interval: 19
+lapses: 4
+modified: 20220908133004506
+reps: 2
+retrievability: 1.365081850189581e-29
+review: 20220908133004505
+stability: 6.286496959144383
+tags: ?
+title: FLink场景
+type: text/vnd.tiddlywiki
+
+[img[BillfishCFiuuI2022-07-14 11_07_15.PNG]]

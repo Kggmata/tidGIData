@@ -1,0 +1,21 @@
+created: 20220627044005003
+difficulty: 1
+due: 20221019103308906
+grade: 2
+history: [{"due":"20220630115236382","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629115236382"},{"due":"20220704144450894","interval":4,"difficulty":1,"stability":0.07408249324251646,"retrievability":0.014782011698955301,"grade":0,"lapses":1,"reps":1,"review":"20220703144450893"},{"due":"20220720033057481","interval":4,"difficulty":1,"stability":12.85880065552843,"retrievability":0.0033835789759370447,"grade":1,"lapses":1,"reps":2,"review":"20220707033057481"}]
+interval: 19
+lapses: 1
+modified: 20220726103308906
+reps: 3
+retrievability: 0.8558335647761416
+review: 20220726103308906
+stability: 84.64767738686072
+tags: 用户画像 ?
+title: 实时计算实现哪些指标统计？
+type: text/vnd.tiddlywiki
+
+* Nginx日志相关统计
+* 用户行为相关统计
+
+[img[image-20220627102955348.png]]
+[img[image-20220627103350028.png]]

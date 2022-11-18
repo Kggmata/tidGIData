@@ -1,0 +1,34 @@
+created: 20220718080940488
+difficulty: 1.6001970165236639
+due: 20220906092607021
+grade: 0
+history: [{"due":"20220801114125318","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114125317"},{"due":"20220807124554382","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806124554382"},{"due":"20220813024933879","interval":6,"difficulty":1.2001968027503878,"stability":0.054881164580531924,"retrievability":0.00019680275038780497,"grade":0,"lapses":2,"reps":1,"review":"20220812024933879"},{"due":"20220821043033277","interval":8,"difficulty":1.400197016523664,"stability":0.040656966333775045,"retrievability":2.137732762868068e-7,"grade":0,"lapses":3,"reps":1,"review":"20220820043033277"}]
+interval: 16
+lapses: 4
+modified: 20220905092607021
+reps: 1
+retrievability: 9.834619836208002e-19
+review: 20220905092607021
+stability: 0.03011942145770373
+tags: ?
+title: checkpoint和状态后端
+type: text/vnd.tiddlywiki
+
+```
+Checkpoint其实就是Flink中某一时刻，所有的Operator的全局快照，那么快照应该要有一个地方进行存储，而这个存储的地方叫做状态后端（StateBackend）。
+```
+[img[在这里插入图片描述2022-07-18 16_09_58.png]]
+
+https://blog.csdn.net/m0_49834705/article/details/114587690
+
+1. MemStateBackend
+
+[img[在这里插入图片描述2022-07-18 16_10_55.png]]
+
+2 FSStateBackend
+
+[img[在这里插入图片描述2022-07-18 16_11_15.png]]
+
+3. RocketStateBackend
+
+[img[在这里插入图片描述2022-07-18 16_11_36.png]]

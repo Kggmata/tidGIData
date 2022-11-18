@@ -1,0 +1,137 @@
+created: 20220724013314621
+difficulty: 0.021527042662928327
+due: 20221012143628207
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221011143628207
+reps: 1
+retrievability: 1
+review: 20221011143628207
+stability: 0.10000000088475645
+tags: flink ?
+title: flinkSQL 性能调优
+type: text/vnd.tiddlywiki
+
+```
+	表参数：用于调整 Flink SQL table 的执行行为
+table.dml-sync: false
+table.generated-code.max-length: 64000
+table.local-time-zone: default
+table.planner: BLINK
+table.sql-dialect: default
+```
+```
+```
+MiniBatch聚合
+
+默认情况下，unbounded agg 算子是逐条处理输入的记录，其处理流程如下：
+	从状态中读取 accumulator；
+	累加/撤回的数据记录至 accumulator；
+	将 accumulator 写回状态；
+	下一条记录将再次从流程 1 开始处理。
+但是上述处理流程的问题在于会增加 StateBackend 的访问性能开销（尤其是对于 RocksDB StateBackend）。
+MiniBatch 聚合如何解决上述问题：其核心思想是将一组输入的数据缓存在聚合算子内部的缓冲区中。当输入的数据被触发处理时，每个 key 只需要访问一次状态后端，这样可以大大减少访问状态的时间开销从而获得更好的吞吐量。但是，其会增加一些数据产出的延迟，因为它会缓冲一些数据再去处理。因此如果你要做这个优化，需要提前做一下吞吐量和延迟之间的权衡，但是大多数情况下，buffer 数据的延迟都是可以被接受的。所以非常建议在 unbounded agg 场景下使用这项优化。
+下图说明了 MiniBatch 聚合如何减少状态访问的。
+
+启用 MiniBatch 聚合的参数：
+TableEnvironment tEnv = ...
+
+Configuration configuration = tEnv.getConfig().getConfiguration();
+configuration.setString("table.exec.mini-batch.enabled", "true"); // 启用 MiniBatch 聚合
+configuration.setString("table.exec.mini-batch.allow-latency", "5 s"); // buffer 最多 5s 的输入数据记录
+configuration.setString("table.exec.mini-batch.size", "5000"); // buffer 最多的输入数据记录数目
+
+	注意事项：
+1.	table.exec.mini-batch.allow-latency 和 table.exec.mini-batch.size 两者只要其中一项满足条件就会执行 batch 访问状态操作。
+2.	上述 MiniBatch 配置不会对 Window TVF 生效，因为！！！Window TVF 默认就会启用小批量优化，Window TVF 会将 buffer 的输入记录记录在托管内存中，而不是 JVM 堆中，因此 Window TVF 不会有 GC 过高或者 OOM 的问题。
+
+```
+[img[BillfishoOYGkk2022-07-23 16_35_30.PNG]]
+
+```
+4.2.2 	两阶段聚合
+问题场景：在聚合数据处理场景中，很可能会由于热点数据导致数据倾斜，如下 SQL 所示，当 color = RED 为 50000w 条，而 color = BLUE 为 5 条，就产生了数据倾斜，而器数据处理的算子产生性能瓶颈。
+SELECT color, sum(id)
+FROM T
+GROUP BY color
+两阶段聚合如何解决上述问题：其核心思想类似于 MapReduce 中的 Combiner + Reduce，先将聚合操作在本地做一次 local 聚合，这样 shuffle 到下游的数据就会变少。
+还是上面的 SQL 案例，如果在 50000w 条的 color = RED 的数据 shuffle 之前，在本地将 color = RED 的数据聚合成为 1 条结果，那么 shuffle 给下游的数据量就被极大地减少了。
+下图说明了两阶段聚合是如何处理热点数据的：
+```
+[img[BillfishfRzKOB2022-07-23 16_44_42.PNG]]
+
+```
+启用两阶段聚合的参数：
+TableEnvironment tEnv = ...
+
+Configuration configuration = tEnv.getConfig().getConfiguration();
+configuration.setString("table.exec.mini-batch.enabled", "true"); // 打开 minibatch
+configuration.setString("table.exec.mini-batch.allow-latency", "5 s");
+configuration.setString("table.exec.mini-batch.size", "5000");
+configuration.setString("table.optimizer.agg-phase-strategy", "TWO_PHASE"); // 打开两阶段聚合
+	注意事项：
+1.	此优化在窗口聚合中会自动生效，大家在使用 Window TVF 时可以看到 localagg + globalagg 两部分
+2.	但是在 unbounded agg 中需要与 MiniBatch 参数相结合使用才会生效。
+
+```
+```
+4.2.3 	split 分桶
+问题场景：使用两阶段聚合虽然能够很好的处理 count，sum 等常规聚合算子，但是在 count distinct，sum distinct 等算子的两阶段聚合效果在大多数场景下都不太满足预期。
+因为 100w 条数据的 count 聚合能够在 local 算子聚合为 1 条数据，但是 count distinct 聚合 100w 条在 local 聚合之后的结果和可能是 90w 条，那么依然会有数据倾斜，如下 SQL 案例所示：
+SELECT color, COUNT(DISTINCT user_id)
+FROM T
+GROUP BY color
+split 分桶如何解决上述问题：其核心思想在于按照 distinct 的 key，即 user_id，先做数据的分桶，将数据打散，分散到 Flink 的多个 TM 上进行计算，然后再将数据合桶计算。打开 split 分桶之后的效果就等同于以下 SQL：
+SELECT color, SUM(cnt)
+FROM (
+    SELECT color, COUNT(DISTINCT user_id) as cnt
+    FROM T
+    GROUP BY color, MOD(HASH_CODE(user_id), 1024)
+)
+GROUP BY color
+下图说明了 split 分桶的处理流程：
+
+```
+[img[BillfishFLIPDe2022-07-23 16_45_54.PNG]]
+
+```
+启用 split 分桶的参数：
+TableEnvironment tEnv = ...
+
+tEnv.getConfig()
+.getConfiguration()
+.setString("table.optimizer.distinct-agg.split.enabled", "true"); // 打开 split 分桶
+	注意事项：
+1.	如果有多个 distinct key，则多个 distinct key 都会被作为分桶 key。比如 count(distinct a)，sum(distinct b) 这种多个 distinct key 也支持。
+2.	自己写的 UDAF 不支持！
+3.	其实此种优化很少使用，因为大家直接自己按照分桶的写法自己就可以写了，而且最后生成的算子图和自己写的 SQL 的语法也能对应的上
+
+```
+```
+4.2.4 	去重 filter 子句
+问题场景：在一些场景下，用户可能需要从不同维度计算 UV，例如 Android 的 UV、iPhone 的 UV、Web 的 UV 和总 UV。许多用户会选择 CASE WHEN 支持此功能，如下 SQL 所示：
+SELECT
+ day,
+ COUNT(DISTINCT user_id) AS total_uv,
+ COUNT(DISTINCT CASE WHEN flag IN ('android', 'iphone') THEN user_id ELSE NULL END) AS app_uv,
+ COUNT(DISTINCT CASE WHEN flag IN ('wap', 'other') THEN user_id ELSE NULL END) AS web_uv
+FROM T
+GROUP BY day
+但是如果你想实现类似的效果，Flink SQL 提供了更好性能的写法，就是本小节的 filter 子句。
+Filter 子句重写上述场景：
+SELECT
+ day,
+ COUNT(DISTINCT user_id) AS total_uv,
+ COUNT(DISTINCT user_id) FILTER (WHERE flag IN ('android', 'iphone')) AS app_uv,
+ COUNT(DISTINCT user_id) FILTER (WHERE flag IN ('web', 'other')) AS web_uv
+FROM T
+GROUP BY day
+Filter 子句的优化点在于，Flink 会识别出三个去重的 key 都是 user_id，因此会把三个去重的 key 存在一个共享的状态中。而不是上文 case when 中的三个状态中。其具体实现区别在于：
+	case when：total_uv、app_uv、web_uv 在去重时，state 是存在三个 MapState 中的，MapState key 为 user_id，value 为默认值，判断是否重复直接按照 key 是在 MapState 中的出现过进行判断。如果总 uv 为 1 亿，’android’, ‘iphone’ uv 为 5kw，’wap’, ‘other’ uv 为 5kw，则 3 个 state 要存储总共 2 亿条数据
+	filter：total_uv、app_uv、web_uv 在去重时，state 是存在一个 MapState 中的，MapState key 为 user_id，value 为 long，其中 long 的第一个 bit 位标识在计算总 uv 时此 user_id 是否来光顾哦，第二个标识 ‘android’, ‘iphone’，第三个标识 ‘wap’, ‘other’，因此在上述 case when 相同的数据量的情况下，总共只需要存储 1 亿条数据，state 容量减小了几乎 50%
+或者下面的场景也可以使用 filter 子句进行替换。
+
+```
+```

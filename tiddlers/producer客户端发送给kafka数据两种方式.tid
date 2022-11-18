@@ -1,0 +1,40 @@
+created: 20220609104550578
+difficulty: 1.2484189904046359
+due: 20220907055623148
+grade: 1
+history: [{"due":"20220614100221175","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100221175"},{"due":"20220617064234716","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616064234715"},{"due":"20220619142441122","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618142441121"},{"due":"20220621134357975","interval":2,"difficulty":1.8234816309460267,"stability":0.04068054026463326,"retrievability":0.021550365655700003,"grade":0,"lapses":3,"reps":1,"review":"20220620134357974"},{"due":"20220630104934525","interval":2,"difficulty":1,"stability":7.927130916460668,"retrievability":0.005628582968693983,"grade":2,"lapses":3,"reps":2,"review":"20220622104934525"},{"due":"20220706000102153","interval":13,"difficulty":2.041318756073551,"stability":0.030119694070345152,"retrievability":0.8413187560735507,"grade":0,"lapses":4,"reps":1,"review":"20220705000102152"},{"due":"20220715044842392","interval":5,"difficulty":1.2413187814282158,"stability":5.407958081475959,"retrievability":2.535466524043753e-8,"grade":1,"lapses":4,"reps":2,"review":"20220710044842391"}]
+interval: 11
+lapses: 4
+modified: 20220721055623148
+reps: 3
+retrievability: 0.80710020897642
+review: 20220721055623148
+stability: 47.57937532551808
+tags: kafka ?
+title: producer客户端发送给kafka数据两种方式
+type: text/vnd.tiddlywiki
+
+可以采用同步或者异步的方式-过程图
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 18_46_13.png]]
+
+可以采用同步或者异步的方式
+
+同步：发送一批数据给kafka后，等待kafka返回结果
+
+```
+1、生产者等待10s，如果broker没有给出ack相应，就认为失败。
+2、生产者重试3次，如果还没有相应，就报错
+```
+
+异步：发送一批数据给kafka，只是提供一个回调函数。
+
+```
+1、先将数据保存在生产者端的buffer中。buffer大小是2万条 
+2、满足数据阈值或者数量阈值其中的一个条件就可以发送数据。
+3、发送一批数据的大小是500条
+```
+
+```
+说明：如果broker迟迟不给ack，而buﬀer又满了，开发者可以设置是否直接清空buﬀer中的数据。
+```
+

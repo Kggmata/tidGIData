@@ -1,0 +1,44 @@
+created: 20220609111000053
+difficulty: 1.0606496253758355
+due: 20220905125629278
+grade: 1
+history: [{"due":"20220614102116056","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102116056"},{"due":"20220617052054450","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616052054450"},{"due":"20220619114810570","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618114810570"},{"due":"20220630125336190","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620125336190"}]
+interval: 14
+lapses: 2
+modified: 20220704125629278
+reps: 3
+retrievability: 0.8606496253758356
+review: 20220704125629278
+stability: 63.40697725150013
+tags: kafka ?
+title: kafka获取到发送的反馈信息
+type: text/vnd.tiddlywiki
+
+可以获取到发送的反馈信息有：
+
+- 本条发送到了哪个topic
+- 本条数据发送到了这个topic的哪个分区
+- 本条数据在当前发送的分区的offset偏移量是多少（是第几条）
+
+
+
+```python
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092']
+)
+# 1. 先获取future，异步对象
+future = producer.send("testpython", f"Im handsome{i}".encode("UTF-8"))
+# 2. 异步对象可以获得发送的反馈信息
+# timeout 等待反馈的信息，如果超过10秒还没反馈 报错，单位：秒
+record_metadata = future.get(timeout=10)
+# 3. record_metadata中就存放了反馈回来的信息
+print(f"我向kafka发送的数据是：Im handsome{i}")
+print(f"发送的topic主题是：{record_metadata.topic}")
+print(f"发送到了分区号是：{record_metadata.partition}")
+print(f"发送的offset是：{record_metadata.offset}")
+
+# 当我们使用future.get(timeout=10) 这个API后， 就不需要 producer.flush()了。
+```
+

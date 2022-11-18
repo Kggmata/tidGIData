@@ -1,0 +1,58 @@
+created: 20220608015852897
+difficulty: 1
+due: 20230207103525249
+grade: 2
+history: [{"due":"20220612010303516","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611010303516"},{"due":"20220615003424201","interval":3,"difficulty":1.5162196541321282,"stability":0.07476910459712456,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220614003424201"},{"due":"20220617065748737","interval":2,"difficulty":1.7759276009997034,"stability":0.05500845146445375,"retrievability":0.05970794686757527,"grade":0,"lapses":2,"reps":1,"review":"20220616065748737"},{"due":"20220625005840184","interval":1,"difficulty":1,"stability":7.989853923060247,"retrievability":0.14729006272696568,"grade":2,"lapses":2,"reps":2,"review":"20220617005840184"},{"due":"20220808005949623","interval":9,"difficulty":1.0880909690973046,"stability":43.30078335778522,"retrievability":0.8880909690973048,"grade":1,"lapses":2,"reps":3,"review":"20220626005949623"}]
+interval: 46
+lapses: 2
+modified: 20220811103525249
+reps: 4
+retrievability: 0.8941083493427329
+review: 20220811103525249
+stability: 179.8868941097839
+tags: hbase ?
+title: 二分法思路
+type: text/vnd.tiddlywiki
+
+让目标数和列表中间比较
+
+大于则取[中间+1]到[末尾]
+
+小于则反之
+
+logn
+
+例题1
+
+给一个有序数组,找大于等于某个数最左侧的位置
+
+```
+同样二分法,
+不设置相等终止
+需要一个index来记录>=的位置
+def binary_find_left_most(li, val):
+    left = 0
+    right = len(li) - 1
+    mid = (left + right) // 2
+    index = None
+    while left <= right:
+        mid = (left + right) // 2
+        if li[mid] >= val:
+            right = mid - 1
+            index = mid
+        else:
+            left = mid + 1
+
+    return index
+```
+
+例题2
+
+局部最小值
+
+无序数组,相邻的数不相等,找局部最小,
+比左右都小的为局部最小.
+
+[img[Snipaste_2022-06-10_20-46-04.jpg]]
+
+总结: 只要左右两侧某一侧一定有的,就可以尝试二分

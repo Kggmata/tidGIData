@@ -1,0 +1,27 @@
+created: 20220521023450209
+difficulty: 3.9114558084521596
+due: 20221019090423890
+grade: 1
+history: [{"due":"20220523104618754","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521104618754"},{"due":"20220524003203444","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523003203444"},{"due":"20220611053740597","interval":6,"difficulty":4.743660293347436,"stability":13.061487305027413,"retrievability":0.44366029334743595,"grade":2,"lapses":1,"reps":2,"review":"20220529053740597"},{"due":"20220718234535282","interval":15,"difficulty":3.8296964392196617,"stability":35.16591990152175,"retrievability":0.8860361458722255,"grade":2,"lapses":1,"reps":3,"review":"20220613234535282"}]
+interval: 42
+lapses: 1
+modified: 20220726090423890
+reps: 4
+retrievability: 0.8817593692324974
+review: 20220726090423890
+stability: 85.18172498313032
+tags: hdfs ?
+title: Namenode挂了怎么办？
+type: text/vnd.tiddlywiki
+
+方法一：将SecondaryNameNode中数据拷贝到namenode存储数据的目录；
+
+方法二：使用-importCheckpoint选项启动namenode守护进程，从而将SecondaryNameNode中数据拷贝到namenode目录中。
+
+HA(High Available), 高可用，是保证业务连续性的有效解决方案,一般有两个或两个以上的节点，分为 活动节点 （ Active ）及 备用节点 （ Standby） ）。用于实现业务的不中断或短暂中断
+
+NN 是 HDFS 集群的单点故障点.在 HA 具体实现方法不同情况下，HA 框架的流程是一致的, 不一致的就是如何存储、管理、同步 edits 编辑日志文件。
+
+QJM/Qurom Journal Manager,基本原理就是用 2N+1 台 JournalNode 存储 EditLog，每次写数据操作有>=N+1 返回成功时即认为该次写成功，数据不会丢失了
+
+在 HA 模式下，datanode 需要确保同一时间有且只有一个 NN 能命令 DN。

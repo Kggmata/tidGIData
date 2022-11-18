@@ -1,0 +1,14 @@
+created: 20220803134031993
+modified: 20220803134515436
+tags: ? flink
+title: 什么是类加载器, 类加载器有哪些
+type: text/vnd.tiddlywiki
+
+```
+实现通过类的权限定名获取该类的二进制字节流的代码块叫做类加载器
+
+1 启动类加载器bootstrap classloader
+2 扩展类加载器extensions classloader
+3 系统类加载器system class loader
+4 用户类加载器, 通过继承java.lang.ClassLoader
+```

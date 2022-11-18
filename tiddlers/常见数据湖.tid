@@ -1,0 +1,34 @@
+created: 20220725023106286
+difficulty: 0.02337100302925359
+due: 20220906005031461
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220905005031461
+reps: 1
+retrievability: 1
+review: 20220905005031461
+stability: 0.10000000088475645
+tags: flink ?
+title: 常见数据湖
+type: text/vnd.tiddlywiki
+
+目前市面上流行的三大开源数据湖方案分别为：Delta Lake、Apache Iceberg和Apache Hudi。
+
+```
+Delta lake: DataBricks推出
+```
+```
+Apache Iceberg
+最早由netflix开发开源
+查询方面支持spark
+```
+```
+Apache Hudi: 
+```
+
+```
+存储成本都比较低
+hudi支持快速CRUD和Pull增量, 流批读写
+```

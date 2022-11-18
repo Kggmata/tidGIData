@@ -1,0 +1,17 @@
+created: 20220607054613547
+difficulty: 1
+due: 20220920131922354
+grade: 2
+history: [{"due":"20220611043746034","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610043746034"},{"due":"20220629112035590","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613112035590"}]
+interval: 18
+lapses: 0
+modified: 20220701131922354
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701131922353
+stability: 81.1468944767812
+tags: hbase ?
+title: 你觉得对HBase影响最大的硬件是什么？
+type: text/vnd.tiddlywiki
+
+内存

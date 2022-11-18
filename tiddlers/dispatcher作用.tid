@@ -1,0 +1,26 @@
+created: 20220719031406019
+difficulty: 1.867041731496925
+due: 20221009115453356
+grade: 0
+history: [{"due":"20220801131405875","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131405875"},{"due":"20220822124604408","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806124604408"}]
+interval: 63
+lapses: 1
+modified: 20221008115453356
+reps: 1
+retrievability: 0.6670417314969249
+review: 20221008115453356
+stability: 0.07408182272361549
+tags: ?
+title: dispatcher作用
+type: text/vnd.tiddlywiki
+
+提供一个rest接口:
+
+```
+为每个提交的作业启动Job master
+
+提供webUI
+```
+
+不是必须的, 某些部署模式会忽略
+

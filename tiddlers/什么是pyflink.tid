@@ -1,0 +1,19 @@
+created: 20220714021406538
+difficulty: 1
+due: 20221127022231562
+grade: 2
+history: [{"due":"20220720145722402","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719145722402"},{"due":"20220813103300361","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220728103300361"}]
+interval: 23
+lapses: 0
+modified: 20220820022231562
+reps: 3
+retrievability: 0.8629302061394925
+review: 20220820022231562
+stability: 99.20790923100614
+tags: ?
+title: 什么是pyflink
+type: text/vnd.tiddlywiki
+
+就是flink+Python
+
+比如某些机器学习场景, 需要用到pytorch, 仅支持python, 因此只能使用pyflink

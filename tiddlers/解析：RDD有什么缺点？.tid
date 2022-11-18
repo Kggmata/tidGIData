@@ -1,0 +1,19 @@
+created: 20220530050935110
+difficulty: 1
+due: 20220913003329065
+grade: 2
+history: [{"due":"20220601083531051","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083531051"},{"due":"20220622062018912","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603062018912"},{"due":"20220624032752470","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623032752469"},{"due":"20220705091846129","interval":2,"difficulty":1.3535029461238979,"stability":9.54388636710972,"retrievability":0.05817903264660851,"grade":1,"lapses":1,"reps":2,"review":"20220625091846128"}]
+interval: 14
+lapses: 1
+modified: 20220709003329065
+reps: 3
+retrievability: 0.8567970976533577
+review: 20220709003329065
+stability: 65.69397134863374
+tags: spark ?
+title: 解析：RDD有什么缺点？
+type: text/vnd.tiddlywiki
+
+- 不支持细粒度操作，RDD最小粒度为分区
+
+- 不支持增量操作，只能重新构建新的RDD

@@ -1,0 +1,17 @@
+created: 20220520045521383
+difficulty: 2.2548728843857733
+due: 20220902125859795
+grade: 2
+history: [{"due":"20220523041016574","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521041016574"},{"due":"20220529000756152","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000756152"},{"due":"20220625073550072","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601073550072"}]
+interval: 24
+lapses: 0
+modified: 20220625125859795
+reps: 4
+retrievability: 0.8990204493398125
+review: 20220625125859794
+stability: 69.24360400515107
+tags: hadoop mapreduce ?
+title: MapReduce Shuffle过程中即使有Reduce过程，也不一定会进行Combiner
+type: text/vnd.tiddlywiki
+
+正确：Combiner是可选项，不是必选项【MR中的Combiner，Hive中可用解决group by数据倾斜】

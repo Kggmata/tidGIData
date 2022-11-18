@@ -1,0 +1,73 @@
+created: 20220608103813739
+difficulty: 1.031639173681466
+due: 20220912070243672
+grade: 1
+history: [{"due":"20220613131029014","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612131029014"},{"due":"20220617003008639","interval":4,"difficulty":1.3144367952260434,"stability":0.07442546333264817,"retrievability":0.015960348310605277,"grade":0,"lapses":1,"reps":1,"review":"20220616003008639"},{"due":"20220619144249940","interval":2,"difficulty":1.573372810206144,"stability":0.05491298557316543,"retrievability":0.05893601498010052,"grade":0,"lapses":2,"reps":1,"review":"20220618144249940"},{"due":"20220621135020400","interval":2,"difficulty":1.7949231758618438,"stability":0.04068054026463326,"retrievability":0.021550365655700003,"grade":0,"lapses":3,"reps":1,"review":"20220620135020400"},{"due":"20220630105259903","interval":2,"difficulty":1.0005517588305377,"stability":7.924086351261496,"retrievability":0.005628582968693983,"grade":1,"lapses":3,"reps":2,"review":"20220622105259902"},{"due":"20220706000322362","interval":13,"difficulty":2.0418146643554174,"stability":0.030119694070345152,"retrievability":0.8412629055248797,"grade":0,"lapses":4,"reps":1,"review":"20220705000322362"},{"due":"20220716044920612","interval":5,"difficulty":1,"stability":6.286542282238421,"retrievability":2.535466524043753e-8,"grade":2,"lapses":4,"reps":2,"review":"20220710044920612"}]
+interval: 11
+lapses: 4
+modified: 20220721070243673
+reps: 3
+retrievability: 0.8316391736814662
+review: 20220721070243672
+stability: 53.13811658603962
+tags: hbase ?
+title: Python操作Phoenix
+type: text/vnd.tiddlywiki
+
+```
+# coding:utf8
+"""
+使用Python查询Phoenix的数据
+1. 拿到数据库链接对象
+2. 拿到游标对象cursor
+3. 通过cursor执行sql语句
+4. 通过cursor获取结果
+5. 关闭链接
+
+Phoenix的Python操作和操作PyMysql一模一样
+唯一不同的，就是第一步，获取链接不同。
+"""
+
+import phoenixdb
+
+# 1. 获取链接
+conn = phoenixdb.connect(
+    # 刚刚启动的Phoenix的QueryServer的地址即可
+    "http://node1:8765"
+)
+
+# 2. 获取cursor游标对象
+cursor = conn.cursor()
+
+# 3. 通过游标对象执行SQL
+cursor.execute("select  NAME, RECORD_DATE, NUM_USAGE  from  WATER_BILL "
+               "where  RECORD_DATE between '2020-06-01'  and '2020-06-30' "
+               "LIMIT 10")
+
+# 4. 通过cursor游标对象，获取执行结果
+result = cursor.fetchall()
+# 打印输出结果
+print(result)
+
+# 5. 关闭数据库链接
+conn.close()
+```
+
+
+
+> 使用phoenixdb这个库，和我们前面使用pymysql是一模一样
+>
+> 唯一的不同，就是获取数据库链接
+>
+> - pymysql是这样：pymysql.connect(主机名，3306，root，123456)
+> - Phoenix是这样: phoenixdb.connect("http://node1:8765")
+>
+> 剩下的和pymysql完全一样的用法
+
+> 在Python中使用JDBC协议操作数据库的一系列包的写法的都是大同小异的
+>
+> - pymysql
+> - phoenixdb
+> - pyhive
+> - happybase
+> - 等这些包都是获取链接的时候不同，剩余的写法完全一致。

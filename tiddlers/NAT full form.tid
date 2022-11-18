@@ -1,0 +1,17 @@
+created: 20220521135757518
+difficulty: 2.312937222275254
+due: 20230130140757467
+grade: 2
+history: [{"due":"20220524065037722","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065037722"},{"due":"20220601125056416","interval":3,"difficulty":5.0538149682454625,"stability":7.290234566162131,"retrievability":0.8538149682454624,"grade":1,"lapses":0,"reps":2,"review":"20220525125056416"},{"due":"20220624090751482","interval":9,"difficulty":4.131848473244691,"stability":21.416838424511532,"retrievability":0.8780335049992288,"grade":2,"lapses":0,"reps":3,"review":"20220603090751482"},{"due":"20220819112528141","interval":22,"difficulty":3.2292701870796305,"stability":54.52254730648406,"retrievability":0.8974217138349394,"grade":2,"lapses":0,"reps":4,"review":"20220625112528141"}]
+interval: 64
+lapses: 0
+modified: 20220828140757467
+reps: 5
+retrievability: 0.8836670351956231
+review: 20220828140757467
+stability: 155.37965613624826
+tags: 虚拟化 ?
+title: NAT full form
+type: text/vnd.tiddlywiki
+
+network address translation

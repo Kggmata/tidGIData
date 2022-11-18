@@ -1,0 +1,17 @@
+created: 20220522001507319
+difficulty: 1.7922940688245272
+due: 20220906013705777
+grade: 2
+history: [{"due":"20220524114853893","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114853892"},{"due":"20220529024931339","interval":6,"difficulty":5.929,"stability":0.16205398577412577,"retrievability":0.7290000000000001,"grade":0,"lapses":1,"reps":1,"review":"20220528024931338"},{"due":"20220610131935698","interval":5,"difficulty":4.167743803026746,"stability":8.48189993445585,"retrievability":0.03874380302674565,"grade":2,"lapses":1,"reps":2,"review":"20220602131935698"},{"due":"20220614065525293","interval":11,"difficulty":5.240028111655123,"stability":0.055899466449811495,"retrievability":0.8722843086283765,"grade":0,"lapses":2,"reps":1,"review":"20220613065525293"},{"due":"20220617035545131","interval":3,"difficulty":5.443529959581918,"stability":0.04075126313635327,"retrievability":0.0035018479267943637,"grade":0,"lapses":3,"reps":1,"review":"20220616035545130"},{"due":"20220621102714954","interval":2,"difficulty":3.649209369328985,"stability":3.2316342796879254,"retrievability":0.005679409747066861,"grade":2,"lapses":3,"reps":2,"review":"20220618102714954"},{"due":"20220705085542687","interval":4,"difficulty":2.7269435956871364,"stability":13.113541192239419,"retrievability":0.8777342263581511,"grade":2,"lapses":3,"reps":3,"review":"20220622085542687"}]
+interval: 18
+lapses: 3
+modified: 20220710013705777
+reps: 4
+retrievability: 0.8653504731373907
+review: 20220710013705777
+stability: 58.165366201611874
+tags: hive ?
+title: hive多客户端连接 第一代和第二代区别
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_08-14-46.jpg]]

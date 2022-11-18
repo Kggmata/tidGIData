@@ -1,0 +1,29 @@
+created: 20220725073241478
+modified: 20220729040630775
+tags: ? flink
+title: Hudi query types
+type: text/vnd.tiddlywiki
+
+https://hudi.apache.org/docs/next/table_types
+
+```
+Snapshot Queries、
+可以查询到该表在commit/compaction操作的最新快照. 
+如果是MOR, 可以实现分钟级别的NRTdata. 操作是将base和delta文件merge. 读索引partition中每个fileGroup最新的fileSlice中的文件, 也就是parquet+log
+如果是COW, 读parquet
+
+Incremental Queries
+query只能看到new data written. 也就是给定commit之后的timeline
+
+Read Optimized Queries
+- 直接查询基本文件（数据集的最新快照），其实就是列式文件（Parquet）。并保证与非Hudi列式数据集相比，具有相同的列式查询性能。
+- 读优化查询和快照查询相同仅访问基本文件，提供给定文件片自上次执行压缩操作以来的数据。 通常查询数据的最新程度的保证取决于compaction策略。
+```
+[img[Snipaste_2022-07-29_09-58-12.jpg]]
+[img[BillfishxpepRF2022-07-25 15_33_00.PNG]]
+
+[img[BillfishwZCqOa2022-07-25 15_33_23.PNG]]
+
+[img[BillfishrVCfPi2022-07-25 15_33_45.PNG]]
+
+[img[BillfishKtDcGc2022-07-25 15_34_51.PNG]]

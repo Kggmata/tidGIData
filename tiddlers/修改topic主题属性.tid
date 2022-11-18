@@ -1,0 +1,26 @@
+created: 20220609110720313
+difficulty: 1.0488493284064175
+due: 20221024034256742
+grade: 1
+history: [{"due":"20220614101420214","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613101420214"},{"due":"20220702025001905","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616025001905"},{"due":"20220707035510706","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706035510705"},{"due":"20220723061751313","interval":4,"difficulty":1,"stability":12.858755755983243,"retrievability":0.0033834917823108,"grade":2,"lapses":1,"reps":2,"review":"20220710061751313"}]
+interval: 20
+lapses: 1
+modified: 20220730034256742
+reps: 3
+retrievability: 0.8488493284064177
+review: 20220730034256742
+stability: 85.91487699357447
+tags: kafka ?
+title: 修改topic主题属性
+type: text/vnd.tiddlywiki
+
+```
+bin/kafka-topics.sh --alter --zookeeper zk --topic topicname --partitions num
+--alter 修改
+--zookeeper  表示给出ZK的地址，可以给一台ZK也可以3台都给
+--topic 被修改的topic主题名称
+--partitions 你要修改的分区数量
+
+# 实战将bj59的3分区改为4分区
+bin/kafka-topics.sh --alter --zookeeper node1:2181 --topic bj59 --partitions 4
+```

@@ -1,0 +1,21 @@
+created: 20220614141706936
+difficulty: 1
+due: 20230510003311729
+grade: 2
+history: [{"due":"20220617121609026","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121609026"},{"due":"20220618005107617","interval":1,"difficulty":1.2836910231529453,"stability":0.07416773238429089,"retrievability":0.3495295586291377,"grade":0,"lapses":1,"reps":1,"review":"20220617005107617"},{"due":"20220627000039538","interval":1,"difficulty":1,"stability":8.571531378783702,"retrievability":0.24157608352612525,"grade":2,"lapses":1,"reps":2,"review":"20220618000039538"},{"due":"20220822062535312","interval":11,"difficulty":1,"stability":53.687664858683064,"retrievability":0.8735315421253543,"grade":2,"lapses":1,"reps":3,"review":"20220629062535312"}]
+interval: 68
+lapses: 1
+modified: 20220905003311729
+reps: 4
+retrievability: 0.8750729134873195
+review: 20220905003311729
+stability: 246.93673966133233
+tags: 用户画像 ?
+title: 标签结果数据存储平台 以及选择的原因
+type: text/vnd.tiddlywiki
+
+* es海量数据的插入和更新(ES有分片Shard分布式存储机制，底层不需要zk的）
+* es存储标签结果，更方便标签的查询，方便对接推荐系统获取画像标签数据
+**思考：一个用户是不是有很多标签：
+  *** userid=10001，labelid=男，高，帅，收入10W以上，标签在存储的时候就需要存储机制支持更新写入的
+  ***根据上述描述，es支持upsert的语法，数据插入和更新都可以使用upsert操作

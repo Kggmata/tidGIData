@@ -1,0 +1,30 @@
+created: 20220608004500994
+difficulty: 1.0356604393141842
+due: 20221103104710908
+grade: 1
+history: [{"due":"20220611235257487","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610235257487"},{"due":"20220630150416689","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220614150416689"},{"due":"20220705235939509","interval":20,"difficulty":2.074347896883307,"stability":0.07408249324251646,"retrievability":0.8743478968833069,"grade":0,"lapses":1,"reps":1,"review":"20220704235939509"},{"due":"20220723044810452","interval":5,"difficulty":1,"stability":12.910898599543607,"retrievability":0.0008160568173319206,"grade":2,"lapses":1,"reps":2,"review":"20220710044810451"}]
+interval: 22
+lapses: 1
+modified: 20220801104710908
+reps: 3
+retrievability: 0.8356604393141842
+review: 20220801104710907
+stability: 93.85419115292933
+tags: hbase ?
+title: Phoenix主要的功能
+type: text/vnd.tiddlywiki
+
+利用HBase作为存储，在HBase之上，提供使用SQL操作HBase数据的能力。
+
+Phoenix就是HBase的一个SQL工具。
+
+[img[20220606175826.png]]
+
+如图，Phoenix就是底层基于HBase存储以SQL操作HBase数据的一个`工具`
+
+> Hive不是一款分布式的框架，Hive是一个单机的工具，只是底层的MapReduce是分布式运行的
+
+Phoenix也是一款单机的工具，底层依赖的HBase是分布式的集群。
+
+
+

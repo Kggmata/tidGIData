@@ -1,0 +1,23 @@
+created: 20220608075120115
+difficulty: 1
+due: 20221027015338971
+grade: 2
+history: [{"due":"20220613130808541","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130808541"},{"due":"20220702002413834","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616002413833"},{"due":"20220707095129067","interval":20,"difficulty":2.078509878134214,"stability":0.07408215765534414,"retrievability":0.8785098781342142,"grade":0,"lapses":1,"reps":1,"review":"20220706095129067"},{"due":"20220721065600267","interval":4,"difficulty":1.281893369916525,"stability":10.81875790102446,"retrievability":0.0033834917823108,"grade":1,"lapses":1,"reps":2,"review":"20220710065600266"}]
+interval: 20
+lapses: 1
+modified: 20220730015338971
+reps: 3
+retrievability: 0.8230208251906536
+review: 20220730015338970
+stability: 88.87587610979874
+tags: hbase ?
+title: phoenix索引多了会有什么问题
+type: text/vnd.tiddlywiki
+
+索引表越多写放大越严重。写放大情况可以参考下图。
+
+[img[e332cb5983eaea6439ece7b95a6bbdbf1486f3e1.png]]
+
+写入放大（英語：Write amplification，简称WA）是闪存和固态硬盘（SSD）中一种不良的现象，即实际写入的物理資料量是写入資料量的多倍
+
+一般二级索引建议不超过10个

@@ -1,0 +1,11 @@
+created: 20220803131624857
+modified: 20220803131723487
+tags: ? flink
+title: 什么是操作系统
+type: text/vnd.tiddlywiki
+
+```
+OS, 是管理计算机硬件和软件资源的基石
+向上支持软件运行
+向下调度硬件资源
+```

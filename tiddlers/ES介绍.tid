@@ -1,0 +1,28 @@
+created: 20220614011010457
+difficulty: 1.068971512253249
+due: 20220922054928139
+grade: 1
+history: [{"due":"20220617033511076","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616033511076"},{"due":"20220702101154003","interval":2,"difficulty":1,"stability":13.503436503233734,"retrievability":0.1227653108614827,"grade":1,"lapses":0,"reps":2,"review":"20220618101154002"}]
+interval: 18
+lapses: 0
+modified: 20220706054928139
+reps: 3
+retrievability: 0.8689715122532491
+review: 20220706054928139
+stability: 77.82539154345864
+tags: 用户画像web界面 ?
+title: ES介绍
+type: text/vnd.tiddlywiki
+
+elastic search
+
+https://blog.csdn.net/deliciousion/article/details/78050251
+
+```
+Elasticsearch（ES）是一个基于Lucene构建的开源、分布式、RESTful接口的全文搜索引擎。Elasticsearch还是一个分布式文档数据库，其中每个字段均可被索引，而且每个字段的数据均可被搜索，ES能够横向扩展至数以百计的服务器存储以及处理PB级的数据。可以在极短的时间内存储、搜索和分析大量的数据。通常作为具有复杂搜索场景情况下的核心发动机。
+
+ElasticSearch就是为高可用和可扩展而生的。可以通过购置性能更强的服务器或者升级硬件来完成系统扩展，称为垂直或向上扩展（Vertical Scale/Scaling Up）。另一方面，增加更多的服务器来完成系统扩展，称为水平扩展或者向外扩展（Horizontal Scale/Scaling Out）。尽管ES能够利用更强劲的硬件，垂直扩展毕竟还是有它的极限。真正的可扩展性来自于水平扩展，通过向集群中添加更多的节点来分担负载，增加可靠性。ES天生就是分布式的：它知道如何管理多个节点来完成扩展和实现高可用性。这也意味你的应用不需要做任何的改动。
+```
+
+[img[(40条消息) ElasticSearch介绍和基本概念_sma2022-06-14 09_12_07.png]]
+

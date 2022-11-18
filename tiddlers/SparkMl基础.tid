@@ -1,0 +1,27 @@
+created: 20220625004405432
+difficulty: 1.05157013370948
+due: 20221110020727245
+grade: 1
+history: [{"due":"20220630081025638","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081025638"},{"due":"20220721012459465","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":1,"lapses":0,"reps":2,"review":"20220705012459464"}]
+interval: 25
+lapses: 0
+modified: 20220730020727245
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730020727245
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: SparkMl基础
+type: text/vnd.tiddlywiki
+
+SparkML五大特点：
+
+```
+1-算法：包含有分类，回归，聚类等算法
+2-特征：特征抽取，特征转化等
+3-管道：可以将整个流程处理为Pipeline管道
+4-持久化：可以保存模型
+5-工具：线性代数，统计学和数据处理
+```
+
+[img[image-20220624153143034.png]]

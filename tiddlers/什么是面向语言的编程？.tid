@@ -1,0 +1,19 @@
+created: 20220623071934461
+difficulty: 1
+due: 20221017022945484
+grade: 2
+history: [{"due":"20220626000144821","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625000144821"},{"due":"20220629034633353","interval":3,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.04240087022375615,"grade":0,"lapses":1,"reps":1,"review":"20220628034633353"},{"due":"20220714141625508","interval":3,"difficulty":1,"stability":12.644453482888508,"retrievability":0.014030805349029462,"grade":2,"lapses":1,"reps":2,"review":"20220701141625508"}]
+interval: 20
+lapses: 1
+modified: 20220721022945484
+reps: 3
+retrievability: 0.8464950202970309
+review: 20220721022945484
+stability: 88.42422112611207
+tags: 用户画像 ?
+title: 什么是面向语言的编程？
+type: text/vnd.tiddlywiki
+
+什么是面向语言的编程？
+
+就是在开发软件时使用最适合每项任务的语言. 鼓励开发者自己构建自己的dsl

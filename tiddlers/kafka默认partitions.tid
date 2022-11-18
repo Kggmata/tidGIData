@@ -1,0 +1,30 @@
+created: 20220710025539349
+difficulty: 1
+due: 20221102072732661
+grade: 2
+history: [{"due":"20220713030630664","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030630664"},{"due":"20220806013531052","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721013531052"}]
+interval: 19
+lapses: 0
+modified: 20220809072910405
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809072732661
+stability: 84.88779656040188
+tags: 用户画像 ?
+title: kafka默认partitions
+type: text/vnd.tiddlywiki
+
+1
+
+https://kafka.apache.org/documentation/
+
+```
+num.partitions
+The default number of log partitions per topic
+
+Type:	int
+Default:	1
+Valid Values:	[1,...]
+Importance:	medium
+Update Mode:	read-only
+```

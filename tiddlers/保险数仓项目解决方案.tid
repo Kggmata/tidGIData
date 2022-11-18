@@ -1,0 +1,23 @@
+created: 20220618090414662
+difficulty: 1
+due: 20220825153829123
+grade: 2
+history: [{"due":"20220621004005958","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004005958"},{"due":"20220630145248305","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145248305"}]
+interval: 11
+lapses: 0
+modified: 20220702153829123
+reps: 3
+retrievability: 0.8770024421488429
+review: 20220702153829122
+stability: 53.686353537936405
+tags: 用户画像 ?
+title: 保险数仓项目解决方案
+type: text/vnd.tiddlywiki
+
+1、从【mysql核保数据-客户投保表和客户投保详情表】，【oracle核保数据】，【Pogresql保单变更数据】等关系型数据库，用【sqoop】抽取到数据仓库的【ods】层
+
+2、SparkSQL应用启动，加载ODS层的表，依次计算出【DW】层7个明细表：保费因子表、期交保费表、毛保险费表、现金价值表、准备金表、产品精算表、客户保单精算表。
+
+3、基于DW层和ODS层，计算【APP层】的一些报表统计表。
+
+4、报表输出到MySQL，利用Spring微服务进行展示。

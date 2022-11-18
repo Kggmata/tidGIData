@@ -1,0 +1,29 @@
+created: 20220619151542378
+difficulty: 1
+due: 20221009125047207
+grade: 2
+history: [{"due":"20220621024910579","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620024910579"},{"due":"20220623110417343","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622110417342"},{"due":"20220626082130408","interval":3,"difficulty":1.2140329747514864,"stability":0.054885141354873004,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220625082130408"},{"due":"20220709044039214","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":1,"lapses":2,"reps":2,"review":"20220629044039214"},{"due":"20220712011516621","interval":12,"difficulty":2.0829773710888153,"stability":0.04065715014820503,"retrievability":0.882977371088815,"grade":0,"lapses":3,"reps":1,"review":"20220711011516621"},{"due":"20220727002900668","interval":9,"difficulty":1.2829773711631123,"stability":6.721048376485971,"retrievability":7.429711176324396e-11,"grade":1,"lapses":3,"reps":2,"review":"20220720002900667"}]
+interval: 14
+lapses: 3
+modified: 20220803125047207
+reps: 3
+retrievability: 0.8029467864870067
+review: 20220803125047207
+stability: 66.7245196074349
+tags: 用户画像 ?
+title: restfull api修改index设置
+type: text/vnd.tiddlywiki
+
+Update index settings APIedit
+Changes a dynamic index setting in real time.
+
+For data streams, index setting changes are applied to all backing indices by default.
+
+```
+PUT /my-index-000001/_settings
+{
+  "index" : {
+    "number_of_replicas" : 2
+  }
+}
+```

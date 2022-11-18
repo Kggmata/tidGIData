@@ -1,0 +1,23 @@
+created: 20220521053735888
+difficulty: 2.500940643340839
+due: 20221014075303725
+grade: 2
+history: [{"due":"20220524023928689","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023928689"},{"due":"20220527093735912","interval":4,"difficulty":6.010000000000001,"stability":0.2500261494800798,"retrievability":0.81,"grade":0,"lapses":1,"reps":1,"review":"20220526093735912"},{"due":"20220610145614592","interval":5,"difficulty":4.3316034514288315,"stability":10.231416588301853,"retrievability":0.121603451428831,"grade":2,"lapses":1,"reps":2,"review":"20220531145614592"},{"due":"20220712121142266","interval":12,"difficulty":3.4153606325533037,"stability":30.347651328936035,"retrievability":0.883757181124472,"grade":2,"lapses":1,"reps":3,"review":"20220612121142266"}]
+interval: 35
+lapses: 1
+modified: 20220717075303725
+reps: 4
+retrievability: 0.8855800107875349
+review: 20220717075303725
+stability: 89.06463235224017
+tags: hadoop ?
+title: Hadoop中RecordReader的作用是什么？
+type: text/vnd.tiddlywiki
+
+（1）以怎样的方式从分片中读取一条记录，每读取一条记录都会调用RecordReader类；
+
+（2）系统默认的RecordReader是LineRecordReader
+
+（3）LineRecordReader是用每行的偏移量作为map的key，每行的内容作为map的value；
+
+（4）应用场景：自定义读取每一条记录的方式；自定义读入key的类型，如希望读取的key是文件的路径或名字而不是该行在文件中的偏移量。

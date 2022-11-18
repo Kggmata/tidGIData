@@ -1,0 +1,10 @@
+created: 20220729090721342
+modified: 20220729091006691
+tags: ? flink
+title: Bitmap 索引
+type: text/vnd.tiddlywiki
+
+```
+bitmap index是一种快速数据结构
+bitmap适合只有几个固定值的列
+```

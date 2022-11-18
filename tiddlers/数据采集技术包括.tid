@@ -1,0 +1,50 @@
+caption: {{||Question}}
+created: 20220519092511061
+difficulty: 6.579138778038198
+due: 20221006003944072
+grade: 1
+history: [{"due":"20220521143411707","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220519143411707"},{"due":"20220522004525092","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220521004525092"},{"due":"20220523002555746","interval":1,"difficulty":7.231358589403242,"stability":1.097623272188053,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220522002555746"},{"due":"20220524000208997","interval":1,"difficulty":8.339831973419958,"stability":0.8131393194811983,"retrievability":0.9084733840167178,"grade":0,"lapses":3,"reps":1,"review":"20220523000208997"},{"due":"20220524233347746","interval":0,"difficulty":9.539831973419957,"stability":0.17318667184951622,"retrievability":1,"grade":0,"lapses":4,"reps":1,"review":"20220523233347746"},{"due":"20220525231407716","interval":0,"difficulty":8.739831973419957,"stability":0.17318667184951622,"retrievability":1,"grade":2,"lapses":4,"reps":2,"review":"20220524231407716"},{"due":"20220606102715870","interval":6,"difficulty":6.9658183389746915,"stability":6.424702901518661,"retrievability":0.02598636555473425,"grade":2,"lapses":4,"reps":3,"review":"20220531102715870"},{"due":"20220622013432829","interval":7,"difficulty":6.057367253871695,"stability":15.051141287210756,"retrievability":0.8915489148970038,"grade":2,"lapses":4,"reps":4,"review":"20220607013432828"},{"due":"20220722023819905","interval":15,"difficulty":6.157689509387648,"stability":30.46946188822874,"retrievability":0.9003222555159526,"grade":1,"lapses":4,"reps":5,"review":"20220622023819905"},{"due":"20220729103809855","interval":36,"difficulty":7.240641374242357,"stability":0.02231302864945722,"retrievability":0.8829518648547094,"grade":0,"lapses":5,"reps":1,"review":"20220728103809854"},{"due":"20220805123701500","interval":7,"difficulty":7.440641374242362,"stability":0.016529891162146766,"retrievability":4.41620225506282e-15,"grade":0,"lapses":6,"reps":1,"review":"20220804123701500"},{"due":"20220809110324181","interval":4,"difficulty":7.640641374250821,"stability":0.01224564304198642,"retrievability":8.459293582029705e-12,"grade":0,"lapses":7,"reps":1,"review":"20220808110324181"},{"due":"20220812140609051","interval":3,"difficulty":6.840641374256989,"stability":0.8048622149187151,"retrievability":6.1673261722201965e-12,"grade":1,"lapses":7,"reps":2,"review":"20220811140609050"},{"due":"20220823054522266","interval":4,"difficulty":6.633013567859214,"stability":7.554998449868602,"retrievability":0.5923721936022253,"grade":1,"lapses":7,"reps":3,"review":"20220815054522266"}]
+interval: 21
+lapses: 7
+modified: 20220905003944072
+reps: 4
+retrievability: 0.7461252101789836
+review: 20220905003944072
+stability: 30.93981069606799
+tags: spark ?
+title: 数据采集技术包括
+type: text/vnd.tiddlywiki
+
+```
+Kettle, 
+Sqoop、
+DataX、
+Flume、
+Canal 只能增量 从mysql到其他存储(hbase,mysql等等),
+Apache NiFi,
+ogg(Oracle GoldenGate), 
+flinkCDC(change data capture)等
+Debezium 多数据源实时变更数据capture, 支持全量增量单并发
+
+ELK的logstash数据采集, 
+beats采集日志
+```
+
+离线数据采集
+
+```
+Sqoop 在关系型数据皆和HDFS或NoSQL中导入
+DataX 提供界面方式做数据导入
+Kettle 提供界面化的方式做数据导入
+Hive的外部表的方式(Hive的内部表和外部表)
+```
+
+实时数据采集
+
+```
+Flume实时采集日志数据，通过kafka和结构化流或Flink进行处理
+MySQL实时采集Binlog日志数据，需要使用cannal方式
+Orache实时采集使用ogg方式采集
+Debezium多数据源change data capture
+但是目前Flink出了一个FinkCDC(集中市场所有的数据库提供connector)
+```

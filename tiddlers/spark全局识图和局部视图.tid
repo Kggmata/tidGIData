@@ -1,0 +1,20 @@
+created: 20220620024703614
+difficulty: 1.0419301333873199
+due: 20221018004609577
+grade: 1
+history: [{"due":"20220623133305986","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620094058188"},{"due":"20220626084415132","interval":5,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.005169532745280801,"grade":0,"lapses":1,"reps":1,"review":"20220625084415132"},{"due":"20220712050214938","interval":4,"difficulty":1,"stability":12.859429240324747,"retrievability":0.003384799839695139,"grade":2,"lapses":1,"reps":2,"review":"20220629050214938"}]
+interval: 21
+lapses: 1
+modified: 20220720004609577
+reps: 3
+retrievability: 0.84193013338732
+review: 20220720004609577
+stability: 89.89071596908339
+tags: 用户画像 ?
+title: spark全局识图和局部视图
+type: text/vnd.tiddlywiki
+
+Spark SQL 中临时视图有两种，一种局部临时视图，只在当前SparkSession会话中有效；不能跨SparkSession访问。另一种是全局临时视图，作用于某个Spark应用程序的所有SparkSession会话。
+
+即全局临时视图是跨会话的。 它的生命周期和Spark应用程序的生命周期相同，当应用程序终止时，它将自动删除。 默认保存在系统保留的global_temp数据库下。所以查询全局临时视图时需要在视图名前面加上数据库名。即global_temp.全局视图名。例如：
+

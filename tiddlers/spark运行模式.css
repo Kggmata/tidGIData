@@ -1,0 +1,6 @@
+- **Local**：程序运行在本地，只启动一个进程来运行所有Task任务，没有集群架构
+- **Standalone**：Spark自带的分布式资源管理平台的集群，可以将Spark运行在自带的Standalone集群中
+--master spark://HOST:PORT
+- **==YARN==**：Spark on YARN，将Spark程序提交到YARN中运行，由YARN提供分布式资源
+- Messos：类似于YARN，国外用的比较多，国内基本没有
+- K8s：基于容器化的平台

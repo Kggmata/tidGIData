@@ -1,0 +1,118 @@
+created: 20220620021911087
+difficulty: 1
+due: 20220708084341913
+grade: 1
+history: [{"due":"20220621094054662","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620094054662"},{"due":"20220623132918631","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622132918631"}]
+interval: 3
+lapses: 1
+modified: 20220710092346057
+reps: 2
+retrievability: 0.01403297475148654
+review: 20220625084341913
+stability: 12.644777089702036
+tags: 用户画像
+title: spark on hive
+type: text/vnd.tiddlywiki
+
+*第一步：将hive-site.xml拷贝到spark安装路径conf目录
+
+node1执行以下命令来拷贝hive-site.xml到所有的spark安装服务器上面去
+
+```
+cd /export/server/hive/conf
+cp hive-site.xml /export/server/spark/conf/
+scp hive-site.xml root@node2:/export/server/spark/conf/
+scp hive-site.xml root@node3:/export/server/spark/conf/
+```
+
+*第二步：将mysql的连接驱动包拷贝到spark的jars目录下
+
+node1执行以下命令将连接驱动包拷贝到spark的jars目录下，三台机器都要进行拷贝
+
+```
+cd /export/server/hive/lib
+cp mysql-connector-java-5.1.32.jar  /export/server/spark/jars/
+scp mysql-connector-java-5.1.32.jar  root@node2:/export/server/spark/jars/
+scp mysql-connector-java-5.1.32.jar  root@node3:/export/server/spark/jars/
+```
+
+*第三步：Hive开启MetaStore服务
+
+(1)修改 hive/conf/hive-site.xml新增如下配置
+
+```
+远程模式部署metastore 服务地址
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://node1:9083</value>
+    </property>
+</configuration>
+```
+
+2: 后台启动 Hive MetaStore服务
+
+前台启动：
+
+```
+bin/hive --service metastore &
+```
+
+后台启动：
+
+```
+nohup /export/server/hive/bin/hive --service metastore 2>&1 >> /var/log.log &
+```
+
+完整的hive-site.xml文件
+
+```xml
+<configuration>
+    <!-- 存储元数据mysql相关配置 -->
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value> jdbc:mysql://node1:3306/hive?createDatabaseIfNotExist=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>root</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>123456</value>
+    </property>
+ <!-- H2S运行绑定host -->
+    <property>
+        <name>hive.server2.thrift.bind.host</name>
+        <value>node1</value>
+    </property>
+
+    <!-- 远程模式部署metastore 服务地址 -->
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://node1:9083</value>
+    </property>
+
+    <!-- 关闭元数据存储授权  -->
+    <property>
+        <name>hive.metastore.event.db.notification.api.auth</name>
+        <value>false</value>
+    </property>
+
+    <!-- 关闭元数据存储版本的验证 -->
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+</configuration>
+```
+

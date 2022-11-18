@@ -1,0 +1,19 @@
+created: 20220521070244978
+difficulty: 1.363378944121097
+due: 20220924125409682
+grade: 2
+history: [{"due":"20220524053622102","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522053622102"},{"due":"20220601102651361","interval":9,"difficulty":5.822431111850943,"stability":0.11806790392114878,"retrievability":0.6224311118509421,"grade":0,"lapses":1,"reps":1,"review":"20220531102651360"},{"due":"20220612063419434","interval":5,"difficulty":4.033971977352322,"stability":7.0201828121751815,"retrievability":0.011540865501379421,"grade":2,"lapses":1,"reps":2,"review":"20220605063419434"},{"due":"20220711010549262","interval":10,"difficulty":3.0946091236491906,"stability":26.36508831288796,"retrievability":0.8606371462968686,"grade":2,"lapses":1,"reps":3,"review":"20220615010549262"},{"due":"20220716011658932","interval":30,"difficulty":4.1816303220603555,"stability":0.05488141221849455,"retrievability":0.8870211984111647,"grade":0,"lapses":2,"reps":1,"review":"20220715011658932"},{"due":"20220727070320733","interval":6,"difficulty":2.381640264377964,"stability":5.562523685049306,"retrievability":0.000009942317607937474,"grade":2,"lapses":2,"reps":2,"review":"20220721070320733"}]
+interval: 13
+lapses: 2
+modified: 20220803125409682
+reps: 3
+retrievability: 0.7817386797431332
+review: 20220803125409682
+stability: 52.053691893176676
+tags: zookeeper ?
+title: zookeeper中文
+type: text/vnd.tiddlywiki
+
+大数据协调服务框架
+
+因为watch监听机制和临时节点

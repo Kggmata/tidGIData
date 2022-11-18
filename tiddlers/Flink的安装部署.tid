@@ -1,0 +1,25 @@
+created: 20220716012203954
+difficulty: 2.062939784909897
+due: 20220824123226084
+grade: 0
+history: [{"due":"20220722092335484","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721092335484"},{"due":"20220816063232397","interval":10,"difficulty":1,"stability":16.43908736440644,"retrievability":0.000026561715818525218,"grade":2,"lapses":0,"reps":2,"review":"20220731063232397"}]
+interval: 23
+lapses: 1
+modified: 20220823123226084
+reps: 1
+retrievability: 0.862939784909897
+review: 20220823123226084
+stability: 0.07408182272361549
+tags: ?
+title: Flink的安装部署
+type: text/vnd.tiddlywiki
+
+```
+local（**本地开发测试**）——本地模式
+
+- standalone——独立模式，Flink自带集群，开发测试环境使用（**集群测试**）
+
+- standaloneHA—独立集群高可用模式，Flink自带集群，开发测试环境使用（**略过**）
+
+- yarn——计算资源统一由Hadoop YARN管理（**生产环境**）
+```

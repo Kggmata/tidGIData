@@ -1,0 +1,42 @@
+created: 20220716091500188
+difficulty: 1
+due: 20221220143442498
+grade: 2
+history: [{"due":"20220722115934286","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721115934285"},{"due":"20220817234426733","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":1,"lapses":0,"reps":2,"review":"20220801234426732"}]
+interval: 27
+lapses: 0
+modified: 20220829143442498
+reps: 3
+retrievability: 0.8411020839292245
+review: 20220829143442498
+stability: 113.47759365239038
+tags: ?
+title: yield in python
+type: text/vnd.tiddlywiki
+
+```
+yield和return类似, 但是返回的是一个生成器, 可以使用for遍历直到生成器结束
+或者使用next从上次停止的位置继续
+```
+```
+def foo():
+    print('starting')
+    yield 1
+    yield 2
+    yield 3
+
+
+if __name__ == '__main__':
+    g = foo()
+    for i in foo():
+        print(i)
+
+# starting
+# 1
+# 2
+# 3
+```
+```
+带yield的函数是一个生成器了
+```
+[img[如何理解Python中的yield用法 - 知乎2022-07-23 21_13_40.jpg]]

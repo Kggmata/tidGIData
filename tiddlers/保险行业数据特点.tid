@@ -1,0 +1,18 @@
+created: 20220618092241852
+difficulty: 1
+due: 20220825153855396
+grade: 2
+history: [{"due":"20220621004617626","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004617626"},{"due":"20220630145252084","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145252084"}]
+interval: 11
+lapses: 0
+modified: 20220702153855397
+reps: 3
+retrievability: 0.8770024421488429
+review: 20220702153855396
+stability: 53.686353537936405
+tags: 用户画像 ?
+title: 保险行业数据特点
+type: text/vnd.tiddlywiki
+
+* 银行和证券的实时场景很丰富，因为客户的交易频率【??】，适合用【??】来做，但是保险的交易频率不高，适合用 【??】做离线分析
+* 保险的存量数据很大

@@ -1,0 +1,17 @@
+created: 20220702122935788
+difficulty: 1
+due: 20221227143552352
+grade: 2
+history: [{"due":"20220707033740504","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706033740504"},{"due":"20220726063422776","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":2,"lapses":0,"reps":2,"review":"20220710063422776"},{"due":"20220803140319252","interval":23,"difficulty":2.059946790337357,"stability":0.07408184304237006,"retrievability":0.859946790337357,"grade":0,"lapses":1,"reps":1,"review":"20220802140319252"},{"due":"20220821081725816","interval":6,"difficulty":1,"stability":12.923393125053918,"retrievability":0.00019680310698987739,"grade":2,"lapses":1,"reps":2,"review":"20220808081725815"}]
+interval: 27
+lapses: 1
+modified: 20220904143552352
+reps: 3
+retrievability: 0.8024202272251365
+review: 20220904143552352
+stability: 114.45588880361659
+tags: 用户画像 ?
+title: ip是几进制
+type: text/vnd.tiddlywiki
+
+256进制

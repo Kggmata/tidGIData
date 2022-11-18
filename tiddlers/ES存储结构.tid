@@ -1,0 +1,17 @@
+created: 20220615132906923
+difficulty: 1
+due: 20220918131342156
+grade: 2
+history: [{"due":"20220619233347821","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618233347821"},{"due":"20220704025147138","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621025147138"}]
+interval: 16
+lapses: 0
+modified: 20220707131342156
+reps: 3
+retrievability: 0.8824752287483904
+review: 20220707131342155
+stability: 73.44779868247726
+tags: 用户画像 ?
+title: ES存储结构
+type: text/vnd.tiddlywiki
+
+[img[image-20220615172758201.png]]

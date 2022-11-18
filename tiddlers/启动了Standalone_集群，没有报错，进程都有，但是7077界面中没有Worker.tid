@@ -1,0 +1,27 @@
+created: 20220523014321271
+difficulty: 1
+due: 20221106094715109
+grade: 2
+history: [{"due":"20220524081150271","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523081150271"},{"due":"20220602060933314","interval":2,"difficulty":2.640976298811018,"stability":7.587419783831714,"retrievability":0.6931759895835838,"grade":2,"lapses":0,"reps":2,"review":"20220525060933314"},{"due":"20220714070648307","interval":11,"difficulty":1.6993220165605727,"stability":39.457719707153394,"retrievability":0.858345717749555,"grade":2,"lapses":0,"reps":3,"review":"20220605070648307"},{"due":"20220722022414984","interval":46,"difficulty":2.7837361958426965,"stability":0.07408198986175796,"retrievability":0.8844141792821236,"grade":0,"lapses":1,"reps":1,"review":"20220721022414984"},{"due":"20220812022617554","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":2,"lapses":1,"reps":2,"review":"20220730022617554"}]
+interval: 18
+lapses: 1
+modified: 20220817094715109
+reps: 3
+retrievability: 0.863549949018463
+review: 20220817094715109
+stability: 80.89456385090092
+tags: spark ?
+title: 启动了Standalone:集群，没有报错，进程都有，但是7077界面中没有Worker
+type: text/vnd.tiddlywiki
+
+分析
+`Master和Worker都活着，Worker不认这个Master,Master的状态不是Active
+配置了HA,HA配置中是需要启动两个Masteri进行选举的，不需要
+Master的配置，配置中注释掉了
+定位
+Zookeeper没有启动，启动了一个Master,Master无法连接ZK,
+无法更新状态，默认就是Standby
+解决
+spark-env.sh
+还原非HA架构的配置
+重启集群即可`

@@ -1,0 +1,17 @@
+created: 20220522001835717
+difficulty: 2.375799493527758
+due: 20220928064255872
+grade: 2
+history: [{"due":"20220524115106238","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522115106238"},{"due":"20220528123645364","interval":5,"difficulty":5.968433471420917,"stability":0.16205398577412577,"retrievability":0.7684334714209162,"grade":0,"lapses":1,"reps":1,"review":"20220527123645364"},{"due":"20220609061701041","interval":5,"difficulty":4.2071772744476625,"stability":8.427236089624916,"retrievability":0.03874380302674565,"grade":2,"lapses":1,"reps":2,"review":"20220601061701041"},{"due":"20220710074842228","interval":11,"difficulty":3.278688799197096,"stability":28.141158319631977,"retrievability":0.8715115247494332,"grade":2,"lapses":1,"reps":3,"review":"20220612074842228"}]
+interval: 29
+lapses: 1
+modified: 20220711064255872
+reps: 4
+retrievability: 0.8971106943306618
+review: 20220711064255872
+stability: 79.36379010225461
+tags: hive ?
+title: hive存储格式图解
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_08-18-43.jpg]]

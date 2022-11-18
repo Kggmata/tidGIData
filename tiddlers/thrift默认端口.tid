@@ -1,0 +1,17 @@
+created: 20220602022550956
+difficulty: 1
+due: 20221005125155992
+grade: 2
+history: [{"due":"20220607061419286","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606061419286"},{"due":"20220629010410657","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612010410657"},{"due":"20220703114842406","interval":20,"difficulty":2.085535437739404,"stability":0.07408316441686115,"retrievability":0.8855354377394037,"grade":0,"lapses":1,"reps":1,"review":"20220702114842406"},{"due":"20220708010137354","interval":5,"difficulty":2.286351547132127,"stability":0.05488141221849455,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220707010137353"},{"due":"20220711122600054","interval":3,"difficulty":2.489504691215092,"stability":0.04065715014820503,"retrievability":0.0031531440829650446,"grade":0,"lapses":3,"reps":1,"review":"20220710122600053"},{"due":"20220715133258132","interval":4,"difficulty":2.6895361839042966,"stability":0.030119557630782685,"retrievability":0.00003149268920435674,"grade":0,"lapses":4,"reps":1,"review":"20220714133258132"},{"due":"20220727065531439","interval":7,"difficulty":1,"stability":6.286519723671343,"retrievability":2.320774054291401e-11,"grade":2,"lapses":4,"reps":2,"review":"20220721065531439"}]
+interval: 13
+lapses: 4
+modified: 20220803125155992
+reps: 3
+retrievability: 0.8042245284301539
+review: 20220803125155992
+stability: 62.75982489731487
+tags: hbase ?
+title: thrift默认端口
+type: text/vnd.tiddlywiki
+
+9090

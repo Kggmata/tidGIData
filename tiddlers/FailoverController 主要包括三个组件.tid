@@ -1,0 +1,21 @@
+created: 20220521023607876
+difficulty: 3.5323384784322416
+due: 20220914121110739
+grade: 2
+history: [{"due":"20220523110248875","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521110248875"},{"due":"20220524002556157","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523002556157"},{"due":"20220601012615244","interval":3,"difficulty":5.966078293706857,"stability":6.350492017651376,"retrievability":0.6660782937068555,"grade":1,"lapses":1,"reps":2,"review":"20220526012615244"},{"due":"20220621092317886","interval":8,"difficulty":5.041782093429881,"stability":17.578850307397797,"retrievability":0.8757037997230244,"grade":2,"lapses":1,"reps":3,"review":"20220603092317885"},{"due":"20220731085009398","interval":19,"difficulty":5.134148633127219,"stability":39.074221384769935,"retrievability":0.8923665396973373,"grade":1,"lapses":1,"reps":4,"review":"20220622085009398"},{"due":"20220806073103110","interval":44,"difficulty":6.22227389604909,"stability":0.054881171378436774,"retrievability":0.8881252629218711,"grade":0,"lapses":2,"reps":1,"review":"20220805073103110"},{"due":"20220810042431647","interval":4,"difficulty":6.422736252711164,"stability":0.04065696669349018,"retrievability":0.00046235666207404937,"grade":0,"lapses":3,"reps":1,"review":"20220809042431647"},{"due":"20220817081939475","interval":5,"difficulty":4.622738611759245,"stability":2.7641261776614265,"retrievability":0.0000023590480806006053,"grade":2,"lapses":3,"reps":2,"review":"20220814081939475"}]
+interval: 9
+lapses: 3
+modified: 20220823121110739
+reps: 3
+retrievability: 0.7095998666729959
+review: 20220823121110738
+stability: 21.61516526191757
+tags: hdfs ?
+title: FailoverController 主要包括三个组件
+type: text/vnd.tiddlywiki
+
+HealthMonitor: 监控 NameNode 是否处于 unavailable 或 unhealthy 状态。当前通过RPC 调用 NN 相应的方法完成。
+
+ActiveStandbyElector: 监控 NN 在 ZK 中的状态。
+
+ZKFailoverController: 订阅 HealthMonitor 和 ActiveStandbyElector 的事件，并管理 NN 的状态,另外 zkfc还负责解决 fencing（也就是脑裂问题）。

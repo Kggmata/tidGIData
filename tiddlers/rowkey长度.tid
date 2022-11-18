@@ -1,0 +1,9 @@
+created: 20220801235406859
+modified: 20220801235422909
+tags: ? flink
+title: rowkey长度
+type: text/vnd.tiddlywiki
+
+```
+最大64kb, 一般10到100byte
+```

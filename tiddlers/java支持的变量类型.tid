@@ -1,0 +1,26 @@
+created: 20220724122017184
+difficulty: 0.025386988635295055
+due: 20220827143302073
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143302073
+reps: 1
+retrievability: 1
+review: 20220826143302073
+stability: 0.10000000088475645
+tags: flink ?
+title: java支持的变量类型
+type: text/vnd.tiddlywiki
+
+```
+类变量:
+独立于方法之外的变量, 使用static修饰
+
+实例变量:
+独立于方法之外的变量, 没有static修饰
+
+局部变量:
+类的方法中的变量
+```

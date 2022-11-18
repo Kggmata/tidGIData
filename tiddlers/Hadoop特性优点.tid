@@ -1,0 +1,23 @@
+created: 20220623054549513
+difficulty: 1
+due: 20220919005137908
+grade: 2
+history: [{"due":"20220625143431341","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624143431341"},{"due":"20220709132403556","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626132403556"}]
+interval: 15
+lapses: 0
+modified: 20220711005137908
+reps: 3
+retrievability: 0.8893785641845435
+review: 20220711005137907
+stability: 69.7164941253289
+tags: 用户画像 ?
+title: Hadoop特性优点
+type: text/vnd.tiddlywiki
+
+扩容能力（Scalable）：Hadoop是在可用的计算机集群间分配数据并完成计算任务的，这些集群可用方便的扩展到数以千计的节点中。
+
+成本低（Economical）：Hadoop通过普通廉价的机器组成服务器集群来分发以及处理数据，以至于成本很低。
+
+高效率（Efficient）：通过并发数据，Hadoop可以在节点之间动态并行的移动数据，使得速度非常快。
+
+可靠性（Rellable）：能自动维护数据的多份复制，并且在任务失败后能自动地重新部署（redeploy）计算任务。所以Hadoop的按位存储和处理数据的能力值得人们信赖。

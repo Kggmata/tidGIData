@@ -1,0 +1,12 @@
+created: 20220802105813904
+modified: 20220802105910368
+tags: ? flink
+title: spark行转列, 列转行
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/159477792
+
+```
+collect_list 列聚合为数组, 不去重
+collect_set 列聚合为数组, 去重
+```

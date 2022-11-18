@@ -1,0 +1,152 @@
+created: 20220718125238958
+difficulty: 1
+due: 20231120063241134
+grade: 1
+history: [{"due":"20220801120443682","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731120443681"},{"due":"20220823001210344","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220807001210344"}]
+interval: 103
+lapses: 0
+modified: 20221118063241134
+reps: 3
+retrievability: 0.516455716201446
+review: 20221118063241134
+stability: 366.51759930429773
+tags: ?
+title: spark加盐扩容步骤
+type: text/vnd.tiddlywiki
+
+```
+对 table_log 与 table_productjoin 的 join 结果表 table_join_01 进行TABLESAMPLE 采样，取出倾斜 key 表 table_skew
+把 table_join_01 与倾斜表 table_skew 进行 join，join 上的 dp_id 增加0-100的随机前缀 concat(cast(rand()*100 as int),'_',a.dp_id)
+把 table_schema 与倾斜表 table_skew 进行 join，join 上的每条数据explode 膨胀成 100 条数据，这 100 条数据都按顺序附加一个 0~100 的前缀
+此时就将原先相同的 key 打散成 100 份，分散到多个 task 中去进行 join 了。
+```
+```
+WITH table_log AS (
+	SELECT
+		pid,
+		dp_id
+	FROM
+		bi_ods_clear.table_log
+	WHERE
+		dt = '${yyyymmdd}'
+),
+ table_product AS (
+	SELECT
+		id,
+		NAME,
+		schema_id
+	FROM
+		bi_ods.table_product
+	WHERE
+		dt = '${yyyymmdd}'
+),
+ table_schema AS (
+	SELECT
+		CODE,
+		property,
+		schema_id,
+		dp_id
+	FROM
+		bi_ods.table_schema
+	WHERE
+		dt = '${yyyymmdd}'
+),
+ table_join_01 AS (
+	SELECT
+		,
+		a.pid,
+		a.dp_id,
+		b. NAME,
+		b.schema_id
+	FROM
+		table_log a
+	LEFT OUTER JOIN table_product b ON a.pid = b.id
+),
+ -- sample取样取出数量排名前100的倾斜key 
+ table_skew AS (
+	SELECT
+		count(1) cnt,
+		schema_id,
+		dp_id
+	FROM
+		table_join_01 TABLESAMPLE (10 PERCENT) a
+	GROUP BY
+		schema_id,
+		dp_id
+	ORDER BY
+		cnt DESC
+	LIMIT 100
+),
+ -- 驱动表倾斜key join对驱动表增加随机前缀
+rebuild_table_01 AS (
+	SELECT
+		pid,
+		NAME,
+		a.schema_id,
+		CASE
+	WHEN b.cnt IS NOT NULL THEN
+		concat(
+			cast(rand() * 100 AS INT),
+			'_',
+			a.dp_id
+		)
+	ELSE
+		a.dp_id
+	END dp_id
+	FROM
+		table_join_01 a
+	LEFT JOIN table_skew b ON a.dp_id = b.dp_id
+	AND a.schema_id = b.schema_id
+),
+ -- 被驱动表倾斜key join
+table_join_02 AS (
+	SELECT
+		a.schema_id,
+		a.dp_id,
+		b.cnt cnt
+	FROM
+		table_schema a
+	LEFT JOIN table_skew b ON a.dp_id = b.dp_id
+	AND a.schema_id = b.schema_id
+),
+ -- 被驱动表膨胀100倍
+  rebuild_table_02 AS (
+	SELECT
+		CODE,
+		property,
+		schema_id,
+		dp_id
+	FROM
+		table_join_02
+	WHERE
+		cnt IS NULL
+	UNION ALL
+		SELECT
+			CODE,
+			property,
+			schema_id,
+			concat(b.prefix, '_', dp_id) prefix
+		FROM
+			table_join_02 lateral VIEW OUTER explode (
+				split (
+					'0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100',
+					','
+				)
+			) b AS prefix
+		WHERE
+			cnt IS NOT NULL
+) 
+INSERT overwrite TABLE qs_tzl_device_report_test PARTITION (dt = '${yyyymmdd}') SELECT
+	/*+ REPARTITION(100) */
+	a.pid AS product_id,
+	a. NAME AS product_name,
+	c. CODE AS property_code,
+	c.property
+FROM
+	rebuild_table_01 a
+LEFT OUTER JOIN rebuild_table_02 c ON (
+	a.schema_id = c.schema_id
+	AND a.dp_id = c.dp_id
+)
+
+```

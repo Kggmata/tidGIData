@@ -1,0 +1,11 @@
+created: 20220803082105049
+modified: 20220803083020364
+tags: ? flink
+title: 分桶抽样
+type: text/vnd.tiddlywiki
+
+```
+tablesample(bucket 1 out of 4 on id)
+x代表第几桶开始
+y代表分几份
+```

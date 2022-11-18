@@ -1,0 +1,60 @@
+created: 20220609111100796
+difficulty: 1.0497574316340097
+due: 20221018042336701
+grade: 1
+history: [{"due":"20220614102616819","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102616819"},{"due":"20220706094641043","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024208621"}]
+interval: 24
+lapses: 0
+modified: 20220710042336701
+reps: 3
+retrievability: 0.8497574316340097
+review: 20220710042336701
+stability: 99.90293460845956
+tags: kafka ?
+title: 手动提交消费的offset
+type: text/vnd.tiddlywiki
+
+```
+# coding:utf8
+"""
+Kafka消费者的API
+"""
+from kafka import KafkaConsumer
+
+consumer = KafkaConsumer(
+    "testpython", # topic
+    group_id="mygroup", # 消费者组，明天说
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092'],
+    auto_offset_reset='earliest',    # 启动的时候 从`可用`的最早数据开始读取，如果不设置这个参数，上来就等新数据，已有的完全不管
+    enable_auto_commit=False    # 关闭自动提交
+)
+
+for message in consumer:
+    # 这个for循环不会停止，有数据就会进来执行，没数据就一直等待
+    # 消费者的特性是，持续监控kafka的topic各个分区，有数据就抓取
+    topic = message.topic
+    partition = message.partition
+    offset = message.offset
+    key = message.key
+    value = message.value.decode("UTF-8")   # 消费出来的数据是byte，要自行decode解码
+
+    print(
+        "消费的topic是:%s，本条消息的分区号是：%d，本条消息的offset是：%d，"
+        "本条消息的key是：%s，本条消息的内容是：%s" % (topic, partition, offset, key, value)
+    )
+    
+    consumer.commit() # 提交当前消费的offset到kafka内置主题
+```
+
+> 也就是需要：
+>
+> 1. 构建Consumer对象的时候，设置enable_auto_commit=False 关闭自动提交
+> 2. 消费到一条数据后，自行consumer.commit() 提交记录到内置主题去记录
+
+```
+设置启动的时候，从哪里开始消费
+
+auto_offset_reset这个参数设置为：earliest
+
+表示从`可用`的最早数据开始消费，上一次的记录值
+```

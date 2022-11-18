@@ -1,0 +1,17 @@
+created: 20220529052903614
+difficulty: 1
+due: 20220920141159987
+grade: 2
+history: [{"due":"20220601054842422","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531054842422"},{"due":"20220622130056699","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130056699"}]
+interval: 20
+lapses: 0
+modified: 20220623141159987
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623141159986
+stability: 89.0394510841741
+tags: hive ?
+title: ORC文件中支持bloom filter index索引，可以实现范围过滤
+type: text/vnd.tiddlywiki
+
+错误：row group index ：范围过滤，bloom filter index：等值过滤【说你有，你不一定有，说你没有，就一定没有】

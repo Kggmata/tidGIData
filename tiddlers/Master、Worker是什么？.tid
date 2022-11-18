@@ -1,0 +1,23 @@
+created: 20220522045632000
+difficulty: 1.3767994636196013
+due: 20220909131707334
+grade: 2
+history: [{"due":"20220524020754247","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020754247"},{"due":"20220619020009187","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529020009187"}]
+interval: 22
+lapses: 0
+modified: 20220620131707334
+reps: 3
+retrievability: 0.8959329765306554
+review: 20220620131707333
+stability: 81.39969753492974
+tags: spark ?
+title: Master、Worker是什么？
+type: text/vnd.tiddlywiki
+
+''- 主：Master：管理节点''
+
+  - 接受客户端请求、管理从节点Worker节点、资源管理和任务调度
+
+''- 从：Worker：计算节点''
+
+  - 使用自己所在节点的资源运行Executor进程：给每个Executor分配一定的资源

@@ -1,0 +1,17 @@
+created: 20220602054008005
+difficulty: 1.0855354377394038
+due: 20220925114555440
+grade: 1
+history: [{"due":"20220607063247001","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606063247001"},{"due":"20220629004842670","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612004842670"}]
+interval: 20
+lapses: 0
+modified: 20220702114555440
+reps: 3
+retrievability: 0.8855354377394037
+review: 20220702114555440
+stability: 84.64594355987899
+tags: hbase ?
+title: SNN工作流程
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-06-02_13-40-21.jpg]]

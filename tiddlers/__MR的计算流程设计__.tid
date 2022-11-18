@@ -1,0 +1,47 @@
+created: 20220519134435402
+difficulty: 2.2968933941393876
+due: 20230220150717735
+grade: 2
+history: [{"due":"20220522010520262","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520010520262"},{"due":"20220528005349916","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522005349916"},{"due":"20220623005724084","interval":10,"difficulty":4.126014725196352,"stability":22.07656732651434,"retrievability":0.826014725196352,"grade":2,"lapses":0,"reps":3,"review":"20220601005724084"},{"due":"20220822054555679","interval":24,"difficulty":3.21779089675283,"stability":58.054925025422094,"retrievability":0.8917761715564773,"grade":2,"lapses":0,"reps":4,"review":"20220625054555679"}]
+interval: 71
+lapses: 0
+modified: 20220904150717735
+reps: 5
+retrievability: 0.8791024973865574
+review: 20220904150717735
+stability: 169.063943780605
+tags: spark ?
+title: **MR的计算流程设计**
+type: text/vnd.tiddlywiki
+
+- step1：读取数据：**Input**
+
+  - 功能一：实现分片，将读取到的数据进行划分，将不同的数据才能分给不同Task
+
+  - 功能二：转换KV
+
+- step2：处理数据：**Map、Shuffle、Reduce**
+
+  - Map：负责数据处理：一对一的转换，多对一的过滤
+
+    - 功能一：构建分布式并行Task，每个分片对应一个MapTask【进程】
+
+    - 功能二：每个MapTask负责自己处理的分片的数据的转换，转换逻辑由map方法来决定
+  
+- Shuffle：负责数据处理
+
+    - Map输出写入数据：磁盘
+
+    - 功能：实现全局的：分区、排序、分组
+
+    - Reduce读取Map输出的数据：读取磁盘
+
+  - Reduce：负责数据处理：多对一的聚合
+
+    - 功能：默认由一个ReduceTask【进程】来实现数据的聚合处理
+
+- step3：保存结果：**Output**
+
+  - 功能：将上一步的结果写入外部系统
+
+[img[image-20210708163107625.png]]

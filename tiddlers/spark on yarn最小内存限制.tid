@@ -1,0 +1,37 @@
+created: 20220624053722978
+difficulty: 1.065612726934808
+due: 20221021060841500
+grade: 1
+history: [{"due":"20220626002128259","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625002128259"},{"due":"20220715045659462","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":2,"lapses":0,"reps":2,"review":"20220629045659462"}]
+interval: 22
+lapses: 0
+modified: 20220721060841500
+reps: 3
+retrievability: 0.865612726934808
+review: 20220721060841500
+stability: 92.15055392172822
+tags: 用户画像 ?
+title: spark on yarn最小内存限制
+type: text/vnd.tiddlywiki
+
+[img[image-20220624111419532.png]]
+
+```
+原因：在yarn-site.xml中配置了yarn使用的最小内存不能低于512m
+
+命令：
+
+\# yarn????????? 最小内存需要512m
+
+bin/spark-submit \
+
+--master yarn \
+
+--deploy-mode client \
+
+--driver-memory 1g \
+
+--executor-memory 1g \
+
+/export/server/spark/examples/src/main/python/pi.py \
+```

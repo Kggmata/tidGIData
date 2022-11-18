@@ -1,0 +1,26 @@
+created: 20220729004857276
+modified: 20220729005356864
+tags: ? flink
+title: linux查看内存占用的几种方式
+type: text/vnd.tiddlywiki
+
+```
+top
+```
+[img[Snipaste_2022-07-29_08-49-47.jpg]]
+
+```
+free
+查看系统内存使用情况
+total总物理内存
+used已使用多大
+free可用内存
+shared多个进程共享的内存总额
+buff/cached磁盘缓存大小
+```
+[img[Snipaste_2022-07-29_08-51-42.jpg]]
+
+```
+cat /proc/meminfo
+查看RAM使用情况的最简单方法
+```

@@ -1,0 +1,35 @@
+created: 20220720234955826
+difficulty: 1
+due: 20230613140644982
+grade: 2
+history: [{"due":"20220802090906260","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801090906259"},{"due":"20220823010815156","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220807010815156"}]
+interval: 65
+lapses: 0
+modified: 20221011140644982
+reps: 3
+retrievability: 0.6585224129237505
+review: 20221011140644982
+stability: 245.22002005146214
+tags: ?
+title: flink checkpoint两种语义
+type: text/vnd.tiddlywiki
+
+```
+Flink Checkpoint 支持两种语义：Exactly_Once 和 At_least_Once，默认的 Checkpoint 语义是 Exactly_Once。具体语义含义如下：
+
+Exactly_Once 含义是：保证每条数据对于 Flink 任务的状态结果只影响一次。打个比方，比如 WordCount 程序，目前实时统计的 "hello" 这个单词数为 5，同时这个结果在这次 Checkpoint 成功后，保存在了 HDFS。在下次 Checkpoint 之前， 又来 2 个 "hello" 单词，突然程序遇到外部异常自动容错恢复，会从最近的 Checkpoint 点开始恢复，那么会从单词数为 5 的这个状态点开始恢复，Kafka 消费的数据点位也是状态为 5 这个点位开始计算，所以即使程序遇到外部异常自动恢复时，也不会影响到 Flink 状态的结果计算。
+
+At_Least_Once 含义是：每条数据对于 Flink 任务的状态计算至少影响一次。比如在 WordCount 程序中，你统计到的某个单词的单词数可能会比真实的单词数要大，因为同一条消息，当 Flink 任务容错恢复后，可能将其计算多次。
+
+Flink 中 Exactly_Once 和 At_Least_Once 具体是针对 Flink 任务状态而言的，并不是 Flink 程序对消息记录只处理一次。举个例子，当前 Flink 任务正在做 Checkpoint，该次 Checkpoint 还没有完成，这次 Checkpoint 时间段的数据其实已经进入 Flink 程序处理，只是程序状态没有最终存储到远程存储。当程序突然遇到异常，进行容错恢复时，那么就会从最新的 Checkpoint 进行状态恢复重启，上一次 Checkpoint 成功到这次 Checkpoint 失败的数据还会进入 Flink 系统重新处理，具体实例如下图：
+```
+```
+Exactly_Once 和 At_Least_Once 具体在底层实现大致相同，具体差异表现在 CheckpointBarrier 对齐方式的处理：
+```
+[img[img2022-07-21 07_55_35.png]]
+
+```
+如果是 Exactly_Once 模式，某个算子的 Task 有多个输入通道时，当其中一个输入通道收到 CheckpointBarrier 时，Flink Task 会阻塞该通道，其不会处理该通道后续数据，但是会将这些数据缓存起来，一旦完成了所有输入通道的 CheckpointBarrier 对齐，才会继续对这些数据进行消费处理。
+
+对于 At_least_Once，同样针对某个算子的 Task 有多个输入通道的情况下，当某个输入通道接收到 CheckpointBarrier 时，它不同于 Exactly Once，即使没有完成所有输入通道 CheckpointBarrier 对齐，At Least Once 也会继续处理后续接收到的数据。所以使用 At Least Once 不能保证数据对于状态计算只有一次的计算影响。
+```

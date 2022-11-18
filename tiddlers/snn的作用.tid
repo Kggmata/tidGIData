@@ -1,0 +1,42 @@
+created: 20220521025404069
+difficulty: 2.0728102026507074
+due: 20221223000529018
+grade: 2
+history: [{"due":"20220524021452336","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021452336"},{"due":"20220615054231958","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529054231958"},{"due":"20220802104607364","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616104607364"}]
+interval: 52
+lapses: 0
+modified: 20220807000529018
+reps: 4
+retrievability: 0.8893157252623122
+review: 20220807000529017
+stability: 137.99102630377573
+tags: hdfs ?
+title: snn的作用
+type: text/vnd.tiddlywiki
+
+SecondaryNameNode 就是来帮助解决上述问题的，它的职责是合并 NameNode 的 edit logs 到 fsimage 文件中
+
+Checkpoint 
+每达到触发条件，会由 secondary namenode 将 namenode 上积累的所有 edits 和一个最新的 fsimage 下载到本地，并加载到内存进行 merge（这个过程称为 checkpoint）
+
+NameNode 管理着元数据信息，其中有两类持久化元数据文件：edits 操作日志文件和fsimage 元数据镜像文件。新的操作日志不会立即与 fsimage 进行合并，也不会刷到NameNode 的内存中，而是会先写到 edits 中(因为合并需要消耗大量的资源)，操作成功之后更新至内存。
+
+有 dfs.namenode.checkpoint.period 和 dfs.namenode.checkpoint.txns 两个配置，只要达到这两个条件任何一个，secondarynamenode 就会执行 checkpoint 的操作。
+
+当触发 checkpoint 操作时，NameNode 会生成一个新的 edits 即上图中的 edits.new 文件，同时 SecondaryNameNode 会将 edits 文件和 fsimage 复制到本地（HTTP GET 方式）。
+ 
+secondarynamenode 将下载下来的 fsimage 载入到内存，然后一条一条地执行 edits 文件中的各项更新操作，使得内存中的 fsimage 保存最新，这个过程就是 edits 和 fsimage文件合并，生成一个新的 fsimage 文件即上图中的 Fsimage.ckpt 文件。
+
+secondarynamenode 将新生成的 Fsimage.ckpt 文件复制到 NameNode 节点。
+
+在 NameNode 节点的 edits.new 文件和 Fsimage.ckpt 文件会替换掉原来的 edits 文件和 fsimage 文件，至此刚好是一个轮回，即在 NameNode 中又是 edits 和 fsimage 文件。
+
+等待下一次 checkpoint 触发 SecondaryNameNode 进行工作，一直这样循环操作。
+
+<name> dfs.namenode.checkpoint.period</name> 
+   <value>3600</value>
+
+<name>dfs.namenode.checkpoint.txns</name> 
+  <value>1000000</value>
+
+Secondary namenode keeps the checkpoint on the namenode, It reads the edit logs from the namenode continuously after a specific interval and applies it to the fsimage copy of secondary namenode. 

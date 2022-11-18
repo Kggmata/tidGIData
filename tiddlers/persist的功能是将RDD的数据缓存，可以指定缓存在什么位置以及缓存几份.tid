@@ -1,0 +1,17 @@
+created: 20220529053110659
+difficulty: 1
+due: 20220920141245296
+grade: 2
+history: [{"due":"20220601061554306","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531061554306"},{"due":"20220622130107038","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130107038"}]
+interval: 20
+lapses: 0
+modified: 20220623141245296
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623141245296
+stability: 89.0394510841741
+tags: spark ?
+title: persist的功能是将RDD的数据缓存，可以指定缓存在什么位置以及缓存几份
+type: text/vnd.tiddlywiki
+
+正确：磁盘1x/2x/3x、内存1x/2x、内存以及磁盘1x/2x、堆外内存、

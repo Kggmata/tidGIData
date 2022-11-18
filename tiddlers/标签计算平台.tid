@@ -1,0 +1,21 @@
+created: 20220614141554501
+difficulty: 1
+due: 20230301121731509
+grade: 2
+history: [{"due":"20220617121117778","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121117778"},{"due":"20220626004902058","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617004902058"},{"due":"20220813020401073","interval":10,"difficulty":1.0875368908748189,"stability":47.300564051648585,"retrievability":0.8875368908748189,"grade":1,"lapses":0,"reps":3,"review":"20220627020401073"}]
+interval: 51
+lapses: 0
+modified: 20220817121731509
+reps: 4
+retrievability: 0.8926141336732472
+review: 20220817121731508
+stability: 196.07168293647965
+tags: 用户画像 ?
+title: 标签计算平台
+type: text/vnd.tiddlywiki
+
+采用SparkSQL的方式计算
+
+* （1）Spark Job方式灵活 ，一个Job直接写入画像结果表
+* （2）Spark 拥有SparkMl包，能够基于SparkML完成挖掘类标签构建
+* （3）Spark 速度较快，和Yarn无缝整合

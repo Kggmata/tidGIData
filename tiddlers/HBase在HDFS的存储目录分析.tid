@@ -1,0 +1,66 @@
+created: 20220606060804459
+difficulty: 1
+due: 20221114064222594
+grade: 2
+history: [{"due":"20220610121804658","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609121804658"},{"due":"20220613121831802","interval":3,"difficulty":1.5162196541321282,"stability":0.07545638712607733,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220612121831802"},{"due":"20220628053656782","interval":3,"difficulty":1,"stability":12.80868935150994,"retrievability":0.01516249539961304,"grade":2,"lapses":1,"reps":2,"review":"20220615053656782"},{"due":"20220701020746056","interval":15,"difficulty":2.083922762157107,"stability":0.054882158045770235,"retrievability":0.883922762157107,"grade":0,"lapses":2,"reps":1,"review":"20220630020746056"},{"due":"20220715065640676","interval":5,"difficulty":1,"stability":10.164715632813108,"retrievability":0.00006781040616137007,"grade":2,"lapses":2,"reps":2,"review":"20220705065640676"},{"due":"20220722054946020","interval":16,"difficulty":2.0471774543198196,"stability":0.040657012017596195,"retrievability":0.8471774543198195,"grade":0,"lapses":3,"reps":1,"review":"20220721054946020"},{"due":"20220806025358240","interval":9,"difficulty":1.2471774543941108,"stability":6.854690100465863,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220730025358240"},{"due":"20220810072238472","interval":10,"difficulty":2.304701780618118,"stability":0.030119421724187252,"retrievability":0.857524326224007,"grade":0,"lapses":4,"reps":1,"review":"20220809072238472"},{"due":"20220820082649106","interval":5,"difficulty":1,"stability":6.286496752787149,"retrievability":2.5350655691687196e-8,"grade":2,"lapses":4,"reps":2,"review":"20220814082649106"}]
+interval: 16
+lapses: 4
+modified: 20220830064222594
+reps: 3
+retrievability: 0.7647876828801821
+review: 20220830064222594
+stability: 75.53567878123704
+tags: hbase ?
+title: HBase在HDFS的存储目录分析
+type: text/vnd.tiddlywiki
+
+HBase的数据存储在HDFS上。
+
+到底在HDFS的哪个地方呢？取决于hbase-site.xml的配置
+
+[img[20220606112207.png]]
+
+如图，我们通过`hbase.rootdir`来配置，hbase的数据存放再HDFS的哪个地方。
+
+[img[20220606112333.png]]
+
+Data文件的内容
+
+[img[20220606112721-16544957371167.png]]
+
+HDFS中的HBase根目录：
+
+`data 表数据
+   - namespace1
+   - namespace2
+   - namespace3
+   - 默认namespace（叫做default）
+     - 表1
+     - 表2
+     - 表3
+     - 表N
+       - region1
+       - region2
+       - region3
+       - regionN
+         - 列族1
+         - 列族2
+         - 列族N
+           - HFile1
+           - HFile2
+           - HFile3`
+
+> HBase的最小数据物理存储单元就是HFile文件
+>
+> 剩下的
+>
+> - namespace（数据库）
+> - 表
+> - 列族
+> - 都是文件夹
+
+> 物理存储单元最小是HFile文件
+>
+> HFile内，最小单元是Cell单元格（一个KV键值对）
+
+

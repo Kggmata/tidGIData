@@ -1,0 +1,211 @@
+created: 20220617101815024
+difficulty: 3.075606624032164
+due: 20220906093148406
+grade: 0
+history: [{"due":"20220620061639468","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619061639468"},{"due":"20220704031858601","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621031858601"},{"due":"20220718070206852","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708064600911"},{"due":"20220723114822299","interval":14,"difficulty":2.2756064102320215,"stability":0.054881225761675624,"retrievability":2.2530868927322153e-9,"grade":0,"lapses":2,"reps":1,"review":"20220722114822298"},{"due":"20220810042312824","interval":8,"difficulty":2.4756066240089583,"stability":0.04065697748494399,"retrievability":2.1377693640808248e-7,"grade":0,"lapses":3,"reps":1,"review":"20220730040157679"},{"due":"20220815081842670","interval":15,"difficulty":2.6756066240089584,"stability":0.03011942145770373,"retrievability":1.3128492437767563e-17,"grade":0,"lapses":4,"reps":1,"review":"20220814081842670"},{"due":"20220822112047822","interval":7,"difficulty":2.8756066240321636,"stability":0.02231301621225883,"retrievability":2.3205171444202523e-11,"grade":0,"lapses":5,"reps":1,"review":"20220821112047822"}]
+interval: 15
+lapses: 6
+modified: 20220905093148406
+reps: 1
+retrievability: 1.7352956271111043e-31
+review: 20220905093148405
+stability: 0.016529888968407916
+tags: 用户画像 ?
+title: ES的PythonAPI
+type: text/vnd.tiddlywiki
+
+猎聘网搜索案例--代码需要自己能熟练写出来
+
+需求：使用PythonAPI完成添加索引(查看索引，删除索引)，完成增加数据，修改数据，查询数据
+
+步骤：
+
+1-首先创建ES的连接(使用代码指定ES的专用连接)
+
+2-添加索引 job_doc
+
+3-根据ID检索指定职位数据-Get
+
+```
+猎聘网搜索案例--代码需要自己能熟练写出来
+
+需求：使用PythonAPI完成添加索引(查看索引，删除索引)，完成增加数据，修改数据，查询数据
+
+步骤：
+
+1-首先创建ES的连接(使用代码指定ES的专用连接)
+
+2-添加索引 job_doc
+
+3-根据ID检索指定职位数据-Get
+```
+4-修改职位数据
+
+```
+
+POST /job_idx/_update/29097
+{
+    "doc":{
+        "exp":"3年以下经验"
+    }
+}
+```
+
+5-根据文档的id删除数据
+
+```
+DELETE /job_idx/_doc/29097
+```
+6-根据关键字检索数据
+
+```
+GET  /job_idx/_search 
+{
+    "query": {
+        "match": {
+            "jd": "销售"
+        }
+    }
+}
+```
+7-分页检索
+
+```
+GET  /job_idx/_search 
+{
+    "from":0,
+    "size":5,
+     "query": {
+        "match": {
+            "jd": "淘宝店、天猫店的营销推广"
+        }
+    } 
+}
+```
+8-高亮查询
+
+```
+#!/usr/bin/env python
+# @desc :
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from testES.basePojo import JobDetail
+
+'''
+1.大家如果采用自己之前Spark的虚拟机，直接在虚拟机node1的环境下安装：pip install elasticsearch==7.17.3
+2.如果采用up01的虚拟机：内置好elasticsearch版本了，无需安装
+'''
+# * 1-首先创建ES的连接(使用代码指定ES的专用连接)
+from elasticsearch import Elasticsearch
+# 直接将ip:port传入ElasticSearch类中
+es = Elasticsearch(hosts="192.168.88.161:9200") #<Elasticsearch([{'host': '192.168.88.161', 'port': 9200}])>
+print("----------------1-es base information---------------------")
+print(es)
+# * 2-添加索引 job_doc
+# 2-1 准备好数据
+# id, area, cmp, edu, exp, title, job_type, pv, jd, salary
+detail = JobDetail(1, '江苏省-南京市', 'Elasticsearch大学', '本科及以上', '一年工作经验', '大数据工程师', '全职', '1700次浏览', '会Hadoop就行', '5-9千/月')
+# 2-2 添加索引
+#  index: str,
+#  document: Any,
+#  id
+print("----------------2-es inidex create---------------------")
+res = es.index(index="job_doc", id=3, document=detail.__str__())
+print(res)
+# * 3-根据ID检索指定职位数据-Get
+print("----------------3-根据ID检索指定职位数据-Get---------------------")
+result1 = es.get(index="job_doc", id=3)
+print(result1)
+# * 4-修改职位数据
+print("----------------4-修改职位数据---------------------")
+'''
+POST /job_idx/_update/3
+{
+    "doc":{
+        "exp":"3年以下经验"
+    }
+}
+'''
+updateResult = es.update(index="job_doc", id=3, doc={"exp": "5年以上经验"})
+print(updateResult)
+# * 5-根据文档的id删除数据 --- DELETE /job_idx/_doc/29097
+'''
+DELETE /job_idx/_doc/3
+'''
+print("----------------5-根据文档的id删除数据---------------------")
+# delete = es.delete(index="job_doc", id=3)
+# print(delete)
+# * 6-根据关键字检索数据
+print("----------------6-根据关键字检索数据---------------------")
+'''
+# 基于字段的搜索
+GET  /job_idx/_search 
+{
+    "query": {
+        "match": {
+            "jd": "淘宝店、天猫店的营销推广"
+        }
+    }
+}
+'''
+print("单个值查询的方法1")
+signal_search_res1= es.search(index="job_idx", query={"match": {"jd":"淘宝店、天猫店的营销推广"}})
+for res in signal_search_res1["hits"]["hits"]:
+    print(res["_source"])
+print("单个值查询的方法2")
+signal_search_res2= es.search(index="job_idx", query={"multi_match":{"query": "淘宝店长","fields": ["jd"]}})
+for res in signal_search_res2["hits"]["hits"]:
+    print(res["_source"])
+'''
+#基于多个字段的搜索
+GET  /job_idx/_search 
+{
+    "query": {
+        "multi_match": {
+            "query": "淘宝店长",
+            "fields": [
+                "title",
+                "jd"
+            ]
+        }
+    }
+}
+'''
+print("多个值查询的方法2")
+search_res3= es.search(index="job_idx", query={"multi_match": {"query": "淘宝店长", "fields": ["title", "jd"]}})
+print(search_res3["hits"]["hits"])
+for res in search_res3["hits"]["hits"]:
+    print(res["_source"])
+# * 7-分页检索
+'''
+GET  /job_idx/_search 
+{
+    "from":0,
+    "size":5,
+     "query": {
+        "match": {
+            "jd": "淘宝店、天猫店的营销推广"
+        }
+    } 
+}
+'''
+print("7-分页查询结果")
+page_search_res4= es.search(index="job_idx", from_=0,size=5,query={"multi_match": {"query": "淘宝店长", "fields": ["title", "jd"]}})
+for res in page_search_res4["hits"]["hits"]:
+    print(res["_source"])
+# * 8-高亮查询,highlight参数声明高亮查询
+print("8-高亮查询,highlight参数声明高亮查询")
+page_search_res5= es.search(index="job_idx",
+                            from_=0,
+                            size=5,
+                            query={"multi_match": {"query": "淘宝店长", "fields": ["title", "jd"]}},
+                            highlight={'fields':{'jd':{},'title':{}}}
+                            )
+print(page_search_res5)
+for res in page_search_res5["hits"]["hits"]:
+    # 将高亮合并到原有数据中
+    res['_source']['jd']=res['highlight']['jd']
+    res['_source']['title']=res['highlight']['title']
+    print(res["_source"])
+```

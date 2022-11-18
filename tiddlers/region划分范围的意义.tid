@@ -1,0 +1,54 @@
+created: 20220605060548004
+difficulty: 1.0855725047529947
+due: 20220920070244989
+grade: 1
+history: [{"due":"20220609003541054","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608003541054"},{"due":"20220628114619927","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220612114619927"}]
+interval: 19
+lapses: 0
+modified: 20220701070244990
+reps: 3
+retrievability: 0.8855725047529949
+review: 20220701070244989
+stability: 81.07280620615806
+tags: hbase ?
+title: region划分范围的意义
+type: text/vnd.tiddlywiki
+
+1. HBase的表的region，如果划分了范围
+
+2. 在写入的时候，可以基于范围来确定写入到哪一个Region内
+
+   > 可以相对均衡，是否均衡，取决于Region的范围（建表的时候的设计）是否可以让数据分散的比较彻底。
+
+   > 设计的好，数据非常分散，设计的不好， 数据全挤到一堆。
+
+3. `在查询的时候`，比如查询一条rowkey的数据，可以基于region的范围，快速锁定`一个region`
+
+4. 当你锁定一个Region的时候，剩余的Region全部排除
+
+   > 比如，表有10TB数据，有10W个region
+   >
+   > 当你单条查询的时候，可以锁定一个region，那么就排除了99999个region
+   >
+   > 也就是排除了99.99999999%的数据
+
+
+
+> 所以，这就是HBase随机查询能力非常恐怖的原因
+>
+> 不管你数据多大，10TB 、100TB  1000PB ，随意，只要region范围做的好
+>
+> 上来排除99.9999999%
+
+
+
+> 在目前所有的大数据数据库中， 没有任何一个数据库，在数据量上升到TB级别后
+>
+> 能够在单条查询上性能超过HBase
+
+> Region的范围是包头不包尾
+>
+> 比如范围是100~200
+>
+> 100>= Rowkey < 200（到200结束，不包含200本身）
+

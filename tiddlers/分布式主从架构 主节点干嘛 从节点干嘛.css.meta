@@ -1,0 +1,15 @@
+created: 20220519125909218
+difficulty: 1.7700798988601243
+due: 20230118075706971
+grade: 2
+history: [{"due":"20220522001956686","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001956685"},{"due":"20220528002443651","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522002443651"},{"due":"20220601144104905","interval":9,"difficulty":6.14195525232829,"stability":0.11806790392114878,"retrievability":0.8419552523282889,"grade":0,"lapses":1,"reps":1,"review":"20220531144104905"},{"due":"20220607143641225","interval":2,"difficulty":4.509795206356273,"stability":5.030703816867395,"retrievability":0.16783995402798293,"grade":2,"lapses":1,"reps":2,"review":"20220602143641225"},{"due":"20220627004201945","interval":7,"difficulty":3.573430719795623,"stability":18.120816561512246,"retrievability":0.8636355134393505,"grade":2,"lapses":1,"reps":3,"review":"20220609004201945"},{"due":"20220813231652800","interval":17,"difficulty":2.67931499595924,"stability":48.27421389897673,"retrievability":0.905884276163617,"grade":2,"lapses":1,"reps":4,"review":"20220626231652800"}]
+interval: 53
+lapses: 1
+modified: 20220819075706971
+reps: 5
+retrievability: 0.8907649029008842
+review: 20220819075706971
+stability: 151.5091300534218
+tags: hadoop spark ?
+title: 分布式主从架构 主节点干嘛 从节点干嘛
+type: text/css

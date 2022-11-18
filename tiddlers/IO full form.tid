@@ -1,0 +1,17 @@
+created: 20220604080605837
+difficulty: 1
+due: 20220929103918697
+grade: 2
+history: [{"due":"20220607125908219","interval":0,"difficulty":1.2687524673440806,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606125908219"},{"due":"20220629004432760","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612004432760"}]
+interval: 20
+lapses: 0
+modified: 20220702103918697
+reps: 3
+retrievability: 0.8855354377394037
+review: 20220702103918697
+stability: 88.62633086145719
+tags: hbase ?
+title: IO full form
+type: text/vnd.tiddlywiki
+
+The Full form of I-O is Input-Output

@@ -1,0 +1,19 @@
+created: 20220718085755863
+difficulty: 1
+due: 20230618002804745
+grade: 2
+history: [{"due":"20220801114653516","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114653516"},{"due":"20220822235304605","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806235304605"}]
+interval: 66
+lapses: 0
+modified: 20221012002804745
+reps: 3
+retrievability: 0.6543036435229179
+review: 20221012002804744
+stability: 248.56419911486927
+tags: ?
+title: Kafka为啥需要幂等性？
+type: text/vnd.tiddlywiki
+
+```
+Producer在生产发送消息时，难免会重复发送消息。Producer进行retry时会产生重试机制，发生消息重复发送。而引入幂等性后，重复发送只会生成一条有效的消息。Kafka作为分布式消息系统，它的使用场景常见与分布式系统中，比如消息推送系统、业务平台系统（如物流平台、银行结算平台等）。以银行结算平台来说，业务方作为上游把数据上报到银行结算平台，如果一份数据被计算、处理多次，那么产生的影响会很严重。
+```

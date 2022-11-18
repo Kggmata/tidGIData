@@ -1,0 +1,20 @@
+created: 20220719130024869
+difficulty: 1.9205227050402993
+due: 20220927010006894
+grade: 0
+history: [{"due":"20220801132752351","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731132752351"},{"due":"20220822123415883","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806123415883"}]
+interval: 51
+lapses: 1
+modified: 20220926010006894
+reps: 1
+retrievability: 0.7205227050402994
+review: 20220926010006894
+stability: 0.07408182272361549
+tags: ?
+title: 视图在table api的表现
+type: text/vnd.tiddlywiki
+
+```
+
+视图 VIEW 在 Table API 中的体现就是：一个 Table 的 Python对象，其封装了一段查询逻辑。
+```

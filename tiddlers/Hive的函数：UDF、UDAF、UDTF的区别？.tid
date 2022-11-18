@@ -1,0 +1,37 @@
+created: 20220524125832815
+difficulty: 1
+due: 20221003124118851
+grade: 2
+history: [{"due":"20220529144837882","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528144837882"},{"due":"20220624090838856","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602090838856"}]
+interval: 23
+lapses: 0
+modified: 20220625124118851
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625124118851
+stability: 100.35422359618087
+tags: hive ?
+title: Hive的函数：UDF、UDAF、UDTF的区别？
+type: text/vnd.tiddlywiki
+
+UDF:单行进入，单行输出
+
+UDAF:多行进入，单行输出
+
+UDTF:单行输入，多行输出
+
+（1）UDF（User-Defined-Function）
+
+一进一出
+
+（2）UDAF（User-Defined Aggregation Function）
+
+聚集函数，多进一出
+
+类似于：count/max/min
+
+（3）UDTF（User-Defined Table-Generating Functions）
+
+一进多出
+
+如lateral view explore()

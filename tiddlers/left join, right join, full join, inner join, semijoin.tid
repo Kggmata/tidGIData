@@ -1,0 +1,27 @@
+created: 20220521080144674
+difficulty: 2.102801048166571
+due: 20221209141135700
+grade: 2
+history: [{"due":"20220524060925183","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522060925183"},{"due":"20220611081901263","interval":6,"difficulty":3.9290000000000003,"stability":14.477344517323703,"retrievability":0.7290000000000001,"grade":2,"lapses":0,"reps":2,"review":"20220528081901263"},{"due":"20220725233047044","interval":16,"difficulty":3.019081886203402,"stability":41.76374471765233,"retrievability":0.8900818862034015,"grade":2,"lapses":0,"reps":3,"review":"20220613233047044"}]
+interval: 49
+lapses: 0
+modified: 20220802141135700
+reps: 4
+retrievability: 0.8837191619631688
+review: 20220802141135699
+stability: 128.82700584986458
+tags: hive ?
+title: left join, right join, full join, inner join, semijoin
+type: text/vnd.tiddlywiki
+
+都是根据on后的字段,leftjoin保留左表全部数据,右表on字段为null未匹配上的不会保留
+
+都是根据on后的字段,rightjoin保留左表全部数据,左表on字段为null未匹配上的不会保留
+
+都是根据on后的字段,fulljoin保留两侧表全部数据
+
+inner join是两侧只要on的字段未匹配,都不保留,相当于交集
+
+注意,如果on后侧过滤主表的内容,只会过滤on的条件,最后主表的对应仍会保留
+
+semi join是只使用join字段做过滤, 方式类似inner join, 保留交集的join字段和主表的数据.在特定场景下,性能更有优势

@@ -1,0 +1,17 @@
+created: 20220528034457564
+difficulty: 1
+due: 20220920071648918
+grade: 2
+history: [{"due":"20220601052757034","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052757034"},{"due":"20220622091008505","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603091008505"}]
+interval: 20
+lapses: 0
+modified: 20220623071648918
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623071648917
+stability: 89.0394510841741
+tags: hive ?
+title: beeline是什么
+type: text/vnd.tiddlywiki
+
+Beeline是Hive新的命令行客户端工具。 Beeline是从Hive 0.11版本引入的。 HiveServer2 支持一个新的命令行Shell，称为Beeline，它是基于SQLLine CLI的JDBC客户端

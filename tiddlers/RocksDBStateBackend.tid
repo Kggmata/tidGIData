@@ -1,0 +1,37 @@
+created: 20220718070526614
+difficulty: 1.8548145031221182
+due: 20221012132959567
+grade: 0
+history: [{"due":"20220731042513420","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042513420"},{"due":"20220822122239304","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806122239304"}]
+interval: 66
+lapses: 1
+modified: 20221011132959567
+reps: 1
+retrievability: 0.6548145031221182
+review: 20221011132959567
+stability: 0.07408182272361549
+tags: ?
+title: RocksDBStateBackend
+type: text/vnd.tiddlywiki
+
+[img[BillfishDzRAjY2022-07-18 15_05_37.PNG]]
+
+```
+RocksDBStateBackend 的配置也需要一个文件系统（类型，地址，路径），如下所示：
+	hdfs://namenode:9000/flink/checkpoints
+	file:///flink/checkpoints
+RocksDB 是一种嵌入式的本地数据库。RocksDBStateBackend 将处理中的数据使用 RocksDB 存储在本地磁盘上。在 checkpoint 时，整个 RocksDB 数据库会被存储到配置的文件系统中，或者在超大状态作业时可以将增量的数据存储到配置的文件系统中。同时 Flink 会将极少的元数据存储在 JobManager 的内存中，或者在 Zookeeper 中（对于高可用的情况）。RocksDB 默认也是配置成异步快照的模式。
+何时使用 RocksDBStateBackend：
+	RocksDBStateBackend 最适合用于处理大状态，长窗口，或大键值状态的有状态处理任务。
+	RocksDBStateBackend 非常适合用于高可用方案。
+	RocksDBStateBackend 是目前唯一支持增量 checkpoint 的后端。增量 checkpoint 非常使用于超大状态的场景。
+本地文件+异步HDFS持久化
+	全局配置 flink-conf.yaml
+state.backend: rocksdb
+state.checkpoints.dir: file:///checkpoint-dir/
+
+# Optional, Flink will automatically default to FileSystemCheckpointStorage
+# when a checkpoint directory is specified.
+state.checkpoint-storage: filesystem
+
+```

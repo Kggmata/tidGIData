@@ -1,0 +1,17 @@
+created: 20220718063934002
+difficulty: 1
+due: 20230603120806054
+grade: 1
+history: [{"due":"20220731042125319","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042125319"},{"due":"20220822111317733","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806111317733"}]
+interval: 63
+lapses: 0
+modified: 20221008120806054
+reps: 3
+retrievability: 0.6675388548145345
+review: 20221008120806054
+stability: 238.47702010819364
+tags: ?
+title: flink savepoint和check point区别
+type: text/vnd.tiddlywiki
+
+从概念上讲，Flink 的Savepoint 和Checkpoint 的不同之处很像传统数据库中备份与恢复日志之间的区别。 Checkpoint 的主要目标是充当Flink 中的恢复机制，以确保能从潜在的故障中恢复。 相反，Savepoint 的主要目标是充当手动备份之后重启、恢复暂停作业的方法。

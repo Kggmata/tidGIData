@@ -1,0 +1,32 @@
+created: 20220618055953830
+difficulty: 1.7298397762984117
+due: 20220909142841518
+grade: 1
+history: [{"due":"20220620152234111","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619152234111"},{"due":"20220704030522623","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621030522623"},{"due":"20220709064546191","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708064546191"},{"due":"20220722002931564","interval":3,"difficulty":1.2896353152469724,"stability":10.593979009907587,"retrievability":0.014028907268038276,"grade":1,"lapses":1,"reps":2,"review":"20220711002931564"},{"due":"20220731024445407","interval":19,"difficulty":2.3174540335893856,"stability":0.0548811791474709,"retrievability":0.827818718342413,"grade":0,"lapses":2,"reps":1,"review":"20220730024445406"},{"due":"20220813072855730","interval":6,"difficulty":1.517463975420647,"stability":7.605711157873004,"retrievability":0.00000994183126152159,"grade":1,"lapses":2,"reps":2,"review":"20220805072855730"},{"due":"20220821012425386","interval":15,"difficulty":2.5298397762984117,"stability":0.040656966333775045,"retrievability":0.8123758008777646,"grade":0,"lapses":3,"reps":1,"review":"20220820012425386"}]
+interval: 15
+lapses: 3
+modified: 20220904142841518
+reps: 2
+retrievability: 1.312835246871398e-17
+review: 20220904142841518
+stability: 5.4600357697260025
+tags: 用户画像 ?
+title: ES的DataNode节点负责那些职责？
+type: text/vnd.tiddlywiki
+
+Data node
+
+```
+A node that has the data role. Data nodes hold data and perform data related operations such as CRUD, search, and aggregations. A node with the data role can fill any of the specialised data node roles.
+
+Data nodes hold the shards that contain the documents you have indexed. Data nodes handle data related operations like CRUD, search, and aggregations. These operations are I/O-, memory-, and CPU-intensive. It is important to monitor these resources and to add more data nodes if they are overloaded.
+The main benefit of having dedicated data nodes is the separation of the master and data roles
+
+Each data node maintains the following data on disk:
+
+1 the shard data for every shard allocated to that node,
+
+2 the index metadata corresponding with every shard allocated to that node, and
+
+3 the cluster-wide metadata, such as settings and index templates.
+```

@@ -1,0 +1,40 @@
+created: 20220702122817316
+difficulty: 1.0206186190094726
+due: 20221013063418238
+grade: 1
+history: [{"due":"20220707033708602","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706033708602"},{"due":"20220711045723748","interval":4,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.014781165126568838,"grade":0,"lapses":1,"reps":1,"review":"20220710045723747"},{"due":"20220712092342700","interval":1,"difficulty":1.4411799948253508,"stability":0.05488141221849455,"retrievability":0.2411799948253509,"grade":0,"lapses":2,"reps":1,"review":"20220711092342700"},{"due":"20220716012724598","interval":4,"difficulty":1.6416423670686782,"stability":0.04065715014820503,"retrievability":0.0004623722433273712,"grade":0,"lapses":3,"reps":1,"review":"20220715012724598"},{"due":"20220729070004993","interval":6,"difficulty":1,"stability":7.9940983219224,"retrievability":1.7673176748815954e-7,"grade":1,"lapses":3,"reps":2,"review":"20220721070004993"}]
+interval: 15
+lapses: 3
+modified: 20220805063629510
+reps: 3
+retrievability: 0.8206186190094727
+review: 20220805063418238
+stability: 69.29601473304291
+tags: 用户画像 ?
+title: 存储格式
+type: text/vnd.tiddlywiki
+
+```
+TextFile
+默认格式，按行存储，可以压缩但压缩文件不支持分片，反序列化开销是SequenceFile的几十倍（需要判断分隔符和换行符）
+
+SequenceFile
+hadoop原生支持，将kv以二进制方式按行存储，压缩后的文件支持压缩。默认以record压缩，可以改为block性能更好。压缩率很低，查询速度一般。
+
+RCFile
+按行分块、按列存储的存储方式，反序列化速度较慢，但压缩率和查询速度 快。
+
+ORC file
+RC的改良版，每个Task输出单文件、存储索引、支付复杂类型、支持块压缩、可以直接读取，ORC比RC高效很多。
+
+Parquet
+列式存储，是spark的默认存储格式，压缩和查询性能比ORC稍差，但是支持的编码更多，而且对嵌套式结构支持的更好（json）。
+
+因此对结构化数仓来说ORC file格式更好，对灵活的spark作业来说Parquet格式更好。
+```
+```
+嵌套结构支持：Parquet 能够很完美的支持嵌套式结构，而在这一点上 ORC 支持的并不好，表达起来复杂且性能和空间都损耗较大。
+更新与 ACID 支持：ORC 格式支持 update 操作与 ACID，而 Parquet 并不支持。
+压缩与查询性能：在压缩空间与查询性能方面，Parquet 与 ORC 总体上相差不大。可能 ORC 要稍好于 Parquet。
+查询引擎支持：这方面 Parquet 可能更有优势，支持 Hive、Impala、Presto 等各种查询引擎，而 ORC 与 Hive 接触的比较紧密，而与 Impala 适配的并不好。之前我们说 Impala 不支持 ORC，直到 CDH 6.1.x 版本也就是 Impala3.x 才开始以 experimental feature 支持 ORC 格式。
+```

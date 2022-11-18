@@ -1,0 +1,21 @@
+created: 20220718025456292
+difficulty: 1.8548145031221182
+due: 20221012133437171
+grade: 0
+history: [{"due":"20220731041438203","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041438203"},{"due":"20220822122351441","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220806122351441"}]
+interval: 66
+lapses: 1
+modified: 20221011133437171
+reps: 1
+retrievability: 0.6548145031221182
+review: 20221011133437171
+stability: 0.07408182272361549
+tags: ?
+title: watermark
+type: text/vnd.tiddlywiki
+
+水印是一种延迟触发机制, 再原有数据基础上赋予一个逻辑时间戳, 被叫做水印时间,没有水印时间, 将事件时间作为触发窗口的时间, 有了水印时间后, 使用水印时间替代事件时间
+
+水印时间只会越来越大, 不会越来越小, 新来的时间和水印时间比较, 大的话成为新的水印时间
+
+[img[BillfishSnehSv2022-07-18 14_24_42.PNG]]

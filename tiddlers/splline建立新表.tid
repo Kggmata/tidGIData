@@ -1,0 +1,20 @@
+created: 20220608062637511
+difficulty: 1.0785098781342142
+due: 20220929100916788
+grade: 1
+history: [{"due":"20220613130205237","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612130205237"},{"due":"20220702003140226","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616003140225"}]
+interval: 20
+lapses: 0
+modified: 20220706100916788
+reps: 3
+retrievability: 0.8785098781342142
+review: 20220706100916788
+stability: 84.72864024381416
+tags: hbase ?
+title: splline建立新表
+type: text/vnd.tiddlywiki
+
+```
+create table if not exists order_dtl(id varchar primary key, c1.status varchar, c1.money float, c1.pay_way integer, c1.user_id varchar, c1.operation_time varchar, c1.category varchar);
+# primary key 就是映射为HBase的Rowkey
+# c1.status:c1映射为hbase的c1列族，status映射为c1列族内的二级列

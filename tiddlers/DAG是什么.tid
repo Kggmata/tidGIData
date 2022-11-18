@@ -1,0 +1,23 @@
+created: 20220519134714056
+difficulty: 2.78210661787993
+due: 20220829062635047
+grade: 1
+history: [{"due":"20220523011235134","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011235134"},{"due":"20220529002448379","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523002448379"},{"due":"20220603053111961","interval":10,"difficulty":6.126014725196352,"stability":0.0960748629946603,"retrievability":0.826014725196352,"grade":0,"lapses":1,"reps":1,"review":"20220602053111961"},{"due":"20220612121532271","interval":4,"difficulty":4.338457679766608,"stability":5.650237888044585,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606121532271"},{"due":"20220615004201364","interval":8,"difficulty":5.399874525721104,"stability":0.055390315029607076,"retrievability":0.8614168459544946,"grade":0,"lapses":2,"reps":1,"review":"20220614004201364"},{"due":"20220620070312516","interval":2,"difficulty":3.622149448178223,"stability":4.048503286193592,"retrievability":0.022274922457119053,"grade":2,"lapses":2,"reps":2,"review":"20220616070312516"},{"due":"20220707022106593","interval":5,"difficulty":2.700137056710635,"stability":15.938582029465804,"retrievability":0.8779876085324116,"grade":2,"lapses":2,"reps":3,"review":"20220621022106592"}]
+interval: 19
+lapses: 2
+modified: 20220710062635047
+reps: 4
+retrievability: 0.8819695611692946
+review: 20220710062635046
+stability: 49.5839612214139
+tags: spark ?
+title: DAG是什么
+type: text/vnd.tiddlywiki
+
+DAG，全称 Directed Acyclic Graph， 中文为：有向无环图。
+
+DAG 是一组顶点和边的组合。顶点代表了 RDD， 边代表了对 RDD 的一系列操作。
+
+DAG Scheduler 会根据 RDD 的 transformation 动作，将 DAG 分为不同的 stage，每个 stage 中分为多个 task，这些 task 可以并行运行。
+
+[img[Snipaste_2022-05-19_21-50-17.jpg]]

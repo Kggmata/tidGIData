@@ -1,0 +1,15 @@
+created: 20220521012022644
+difficulty: 3.588032446284296
+due: 20220930030811972
+grade: 1
+history: [{"due":"20220523081315362","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521081315362"},{"due":"20220529001247999","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523001247999"},{"due":"20220625123812194","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601123812194"},{"due":"20220627020325041","interval":25,"difficulty":4.250894202941382,"stability":0.07408719146292923,"retrievability":0.8950417678954212,"grade":0,"lapses":1,"reps":1,"review":"20220626020325041"},{"due":"20220704062843060","interval":3,"difficulty":3.4649271776928687,"stability":5.341207459425468,"retrievability":0.01403297475148654,"grade":1,"lapses":1,"reps":2,"review":"20220629062843060"},{"due":"20220727020446398","interval":8,"difficulty":3.5189410970739408,"stability":20.275062010544158,"retrievability":0.8540139193810719,"grade":1,"lapses":1,"reps":3,"review":"20220707020446398"}]
+interval: 27
+lapses: 1
+modified: 20220803030811972
+reps: 4
+retrievability: 0.8690913492103549
+review: 20220803030811972
+stability: 58.38396179452523
+tags: spark ?
+title: 构建SparkConfiguration对象
+type: text/css

@@ -1,0 +1,17 @@
+created: 20220530051140624
+difficulty: 1
+due: 20220925062500800
+grade: 2
+history: [{"due":"20220601083839268","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083839268"},{"due":"20220622132406334","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603132406334"}]
+interval: 21
+lapses: 0
+modified: 20220624062500800
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624062500800
+stability: 92.52384777796357
+tags: spark ?
+title: Spark的Shuffle过程中数据不用落地于磁盘，直接在内存中处理
+type: text/vnd.tiddlywiki
+
+错误：Shuffle一定会经过磁盘

@@ -1,0 +1,23 @@
+created: 20220715040249932
+difficulty: 1.0684786995977096
+due: 20221121120404657
+grade: 1
+history: [{"due":"20220722091820636","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721091820636"},{"due":"20220815035250844","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220730035250844"}]
+interval: 22
+lapses: 0
+modified: 20220821120404657
+reps: 3
+retrievability: 0.8684786995977097
+review: 20220821120404657
+stability: 92.0442381875389
+tags: ?
+title: char和varchar
+type: text/vnd.tiddlywiki
+
+char的长度是不可变的，而varchar的长度是可变的。
+
+char的存取速度还是要比varchar要快得多，因为其长度固定，方便程序的存储与查找。
+
+char也为此付出的是空间的代价，因为其长度固定，所以难免会有多余的空格占位符占据空间，可谓是以空间换取时间效率。
+
+varchar是以空间效率为首位。 char的存储方式是：对英文字符（ASCII）占用1个字节，对一个汉字占用两个字节。 varchar的存储方式是：对每个英文字符占用2个字节，汉字也占用2个字节。 两者的存储数据都非unicode的字符数据

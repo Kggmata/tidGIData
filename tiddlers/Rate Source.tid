@@ -1,0 +1,67 @@
+created: 20220612062927773
+difficulty: 1.0356604393141842
+due: 20221103105055921
+grade: 1
+history: [{"due":"20220615141814641","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220614141814641"},{"due":"20220630103518745","interval":2,"difficulty":1,"stability":13.526011926209534,"retrievability":0.12395450234099842,"grade":1,"lapses":0,"reps":2,"review":"20220616103518745"},{"due":"20220706001220604","interval":19,"difficulty":2.062431112874936,"stability":0.07408249324251646,"retrievability":0.8624311128749359,"grade":0,"lapses":1,"reps":1,"review":"20220705001220603"},{"due":"20220723045009548","interval":5,"difficulty":1,"stability":12.910898599543607,"retrievability":0.0008160568173319206,"grade":2,"lapses":1,"reps":2,"review":"20220710045009548"}]
+interval: 22
+lapses: 1
+modified: 20220801105055921
+reps: 3
+retrievability: 0.8356604393141842
+review: 20220801105055921
+stability: 93.85419115292933
+tags: [[structed streaming]] ?
+title: Rate Source
+type: text/vnd.tiddlywiki
+
+功能：官方内置的数据模拟器，`只会`生成如下表格的数据
+
+| timestamp  | value            |
+| ---------- | ---------------- |
+| 时间戳数字 | 1（从1开始递增） |
+| ......     | ......           |
+
+> 这个就是模拟器，生成数据，供你测试一些东西或者性能。
+
+| option参数    | 描述说明                                                     |
+| ------------- | ------------------------------------------------------------ |
+| rowsPerSecond | 每秒应该生成多少行 : （例如 100，默认值：1）                 |
+| rampUpTime    | 在生成速度变为rowsPerSecond之前应该经过多久的`加速时间`（例如5s，默认0） |
+| numPartitions | 生成行的分区号: （例如 10，默认值：Spark 的默认并行度）      |
+
+
+```
+# coding:utf8
+"""
+演示Spark结构化流的Rate Source
+"""
+
+from pyspark.sql import SparkSession
+
+# 构建入口对象，SparkSession对象
+spark = SparkSession.builder.\
+    master("local[*]").\
+    appName("test spark").\
+    config("spark.default.parallelism", 1).\
+    config("spark.sql.shuffle.partitions", 1).\
+    getOrCreate()
+
+rate_df = spark.readStream.\
+    format("rate").\
+    option("rowsPerSecond", 20).\
+    option("rampUpTime", "10s").\
+    option("numPartitions", 1).\
+    load()
+
+# 打印schema信息
+rate_df.printSchema()
+
+# 流式输出到控制台
+rate_df.writeStream.\
+    outputMode("update").\
+    format("console").\
+    start().awaitTermination()
+
+```
+
+''Rate Source 一般用于做性能测试''

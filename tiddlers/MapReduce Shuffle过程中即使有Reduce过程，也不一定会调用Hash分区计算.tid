@@ -1,0 +1,19 @@
+created: 20220520045403037
+difficulty: 2.2548728843857733
+due: 20220902125009085
+grade: 2
+history: [{"due":"20220523040916854","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040916854"},{"due":"20220529000540987","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000540986"},{"due":"20220625073530239","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601073530239"}]
+interval: 24
+lapses: 0
+modified: 20220625125009085
+reps: 4
+retrievability: 0.8990204493398125
+review: 20220625125009085
+stability: 69.24360400515107
+tags: hadoop mapreduce ?
+title: MapReduce Shuffle过程中即使有Reduce过程，也不一定会调用Hash分区计算
+type: text/vnd.tiddlywiki
+
+正确：Hash分区计算只有在Reduce个数大于1才计算
+
+- if  numReduceTasks > 1  then HashParition.getPartition else  numReduceTask - 1

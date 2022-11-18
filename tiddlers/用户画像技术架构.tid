@@ -1,0 +1,53 @@
+created: 20220614075750293
+difficulty: 1
+due: 20230408141815054
+grade: 2
+history: [{"due":"20220617073016628","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616073016628"},{"due":"20220626125201614","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":1,"lapses":0,"reps":2,"review":"20220617125201614"},{"due":"20220818233946059","interval":11,"difficulty":1.0770110293660886,"stability":51.416362145708,"retrievability":0.8770110293660888,"grade":1,"lapses":0,"reps":3,"review":"20220628233946058"}]
+interval: 60
+lapses: 0
+modified: 20220828141815055
+reps: 4
+retrievability: 0.8843080623632198
+review: 20220828141815054
+stability: 223.48423217358754
+tags: 用户画像web界面 ?
+title: 用户画像技术架构
+type: text/vnd.tiddlywiki
+
+用户画像技术架构，从以下几点出发：
+
+1-数据采集
+
+```
+*从数据仓库中对接数据，这里使用构建**Hive的外部表的方式
+*传统的方式：Sqoop，Flume，DataX
+```
+2-数据存储
+
+```
+*采用的是ElasticSearch的分布式存储
+*传统的方式：HDFS，Hbase中
+```
+
+3-数据ETl
+
+```
+*采用SparkSQL进行处理，因为Spark计算速度较快，Spark Job更好通过SparkSubmit提交，Spark支持机器学习
+*传统方式：Hive方式，Spark的方式，FLink的方式
+```
+
+4-数据计算
+
+```
+*采用SparkSQL进行处理，因为Spark计算速度较快，Spark Job更好通过SparkSubmit提交，Spark支持机器学习
+*传统方式：Hive方式，Spark的方式，FLink的方式
+```
+
+5-数据展示
+
+```
+*Presto对接多数据源在整合FineBI
+*画像数据结果存放在ElasticSearch中
+*实时结果的数据存放在MySQL中
+*使用Presto对接ElasticSearch和MySQL的数据源，直接进行图标展示
+```

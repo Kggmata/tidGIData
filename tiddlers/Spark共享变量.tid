@@ -1,0 +1,102 @@
+created: 20220526132923189
+difficulty: 1
+due: 20220930231635080
+grade: 2
+history: [{"due":"20220531130604082","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130604082"},{"due":"20220624020652077","interval":4,"difficulty":1,"stability":21.308966314267085,"retrievability":0.07105206550140858,"grade":2,"lapses":0,"reps":2,"review":"20220603020652077"}]
+interval: 22
+lapses: 0
+modified: 20220625231635080
+reps: 3
+retrievability: 0.8969301616777541
+review: 20220625231635080
+stability: 96.59359316336112
+tags: spark ?
+title: Spark共享变量
+type: text/vnd.tiddlywiki
+
+Broadcast Variables广播变量
+
+`**功能**：**将一个变量元素进行广播到每台Worker节点的Executor中，让每个Task直接从本地读取数据，减少网络传输IO**`
+
+- - step1：将一个变量定义成为一个广播变量
+
+  - step2：当需要用到这个变量时，就从广播变量中获取它的值
+
+  - step3：释放广播变量
+
+`broadcast_city_dict.unpersist()`
+
+`#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from pyspark import SparkContext, SparkConf
+import os
+import re
+
+"""
+-------------------------------------------------
+   Description :	TODO：
+   SourceFile  :	03.pyspark_core_share_var_broadcast
+   Author      :	Frank
+   Date	       :	2022/5/26
+-------------------------------------------------
+"""
+
+if __name__ == '__main__':
+    # todo:0-设置系统环境变量
+    os.environ['JAVA_HOME'] = 'D:/jdk1.8.0_241'
+    os.environ['HADOOP_HOME'] = 'D:/hadoop-3.3.0'
+    os.environ['PYSPARK_PYTHON'] = 'D:/Anaconda/python.exe'
+    os.environ['PYSPARK_DRIVER_PYTHON'] = 'D:/Anaconda/python.exe'
+
+    # todo:1-构建SparkContext
+    conf = SparkConf().setMaster("local[2]").setAppName("App Name")
+    sc = SparkContext(conf=conf)
+
+    # todo:2-数据处理：读取、转换、保存
+    # step1: 读取数据
+    # 定义一个字典：在Driver内存中
+    city_dict = {
+        1: "北京",
+        2: "上海",
+        3: "广州",
+        4: "深圳",
+        5: "苏州",
+        6: "无锡",
+        7: "重庆",
+        8: "厦门",
+        9: "大理",
+        10: "成都"
+    }
+
+    # 将这个字典进行广播，广播给所有节点一份
+    broadcast_city_dict = sc.broadcast(city_dict)
+
+    # 读取用户数据
+    user_rdd = sc.textFile("../datas/broadcast/users.tsv", minPartitions=2)
+
+    # step2: 处理数据
+    # 关联城市名称的方法
+    def join_city(line):
+        # 从数据中获取城市id
+        city_id = re.split("\\s+", line)[3]
+        # 根据城市id从字典中获取城市名称：从广播变量中获取这个字典
+        city_name = broadcast_city_dict.value.get(int(city_id))
+        # 拼接返回城市名称
+        return line + "\t" + city_name
+
+    # 一对一转换，将每条数据中增加城市名称：10个分区 = 10个Task = 每个Task获取这字典 = Task运行在Executor中，但是字典在Driver中
+    rs_rdd = user_rdd.map(lambda line: join_city(line))
+
+    # step3: 保存结果
+    rs_rdd.foreach(lambda x: print(x))
+
+    # todo:3-关闭SparkContext
+    sc.stop()`
+
+*场景**
+
+  - a. 广播一个较大的数据，减少每次从Driver复制的数据量，降低网络IO损耗，提高性能
+  - b. 两张表进行Join时，将小表进行广播，与大表的每个部分进行Join，实现Broadcast Join, 避免Shuffle Join【类似于map join】
+
+- **特点**：**广播变量是一个只读变量，不能修改

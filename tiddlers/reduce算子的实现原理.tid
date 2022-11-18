@@ -1,0 +1,39 @@
+created: 20220525090943249
+difficulty: 1
+due: 20221003135720129
+grade: 2
+history: [{"due":"20220529151922142","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528151922142"},{"due":"20220624134040704","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602134040704"}]
+interval: 23
+lapses: 0
+modified: 20220625135720129
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625135720129
+stability: 100.35422359618087
+tags: spark ?
+title: reduce算子的实现原理
+type: text/vnd.tiddlywiki
+
+- **回顾**：reduce是RDD的一个触发算子，功能是实现RDD中元素的聚合操作
+
+`python
+  def reduce(self,f : (T,T) -> T) -> T`
+
+- **问题1**：Spark中的reduce是如何实现分布式计算的？
+
+- **问题2**：reduce算子在计算过程中为什么需要两个参数，这两个参数的功能是什么？
+
+**思想**：每个分区并行计算实现分区内部先聚合，最后再将每个分区聚合的结果实现最终分区间的聚合
+
+`- 这种思想等同于MR中Combiner的思想，先并行实现每个分区内部的计算，最后只要将每个分区的结果进行计算即可
+- **这种算子在Spark中称为：带有Map端聚合算子**
+- **面试题：groupByKey+map和reduceByKey都能实现分布式分组聚合，性能层面有什么区别？**
+  - 能用reduceByKey就不用groupByKey
+  - reduceByKey的性能要高于groupByKey
+  - reduceByKey是带有Map聚合的算子，先在每个分区内部分组聚合，然后最后将所有分区的结果再分组聚合
+  - groupByKey经过shuffle将所有数据放在一起以后再重新分组
+`
+
+- 解决1：先分区内部聚合计算，最后实现分区间聚合计算
+
+- 解决2：第一个参数的功能是一个临时变量，用于存储每次聚合的结果，第二个参数是每次参与计算的元素

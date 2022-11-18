@@ -1,0 +1,23 @@
+created: 20220525040441498
+difficulty: 1
+due: 20221003140044386
+grade: 2
+history: [{"due":"20220529150722608","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528150722608"},{"due":"20220624134249123","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602134249122"}]
+interval: 23
+lapses: 0
+modified: 20220625140044386
+reps: 3
+retrievability: 0.897843755714891
+review: 20220625140044386
+stability: 100.35422359618087
+tags: spark ?
+title: sortBy和sortByKey是transfermation算子但是
+type: text/vnd.tiddlywiki
+
+sortBy is implemented using sortByKey which depends on a RangePartitioner (JVM) or partitioning function (Python). When you call sortBy / sortByKey partitioner (partitioning function) is initialized eagerly and samples input RDD to compute partition boundaries. Job you see corresponds to this process.
+
+Actual sorting is performed only if you execute an action on the newly created RDD or its descendants.
+
+rangepartitioner这里用来通过算法取界限数.它的原理是,将分区实现设定好几个个范围,然后判断数据的数值在范围内则划入分区,分区内排序
+
+rangepartioner会触发一个job来计算分区边界

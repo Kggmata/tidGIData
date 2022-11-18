@@ -1,0 +1,17 @@
+created: 20220609105106169
+difficulty: 1
+due: 20221002091051259
+grade: 2
+history: [{"due":"20220614100401141","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100401141"},{"due":"20220702064117827","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616064117827"}]
+interval: 20
+lapses: 0
+modified: 20220706091051259
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706091051258
+stability: 88.3647639214822
+tags: kafka ?
+title: MQ full form
+type: text/vnd.tiddlywiki
+
+message queue

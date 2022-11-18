@@ -1,0 +1,21 @@
+created: 20220721092458622
+difficulty: 1
+due: 20220825081932438
+grade: 2
+history: [{"due":"20220802091034983","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801091034983"},{"due":"20220808030445144","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807030445144"}]
+interval: 5
+lapses: 1
+modified: 20220812081932438
+reps: 2
+retrievability: 0.0008160044497337299
+review: 20220812081932438
+stability: 12.910806318862917
+tags: ?
+title: hadoop几种模式
+type: text/vnd.tiddlywiki
+
+1 单机模式standalone
+
+2 伪分布式模式pseudo distributed mode
+
+3 fully distributed

@@ -1,0 +1,19 @@
+created: 20220607030033622
+difficulty: 1
+due: 20221005022336983
+grade: 2
+history: [{"due":"20220611020226626","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610020226626"},{"due":"20220630002916025","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220614002916025"}]
+interval: 21
+lapses: 0
+modified: 20220705022336983
+reps: 3
+retrievability: 0.8743166899058877
+review: 20220705022336983
+stability: 92.05743968425202
+tags: hbase ?
+title: WALs的作用是？如果没有WALs将带来什么隐患？
+type: text/vnd.tiddlywiki
+
+write ahead log
+
+它的作用是将进入memstore但是还没有写入hdfs持久化的数据备份,防止内存中数据丢失

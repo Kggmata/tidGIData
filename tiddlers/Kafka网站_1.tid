@@ -1,0 +1,19 @@
+created: 20220609014615768
+difficulty: 1
+due: 20221002080017970
+grade: 2
+history: [{"due":"20220613132451598","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612132451598"},{"due":"20220701232435928","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615232435927"}]
+interval: 20
+lapses: 0
+modified: 20220706080017970
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706080017970
+stability: 88.3647639214822
+tags: kafka ?
+title: Kafka网站
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1812233
+https://developer.huawei.com/consumer/cn/forum/topic/0202556784431820988?fid=23
+https://www.w3cschool.cn/apache_kafka/apache_kafka_introduction.html

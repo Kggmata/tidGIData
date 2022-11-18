@@ -1,0 +1,36 @@
+created: 20220627020715426
+difficulty: 1
+due: 20221024020937272
+grade: 2
+history: [{"due":"20220630104922334","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629104922334"},{"due":"20220719143541053","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703143541053"}]
+interval: 21
+lapses: 0
+modified: 20220724020937272
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724020937272
+stability: 92.01798815217393
+tags: 用户画像 ?
+title: 如何查询ES中结果数据的匹配上103-5的结果
+type: text/vnd.tiddlywiki
+
+方式1：es-head的基本查询(了解)
+[img[image-20220626184520804.png]]
+方式2：复合查询(了解)
+[img[image-20220626184756557.png]]
+方式3：基于presto查询
+
+```
+select count(*) from elasticsearch."default"."insurance-profile-result" cross join unnest(split(tagsid,',')) as t(target) where target='103';--4
+select count(*) from elasticsearch."default"."insurance-profile-result" cross join unnest(split(tagsid,',')) as t(target) where target='104';--1313
+select count(*) from elasticsearch."default"."insurance-profile-result" cross join unnest(split(tagsid,',')) as t(target) where target='105';--2016
+```
+
+方式4：essql的查询（优先选择es-sql查询）
+
+```
+select count(1) from "insurance-profile-result" where tagsId like '%103%' or tagsId like '%104%' or tagsId like '%105%' ;
+/* elasticsearch."default"."insurance-profile-result" */
+select count(1) from elasticsearch."default"."insurance-profile-result" where tagsId like '*103*' or tagsId like '*104*' or tagsId like '*105*' ;
+select count(1) from elasticsearch."default"."insurance-profile-result" where tagsId regexp_like(tagsId,'103');
+```

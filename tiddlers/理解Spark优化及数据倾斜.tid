@@ -1,0 +1,99 @@
+created: 20220530124107128
+difficulty: 3.4857728112032857
+due: 20220827030858540
+grade: 1
+history: [{"due":"20220601090417566","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531090417566"},{"due":"20220604062439487","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603062439487"},{"due":"20220607125729147","interval":3,"difficulty":3.0096518527259373,"stability":0.058954374971038004,"retrievability":0.024351003043347287,"grade":0,"lapses":2,"reps":1,"review":"20220606125729147"},{"due":"20220610005959051","interval":3,"difficulty":3.214345898628073,"stability":0.042165720570753545,"retrievability":0.004694045902135523,"grade":0,"lapses":3,"reps":1,"review":"20220609005959051"},{"due":"20220613120623283","interval":3,"difficulty":3.4149011035639,"stability":0.03067827763910418,"retrievability":0.0005552049358268727,"grade":0,"lapses":4,"reps":1,"review":"20220612120623283"},{"due":"20220616012828245","interval":3,"difficulty":3.614934632356145,"stability":0.022520021534511936,"retrievability":0.00003352879224501514,"grade":0,"lapses":5,"reps":1,"review":"20220615012828244"},{"due":"20220617110454340","interval":1,"difficulty":3.8242273297208778,"stability":0.016568227187346768,"retrievability":0.009292697364732616,"grade":0,"lapses":6,"reps":1,"review":"20220616110454340"},{"due":"20220618011246229","interval":1,"difficulty":4.025958096637072,"stability":0.012259843705039443,"retrievability":0.0017307669161938737,"grade":0,"lapses":7,"reps":1,"review":"20220617011246229"},{"due":"20220620014252334","interval":2,"difficulty":3.2259581309444574,"stability":1.3549396660768125,"retrievability":3.4307385143450586e-8,"grade":1,"lapses":7,"reps":2,"review":"20220619014252334"},{"due":"20220628002000699","interval":2,"difficulty":3.2819275737839826,"stability":6.513193678776636,"retrievability":0.8559694428395254,"grade":1,"lapses":7,"reps":3,"review":"20220621002000699"},{"due":"20220630150614683","interval":8,"difficulty":4.360539651350596,"stability":0.00907195970816722,"retrievability":0.8786120775666127,"grade":0,"lapses":8,"reps":1,"review":"20220629150614682"},{"due":"20220704140653766","interval":4,"difficulty":3.560539651350596,"stability":0.99386610773505,"retrievability":6.678055223918471e-21,"grade":1,"lapses":8,"reps":2,"review":"20220703140653766"},{"due":"20220718021100948","interval":4,"difficulty":3.4149353299609917,"stability":11.42739539733301,"retrievability":0.6543956786103955,"grade":1,"lapses":8,"reps":3,"review":"20220707021100947"}]
+interval: 15
+lapses: 8
+modified: 20220722030858540
+reps: 4
+retrievability: 0.8708374812422939
+review: 20220722030858540
+stability: 35.65917641505245
+tags: spark ?
+title: 理解Spark优化及数据倾斜
+type: text/vnd.tiddlywiki
+
+*参数优化
+
+```
+# 开启Shuffle过程中的压缩
+spark.shuffle.compress = true
+# 是否开启shuffle block file的合并，默认为false
+spark.shuffle.consolidateFiles = true
+# reduce task的拉取缓存，默认48m
+spark.reducer.maxSizeInFlight = 96
+# map task的写磁盘缓存，默认32k
+spark.shuffle.file.buffer = 64
+# 拉取失败的最大重试次数，默认3次
+spark.shuffle.io.maxRetries = 5
+# 拉取失败的重试间隔，默认5s
+spark.shuffle.io.retryWait = 3
+# 用于reduce端聚合的内存比例，默认0.2，超过比例就会溢出到磁盘上
+spark.shuffle.memoryFraction = 0.4
+```
+
+```
+# 指定Spark的Shuffle过程中Task的默认并行度
+spark.default.parallelism = 500
+# 指定Spark中默认的压缩格式
+spark.io.compression.codec = lz4
+# 开启广播变量的压缩
+spark.broadcast.compress = true
+# 开启Checkpoint的压缩
+spark.checkpoint.compress = true
+# 指定SparkSQL中parquet格式的压缩类型
+spark.sql.parquet.compression.codec = snappy
+# 指定Spark序列化的类型
+spark.serializer = org.apache.spark.serializer.KryoSerializer
+# 关闭Spark自带的parquet解析
+spark.sql.hive.convertMetastoreParquet = false
+```
+
+*开发优化
+
+```
+RDD/DSL
+- 避免创建重复的RDD：同样的一份数据只构建一个RDD
+- 尽可能复用同一个RDD：尽量使用已有的RDD构建得到想要的数据，减少RDD个数
+- 对多次使用的RDD进行persist持久化缓存
+- 聚合数据后降低RDD分区数
+- persist后及时unpersist
+- 尽量避免使用shuffle类的宽依赖算子
+- 优先使用map-side预聚合的shuffle操作
+- 优先使用高性能的算子：分区操作算子xxxxPartition，repartitionAndSortWithinPartitions算子代替repartition+sort
+- 广播较大的非RDD的数据变量
+- SQL：遵循谓词下推的原则
+```
+
+*设计优化
+
+```
+分区表、列式存储、合适的压缩
+```
+
+*数据倾斜
+
+ - 现象：部分Task执行时间过长
+
+- 定位：从4040监控中看到某个Stage中的Task运行时间远高于别的Task
+
+- 原因：数据分配不均衡
+
+- 解决
+
+```
+  - 提高Shuffle过程中的并行度
+
+  - 选用带有分区内聚合的算子
+
+  - 将小表数据进行广播，实现广播Join
+
+  - 采样抽取倾斜的数据，单独Join，最后Union合并【Skew Join：内连接有效】
+
+  - 增加随机前缀
+
+  - 自定义分区器
+
+  - 小表扩大N倍，大表增加1 ~ N的随机前缀
+```

@@ -1,0 +1,34 @@
+created: 20220718063707331
+difficulty: 1
+due: 20230617132444165
+grade: 2
+history: [{"due":"20220731042107205","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042107205"},{"due":"20220822120300605","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220806120300605"}]
+interval: 66
+lapses: 0
+modified: 20221011132444165
+reps: 3
+retrievability: 0.6548145031221182
+review: 20221011132444165
+stability: 248.53042151389508
+tags: ?
+title: flink状态后端
+type: text/vnd.tiddlywiki
+
+```
+Flink 提供了不同的状态后端，用于指定状态的存储方式和位置。默认情况下，配置文件flink-conf.yaml确定所有 Flink 作业的状态后端。
+对于流处理程序，Flink Job的状态后端决定了它的状态如何 存储在每个 TaskManager（TaskManager 的 Java 堆或（嵌入式）RocksDB）上。
+State 始终在本地访问（只是访问/使用），这有助于 Flink 应用程序实现高吞吐量和低延迟。您可以选择将状态保留在 JVM 堆上，或者如果它太大，则保留在有效组织的磁盘数据结构中，这取决于状态后端的配置。
+
+```
+[img[BillfishhRBCHJ2022-07-18 14_37_34.PNG]]
+
+```
+flink提供不同的状态后端（state backends）来区分状态的存储⽅式和存储位置。flink状态可以存储在java堆内存内或者内存之外。通过状态后端的设置，flink允许应⽤保持⼤容量的状态。开发者可以在不改变应⽤逻辑的情况下设置状态后端。
+默认情况下，flink的状态会保存在taskmanager的内存中，⽽checkpoint会保存在jobManager的内存中。
+Flink 提供了三种可用的状态后端用于在不同情况下进行状态的保存：
+	MemoryStateBackend
+	FsStateBackend
+	RocksDBStateBackend
+从Flink 1.13版本开始，社区重新设计了其公共状态后端类，以帮助用户更好地理解本地状态存储和检查点存储的分离。此更改不会影响 Flink 的状态后端或检查点过程的运行时实现或特性；它只是为了更好地传达意图。用户可以迁移现有应用程序以使用新 API，而不会丢失任何状态或一致性。
+
+```

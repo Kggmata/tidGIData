@@ -1,0 +1,66 @@
+created: 20220717022558506
+difficulty: 1
+due: 20220825074332521
+grade: 2
+history: [{"due":"20220805134402019","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726065334400"}]
+interval: 14
+lapses: 0
+modified: 20220809074332521
+reps: 2
+retrievability: 3.9260748606056117e-7
+review: 20220809074332521
+stability: 16.439763804276993
+tags: ?
+title: SQL 视图 VIEW
+type: text/vnd.tiddlywiki
+
+```
+上文已经说了，一个 VIEW 其实就是一段 SQL 逻辑的查询结果。
+视图 VIEW 在 Table API 中的体现就是：一个 Table 的 Python对象，其封装了一段查询逻辑。如下案例所示：
+	SQL API 创建 VIEW
+
+```
+```
+settings = EnvironmentSettings
+    .newInstance()
+    .inStreamingMode() // 声明为流任务
+    .build();
+
+tEnv = TableEnvironment.create(settings);
+
+sql = "CREATE TABLE source_table (\n"
+    + "    user_id BIGINT,\n"
+    + "    `name` STRING\n"
+    + ") WITH (\n"
+    + "  'connector' = 'user_defined',\n"
+    + "  'format' = 'json',\n"
+    + "  'class.name' = 'flink.examples.sql._03.source_sink.table.user_defined.UserDefinedSource'\n"
+    + ");\n"
+    + "\n"
+    + "CREATE TABLE sink_table (\n"
+    + "    user_id BIGINT,\n"
+    + "    name STRING\n"
+    + ") WITH (\n"
+    + "  'connector' = 'print'\n"
+    + ");\n"
+    + "CREATE VIEW query_view as\n" // 创建 VIEW
+    + "SELECT\n"
+    + "    *\n"
+    + "FROM source_table\n"
+    + ";\n"
+    + "INSERT INTO sink_table\n"
+    + "SELECT\n"
+    + "    *\n"
+    + "FROM query_view;";
+
+Arrays.stream(sql.split(";"))
+      .forEach(tEnv::executeSql);
+
+```
+```
+SQL API 是直接通过一段 CREATE VIEW query_view as select * from source_table 来创建的 VIEW，是纯 SQL 写法。
+	注意事项
+在 Table API 中的一个 Table 对象被后续的多个查询使用的场景下：
+Table 对象不会真的产生一个中间表供下游多个查询去引用，即多个查询不共享这个 Table 的结果，小伙伴萌可以理解为是一种中间表的简化写法，不会先产出一个中间表结果，然后将这个结果在下游多个查询中复用，后续的多个查询会将这个 Table 的逻辑执行多次。类似于 with tmp as (DML) 的语法
+
+```

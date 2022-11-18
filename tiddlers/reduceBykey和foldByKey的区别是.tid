@@ -1,0 +1,17 @@
+created: 20220530051100881
+difficulty: 1
+due: 20220925002016927
+grade: 2
+history: [{"due":"20220601083700346","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083700346"},{"due":"20220622131531719","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603131531719"}]
+interval: 21
+lapses: 0
+modified: 20220624002016927
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624002016926
+stability: 92.52384777796357
+tags: spark ?
+title: reduceBykey和foldByKey的区别是
+type: text/vnd.tiddlywiki
+
+foldByKey支持初始值zeroValue

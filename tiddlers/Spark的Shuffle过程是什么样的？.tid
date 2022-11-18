@@ -1,0 +1,91 @@
+created: 20220526133947290
+difficulty: 1.08989421166474
+due: 20220912064716767
+grade: 1
+history: [{"due":"20220601033858550","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531033858550"},{"due":"20220622132246939","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603132246938"},{"due":"20220625062357287","interval":21,"difficulty":2.0903877853574464,"stability":0.07408719146292923,"retrievability":0.8903877853574464,"grade":0,"lapses":1,"reps":1,"review":"20220624062357287"},{"due":"20220710002539996","interval":3,"difficulty":1,"stability":12.644777089702036,"retrievability":0.01403297475148654,"grade":2,"lapses":1,"reps":2,"review":"20220627002539996"}]
+interval: 14
+lapses: 1
+modified: 20220711064716767
+reps: 3
+retrievability: 0.8898942116647401
+review: 20220711064716767
+stability: 62.700049031816626
+tags: spark ?
+title: Spark的Shuffle过程是什么样的？
+type: text/vnd.tiddlywiki
+
+**介绍**：Spark Shuffle过程也叫作宽依赖过程，Spark不完全依赖于内存计算，面临以上问题时，也需要Shuffle过程
+
+Spark中哪些算子会产生Shuffle？
+
+- 全局分组或者分组聚合
+
+- 全局排序
+
+- 重新分区【调大】
+
+- - 在`1.1以前`的版本一直是采用==Hash Shuffle==的实现的方式
+
+    - Spark 0.8及以前 Hash Based Shuffle
+
+    - Spark 0.8.1 为Hash Based Shuffle引入File Consolidation机制
+
+    - Spark 0.9 引入ExternalAppendOnlyMap
+
+  - `1.1版本`时**参考Hadoop MapReduce**的实现开始引入==Sort Shuffle==
+
+    - Spark 1.1 引入Sort Based Shuffle，但默认仍为Hash Based Shuffle
+
+    - Spark 1.2 默认的Shuffle方式改为Sort Based Shuffle
+
+  - 在`1.5版本`时开始Tungsten钨丝计划，引入==UnSafe Shuffle优化内存及CPU==的使用
+
+  - 在`1.6版本`中将Tungsten统一到Sort Shuffle中，实现==自我感知选择最佳Shuffle==方式
+
+  - `2.0版本`，Hash Shuffle已被删除，所有Shuffle方式全部统一到Sort Shuffle一个实现中。
+
+- **功能**：分区、排序、分组
+
+- ==**阶段**：Shuffle Write 和 Shuffle Read==
+
+  - Shuffle Write：类似于Map端Shuffle过程，将当前Stage的结果进行分区、排序后写入HDFS
+
+  - Shuffle Read：类似于Reduce端Shuffle过程，读取上一个Stage的结果，进行排序、分组等操作
+
+- **流程**
+
+  - Sort Shuffle：类似于MapReduce Shuffle的Shuffle过程，Spark1.2以后默认的Shuffle类型
+
+  - **Shuffle Write**：有三种Shuffle write
+
+    - Stage输出的结果先写入内存缓冲区
+
+    - 内存中排序以后，生成小文件
+
+    - 小文件合并成整体有序的大文件以及索引文件
+
+[img[image-20220508092130069.png]]
+
+**Shuffle Read**
+
+- 下一个Stage的每个Task根据索引文件读取属于自己的数据
+
+- Spark中的Shuffle Read根据算子的功能实现不同的操作，有别于MR的Reduce Shuffle一定会有排序、分组
+
+  - repartition：读取数据
+
+  - sortByKey：读取数据，每个分区内部进行排序
+
+  - reduceByKey：读取数据，每个分区内部进行聚合
+
+  - ……
+
+面试：MR Shuffle过程和Spark Shuffle过程有什么区别吗？
+
+- 整体过程类似
+
+- Spark中叫做Shuffle Write 和 Shuffle Read
+
+- Shuffle Write阶段除了生成整体大文件以外，还有一个索引文件
+
+- Shuffle Read根据算子来实现不同的过程

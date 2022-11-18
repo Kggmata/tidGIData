@@ -1,0 +1,9 @@
+created: 20220820055324953
+modified: 20220820055332273
+tags: ? flink
+title: 什么是boosting
+type: text/vnd.tiddlywiki
+
+```
+Boosting是一种通用的、可证明有效的方法，通过将粗略的和适度不准确的经验规则结合在一起，以类似上述建议的方式产生非常准确的预测规则
+```

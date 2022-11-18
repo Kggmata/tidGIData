@@ -1,0 +1,18 @@
+caption: {{||Question}}
+created: 20220519123535260
+difficulty: 2.232984010198816
+due: 20220915063546836
+grade: 2
+history: [{"due":"20220522000308047","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000308047"},{"due":"20220528005700726","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522005700726"},{"due":"20220627020335388","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601020335388"}]
+interval: 28
+lapses: 0
+modified: 20220629063546836
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629063546836
+stability: 78.32227625296495
+tags: ?
+title: B. Zookeeper集群只能由Leader节点写入数据
+type: text/vnd.tiddlywiki
+
+正确：写请求所有节点都可以接收，但是写操作只能由Leader进行广播写入，保证所有节点数据一致性

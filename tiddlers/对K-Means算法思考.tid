@@ -1,0 +1,35 @@
+created: 20220624091816541
+difficulty: 1.0982194665518623
+due: 20220904092521303
+grade: 1
+history: [{"due":"20220626051735400","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625051735400"},{"due":"20220628052728583","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220627052728582"},{"due":"20220711143248101","interval":2,"difficulty":1,"stability":11.778612134693832,"retrievability":0.05817303643692872,"grade":1,"lapses":1,"reps":2,"review":"20220629143248101"}]
+interval: 12
+lapses: 1
+modified: 20220711092521303
+reps: 3
+retrievability: 0.8982194665518624
+review: 20220711092521302
+stability: 55.07958726971091
+tags: 用户画像 ?
+title: 对K-Means算法思考
+type: text/vnd.tiddlywiki
+
+（1）均值的影响
+
+```
+K-Means将簇中所有的点均值作为新质心，若簇中含有异常点，将导致均值偏离严重，如下面数据
+（1，2，3，4，100）均值22，距离大多数点1，2，3距离较远
+改为求数组的中位数3，在该实例中比较稳妥，这也是下面的K-Mediods聚类。
+```
+（2）初值的选定
+
+目的：让聚类中心离得远一些
+
+[img[Billfisheoxwhf2022-06-24 17_18_40.PNG]]
+方案：（kmeans++---以距离作为权值来选择初值，一般无法收敛全局最优解）
+
+[img[BillfishSpdxTk2022-06-24 17_19_02.PNG]]
+（3）K-Means假设
+
+K-Means本质上认为样本服从混合高斯分布GMM（如左图），每一个高斯分布的方差都相等，这是K均值的假设前提，如果样本点不能很好的满足GMM，聚类的效果会下降（如右图）。
+[img[BillfishjwXwgG2022-06-24 17_20_51.PNG]]

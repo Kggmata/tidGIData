@@ -1,0 +1,42 @@
+created: 20220718130037966
+difficulty: 1
+due: 20220825050102842
+grade: 1
+history: [{"due":"20220801121150395","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121150395"},{"due":"20220807123801233","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806123801233"}]
+interval: 6
+lapses: 1
+modified: 20220812050102842
+reps: 2
+retrievability: 0.00019680275038780497
+review: 20220812050102842
+stability: 12.923390933819324
+tags: ?
+title: spark数据倾斜问题发现与定位
+type: text/vnd.tiddlywiki
+
+```
+1、通过 Spark Web UI
+
+通过 Spark Web UI 来查看当前运行的 stage 各个 task 分配的数据量（Shuffle Read Size/Records），从而进一步确定是不是 task 分配的数据不均匀导致了数据倾斜。
+
+知道数据倾斜发生在哪一个 stage 之后，接着我们就需要根据 stage 划分原理，推算出来发生倾斜的那个 stage 对应代码中的哪一部分，这部分代码中肯定会有一个 shuffle 类算子。可以通过 countByKey 查看各个 key 的分布。
+
+TIPS
+
+数据倾斜只会发生在 shuffle 过程中。这里给大家罗列一些常用的并且可能会触发 shuffle 操作的算子: distinct、groupByKey、reduceByKey、aggregateByKey、join、cogroup、repartition 等。出现数据倾斜时，可能就是你的代码中使用了这些算子中的某一个所导致的。
+```
+```
+2、通过 key 统计
+
+也可以通过抽样统计 key 的出现次数验证。
+
+由于数据量巨大，可以采用抽样的方式，对数据进行抽样，统计出现的次数，根据出现次数大小排序取出前几个:
+
+df.select("key").sample(false, 0.1)           // 数据采样
+    .(k => (k, 1)).reduceBykey(_ + _)         // 统计 key 出现的次数
+    .map(k => (k._2, k._1)).sortByKey(false)  // 根据 key 出现次数进行排序
+    .take(10)                                 // 取前 10 个。
+（滑动可查看）
+
+如果发现多数数据分布都较为平均，而个别数据比其他数据大上若干个数量级，则说明发生了数据倾斜。
+```

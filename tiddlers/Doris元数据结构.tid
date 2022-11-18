@@ -1,0 +1,14 @@
+created: 20220727124004970
+modified: 20220727124249345
+tags: ? flink
+title: Doris元数据结构
+type: text/vnd.tiddlywiki
+
+```
+采用paxos以及memory+checkpoint+journal来确保metadata的高性能和高可用
+元数据的更新步骤:
+1 写入磁盘log
+2 写入内存
+3 定期checkpoint到磁盘上
+```
+[img[BillfishVJInoV2022-07-27 20_40_28.PNG]]

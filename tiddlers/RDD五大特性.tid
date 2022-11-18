@@ -1,0 +1,74 @@
+created: 20220523052044359
+difficulty: 1
+due: 20220928073543777
+grade: 2
+history: [{"due":"20220526132050418","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132050418"},{"due":"20220628142738562","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531142738562"},{"due":"20220702031927751","interval":31,"difficulty":2.42762332583152,"stability":0.07408316441686115,"retrievability":0.8885518728545304,"grade":0,"lapses":1,"reps":1,"review":"20220701031927751"},{"due":"20220715095325640","interval":5,"difficulty":1.6284394352242428,"stability":9.198819069745207,"retrievability":0.0008161093927229343,"grade":1,"lapses":1,"reps":2,"review":"20220706095325640"},{"due":"20220722055949591","interval":15,"difficulty":2.6705823869638676,"stability":0.054881225761675624,"retrievability":0.8421429517396246,"grade":0,"lapses":2,"reps":1,"review":"20220721055949591"},{"due":"20220806031149614","interval":9,"difficulty":1.8705824183115871,"stability":6.577182785615449,"retrievability":3.1347719722603765e-8,"grade":1,"lapses":2,"reps":2,"review":"20220730031149614"}]
+interval: 10
+lapses: 2
+modified: 20220809073543777
+reps: 3
+retrievability: 0.8519810879256086
+review: 20220809073543776
+stability: 49.77270022691699
+tags: spark ?
+title: RDD五大特性
+type: text/vnd.tiddlywiki
+
+[img[image-20211201161438756.png]]
+
+*特性一：每个RDD都由一系列的分区构成
+
+RDD是一个分布式列表，每个RDD都由多个分区构成，由分区实现了分布式
+`def getPartitions(): -> List[Partition:List[每条数据]]`
+
+*特性二：RDD的计算操作本质上是对RDD每个分区的计算
+
+在调用函数对RDD的数据进行转换处理时，由于RDD由多个分区构成的，所以底层会并行对RDD的每个分区进行计算
+
+*特性三：每个RDD都会保存与其他RDD之间的依赖关系：血链或者血脉lineage
+
+为了保证RDD的数据在内存中不会丢失，每个RDD都会保留自己与其他RDD之间的关系【自己是怎么通过别的RDD构建出来】
+
+*特性四：可选的，如果是二元组【KV】类型的RDD，在Shuffle过程中可以自定义分区器
+
+- 对于KV类型的RDD，在调用经过shuffle的函数时，可以自定义分区规则
+
+- Spark默认自带了两种分区器：HashPartition和RangePartition，大多数情况下默认使用的都是HashPartition
+
+- 这个东西一般用于出现数据倾斜的时候，才会自定义分区规则，正常情况都用默认的
+
+*特性五：可选的，Spark程序运行时，Task的分配可以指定实现最优路径解：最优计算位置
+
+- **思想：移动存储不如移动计算**：计算过程中避免了大量数据在网络中传输，影响性能
+
+- Driver分配Task给Executor运行，怎么分配性能最好
+
+https://spark.apache.org/docs/latest/tuning.html#data-locality
+
+```
+PROCESS_LOCAL data is in the same JVM as the running code. This is the best locality possible
+
+NODE_LOCAL data is on the same node. Examples might be in HDFS on the same node, or in another executor on the same node. This is a little slower than PROCESS_LOCAL because the data has to travel between processes
+
+NO_PREF data is accessed equally quickly from anywhere and has no locality preference
+
+RACK_LOCAL data is on the same rack of servers. Data is on a different server on the same rack so needs to be sent over the network, typically through a single switch
+
+ANY data is elsewhere on the network and not in the same rack
+```
+
+- 如果按照以下方案：随机来，每个Task都要通过网络到别的机器上下载数据到自己机器的内存中才能计算，影响性能
+
+[img[image-20220523120748329.png]]
+
+使用最优路径方案：如果说Task就在数据所在的机器运行，效率是最高的
+
+[img[image-20220523120937626.png]]
+
+`RDD的五大特性分别是什么？
+
+- 每个RDD由一系列的分区构建
+- 每个RDD的转换本质上是对RDD每个分区的并行转换
+- 每个RDD都会保留自己与其他RDD的依赖关系：血缘机制
+- 可选的，对于KV类型的RDD，可以自定义分区规则，默认分区规则支持HashParition
+- 可选的，Spark程序中的Task进行分配的时候，可以进行最优路径分配`

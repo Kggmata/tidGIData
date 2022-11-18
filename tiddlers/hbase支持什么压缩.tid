@@ -1,0 +1,36 @@
+created: 20220602002944317
+difficulty: 1.3332723181645736
+due: 20220924055002341
+grade: 1
+history: [{"due":"20220605094706955","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604094706954"},{"due":"20220626003005411","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609003005410"},{"due":"20220630023736031","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629023736031"},{"due":"20220715115316554","interval":5,"difficulty":1.2855622183099833,"stability":10.841096750736916,"retrievability":0.0008161093927229343,"grade":1,"lapses":1,"reps":2,"review":"20220704115316553"}]
+interval: 17
+lapses: 1
+modified: 20220721055002341
+reps: 3
+retrievability: 0.8477100998545904
+review: 20220721055002340
+stability: 65.1569557956587
+tags: hbase ?
+title: hbase支持什么压缩
+type: text/vnd.tiddlywiki
+
+目前 HBase 主要支持 4 种压缩方式：GZ（GZIP），SNAPPY，LZO，LZ4。
+
+应该选择哪一种压缩方式？首先应该了解不同压缩方式之间的区别。
+
+GZ（GZIP）
+
+用于冷数据存储，要求数据访问不频繁，与 Snappy 和 LZO 相比，GZIP 的压缩率更高，但是更消耗 CPU，解压/压缩速度更慢。
+
+Snappy 和 LZO
+
+用于热数据存储，数据访问频繁时使用，占用 CPU 少，解压/压缩速度比 GZ 快，但是压缩率不如 GZ 高。
+
+大部分场景下，开启 Snappy 或者 LZO 压缩会是比较好的选择，其中 Snappy 整体性能优于 LZO，主要表现在解压/压缩速度更快，是使用较多的一种压缩方式。
+
+LZ4
+
+这是一种追求极致解压/压缩速度的压缩方式，HBase 官网上介绍不多。根据 HBase 社区的测试结果来看，在不同业务类型数据下，LZ4 的压缩率与 LZO 相当或者略小于 LZO，但是解压速度却明显高于 LZO，部分场景下可以达到 LZO 的两倍以上。
+————————————————
+版权声明：本文为CSDN博主「大数据技术架构」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u011598442/article/details/97078098

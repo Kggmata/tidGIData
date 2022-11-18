@@ -1,0 +1,17 @@
+created: 20220524073756252
+difficulty: 1
+due: 20221231082744545
+grade: 2
+history: [{"due":"20220529142349811","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142349811"},{"due":"20220603090547572","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602090547572"},{"due":"20220618122636640","interval":4,"difficulty":1.4878375526797638,"stability":11.844090543980142,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606122636640"},{"due":"20220620021609459","interval":13,"difficulty":2.5786306917122053,"stability":0.05491298557316543,"retrievability":0.8907931390324411,"grade":0,"lapses":2,"reps":1,"review":"20220619021609459"},{"due":"20220628035836663","interval":2,"difficulty":1.8001810573679051,"stability":6.531765430823941,"retrievability":0.021550365655700003,"grade":1,"lapses":2,"reps":2,"review":"20220621035836663"},{"due":"20220701021413748","interval":9,"difficulty":2.86505256815452,"stability":0.04065770267064033,"retrievability":0.8648715107866144,"grade":0,"lapses":3,"reps":1,"review":"20220630021413748"},{"due":"20220710071053977","interval":5,"difficulty":2.065054927755979,"stability":4.828128848468401,"retrievability":0.000002359601458918098,"grade":1,"lapses":3,"reps":2,"review":"20220705071053976"},{"due":"20220810064014619","interval":6,"difficulty":1.1423311689184594,"stability":29.979993827028657,"retrievability":0.8772762411624803,"grade":2,"lapses":3,"reps":3,"review":"20220711064014619"}]
+interval: 34
+lapses: 3
+modified: 20220814082744545
+reps: 4
+retrievability: 0.8873744185730706
+review: 20220814082744545
+stability: 138.60739056423074
+tags: hive ?
+title: Hive skewindata原理
+type: text/vnd.tiddlywiki
+
+[img[v2-26b17fbbcd11b1ca20a396c2be904346_720w.jpg]]

@@ -1,0 +1,20 @@
+created: 20220627021004419
+difficulty: 1
+due: 20221024021251718
+grade: 2
+history: [{"due":"20220630105029815","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105029815"},{"due":"20220719143854525","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703143854524"}]
+interval: 21
+lapses: 0
+modified: 20220724021251719
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724021251718
+stability: 92.01798815217393
+tags: 用户画像 ?
+title: 什么时候使用fit或tranform
+type: text/vnd.tiddlywiki
+
+```
+理解：一些操作或所有机器学习算法都需要fit训练模型之后才能够进行转化tranform
+        # 源码实现：如果继承EStimator类需要fit在tranform，如果继承Tarnsformer类直接进行tranform转换
+```

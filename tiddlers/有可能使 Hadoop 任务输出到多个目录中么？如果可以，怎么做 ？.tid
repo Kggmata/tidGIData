@@ -1,0 +1,20 @@
+created: 20220521053330871
+difficulty: 3.500018160267203
+due: 20221011053739587
+grade: 1
+history: [{"due":"20220524023715838","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023715838"},{"due":"20220526131106903","interval":3,"difficulty":6.0538149682454625,"stability":0.2500261494800798,"retrievability":0.8538149682454624,"grade":0,"lapses":1,"reps":1,"review":"20220525131106902"},{"due":"20220611140824862","interval":6,"difficulty":4.333602509474025,"stability":10.957115940642902,"retrievability":0.07978754122856174,"grade":2,"lapses":1,"reps":2,"review":"20220531140824862"},{"due":"20220715112715671","interval":13,"difficulty":3.4160956096487087,"stability":32.44861675333493,"retrievability":0.8824931001746841,"grade":2,"lapses":1,"reps":3,"review":"20220613112715670"}]
+interval: 38
+lapses: 1
+modified: 20220721053739587
+reps: 4
+retrievability: 0.8839225506184942
+review: 20220721053739587
+stability: 82.16007914271242
+tags: hadoop ?
+title: 有可能使 Hadoop 任务输出到多个目录中么？如果可以，怎么做 ？
+type: text/vnd.tiddlywiki
+
+1）可以输出到多个目录中，采用自定义OutputFormat。
+
+2）实现步骤：
+（1）自定义outputformat，（2）改写recordwriter，具体改写输出数据的方法write()

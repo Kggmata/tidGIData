@@ -1,0 +1,40 @@
+created: 20220723031604938
+difficulty: 1
+due: 20221012141302376
+grade: 0
+history: [{"due":"20220823055930727","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822055930726"}]
+interval: 50
+lapses: 1
+modified: 20221011141302376
+reps: 1
+retrievability: 1.3220714356875621e-23
+review: 20221011141302375
+stability: 0.07408182272361549
+tags: ?
+title: flink udf分类
+type: text/vnd.tiddlywiki
+
+```
+udf(Scalar Function) 进一出一
+1 装饰器 @udf
+2 udf(lambda表达式, 参数类型, 返回值类型)
+3 继承ScalarFunction类, 重写open, eval方法
+open可以定义初始化工作, eval是udf计算逻辑
+
+udtf 进一出0到多
+输入一条返回0-多条
+1 @udtf
+2 继承TableFunction
+3 udtf()
+
+udaf 多进一出
+输入多条返回一条
+1 @udaf
+2 继承 AggregateFunction
+3 udaf()
+
+udtaf 针对一组数据进行聚合计算, 比如一个window下的多条数据, 同一个key下的多条数据等, 针对一组输入数据, udtaf可以产生0,1,多条输出数据
+flink1.13后支持的功能
+
+async table function
+```

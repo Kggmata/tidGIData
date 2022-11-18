@@ -1,0 +1,53 @@
+created: 20220523082453262
+difficulty: 1
+due: 20220906055638873
+grade: 2
+history: [{"due":"20220529140710526","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528140710526"},{"due":"20220624051326452","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602051326452"},{"due":"20220626105504093","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625105504093"},{"due":"20220707052127920","interval":3,"difficulty":1.5872713285758853,"stability":9.171193984225875,"retrievability":0.01403297475148654,"grade":1,"lapses":1,"reps":2,"review":"20220628052127920"}]
+interval: 12
+lapses: 1
+modified: 20220710055638873
+reps: 3
+retrievability: 0.8712220424360404
+review: 20220710055638873
+stability: 57.72209753866724
+tags: spark ?
+title: 为什么的有的代码会触发job运行，而有些代码不会触发job运行？
+type: text/vnd.tiddlywiki
+
+- 问题**：如果用户构建了一个RDD，程序直接将RDD的数据放入内存，但是后来这个RDD用不到，资源浪费怎么办？
+
+- 设计**
+
+  - Spark为了避免资源浪费，将RDD的转换设计为lazy模式【只定义，不执行】
+
+  - RDD的定义、转换都不是立即执行的
+
+  - 需要等待真正使用到对应的数据返回给用户时，才真正的执行所有RDD的构建和转换
+
+''实现''
+
+*Tranformation算子**
+
+  - 功能：用于对RDD中的数据进行转换
+  - 特点：lazy模式，不会立即执行所以不会触发job的运行，函数返回值固定为RDD类型
+  - 常见：map/filter/flatMap/reduceByKey/groupByKey/join等
+
+[img[image-20211201223931714.png]]
+
+*Action算子**
+
+- 功能：用户对RDD的数据进行输出或者保存
+- 特点：会触发job的运行，返回值为非RDD类型
+- 常见：first/count/take/collect/foreach/saveAsTextFile等
+
+[img[image-20211201224014552.png]]
+
+类比SQL处理数据的常见功能
+
+- 过滤数据
+- 处理数据
+- 展开数据
+- 合并数据
+- 去重数据
+- 分组聚合
+- 排序数据

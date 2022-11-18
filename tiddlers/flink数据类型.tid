@@ -1,0 +1,38 @@
+created: 20220718011103039
+difficulty: 1
+due: 20220830044809948
+grade: 1
+history: [{"due":"20220731041154123","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041154123"},{"due":"20220807115948557","interval":7,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806115948556"},{"due":"20220813034042617","interval":6,"difficulty":1.2001968028692551,"stability":0.05488116409496729,"retrievability":0.00019680286925510766,"grade":0,"lapses":2,"reps":1,"review":"20220812034042617"}]
+interval: 8
+lapses: 2
+modified: 20220820044809948
+reps: 2
+retrievability: 2.13773247238443e-7
+review: 20220820044809948
+stability: 10.165649333901193
+tags: ?
+title: flink数据类型
+type: text/vnd.tiddlywiki
+
+原子数据类型:
+
+```
+1 字符串: char, varchar
+2 二进制: binary, varbinary
+3 精确数值类型: decimal(p, s), numeric(p, s), tinyint: -128 - 127, smallint: -32768 - 32767, int\integer: -2147483648 -  2147483647 4字节, bigint: 8 字节
+4 有损数值类型: float: 4字节大小的单精度浮点数值, double: 8字节
+5 布尔类型: boolean
+6 null类型: null
+7 raw类型: raw('class', 'snapshot'), 只会在数据发生网络传输时进行序列化，反序列化操作，可以保留其原始数据。以 Java 举例，class 参数代表具体对应的 Java 类型，snapshot 代表类型在发生网络传输时的序列化器
+8 日期,时间: date, time, timestamp, timestamp with time zone, timestamp_ltz, interval year to month, interval day to second
+```
+
+复合数据类型:
+
+```
+数组类型: array
+map类型: map(k, v)
+集合类型: multiset
+对象类型: row(n0, t0, n1, t1)
+```
+用户自定义数据类型

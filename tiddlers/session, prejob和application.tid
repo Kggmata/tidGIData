@@ -1,0 +1,19 @@
+created: 20220719023821801
+difficulty: 1.6001970164642014
+due: 20221012133156667
+grade: 0
+history: [{"due":"20220801123514714","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731123514714"},{"due":"20220808000314182","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807000314182"},{"due":"20220814090421646","interval":6,"difficulty":1.2001968026909542,"stability":0.05488116409496729,"retrievability":0.00019680269095417443,"grade":0,"lapses":2,"reps":1,"review":"20220813090421646"},{"due":"20220822114244668","interval":8,"difficulty":1.4001970164642015,"stability":0.040656966333775045,"retrievability":2.13773247238443e-7,"grade":0,"lapses":3,"reps":1,"review":"20220821114244668"}]
+interval: 51
+lapses: 4
+modified: 20221011133156667
+reps: 1
+retrievability: 3.998662736656592e-58
+review: 20221011133156667
+stability: 0.03011942145770373
+tags: ?
+title: session, prejob和application
+type: text/vnd.tiddlywiki
+
+session和prejob的main都是在客户端运行, 当多客户端连接的时候, 客户端会成为瓶颈
+
+因此application模式类似prejob模式, 但是将程序逻辑和环境打包进jar包, 入口程序applicationClusterEntryPoint负责调用其中的main方法生成JobGraph. 也就是客户端要做的工作转移到JM里

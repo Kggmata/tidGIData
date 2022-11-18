@@ -1,0 +1,27 @@
+created: 20220608004528135
+difficulty: 2.1207185343822084
+due: 20220916014517248
+grade: 0
+history: [{"due":"20220612000010630","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611000010630"},{"due":"20220615063804147","interval":3,"difficulty":1.5162196541321282,"stability":0.07476910459712456,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220614063804147"},{"due":"20220617103322065","interval":2,"difficulty":1.7759276009997034,"stability":0.05500845146445375,"retrievability":0.05970794686757527,"grade":0,"lapses":2,"reps":1,"review":"20220616103322064"},{"due":"20220619141216651","interval":2,"difficulty":1.9976219635778167,"stability":0.04068054026463326,"retrievability":0.02169436257811349,"grade":0,"lapses":3,"reps":1,"review":"20220618141216650"},{"due":"20220628133353297","interval":2,"difficulty":1,"stability":7.927130916460668,"retrievability":0.005628582968693983,"grade":2,"lapses":3,"reps":2,"review":"20220620133353297"},{"due":"20220822031208049","interval":11,"difficulty":1.0639828036880168,"stability":51.78566941037613,"retrievability":0.8639828036880168,"grade":1,"lapses":3,"reps":3,"review":"20220701031208049"}]
+interval: 76
+lapses: 4
+modified: 20220915014517248
+reps: 1
+retrievability: 0.8567357306941915
+review: 20220915014517248
+stability: 0.03011942145770373
+tags: hbase ?
+title: Phoenix的性能
+type: text/vnd.tiddlywiki
+
+HBase本身是一个高性能的NoSQL，性能主要体现在：随机查询，范围查询
+
+在针对列进行数据分析的场景中规中矩
+
+Phoenix在不破胡HBase Rowkey的高性能的同时
+
+增强了HBase在数据分析方面的能力
+
+Phoenix可以认为是HBase在`数据分析方面`的加强器（外挂）
+
+[img[20220606180340.png]]

@@ -1,0 +1,13 @@
+created: 20220727132511415
+modified: 20220727132618935
+tags: ? flink
+title: doris 表参数
+type: text/vnd.tiddlywiki
+
+```
+properties
+( "replication_num"='3',
+ 'storage_medium'='ssd',
+'storage_cooldown_time'='2021-01-01 12:00:00
+)
+```

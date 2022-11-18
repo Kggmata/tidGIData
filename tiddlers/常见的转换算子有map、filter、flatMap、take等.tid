@@ -1,0 +1,17 @@
+created: 20220525043731067
+difficulty: 1
+due: 20220918145530790
+grade: 2
+history: [{"due":"20220529151722647","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528151722647"},{"due":"20220621104329897","interval":4,"difficulty":1.3310647873439139,"stability":19.873133781910397,"retrievability":0.14564366571177542,"grade":2,"lapses":0,"reps":2,"review":"20220601104329897"}]
+interval: 20
+lapses: 0
+modified: 20220621145530790
+reps: 3
+retrievability: 0.8993948626080656
+review: 20220621145530790
+stability: 89.2818096131198
+tags: spark ?
+title: 常见的转换算子有map、filter、flatMap、take等
+type: text/vnd.tiddlywiki
+
+错误：take是触发算子

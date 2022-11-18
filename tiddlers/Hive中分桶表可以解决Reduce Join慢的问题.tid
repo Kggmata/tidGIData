@@ -1,0 +1,17 @@
+created: 20220519125329767
+difficulty: 2.232984010198816
+due: 20220915140721129
+grade: 2
+history: [{"due":"20220522001602788","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001602788"},{"due":"20220528011457169","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522011457169"},{"due":"20220627063517945","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601063517945"}]
+interval: 28
+lapses: 0
+modified: 20220629140721129
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629140721128
+stability: 78.32227625296495
+tags: hadoop ?
+title: Hive中分桶表可以解决Reduce Join慢的问题
+type: text/vnd.tiddlywiki
+
+利用分桶来实现Bucket Map  Join，性能相对较快，避免数据倾斜的问题

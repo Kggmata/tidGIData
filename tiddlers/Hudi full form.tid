@@ -1,0 +1,11 @@
+created: 20220725085717292
+modified: 20220725085926068
+tags: ? flink
+title: Hudi full form
+type: text/vnd.tiddlywiki
+
+```
+Hadoop Upserts and incrementals
+用于管理分布式文件系统DFS上大型分析数据集存储
+Hudi是一种面向分析型业务的, 扫描优化的数据存储抽象. 能够使DFS数据集在分钟级的时延内支持变更, 也支持下游系统对这个数据集的增量处理. 
+```

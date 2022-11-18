@@ -1,0 +1,28 @@
+created: 20220607032339036
+difficulty: 1
+due: 20220930235157779
+grade: 2
+history: [{"due":"20220611042510995","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610042510995"},{"due":"20220629234338677","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613234338677"}]
+interval: 20
+lapses: 0
+modified: 20220704235157780
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704235157779
+stability: 88.3800382106863
+tags: hbase ?
+title: minor、major合并各自的机制是什么？为什么要合并？
+type: text/vnd.tiddlywiki
+
+minor是轻量合并, 频繁发生. 
+
+条件: 文件数量的条件限制默认在3-10个, 默认10秒会检查一次.同时要满足合并的每个文件大小在max之下.对于大小在min-max之间的文件,使用compaction.ratio判断
+
+minor会将Hfile合并成一个, 删除TTL过期的数据,但是不会删除标记为删除的数据和版本过期的数据
+
+Major是大合并
+
+条件:手动或者默认每七天
+
+major会将Hfile合并成一个, 删除TTL过期的数据,删除标记为删除的数据和版本过期的数据. 同时, major compaction也会解决data locality的问题
+

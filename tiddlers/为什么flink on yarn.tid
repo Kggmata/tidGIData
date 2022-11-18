@@ -1,0 +1,21 @@
+created: 20220719022625123
+difficulty: 1
+due: 20230425125535985
+grade: 1
+history: [{"due":"20220801123242318","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731123242318"},{"due":"20220822123742065","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806123742065"}]
+interval: 54
+lapses: 0
+modified: 20220929125535986
+reps: 3
+retrievability: 0.7067633236242729
+review: 20220929125535985
+stability: 207.96630844006646
+tags: ?
+title: 为什么flink on yarn
+type: text/vnd.tiddlywiki
+
+yarn的资源按需分配
+
+yarn的任务根据优先级运行作业
+
+高容错: JM和TM都由yarn监控, JM异常退出, Yarn自动在其他机器启动JM, TM异常退出JM自动向yarn申请资源,重启TM

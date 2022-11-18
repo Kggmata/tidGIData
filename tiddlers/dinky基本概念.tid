@@ -1,0 +1,43 @@
+created: 20220731072545077
+modified: 20220731073012480
+tags: ? flink
+title: dinky基本概念
+type: text/vnd.tiddlywiki
+
+```
+jobmanager
+dinky作业管理的统一入口, 负责flink作业调度
+
+executor
+Executor是Dinky定制的FlinkSQL 执行器，来模拟真实的Flink执行环境，负责FlinkSQL的Catalog管理、UDF管理、片段管理、配置管理、语句集管理、语法校验、逻辑验证、计划优化、生成 JobGraph、本地执行、远程提交、SELECT及SHOW预览等核心功能。
+
+Interceptor
+Interceptor是Dinky的Flink执行拦截器，负责对其进行片段解析、UDF注册、SET和AGGTABLE等增强语法解析。
+
+Gateway
+Gateway并非是开源项目flink-sql-gateway，而是Dinky自己定制的Gateway，负责进行基于Yarn环境的任务提交与管理，主要有Yarn-Per-Job和Yarn-Application的FlinkSQL提交、停止、SavePoint以及配置测试，而User Jar目前只开放了Yarn-Application的提交。
+
+Flink SDK
+Dinky主要通过调用flink-client和flink-table模块进行二次开发。
+
+Yarn SDK
+Dinky通过调用flink-yarn模块进行二次开发。
+
+Flink API
+Dinky也支持通过调用JobManager的RestAPI对任务进行管理等操作，系统配置可以控制开启和停用。
+
+Flink API
+Dinky也支持通过调用JobManager的RestAPI对任务进行管理等操作，系统配置可以控制开启和停用。
+
+Standalone
+Dinky通过已注册的Flink Standalone集群实例可以对远程集群进行FlinkSQL的提交、Catalog的交互式管理以及对SELECT和SHOW等语句的执行结果预览。
+
+Yarn-Session
+Dinky通过已注册的Flink Yarn Session集群实例可以对远程集群进行FlinkSQL的提交、Catalog的交互式管理以及对SELECT和SHOW等语句的执行结果预览。
+
+Yarn-Per-Job
+Dinky通过已注册的集群配置来获取对应的YarnClient 实例，然后将Local模式解析生成的 JobGraph与Configuration提交至Yarn来创建Flink Per-Job应用。
+
+Yarn-Application
+Dinky通过已注册的集群配置来获取对应的YarnClient实例。对于User Jar，将Jar相关配置与 Configuration提交至Yarn来创建Flink-Application应用；对于Flink SQL，Dinky则将作业ID及数据库连接配置作为Main入参和dlink-app.jar以及Configuration提交至Yarn来创建Flink-Application 应用。
+```

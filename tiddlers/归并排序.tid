@@ -1,0 +1,56 @@
+created: 20220613055133206
+difficulty: 1
+due: 20230318120201234
+grade: 2
+history: [{"due":"20220617031809729","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031809729"},{"due":"20220626005928966","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617005928966"},{"due":"20220816052902738","interval":10,"difficulty":1,"stability":49.62805757902991,"retrievability":0.8875472375963519,"grade":2,"lapses":0,"reps":3,"review":"20220627052902738"}]
+interval: 55
+lapses: 0
+modified: 20220821120201235
+reps: 4
+retrievability: 0.8897941229073937
+review: 20220821120201234
+stability: 208.515101362186
+tags: 数据结构 ?
+title: 归并排序
+type: text/vnd.tiddlywiki
+
+一个数组, 按照中点左右分两部分, 先把左右两侧排好序, 
+
+1)整体就是一个递归,左边排好序,右边排好序
+
+2)整体有序的方法用到了外排序
+
+[img[Snipaste_2022-06-13_13-56-23.jpg]]
+
+时间复杂度
+
+```
+T(N)=2T(N/2)+O(N)
+
+log(2,2)=1
+
+O(N*log(N))
+```
+
+空间复杂度
+
+```
+O(N)
+```
+''为什么?''
+
+O(N^2)的排序算法,浪费了大量的无效比较,每一轮比较都是独立的
+
+归并好在它没有浪费比较行为,每次排好序的信息被保存下来
+
+例题
+
+`小和问题, 
+1 3 4 2 5
+1  0
+3  1
+4  1,3
+2  1
+5  1,3,4,2
+1*4+3*2+4+2=16
+`

@@ -1,0 +1,17 @@
+created: 20220520043730212
+difficulty: 2.229344411327985
+due: 20220919115030402
+grade: 2
+history: [{"due":"20220523040251989","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040251989"},{"due":"20220529005320832","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523005320831"},{"due":"20220628135811652","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602135811652"}]
+interval: 29
+lapses: 0
+modified: 20220701115030402
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701115030402
+stability: 80.25328821558121
+tags: zookeeper ?
+title: Zookeeper中的持久节点和临时节点的区分依靠节点的ephemeralOwner进行区分
+type: text/vnd.tiddlywiki
+
+正确：持久性节点的ephemeralOwner的值为0，临时节点的ephemeralOwner的值是客户端的编号

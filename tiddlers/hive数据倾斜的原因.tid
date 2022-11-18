@@ -1,0 +1,21 @@
+created: 20220528142325095
+difficulty: 1
+due: 20220920132800787
+grade: 2
+history: [{"due":"20220601053107520","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053107520"},{"due":"20220622125515027","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603125515026"}]
+interval: 20
+lapses: 0
+modified: 20220623132800787
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623132800787
+stability: 89.0394510841741
+tags: hive ?
+title: hive数据倾斜的原因
+type: text/vnd.tiddlywiki
+
+关于数据倾斜出现原因：
+
+对于join过程来说，如果出项较多的key值为空或异常的记录，或key值分布不均匀，就容易出现数据倾斜。
+
+对于group by 过程来说，如果某一个key值有特别的多的记录，其它key值的记录比较少，也容易出项数据倾斜。v

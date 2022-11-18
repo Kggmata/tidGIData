@@ -1,0 +1,18 @@
+created: 20220731011030042
+modified: 20220731011040326
+tags: ? flink
+title: flinkCDC mysql connector
+type: text/vnd.tiddlywiki
+
+```
+    'connector'= 'mysql-cdc',
+    'hostname'= 'node2',
+    'port'= '3306',
+    'username'= 'root',
+    'password'='123456',
+    'server-time-zone'= 'Asia/Shanghai',
+    'debezium.snapshot.mode'='initial',
+    'database-name'= 'bxg',
+    'table-name'= 'oe_course'
+
+```

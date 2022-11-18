@@ -1,0 +1,44 @@
+created: 20220623004548573
+difficulty: 1.3040218665407008
+due: 20220930072528211
+grade: 1
+history: [{"due":"20220625133851593","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624133851592"},{"due":"20220627062127659","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220626062127659"},{"due":"20220712063945151","interval":3,"difficulty":1,"stability":12.644453482888508,"retrievability":0.014030805349029462,"grade":1,"lapses":1,"reps":2,"review":"20220629063945150"},{"due":"20220718062731530","interval":18,"difficulty":2.0607201433835716,"stability":0.05488141221849455,"retrievability":0.8607201433835715,"grade":0,"lapses":2,"reps":1,"review":"20220717062731530"},{"due":"20220731031541187","interval":5,"difficulty":1.2607879449447352,"stability":8.650751699190382,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220722031541187"}]
+interval: 14
+lapses: 2
+modified: 20220805072528211
+reps: 3
+retrievability: 0.8432339215959654
+review: 20220805072528210
+stability: 56.165994308838854
+tags: 用户画像 ?
+title: CAP full form
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1860632#:~:text=CAP%20%E7%90%86%E8%AE%BA%EF%BC%8C%E7%9B%B8%E4%BF%A1%E5%BE%88%E5%A4%9A%E4%BA%BA,%E9%A1%B9%E4%B8%AD%E7%9A%84%E4%B8%A4%E9%A1%B9%E3%80%82
+
+一致性（Consistency）
+
+```
+all read receive most recent write or an error
+```
+可用性（Availability）
+
+```
+all reads contains data, but it might not be the most recent
+```
+分区容忍性（Partition tolerance）
+
+```
+The system continues to operate despite network failures
+```
+[img[cap theorem2022-07-12 07_05_25.png]]
+
+```
+因为，在分布式系统内，P 是必然的发生的，不选 P，一旦发生分区错误，整个分布式系统就完全无法使用了，这是不符合实际需要的。所以，对于分布式系统，我们只能能考虑当发生分区错误时，如何选择一致性和可用性。
+
+而根据一致性和可用性的选择不同，开源的分布式系统往往又被分为 CP 系统和 AP 系统。
+
+当一套系统在发生分区故障后，客户端的任何请求都被卡死或者超时，但是，系统的每个节点总是会返回一致的数据，则这套系统就是 CP 系统，经典的比如 Zookeeper。
+
+如果一套系统发生分区故障后，客户端依然可以访问系统，但是获取的数据有的是新的数据，有的还是老数据，那么这套系统就是 AP 系统，经典的比如 Eureka。
+```

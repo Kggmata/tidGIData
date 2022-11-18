@@ -1,0 +1,11 @@
+created: 20220901114602371
+modified: 20220901114647416
+tags: ? flink
+title: L1 L2正则化
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/29360425
+
+```
+目的是减小模型复杂度, 减小过拟合
+```

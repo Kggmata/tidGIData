@@ -1,0 +1,40 @@
+created: 20220721101928382
+difficulty: 1
+due: 20220824084443687
+grade: 1
+history: [{"due":"20220802092033771","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092033770"}]
+interval: 7
+lapses: 0
+modified: 20220808084443687
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808084443687
+stability: 16.423571292705216
+tags: ?
+title: stream barriers
+type: text/vnd.tiddlywiki
+
+https://nightlies.apache.org/flink/flink-docs-master/zh/docs/concepts/stateful-stream-processing/
+
+```
+flink的快照机制启发于chandy-lamport算法
+```
+```
+barrier是flink分布式snapshot的核心元素, 这些barrier被注入data stream, 并跟随流动
+
+barrier不会代替data stream当中的record, barrier把数据分为进入current snapshot的部分和进入next snapshot的部分
+barrier包含当前的快照id
+```
+[img[Checkpoint barriers in data stre2022-07-21 18_23_05.svg]]
+[img[Aligning data streams at operato2022-07-21 18_24_16.svg]]
+
+```
+barrier对齐
+As soon as the operator receives snapshot barrier n from an incoming stream, it cannot process any further records from that stream until it has received the barrier n from the other inputs as well. Otherwise, it would mix records that belong to snapshot n and with records that belong to snapshot n+1.
+
+Once the last stream has received barrier n, the operator emits all pending outgoing records, and then emits snapshot n barriers itself.
+
+It snapshots the state and resumes processing records from all input streams, processing records from the input buffers before processing the records from the streams.
+
+Finally, the operator writes the state asynchronously to the state backend.
+```

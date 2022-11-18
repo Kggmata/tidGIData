@@ -1,0 +1,17 @@
+created: 20220519133341872
+difficulty: 2.346845958092267
+due: 20221216075023938
+grade: 2
+history: [{"due":"20220522004714255","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520004714255"},{"due":"20220528002523825","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522002523824"},{"due":"20220620144511458","interval":9,"difficulty":4.14195525232829,"stability":20.395966063619362,"retrievability":0.8419552523282889,"grade":2,"lapses":0,"reps":3,"review":"20220531144511458"},{"due":"20220807233149535","interval":19,"difficulty":3.248468803259386,"stability":49.157941576493165,"retrievability":0.9065135509310956,"grade":2,"lapses":0,"reps":4,"review":"20220619233149534"}]
+interval: 50
+lapses: 0
+modified: 20220809075023938
+reps: 5
+retrievability: 0.8983771548328807
+review: 20220809075023937
+stability: 128.834822341217
+tags: hadoop yarn ?
+title: 分布式资源管理yarn 从逻辑上
+type: text/vnd.tiddlywiki
+
+一个多机器的集群，可以将多台机器的硬件资源从逻辑上合并为一个整体【YARN】

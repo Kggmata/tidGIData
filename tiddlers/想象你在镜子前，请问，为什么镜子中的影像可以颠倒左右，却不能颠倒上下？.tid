@@ -1,0 +1,17 @@
+created: 20220721133535287
+difficulty: 1
+due: 20220824123303910
+grade: 2
+history: [{"due":"20220804022049013","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803022049013"}]
+interval: 5
+lapses: 0
+modified: 20220808123303910
+reps: 2
+retrievability: 0.005153779050734244
+review: 20220808123303909
+stability: 16.30688294756679
+tags: ?
+title: 想象你在镜子前，请问，为什么镜子中的影像可以颠倒左右，却不能颠倒上下？
+type: text/vnd.tiddlywiki
+
+因为人的两眼在水平方向上对称。

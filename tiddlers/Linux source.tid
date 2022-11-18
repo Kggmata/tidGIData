@@ -1,0 +1,24 @@
+created: 20220716015734564
+difficulty: 1
+due: 20221219134150419
+grade: 2
+history: [{"due":"20220722111724478","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721111724478"},{"due":"20220817105501834","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":1,"lapses":0,"reps":2,"review":"20220801105501834"}]
+interval: 27
+lapses: 0
+modified: 20220828134150419
+reps: 3
+retrievability: 0.8411020839292245
+review: 20220828134150419
+stability: 113.47759365239038
+tags: ?
+title: Linux source
+type: text/vnd.tiddlywiki
+
+```
+source命令可用于：
+
+刷新当前的shell环境
+在当前环境使用source执行Shell脚本
+从脚本中导入环境中一个Shell函数
+从另一个Shell脚本中读取变量
+```

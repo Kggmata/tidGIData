@@ -1,0 +1,17 @@
+created: 20220612125912681
+difficulty: 1
+due: 20220917094830678
+grade: 2
+history: [{"due":"20220617031609494","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031609494"},{"due":"20220619141247154","interval":2,"difficulty":1.1589202913593706,"stability":0.07412477722623134,"retrievability":0.1227653108614827,"grade":0,"lapses":1,"reps":1,"review":"20220618141247153"},{"due":"20220702133402114","interval":2,"difficulty":1,"stability":11.782015348442691,"retrievability":0.05826299883277926,"grade":2,"lapses":1,"reps":2,"review":"20220620133402113"}]
+interval: 16
+lapses: 1
+modified: 20220706094830678
+reps: 3
+retrievability: 0.8666849156502523
+review: 20220706094830678
+stability: 73.33892038155932
+tags: hbase ?
+title: zk端口号
+type: text/vnd.tiddlywiki
+
+2181

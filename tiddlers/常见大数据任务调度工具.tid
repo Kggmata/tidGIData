@@ -1,0 +1,25 @@
+created: 20220615011600039
+difficulty: 1.0824986202593607
+due: 20220913092612192
+grade: 1
+history: [{"due":"20220618143804263","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220617143804263"},{"due":"20220702005603959","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220619005603959"}]
+interval: 16
+lapses: 0
+modified: 20220705092612192
+reps: 3
+retrievability: 0.8824986202593608
+review: 20220705092612191
+stability: 70.2115090436281
+tags: 用户画像 ?
+title: 常见大数据任务调度工具
+type: text/vnd.tiddlywiki
+
+```
+1 Ozzie
+
+2 DS (Apache DolphinScheduler)
+
+3 azkaban
+
+4 airflow
+```

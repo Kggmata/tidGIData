@@ -1,0 +1,109 @@
+created: 20220526132204701
+difficulty: 1.0952562399448285
+due: 20220827110056611
+grade: 1
+history: [{"due":"20220531130438588","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130438588"},{"due":"20220604020625464","interval":4,"difficulty":2.7187326055546124,"stability":0.08507834253141604,"retrievability":0.07105206550140858,"grade":0,"lapses":1,"reps":1,"review":"20220603020625464"},{"due":"20220621013247675","interval":4,"difficulty":1,"stability":14.2835505337834,"retrievability":0.007058121659701603,"grade":2,"lapses":1,"reps":2,"review":"20220607013247675"}]
+interval: 15
+lapses: 1
+modified: 20220622110056611
+reps: 3
+retrievability: 0.8952562399448285
+review: 20220622110056610
+stability: 66.45473146777009
+tags: spark ?
+title: RDD容错机制：persist
+type: text/vnd.tiddlywiki
+
+问题：RDD依赖血缘机制保证数据安全，那每调用一次RDD都要重新构建一次，调用多次时性能就特别差，怎么办？
+
+- **解决**：将RDD进行缓存
+
+  - 下一次如果需要用到，将这个RDD存储起来，下次用到直接读取我们存储的RDD，不用再重新构建了
+
+- **算子**
+
+  - **cache**
+
+    - 功能：将RDD缓存在内存中
+    - 语法：`cache()`
+    - 本质：底层调用的还是persist，但是只缓存在内存，如果内存不够，缓存会失败
+    - 场景：资源充足，需要将RDD仅缓存在内存中
+
+  - **persist**
+
+    - 功能：将**==RDD==**【包含这个RDD的依赖关系】进行缓存，可以自己指定缓存的级别
+
+    - 语法：`persist(StorageLevel)`
+
+    - 级别：StorageLevel决定了缓存位置和缓存几份
+
+`# 缓存在磁盘中
+StorageLevel.DISK_ONLY = StorageLevel(True, False, False, False)
+StorageLevel.DISK_ONLY_2 = StorageLevel(True, False, False, False, 2)
+StorageLevel.DISK_ONLY_3 = StorageLevel(True, False, False, False, 3)
+
+# 缓存在内存中
+StorageLevel.MEMORY_ONLY = StorageLevel(False, True, False, False)
+StorageLevel.MEMORY_ONLY_2 = StorageLevel(False, True, False, False, 2)
+
+# 缓存在内存中，如果内存不足就写入磁盘
+StorageLevel.MEMORY_AND_DISK = StorageLevel(True, True, False, False)
+StorageLevel.MEMORY_AND_DISK_2 = StorageLevel(True, True, False, False, 2)
+
+# 缓存在堆外内存中
+StorageLevel.OFF_HEAP = StorageLevel(True, True, True, False, 1)
+
+# 缓存在内存中，如果内存不足就写入磁盘并且不经过序列化
+StorageLevel.MEMORY_AND_DISK_DESER = StorageLevel(True, True, False, True)`
+
+- 推荐：实际工作中一般推荐使用以下两种
+
+`python
+  StorageLevel.MEMORY_AND_DISK
+  StorageLevel.MEMORY_AND_DISK_2`
+
+- 场景：根据资源情况，将RDD缓存在不同的地方或者缓存多份
+
+*unpersist
+
+    - 功能：将缓存的RDD进行释放
+
+    - 语法：`unpersist`
+
+      - unpersist(blocking=True)：等释放完再继续下一步
+
+    - 场景：明确RDD已经不再使用，将RDD的数据从缓存中释放，避免占用资源
+
+    - 注意：如果不释放，这个Spark程序结束，也会释放这个程序中的所有内存
+
+*测试**
+
+- 没有缓存：每次需要重新构建
+
+- 配置缓存
+
+`# 由于这个rs_rdd会被调用多次，将rs_rdd进行缓存
+    # cache方法：直接调用即可
+    # rs_rdd.cache()
+    # persist方法：允许指定缓存的位置和副本数
+    rs_rdd.persist(StorageLevel.MEMORY_AND_DISK)
+    # 打印结果
+    rs_rdd.foreach(lambda x: print(x))
+    # 结果保存到文件中：路径不能提前存在
+    rs_rdd.saveAsTextFile("../datas/output/wcoutput1")
+    # unpersist：如果某一个缓存过的RDD明确不再被使用，一定要进行释放缓存，避免一直占用资源，除非这个程序马上就结束
+    rs_rdd.unpersist(blocking=True)`
+
+[img[image-20220526150806211.png]]
+
+- - 注意：缓存必须要通过触发算子触发，才能生效
+
+- **场景**：高性能
+
+  - 适合：RDD需要多次使用，或者RDD是经过非常复杂的转换过程所构建
+  - 不适合：RDD只使用1次而且构建比较简单
+
+- **思考**：缓存的RDD是否会丢失？
+
+  - 缓存的RDD缓存在内存或者磁盘中，内存中RDD丢失的概率存在的
+  - 如果RDD在内存中的缓存丢失怎么办？会通过血脉重新构建缓存

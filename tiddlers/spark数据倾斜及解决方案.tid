@@ -1,0 +1,55 @@
+created: 20220718125809043
+difficulty: 1
+due: 20220826090823357
+grade: 2
+history: [{"due":"20220801121108370","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121108370"},{"due":"20220808001633768","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807001633768"}]
+interval: 6
+lapses: 1
+modified: 20220813090823357
+reps: 2
+retrievability: 0.00019680269095417443
+review: 20220813090823357
+stability: 12.923390568613549
+tags: ?
+title: spark数据倾斜及解决方案
+type: text/vnd.tiddlywiki
+
+https://developer.aliyun.com/article/741111
+
+```
+一、什么是数据倾斜
+对于spark/hadoop来说, 不怕数据量大, 但是怕数据量分布不均匀
+
+二、数据倾斜的危害
+当出现数据倾斜时，小量任务耗时远高于其它任务，从而使得整体耗时过大，未能充分发挥分布式系统的并行计算优势。　　
+
+另外，当发生数据倾斜时，部分任务处理的数据量过大，可能造成内存不足使得任务失败，并进而引进整个应用失败。
+```
+```
+数据倾斜现象
+
+个别task运行极慢 导致整个任务卡在某个阶段不能结束
+原本正常的spark任务, 突然出现OOM error
+```
+```
+原因
+按照key 聚合或join的时候, 某个key数据量特别大
+```
+```
+如何判断: sparkwebUI, 统计key
+```
+```
+方案:
+1 过滤异常数据
+2 提高shuffle并行度
+3 自定义partitioner
+
+join:
+4 broadcast join
+5 抽样拆分为倾斜数据集和非倾斜数据集join, 最后再union
+
+group聚合:
+6 加盐, 扩容
+7 map提前聚合算子reduceByKey
+8 加盐聚合+加盐全局聚合
+```

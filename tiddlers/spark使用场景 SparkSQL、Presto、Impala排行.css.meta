@@ -1,0 +1,15 @@
+created: 20220519134204950
+difficulty: 5.239993998950177
+due: 20220930125151097
+grade: 1
+history: [{"due":"20220522005841552","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520005841552"},{"due":"20220523012122809","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522012122809"},{"due":"20220524003846601","interval":1,"difficulty":7.231358589403242,"stability":0.5762522178987278,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220523003846601"},{"due":"20220609072757539","interval":6,"difficulty":5.7652214364268355,"stability":11.298451615441309,"retrievability":0.3338628470235931,"grade":2,"lapses":2,"reps":2,"review":"20220529072757539"},{"due":"20220613115007375","interval":14,"difficulty":6.842831378659465,"stability":0.04141134327240674,"retrievability":0.8776099422326297,"grade":0,"lapses":3,"reps":1,"review":"20220612115007375"},{"due":"20220619003036579","interval":4,"difficulty":5.042869414884678,"stability":2.6418137762730174,"retrievability":0.00003803622521276857,"grade":2,"lapses":3,"reps":2,"review":"20220616003036579"},{"due":"20220629141643229","interval":4,"difficulty":5.095415899676431,"stability":9.274888529752777,"retrievability":0.852546484791753,"grade":1,"lapses":3,"reps":3,"review":"20220620141643229"},{"due":"20220727114638347","interval":12,"difficulty":5.1679817712376765,"stability":24.618410998191795,"retrievability":0.8725658715612448,"grade":1,"lapses":3,"reps":4,"review":"20220702114638347"}]
+interval: 32
+lapses: 3
+modified: 20220803125151097
+reps: 5
+retrievability: 0.8720122277125002
+review: 20220803125151097
+stability: 57.95220634835355
+tags: spark ?
+title: spark使用场景 SparkSQL、Presto、Impala排行
+type: text/css

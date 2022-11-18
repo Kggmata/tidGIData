@@ -1,0 +1,20 @@
+created: 20220529052321344
+difficulty: 1
+due: 20220925002259240
+grade: 2
+history: [{"due":"20220601053404559","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053404559"},{"due":"20220622131554339","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603131554339"}]
+interval: 21
+lapses: 0
+modified: 20220624002259241
+reps: 3
+retrievability: 0.8903877853574464
+review: 20220624002259240
+stability: 92.52384777796357
+tags: spark ?
+title: source Sink什么意思
+type: text/vnd.tiddlywiki
+
+- Source：数据来源，从哪里读数据
+
+- Sink：目标结果，将数据写入哪里
+

@@ -1,0 +1,17 @@
+created: 20220618092059191
+difficulty: 1
+due: 20220916135238601
+grade: 2
+history: [{"due":"20220621004358892","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004358892"},{"due":"20220622150404339","interval":1,"difficulty":1.1207546885009714,"stability":0.07409256085768667,"retrievability":0.348891394928074,"grade":0,"lapses":1,"reps":1,"review":"20220621150404339"},{"due":"20220705032140000","interval":2,"difficulty":1,"stability":11.779292992662073,"retrievability":0.0581910256162679,"grade":2,"lapses":1,"reps":2,"review":"20220623032140000"}]
+interval: 15
+lapses: 1
+modified: 20220708135238601
+reps: 3
+retrievability: 0.8744428820825005
+review: 20220708135238601
+stability: 69.51408187783063
+tags: 用户画像 ?
+title: 对长期险来说，持续几年都会交保费，从第[ ]年保费开始，称为[ ]。
+type: text/vnd.tiddlywiki
+
+对长期险来说，持续几年都会交保费，从第【2】年保费开始，称为续期。

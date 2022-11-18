@@ -1,0 +1,50 @@
+created: 20220617141749211
+difficulty: 1.058949032118042
+due: 20220923033517503
+grade: 1
+history: [{"due":"20220620135731949","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619135731949"},{"due":"20220622062233682","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621062233681"},{"due":"20220705140553933","interval":2,"difficulty":1,"stability":11.780200635877742,"retrievability":0.05821501375612986,"grade":2,"lapses":1,"reps":2,"review":"20220623140553933"}]
+interval: 17
+lapses: 1
+modified: 20220710033517503
+reps: 3
+retrievability: 0.858949032118042
+review: 20220710033517503
+stability: 74.58975586012556
+tags: 用户画像 ?
+title: Lucene 和 ES
+type: text/vnd.tiddlywiki
+
+https://xie.infoq.cn/article/2f8732411ea2f8d10cba85b78
+
+Lucene
+
+
+Lucene 是 Elasticsearch 所基于的 Java 库，它引入了按段搜索的概念。
+
+
+
+Segment： 也叫段，类似于倒排索引，相当于一个数据集。
+
+
+
+Commit point：提交点，记录着所有已知的段。
+
+
+
+Lucene index： “a collection of segments plus a commit point”。由一堆 Segment 的集合加上一个提交点组成。
+
+
+
+对于一个 Lucene index 的组成，如下图所示。
+
+[img[【Elasticsearch 技术分享】—— 十张图带大家看懂 2022-06-17 22_19_11.png]]
+
+Elasticsearch
+
+
+一个 Elasticsearch Index 由一个或者多个 shard （分片） 组成。
+
+[img[【Elasticsearch 技术分享】—— 十张图带大家看懂 2022-06-17 22_19_40.png]]
+
+而 Lucene 中的 Lucene index 相当于 ES 的一个 shard。
+[img[【Elasticsearch 技术分享】—— 十张图带大家看懂2022-06-17 22_20_09 .png]]

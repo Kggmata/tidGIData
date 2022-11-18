@@ -1,0 +1,25 @@
+created: 20220523012105261
+difficulty: 1
+due: 20230308064257450
+grade: 2
+history: [{"due":"20220524063401802","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523063401802"},{"due":"20220606010853312","interval":3,"difficulty":2.524919168615612,"stability":11.181919693641438,"retrievability":0.5771188593881783,"grade":2,"lapses":0,"reps":2,"review":"20220526010853312"},{"due":"20220729004649028","interval":14,"difficulty":1.6013358877257884,"stability":50.346949805680694,"retrievability":0.8764167191101764,"grade":2,"lapses":0,"reps":3,"review":"20220609004649027"}]
+interval: 57
+lapses: 0
+modified: 20220805064257450
+reps: 4
+retrievability: 0.8875563367470857
+review: 20220805064257450
+stability: 214.52321365463524
+tags: spark ?
+title: driver, executor理解
+type: text/vnd.tiddlywiki
+
+每个spark都有driver和executor,这俩都是进程
+
+driver在cluster manager接到运行请求后就启动.类似application master,相当于运行代码中的main(),构建sparkContext()
+
+executor,每个从节点可以多个executor,负责运行task
+
+driver,executor都是相对于程序的概念
+
+cluster manager和worker node是相对于物理服务器的概念

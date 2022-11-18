@@ -1,0 +1,17 @@
+created: 20220519125817945
+difficulty: 2.232984010198816
+due: 20220915062826290
+grade: 2
+history: [{"due":"20220522001838434","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001838434"},{"due":"20220528005354782","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522005354781"},{"due":"20220627005828770","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601005828770"}]
+interval: 28
+lapses: 0
+modified: 20220629062826291
+reps: 4
+retrievability: 0.8918064933310472
+review: 20220629062826290
+stability: 78.32227625296495
+tags: hadoop ?
+title: 分布式
+type: text/vnd.tiddlywiki
+
+一般由多个提供相同或者不同服务的机器共同协作，称为分布式系统或者分布式服务，强调合作关系

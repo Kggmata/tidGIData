@@ -1,0 +1,21 @@
+created: 20220723132158015
+difficulty: 1
+due: 20221024120134896
+grade: 1
+history: [{"due":"20220823061844727","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822061844727"}]
+interval: 47
+lapses: 0
+modified: 20221008120134896
+reps: 2
+retrievability: 3.118743276916041e-22
+review: 20221008120134895
+stability: 16.439759152464664
+tags: flink ?
+title: flink create table like
+type: text/vnd.tiddlywiki
+
+https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/dev/table/sql/create/#like
+
+```
+like是create table的延伸, 类似函数的继承概念, create table A() like B, 代表使用B的表结构元数据, 然后可以自己添加新的属性
+```

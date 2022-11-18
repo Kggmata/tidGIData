@@ -1,0 +1,38 @@
+created: 20220606113906930
+difficulty: 1.069974757506569
+due: 20221004031148178
+grade: 1
+history: [{"due":"20220611003621153","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003621153"},{"due":"20220629112609239","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613112609238"},{"due":"20220702141707016","interval":18,"difficulty":2.0861675498643524,"stability":0.07408316441686115,"retrievability":0.8861675498643524,"grade":0,"lapses":1,"reps":1,"review":"20220701141707016"},{"due":"20220718094354417","interval":4,"difficulty":1,"stability":12.858890454366344,"retrievability":0.0033837533675606132,"grade":2,"lapses":1,"reps":2,"review":"20220705094354417"}]
+interval: 17
+lapses: 1
+modified: 20220722031148178
+reps: 3
+retrievability: 0.869974757506569
+review: 20220722031148178
+stability: 74.16740047608377
+tags: hbase ?
+title: 什么是hash
+type: text/vnd.tiddlywiki
+
+https://www.tutorialspoint.com/cryptography/cryptography_hash_functions.htm#
+
+A hash function is any function that can be used to map data of arbitrary size to fixed-size values.[1] The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. The values are usually used to index a fixed-size table called a hash table. Use of a hash function to index a hash table is called hashing or scatter storage addressing.
+
+散列函数是可用于将任意大小的数据映射到固定大小值的任何函数。【1】散列函数返回的值称为散列值、散列代码、摘要或简单的散列。这些值通常用于索引称为哈希表的固定大小的表。使用哈希函数对哈希表进行索引称为哈希或分散存储寻址。
+
+特点:
+
+1 固定长度输出
+
+2 速度很快
+
+3 参数相同,输入相同的情况下,输出的结果是相同的
+
+Popular Hash Functions
+
+Message Digest (MD): MD2, MD4, MD5 and MD6
+
+Secure Hash Function (SHA): SHA-0, SHA-1, SHA-2, and SHA-3
+
+ 
+

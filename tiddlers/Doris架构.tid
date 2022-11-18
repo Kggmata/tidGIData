@@ -1,0 +1,30 @@
+created: 20220727052357323
+modified: 20220727052942019
+tags: ? flink
+title: Doris架构
+type: text/vnd.tiddlywiki
+
+[img[悄悄学习 Doris，偷偷惊艳所有人 ：Apache Doris2022-07-27 13_24_08.png]]
+
+```
+FE前端节点-负责元数据的管理, 查询调度, 解析SQL的执行计划给BE
+
+BE数据的存储和执行引擎, 存储和计算是一起的
+
+FE: leader, follower, 水平扩容
+
+对外提供mysql兼容的协议
+```
+[img[悄悄学习 Doris，偷偷惊艳所有人 ：Apache Doris2022-07-27 13_26_26.png]]
+
+```
+跟传统架构的区别:
+Scatter/Gather: 通过分布式拆分成不同的task，再在中心节点汇聚；
+druid、clickhouse都是类型；
+
+Mapreduce:
+MR是任务的拆分、落盘；
+
+MPP:
+doris是MPP架构，任务之间分成task、全都在内存中执行和传输，所有任务都是流水线，没有磁盘IO，适用于低延迟亚秒级查询；
+```

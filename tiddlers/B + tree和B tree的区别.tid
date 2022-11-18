@@ -1,0 +1,20 @@
+created: 20220711145304519
+difficulty: 1.0737446509856596
+due: 20221107065833092
+grade: 1
+history: [{"due":"20220716022901255","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715022901255"},{"due":"20220806143337314","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":2,"lapses":0,"reps":2,"review":"20220721143337314"}]
+interval: 21
+lapses: 0
+modified: 20220811065833092
+reps: 3
+retrievability: 0.8737446509856597
+review: 20220811065833092
+stability: 88.37312486757398
+tags: ?
+title: B + tree和B tree的区别
+type: text/vnd.tiddlywiki
+
+B+树是B-树的变体，也是一种多路搜索树, 它与 B- 树的不同之处在于:
+
+所有关键字存储在叶子节点出现,内部节点(非叶子节点并不存储真正的 data)
+为所有叶子结点增加了一个链指针

@@ -1,0 +1,32 @@
+created: 20220618085226231
+difficulty: 1
+due: 20220825153645024
+grade: 2
+history: [{"due":"20220621003156094","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003156094"},{"due":"20220630145055198","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145055198"}]
+interval: 11
+lapses: 0
+modified: 20220702153645024
+reps: 3
+retrievability: 0.8770024421488429
+review: 20220702153645023
+stability: 53.686353537936405
+tags: 用户画像 ?
+title: 保险数仓架构
+type: text/vnd.tiddlywiki
+
+1、从【mysql】，【oracle】，【postgresql】等关系型数据库，用【sqoop】抽取到数据仓库的【ods】层
+
+2、SparkSQL应用启动，加载ODS层的表，依次计算出【DW】层7个明细表：保费因子表、期交保费表、毛保险费表、现金价值表、准备金表、产品精算表、客户保单精算表。
+
+3、基于DW层和ODS层，计算【APP层】的一些报表统计表。
+
+4、报表输出到MySQL，利用Spring微服务进行展示。
+
+补充：
+
+```
+1、保险项目架构采用，业务数据库->【sqoop】导数->【hive】数仓->【spark】计算引擎(1、明细的计算，2、指标汇总的计算)->页面展示。
+2、保费的计算有很多专业名词，我们只用交付准确的结果就行，对他们的业务意义了解就行。
+3、数仓面向SQL编程（90%），如果SQL无法满足，则采用python（10%）解决。
+后面如果大家感兴趣下发保险数仓项目
+```

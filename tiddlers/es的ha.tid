@@ -1,0 +1,23 @@
+created: 20220618132820769
+difficulty: 1
+due: 20220924131559131
+grade: 2
+history: [{"due":"20220621005239097","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005239097"},{"due":"20220705080503510","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622080503510"}]
+interval: 17
+lapses: 0
+modified: 20220709131559131
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709131559131
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: es的ha
+type: text/vnd.tiddlywiki
+
+```
+High availability (HA) clusters require at least three master-eligible nodes, at least two of which are not voting-only nodes. Such a cluster will be able to elect a master node even if one of the nodes fails.
+
+Since voting-only nodes never act as the cluster’s elected master, they may require less heap and a less powerful CPU than the true master nodes. However all master-eligible nodes, including voting-only nodes, require reasonably fast persistent storage and a reliable and low-latency network connection to the rest of the cluster, since they are on the critical path for publishing cluster state updates.
+
+Voting-only master-eligible nodes may also fill other roles in your cluster. For instance, a node may be both a data node and a voting-only master-eligible node. A dedicated voting-only master-eligible nodes is a voting-only master-eligible node that fills no other roles in the cluster.
+```

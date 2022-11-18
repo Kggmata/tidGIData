@@ -1,0 +1,10 @@
+created: 20220729062030945
+modified: 20220729062257403
+tags: ? flink
+title: spark推测执行
+type: text/vnd.tiddlywiki
+
+```
+speculative execution
+识别执行较慢的task, 在其他节点的executor重启, 那个先结束, 使用哪个的结果. 
+```

@@ -1,0 +1,17 @@
+created: 20220626020447168
+difficulty: 1
+due: 20221113021744478
+grade: 2
+history: [{"due":"20220630104820311","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629104820311"},{"due":"20220721025540981","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705025540981"}]
+interval: 25
+lapses: 0
+modified: 20220730021744478
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730021744477
+stability: 106.35191003523644
+tags: 用户画像 ?
+title: Yarn资源调度了解吗 ？有几种，你们生产中使用那种 ？
+type: text/vnd.tiddlywiki
+
+[img[微信图片_20220626100425.png]]

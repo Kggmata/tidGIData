@@ -1,0 +1,17 @@
+created: 20220609014752491
+difficulty: 1
+due: 20221002081857384
+grade: 2
+history: [{"due":"20220613132627272","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612132627272"},{"due":"20220701234823909","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615234823909"}]
+interval: 20
+lapses: 0
+modified: 20220706081857385
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706081857384
+stability: 88.3647639214822
+tags: kafka ?
+title: kafka有计算和存储能力吗
+type: text/vnd.tiddlywiki
+
+ Kafka具备数据的计算能力和存储能力，但是两个能力相对（MR/SPARK，HDFS）较弱.

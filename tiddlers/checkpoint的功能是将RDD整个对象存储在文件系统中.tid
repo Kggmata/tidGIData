@@ -1,0 +1,17 @@
+created: 20220529053126622
+difficulty: 1
+due: 20220920071713952
+grade: 2
+history: [{"due":"20220601061557681","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531061557681"},{"due":"20220622091339400","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603091339400"}]
+interval: 20
+lapses: 0
+modified: 20220623071713952
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623071713952
+stability: 89.0394510841741
+tags: spark ?
+title: checkpoint的功能是将RDD整个对象存储在文件系统中
+type: text/vnd.tiddlywiki
+
+错误：checkpoint只存储RDD的数据

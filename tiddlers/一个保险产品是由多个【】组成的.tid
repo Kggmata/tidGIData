@@ -1,0 +1,17 @@
+created: 20220618092020083
+difficulty: 1
+due: 20220924093247432
+grade: 2
+history: [{"due":"20220621004219093","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004219093"},{"due":"20220705041348965","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622041348965"}]
+interval: 17
+lapses: 0
+modified: 20220709093247432
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709093247432
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: 一个保险产品是由多个【】组成的
+type: text/vnd.tiddlywiki
+
+一个保险产品是由多个【责任】组成的，保险公司向被保人，提供的保障责任是多方面的，比如【医疗门诊】责任，【医疗住院】责任，【自然死亡】责任，【意外死亡】责任，【残疾责任】责任，【重疾赔付】责任，【住院津贴责任】责任等等

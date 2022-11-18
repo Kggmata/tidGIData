@@ -1,0 +1,17 @@
+created: 20220603092248215
+difficulty: 1
+due: 20220929115111630
+grade: 2
+history: [{"due":"20220607125904828","interval":0,"difficulty":1.2687524673440806,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606125904828"},{"due":"20220629012044860","interval":6,"difficulty":1,"stability":17.334334758295512,"retrievability":0.002781225250114914,"grade":2,"lapses":0,"reps":2,"review":"20220612012044860"}]
+interval: 20
+lapses: 0
+modified: 20220702115111630
+reps: 3
+retrievability: 0.8855354377394037
+review: 20220702115111630
+stability: 88.62633086145719
+tags: hbase ?
+title: zkfc运行在?
+type: text/vnd.tiddlywiki
+
+每个namenode有一个zkfc

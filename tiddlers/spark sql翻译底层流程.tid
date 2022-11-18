@@ -1,0 +1,31 @@
+created: 20220718144006102
+difficulty: 1
+due: 20220826090637003
+grade: 2
+history: [{"due":"20220801122755634","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731122755634"},{"due":"20220808000949654","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807000949653"}]
+interval: 6
+lapses: 1
+modified: 20220813090637003
+reps: 2
+retrievability: 0.00019680269095417443
+review: 20220813090637003
+stability: 12.923390568613549
+tags: ?
+title: spark sql翻译底层流程
+type: text/vnd.tiddlywiki
+
+http://www.jasongj.com/spark/rbo/
+
+[img[Spark SQL Catalyst2022-08-07 08_08_00.png]]
+
+```
+从上图可见，无论是直接使用 SQL 语句还是使用 DataFrame，都会经过如下步骤转换成 DAG 对 RDD 的操作
+
+Parser 解析 SQL，生成 Unresolved Logical Plan
+由 Analyzer 结合 Catalog 信息生成 Resolved Logical Plan
+Optimizer根据预先定义好的规则对 Resolved Logical Plan 进行优化并生成 Optimized Logical Plan
+Query Planner 将 Optimized Logical Plan 转换成多个 Physical Plan
+CBO 根据 Cost Model 算出每个 Physical Plan 的代价并选取代价最小的 Physical Plan 作为最终的 Physical Plan
+Spark 以 DAG 的方法执行上述 Physical Plan
+在执行 DAG 的过程中，Adaptive Execution 根据运行时信息动态调整执行计划从而提高执行效率
+```

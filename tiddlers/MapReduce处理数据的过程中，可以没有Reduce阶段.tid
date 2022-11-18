@@ -1,0 +1,21 @@
+caption: {{||Question}}
+created: 20220519124934873
+difficulty: 2.3430032057130985
+due: 20221221102016487
+grade: 2
+history: [{"due":"20220522001231311","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001231311"},{"due":"20220528004453167","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522004453167"},{"due":"20220620150053667","interval":9,"difficulty":4.14195525232829,"stability":20.395966063619362,"retrievability":0.8419552523282889,"grade":2,"lapses":0,"reps":3,"review":"20220531150053667"},{"due":"20220807233226524","interval":19,"difficulty":3.248468803259386,"stability":49.157941576493165,"retrievability":0.9065135509310956,"grade":2,"lapses":0,"reps":4,"review":"20220619233226524"}]
+interval: 52
+lapses: 0
+modified: 20220811102016487
+reps: 5
+retrievability: 0.8945344024537119
+review: 20220811102016486
+stability: 132.1045863727739
+tags: hadoop ?
+title: MapReduce处理数据的过程中，可以没有Reduce阶段
+type: text/vnd.tiddlywiki
+
+- 正确：MapReduce过程有两种
+- 第一种：Input、Map、Output【Sqoop：part-m-000000】
+  - 第二种：Input、Map、Shuffle、Reduce、Output【分组聚合排序等功能才需要part-r-000000】
+

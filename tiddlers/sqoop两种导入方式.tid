@@ -1,0 +1,11 @@
+created: 20220801120238175
+modified: 20220828135056658
+tags: ? flink
+title: sqoop两种导入方式
+type: text/vnd.tiddlywiki
+
+```
+原生sqoop api, 支持的格式较少, 允许数据覆盖, 不要求字段名称相同, 按照顺序匹配
+
+hcatalog api, 支持的格式较多, 包括RC, ORC, CSV, json, sequenceFile等, 只能追加, 名称必须相同, 不同的话会报NullPointerException错误
+```

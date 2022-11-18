@@ -1,0 +1,21 @@
+created: 20220603011004601
+difficulty: 1
+due: 20220923021046508
+grade: 2
+history: [{"due":"20220607125901005","interval":0,"difficulty":1.2687524673440806,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606125901005"},{"due":"20220628021254472","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220611021254472"}]
+interval: 19
+lapses: 0
+modified: 20220630021046508
+reps: 3
+retrievability: 0.8901797860786494
+review: 20220630021046507
+stability: 85.04800908266367
+tags: hbase ?
+title: hdfs HA当中 journal的作用
+type: text/vnd.tiddlywiki
+
+存储edits
+
+https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.5.0/bk_hadoop-high-availability/content/ha-nn-architecture.html
+
+In order for the Standby node to keep its state synchronized with the Active node, both nodes communicate with a group of separate daemons called JournalNodes (JNs). When the Active node performs any namespace modification, the Active node durably logs a modification record to a majority of these JNs. The Standby node reads the edits from the JNs and continuously watches the JNs for changes to the edit log. Once the Standby Node observes the edits, it applies these edits to its own namespace. When using QJM, JournalNodes acts the shared editlog storage. In a failover event, the Standby ensures that it has read all of the edits from the JounalNodes before promoting itself to the Active state. (This mechanism ensures that the namespace state is fully synchronized before a failover completes.)

@@ -1,0 +1,58 @@
+created: 20220624053904490
+difficulty: 1.065612726934808
+due: 20221021060954641
+grade: 1
+history: [{"due":"20220626002136402","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625002136402"},{"due":"20220715050203705","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":1,"lapses":0,"reps":2,"review":"20220629050203705"}]
+interval: 22
+lapses: 0
+modified: 20220721060954641
+reps: 3
+retrievability: 0.865612726934808
+review: 20220721060954640
+stability: 92.15055392172822
+tags: 用户画像 ?
+title: spark-submit python提交
+type: text/vnd.tiddlywiki
+
+```
+spark-submit \
+--master yarn \
+--deploy-mode client \
+--driver-memory 1g \
+--executor-memory 1g \
+--py-files="/export/server/InsuranceUserProfileVersion2.zip" \
+/export/server/age_tag_model.py
+
+spark-submit \
+--master yarn \
+--deploy-mode client \
+--driver-memory 1g \
+--executor-memory 1g \
+--py-files="/export/server/InsuranceUserProfileVersion2.zip" \
+/export/server/buy_period_tag_model.py
+
+spark-submit \
+--master yarn \
+--deploy-mode client \
+--driver-memory 1g \
+--executor-memory 1g \
+--py-files="/export/server/InsuranceUserProfileVersion2.zip" \
+/export/server/gender_tag_model.py
+
+spark-submit \
+--master yarn \
+--deploy-mode client \
+--driver-memory 1g \
+--executor-memory 1g \
+--py-files="/export/server/InsuranceUserProfileVersion2.zip" \
+/export/server/income_tag_model.py
+
+spark-submit \
+--master yarn \
+--deploy-mode client \
+--driver-memory 1g \
+--executor-memory 1g \
+--py-files="/export/server/InsuranceUserProfileVersion2.zip" \
+/export/server/pay_period_tag_model.py
+
+```

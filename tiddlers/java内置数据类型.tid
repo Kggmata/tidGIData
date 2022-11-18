@@ -1,0 +1,28 @@
+created: 20220724120519867
+difficulty: 0.025386988635295055
+due: 20220827143251625
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143251625
+reps: 1
+retrievability: 1
+review: 20220826143251625
+stability: 0.10000000088475645
+tags: flink ?
+title: java内置数据类型
+type: text/vnd.tiddlywiki
+
+```
+六种数字类型
+byte 8bit -128\127
+short 16bit -32768\32767
+int 32bit -2147483648\2147483648
+long 64bit
+float 32bit
+double 64bit
+
+boolean类型
+字符类型
+```

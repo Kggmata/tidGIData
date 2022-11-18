@@ -1,0 +1,22 @@
+created: 20220723133135758
+difficulty: 1
+due: 20221012005820348
+grade: 1
+history: [{"due":"20220823062128589","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062128589"}]
+interval: 35
+lapses: 0
+modified: 20220926005820349
+reps: 2
+retrievability: 9.657805291589202e-17
+review: 20220926005820348
+stability: 16.439759152464664
+tags: flink ?
+title: 实时算子处于什么状态
+type: text/vnd.tiddlywiki
+
+```
+类似pipeline的状态, 同一时刻都是running的状态
+```
+```
+而hive之类的批处理batch processing, 一般是一步步的执行, 执行完成释放资源
+```

@@ -1,0 +1,17 @@
+created: 20220612132033312
+difficulty: 1
+due: 20220925094804398
+grade: 2
+history: [{"due":"20220617031613640","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031613640"},{"due":"20220702141021477","interval":2,"difficulty":1,"stability":13.503436503233734,"retrievability":0.1227653108614827,"grade":2,"lapses":0,"reps":2,"review":"20220618141021477"}]
+interval: 18
+lapses: 0
+modified: 20220706094804398
+reps: 3
+retrievability: 0.8689715122532491
+review: 20220706094804398
+stability: 80.899654789959
+tags: hbase ?
+title: phoenix当中类似thirft server的是?
+type: text/vnd.tiddlywiki
+
+queryServer

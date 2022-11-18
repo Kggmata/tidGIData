@@ -1,0 +1,23 @@
+created: 20220728014731855
+modified: 20220728085505018
+tags: ? flink
+title: doris  join方式
+type: text/vnd.tiddlywiki
+
+```
+默认是broadcast join
+小表的数据量大时, 使用shuffle join(partition join)
+
+colocation join
+宜在为某些join查询提供local optimization, 来reduce data transmission time between nodes and speed up queries.
+colocation join就是make a CG包含相同CGS的table. 
+
+bucket sequence: 假设一个table的分桶数为8 则有[0,1,2,3,4,5,6,7]8个分桶. 则这样一个序列为BucketsSequence. 
+一个bucket会有一个到多个tablet
+为单分区时, 一个bucket一个tablet, 多分区时, 一个bucket多个tablet
+可以使用desc查看, colocate=true则代表colocate生效
+
+同一个CG的table必须保证以下属性相同:
+1 分桶列和分桶数
+2 副本数
+```

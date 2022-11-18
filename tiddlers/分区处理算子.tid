@@ -1,0 +1,73 @@
+created: 20220525110807347
+difficulty: 1.0953239134772894
+due: 20220915004813903
+grade: 1
+history: [{"due":"20220531125930877","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530125930877"},{"due":"20220621143700838","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220602143700838"}]
+interval: 20
+lapses: 0
+modified: 20220622004813903
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220622004813903
+stability: 84.71832744247013
+tags: spark ?
+title: 分区处理算子
+type: text/vnd.tiddlywiki
+
+*数据**：有一个RDD读文件产生，有两个分区，每个分区有50万条数据
+
+*需求**：需要将RDD的数据进行一对一的处理转换，最后用将转换好的结果写入MySQL，怎么实现
+
+- map处理时，map中的函数被调用多少次？
+
+  - 每个元素调用一次，100万次
+
+- foreach处理时，MySQL的连接构建了多少个？
+
+  - 每个元素调用一次，100万个连接
+
+*问题**：注意MySQL每秒并发连接请求最多为千级别，一旦上万，MySQL就会宕机
+
+- 1-Spark中的map是每次读取一个元素放入内存，然后计算一次，一共需要读取磁盘100万次，性能相对较差
+
+- 2-如果Spark每秒写入10万条数据，每秒就需要构建10万个MySQL连接，然后将数据写入MySQL，MySQL会宕机
+
+*解决**：基于分区来操作，每次读取一个分区代替每次读取一个元素，每个分区构建一个MySQL连接代替每个元素构建一个连接
+
+*mapPartitions
+
+  - 功能：对RDD每个分区的数据进行操作，将每个分区的数据进行map转换，将转换的结果放入新的RDD中
+
+  - 分类：转换算子
+
+  - 语法
+
+`python
+    def mapPartitions(self: RDD[T], f: Iterable[T] -> Iterable[U] ) -> RDD[U]`
+
+    - 对比map：map对每个元素进行操作
+
+`python
+    def map(self: RDD[T], f: T -> U ) -> RDD[U]`
+
+*foreachParition
+
+  - 功能：对RDD每个分区的数据进行操作，将整个分区的数据加载到内存进行foreach处理，没有返回值
+
+  - 分类：触发算子
+
+  - 语法
+
+`python
+    def foreachParition(self: RDD[T] , f: Iterable[T] -> None) -> None`
+
+    - 对比foreach：对每个元素进行操作
+
+`python
+    def foreach(self: RDD[T] , f: T -> None) -> None`
+
+- **优点**：性能快、节省资源
+
+- **缺点**：如果单个分区的数据量较大，容易出现内存溢出
+
+- **场景**：数据量不是特别大，需要提高性能【将整个分区的数据放入内存】或者需要构建外部资源时【基于每个分区构建一份资源】

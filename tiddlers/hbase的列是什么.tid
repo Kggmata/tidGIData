@@ -1,0 +1,17 @@
+created: 20220601074148319
+difficulty: 1
+due: 20220914123355093
+grade: 2
+history: [{"due":"20220604130814026","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220603130814026"},{"due":"20220624005625989","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220607005625988"}]
+interval: 18
+lapses: 0
+modified: 20220625123355093
+reps: 3
+retrievability: 0.893696518950571
+review: 20220625123355093
+stability: 81.40525473163041
+tags: hbase ?
+title: hbase的列是什么
+type: text/vnd.tiddlywiki
+
+列族: column family

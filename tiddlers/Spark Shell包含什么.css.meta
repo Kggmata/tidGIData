@@ -1,0 +1,15 @@
+created: 20220519135214889
+difficulty: 2.4572513742164057
+due: 20220919131627169
+grade: 2
+history: [{"due":"20220523011514213","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011514213"},{"due":"20220524003502139","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523003502138"},{"due":"20220530072340521","interval":6,"difficulty":6.743660293347436,"stability":0.1200525453955683,"retrievability":0.44366029334743595,"grade":0,"lapses":2,"reps":1,"review":"20220529072340521"},{"due":"20220603142318389","interval":4,"difficulty":6.973542859944579,"stability":0.052727002747608956,"retrievability":0.029882566597142605,"grade":0,"lapses":3,"reps":1,"review":"20220602142318389"},{"due":"20220609124225084","interval":4,"difficulty":5.173880710254311,"stability":3.149921554971304,"retrievability":0.00033785030973188445,"grade":2,"lapses":3,"reps":2,"review":"20220606124225084"},{"due":"20220626114905679","interval":6,"difficulty":4.192045347705634,"stability":14.136296200633867,"retrievability":0.8181646374513227,"grade":2,"lapses":3,"reps":3,"review":"20220612114905679"},{"due":"20220805050004115","interval":17,"difficulty":4.273039538406855,"stability":36.969671420742756,"retrievability":0.8809941907012206,"grade":1,"lapses":3,"reps":4,"review":"20220629050004115"},{"due":"20220810035801113","interval":41,"difficulty":5.362761186757349,"stability":0.030119421724187252,"retrievability":0.8897216483504937,"grade":0,"lapses":4,"reps":1,"review":"20220809035801113"},{"due":"20220817084655252","interval":5,"difficulty":3.562761212108005,"stability":2.6009427545499566,"retrievability":2.5350655691687196e-8,"grade":2,"lapses":4,"reps":2,"review":"20220814084655252"}]
+interval: 9
+lapses: 4
+modified: 20220823131627170
+reps: 3
+retrievability: 0.6944901621084003
+review: 20220823131627169
+stability: 27.14772992133807
+tags: spark ?
+title: Spark Shell包含什么
+type: text/css

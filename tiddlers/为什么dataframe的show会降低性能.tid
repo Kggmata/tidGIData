@@ -1,0 +1,21 @@
+created: 20220703072719149
+difficulty: 1
+due: 20221109121933733
+grade: 2
+history: [{"due":"20220707034500128","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706034500128"},{"due":"20220726060053138","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":2,"lapses":0,"reps":2,"review":"20220710060053137"}]
+interval: 23
+lapses: 0
+modified: 20220802121933733
+reps: 3
+retrievability: 0.859946790337357
+review: 20220802121933733
+stability: 99.20238880625153
+tags: 用户画像 ?
+title: 为什么dataframe的show会降低性能
+type: text/vnd.tiddlywiki
+
+因为show是一个action
+
+spark默认是lazy模式, 直到必要的时候比如action
+
+因此应当尽可能的减少show的使用, 建议尽在代码调试阶段

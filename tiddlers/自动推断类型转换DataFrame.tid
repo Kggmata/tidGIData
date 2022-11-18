@@ -1,0 +1,126 @@
+created: 20220528135320113
+difficulty: 1.5900747941978677
+due: 20220831070152772
+grade: 1
+history: [{"due":"20220601053019835","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053019835"},{"due":"20220604090940303","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603090940303"},{"due":"20220621004514268","interval":4,"difficulty":1,"stability":14.2835505337834,"retrievability":0.007058121659701603,"grade":2,"lapses":1,"reps":2,"review":"20220607004514268"},{"due":"20220623043422909","interval":15,"difficulty":2.0952562399448285,"stability":0.054889119100343345,"retrievability":0.8952562399448285,"grade":0,"lapses":2,"reps":1,"review":"20220622043422909"},{"due":"20220703074043913","interval":3,"difficulty":1.2984119348825482,"stability":8.4355026024099,"retrievability":0.003155694937719725,"grade":1,"lapses":2,"reps":2,"review":"20220625074043913"},{"due":"20220707115212494","interval":11,"difficulty":2.3700409221184477,"stability":0.04065715014820503,"retrievability":0.8716289872358993,"grade":0,"lapses":3,"reps":1,"review":"20220706115212494"},{"due":"20220716062436079","interval":4,"difficulty":1.5700724148076521,"stability":5.840146819115828,"retrievability":0.00003149268920435674,"grade":1,"lapses":3,"reps":2,"review":"20220710062436079"}]
+interval: 11
+lapses: 3
+modified: 20220721070152772
+reps: 3
+retrievability: 0.8200023793902156
+review: 20220721070152772
+stability: 40.934468296223756
+tags: spark ?
+title: 自动推断类型转换DataFrame
+type: text/vnd.tiddlywiki
+
+问题1：工作中如果遇到了数据源是半结构化数据或者特殊格式的数据，能否直接使用SparkSQL进行处理？
+
+- 不能
+
+- SparkCore：适用于结构化或者非结构化的数据的处理
+
+- SparkSQL：适用于结构化数据的处理
+
+- 解决：先用SparkCore将非结构化数据进行清洗转化成结构化数据，然后使用SparkSQL进行统计分析
+
+*自动推断类型转换
+
+设计：将RDD中每条数据转换成Row类型，Spark可以自动将RDD转换成DataFrame
+
+` # step1: 读取数据
+    # 用RDD方式进行读取
+    movie_rdd = spark.sparkContext.textFile("../datas/movie/u.data")
+
+    # step2: 处理数据
+    """自动推断：RDD中每条数据必须为Row类型，Spark就可以实现自动推断"""
+    # a.将str类型的RDD变成Row类型的RDD
+    movie_rdd_row = ( movie_rdd
+                      # 先将每个字符串分割，变成列表
+                      .map(lambda line: re.split("\\s+", line))
+                      # 将每个列表转换成一条Row类型对象数据
+                  .map(lambda item: Row(userid=item[0], movieid=item[1], rate=float(item[2]), ts=int(item[3])))
+    )
+    
+    # b.将RDD转换成DF
+    movie_df = spark.createDataFrame(movie_rdd_row)
+
+    # step3: 保存结果
+    movie_df.printSchema()
+    movie_df.show()`
+
+*自定义Schema转换DataFrame
+
+- 第一步、**Create an RDD of tuples or lists from the original RDD**
+
+  - RDD中数据类型为元组或列表，比如[RDD[list] 或  RDD[tuple]]()
+
+- 第二步、**Create the schema represented by a `StructType`**
+
+  - 创建Schema，定义列名称和列类型，与第一步中RDD匹配
+
+- 第三步、Apply the schema to the RDD via `createDataFrame` method provided by `SparkSession`.
+
+  - 使用SparkSession组合RDD和Schema，转换为DataFrame
+
+`    # step1: 读取数据
+    # 用RDD方式进行读取
+    movie_rdd_str = spark.sparkContext.textFile("../datas/movie/u.data")
+
+    # step2: 处理数据
+    """自定义Schema：自己定义RDD中数据对应的Schema"""
+    # a.将str类型的RDD变成Row类型的RDD
+    movie_rdd_list = ( movie_rdd_str
+                      # 先将每个字符串分割，变成列表
+                      .map(lambda line: re.split("\\s+", line))
+                      # 将每个列表转换成一条Row类型对象数据
+                      .map(lambda item: [item[0], item[1], float(item[2]), int(item[3])] )
+    )
+
+    # b.定义与这个RDD中每一列向匹配的Schema
+    movie_schema = StructType([
+        StructField(name="userid", dataType=StringType(), nullable=False),
+        StructField(name="movieid", dataType=StringType(), nullable=False),
+        StructField(name="rate", dataType=DoubleType(), nullable=False),
+        StructField(name="ts", dataType=LongType(), nullable=False)
+    ])
+
+    # c.将RDD与Schema合并
+    movie_df = spark.createDataFrame(movie_rdd_list, movie_schema)
+
+    # step3: 保存结果
+    movie_df.printSchema()
+    movie_df.show()`
+
+*指定列名称转换DataFrame
+
+- **toDF函数**
+
+  - 功能：将元素类型为元组类型的RDD直接转换为DataFrame
+
+  - 语法
+
+    ```python
+    def toDF(self: RDD[RowLike], schema: List[str]) -> DataFrame
+    ```
+
+`    # step1: 读取数据
+    # 用RDD方式进行读取
+    movie_rdd_str = spark.sparkContext.textFile("../datas/movie/u.data")
+
+    # step2: 处理数据
+    """自定义Schema：自己定义RDD中数据对应的Schema"""
+    # a.将str类型的RDD变成Row类型的RDD
+    movie_rdd_list = ( movie_rdd_str
+                      # 先将每个字符串分割，变成列表
+                      .map(lambda line: re.split("\\s+", line))
+                      # 将每个列表转换成一条Row类型对象数据
+                      .map(lambda item: (item[0], item[1], float(item[2]), int(item[3])) )
+    )
+
+    # b.将RDD转换成DF
+    movie_df = movie_rdd_list.toDF(["userid", "movieid", "rate", "ts"])
+
+    # step3: 保存结果
+    movie_df.printSchema()
+    movie_df.show()`

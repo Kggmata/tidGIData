@@ -1,0 +1,66 @@
+created: 20220602131226465
+difficulty: 1.0881338099495967
+due: 20220919015428014
+grade: 1
+history: [{"due":"20220607064054532","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606064054532"},{"due":"20220627234929555","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220610234929555"}]
+interval: 19
+lapses: 0
+modified: 20220630015428014
+reps: 3
+retrievability: 0.8881338099495968
+review: 20220630015428014
+stability: 81.06494249758362
+tags: hbase ?
+title: Hbase的HA
+type: text/vnd.tiddlywiki
+
+[img[20220602173426.png]]
+
+```
+1. HBase的高可用是基于Zk来实现的，HBase支持1个Active（活跃），N个Backup（备份）
+2. 当HBase集群启动的时候，第一个Master进程，会在Zk中注册到临时节点
+3. 注册到临时节点所有权的Master进程，会接管全部的RegionServer
+4. 剩余的Master进程，由于启动的晚，没抢到临时节点，将自身标记为`backup`
+5. 这些备份的master进程，会定期检查ZK的临时节点
+6. 如果活跃master宕机，临时节点所有权就释放了
+7. 备份的master进程，谁先注册到临时节点，谁就是活跃的master，并且从Zk中读取元数据，接管RegionServer
+8. 宕机的老master被重启恢复后，也抢不到临时节点了，那么将自己标记为backup，等待上位。
+```
+
+```shell
+在Master换届期间，会有十几秒左右的无master时间（取决于临时节点超时的配置）
+
+在这个时间内，没有master下：
+
+- RegionServer正在进行的任务，一切照旧
+- 当前集群无法分配新任务
+
+也就是说没有master不影响老任务，只是新任务没人去分配了，等一会有master就正常了。
+```
+*快捷方式 无固定备份master
+
+高可用可以`不做任何的配置`，直接找一个机器，`启动master就行`。
+
+在`conf`中，新建一个`backup-masters`的文件，填入备份的master主机即可
+
+```shell
+node1
+node2
+node3
+```
+
+> 记录这个文件的作用就在于：
+>
+> 当我们使用`start-hbase.sh`脚本启动集群的时候
+>
+> 会自动启动：
+>
+> 1. 当前机器的master，作为活跃master
+> 2. 读取backup-masters内的主机，启动它们作为备份master
+>
+>backup-masters这个文件，只对start-hbase.sh启动脚本有用。
+>
+>backup-masters在node1,设置node2,node3为backup,那么在node1运行start-hbase.sh
+node1active主节点,node2,3为备用节点
+
+>如果在node2设置backup-master文件,同样设置node2,node3为备用节点,在node2运行start-base.sh,那么node2会是active主节点,node3备用节点,node1不会启动

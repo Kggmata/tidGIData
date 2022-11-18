@@ -1,0 +1,20 @@
+created: 20220819064717262
+modified: 20220819065030816
+tags: ? flink
+title: 3 types of layer in CNN
+type: text/vnd.tiddlywiki
+
+```
+convolution layer(Conv)
+Pooling:
+max pooling 
+average pooling
+
+Hyperparameter:
+f, s, padding(use very rare)
+
+Fully connected(FC)
+```
+```
+一般情况下, nh, nwdecrease, channel increase
+```

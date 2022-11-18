@@ -1,0 +1,102 @@
+created: 20220619075649631
+difficulty: 1
+due: 20220924131847470
+grade: 2
+history: [{"due":"20220621013842822","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620013842822"},{"due":"20220705081730202","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622081730202"}]
+interval: 17
+lapses: 0
+modified: 20220711003810363
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709131847469
+stability: 77.17521774511171
+tags: 用户画像 ?
+title: ES的node roles
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html
+
+Node roles
+
+```
+You define a node’s roles by setting node.roles in elasticsearch.yml. If you set node.roles, the node is only assigned the roles you specify. If you don’t set node.roles, the node is assigned the following roles:
+
+master:
+  vote-only
+  dedicated
+
+data
+data_content较长的数据保存要求
+data_hot最频繁使用的数据
+data_warm中等频繁使用的数据
+data_cold不频繁使用的数据
+data_frozen很少使用的数据
+
+coordinating-only
+ingest
+ml
+remote_cluster_client
+transform
+```
+
+Master-eligible node
+
+```
+A node that has the master role, which makes it eligible to be elected as the master node, which controls the cluster.
+
+The master node is responsible for lightweight cluster-wide actions such as creating or deleting an index, tracking which nodes are part of the cluster, and deciding which shards to allocate to which nodes. It is important for cluster health to have a stable master node.
+Any master-eligible node that is not a voting-only node may be elected to become the master node by the master election process.
+
+Similarly, each master-eligible node maintains the following data on disk:
+
+the index metadata for every index in the cluster, and
+the cluster-wide metadata, such as settings and index templates.
+```
+Data node
+
+```
+A node that has the data role. Data nodes hold data and perform data related operations such as CRUD, search, and aggregations. A node with the data role can fill any of the specialised data node roles.
+
+Data nodes hold the shards that contain the documents you have indexed. Data nodes handle data related operations like CRUD, search, and aggregations. These operations are I/O-, memory-, and CPU-intensive. It is important to monitor these resources and to add more data nodes if they are overloaded.
+The main benefit of having dedicated data nodes is the separation of the master and data roles
+
+Each data node maintains the following data on disk:
+
+1 the shard data for every shard allocated to that node,
+
+2 the index metadata corresponding with every shard allocated to that node, and
+
+3 the cluster-wide metadata, such as settings and index templates.
+```
+
+Ingest node
+
+```
+A node that has the ingest role. Ingest nodes are able to apply an ingest pipeline to a document in order to transform and enrich the document before indexing. With a heavy ingest load, it makes sense to use dedicated ingest nodes and to not include the ingest role from nodes that have the master or data roles.
+
+Ingest nodes can execute pre-processing pipelines, composed of one or more ingest processors. Depending on the type of operations performed by the ingest processors and the required resources, it may make sense to have dedicated ingest nodes, that will only perform this specific task.
+```
+
+Remote-eligible node
+
+```
+A node that has the remote_cluster_client role, which makes it eligible to act as a remote client.
+
+A remote-eligible node acts as a cross-cluster client and connects to remote clusters. Once connected, you can search remote clusters using cross-cluster search. You can also sync data between clusters using cross-cluster replication.
+```
+
+Machine learning node
+
+```
+A node that has the ml role. If you want to use machine learning features, there must be at least one machine learning node in your cluster. For more information, see Machine learning settings and Machine learning in the Elastic Stack.
+
+Machine learning nodes run jobs and handle machine learning API requests. For more information, see Machine learning settings.
+```
+
+Transform node
+
+```
+A node that has the transform role. If you want to use transforms, there must be at least one transform node in your cluster. For more information, see Transforms settings and Transforming data.
+
+Transform nodes run transforms and handle transform API requests. For more information, see Transforms settings.
+```

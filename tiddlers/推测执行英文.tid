@@ -1,0 +1,17 @@
+created: 20220711090937479
+difficulty: 1
+due: 20221029143703141
+grade: 2
+history: [{"due":"20220713040253057","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040253057"},{"due":"20220721073555616","interval":8,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220720073555615"},{"due":"20220729104106854","interval":8,"difficulty":1.2000114477216277,"stability":0.05488119468553914,"retrievability":0.000011447721627644813,"grade":0,"lapses":2,"reps":1,"review":"20220728104106854"},{"due":"20220815063955740","interval":8,"difficulty":1,"stability":10.165653873028125,"retrievability":2.137750772920513e-7,"grade":2,"lapses":2,"reps":2,"review":"20220805063955740"}]
+interval: 15
+lapses: 2
+modified: 20220820143703141
+reps: 3
+retrievability: 0.8560166702385896
+review: 20220820143703141
+stability: 69.56920114604685
+tags: hive ?
+title: 推测执行英文
+type: text/vnd.tiddlywiki
+
+Speculative Execution

@@ -1,0 +1,17 @@
+created: 20220716072817981
+difficulty: 1.9336452047336083
+due: 20220916014553527
+grade: 0
+history: [{"due":"20220722112011229","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721112011229"},{"due":"20220802105017198","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261508688753902,"grade":0,"lapses":1,"reps":1,"review":"20220801105017198"},{"due":"20220821082324610","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":2,"lapses":1,"reps":2,"review":"20220808082324610"}]
+interval: 38
+lapses: 2
+modified: 20220915014553527
+reps: 1
+retrievability: 0.7336452047336085
+review: 20220915014553527
+stability: 0.05488116409496729
+tags: ?
+title: python清华源
+type: text/vnd.tiddlywiki
+
+https://pypi.tuna.tsinghua.edu.cn/simple

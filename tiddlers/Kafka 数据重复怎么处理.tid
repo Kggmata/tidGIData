@@ -1,0 +1,22 @@
+created: 20220713070002600
+difficulty: 1.022337006947547
+due: 20221208114417289
+grade: 1
+history: [{"due":"20220719144117697","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718144117697"},{"due":"20220727113926389","interval":8,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220726113926389"},{"due":"20220817133030846","interval":9,"difficulty":1,"stability":12.927341248345753,"retrievability":0.0000027608925165954863,"grade":1,"lapses":1,"reps":2,"review":"20220804133030845"}]
+interval: 24
+lapses: 1
+modified: 20220828114417289
+reps: 3
+retrievability: 0.8223370069475472
+review: 20220828114417289
+stability: 101.92729658729172
+tags: ?
+title: Kafka 数据重复怎么处理
+type: text/vnd.tiddlywiki
+
+开启幂等性的 Producer 在初始化的时候会被分配一个 PID，发往同一 Partition 的消息会附带 Sequence Number。而 Broker 端会对 <PID, Partition, SeqNumber> 做缓存，当具有相同主键的消息提交时，Broker只会持久化一条。
+
+在下游消费者处理
+————————————————
+版权声明：本文为CSDN博主「xy29981」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_19007169/article/details/124725585

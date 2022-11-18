@@ -1,0 +1,21 @@
+created: 20220607054351138
+difficulty: 1.2993864766860177
+due: 20221014021901313
+grade: 1
+history: [{"due":"20220611043720965","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610043720965"},{"due":"20220630003240245","interval":4,"difficulty":1,"stability":16.473290229170406,"retrievability":0.01718665362921924,"grade":2,"lapses":0,"reps":2,"review":"20220614003240244"},{"due":"20220706025556210","interval":21,"difficulty":2.074316689905888,"stability":0.07408215765534414,"retrievability":0.8743166899058877,"grade":0,"lapses":1,"reps":1,"review":"20220705025556210"},{"due":"20220721045218632","interval":5,"difficulty":1.275132720436437,"stability":10.902549496337217,"retrievability":0.0008160305305493356,"grade":1,"lapses":1,"reps":2,"review":"20220710045218632"}]
+interval: 20
+lapses: 1
+modified: 20220730021901313
+reps: 3
+retrievability: 0.8242537562495809
+review: 20220730021901313
+stability: 75.79056589322832
+tags: hbase ?
+title: ZK对HBase意义是什么？没有ZK会影响HBase什么功能？
+type: text/vnd.tiddlywiki
+
+Zk首先是存储hbase的元数据, 包含各个regionServer的寻址入口
+
+然后负责HA高可用的master主备切换
+
+最后是监控regionserver的上线下线

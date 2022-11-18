@@ -1,0 +1,17 @@
+created: 20220714052051693
+difficulty: 1
+due: 20221206142107477
+grade: 2
+history: [{"due":"20220720151146842","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719151146842"},{"due":"20220730144605121","interval":10,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.0000265626666297211,"grade":0,"lapses":1,"reps":1,"review":"20220729144605121"},{"due":"20220818072105548","interval":7,"difficulty":1,"stability":12.926432277358748,"retrievability":0.00004746481942846522,"grade":1,"lapses":1,"reps":2,"review":"20220805072105548"}]
+interval: 23
+lapses: 1
+modified: 20220828142107478
+reps: 3
+retrievability: 0.8290556825578456
+review: 20220828142107477
+stability: 99.59020799887976
+tags: ?
+title: avl树
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-07-14_13-20-42.jpg]]

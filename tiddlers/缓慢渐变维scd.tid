@@ -1,0 +1,23 @@
+created: 20220523015325058
+difficulty: 1.882068212843924
+due: 20221006080053476
+grade: 1
+history: [{"due":"20220524081209880","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523081209880"},{"due":"20220528000557675","interval":1,"difficulty":2.780372221787294,"stability":4.00825033798033,"retrievability":0.8325719125598604,"grade":2,"lapses":0,"reps":2,"review":"20220524000557674"},{"due":"20220630013447611","interval":8,"difficulty":1.7907236235956276,"stability":29.311545151768094,"retrievability":0.8103514018083336,"grade":2,"lapses":0,"reps":3,"review":"20220601013447611"}]
+interval: 32
+lapses: 0
+modified: 20220703080053476
+reps: 4
+retrievability: 0.8913445892482964
+review: 20220703080053476
+stability: 95.28916815103118
+tags: 基础概念 ?
+title: 缓慢渐变维scd
+type: text/vnd.tiddlywiki
+
+slowly changing dimension
+
+scd1:新数据覆盖旧数据
+
+scd2:使用start_date,end_date记录历史数据生效时间
+
+scd3:给新数据建立单独字段

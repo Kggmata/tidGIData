@@ -1,0 +1,21 @@
+created: 20220724103437331
+difficulty: 0.025386988635295055
+due: 20220827143248685
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143248685
+reps: 1
+retrievability: 1
+review: 20220826143248685
+stability: 0.10000000088475645
+tags: flink ?
+title: java修饰符
+type: text/vnd.tiddlywiki
+
+```
+specifiers
+访问修饰符: default, public, protected, private
+非访问修饰符: final, abstract, static, synchronized
+```

@@ -1,0 +1,23 @@
+created: 20220622125425255
+difficulty: 1.0963567239886889
+due: 20220911133418448
+grade: 1
+history: [{"due":"20220625132028098","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624132028098"},{"due":"20220709062801252","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626062801252"}]
+interval: 14
+lapses: 0
+modified: 20220710133418448
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220710133418448
+stability: 62.708036231878836
+tags: 用户画像 ?
+title: Dynamic mapping
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-mapping.html#dynamic-mapping
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-field-mapping.html
+
+Dynamic mapping
+
+One of the most important features of Elasticsearch is that it tries to get out of your way and let you start exploring your data as quickly as possible. To index a document, you don’t have to first create an index, define a mapping type, and define your fields — you can just index a document and the index, type, and fields will display automatically:

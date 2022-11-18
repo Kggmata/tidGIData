@@ -1,0 +1,17 @@
+created: 20220521030702888
+difficulty: 2.0748186087784726
+due: 20221220235925536
+grade: 2
+history: [{"due":"20220524021522710","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021522710"},{"due":"20220615054056972","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529054056972"},{"due":"20220802104455173","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616104455173"}]
+interval: 51
+lapses: 0
+modified: 20220806235925536
+reps: 4
+retrievability: 0.8913241313900776
+review: 20220806235925536
+stability: 136.18234364390057
+tags: mapreduce ?
+title: reduce的作用
+type: text/vnd.tiddlywiki
+
+负责聚合

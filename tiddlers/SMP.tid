@@ -1,0 +1,21 @@
+created: 20220716141258444
+difficulty: 1.0197965854547897
+due: 20230108150427962
+grade: 1
+history: [{"due":"20220727050440174","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726050440174"},{"due":"20220820134109012","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220804134109012"}]
+interval: 31
+lapses: 0
+modified: 20220904150427962
+reps: 3
+retrievability: 0.8197965854547897
+review: 20220904150427961
+stability: 126.17351402567458
+tags: ?
+title: SMP
+type: text/vnd.tiddlywiki
+
+```
+对于数据处理系统的架构，最简单的实现方式当然就是单节点。当数据量增大、处理计算更加复杂时，我们可以考虑增加 CPU 数量、加大内存，也就是让这一台机器变得性能更强大，从而提高吞吐量——这就是所谓的 SMP（Symmetrical Multi-Processing，对称多处理）架构。
+
+但是这样做问题非常明显：所有 CPU 是完全平等、共享内存和总线资源的，这就势必造成资源竞争；而且随着 CPU 核心数量的增加，机器的成本会指数增长，所以 SMP 的可扩展性是比较差的，无法应对海量数据的处理场景。
+```

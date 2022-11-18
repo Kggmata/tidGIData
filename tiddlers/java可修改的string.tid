@@ -1,0 +1,20 @@
+created: 20220724124320777
+difficulty: 0.025386988635295055
+due: 20220827143616547
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143616547
+reps: 1
+retrievability: 1
+review: 20220826143616547
+stability: 0.10000000088475645
+tags: flink ?
+title: java可修改的string
+type: text/vnd.tiddlywiki
+
+```
+stringBuffer和stringBuilder
+和string不同, 他们能够倍多次修改
+```

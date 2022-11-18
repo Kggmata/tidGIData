@@ -1,0 +1,21 @@
+created: 20220712071104350
+difficulty: 1
+due: 20221114081149991
+grade: 2
+history: [{"due":"20220718071025334","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717071025334"},{"due":"20220809092706976","interval":7,"difficulty":1,"stability":16.42362666911943,"retrievability":0.0006265996821383716,"grade":2,"lapses":0,"reps":2,"review":"20220724092706976"}]
+interval: 21
+lapses: 0
+modified: 20220814081149991
+reps: 3
+retrievability: 0.8739616589731285
+review: 20220814081149991
+stability: 92.05212560775539
+tags: ?
+title: app层别名
+type: text/vnd.tiddlywiki
+
+ads application data service
+
+rpt representation
+
+app application

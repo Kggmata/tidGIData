@@ -1,0 +1,27 @@
+created: 20220521023222015
+difficulty: 2.229344411327985
+due: 20220919030707017
+grade: 2
+history: [{"due":"20220523084302772","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521084302772"},{"due":"20220529003255431","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003255431"},{"due":"20220628133709514","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602133709514"}]
+interval: 29
+lapses: 0
+modified: 20220701030707017
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701030707017
+stability: 80.25328821558121
+tags: hdfs ?
+title: NameNode与SecondaryNameNode 的区别与联系？
+type: text/vnd.tiddlywiki
+
+区别
+
+（1）NameNode负责管理整个文件系统的元数据，以及每一个路径（文件）所对应的数据块信息。
+
+（2）SecondaryNameNode主要用于定期合并命名空间镜像和命名空间镜像的编辑日志。
+
+联系：
+
+（1）SecondaryNameNode中保存了一份和namenode一致的镜像文件（fsimage）和编辑日志（edits）。
+
+（2）在主namenode发生故障时（假设没有及时备份数据），可以从SecondaryNameNode恢复数据。

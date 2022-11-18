@@ -1,0 +1,21 @@
+created: 20220617060956675
+difficulty: 2.1522967512734428
+due: 20220906003421790
+grade: 0
+history: [{"due":"20220620023214096","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619023214096"},{"due":"20220620235530950","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220619235530950"},{"due":"20220630145525211","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621145525211"},{"due":"20220822153921198","interval":11,"difficulty":1.0770024421488429,"stability":51.41655908444445,"retrievability":0.8770024421488429,"grade":1,"lapses":0,"reps":4,"review":"20220702153921197"}]
+interval: 65
+lapses: 1
+modified: 20220905003421790
+reps: 1
+retrievability: 0.8752943091245999
+review: 20220905003421790
+stability: 0.07408182272361549
+tags: 用户画像 ?
+title: 查看索引映射
+type: text/vnd.tiddlywiki
+
+```
+GET /job_idx/_mapping
+```
+或者取es head网页端查看
+[img[image-20220617115012429.png]]

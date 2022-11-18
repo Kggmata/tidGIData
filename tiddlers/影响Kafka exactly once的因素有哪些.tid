@@ -1,0 +1,18 @@
+created: 20220718085819495
+difficulty: 1
+due: 20220824140625603
+grade: 2
+history: [{"due":"20220801114704725","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114704725"},{"due":"20220807123829784","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806123829784"}]
+interval: 5
+lapses: 1
+modified: 20220811140625603
+reps: 2
+retrievability: 0.0008160046550921422
+review: 20220811140625603
+stability: 12.910806680748394
+tags: ?
+title: 影响Kafka exactly once的因素有哪些
+type: text/vnd.tiddlywiki
+
+在使用Kafka时，需要确保Exactly-Once语义。分布式系统中，一些不可控因素有很多，比如网络、OOM、FullGC等。在Kafka Broker确认Ack时，出现网络异常、FullGC、OOM等问题时导致Ack超时，Producer会进行重复发送。可能出现的情况如下：
+[img[Kafka幂等性原理及实现剖析 - 哥不是小萝莉 - 博客园2022-07-18 16_58_28.png]]

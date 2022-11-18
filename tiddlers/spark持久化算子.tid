@@ -1,0 +1,29 @@
+created: 20220715035431600
+difficulty: 1
+due: 20230221124654079
+grade: 1
+history: [{"due":"20220722090628119","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090628119"},{"due":"20220802105607294","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261508688753902,"grade":0,"lapses":1,"reps":1,"review":"20220801105607294"},{"due":"20220821082652927","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220808082652927"}]
+interval: 39
+lapses: 1
+modified: 20220916124654079
+reps: 3
+retrievability: 0.7276897260275259
+review: 20220916124654069
+stability: 158.428969972299
+tags: ?
+title: spark持久化算子
+type: text/vnd.tiddlywiki
+
+cache, persist, checkpoint
+
+控制算子, 
+
+持久化的最小单位是partition
+
+cache和persist都是懒执行的。必须有一个action类算子触发执行。checkpoint算子不仅能将RDD持久化到磁盘，还能切断RDD之间的依赖关系。
+
+1、cache和persist都是懒执行，必须有一个action类算子触发执行。
+
+2、cache和persist算子的返回值可以赋值给一个变量，在其他job中直接使用这个变量就是使用持久化的数据了。持久化的单位是partition。
+
+3、cache和persist算子后不能立即紧跟action算子。

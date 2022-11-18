@@ -1,0 +1,17 @@
+created: 20220519125321227
+difficulty: 1.6471566200312562
+due: 20230113143512922
+grade: 2
+history: [{"due":"20220522001557108","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001557108"},{"due":"20220528011445193","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522011445193"},{"due":"20220627062104722","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601062104722"},{"due":"20220630140515266","interval":28,"difficulty":4.232984010198816,"stability":0.07408316441686115,"retrievability":0.8918064933310472,"grade":0,"lapses":1,"reps":1,"review":"20220629140515266"},{"due":"20220705120746617","interval":5,"difficulty":4.433800119591539,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704120746617"},{"due":"20220714015214145","interval":6,"difficulty":3.633810062427939,"stability":4.152458030962336,"retrievability":0.00000994283639911803,"grade":1,"lapses":2,"reps":2,"review":"20220710015214145"},{"due":"20220821052138914","interval":11,"difficulty":2.5902716491985753,"stability":30.697146783171195,"retrievability":0.7564615867706365,"grade":2,"lapses":2,"reps":3,"review":"20220721052138914"}]
+interval: 45
+lapses: 2
+modified: 20220904143512923
+reps: 4
+retrievability: 0.856884970832681
+review: 20220904143512922
+stability: 131.44784818377693
+tags: hadoop ?
+title: Hive中不可以没有Metastore服务
+type: text/vnd.tiddlywiki
+
+Hive中可以没有Metastore服务，HiveServer2可以直接访问MySQL中的元数据进行处理和计算

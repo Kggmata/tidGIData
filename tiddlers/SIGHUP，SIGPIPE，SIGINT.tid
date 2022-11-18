@@ -1,0 +1,30 @@
+created: 20220627153004815
+difficulty: 1.05157013370948
+due: 20221110015724627
+grade: 1
+history: [{"due":"20220630131302564","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629131302564"},{"due":"20220721002619439","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705002619438"}]
+interval: 25
+lapses: 0
+modified: 20220730015724627
+reps: 3
+retrievability: 0.8515701337094802
+review: 20220730015724627
+stability: 103.24053881558572
+tags: 用户画像 ?
+title: SIGHUP，SIGPIPE，SIGINT
+type: text/vnd.tiddlywiki
+
+SIGHUP 信号在用户终端连接(正常或非正常)结束时发出
+
+```
+The SIGHUP (“hang-up”) signal is used to report that the user's terminal is disconnected
+```
+
+在网络编程中，SIGPIPE这个信号是很常见的。当往一个写端关闭的管道或socket连接中连续写入数据时会引发SIGPIPE信号,引发SIGPIPE信号的写操作将设置errno为EPIPE。
+
+```
+A SIGPIPE is sent to a process if it tried to write to a socket that had been shutdown for writing or isn't connected (anymore).
+```
+SIGINT在ctrl+c的时候发出, 默认是终止当前active进程,但是每个程序应对SIGINT信号的方式不同
+
+SIGINT is the signal sent when we press Ctrl+C. The default action is to terminate the process. However, some programs override this action and handle it differently.

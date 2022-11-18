@@ -1,0 +1,21 @@
+created: 20220623071900443
+difficulty: 1.045489689214815
+due: 20220909031000333
+grade: 1
+history: [{"due":"20220626000052989","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625000052989"},{"due":"20220628150848424","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220627150848424"},{"due":"20220630233438181","interval":2,"difficulty":1.2581730364369286,"stability":0.054882158045770235,"retrievability":0.05817303643692872,"grade":0,"lapses":2,"reps":1,"review":"20220629233438181"},{"due":"20220706050616909","interval":5,"difficulty":1.4582408468430899,"stability":0.04065715014820503,"retrievability":0.00006781040616137007,"grade":0,"lapses":3,"reps":1,"review":"20220705050616909"},{"due":"20220711040824224","interval":5,"difficulty":1.658243206029099,"stability":0.030119557630782685,"retrievability":0.000002359186009207673,"grade":0,"lapses":4,"reps":1,"review":"20220710040824224"},{"due":"20220718010929201","interval":2,"difficulty":1,"stability":6.277463748555188,"retrievability":0.0009153967974903628,"grade":1,"lapses":4,"reps":2,"review":"20220712010929201"}]
+interval: 10
+lapses: 4
+modified: 20220722031000333
+reps: 3
+retrievability: 0.8454896892148153
+review: 20220722031000332
+stability: 48.52444337967911
+tags: 用户画像 ?
+title: 领域专用语言有什么优点？ 我为什么要关注？
+type: text/vnd.tiddlywiki
+
+1 specifically: 在DSL面向的特定领域, 开发效率很高
+
+2 clear: 思路清晰, 更少冗余
+
+3 high quality: 质量更高: 错误更少、架构更加一致、可维护性更高。 

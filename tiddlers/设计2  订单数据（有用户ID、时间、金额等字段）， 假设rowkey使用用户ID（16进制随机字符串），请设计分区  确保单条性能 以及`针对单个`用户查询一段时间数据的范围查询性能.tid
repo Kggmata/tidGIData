@@ -1,0 +1,17 @@
+created: 20220607055904015
+difficulty: 1
+due: 20220920141203767
+grade: 2
+history: [{"due":"20220611044045027","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610044045027"},{"due":"20220629112532571","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613112532571"}]
+interval: 18
+lapses: 0
+modified: 20220701141203767
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701141203767
+stability: 81.1468944767812
+tags: hbase ?
+title: 设计2  订单数据（有用户ID、时间、金额等字段）， 假设rowkey使用用户ID（16进制随机字符串），请设计分区  确保单条性能 以及`针对单个`用户查询一段时间数据的范围查询性能
+type: text/vnd.tiddlywiki
+
+用户id_时间

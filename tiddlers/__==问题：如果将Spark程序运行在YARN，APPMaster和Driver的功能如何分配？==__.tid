@@ -1,0 +1,21 @@
+created: 20220522111216529
+difficulty: 1
+due: 20221004102615733
+grade: 2
+history: [{"due":"20220524063307326","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523063307326"},{"due":"20220524234039275","interval":0,"difficulty":2.947800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220523234039275"},{"due":"20220525232301421","interval":0,"difficulty":2.147800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":3,"review":"20220524232301421"},{"due":"20220707103000831","interval":6,"difficulty":1,"stability":37.118523502356865,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":4,"review":"20220531103000831"},{"due":"20220711045519318","interval":40,"difficulty":2.0926688865413943,"stability":0.07408215765534414,"retrievability":0.8926688865413943,"grade":0,"lapses":1,"reps":1,"review":"20220710045519317"},{"due":"20220720085947973","interval":1,"difficulty":1,"stability":8.569928231443768,"retrievability":0.2411799948253509,"grade":2,"lapses":1,"reps":2,"review":"20220711085947973"}]
+interval: 15
+lapses: 1
+modified: 20220726102615733
+reps: 3
+retrievability: 0.8315921339124286
+review: 20220726102615733
+stability: 69.94298672883983
+tags: spark ?
+title: **==问题：如果将Spark程序运行在YARN，APPMaster和Driver的功能如何分配？==**
+type: text/vnd.tiddlywiki
+
+- YARN中运行任何程序一定有Application Master
+
+- 任何一个Spark程序都一定有Driver
+
+- Application Master 和 Driver功能是对等的

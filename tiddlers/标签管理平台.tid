@@ -1,0 +1,21 @@
+created: 20220614141615654
+difficulty: 1
+due: 20230320131654321
+grade: 2
+history: [{"due":"20220617121131825","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121131825"},{"due":"20220618004801262","interval":1,"difficulty":1.2836910231529453,"stability":0.07416773238429089,"retrievability":0.3495295586291377,"grade":0,"lapses":1,"reps":1,"review":"20220617004801261"},{"due":"20220618235931028","interval":0,"difficulty":1,"stability":0.07416773238429089,"retrievability":1,"grade":2,"lapses":1,"reps":2,"review":"20220617235931028"},{"due":"20220628094139125","interval":1,"difficulty":1,"stability":8.571531378783702,"retrievability":0.24157608352612525,"grade":2,"lapses":1,"reps":3,"review":"20220619094139125"},{"due":"20220818142306652","interval":10,"difficulty":1,"stability":49.60683375997315,"retrievability":0.8843351782555586,"grade":2,"lapses":1,"reps":4,"review":"20220629142306652"}]
+interval: 55
+lapses: 1
+modified: 20220823131654321
+reps: 5
+retrievability: 0.8897496726775886
+review: 20220823131654321
+stability: 208.5071754863496
+tags: 用户画像 ?
+title: 标签管理平台
+type: text/vnd.tiddlywiki
+
+标签管理平台：
+
+```
+这里采用JavaWeb的方式，就是简单增删改查1-4级的标签
+```

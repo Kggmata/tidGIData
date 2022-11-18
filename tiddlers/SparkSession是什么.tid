@@ -1,0 +1,19 @@
+caption: {{||Question}}
+created: 20220519135733617
+difficulty: 1.6708092073687866
+due: 20221008070917054
+grade: 2
+history: [{"due":"20220523011644265","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011644265"},{"due":"20220529004045600","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523004045600"},{"due":"20220602102709589","interval":9,"difficulty":5.1558524350459605,"stability":0.11806790392114878,"retrievability":0.8558524350459593,"grade":0,"lapses":1,"reps":1,"review":"20220601102709589"},{"due":"20220609134923569","interval":2,"difficulty":3.5236923890739433,"stability":5.956896970056114,"retrievability":0.16783995402798293,"grade":2,"lapses":1,"reps":2,"review":"20220603134923569"},{"due":"20220708073105743","interval":9,"difficulty":2.5765315314523294,"stability":26.40166540334404,"retrievability":0.852839142378386,"grade":2,"lapses":1,"reps":3,"review":"20220612073105742"}]
+interval: 28
+lapses: 1
+modified: 20220710070917054
+reps: 4
+retrievability: 0.8942776759164571
+review: 20220710070917053
+stability: 90.48332620790623
+tags: spark ?
+title: SparkSession是什么
+type: text/vnd.tiddlywiki
+
+ - SparkSession也是Spark程序中的一个类，功能类似于SparkContext，Spark2.0以后推出的，**==主要用于SparkSQL==**
+  - 当前的程序中默认构建了一个SparkSession类的对象叫做spark

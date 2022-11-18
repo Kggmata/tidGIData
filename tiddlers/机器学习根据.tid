@@ -1,0 +1,22 @@
+created: 20220624054421707
+difficulty: 1.0963567239886889
+due: 20220912012425104
+grade: 1
+history: [{"due":"20220626015031595","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625015031595"},{"due":"20220710144219752","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220627144219752"}]
+interval: 14
+lapses: 0
+modified: 20220711012425104
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220711012425104
+stability: 62.708036231878836
+tags: 用户画像 ?
+title: 机器学习根据
+type: text/vnd.tiddlywiki
+
+基于规则学习-专家制定规则
+[img[image-20220624120233061.png]]
+基于模型学习-机器学习预测
+[img[image-20220624121031555.png]]
+
+总结：x-特征信息，y=类别标签列，模型：y=kx+b，需要学习k和b的最佳的值对应模型取值

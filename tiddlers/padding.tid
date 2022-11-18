@@ -1,0 +1,23 @@
+created: 20220819062058775
+modified: 20220819062356334
+tags: ? flink
+title: padding
+type: text/vnd.tiddlywiki
+
+```
+为什么需要padding, 
+
+1. 因为 经过edge detection 之后, 图片会变小, 每次convolution之后都会变小
+
+2. 中间像素点用的更多, 而边缘的像素点用的次数很少, 导致边缘信息更多的丢失
+```
+```
+padding是什么
+
+就是在原image的四周填充一圈像素点, 减弱了图片边界信息的丢失
+```
+```
+padding的两种方式: 
+1 valid convolution: 也就是不适用padding
+2 same convolution: 使用padding, 让output和input size相同
+```

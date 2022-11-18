@@ -1,0 +1,33 @@
+created: 20220725072115474
+modified: 20220729012917947
+tags: ? flink
+title: Hudi Timeline
+type: text/vnd.tiddlywiki
+
+```
+time包含instant action, instant time, state
+```
+[img[BillfishoPflho2022-07-25 15_21_33.PNG]]
+
+```
+instant action: type of actions perform on the table
+instant time: typically a timestamp, 记录action的时间
+state: instant state
+```
+```
+action包括:
+- commits: 一次commit是a batch of records的一次原子性写入
+- cleans: background activity用来清除旧版本的records
+- delta_commit: 代表MOR表的一次batch of records原子性写入, 一些数据可用仅写入delta logs.
+- compaction: background activity用来调整内部数据结构, 比如把row存储的log文件转化为columnar格式, 在Timeline上是一次special commit. 
+- rollback: 回滚, 如果commit/delta commit的原子性写入失败, 会回滚.
+- savepoint: 将特定file groups标记为saved, 这样cleaner不会删除他们. 可以帮助table restore到timeline的某个时间点
+```
+```
+instant的state包括:
+- requested: 代表一个action被scheduled, 但是还未初始化
+- inflight: 代表action正在执行
+- completed: 代表action完成
+```
+[img[BillfishQjRPGp2022-07-25 15_21_55.PNG]]
+[img[BillfishYuhLdv2022-07-25 15_22_14.PNG]]

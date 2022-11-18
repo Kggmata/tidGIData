@@ -1,0 +1,268 @@
+created: 20220621122030958
+difficulty: 1
+due: 20221027003042151
+grade: 2
+history: [{"due":"20220625123248092","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624123248092"},{"due":"20220712002255756","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":2,"lapses":0,"reps":2,"review":"20220627002255756"}]
+interval: 23
+lapses: 0
+modified: 20220720003042151
+reps: 3
+retrievability: 0.8541153584120541
+review: 20220720003042151
+stability: 99.2184412429942
+tags: 用户画像 ?
+title: Spark的DSL相关操作详解
+type: text/vnd.tiddlywiki
+
+```
+1-iris为例加载数据，通过案例学会如何访问iris数据集的每一列
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadES") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 2-读取csv的数据
+    # inferSchema spark读取数据的时候默认读取内置的scheme(解析器认为字段的类型)
+    irisDF = spark.read.format("csv") \
+        .option("sep", ",") \
+        .option("inferSchema", "true") \
+        .option("header", "true") \
+        .load("F:\\ProgramCJ\\InsuranceUserProfileVersion2\\cn\\test\\test59Scripts\\data\\iris.csv")
+    # 3-对csv的数据基本信息查看，printSchema，show
+    irisDF.show()
+    # 5-需求1：请大家打印schema信息
+    irisDF.printSchema()
+    # 6-需求2：打印出petal_width这一列
+    from pyspark.sql import functions as F
+    irisDF.select(irisDF["petal_width"]).show()
+    irisDF.select(irisDF.petal_width).show()#这种写法项目中不建议，很多字段不容易识别
+    irisDF.select(F.col("petal_width")).show()
+    # 7-需求3：打印出petal_width这一列所有的值+1
+    irisDF.select(irisDF["petal_width"]+1).show()
+    irisDF.select(irisDF.petal_width+1).show()  # 这种写法项目中不建议，很多字段不容易识别
+    irisDF.select(F.col("petal_width")+1).show()
+    # 8-给求解的列命名
+    irisDF.select(irisDF["petal_width"].alias("petal_width_alias")).show()
+    #withColumnRenamed:Returns a new :class:`DataFrame` by renaming an existing column.
+    irisDF.select(F.col("petal_width")+1).withColumnRenamed("(petal_width + 1)","add2").show()
+    irisDF.select((F.col("petal_width")+1).alias("test")).show()
+    # 9-现在希望选择两个列
+    irisDF.select(irisDF["petal_width"],irisDF["class"]).show()
+    irisDF.select(irisDF["petal_width"]+1,irisDF["class"]).show()
+    # Select people older than 21
+    irisDF.filter(irisDF['class'] != "Iris-setosa").show()
+    # +---+----+
+    # |age|name|
+    # +---+----+
+    # | 30|Andy|
+    # +---+----+
+    # Count people by age
+    irisDF.groupBy("class").count().show()
+    #+---------------+-----+
+    # |          class|count|
+    # +---------------+-----+
+    # |    Iris-setosa|   50|
+    # | Iris-virginica|   50|
+    # |Iris-versicolor|   50|
+    # +---------------+-----+
+    # spark.stop()
+```
+```
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext, Row
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadES") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 2-读取csv的数据
+    irisRDD = sc.textFile("F:\\ProgramCJ\\InsuranceUserProfileVersion2\\cn\\test\\test59Scripts\\data\\iris.txt")
+    print(irisRDD.collect())
+    parts = irisRDD.map(lambda l: l.split(","))
+    #sepal_length,sepal_width,petal_length,petal_width,classA
+    people = parts.map(lambda p: Row(sepal_length=float(p[0]),
+                                     sepal_width=float(p[1]),
+                                     petal_length=float(p[2]),
+                                     petal_width=float(p[3]),
+                                     classA=p[4]))
+    print(type(people))#rdd<class 'pyspark.rdd.PipelinedRDD'>
+    irisDF = spark.createDataFrame(people)
+    print(type(irisDF))#DataFrame <class 'pyspark.sql.dataframe.DataFrame'>
+    # show方法 是在sparksql中使用，在rdd中打印使用collect的方法将数据收集到driver端打印
+    irisDF.show()
+    irisDF.printSchema()
+    #root
+     # |-- classA: string (nullable = true)
+     # |-- petal_length: double (nullable = true)
+     # |-- petal_width: double (nullable = true)
+     # |-- sepal_length: double (nullable = true)
+     # |-- sepal_width: double (nullable = true)
+```
+```
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext, Row
+from pyspark.sql.types import DoubleType
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadES") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 2-读取csv的数据
+    irisRDD = sc.textFile("F:\\ProgramCJ\\InsuranceUserProfileVersion2\\cn\\test\\test59Scripts\\data\\iris.txt")
+    parts = irisRDD.map(lambda l: l.split(","))
+    df = parts.toDF(["sepal_length", "sepal_width", "petal_length", "petal_width", "classA"])
+    df.show()
+    df.printSchema()  # string类型
+    # root
+    # |-- sepal_length: string (nullable = true)
+    # |-- ,sepal_width: string (nullable = true)
+    # |-- petal_length: string (nullable = true)
+    # |-- petal_width: string (nullable = true)
+    # |-- classA: string (nullable = true)
+    # 问题：如何将上述string类型转化为double类型
+    df2 = df.select(df["sepal_length"].cast(DoubleType()))
+    df2.printSchema()
+    df2.show()
+    # df.df2(df["sepal_length"].cast("double")).show()
+
+```
+```
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext, Row
+from pyspark.sql.types import DoubleType, StructType, StructField, StringType, FloatType
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadES") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 2-读取csv的数据
+    irisRDD = sc.textFile("F:\\ProgramCJ\\InsuranceUserProfileVersion2\\cn\\test\\test59Scripts\\data\\iris.txt")
+    parts = irisRDD.map(lambda l: l.split(","))
+    people = parts.map(lambda p: (p[0],p[1],p[2],p[3],p[4]))
+    # 3-利用structype
+    # FloatType 是Spark的类型，不要和python混淆
+    schema=StructType([StructField("sepal_length", StringType(), True),
+                StructField("sepal_width", StringType(), False),
+                StructField("petal_length", StringType(), False),
+                StructField("petal_width", StringType(), False),
+                StructField("classA", StringType(), False),
+                ])
+    # 4-构建datafrmae
+    df = spark.createDataFrame(people, schema)
+    df.printSchema()
+    df.show()
+```

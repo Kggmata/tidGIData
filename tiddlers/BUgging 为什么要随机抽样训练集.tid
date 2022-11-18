@@ -1,0 +1,9 @@
+created: 20220820070611575
+modified: 20220820070709532
+tags: ? flink
+title: BUgging 为什么要随机抽样训练集
+type: text/vnd.tiddlywiki
+
+```
+因为不进行随机抽样, 每次训练数据集完全一样, 训练出的classifier也完全一样, 没有意义
+```

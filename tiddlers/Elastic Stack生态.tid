@@ -1,0 +1,55 @@
+created: 20220617114456345
+difficulty: 1
+due: 20220918131245444
+grade: 2
+history: [{"due":"20220620134817850","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619134817850"},{"due":"20220704022338708","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621022338708"}]
+interval: 16
+lapses: 0
+modified: 20220707131245444
+reps: 3
+retrievability: 0.8824752287483904
+review: 20220707131245443
+stability: 73.44779868247726
+tags: 用户画像 ?
+title: Elastic Stack生态
+type: text/vnd.tiddlywiki
+
+Beats + Logstash + ElasticSearch + Kibana
+[img[es-introduce-1-1.png]]
+由于Elastic X-Pack是面向收费的，所以我们不妨也把X-Pack放进去，看看哪些是由X-Pack带来的，在阅读官网文档时将方便你甄别重点：
+[img[es-introduce-1-0.png]]
+
+Beats 
+
+```
+Beats是一个面向轻量型采集器的平台，这些采集器可以从边缘机器向Logstash、ElasticSearch发送数据，它是由Go语言进行开发的，运行效率方面比较快。从下图中可以看出，不同Beats的套件是针对不同的数据源。
+```
+Logstash 
+
+```
+Logstash是动态数据收集管道，拥有可扩展的插件生态系统，支持从不同来源采集数据，转换数据，并将数据发送到不同的存储库中。其能够与ElasticSearch产生强大的协同作用，后被Elastic公司在2013年收购。
+ 它具有如下特性：
+1）实时解析和转换数据； 
+2）可扩展，具有200多个插件； 
+3）可靠性、安全性。Logstash会通过持久化队列来保证至少将运行中的事件送达一次，同时将数据进行传输加密； 
+4）监控；
+```
+
+ElasticSearch
+
+```
+ElasticSearch对数据进行搜索、分析和存储，其是基于JSON的分布式搜索和分析引擎，专门为实现水平可扩展性、高可靠性和管理便捷性而设计的。 
+它的实现原理主要分为以下几个步骤： 
+1）首先用户将数据提交到ElasticSearch数据库中； 
+2）再通过分词控制器将对应的语句分词； 
+3）将分词结果及其权重一并存入，以备用户在搜索数据时，根据权重将结果排名和打分，将返回结果呈现给用户；
+```
+
+Kibana
+
+```
+Kibana实现数据可视化，其作用就是在ElasticSearch中进行民航。Kibana能够以图表的形式呈现数据，并且具有可扩展的用户界面，可以全方位的配置和管理ElasticSearch。 
+Kibana最早的时候是基于Logstash创建的工具，后被Elastic公司在2013年收购。 
+1）Kibana可以提供各种可视化的图表； 
+2）可以通过机器学习的技术，对异常情况进行检测，用于提前发现可疑问题；
+```

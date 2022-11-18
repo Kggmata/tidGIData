@@ -1,0 +1,33 @@
+created: 20220612141647715
+difficulty: 1
+due: 20220925080036969
+grade: 2
+history: [{"due":"20220617031641195","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031641195"},{"due":"20220702133718024","interval":2,"difficulty":1,"stability":13.503436503233734,"retrievability":0.1227653108614827,"grade":2,"lapses":0,"reps":2,"review":"20220618133718024"}]
+interval: 18
+lapses: 0
+modified: 20220706080036969
+reps: 3
+retrievability: 0.8689715122532491
+review: 20220706080036969
+stability: 80.899654789959
+tags: kafka ?
+title: kafka为什么要分区
+type: text/vnd.tiddlywiki
+
+```
+假如没有分区，topic都存在一个broker上，那么这个broker就会成为瓶颈。
+
+Kafka中，分区可以均匀的分配在不同的broker集群上面，这样消息就可以均匀（取决于你的消息分区策略，默认的hash也会做到相对的均匀）的分布在不同的分区上，方便水平扩展
+```
+
+消息如何分区
+
+```
+默认根据消息的key的hashcode%为该topic分配的分区
+自定义分区：实现Partitioner；如果有些大客户数据（这些数据的key都是相同的），那么某个分区数据也会很多，这时候可以自定义分区，为大客户指定单独的分区。
+```
+
+作者：selrain001
+链接：https://juejin.cn/post/6844903679380684813
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

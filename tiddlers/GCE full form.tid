@@ -1,0 +1,17 @@
+created: 20220714013929436
+difficulty: 1
+due: 20221129132406806
+grade: 2
+history: [{"due":"20220720113241992","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719113241992"},{"due":"20220815014140280","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":2,"lapses":0,"reps":2,"review":"20220730014140280"}]
+interval: 23
+lapses: 0
+modified: 20220822132406806
+reps: 3
+retrievability: 0.8629435913626122
+review: 20220822132406806
+stability: 99.20795668530575
+tags: ?
+title: GCE full form
+type: text/vnd.tiddlywiki
+
+Google Compute Engine

@@ -1,0 +1,30 @@
+created: 20220717022406677
+difficulty: 1.964002556332901
+due: 20220917124705500
+grade: 0
+history: [{"due":"20220727065201111","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726065201111"},{"due":"20220821063129963","interval":10,"difficulty":1,"stability":16.43908736440644,"retrievability":0.000026561715818525218,"grade":1,"lapses":0,"reps":2,"review":"20220805063129962"}]
+interval: 42
+lapses: 1
+modified: 20220916124705500
+reps: 1
+retrievability: 0.7640025563329013
+review: 20220916124705500
+stability: 0.07408182272361549
+tags: ?
+title: SQL 中表的概念
+type: text/vnd.tiddlywiki
+
+```
+一个表的全名（标识）会由三个部分组成：Catalog 名称.数据库名称.表名称。
+如果 Catalog 名称或者数据库名称没有指明，就会使用当前默认值 default。
+举个例子，下面这个 SQL 创建的 Table 的全名为 default.default.table1。
+tableEnv.executeSql("CREATE TEMPORARY TABLE table1 ... WITH ( 'connector' = ... )");
+下面这个 SQL 创建的 Table 的全名为 default.mydatabase.table1。
+tableEnv.executeSql("CREATE TEMPORARY TABLE mydatabase.table1 ... WITH ( 'connector' = ... )");
+表可以是常规的（外部表 TABLE），也可以是虚拟的（视图 VIEW）。
+	外部表 TABLE：描述的是外部数据，例如文件（HDFS）、消息队列（Kafka）等。依然拿离线 Hive SQL 举个例子，离线中一个表指的是 Hive 表，也就是所说的外部数据。
+	视图 VIEW：从已经存在的表中创建，视图一般是一个 SQL 逻辑的查询结果。对比到离线的 Hive SQL 中，在离线的场景（Hive 表）中 VIEW 也都是从已有的表中去创建的。其实 Flink 也是一样的。
+	注意事项
+这里有不同的地方就是，离线 Hive MetaStore 中不会有 Catalog 这个概念，其标识都数据库.数据表。
+
+```

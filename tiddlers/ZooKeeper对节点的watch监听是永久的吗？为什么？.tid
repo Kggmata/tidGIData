@@ -1,0 +1,25 @@
+created: 20220521060215996
+difficulty: 3.199660036483145
+due: 20220910150632935
+grade: 2
+history: [{"due":"20220524032123373","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032123373"},{"due":"20220621102003709","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531102003709"},{"due":"20220813015617539","interval":23,"difficulty":3.912185197386786,"stability":51.190821615656525,"retrievability":0.889754085535843,"grade":1,"lapses":0,"reps":3,"review":"20220623015617539"},{"due":"20220821014337202","interval":58,"difficulty":4.999660035939798,"stability":0.07408182272361549,"retrievability":0.8874748385530122,"grade":0,"lapses":1,"reps":1,"review":"20220820014337202"}]
+interval: 15
+lapses: 1
+modified: 20220904150632935
+reps: 2
+retrievability: 5.433470770278863e-10
+review: 20220904150632935
+stability: 5.768407323321201
+tags: zookeeper ?
+title: ZooKeeper对节点的watch监听是永久的吗？为什么？
+type: text/vnd.tiddlywiki
+
+不是。
+
+官方声明：一个Watch事件是一个一次性的触发器，当被设置了Watch的数据发生了改变的时候，则服务器将这个改变发送给设置了Watch的客户端，以便通知它们。
+
+为什么不是永久的，举个例子，如果服务端变动频繁，而监听的客户端很多情况下，每次变动都要通知到所有的客户端，这太消耗性能了。
+
+一般是客户端执行getData(“/节点A”,true)，如果节点A发生了变更或删除，客户端会得到它的watch事件，但是在之后节点A又发生了变更，而客户端又没有设置watch事件，就不再给客户端发送。
+
+在实际应用中，很多情况下，我们的客户端不需要知道服务端的每一次变动，我只要最新的数据即可。

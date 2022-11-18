@@ -1,0 +1,61 @@
+created: 20220525063400165
+difficulty: 1
+due: 20220923005212905
+grade: 2
+history: [{"due":"20220529151817353","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528151817353"},{"due":"20220621112022763","interval":4,"difficulty":1.3310647873439139,"stability":19.873133781910397,"retrievability":0.14564366571177542,"grade":2,"lapses":0,"reps":2,"review":"20220601112022763"}]
+interval: 21
+lapses: 0
+modified: 20220622005212905
+reps: 3
+retrievability: 0.8946391981747235
+review: 20220622005212905
+stability: 92.73882157712833
+tags: spark ?
+title: 分区转换算子
+type: text/vnd.tiddlywiki
+
+*repartition算子
+
+- 功能：调整RDD的分区个数
+
+- 分类：转换算子
+
+- 场景：一般用于调大分区个数
+
+`- repartition能不能降低分区个数：能，但是没必要
+
+- 调大分区为什么一定要经过shuffle过程：必须调用Hash分区器来实现
+
+- rdd1.repartition(4)`
+
+- 特点：必须经过Shuffle过程, repartition底层就是coalesce（shuffle=True）
+
+- 语法
+
+`python
+  def repartition(self,numPartitions) -> RDD[T]`
+
+*coalesce算子
+
+- 功能：调整RDD的分区个数
+
+- 分类：转换算子
+
+- 场景：一般用于降低分区个数
+
+`- coalesce能否调大分区个数：可以，不如直接调用repartition
+
+- 降低分区数为什么可以不经过shuffle：将多个分区直接合并为1个分区的数据
+
+- rdd2.coalesce(1)`
+
+- 特点：可以选择是否经过Shuffle
+
+- 语法
+
+`python
+  def coalesce(self, numPartitions, shuffle) -> RDD[T]`
+
+  
+
+  

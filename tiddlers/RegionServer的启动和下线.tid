@@ -1,0 +1,35 @@
+created: 20220606060626430
+difficulty: 1.3027344734287876
+due: 20220912084645865
+grade: 1
+history: [{"due":"20220610113550991","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609113550991"},{"due":"20220614095822655","interval":4,"difficulty":1.4859391209733,"stability":0.07545638712607733,"retrievability":0.01718665362921924,"grade":0,"lapses":1,"reps":1,"review":"20220613095822655"},{"due":"20220617064621249","interval":3,"difficulty":1.701101616372913,"stability":0.05500845146445375,"retrievability":0.01516249539961304,"grade":0,"lapses":2,"reps":1,"review":"20220616064621249"},{"due":"20220619150845894","interval":2,"difficulty":1.9227959789510263,"stability":0.04068054026463326,"retrievability":0.02169436257811349,"grade":0,"lapses":3,"reps":1,"review":"20220618150845894"},{"due":"20220628135716313","interval":2,"difficulty":1,"stability":7.927130916460668,"retrievability":0.005628582968693983,"grade":2,"lapses":3,"reps":2,"review":"20220620135716313"},{"due":"20220702070934902","interval":11,"difficulty":2.063982803688017,"stability":0.030119966949470094,"retrievability":0.8639828036880168,"grade":0,"lapses":4,"reps":1,"review":"20220701070934902"},{"due":"20220707095437442","interval":5,"difficulty":2.2639828290467,"stability":0.022313117091756884,"retrievability":2.5358683198950755e-8,"grade":0,"lapses":5,"reps":1,"review":"20220706095437442"},{"due":"20220711070037806","interval":4,"difficulty":2.4639828353157736,"stability":0.016529963701778165,"retrievability":6.269073260020821e-9,"grade":0,"lapses":6,"reps":1,"review":"20220710070037805"},{"due":"20220718013607224","interval":4,"difficulty":1,"stability":3.8878864790311796,"retrievability":8.460240101871655e-12,"grade":2,"lapses":6,"reps":2,"review":"20220714013607224"},{"due":"20220724091350455","interval":9,"difficulty":1.9835681779555634,"stability":0.012245656693344813,"retrievability":0.7835681779555635,"grade":0,"lapses":7,"reps":1,"review":"20220723091350455"},{"due":"20220803013445484","interval":10,"difficulty":2.1835681779555633,"stability":0.009071797897366658,"retrievability":4.302273819962781e-38,"grade":0,"lapses":8,"reps":1,"review":"20220802013445484"},{"due":"20220810082427428","interval":6,"difficulty":1.3835681779555633,"stability":1.9176059925701767,"retrievability":5.450485857798826e-31,"grade":1,"lapses":8,"reps":2,"review":"20220808082427428"}]
+interval: 6
+lapses: 8
+modified: 20220814084645865
+reps: 3
+retrievability: 0.7191662954732243
+review: 20220814084645865
+stability: 29.133169524270595
+tags: hbase ?
+title: RegionServer的启动和下线
+type: text/vnd.tiddlywiki
+
+上线
+
+`RegionServer上线会在ZK的server(/hbase/rs)目录内注册自己（在ZK中记录自己是小弟）
+- Master就能从ZK中，得知小弟上线了
+- Master就可以从ZK中，去核对并校准小弟的信息
+  - IP、主机名
+  - CPU、内存
+  - `region`的信息
+- RegionServer就等待干活了`
+
+下线
+
+`RegionServer下线后，和ZK断联，Master就能从ZK中监听到这个行为
+- 一旦 超过一定的时间 （和Zookeeper连接的超时时间默认15秒）后，RegionServer没有重连回来，master会 断定  这个RegionServer宕机了
+- 一旦被master认定下线宕机后，master会将其在ZK的节点清除（因为RS下线后节点占用丢失）
+- 将下线的RS的region，分配给其它在线的RegionServer管理`
+
+> 一句话：下线了，你的region给别的RegionServer管理
+

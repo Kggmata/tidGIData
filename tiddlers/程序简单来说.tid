@@ -1,0 +1,17 @@
+created: 20220711120931857
+difficulty: 1
+due: 20221102074911918
+grade: 2
+history: [{"due":"20220713040630340","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040630340"},{"due":"20220806014804359","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721014804359"}]
+interval: 19
+lapses: 0
+modified: 20220809074911919
+reps: 3
+retrievability: 0.8853405116014387
+review: 20220809074911918
+stability: 84.88779656040188
+tags: ?
+title: 程序简单来说
+type: text/vnd.tiddlywiki
+
+数据结构和算法

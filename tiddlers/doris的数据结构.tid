@@ -1,0 +1,11 @@
+created: 20220729090237873
+modified: 20220729090355032
+tags: ? flink
+title: doris的数据结构
+type: text/vnd.tiddlywiki
+
+```
+doris的数据存储类似SSTable(Sorted String table), 是一种有序的数据结构, 按照指定的列进行排序存储, 以排序的列进行查找会非常高效
+在 Aggregate、Unique 和 Duplicate 三种数据模型中。底层的数据存储，是按照各自建表语句中，AGGREGATE KEY、UNIQUE KEY 和 DUPLICATE KEY 中指定的列进行排序存储的。
+
+```

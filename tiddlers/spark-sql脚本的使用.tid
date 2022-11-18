@@ -1,0 +1,42 @@
+created: 20220530123856228
+difficulty: 1
+due: 20230228134745447
+grade: 2
+history: [{"due":"20220601084009047","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531084009047"},{"due":"20220622131607067","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603131607067"},{"due":"20220625005501808","interval":21,"difficulty":2.0903877853574464,"stability":0.07408719146292923,"retrievability":0.8903877853574464,"grade":0,"lapses":1,"reps":1,"review":"20220624005501808"},{"due":"20220628002100474","interval":3,"difficulty":2.304420760108933,"stability":0.05488315248213783,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220627002100474"},{"due":"20220709080441794","interval":4,"difficulty":1.504883244950922,"stability":7.644627233408031,"retrievability":0.0004624848419891039,"grade":1,"lapses":2,"reps":2,"review":"20220701080441793"},{"due":"20220818011946855","interval":10,"difficulty":1.5761361692997407,"stability":38.15974424550869,"retrievability":0.8712529243488188,"grade":1,"lapses":2,"reps":3,"review":"20220711011946854"}]
+interval: 48
+lapses: 2
+modified: 20220828134745448
+reps: 4
+retrievability: 0.8758767986479792
+review: 20220828134745447
+stability: 184.21606253782073
+tags: spark ?
+title: spark-sql脚本的使用
+type: text/vnd.tiddlywiki
+
+spark-sql脚本**：类似于Hive中的hive脚本
+
+```
+# 启动HDFS服务：NameNode和DataNodes
+start-dfs.sh
+start-yarn.sh
+
+# 启动HiveMetaStore 服务
+start-metastore.sh 
+
+# 设置Spark日志级别
+cd /export/server/spark-local/conf/
+mv log4j.properties.template log4j.properties
+vim log4j.properties 
+#修改INFO为WARN
+log4j.rootCategory=WARN, console
+
+# 启动spark-sql命令行
+/export/server/spark-local/bin/spark-sql --master local[2] --conf spark.sql.shuffle.partitions=2`
+
+`spark-sql> show databases ;
+spark-sql> use db_hive ;
+spark-sql> show tables ;
+spark-sql> select * from db_hive.emp ;
+```
+

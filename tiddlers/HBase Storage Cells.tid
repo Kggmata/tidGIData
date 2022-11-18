@@ -1,0 +1,17 @@
+created: 20220601091311699
+difficulty: 1
+due: 20220914080015195
+grade: 2
+history: [{"due":"20220605024010038","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604024010037"},{"due":"20220623023207987","interval":3,"difficulty":1,"stability":16.00419314059993,"retrievability":0.05273732312238567,"grade":2,"lapses":0,"reps":2,"review":"20220607023207987"}]
+interval: 18
+lapses: 0
+modified: 20220625080015196
+reps: 3
+retrievability: 0.8882522377612516
+review: 20220625080015195
+stability: 81.20737317396814
+tags: hbase ?
+title: HBase Storage Cells
+type: text/vnd.tiddlywiki
+
+HBase stores data as a group of values, or cells. HBase uniquely identifies each cell by a key. Using a key, you can look up the data for records stored in HBase very quickly. You can also insert, modify, or delete records in the middle of a dataset. HBase makes this possible by organizing data by storage key.

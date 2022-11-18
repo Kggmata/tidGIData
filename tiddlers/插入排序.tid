@@ -1,0 +1,29 @@
+created: 20220526003715271
+difficulty: 1
+due: 20220915145437791
+grade: 2
+history: [{"due":"20220531130126677","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130126677"},{"due":"20220621143615663","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220602143615663"}]
+interval: 19
+lapses: 0
+modified: 20220621145437791
+reps: 3
+retrievability: 0.9002874064837764
+review: 20220621145437791
+stability: 85.55303743418845
+tags: 数据结构 ?
+title: 插入排序
+type: text/vnd.tiddlywiki
+
+`def insert_sort(list0: list):
+    for i in range(1, len(list0)):
+        tmp = list0[i]
+        j = i - 1
+        while list0[j] > tmp and j >= 0:
+            list0[j + 1] = list0[j]
+            j -= 1
+        list0[j + 1] = tmp
+        print(list0)
+    return list0
+
+
+print(f"\n{insert_sort([3, 2, 1, 4, 5, 7, 1])}")`

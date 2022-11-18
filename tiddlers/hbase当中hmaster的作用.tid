@@ -1,0 +1,25 @@
+created: 20220602002029183
+difficulty: 1
+due: 20221007082043493
+grade: 2
+history: [{"due":"20220605072438695","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604072438695"},{"due":"20220626002449930","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002449930"},{"due":"20220630022213439","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629022213439"},{"due":"20220705104405992","interval":5,"difficulty":2.2855622183099835,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704104405992"},{"due":"20220720003429377","interval":6,"difficulty":1,"stability":10.165567424338107,"retrievability":0.00000994283639911803,"grade":2,"lapses":2,"reps":2,"review":"20220710003429376"},{"due":"20220727105326725","interval":16,"difficulty":2.0471892271731464,"stability":0.04065698899582806,"retrievability":0.8471892271731463,"grade":0,"lapses":3,"reps":1,"review":"20220726105326725"},{"due":"20220810042644412","interval":8,"difficulty":1.2471892281648544,"stability":6.854641952494806,"retrievability":9.917079777346664e-10,"grade":1,"lapses":3,"reps":2,"review":"20220803042644411"}]
+interval: 11
+lapses: 3
+modified: 20220814082043493
+reps: 3
+retrievability: 0.8444434629481314
+review: 20220814082043493
+stability: 53.957124310660056
+tags: hbase ?
+title: hbase当中hmaster的作用
+type: text/vnd.tiddlywiki
+
+1为Region server分配region
+
+2负责region server的负载均衡
+
+3发现失效的region server并重新分配其上的region
+
+4HDFS gc
+
+5处理schema更新请求

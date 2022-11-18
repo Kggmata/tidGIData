@@ -1,0 +1,104 @@
+created: 20220609111039029
+difficulty: 1.6687465855722723
+due: 20220921055025220
+grade: 1
+history: [{"due":"20220614102544066","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102544066"},{"due":"20220711044149847","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024503094"},{"due":"20220713112059605","interval":26,"difficulty":2.0383066006611736,"stability":0.07408215765534414,"retrievability":0.8383066006611735,"grade":0,"lapses":1,"reps":1,"review":"20220712112059605"},{"due":"20220721090617265","interval":8,"difficulty":2.2383180486778147,"stability":0.054881287913948605,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220720090617265"},{"due":"20220729105040743","interval":8,"difficulty":2.4383182624584694,"stability":0.04065698899582806,"retrievability":2.137806546823325e-7,"grade":0,"lapses":3,"reps":1,"review":"20220728105040742"},{"due":"20220811064017378","interval":8,"difficulty":1.6383182634501774,"stability":5.670224425144512,"retrievability":9.917079777346664e-10,"grade":1,"lapses":3,"reps":2,"review":"20220805064017378"}]
+interval: 10
+lapses: 3
+modified: 20220815055025220
+reps: 3
+retrievability: 0.8304283221220949
+review: 20220815055025220
+stability: 36.71966085921569
+tags: kafka ?
+title: 消费者代码
+type: text/vnd.tiddlywiki
+
+topic, group_id, auto_offset_reset, enable_auto_commit
+
+massage包括topic partition offset key value
+
+```
+# coding:utf8
+"""
+Kafka消费者的API
+"""
+from kafka import KafkaConsumer
+
+consumer = KafkaConsumer(
+    "testpython", # topic
+    group_id="mygroup", # 消费者组，明天说
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092'],
+    auto_offset_reset='earliest',    # 启动的时候 从`可用`的最早数据开始读取，如果不设置这个参数，上来就等新数据，已有的完全不管
+    enable_auto_commit=False    # 如果是True，你消费后，默认1分钟会在Kafka中记录你上一次消费到哪了
+)
+
+for message in consumer:
+    # 这个for循环不会停止，有数据就会进来执行，没数据就一直等待
+    # 消费者的特性是，持续监控kafka的topic各个分区，有数据就抓取
+    topic = message.topic
+    partition = message.partition
+    offset = message.offset
+    key = message.key
+    value = message.value.decode("UTF-8")   # 消费出来的数据是byte，要自行decode解码
+
+    print(
+        "消费的topic是:%s，本条消息的分区号是：%d，本条消息的offset是：%d，"
+        "本条消息的key是：%s，本条消息的内容是：%s" % (topic, partition, offset, key, value)
+    )
+```
+
+>注意：for message in consumer 这个for循环是无限循环
+>
+>会一直等待新数据，没数据就一直等，有数据就干活
+>
+>所以，消费者的程序一启动就不会停止。
+>
+>数据就是：value = message.value.decode("UTF-8") 获取出来，要注意，要自行解码（byte 转 字符串）
+
+手动提交消费的offset
+
+```
+# coding:utf8
+"""
+Kafka消费者的API
+"""
+from kafka import KafkaConsumer
+
+consumer = KafkaConsumer(
+    "testpython", # topic
+    group_id="mygroup", # 消费者组，明天说
+    bootstrap_servers=['node1:9092', 'node2:9092', 'node3:9092'],
+    auto_offset_reset='earliest',    # 启动的时候 从`可用`的最早数据开始读取，如果不设置这个参数，上来就等新数据，已有的完全不管
+    enable_auto_commit=False    # 关闭自动提交
+)
+
+for message in consumer:
+    # 这个for循环不会停止，有数据就会进来执行，没数据就一直等待
+    # 消费者的特性是，持续监控kafka的topic各个分区，有数据就抓取
+    topic = message.topic
+    partition = message.partition
+    offset = message.offset
+    key = message.key
+    value = message.value.decode("UTF-8")   # 消费出来的数据是byte，要自行decode解码
+
+    print(
+        "消费的topic是:%s，本条消息的分区号是：%d，本条消息的offset是：%d，"
+        "本条消息的key是：%s，本条消息的内容是：%s" % (topic, partition, offset, key, value)
+    )
+    
+    consumer.commit() # 提交当前消费的offset到kafka内置主题
+```
+
+> 也就是需要：
+>
+> 1. 构建Consumer对象的时候，设置enable_auto_commit=False 关闭自动提交
+> 2. 消费到一条数据后，自行consumer.commit() 提交记录到内置主题去记录
+
+
+
+设置启动的时候，从哪里开始消费
+
+auto_offset_reset这个参数设置为：earliest
+
+表示从`可用`的最早数据开始消费，上一次的记录值

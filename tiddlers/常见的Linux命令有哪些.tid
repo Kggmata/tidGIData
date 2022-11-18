@@ -1,0 +1,51 @@
+created: 20220622060205090
+difficulty: 1.0963567239886889
+due: 20220911123237349
+grade: 1
+history: [{"due":"20220625130622411","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624130622411"},{"due":"20220709005622134","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220626005622134"}]
+interval: 14
+lapses: 0
+modified: 20220712013635479
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220710123237349
+stability: 62.708036231878836
+tags: 用户画像 ?
+title: 常见的Linux命令有哪些
+type: text/vnd.tiddlywiki
+
+
+1、常见的Linux命令有哪些？
+
+```
+[常见命令·面试不建议说]
+cd命令：进入指定的目录
+pwd命令：显示当前的工作路径
+s命令：查看目录中的文件和文件夹
+cp命令：复制(copy)（拷贝）命令
+mv命令：移动文件、更改名称（重命名）
+rm命令：删除命令
+```
+
+【建议面试的时候说】
+
+```
+cat命令 (short for “concatenate“)：查看文本文件的内容，工作用它看什么？日志、文件！！！[静态查看文件（日志）]
+find命令：根据指定文件路径，查找对应的文件
+jps命令java process：查看当前系统中，java进程
+df命令 disk format：查看inux系统中磁盘df-h (human readable)
+[拓展、面试的时候，好使！！！]
+top命令：查看cpu使用情况[拓展、面试的时候好使！！！]
+tail命令 tail -f (follow)：动态查看文件（日志）tail-fXxx.log 
+By default, tail will output the last 10 lines of its input to the standard output. With command line options, the amount of output and the units (lines, blocks or bytes) may be changed.
+
+free -h 查看内存
+```
+
+[面试问题-回答方式]
+
+```
+1:兄弟，你简单说一下，你常用的iux命令有哪些？？？
+静态查看一下日志，cat、查找一些文件find、jps、关注一下集群的磁盘资源df-h、当前系统中cpu使用的情
+况top
+```

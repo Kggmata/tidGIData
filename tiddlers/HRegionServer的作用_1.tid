@@ -1,0 +1,24 @@
+created: 20220605060442884
+difficulty: 1
+due: 20220929103915000
+grade: 2
+history: [{"due":"20220608060450837","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220607060450837"},{"due":"20220629071333351","interval":5,"difficulty":1,"stability":16.761683814178046,"retrievability":0.006222847464917221,"grade":2,"lapses":0,"reps":2,"review":"20220612071333350"}]
+interval: 20
+lapses: 0
+modified: 20220702103915000
+reps: 3
+retrievability: 0.881865341412669
+review: 20220702103914999
+stability: 88.52257450657113
+tags: hbase ?
+title: HRegionServer的作用
+type: text/vnd.tiddlywiki
+
+细节：
+
+```
+托管分配给它的Region（数据块），去负责对应的数据工作（存、查、改、删）
+- 刷新内存缓存到HDFS形成HFile
+- 维护HLog（WALs）
+- 执行数据的压缩、region的分裂、HFile的合并等
+```

@@ -1,0 +1,40 @@
+created: 20220723022640965
+difficulty: 1
+due: 20221009120308329
+grade: 0
+history: [{"due":"20220822142703443","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821142703443"}]
+interval: 48
+lapses: 1
+modified: 20221008120308329
+reps: 1
+retrievability: 1.0874385510043795e-22
+review: 20221008120308329
+stability: 0.07408182272361549
+tags: ?
+title: flink deduplication
+type: text/vnd.tiddlywiki
+
+```
+Deduplication 其实就是去重，也即上文介绍到的 TopN 中 row_number = 1 的场景，但是这里有一点不一样在于其排序字段一定是时间属性列，不能是其他非时间属性的普通列。在 row_number = 1 时，如果排序字段是普通列 planner 会翻译成 TopN 算子，如果是时间属性列 planner 会翻译成 Deduplication，这两者最终的执行算子是不一样的，Deduplication 相比 TopN 算子专门做了对应的优化，性能会有很大提升。
+```
+```
+使用row_time
+	数据源：消费到 Kafka 中数据后，将数据按照 partition by 的 key 通过 hash 分发策略发送到下游去重算子
+	Deduplication 去重算子：接受到上游数据之后，根据 order by 中的条件判断当前的这条数据和之前数据时间戳大小，以上面案例来说，如果当前数据时间戳大于之前数据时间戳，则撤回之前向下游发的中间结果，然后将最新的结果发向下游（发送策略也为 hash，具体的 hash 策略为按照 group by 中 key 进行发送），如果当前数据时间戳小于之前数据时间戳，则不做操作。次算子产出的结果就是每一个用户的对应的最新等级信息。
+	Group by 聚合算子：接受到上游数据之后，根据 Group by 聚合粒度对数据进行聚合计算结果（每一个等级的用户数），发往下游数据汇算子
+	数据汇：接收到上游的数据之后，然后输出到外部存储引擎中
+
+```
+```
+使用proctime
+	数据源：消费到 Kafka 中数据后，将数据按照 partition by 的 key 通过 hash 分发策略发送到下游去重算子
+	Deduplication 去重算子：处理时间语义下，如果是当前 key 的第一条数据，则直接发往下游，如果判断（根据 state 中是否存储过改 key）不是第一条，则直接丢弃
+	数据汇：接收到上游的数据之后，然后输出到外部存储引擎中
+	注意事项：
+在 Deduplication 关于是否会出现回撤流，总结如下：
+1.	Order by 事件时间 DESC：会出现回撤流，因为当前 key 下 可能会有 比当前事件时间还大的数据
+2.	Order by 事件时间 ASC：会出现回撤流，因为当前 key 下 可能会有 比当前事件时间还小的数据
+3.	Order by 处理时间 DESC：会出现回撤流，因为当前 key 下 可能会有 比当前处理时间还大的数据
+4.	Order by 处理时间 ASC：不会出现回撤流，因为当前 key 下 不可能会有 比当前处理时间还小的数据
+
+```

@@ -1,0 +1,17 @@
+created: 20220522001810437
+difficulty: 2.200038941363643
+due: 20221011062400684
+grade: 2
+history: [{"due":"20220524115042202","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522115042202"},{"due":"20220602131138650","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525131138650"},{"due":"20220707120411103","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606120411103"}]
+interval: 34
+lapses: 0
+modified: 20220710062400684
+reps: 4
+retrievability: 0.8895462481526426
+review: 20220710062400684
+stability: 92.90536780574088
+tags: hive ?
+title: 炸裂函数
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-05-22_08-18-16.jpg]]

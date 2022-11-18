@@ -1,0 +1,19 @@
+created: 20220601075140832
+difficulty: 1
+due: 20220914061829161
+grade: 2
+history: [{"due":"20220605023036923","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023036923"},{"due":"20220623013549355","interval":3,"difficulty":1,"stability":16.00419314059993,"retrievability":0.05273732312238567,"grade":2,"lapses":0,"reps":2,"review":"20220607013549355"}]
+interval: 18
+lapses: 0
+modified: 20220625061829161
+reps: 3
+retrievability: 0.8882522377612516
+review: 20220625061829161
+stability: 81.20737317396814
+tags: hbase ?
+title: 为什么列式存储空间小
+type: text/vnd.tiddlywiki
+
+列式存储更适合压缩,可以针对每列使用不同的压缩算法
+
+hbase的列族式存储,不存储空值,也会节省一部分空间

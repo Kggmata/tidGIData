@@ -1,0 +1,29 @@
+created: 20220713060750341
+difficulty: 1.6717761840259295
+due: 20221012135316982
+grade: 0
+history: [{"due":"20220719082805256","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718082805256"},{"due":"20220727103925007","interval":8,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220726103925007"},{"due":"20220805123956022","interval":9,"difficulty":1.2000027608925166,"stability":0.054881171378436774,"retrievability":0.0000027608925165954863,"grade":0,"lapses":2,"reps":1,"review":"20220804123956022"},{"due":"20220810041025438","interval":5,"difficulty":1.4000705595976783,"stability":0.04065696669349018,"retrievability":0.00006779870516182631,"grade":0,"lapses":3,"reps":1,"review":"20220809041025438"},{"due":"20220823054645448","interval":6,"difficulty":1,"stability":7.994069428358752,"retrievability":1.7671936852144708e-7,"grade":1,"lapses":3,"reps":2,"review":"20220815054645448"}]
+interval: 57
+lapses: 4
+modified: 20221011135316982
+reps: 1
+retrievability: 0.4717761840259296
+review: 20221011135316981
+stability: 0.03011942145770373
+tags: ?
+title: 四个隔离级别
+type: text/vnd.tiddlywiki
+
+```
+read uncommitted 允许读未被其他事务提交的变更数据, 会出现脏读, 不可重复读, 幻读
+
+read committed 只允许读已提交的数据 可避免脏读和不可重复读, 仍会出现幻读
+
+repeatable read 在事务持续期间,禁止其他事务对数据的更新, 可避免脏读和不可重复读, 仍会出现幻读
+
+serializable串行化 要求事务序列化执行, 无法并发执行
+```
+
+隔离级别越高，越能保证数据的完整性和一致性，但是对并发性能的影响也越大。对于多数应用程序，可以优先考虑把数据库系统的隔离级别设为Read Committed，它能够避免脏读取，而且具有较好的并发性能
+
+MySQL支持四种事务隔离级别，其中REPEATABLE READ为默认事务隔离级别。

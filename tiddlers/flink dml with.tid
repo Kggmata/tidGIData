@@ -1,0 +1,36 @@
+created: 20220720061017509
+difficulty: 1.8585224129237503
+due: 20221012140709301
+grade: 0
+history: [{"due":"20220802045957342","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801045957342"},{"due":"20220823010902504","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220807010902504"}]
+interval: 65
+lapses: 1
+modified: 20221011140709301
+reps: 1
+retrievability: 0.6585224129237505
+review: 20221011140709301
+stability: 0.07408182272361549
+tags: ?
+title: flink dml with
+type: text/vnd.tiddlywiki
+
+https://nightlies.apache.org/flink/flink-docs-release-1.15/docs/connectors/table/overview/
+
+```
+with是建表ddl的时候, 描述数据源的具体外部存储的元数据信息的.
+一般with当中的配置项由flinkSQL的connector来定义
+```
+```
+比如socket
+'connector'='socket'
+'hostname'='node1'
+'port'='8888'
+'format'='csv
+
+'connector'='kafka'
+'topic'='test'
+'properties.bootstrap.servers'='node1:9092'
+'properties.group.id'='testGroup'
+'scan.startup.mode'='eariest-offset'
+'format'='csv'
+```

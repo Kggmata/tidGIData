@@ -1,0 +1,43 @@
+created: 20220718033924535
+difficulty: 1.4000114474289254
+due: 20220909131824228
+grade: 0
+history: [{"due":"20220807111158124","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041823814"},{"due":"20220813025818314","interval":13,"difficulty":1,"stability":0.07408182337905919,"retrievability":0.000001125972830638602,"grade":0,"lapses":1,"reps":1,"review":"20220812025818314"},{"due":"20220821043623051","interval":8,"difficulty":1.2000114474289252,"stability":0.05488116409496729,"retrievability":0.000011447428925309354,"grade":0,"lapses":2,"reps":1,"review":"20220820043623051"}]
+interval: 19
+lapses: 3
+modified: 20220908131824228
+reps: 1
+retrievability: 1.4409178333650156e-16
+review: 20220908131824228
+stability: 0.040656966333775045
+tags: ?
+title: flink checkpoint配置
+type: text/vnd.tiddlywiki
+
+execution.checkpointing.interval: 5000
+
+execution.checkpointing.mode: Exactly_once
+
+state.backend: filesystem
+
+state.checkpoints.dir: hdfs://node1:8020/checkpoints
+
+state.savepoints.dir: hdfs://node1:8020/checkpoints
+
+execution.checkpointing.timeout: 600000
+
+execution.checkpointing.min-pause: 500
+
+checkpointing.max-concurrent-checkpoints: 1
+
+checkpoints.num-retained: 3
+
+```
+#默认情况下，checkpoint不是持久化的，只用于从故障中恢复作业。当程序被取消时，它们会被删除。但是你可以配置checkpoint被周期性持久化到外部，类似于savepoints。这些外部的checkpoints将它们的元数据输出到外#部持久化存储并且当作业失败时不会自动清除。这样，如果你的工作失败了，你就会有一个checkpoint来恢复。
+#ExternalizedCheckpointCleanup模式配置当你取消作业时外部checkpoint会产生什么行为:
+#RETAIN_ON_CANCELLATION: 当作业被取消时，保留外部的checkpoint。注意，在此情况下，您必须手动清理checkpoint状态。
+#DELETE_ON_CANCELLATION: 当作业被取消时，删除外部化的checkpoint。只有当作业失败时，检查点状态才可用。
+execution.checkpointing.externalized-checkpoint-retention: RETAIN_ON_CANCELLATION
+
+```
+

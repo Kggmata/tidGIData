@@ -1,0 +1,18 @@
+created: 20220524073542577
+difficulty: 1
+due: 20221002065736246
+grade: 2
+history: [{"due":"20220529141741010","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141741010"},{"due":"20220624135535221","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602135535221"},{"due":"20220626234720200","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625234720200"},{"due":"20220630141914033","interval":3,"difficulty":2.5872713285758855,"stability":0.054882158045770235,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220629141914033"},{"due":"20220715025618501","interval":6,"difficulty":1,"stability":10.165641185718835,"retrievability":0.00000994387404859016,"grade":2,"lapses":2,"reps":2,"review":"20220705025618501"}]
+interval: 16
+lapses: 2
+modified: 20220721065736246
+reps: 3
+retrievability: 0.8471902465650784
+review: 20220721065736246
+stability: 73.49641985920579
+tags: zookeeper ?
+title: ZooKeeper的部署方式有哪几种？集群中的角色有哪些？集群最少需要几台机器？
+type: text/vnd.tiddlywiki
+
+ZooKeeper的部署方式有单机模式和集群模式，集群中的角色有Leader和Follower，集群最少3（2N+1）台，根据
+选举算法，应保证奇数。

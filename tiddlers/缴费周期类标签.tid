@@ -1,0 +1,23 @@
+created: 20220627021219463
+difficulty: 1.071305136947512
+due: 20221020020325203
+grade: 1
+history: [{"due":"20220630105313635","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105313635"},{"due":"20220719091946806","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703091946806"}]
+interval: 21
+lapses: 0
+modified: 20220724020325203
+reps: 3
+retrievability: 0.871305136947512
+review: 20220724020325202
+stability: 88.44264016901889
+tags: 用户画像 ?
+title: 缴费周期类标签
+type: text/vnd.tiddlywiki
+
+开发步骤
+
+```
+1-根据用户id和ppp缴费周期进行分组和count计数
+2-使用开窗函数进行组内排序，取Top1
+3-将rankDF和FiveDF进行匹配(FiveDF将id和rule反转后转化为字典fiveDict)
+```

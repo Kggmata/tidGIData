@@ -1,0 +1,19 @@
+created: 20220721105425888
+difficulty: 1
+due: 20220824083745076
+grade: 2
+history: [{"due":"20220802092502714","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092502714"}]
+interval: 7
+lapses: 0
+modified: 20220808083745076
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808083745075
+stability: 16.423571292705216
+tags: ?
+title: state and fault tolerance in batch programs
+type: text/vnd.tiddlywiki
+
+```
+batch programs的容错不需要checkpoint. 因为是有界数据集, 之间relay streams. 这使得恢复的cost更大, 但是对正常的processing的消耗更小, 因为避免了checkpoint
+```

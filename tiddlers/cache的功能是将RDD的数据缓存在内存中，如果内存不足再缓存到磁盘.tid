@@ -1,0 +1,17 @@
+created: 20220529053106198
+difficulty: 1
+due: 20220920071653670
+grade: 2
+history: [{"due":"20220601060244325","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531060244325"},{"due":"20220622091013686","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603091013686"}]
+interval: 20
+lapses: 0
+modified: 20220623071653670
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623071653670
+stability: 89.0394510841741
+tags: spark ?
+title: cache的功能是将RDD的数据缓存在内存中，如果内存不足再缓存到磁盘
+type: text/vnd.tiddlywiki
+
+错误：cache功能是将RDD缓存在内存中，内存不足缓存失败

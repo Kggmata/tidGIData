@@ -1,0 +1,234 @@
+created: 20220605092145549
+difficulty: 1.0839227621571068
+due: 20220904021027607
+grade: 1
+history: [{"due":"20220609132624298","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608132624297"},{"due":"20220613074710679","interval":4,"difficulty":1.4859391209733,"stability":0.07545638712607733,"retrievability":0.01718665362921924,"grade":0,"lapses":1,"reps":1,"review":"20220612074710679"},{"due":"20220628060417669","interval":3,"difficulty":1,"stability":12.80868935150994,"retrievability":0.01516249539961304,"grade":2,"lapses":1,"reps":2,"review":"20220615060417668"}]
+interval: 15
+lapses: 1
+modified: 20220630021027607
+reps: 3
+retrievability: 0.883922762157107
+review: 20220630021027607
+stability: 66.49367948740202
+tags: hbase ?
+title: HBase之Compact流程
+type: text/vnd.tiddlywiki
+
+https://www.modb.pro/db/79197#:~:text=%E7%AC%AC%E4%B8%80%E6%AD%A5%2C%E8%AF%BB%E5%8F%96,%E6%A0%87%E8%AE%B0%EF%BC%8C%E6%9C%80%E5%90%8E%E5%BC%BA%E5%88%B6%E6%89%A7%E8%A1%8Csync%E3%80%82
+
+Compact的工作原理:
+
+Compact是一个合并操作，从Region的Store中选择HFile文件进行合并，进行合并时，会从这些待合并的数据文件中依次读出KeyValue,再从小到大排序后写入一个新的文件，然后，新生成的文件取代之前已合并的所有文件对外提供服务。
+
+Compact的作用:
+
+compact含有以下作用:
+
+1).合并小文件，减少文件数，稳定随机读延迟。
+
+2).提高数据的本地化率。本地化率越高，在HDFS上访问数据延迟就越小，相反，延迟会比较大。
+
+3).清除无效文件，减少数据存储量
+
+*''minor 合并''
+
+HBase的一种`轻量化`合并机制，它默认当HFile数量在3~10个的时候，会触发它的合并
+
+特点：
+
+- 将选择的HFile合并为`1个`
+
+  - 合并：全部数据读出来，做排序，写出一个排好序的HFile
+
+- 删除过期的TTL数据
+
+  > TTL：Time To Live（是时间离开了）
+  >
+  > 数据的有效时间，HBase的数据可以设置TTL，如果数据超过TTL允许的时间
+  >
+  > 就会在minor小合并的时候，被清理。
+
+- `不会`清除已经被标记删除的数据，和过期的多版本数据
+
+执行条件：
+
+常见参数：
+
+hbase-site.xml
+
+了解即可。
+
+https://hbase.apache.org/book.html
+
+```shell
+''hbase.hstore.compaction.min''
+Description
+The minimum number of StoreFiles which must be eligible for compaction before compaction can run. The goal of tuning hbase.hstore.compaction.min is to avoid ending up with too many tiny StoreFiles to compact. Setting this value to 2 would cause a minor compaction each time you have two StoreFiles in a Store, and this is probably not appropriate. If you set this value too high, all the other values will need to be adjusted accordingly. For most cases, the default value is appropriate (empty value here, results in 3 by code logic). In previous versions of HBase, the parameter hbase.hstore.compaction.min was named hbase.hstore.compactionThreshold.
+
+Default
+none
+
+''hbase.hstore.compaction.max''
+Description
+The maximum number of StoreFiles which will be selected for a single minor compaction, regardless of the number of eligible StoreFiles. Effectively, the value of hbase.hstore.compaction.max controls the length of time it takes a single compaction to complete. Setting it larger means that more StoreFiles are included in a compaction. For most cases, the default value is appropriate.
+
+Default
+10
+
+''hbase.hstore.compaction.min.size''
+Description
+A StoreFile (or a selection of StoreFiles, when using ExploringCompactionPolicy) smaller than this size will always be eligible for minor compaction. HFiles this size or larger are evaluated by hbase.hstore.compaction.ratio to determine if they are eligible. Because this limit represents the "automatic include" limit for all StoreFiles smaller than this value, this value may need to be reduced in write-heavy environments where many StoreFiles in the 1-2 MB range are being flushed, because every StoreFile will be targeted for compaction and the resulting StoreFiles may still be under the minimum size and require further compaction. If this parameter is lowered, the ratio check is triggered more quickly. This addressed some issues seen in earlier versions of HBase but changing this parameter is no longer necessary in most situations. Default: 128 MB expressed in bytes.
+
+Default
+134217728(128mb)
+
+''hbase.hstore.compaction.max.size''
+Description
+A StoreFile (or a selection of StoreFiles, when using ExploringCompactionPolicy) larger than this size will be excluded from compaction. The effect of raising hbase.hstore.compaction.max.size is fewer, larger StoreFiles that do not get compacted often. If you feel that compaction is happening too often without much benefit, you can try raising this value. Default: the value of LONG.MAX_VALUE, expressed in bytes.
+
+Default
+9223372036854775807(8589934592gb)
+
+''hbase.hstore.compaction.ratio''
+Description
+For minor compaction, this ratio is used to determine whether a given StoreFile which is larger than hbase.hstore.compaction.min.size is eligible for compaction. Its effect is to limit compaction of large StoreFiles. The value of hbase.hstore.compaction.ratio is expressed as a floating-point decimal. A large ratio, such as 10, will produce a single giant StoreFile. Conversely, a low value, such as .25, will produce behavior similar to the BigTable compaction algorithm, producing four StoreFiles. A moderate value of between 1.0 and 1.4 is recommended. When tuning this value, you are balancing write costs with read costs. Raising the value (to something like 1.4) will have more write costs, because you will compact larger StoreFiles. However, during reads, HBase will need to seek through fewer StoreFiles to accomplish the read. Consider this approach if you cannot take advantage of Bloom filters. Otherwise, you can lower this value to something like 1.0 to reduce the background cost of writes, and use Bloom filters to control the number of StoreFiles touched during reads. For most cases, the default value is appropriate.
+
+Default
+1.2F
+
+hbase.server.thread.wakefrequency
+Description
+In master side, this config is the period used for FS related behaviors: checking if hdfs is out of safe mode, setting or checking hbase.version file, setting or checking hbase.id file. Using default value should be fine. In regionserver side, this config is used in several places: flushing check interval, compaction check interval, wal rolling check interval. Specially, admin can tune flushing and compaction check interval by hbase.regionserver.flush.check.period and hbase.regionserver.compaction.check.period. (in milliseconds)
+
+Default
+10000
+
+''hbase.regionserver.flush.check.period''
+Description
+It determines the flushing check period of PeriodicFlusher in regionserver. If unset, it uses hbase.server.thread.wakefrequency as default value. (in milliseconds)
+
+Default
+${hbase.server.thread.wakefrequency}
+
+''hbase.regionserver.compaction.check.period''
+Description
+It determines the compaction check period of CompactionChecker in regionserver. If unset, it uses hbase.server.thread.wakefrequency as default value. (in milliseconds)
+
+Default
+${hbase.server.thread.wakefrequency}
+```
+
+
+> 一旦小合并的参数检查表示不符合条件
+>
+> 小合并就不干活了。
+>
+> 它认为自己是做轻量化任务的，超出条件后，这就不是轻量化的任务了
+>
+> 不干活，大合并干去吧。
+
+*''major合并（大合并）''
+
+HBase的大合并，不是轻量化的操作，有很大的I/O消耗
+
+特点：
+
+- `将所有HFile合并为1个`
+- 删除过期TTL数据
+- 清理标记删除的数据
+- 清理过期的多版本数据
+- data locality
+
+
+
+执行条件：
+
+1. 自动执行：默认7天来一次
+
+   `hbase.hregion.majorcompaction` 默认7天
+
+`hbase.hregion.majorcompaction
+Description
+Time between major compactions, expressed in milliseconds. Set to 0 to disable time-based automatic major compactions. User-requested and size-based major compactions will still run. This value is multiplied by hbase.hregion.majorcompaction.jitter to cause compaction to start at a somewhat-random time during a given window of time. The default value is 7 days, expressed in milliseconds. If major compactions are causing disruption in your environment, you can configure them to run at off-peak times for your deployment, or disable time-based major compactions by setting this parameter to 0, and run major compactions in a cron job or by another external mechanism.
+
+Default
+604800000`
+
+2. 手动执行：HBase Shell执行：`major_compact '表名'`
+
+> 总结来说：
+>
+> 1. 小合并是频繁发生的，是HBase自动化最好
+>
+> 2. 大合并是偶尔进行的，一般建议手动执行（比如：凌晨2点，压力最小的时候执行）
+>
+>    因为大合并会影响某个表、某个Region的性能很大
+
+*''HBase在2.0之后新推出的In-Memory合并机制''
+
+> 产生背景：
+>
+> 不管是传统minor合并和major合并，都是对硬盘的HFile进行合并。
+>
+> 会将HFile（StroeFile）读取到内存中进行排序并且执行合并
+>
+> 开销很大。
+>
+> 思考？能不能让数据在内存中多缓一会（靠WAL确保安全），积攒多个批次的数据，合并后再写出HFile
+>
+> 这就是2.0后新推出的In-Memory合并机制，内存合并。
+
+> 注意事项，使用In-Memory合并，对内存的占用是更加的巨大的。
+>
+> 一般如果使用In-Memory刷新机制，建议内存32G
+
+1. In-Memory合并的机制是在，当我们Memstore在老的机制下是要刷洗到HFile，如果在In-memory机制下，会刷新到一个
+
+   PipeLine的内存管道中，在这个内存管道中作为一个`segment`段存在
+
+2. Memstore不停的刷新，将新的Segment段刷新到PipLine中
+
+3. 当PipLine中积攒了足够多的Segment端后，将其合并为一个大的排序后的数据集，写出一个`大号的HFile`
+
+> HBase本身也是一个内存大户，和Spark一样。
+>
+> - Spark是要在内存中做迭代计算
+> - HBase是要在内存中，完成Memstore的合并（新机制下，要用PipLine完成内存的合并）
+> - HBase要在内存中，通过Block块缓存去加速查询
+> - HBase的HFile合并也会占用内存
+
+
+
+
+
+> minor、major、In-Memory三种合并机制不会产生冲突
+>
+> 对于minor和major来说，他们是针对磁盘的HFile进行合并
+>
+> 被合并的HFile是从Memstore中刷新下来的，还是In-Memory的PipLine中刷新下来的
+>
+> 对于minor和major来说没有区别。
+
+NONE: No in-memory compaction.
+
+BASIC: Basic policy enables flushing and keeps a pipeline of flushes until we trip the pipeline maximum threshold and then we flush to disk. No in-memory compaction but can help throughput as data is moved from the profligate, native ConcurrentSkipListMap data-type to more compact (and efficient) data types.
+
+EAGER: This is BASIC policy plus in-memory compaction of flushes (much like the on-disk compactions done to hfiles); on compaction we apply on-disk rules eliminating versions, duplicates, ttl’d cells, etc.
+
+ADAPTIVE: Adaptive compaction adapts to the workload. It applies either index compaction or data compaction based on the ratio of duplicate cells in the data. Experimental.
+
+To enable BASIC on the info column family in the table radish, add the attribute to the info column family:
+
+`hbase(main):003:0> alter 'radish', {NAME => 'info', IN_MEMORY_COMPACTION => 'BASIC'}
+Updating all regions with the new schema...
+All regions updated.
+Done.
+Took 1.2413 seconds
+hbase(main):004:0> describe 'radish'
+Table radish is DISABLED
+radish
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'info', VERSIONS => '1', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536', METADATA => {
+'IN_MEMORY_COMPACTION' => 'BASIC'}}
+1 row(s)
+Took 0.0239 seconds`

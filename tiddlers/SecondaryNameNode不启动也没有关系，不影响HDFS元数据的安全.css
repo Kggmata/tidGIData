@@ -1,0 +1,6 @@
+正确：SecondaryNameNode不影响NN启动过程，以及元数据的安全
+
+- 为什么需要SecondaryNameNode
+- 问题：edits记录的是日志，日志文件会越来越大，包含很多无用数据，每次NameNode启动加载合并就会变慢
+- 解决：SecondaryNameNode按照一定的规则将fsimage文件和edits提前合并，生成最新的元数据文件
+- 下次NameNode启动只需要合并fsimage和一个最新的比较小的edits文件即可

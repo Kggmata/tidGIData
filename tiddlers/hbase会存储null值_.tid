@@ -1,0 +1,17 @@
+created: 20220602001723570
+difficulty: 1
+due: 20220926022439962
+grade: 2
+history: [{"due":"20220605072401310","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604072401310"},{"due":"20220626002552348","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002552348"}]
+interval: 20
+lapses: 0
+modified: 20220629022439962
+reps: 3
+retrievability: 0.8847461089172606
+review: 20220629022439962
+stability: 88.60191707719252
+tags: hbase ?
+title: hbase会存储null值?
+type: text/vnd.tiddlywiki
+
+错误: 对于为空(null)的列，并不占用存储空间，因此，表可以设计的非常稀疏。

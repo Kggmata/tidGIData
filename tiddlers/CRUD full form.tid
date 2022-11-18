@@ -1,0 +1,17 @@
+created: 20220601021218914
+difficulty: 1
+due: 20220923062134715
+grade: 2
+history: [{"due":"20220603145226902","interval":0,"difficulty":1.7275095844283441,"stability":0.1296875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220602145226902"},{"due":"20220625120751447","interval":4,"difficulty":1,"stability":19.03598280903463,"retrievability":0.03878686052566552,"grade":2,"lapses":0,"reps":2,"review":"20220606120751447"}]
+interval: 20
+lapses: 0
+modified: 20220626062134715
+reps: 3
+retrievability: 0.895210703053972
+review: 20220626062134715
+stability: 89.03336733877475
+tags: hbase ?
+title: CRUD full form
+type: text/vnd.tiddlywiki
+
+create read update delete

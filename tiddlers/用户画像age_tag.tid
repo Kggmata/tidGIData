@@ -1,0 +1,104 @@
+created: 20220621000712594
+difficulty: 1
+due: 20220914132555266
+grade: 2
+history: [{"due":"20220625121730813","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121730813"},{"due":"20220709061844566","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626061844566"}]
+interval: 14
+lapses: 0
+modified: 20220710132555266
+reps: 3
+retrievability: 0.8963567239886889
+review: 20220710132555266
+stability: 65.98229464323742
+tags: 用户画像 ?
+title: 用户画像age_tag
+type: text/vnd.tiddlywiki
+
+1 读取mysql当中4级标签数据rule并解析rule
+
+2 根据rule,读取ES业务数据
+
+3 读取mysql5级标签体系
+
+4 根据5级标签和ES数据匹配, 计算用户的5级标签
+
+5 将结果存储在ES
+
+```
+#!/usr/bin/env python
+# @desc :age_tag
+__coding__ = "utf-8"
+__author__ = "itcast team"
+import os
+from pyspark import SparkContext, RDD
+from pyspark.sql.types import StructType, StructField, LongType, StringType, TimestampType
+from pyspark.sql import SparkSession, DataFrame, functions as F
+
+from cn.itcast.tags.bean.ESMeta import ESMeta
+from cn.test.pysparkEStest.parameter import change_to_dict, url
+
+# 这里可以选择本地PySpark环境执行Spark代码，也可以使用虚拟机中PySpark环境，通过os可以配置
+# 1-本地路径
+os.environ['SPARK_HOME'] = 'D:\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+# 2-服务器路径
+# os.environ['SPARK_HOME'] = '/export/servers/spark'
+# PYSPARK_PYTHON = "/root/anaconda3/envs/pyspark_env/bin/python"
+# 当存在多个版本时，不指定很可能会导致出错
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+os.environ["PYSPARK_DRIVER_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    spark: SparkSession = SparkSession. \
+        builder. \
+        appName("spark_test1"). \
+        master("local[*]"). \
+        getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # TODO read_from_mysql
+    print("read_from_mysql-----------------------------------------------------------------")
+    tableName = "tbl_basic_tag"
+    mysqlDF = spark.read.jdbc(f'{url}', f'{tableName}')
+    tag4_DF: DataFrame = mysqlDF.select('rule').where('id=14')
+    tag4_dicts = tag4_DF.rdd.map(lambda rule_row: change_to_dict(rule_row['rule'])).collect()[0]
+    esMeta = ESMeta.fromDictToEsMeta(tag4_dicts)
+    # TODO 从es当中读取需要的业务信息
+    print("从es当中读取需要的信息------------------------------------------------------------------")
+    esDF: DataFrame = spark.read.format("es") \
+        .option("es.resource", f"{esMeta.esIndex}/{esMeta.esType}") \
+        .option("es.nodes", f"{esMeta.esNodes}") \
+        .option("es.index.read.missing.as.empty", "yes") \
+        .option("es.query", "?q=*") \
+        .option("es.read.field.include", f"{esMeta.selectFields}") \
+        .load()
+    birthdate_df = esDF.select(F.regexp_replace(F.split(esDF.birthday, ' ')[0], '-', '').alias("birthday_date"),
+                               esDF.user_id)
+    birthdate_df.show()
+    # TODO 读取5级标签
+    print("读取5级标签------------------------------------------------------------------")
+    tableName = "tbl_basic_tag"
+    mysqlDF = spark.read.jdbc(f'{url}', f'{tableName}')
+    tag5_DF: DataFrame = mysqlDF.select('id', 'rule').where('pid=14')
+    tag5_DF.show()
+    # TODO 5级标签处理
+    print("匹配tagsid------------------------------------------------------------------")
+    tag5_DF_after = tag5_DF.select(tag5_DF.id,
+                                   F.substring(tag5_DF.rule, 0, 8).alias('start_date'),
+                                   F.substring(tag5_DF.rule, 10, 17).alias('end_date')
+                                   )
+    # TODO 匹配5级标签
+    res_df = birthdate_df.join(tag5_DF_after,
+                               birthdate_df['birthday_date'].between(tag5_DF_after.start_date, tag5_DF_after.end_date)). \
+        select(birthdate_df["user_id"].alias("userId"),
+               tag5_DF_after['id'].alias("tagsId"))
+    # TODO 写入ES
+    res_df.write.format("es") \
+        .option("es.nodes", f'{esMeta.esNodes}') \
+        .option("es.resource", f"insurance-profile-result/{esMeta.inType}") \
+        .option("es.mapping.id", f"userId") \
+        .option("es.mapping.name", f"userId:userId,tagsId:tagsId") \
+        .option("es.write.operation", "upsert") \
+        .mode("append") \
+        .save()
+```

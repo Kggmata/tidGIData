@@ -1,0 +1,76 @@
+created: 20220723012624592
+difficulty: 1
+due: 20221009121429502
+grade: 0
+history: [{"due":"20220822134348733","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821134348733"}]
+interval: 48
+lapses: 1
+modified: 20221008121429502
+reps: 1
+retrievability: 1.0874385510043795e-22
+review: 20221008121429502
+stability: 0.07408182272361549
+tags: ?
+title: flink sql TVF数据分析
+type: text/vnd.tiddlywiki
+
+grouping sets,
+
+```
+GROUP BY 
+    window_start, 
+    window_end,
+    -- grouping sets 写法
+    GROUPING SETS (
+        ()
+        , (age)
+        , (sex)
+        , (age, sex)
+    )
+
+```
+```
+窗口也支持grouping sets, 需要让window-start和window_end都在group by当中
+```
+
+rollup, 
+
+```
+rollup会遍历所有前缀, 包括空
+GROUP BY ROLLUP ( a, (b, c), d )
+--等价于以下语句。
+GROUPING SETS (
+    ( a, b, c, d ),
+    ( a, b, c    ),
+    ( a          ),
+    (            )
+GROUP BY grouping sets((b), (c),rollup(a,b,c))
+--等价于以下语句。
+GROUP BY GROUPING SETS (
+    (b), (c),
+    (a,b,c), (a,b), (a), ()
+ )
+```
+cube
+
+```
+cube会枚举所有的可能组合
+GROUP BY CUBE ( (a, b), (c, d) )
+--等价于以下语句。
+GROUPING SETS (
+    ( a, b, c, d ),
+    ( a, b       ),
+    (       c, d ),
+    (            )
+)
+
+GROUP BY a, CUBE (b, c), GROUPING SETS ((d), (e))
+--等价于以下语句。
+GROUP BY GROUPING SETS (
+    (a, b, c, d), (a, b, c, e),
+    (a, b, d),    (a, b, e),
+    (a, c, d),    (a, c, e),
+    (a, d),       (a, e)
+)
+```
+

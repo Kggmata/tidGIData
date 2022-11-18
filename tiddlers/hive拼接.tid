@@ -1,0 +1,17 @@
+created: 20220712064746154
+difficulty: 1
+due: 20221209025309766
+grade: 2
+history: [{"due":"20220718070319962","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717070319962"},{"due":"20220727082248048","interval":9,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220726082248048"},{"due":"20220817132530502","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":2,"lapses":1,"reps":2,"review":"20220804132530502"}]
+interval: 24
+lapses: 1
+modified: 20220828025309766
+reps: 3
+retrievability: 0.8223370799125521
+review: 20220828025309766
+stability: 103.31427152022677
+tags: ?
+title: hive拼接
+type: text/vnd.tiddlywiki
+
+|| 和concat

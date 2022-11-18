@@ -1,0 +1,32 @@
+created: 20220612062108544
+difficulty: 1
+due: 20220928004008089
+grade: 2
+history: [{"due":"20220614231912643","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613231912643"},{"due":"20220630105025615","interval":2,"difficulty":1,"stability":13.570489504250556,"retrievability":0.12633427211412301,"grade":2,"lapses":0,"reps":2,"review":"20220616105025615"}]
+interval: 19
+lapses: 0
+modified: 20220705004008090
+reps: 3
+retrievability: 0.862849556630761
+review: 20220705004008089
+stability: 84.61770258190634
+tags: [[structed streaming]] ?
+title: Spark 结构化流的Source数据输入
+type: text/vnd.tiddlywiki
+
+Spark结构化流的程序结构：
+
+```
+Source负责`流`数据输入
+- Operator负责数据处理（和SparkSQL完全一致，兼容，略过）
+- Sink负责`流`数据的写出
+```
+
+官方内置了4个Sourrce：
+
+```
+- File Source：一般用于测试，不推荐生产
+- Socket Source：测试用，从Socket Server获取网络流数据
+- Rate Source：测试用，生产模拟数据
+- `Kafka Soruce`：生产环境可用，读取Kafka的数据
+```

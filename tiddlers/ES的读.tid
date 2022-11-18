@@ -1,0 +1,34 @@
+created: 20220617102040441
+difficulty: 1.0824752287483903
+due: 20220915131707402
+grade: 1
+history: [{"due":"20220620075520586","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619075520586"},{"due":"20220704025507932","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621025507932"}]
+interval: 16
+lapses: 0
+modified: 20220707131707402
+reps: 3
+retrievability: 0.8824752287483904
+review: 20220707131707402
+stability: 70.21185375754096
+tags: 用户画像 ?
+title: ES的读
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html
+
+```
+1	client发起查询请求，某个node接收到请求，该node就会成为协调节点（Coordinating Node）
+2	scatter phase: 协调节点（Coordinating Node）将查询请求广播到每一个数据节点，这些数据节点的分片会处理该查询请求。协调节点会轮询所有的分片来自动进行负载均衡
+3	每个分片进行数据查询，将符合条件的数据放在一个优先队列中，并将这些数据的文档ID、节点信息、分片信息返回给协调节点
+4	gather phase: 协调节点将所有的结果进行汇总，并进行全局排序
+5	协调节点向包含这些文档ID的分片发送get请求，对应的分片将文档数据返回给协调节点，最后协调节点将数据返回给客户端
+```
+
+```
+Coordinating node
+Requests like search requests or bulk-indexing requests may involve data held on different data nodes. A search request, for example, is executed in two phases which are coordinated by the node which receives the client request — the coordinating node.
+
+In the scatter phase, the coordinating node forwards the request to the data nodes which hold the data. Each data node executes the request locally and returns its results to the coordinating node. In the gather phase, the coordinating node reduces each data node’s results into a single global result set.
+
+Every node is implicitly a coordinating node. This means that a node that has an explicit empty list of roles via node.roles will only act as a coordinating node, which cannot be disabled. As a result, such a node needs to have enough memory and CPU in order to deal with the gather phase.
+```

@@ -1,0 +1,17 @@
+created: 20220618092049188
+difficulty: 1
+due: 20220919144757371
+grade: 2
+history: [{"due":"20220621004340367","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004340367"},{"due":"20220623005712131","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622005712130"},{"due":"20220708060206625","interval":3,"difficulty":1,"stability":12.64542427740461,"retrievability":0.014037314090908812,"grade":1,"lapses":1,"reps":2,"review":"20220625060206625"},{"due":"20220711071330822","interval":15,"difficulty":2.0825157664271754,"stability":0.05488141221849455,"retrievability":0.8825157664271754,"grade":0,"lapses":2,"reps":1,"review":"20220710071330822"},{"due":"20220719101614966","interval":1,"difficulty":1,"stability":7.984061111638629,"retrievability":0.14663847612462463,"grade":2,"lapses":2,"reps":2,"review":"20220711101614966"}]
+interval: 12
+lapses: 2
+modified: 20220723144757371
+reps: 3
+retrievability: 0.8535456296579503
+review: 20220723144757371
+stability: 57.85216917457214
+tags: 用户画像 ?
+title: 购买的保单在[ ]年内，称为[ ]
+type: text/vnd.tiddlywiki
+
+  购买的保单在【第一】年内，称为新单，或新契约

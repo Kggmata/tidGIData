@@ -1,0 +1,21 @@
+created: 20220701142202050
+difficulty: 1
+due: 20221030124637534
+grade: 2
+history: [{"due":"20220707032630914","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706032630914"},{"due":"20220711065618072","interval":4,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.014781165126568838,"grade":0,"lapses":1,"reps":1,"review":"20220710065618071"},{"due":"20220727011737627","interval":4,"difficulty":1,"stability":12.858755755983243,"retrievability":0.0033834917823108,"grade":2,"lapses":1,"reps":2,"review":"20220714011737626"}]
+interval: 20
+lapses: 1
+modified: 20220803124637534
+reps: 3
+retrievability: 0.8488493284064177
+review: 20220803124637534
+stability: 88.3950689244848
+tags: 用户画像 ?
+title: python encode和decode
+type: text/vnd.tiddlywiki
+
+```
+     decode              encode
+
+str ---------> unicode --------->str
+```

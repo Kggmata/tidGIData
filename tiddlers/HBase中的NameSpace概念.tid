@@ -1,0 +1,92 @@
+created: 20220606060935809
+difficulty: 1.0802378846142273
+due: 20220921102208283
+grade: 1
+history: [{"due":"20220610225117447","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609225117446"},{"due":"20220629125047095","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613125047095"}]
+interval: 19
+lapses: 0
+modified: 20220702102208283
+reps: 3
+retrievability: 0.8802378846142273
+review: 20220702102208283
+stability: 81.13219578579007
+tags: hbase ?
+title: HBase中的NameSpace概念
+type: text/vnd.tiddlywiki
+
+很多数据库软件，都是支持多数据库的操作的。
+
+同样，HBase作为数据库，也是支持多个库的操作。
+
+HBase的库叫做`namespace`
+
+不同的HBase的namespace，在HDFS上就是不同的数据文件夹。
+
+HBase在安装启动后，会自带2个namespace：
+
+`default，默认的库
+- hbase，hbase内置的库（自己用的，我们前往不要动它）`
+
+*基本的namespace的操作
+
+查看
+
+```shell
+查看命名空间列表 : list_namespace
+```
+
+
+
+创建
+
+```shell
+create_namespace ‘名字’
+```
+`HBase的数据库（namespace）没有mysql中的use一说
+
+你要用它，直接在操作表的时候加上namespace的前缀即可。
+
+比如scan表：scan 't'， 表示查看't' 这个表的内容，这是查看的default库的't'
+
+如果要查看别的库（namespace）的表，需要加前缀，比如：scan 'my_db:t'
+
+这就表示，查看my_db这个namespace的表't'`
+
+在某个namespace中创建表：
+
+```shell
+create 'my_db:t', 'c1'
+# 这就是在my_db这个namespace中创建表，namespace和表中间用 冒号:隔开
+```
+向某个namespace的表插入数据
+
+```shell
+put 'my_db:t', '123', 'c1:name', 'asd'
+# 和正常的put一致
+# 就是表名字那里，带上namespace的前缀即可
+```
+
+> 想要操作某个特定namespace中的表，所有需要写表名的地方，带上前缀即可
+
+删除某个namespace
+
+```shell
+drop_namespace 'my_db'
+# 注意要求：namespace中没有表才可以，有表不能删除
+
+# 示例，清除表后再删除namespace
+hbase(main):017:0> disable 'my_db:t'
+Took 0.4341 seconds                                                                                                                                          
+hbase(main):018:0> drop 'my_db:t'
+Took 0.2371 seconds                                                                                                                                          
+hbase(main):019:0> drop_namespace 'my_db'
+Took 0.2254 seconds
+```
+
+> 一般namespace用的不多，除非业务表很多很复杂
+>
+> 因为干啥操作都要加个前缀，很烦
+
+
+
+

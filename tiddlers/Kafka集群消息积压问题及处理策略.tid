@@ -1,0 +1,17 @@
+created: 20220806110158261
+modified: 20220806110412329
+tags: ? flink
+title: Kafka集群消息积压问题及处理策略
+type: text/vnd.tiddlywiki
+
+https://blog.51cto.com/u_15103025/2644969
+
+```
+一般生产会采用轮询round-robin或者随机的方式, 实现分区间的负载均衡
+```
+```
+出现积压问题场景:
+1 实时/消费任务挂掉
+2 分区设置不合理以及消费者消费能力不足
+3 key分布不均匀
+```

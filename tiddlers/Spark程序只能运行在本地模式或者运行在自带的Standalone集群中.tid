@@ -1,0 +1,17 @@
+created: 20220520045802769
+difficulty: 2.229344411327985
+due: 20220919080459887
+grade: 2
+history: [{"due":"20220523061425799","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521061425799"},{"due":"20220529003538410","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003538410"},{"due":"20220628134906349","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602134906349"}]
+interval: 29
+lapses: 0
+modified: 20220701080459887
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701080459887
+stability: 80.25328821558121
+tags: spark ?
+title: Spark程序只能运行在本地模式或者运行在自带的Standalone集群中
+type: text/vnd.tiddlywiki
+
+错误：Spark集群模式有4中：Standalone、YARN、Messos、K8s

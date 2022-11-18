@@ -1,0 +1,22 @@
+created: 20220624063942101
+difficulty: 1.0471759267211642
+due: 20221005124612802
+grade: 1
+history: [{"due":"20220626021956953","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625021956953"},{"due":"20220630050612088","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629050612088"},{"due":"20220706022227224","interval":6,"difficulty":1.2001968330633301,"stability":0.05488141221849455,"retrievability":0.0001968330633301299,"grade":0,"lapses":2,"reps":1,"review":"20220705022227224"},{"due":"20220720045144154","interval":5,"difficulty":1,"stability":10.164605117325515,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220710045144154"}]
+interval: 16
+lapses: 2
+modified: 20220726124612802
+reps: 3
+retrievability: 0.8471759267211643
+review: 20220726124612801
+stability: 71.48564989527429
+tags: 用户画像 ?
+title: SVM
+type: text/vnd.tiddlywiki
+
+Support vector machines (SVMs) 
+SVM是一套用于分类、回归和异常点检测的监督学习方法。支持向量机的优点是:在高维空间有效。在维数大于样本数的情况下仍然有效。
+
+```
+Support vector machines (SVMs) are a set of supervised learning methods used for classification, regression and outliers detection. The advantages of support vector machines are: Effective in high dimensional spaces. Still effective in cases where number of dimensions is greater than the number of samples.
+```

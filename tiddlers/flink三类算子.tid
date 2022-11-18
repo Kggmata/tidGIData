@@ -1,0 +1,21 @@
+created: 20220717013534777
+difficulty: 1
+due: 20230110143453913
+grade: 2
+history: [{"due":"20220727064529784","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726064529784"},{"due":"20220820125755562","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":2,"lapses":0,"reps":2,"review":"20220804125755562"}]
+interval: 31
+lapses: 0
+modified: 20220904143453913
+reps: 3
+retrievability: 0.8197965854547897
+review: 20220904143453912
+stability: 127.68971134334092
+tags: ?
+title: flink三类算子
+type: text/vnd.tiddlywiki
+
+source算子 1-多个
+
+transfermation算子 0-多个
+
+sink算子 1-多个

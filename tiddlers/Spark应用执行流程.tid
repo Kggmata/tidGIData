@@ -1,0 +1,33 @@
+created: 20220529071823485
+difficulty: 1
+due: 20221004052100902
+grade: 2
+history: [{"due":"20220601064423282","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531064423282"},{"due":"20220622133345694","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603133345694"},{"due":"20220625113908388","interval":21,"difficulty":2.0903877853574464,"stability":0.07408719146292923,"retrievability":0.8903877853574464,"grade":0,"lapses":1,"reps":1,"review":"20220624113908388"},{"due":"20220708003014748","interval":3,"difficulty":1.3044207601089328,"stability":10.510871821876915,"retrievability":0.01403297475148654,"grade":1,"lapses":1,"reps":2,"review":"20220627003014747"},{"due":"20220711093913180","interval":13,"difficulty":2.382242771195861,"stability":0.05488141221849455,"retrievability":0.877822011086928,"grade":0,"lapses":2,"reps":1,"review":"20220710093913180"},{"due":"20220721133218692","interval":4,"difficulty":1.5827051434391886,"stability":7.381239604304508,"retrievability":0.0004623722433273712,"grade":1,"lapses":2,"reps":2,"review":"20220714133218692"},{"due":"20220731020435346","interval":16,"difficulty":2.5785225400384384,"stability":0.04065697748494399,"retrievability":0.7958173965992495,"grade":0,"lapses":3,"reps":1,"review":"20220730020435346"},{"due":"20220810080124436","interval":6,"difficulty":1.778522716758536,"stability":5.355763904974095,"retrievability":1.7672009785144746e-7,"grade":1,"lapses":3,"reps":2,"review":"20220805080124436"}]
+interval: 10
+lapses: 3
+modified: 20220815052100902
+reps: 3
+retrievability: 0.8214176417070858
+review: 20220815052100902
+stability: 50.27191719136704
+tags: spark ?
+title: Spark应用执行流程
+type: text/vnd.tiddlywiki
+
+[img[image-20220508071205110.png]]
+
+- step1：先启动分布式资源管理的集群：Spark Standalone / YARN
+
+- step2：客户端提交用户开发好的Spark Application程序给ClusterManager
+
+- step3：ClusterManager运行程序启动Driver进程
+
+- step4：Driver进程提交申请启动Executor进程
+
+- step5：Driver解析代码，触发job
+
+- step6：DAGScheduler为job构建DAG图，并划分Stage
+
+- step7：每个Stage转换为TaskSet
+
+- step8：Driver将Task调度分配到Executor中运行

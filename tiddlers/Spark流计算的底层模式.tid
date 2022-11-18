@@ -1,0 +1,32 @@
+created: 20220612061452276
+difficulty: 1
+due: 20221002095605342
+grade: 2
+history: [{"due":"20220614124437774","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613124437774"},{"due":"20220702065027388","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616065027388"}]
+interval: 20
+lapses: 0
+modified: 20220706095605342
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220706095605342
+stability: 88.3647639214822
+tags: [[structed streaming]] ?
+title: Spark流计算的底层模式
+type: text/vnd.tiddlywiki
+
+Spark不是真正的实时计算，而是`伪实时计算、准实时计算`
+
+也就是Spark达不到原生流计算的`低延迟`。
+
+
+
+因为：Spark底层走的是，`微批`的模式
+
+Spark将批处理做的很短、很小，在大尺度上看起来就像是流计算一样，但是本质上就是一堆很小的批处理去串联的。
+
+
+
+> - Spark不是原生流计算，将离线批处理做的很小、很快去模拟流计算
+> - Flink是原生流计算，生下来就是做实时开发的。
+
+也就是说：Spark的延迟较比Flink来说 略高

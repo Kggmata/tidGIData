@@ -1,0 +1,17 @@
+created: 20220608015829773
+difficulty: 1
+due: 20220830142934612
+grade: 2
+history: [{"due":"20220612000252551","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611000252551"},{"due":"20220615003253643","interval":3,"difficulty":1.5162196541321282,"stability":0.07476910459712456,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220614003253643"},{"due":"20220628065107210","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":2,"lapses":1,"reps":2,"review":"20220616065107210"}]
+interval: 13
+lapses: 1
+modified: 20220629142934612
+reps: 3
+retrievability: 0.8907236147679065
+review: 20220629142934612
+stability: 61.86139732115084
+tags: hbase ?
+title: 堆的类型
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-06-08_09-58-27.jpg]]

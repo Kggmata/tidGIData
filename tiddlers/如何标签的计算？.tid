@@ -1,0 +1,17 @@
+created: 20220614083933802
+difficulty: 1
+due: 20230427114200862
+grade: 2
+history: [{"due":"20220617115916591","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616115916591"},{"due":"20220626011831380","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617011831380"},{"due":"20220821003017831","interval":11,"difficulty":1,"stability":53.686361334377686,"retrievability":0.8770110293660888,"grade":2,"lapses":0,"reps":3,"review":"20220628003017830"}]
+interval: 65
+lapses: 0
+modified: 20220901114200863
+reps: 4
+retrievability: 0.8802372998671871
+review: 20220901114200862
+stability: 238.45559661584696
+tags: 用户画像web界面 ?
+title: 如何标签的计算？
+type: text/vnd.tiddlywiki
+
+使用SparkSQL技术

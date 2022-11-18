@@ -1,0 +1,29 @@
+created: 20220714014904548
+difficulty: 2.2629302062705365
+due: 20220906003554838
+grade: 0
+history: [{"due":"20220720145427158","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719145427158"},{"due":"20220813101229439","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220728101229438"},{"due":"20220821020610105","interval":23,"difficulty":2.0629302061394927,"stability":0.07408182272361549,"retrievability":0.8629302061394925,"grade":0,"lapses":1,"reps":1,"review":"20220820020610105"}]
+interval: 16
+lapses: 2
+modified: 20220905003554838
+reps: 1
+retrievability: 1.310436026169101e-10
+review: 20220905003554838
+stability: 0.05488116409496729
+tags: ?
+title: 计算框架
+type: text/vnd.tiddlywiki
+
+离线统计的计算框架
+
+mr, hive, sparkcore, presto, impala, tez
+
+准实时
+
+spark streaming (时间驱动)
+
+实时
+
+storm(Jstorm),
+spark structuredStreaming,
+flink(Blink) (数据驱动)

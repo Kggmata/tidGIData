@@ -1,0 +1,17 @@
+created: 20220714052153243
+difficulty: 1
+due: 20221127022447492
+grade: 2
+history: [{"due":"20220720151153008","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719151153008"},{"due":"20220813103922603","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220728103922603"}]
+interval: 23
+lapses: 0
+modified: 20220820022447492
+reps: 3
+retrievability: 0.8629302061394925
+review: 20220820022447492
+stability: 99.20790923100614
+tags: ?
+title: 贪心算法
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-07-14_13-21-44.jpg]]

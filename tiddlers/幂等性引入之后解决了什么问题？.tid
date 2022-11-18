@@ -1,0 +1,29 @@
+created: 20220718090204016
+difficulty: 1
+due: 20230226142830654
+grade: 1
+history: [{"due":"20220801115412151","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731115412151"},{"due":"20220822122959182","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806122959182"}]
+interval: 41
+lapses: 0
+modified: 20220916142830654
+reps: 3
+retrievability: 0.7683514093598156
+review: 20220916142830653
+stability: 162.94395244809002
+tags: ?
+title: 幂等性引入之后解决了什么问题？
+type: text/vnd.tiddlywiki
+
+```
+面对这样的问题，Kafka引入了幂等性。那么幂等性是如何解决这类重复发送消息的问题的呢？下面我们可以先来看看流程图：
+```
+[img[Kafka幂等性原理及实现剖析 - 哥不是小萝莉 - 博客园2022-07-18 17_02_18.png]]
+
+```
+同样，这是一种理想状态下的发送流程。实际情况下，会有很多不确定的因素，比如Broker在发送Ack信号给Producer时出现网络异常，导致发送失败。异常情况如下图所示：
+```
+[img[Kafka幂等性原理及实现剖析 - 哥不是小萝莉 - 博客园2022-07-18 17_02_41.png]]
+
+```
+当Producer发送消息(x2,y2)给Broker时，Broker接收到消息并将其追加到消息流中。此时，Broker返回Ack信号给Producer时，发生异常导致Producer接收Ack信号失败。对于Producer来说，会触发重试机制，将消息(x2,y2)再次发送，但是，由于引入了幂等性，在每条消息中附带了PID（ProducerID）和SequenceNumber。相同的PID和SequenceNumber发送给Broker，而之前Broker缓存过之前发送的相同的消息，那么在消息流中的消息就只有一条(x2,y2)，不会出现重复发送的情况。
+```

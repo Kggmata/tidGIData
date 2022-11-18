@@ -1,0 +1,30 @@
+created: 20220529052725901
+difficulty: 1
+due: 20220920133612926
+grade: 2
+history: [{"due":"20220601053721041","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053721041"},{"due":"20220622125647560","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603125647559"}]
+interval: 20
+lapses: 0
+modified: 20220623133612927
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623133612926
+stability: 89.0394510841741
+tags: hive ?
+title: Hive中的 if 函数不能实现多层条件判断
+type: text/vnd.tiddlywiki
+
+错误：多层条件判断一般主要用case when
+
+- case when 条件1 then R1 when 条件2 then R2 …… else RN end
+
+- case 列 when  值1  then R1  when  值2 then R2 …… else RN  end
+
+- if也可以实现多层条件判断：嵌套，一般用于单层条件判断
+
+  ```
+  if(条件, True结果，False的结果)
+  if(条件1，True结果, if(条件2，True的结果，False的结果))
+
+
+  

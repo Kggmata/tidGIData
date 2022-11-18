@@ -1,0 +1,52 @@
+created: 20220725072556095
+modified: 20220729044255712
+tags: ? flink
+title: hudi Indexing
+type: text/vnd.tiddlywiki
+
+```
+hudi提供高效的upsert, 通过mapping a given hoodie key (record key + partition path) consistently to a file id, via an indexing mechanism.
+This mapping between record key and file group/file id, never changes once the first version of a record has been written to a file. In short, the mapped file group contains all versions of a group of records.
+```
+[img[Fact table2022-07-29 12_19_18.png]]
+
+```
+Hudi索引类型: 
+Bloom index: record key建立的布隆过滤器
+simple index: 
+hbase index: 吧index mapping在外部hbase table
+user defined
+```
+```
+Global/Non-global:
+默认索引bloom和simple是non-global的, 而hbase只能说global的
+可以通过hoodie.index.type=GLOBAL_BLOOM and hoodie.index.type=GLOBAL_SIMPLE开始global
+
+global代表一个table的所有partition之上的record key的unique
+
+Non-global只保证所在分区内的record key的unique
+```
+index场景:
+
+```
+1 传统场景
+大多数公司把业务数据参在NOSQL数据库, 也就是说大部分update在最新的partition, 少部分到older ones.
+这种场景下, bloom更适合. 可以过滤掉大部分不相关的数据文件, 同时, bloom过滤器的占用空间相比其他少很多.
+bloom根据他的算法和占用空间, 存在误判率, 给的bitmap位数越多, 那么误判率越低.
+```
+[img[Fact table.gif]]
+
+```
+2 实时场景, 去重
+数据更新仅在最新的partition, 实时需要解决的一个问题就是数据重复.
+虽然可以采用hbase索引, 但是占用空间和event数据量成线性增长, 因此cost很高
+可以使用bloom索引
+```
+[img[Event table.gif]]
+
+```
+3. 高维数据的随机update/delete
+特点是更新量不大, 但是分散在各个partitions.同时table可能是unpartitioned, 
+这种场景bloom过滤器效果就一般了, simple index更适合
+```
+[img[Dimensions table.gif]]

@@ -1,0 +1,19 @@
+created: 20220524125626800
+difficulty: 1.0780644521878417
+due: 20221229030608702
+grade: 1
+history: [{"due":"20220529144751773","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528144751773"},{"due":"20220603091007320","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602091007319"},{"due":"20220607122809956","interval":4,"difficulty":3.487837552679764,"stability":0.058954374971038004,"retrievability":0.012442954570255769,"grade":0,"lapses":2,"reps":1,"review":"20220606122809956"},{"due":"20220612063309448","interval":5,"difficulty":3.6879691495478832,"stability":0.042165720570753545,"retrievability":0.00013159686811918498,"grade":0,"lapses":3,"reps":1,"review":"20220611063309447"},{"due":"20220619005550129","interval":3,"difficulty":1.88852435448371,"stability":5.284756316315451,"retrievability":0.0005552049358268727,"grade":2,"lapses":3,"reps":2,"review":"20220614005550129"},{"due":"20220722001305140","interval":6,"difficulty":1,"stability":32.40982465405804,"retrievability":0.8872574392972734,"grade":2,"lapses":3,"reps":3,"review":"20220620001305139"}]
+interval: 40
+lapses: 3
+modified: 20220730030608702
+reps: 4
+retrievability: 0.8780644521878418
+review: 20220730030608702
+stability: 151.73129764541284
+tags: spark ?
+title: Hive的两张表关联，使用MapReduce怎么实现？
+type: text/vnd.tiddlywiki
+
+如果其中有一张表为小表，直接使用map端join的方式（map端加载小表）进行聚合。
+
+如果两张都是大表，那么采用联合key，联合key的第一个组成部分是join on中的公共字段，第二部分是一个flag，0代表表A，1代表表B，由此让Reduce区分客户信息和订单信息；在Mapper中同时处理两张表的信息，将join on公共字段相同的数据划分到同一个分区中，进而传递到一个Reduce中，然后在Reduce中实现聚合

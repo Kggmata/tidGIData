@@ -1,0 +1,17 @@
+created: 20220601075731572
+difficulty: 1
+due: 20221006144339038
+grade: 2
+history: [{"due":"20220605023101090","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023101090"},{"due":"20220626002239605","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002239605"},{"due":"20220630021619490","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629021619490"},{"due":"20220717104251343","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220704104251343"}]
+interval: 17
+lapses: 1
+modified: 20220721144339038
+reps: 3
+retrievability: 0.8704639015033426
+review: 20220721144339038
+stability: 77.14155485994766
+tags: hbase ?
+title: hbase单元格
+type: text/vnd.tiddlywiki
+
+一个行键rowkey、列族column family、列修饰符column identifier、数据value和时间戳time stamp组合起来叫做一个单元格（ Cell）

@@ -1,0 +1,21 @@
+created: 20220711235624322
+difficulty: 1
+due: 20221102075042159
+grade: 2
+history: [{"due":"20220716060005555","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715060005555"},{"due":"20220806141221908","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":2,"lapses":0,"reps":2,"review":"20220721141221908"}]
+interval: 19
+lapses: 0
+modified: 20220809075042159
+reps: 3
+retrievability: 0.8850482664204823
+review: 20220809075042159
+stability: 84.87955078232405
+tags: ?
+title: 谷歌三篇论文
+type: text/vnd.tiddlywiki
+
+GFS
+
+BigTable
+
+MapReduce

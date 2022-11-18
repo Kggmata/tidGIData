@@ -1,0 +1,25 @@
+created: 20220708090435943
+difficulty: 1
+due: 20221028045940900
+grade: 2
+history: [{"due":"20220712072239888","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072239888"},{"due":"20220720151537426","interval":8,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220719151537426"},{"due":"20220808124438668","interval":7,"difficulty":1,"stability":12.926473287254842,"retrievability":0.00004746669245620781,"grade":1,"lapses":1,"reps":2,"review":"20220726124438668"}]
+interval: 17
+lapses: 1
+modified: 20220812045940900
+reps: 3
+retrievability: 0.8706085461455632
+review: 20220812045940900
+stability: 77.14211098680948
+tags: 用户画像 ?
+title: presto资源调度
+type: text/vnd.tiddlywiki
+
+[img[硬刚Presto %7C Presto原理&调优&面试&实战全面2022-07-08 17_04_57.jpg]]
+
+```
+Presto 查询引擎是一个 Master-Slave 的架构，由一个 Coordinator 节点，一个 Discovery Server 节点，多个 Worker 节点组成，Discovery Server 通常内嵌于 Coordinator 节点中。
+
+Coordinator 负责解析 SQL 语句，生成执行计划，分发执行任务给 Worker 节点执行。
+
+Worker 节点负责实际执行查询任务。Worker 节点启动后向 Discovery Server 服务注册，Coordinator 从 Discovery Server 获得可以正常工作的 Worker 节点。如果配置了 Hive Connector，需要配置一个 Hive MetaStore 服务为 Presto 提供 Hive 元信息，Worker 节点与 HDFS 交互读取数据。
+```

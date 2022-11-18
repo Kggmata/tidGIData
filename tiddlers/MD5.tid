@@ -1,0 +1,17 @@
+created: 20220606071856159
+difficulty: 1.074347896883307
+due: 20220927143155477
+grade: 1
+history: [{"due":"20220611003110229","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610003110229"},{"due":"20220629233108135","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613233108135"}]
+interval: 20
+lapses: 0
+modified: 20220704143155477
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704143155477
+stability: 84.82124350335246
+tags: hbase ?
+title: MD5
+type: text/vnd.tiddlywiki
+
+The MD5 message-digest algorithm is a cryptographically broken but still widely used hash function producing a 128-bit hash value

@@ -1,0 +1,31 @@
+created: 20220717063525215
+difficulty: 1
+due: 20220825073603961
+grade: 2
+history: [{"due":"20220805134308910","interval":0,"difficulty":0.07897385645727227,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726114546683"}]
+interval: 14
+lapses: 0
+modified: 20220809073603961
+reps: 2
+retrievability: 3.926042068775345e-7
+review: 20220809073603960
+stability: 16.43975634590915
+tags: ?
+title: Flink SQL 连续查询的两种类型
+type: text/vnd.tiddlywiki
+
+更新（Update）查询 & 追加（Append）查询
+
+```
+虽然前一节的两个查询看起来非常相似（都计算分组进行计数聚合），但它们在一个重要方面不同：
+	第一个查询（group by user），即（Update）查询：会更新先前输出的结果，即结果表流数据中包含 INSERT 和 UPDATE 数据。
+	可以理解为 group by user 这条语句当中，输入源的数据是一直有的，源源不断的，同一个 user 的数据之后可能还是会有的，因此可以认为此 SQL 的每次的输出结果都是一个中间结果，
+	当同一个 user 下一条数据到来的时候，就要用新结果把上一次的产出中间结果（旧结果）给 UPDATE 了。所以这就是 UPDATE 查询的由来（其中 INSERT 就是第一条数据到来的时候，没有之前的中间结果，所以是 INSERT）。
+	第二个查询（group by user, tumble(xxx)），即（Append）查询：只追加到结果表，即结果表流数据中只包含 INSERT 的数据。
+	可以理解为虽然 group by user, tumble(xxx) 上游也是一个源源不断的数据，但是这个查询本质上是对时间上的划分，而时间都是越变越大的，当前这个滚动窗口结束之后，后面来的数据的时间都会比这个滚动窗口的结束时间大，都归属于之后的窗口了，当前这个滚动窗口的结果数据就不会再改变了，因此这条查询只有 INSERT 数据，即一个 Append 查询。
+上面是 Flink SQL 连续查询处理机制上面的两类查询方式。我们可以发现连续查询的处理机制不一样，产出到结果表中的结果数据也是不一样的。针对上面两种结果表的更新方式，Flink SQL 提出了 changelog 表的概念来进行兼容。
+changelog 表这个概念其实就和 MySQL binlog 是一样的。会包含 INSERT、UPDATE、DELETE 三种数据，通过这三种数据的处理来描述实时处理技术对于动态表的变更：
+	changelog 表：即第一个查询的输出表，输出结果数据不但会追加，还会发生更新
+	changelog insert-only 表：即第二个查询的输出表，输出结果数据只会追加，不会发生更新
+
+```

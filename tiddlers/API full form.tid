@@ -1,0 +1,19 @@
+created: 20220529052351418
+difficulty: 1
+due: 20220920071548611
+grade: 2
+history: [{"due":"20220601053420292","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053420291"},{"due":"20220622090947465","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603090947465"}]
+interval: 20
+lapses: 0
+modified: 20220623071548611
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623071548611
+stability: 89.0394510841741
+tags: spark ?
+title: API full form
+type: text/vnd.tiddlywiki
+
+The full form of API is Application Programming Interface
+
+API：源代码，提供的代码接口

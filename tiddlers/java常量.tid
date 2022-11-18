@@ -1,0 +1,19 @@
+created: 20220724121039665
+difficulty: 0.025386988635295055
+due: 20220827143253683
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826143253683
+reps: 1
+retrievability: 1
+review: 20220826143253683
+stability: 0.10000000088475645
+tags: flink ?
+title: java常量
+type: text/vnd.tiddlywiki
+
+```
+final修饰, 在程序运行时无法修改
+```

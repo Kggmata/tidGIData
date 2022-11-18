@@ -1,0 +1,17 @@
+created: 20220522045418649
+difficulty: 1.3767994636196013
+due: 20220909140139884
+grade: 2
+history: [{"due":"20220524020333379","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020333379"},{"due":"20220619072449189","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529072449188"}]
+interval: 22
+lapses: 0
+modified: 20220620140139884
+reps: 3
+retrievability: 0.8959329765306554
+review: 20220620140139884
+stability: 81.39969753492974
+tags: spark ?
+title: Spark Standalone是公平分布式主从架构，主节点不存在单点故障问题
+type: text/vnd.tiddlywiki
+
+错误：普通主从架构，存在单点故障问题

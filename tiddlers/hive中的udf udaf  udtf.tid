@@ -1,0 +1,27 @@
+created: 20220530051214874
+difficulty: 1
+due: 20220920133730544
+grade: 2
+history: [{"due":"20220601083905507","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083905507"},{"due":"20220622125701005","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603125701005"}]
+interval: 20
+lapses: 0
+modified: 20220623133730544
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623133730544
+stability: 89.0394510841741
+tags: spark ?
+title: hive中的udf udaf  udtf
+type: text/vnd.tiddlywiki
+
+- UDF：一对一的函数【User Defined Functions】
+
+  - substr、split、ceil、floor、date_add、from_unixtime
+
+- UDAF：多对一的函数【User Defined Aggregation Functions】
+
+  - count、sum、avg、max、collect_list
+
+- UDTF：一对多的函数【User Defined Tabular Functions】
+
+  - explode、json_tuple、parse_url_tuple

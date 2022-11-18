@@ -1,0 +1,65 @@
+created: 20220618061703781
+difficulty: 1.0825101212717463
+due: 20220915122544266
+grade: 1
+history: [{"due":"20220621002951106","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620002951105"},{"due":"20220623142444116","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622142444115"},{"due":"20220708085502841","interval":3,"difficulty":1,"stability":12.644777089702036,"retrievability":0.01403297475148654,"grade":2,"lapses":1,"reps":2,"review":"20220625085502841"}]
+interval: 15
+lapses: 1
+modified: 20220710122544267
+reps: 3
+retrievability: 0.8825101212717463
+review: 20220710122544266
+stability: 66.51399071455825
+tags: 用户画像 ?
+title: structtype和structfield
+type: text/vnd.tiddlywiki
+
+1、structField
+
+源码结构：
+
+```
+case class StructField(
+    name: String,
+    dataType: DataType,
+    nullable: Boolean = true,
+    metadata: Metadata = Metadata.empty)
+```
+
+`A field inside a StructType
+name：The name of this field.
+dataType：The data type of this field.
+nullable：Indicates if values of this field can be null values.
+metadata：The metadata of this field. The metadata should be preserved during transformation if the content of the column is not modified, e.g, in selection.`
+
+一个结构体内部的 一个StructField就像一个SQL中的一个字段一样，它包含了這个字段的具体信息，可以看如下列子：
+
+```
+def schema_StructField()={
+/**
+  * StructField 是 一个 case class ,其中是否可以为空,默认是 true，初始元信息是为空
+  * 它是作为描述 StructType中的一个字段
+  */
+	val sf = new StructField("b",IntegerType)
+	println(sf.name)//b
+	println(sf.dataType)//IntegerType
+	println(sf.nullable)//true
+	println(sf.metadata)//{}
+}
+```
+2. structType
+
+```
+A StructType object can be constructed by
+StructType(fields: Seq[StructField])
+一个StructType对象，可以有多个StructField,同时也可以用名字（name）来提取,就想当于Map可以用key来提取value，但是他StructType提取的是整条字段的信息
+在源码中structType是一个case class,如下：
+case class StructType(fields: Array[StructField]) extends DataType with Seq[StructField] {}
+它是继承Seq的，也就是说Seq的操作，它都拥有，但是从形式上来说，每个元素是用  StructField包住的。
+```
+3、Schema
+
+```
+Schema就是我们数据的 数据结构描述，
+一个Schema是一个数据结构的描述（比如描述一个Json文件），它可以是在运行的时候隐式导入，或者在编译的时候就导入。 它是用一个StructField集合对象的StructType描述（用一个三元tuple,内部是：name,type.nullability），本来有四个信息的为什么会说是三元数组？ 其实metadata，你是可以调出来。
+```

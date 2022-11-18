@@ -1,0 +1,19 @@
+created: 20220608001501295
+difficulty: 1
+due: 20220930115330679
+grade: 2
+history: [{"due":"20220611235201838","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610235201838"},{"due":"20220630005516940","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220614005516939"}]
+interval: 20
+lapses: 0
+modified: 20220704115330679
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704115330679
+stability: 88.3800382106863
+tags: hbase ?
+title: HDFS Short-Circuit Local Reads
+type: text/vnd.tiddlywiki
+
+https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/ShortCircuitLocalReads.html
+
+In HDFS, reads normally go through the DataNode. Thus, when the client asks the DataNode to read a file, the DataNode reads that file off of the disk and sends the data to the client over a TCP socket. So-called “short-circuit” reads bypass the DataNode, allowing the client to read the file directly. Obviously, this is only possible in cases where the client is co-located with the data. Short-circuit reads provide a substantial performance boost to many applications.

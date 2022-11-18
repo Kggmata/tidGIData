@@ -1,0 +1,17 @@
+created: 20220530051117214
+difficulty: 1
+due: 20220920143411369
+grade: 2
+history: [{"due":"20220601083713301","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531083713301"},{"due":"20220622131528657","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603131528657"}]
+interval: 20
+lapses: 0
+modified: 20220623143411369
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623143411369
+stability: 89.0394510841741
+tags: spark ?
+title: reduceBykey和aggregateByKey的区别是
+type: text/vnd.tiddlywiki
+
+aggregateByKey支持分区内和分区间不同的计算逻辑

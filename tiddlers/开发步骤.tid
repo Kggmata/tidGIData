@@ -1,0 +1,35 @@
+created: 20220620053530821
+difficulty: 1
+due: 20221008132257750
+grade: 2
+history: [{"due":"20220622000552626","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220621000552626"},{"due":"20220624032856814","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220623032856814"},{"due":"20220707092530517","interval":2,"difficulty":1,"stability":11.77883909930856,"retrievability":0.05817903264660851,"grade":2,"lapses":1,"reps":2,"review":"20220625092530516"},{"due":"20220711050210539","interval":15,"difficulty":2.074438361112966,"stability":0.05488141221849455,"retrievability":0.8744383611129658,"grade":0,"lapses":2,"reps":1,"review":"20220710050210538"},{"due":"20220713010836764","interval":2,"difficulty":2.2959412037931184,"stability":0.04065715014820503,"retrievability":0.02150284268015211,"grade":0,"lapses":3,"reps":1,"review":"20220712010836763"},{"due":"20220728013749919","interval":8,"difficulty":1,"stability":7.994100533111112,"retrievability":9.917894733222074e-10,"grade":2,"lapses":3,"reps":2,"review":"20220720013749919"}]
+interval: 14
+lapses: 3
+modified: 20220803132257750
+reps: 3
+retrievability: 0.8315058279852803
+review: 20220803132257750
+stability: 66.07769453861806
+tags: 用户画像 ?
+title: 开发步骤
+type: text/vnd.tiddlywiki
+
+[img[image-20220620103749910.png]]
+* 主要步骤：
+
+```
+1-依据TagId从MySQL中读取标签数据
+2-解析标签rule字段，从es数据源中读取业务数据
+3-业务数据结合5级别的属性标签进行构建标签
+4-合并画像标签数据，存储在es中
+```
+
+* 涉及核心技术点：
+
+```
+（1）如何从es中读取和写入数据？已经搞定-es读取：API-spark.read.format("es") spark.write.format("es")
+（2）一个用户有很多的标签，需要标签计算完成后进行标签的合并，将历史标签和新标签合并？？？
+（3）SparkSQL开发，用户画像项目使用DSL的基于领域查询语言开发，写代码方式逻辑性更强
+SparkSQL的函数在那个包下面？spark.sql.functions
+使用DSL和SQL中，使用DSL直接写代码，但是使用SQL需要注册临时视图？API？df.createOrReplaceTemview()
+```

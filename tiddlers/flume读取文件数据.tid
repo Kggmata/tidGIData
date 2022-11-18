@@ -1,0 +1,101 @@
+created: 20220612065433956
+difficulty: 1.3273257425729266
+due: 20220919125545579
+grade: 1
+history: [{"due":"20220617112455315","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615062830743"},{"due":"20220621001120211","interval":3,"difficulty":1.199811856008279,"stability":0.07412477722623134,"retrievability":0.043640875953000154,"grade":0,"lapses":1,"reps":1,"review":"20220618101902207"},{"due":"20220705085230594","interval":4,"difficulty":1,"stability":12.864457324828322,"retrievability":0.0033945770329884373,"grade":2,"lapses":1,"reps":2,"review":"20220622085230594"},{"due":"20220710143554136","interval":17,"difficulty":2.07002719750835,"stability":0.05488141221849455,"retrievability":0.8700271975083502,"grade":0,"lapses":2,"reps":1,"review":"20220709143554136"},{"due":"20220719063424685","interval":2,"difficulty":1.2915300401885024,"stability":8.223439888089022,"retrievability":0.02150284268015211,"grade":1,"lapses":2,"reps":2,"review":"20220711063424684"}]
+interval: 14
+lapses: 2
+modified: 20220725125545579
+reps: 3
+retrievability: 0.8357957023844241
+review: 20220725125545579
+stability: 55.60819480487735
+tags: [[structed streaming]] ?
+title: flume读取文件数据
+type: text/vnd.tiddlywiki
+
+需求：
+
+- 从文件中读取数据（这个文件还会持续的产生新数据追加），可以使用`TAILDIR`这个Flume内置的Source
+
+  就可以去监听文件了
+
+- 中转Channel，为了安全可以选择File（在磁盘中转），为了性能可以选择Memory在内存中转
+
+  我们就简单的选择`Memory`即可
+
+- 写出Kafka，就可以选择官方提供的：`Kafka Sink`
+
+*配置文件的编辑
+
+在`conf`新建：`taildir_source_kafka_sink.conf`
+
+```
+# 三大组件名称
+a1.sources = r1
+a1.channels = c1
+a1.sinks = s1
+
+# source
+a1.sources.r1.type = TAILDIR
+# 监控文件变化的一个元数据记录json文件
+a1.sources.r1.positionFile = /root/momo/taildir_position.json
+# 要监控的文件组
+a1.sources.r1.filegroups = f1
+# 配置f1组内要监控的文件，我们监控：MOMO_DATA.dat
+a1.sources.r1.filegroups.f1 = /root/momo/MOMO_DATA.dat
+# 一批处理10条数据
+a1.sources.r1.maxBatchCount = 10
+
+# channel
+a1.channels.c1.type = memory
+# channel的容量
+a1.channels.c1.capacity = 1000
+# channel的转换容量批处理容量
+a1.channels.c1.transactionCapacity = 100
+
+# sink
+a1.sinks.s1.type = org.apache.flume.sink.kafka.KafkaSink
+# 写出的kafka 主题
+a1.sinks.s1.kafka.topic = MOMO
+# kafka的broker地址
+a1.sinks.s1.kafka.bootstrap.servers = node1:9092,node2:9092,node3:9092
+# 一次批处理条数
+a1.sinks.s1.kafka.flumeBatchSize = 10
+# 配置生产者的ACK级别
+a1.sinks.s1.kafka.producer.acks = 1
+a1.sinks.s1.kafka.producer.linger.ms = 10
+
+# sink channel source的关系
+a1.sources.r1.channels = c1
+a1.sinks.s1.channel = c1
+```
+
+* 启动
+
+先在KAFKA创建对应的主题Topic：
+
+```
+bin/kafka-topics.sh --create --zookeeper node1:2181,node2:2181,node3:2181 --topic MOMO --partitions 3 --replication-factor 1
+```
+
+开启数据生成器，开始生成数据：
+
+```shell
+cd /root/momo
+
+java -jar MoMo_DataGen.jar MoMo_Data.xlsx ./ 5000
+```
+
+启动Flume：
+
+```shell
+bin/flume-ng agent -c conf -f conf/taildir_source_kafka_sink.conf -n a1 -Dflume.root.logger=INFO,console
+```
+
+开启kafka的模拟消费者，接受数据看看：
+
+```shell
+bin/kafka-console-consumer.sh --bootstrap-server node1:9092,node2:9092,node3:9092 --topic MOMO
+```
+

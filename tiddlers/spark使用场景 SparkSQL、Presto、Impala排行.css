@@ -1,0 +1,7 @@
+- **场景**：所有需要对数据进行分布式的查询、计算、机器学习都可以使用Spark来完成
+  - 工作中Spark目前主要的应用场景：SparkSQL做离线计算，实时计算使用Flink来实现
+- SparkSQL、Presto、Impala：都是基于SQL的内存式计算引擎
+  - SparkSQL：性能垫底，功能最全面，使用成本最低
+  - Presto：性能其次，支持多数据源接口：Hive、ES、Kafka
+    - 一般用于即席查询【查询立即返回结果】，不作为计算引擎
+  - Impala：性能最高，语法兼容性很差，用于对Hive和Hbase数据查询统计

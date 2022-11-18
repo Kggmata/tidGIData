@@ -1,0 +1,6 @@
+**模块**：类似于Hadoop中有HDFS、YARN、MapReduce几个模块
+  - **SparkCore**：最底层的核心的模块，所有上层计算底层都是SparkCore，面试中核心
+  - **==SparkSQL==**：功能最强大的模块，既能做离线也能做实时，既能写SQL也能写代码，底层还是SparkCore，使用Spark的核心
+  - Spark Streaming：准实时计算的模块，底层也是SparkCore，使用离线来模拟实时
+  - Spark MLlib：机器学习的算法库，主要用于实现推荐系统等应用的算法库
+  - Spark GraphX：图计算，基于图数据结构实现一些计算

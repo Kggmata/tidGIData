@@ -1,0 +1,19 @@
+created: 20220619071006882
+difficulty: 1.075606407978934
+due: 20220921131546718
+grade: 1
+history: [{"due":"20220621010212789","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620010212789"},{"due":"20220705080436691","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622080436691"}]
+interval: 17
+lapses: 0
+modified: 20220709131546718
+reps: 3
+retrievability: 0.8756064079789342
+review: 20220709131546718
+stability: 74.00721729876608
+tags: 用户画像 ?
+title: ES的data replication model基于什么
+type: text/vnd.tiddlywiki
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-replication.html
+
+Elasticsearch’s data replication model is based on the primary-backup model and is described very well in the ''PacificA paper of Microsoft Research.'' That model is based on having a single copy from the replication group that acts as the primary shard. The other copies are called replica shards. The primary serves as the main entry point for all indexing operations. It is in charge of validating them and making sure they are correct. Once an index operation has been accepted by the primary, the primary is also responsible for replicating the operation to the other copies.

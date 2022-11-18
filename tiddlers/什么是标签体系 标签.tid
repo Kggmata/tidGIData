@@ -1,0 +1,24 @@
+created: 20220614064029815
+difficulty: 2.0802373214018735
+due: 20220902114736417
+grade: 0
+history: [{"due":"20220617034011190","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034011190"},{"due":"20220626025013213","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617025013212"},{"due":"20220821020247183","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628020247183"}]
+interval: 65
+lapses: 1
+modified: 20220901114736418
+reps: 1
+retrievability: 0.8802373214018735
+review: 20220901114736417
+stability: 0.07408182272361549
+tags: 用户画像web界面 ?
+title: 什么是标签体系 标签
+type: text/vnd.tiddlywiki
+
+```
+就是用户特征符号的表示
+```
+标签
+
+```
+实现用户画像的数学模型
+```

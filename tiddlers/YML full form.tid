@@ -1,0 +1,17 @@
+created: 20220711042125408
+difficulty: 1
+due: 20221111103144200
+grade: 2
+history: [{"due":"20220713035413410","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035413410"},{"due":"20220806053238575","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220721053238575"}]
+interval: 21
+lapses: 0
+modified: 20220811103144200
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811103144199
+stability: 92.05363191623492
+tags: ?
+title: YML full form
+type: text/vnd.tiddlywiki
+
+YAML is a data serialization language that is often used for writing configuration files. Depending on whom you ask, YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents.

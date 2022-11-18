@@ -1,0 +1,17 @@
+created: 20220614083944177
+difficulty: 1
+due: 20230427114700219
+grade: 2
+history: [{"due":"20220617115919531","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616115919531"},{"due":"20220626023251837","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617023251837"},{"due":"20220821014841360","interval":11,"difficulty":1,"stability":53.686361334377686,"retrievability":0.8770110293660888,"grade":2,"lapses":0,"reps":3,"review":"20220628014841360"}]
+interval: 65
+lapses: 0
+modified: 20220901114700219
+reps: 4
+retrievability: 0.8802372998671871
+review: 20220901114700219
+stability: 238.45559661584696
+tags: 用户画像web界面 ?
+title: 如何实现标签调度？
+type: text/vnd.tiddlywiki
+
+使用oozie的调度的方式（可以使用ds的方式）

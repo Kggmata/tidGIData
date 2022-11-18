@@ -1,0 +1,23 @@
+created: 20220605060527650
+difficulty: 1
+due: 20220929114218220
+grade: 2
+history: [{"due":"20220608060459639","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220607060459639"},{"due":"20220629071403709","interval":5,"difficulty":1,"stability":16.761683814178046,"retrievability":0.006222847464917221,"grade":2,"lapses":0,"reps":2,"review":"20220612071403708"}]
+interval: 20
+lapses: 0
+modified: 20220702114218220
+reps: 3
+retrievability: 0.881865341412669
+review: 20220702114218219
+stability: 88.52257450657113
+tags: hbase ?
+title: Rowkey和Region
+type: text/vnd.tiddlywiki
+
+? 我们的某一条数据，如何确定写入到哪一个Region中呢？
+
+1. 轮训写，不指定具体Region，基于数据平衡为基准写入到某一个region内
+
+2. 逮着一个可劲写，写到它不能存了为止，再换region接着写
+
+''3. 每一个region都有自己的数据范围，数据根据rowkey来确定写入到哪个region内''

@@ -1,0 +1,25 @@
+created: 20220803130317753
+modified: 20220803131210673
+tags: ? flink
+title: 进程的调度算法
+type: text/vnd.tiddlywiki
+
+```
+fcfs(first come first serve scheduling)先到先服务
+从就绪队列中选择一个最先进入该队列的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。
+```
+```
+SJF(shortest job first): 短作业优先
+从就绪的队伍当中选择一个估计运行时间最短的进程为之分配资源, 让它立即执行, 直到完成或者因为某事件而阻塞为止重新调度
+```
+```
+round-robin轮询, 每个进程分配一个时间片, 即程序允许运行的时间
+```
+```
+multilevel feedback queue scheduling多级反馈队列调度
+优化前面几种调度机制的局限性, 既能实现长作业的响应, 也能使短作业迅速执行
+```
+```
+priority scheduling优先级调度
+给进程分配优先级, 优先级高的先执行, 优先级相同的按照fcfs执行. 可根据内存要求, 时间要求或者其他资源要求确定优先级.
+```

@@ -1,0 +1,19 @@
+created: 20220601080612392
+difficulty: 1
+due: 20220926050727447
+grade: 2
+history: [{"due":"20220605023207870","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023207870"},{"due":"20220626004026266","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609004026266"}]
+interval: 20
+lapses: 0
+modified: 20220629050727447
+reps: 3
+retrievability: 0.8847461089172606
+review: 20220629050727447
+stability: 88.60191707719252
+tags: hbase ?
+title: unix timestamp格式
+type: text/vnd.tiddlywiki
+
+10位秒
+
+13位毫秒

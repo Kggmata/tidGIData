@@ -1,0 +1,17 @@
+created: 20220711232229960
+difficulty: 1
+due: 20221102075010601
+grade: 2
+history: [{"due":"20220716023607128","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715023607128"},{"due":"20220806141205665","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":2,"lapses":0,"reps":2,"review":"20220721141205665"}]
+interval: 19
+lapses: 0
+modified: 20220809075010601
+reps: 3
+retrievability: 0.8850482664204823
+review: 20220809075010601
+stability: 84.87955078232405
+tags: ?
+title: 分布式系统因为 CAP 定理放弃了 C 或者 A 中的其中一个
+type: text/vnd.tiddlywiki
+
+当没有出现分区问题的时候，系统就应该有完美的数据一致性和可用性。

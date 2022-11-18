@@ -1,0 +1,17 @@
+created: 20220719234116856
+difficulty: 1
+due: 20220824082204176
+grade: 2
+history: [{"due":"20220802035242892","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801035242892"}]
+interval: 7
+lapses: 0
+modified: 20220808082204176
+reps: 2
+retrievability: 0.0006265800565729012
+review: 20220808082204176
+stability: 16.423571292705216
+tags: ?
+title: molap
+type: text/vnd.tiddlywiki
+
+1 molap mutlidimension olap 核心思想是预先聚合 使用空间换时间来提升性能

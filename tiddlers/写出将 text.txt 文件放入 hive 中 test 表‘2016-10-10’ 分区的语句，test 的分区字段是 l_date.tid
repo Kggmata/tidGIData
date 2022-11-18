@@ -1,0 +1,8 @@
+created: 20220524122807078
+history: [{"due":"20220529142956544","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142956544"},{"due":"20220624052218922","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052218922"}]
+modified: 20220628061142906
+tags: hive !
+title: 写出将 text.txt 文件放入 hive 中 test 表‘2016-10-10’ 分区的语句，test 的分区字段是 l_date
+type: text/vnd.tiddlywiki
+
+LOAD DATA LOCAL INPATH '/your/path/test.txt' OVERWRITE INTO TABLE test PARTITION (l_date='2016-10-10')

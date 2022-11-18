@@ -1,0 +1,103 @@
+created: 20220624060933587
+difficulty: 1.065612726934808
+due: 20221021060321779
+grade: 1
+history: [{"due":"20220626015555240","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625015555240"},{"due":"20220715044442464","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":1,"lapses":0,"reps":2,"review":"20220629044442464"}]
+interval: 22
+lapses: 0
+modified: 20220721060321779
+reps: 3
+retrievability: 0.865612726934808
+review: 20220721060321779
+stability: 92.15055392172822
+tags: 用户画像 ?
+title: sort-based shuffle hash-based shuffle
+type: text/vnd.tiddlywiki
+
+一：为什么需要Sort-Based Shuffle?
+
+1， Shuffle一般包含两个阶段任务：
+
+```
+第一部分：产生Shuffle数据的阶段(Map阶段，额外补充，需要实现ShuffleManager中的getWriter来写数据(数据可以通过BlockManager写到Memory，Disk，Tachyon等，例如想非常快的Shuffle，此时可以考虑把数据写在内存中，但是内存不稳定，所以可以考虑增加副本。建议采用MEMONY_AND_DISK方式)；
+第二部分：使用Shuffle数据的阶段(Reduce阶段，额外补充，Shuffle读数据：需要实现ShuffleManager的getReader，Reader会向Driver去获取上一个Stage产生的Shuffle数据)。
+```
+2， Spark的Job会被划分成很多Stage:
+
+```
+如果只要一个Stage，则这个Job就相当于只有一个Mapper段，当然不会产生Shuffle，适合于简单的ETL。如果不止一个Stage，则最后一个Stage就是最终的Reducer，最左侧的第一个Stage就仅仅是整个Job的Mapper，中间所有的任意一个Stage是其父Stage的Reducer且是其子Stage的Mapper；
+```
+二：Hash-based Shuffle
+
+```
+1， Spark Shuffle在最开始的时候只支持Hash-based Shuffle:默认Mapper阶段会为Reducer阶段的每一个Task单独创建一个文件来保存该Task中要使用的数据。
+优点：就是操作数据简单。
+缺点：但是在一些情况下(例如数据量非常大的情况)会造成大量文件(M*R,其中M代表Mapper中的所有的并行任务数量，R代表Reducer中所有的并行任务数据)大数据的随机磁盘I/O操作且会形成大量的Memory(极易造成OOM)。
+```
+
+```
+2，Hash-based Shuffle产生的问题:
+第一：不能够处理大规模的数据
+第二：Spark不能够运行在大规模的分布式集群上！
+```
+
+```
+3，Consolidate机制:
+后来的改善是加入了Consolidate机制来将Shuffle时候产生的文件数量减少到C*R个(C代表在Mapper端，同时能够使用的cores数量，R代表Reducer中所有的并行任务数量)。但是此时如果Reducer端的并行数据分片过多的话则C*R可能已经过大，此时依旧没有逃脱文件打开过多的厄运！！！Consolidate并没有降低并行度，只是降低了临时文件的数量，此时Mapper端的内存消耗就会变少，所以OOM也就会降低，另外一方面磁盘的性能也会变得更好。
+Spark在引入Sort-Based Shuffle之前，适合中小型数据规模的大数据处理！
+```
+三：Sort-Based Shuffle
+
+1， 为了让Spark在更大规模的集群上更高性能处理更大规模的数据，于是就引入了Sort-based Shuffle!从此以后(Spark1.1版本开始)，Spark可以胜任任何规模(包括PB级别及PB以上的级别)的大数据的处理，尤其是钨丝计划的引入和优化，Spark更快速的在更大规模的集群处理更海量的数据的能力推向了一个新的巅峰！
+
+2， Spark1.6版本支持最少三种类型Shuffle：
+
+```
+// Let the user specify short names for shuffle managers
+val shortShuffleMgrNames = Map(
+  "hash" -> "org.apache.spark.shuffle.hash.HashShuffleManager",
+  "sort" -> "org.apache.spark.shuffle.sort.SortShuffleManager",
+  "tungsten-sort" -> "org.apache.spark.shuffle.sort.SortShuffleManager")
+val shuffleMgrName = conf.get("spark.shuffle.manager", "sort")
+val shuffleMgrClass = shortShuffleMgrNames.getOrElse(shuffleMgrName.toLowerCase, shuffleMgrName)
+val shuffleManager = instantiateClass[ShuffleManager](shuffleMgrClass)
+```
+
+实现ShuffleManager接口可以根据自己的业务实际需要最优化的使用自定义的Shuffle实现；
+3，Spark1.6默认采用的就是Sort-based Shuffle的方式：
+
+```
+val shuffleMgrName = conf.get("spark.shuffle.manager", "sort")
+1
+上述源码说明，你可以在Spark配置文件中配置Spark框架运行时要使用的具体的ShuffleManager的实现。可以在conf/spark-default.conf加入如下内容：
+spark.shuffle.manager SORT 配置Shuffle方式是SORT
+```
+
+4， Sort-based Shuffle的工作方式如下：Shuffle的目的就是：
+
+数据分类，然后数据聚集。
+
+[img[这里写图片描述2022-06-24 14_10_19.png]]
+
+
+```
+1) 首先每个ShuffleMapTask不会为每个Reducer单独生成一个文件，相反，Sort-based Shuffle会把Mapper中每个ShuffleMapTask所有的输出数据Data只写到一个文件中。因为每个ShuffleMapTask中的数据会被分类，所以Sort-based Shuffle使用了index文件存储具体ShuffleMapTask输出数据在同一个Data文件中是如何分类的信息！！
+2) 基于Sort-base的Shuffle会在Mapper中的每一个ShuffleMapTask中产生两个文件：Data文件和Index文件，其中Data文件是存储当前Task的Shuffle输出的。而index文件中则存储了Data文件中的数据通过Partitioner的分类信息，此时下一个阶段的Stage中的Task就是根据这个Index文件获取自己所要抓取的上一个Stage中的ShuffleMapTask产生的数据的，Reducer就是根据index文件来获取属于自己的数据。
+涉及问题：Sorted-based Shuffle：会产生 2*M(M代表了Mapper阶段中并行的Partition的总数量，其实就是ShuffleMapTask的总数量)个Shuffle临时文件。
+Shuffle产生的临时文件的数量的变化一次为：
+Basic Hash Shuffle: M*R;
+Consalidate方式的Hash Shuffle: C*R;
+Sort-based Shuffle: 2*M;
+```
+三：默认Sort-based Shuffle的几个缺陷：
+
+```
+1. 如果Mapper中Task的数量过大，依旧会产生很多小文件，此时在Shuffle传递数据的过程中到Reducer端，reduce会需要同时打开大量的记录来进行反序列化，导致大量的内存消耗和GC的巨大负担，造成系统缓慢甚至崩溃！
+2．如果需要在分片内也进行排序的话，此时需要进行Mapper端和Reducer端的两次排序！！！
+优化：
+可以改造Mapper和Reducer端，改框架来实现一次排序。
+频繁GC的解决办法是：钨丝计划！
+```
+————————————————
+版权声明：本文为CSDN博主「snail_gesture」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/snail_gesture/article/details/50807129

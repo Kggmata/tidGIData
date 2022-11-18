@@ -1,0 +1,17 @@
+created: 20220722012551701
+difficulty: 1
+due: 20220824123809645
+grade: 2
+history: [{"due":"20220804023836195","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803023836195"}]
+interval: 5
+lapses: 0
+modified: 20220808123809645
+reps: 2
+retrievability: 0.005153779050734244
+review: 20220808123809645
+stability: 16.30688294756679
+tags: ?
+title: 在9个点上画10条直线，要求每条直线上至少有三个点？
+type: text/vnd.tiddlywiki
+
+[img[图片说明2022-07-22 09_26_08.png]]

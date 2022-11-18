@@ -1,0 +1,29 @@
+created: 20220524122838317
+difficulty: 1
+due: 20221105142501843
+grade: 2
+history: [{"due":"20220529143012319","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528143012318"},{"due":"20220603132909587","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602132909586"},{"due":"20220607123316314","interval":4,"difficulty":3.487837552679764,"stability":0.058954374971038004,"retrievability":0.012442954570255769,"grade":0,"lapses":2,"reps":1,"review":"20220606123316314"},{"due":"20220618063533148","interval":5,"difficulty":1.687969149547883,"stability":7.479108214583632,"retrievability":0.00013159686811918498,"grade":2,"lapses":2,"reps":2,"review":"20220611063533148"},{"due":"20220730021651186","interval":8,"difficulty":1,"stability":41.22771822966409,"retrievability":0.8934200037791605,"grade":2,"lapses":2,"reps":3,"review":"20220619021651185"},{"due":"20220806065658897","interval":47,"difficulty":2.0868210954909903,"stability":0.04065697172950195,"retrievability":0.8868210954909903,"grade":0,"lapses":3,"reps":1,"review":"20220805065658897"},{"due":"20220810072712949","interval":4,"difficulty":2.286852586747657,"stability":0.030119421724187252,"retrievability":0.0000314912566663105,"grade":0,"lapses":4,"reps":1,"review":"20220809072712949"},{"due":"20220819082849580","interval":5,"difficulty":1.4868526120983125,"stability":4.769650655697298,"retrievability":2.5350655691687196e-8,"grade":1,"lapses":4,"reps":2,"review":"20220814082849580"}]
+interval: 14
+lapses: 4
+modified: 20220828142501843
+reps: 3
+retrievability: 0.7339922073186875
+review: 20220828142501842
+stability: 68.57798652526454
+tags: hive ?
+title: Hive如何进行权限控制？
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1746613
+
+```
+Hive权限：
+
+Hive可以基于文件存储级别的权限管理
+Hive可以基于元数据的权限管理
+User：是基于linux用户的user
+Group：是linux层面上的用户组
+Role：角色在Hive里面创建，给角色添加权限，把角色赋予给user
+Hive中没有超级管理员，任何用户都可以进行Grant/Revoke操作
+开发实现自己的权限控制类，确保某个用户为超级用户
+```

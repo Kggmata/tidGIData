@@ -1,0 +1,17 @@
+created: 20220522045459853
+difficulty: 1.3767994636196013
+due: 20220909141714198
+grade: 2
+history: [{"due":"20220524020611680","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020611680"},{"due":"20220619072912119","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529072912119"}]
+interval: 22
+lapses: 0
+modified: 20220620141714198
+reps: 3
+retrievability: 0.8959329765306554
+review: 20220620141714197
+stability: 81.39969753492974
+tags: spark ?
+title: Spark源码是基于JVM的Scala语言开发的，不能使用Python开发
+type: text/vnd.tiddlywiki
+
+错误：可以使用Python开发，将Python程序转换成了Java程序

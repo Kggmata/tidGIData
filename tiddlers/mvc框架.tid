@@ -1,0 +1,21 @@
+created: 20220730074410523
+modified: 20220730083720357
+tags: ? flink
+title: mvc框架
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1841399
+
+''是一种软件架构模式''
+
+```
+model view controller
+''是一种软件架构模式''
+mvc将软件系统构造分为三部分, 包括了模型, 视图和控制器
+```
+```
+mvc包括
+1 视图, 也就是UI
+2 模型, 后台的处理逻辑
+3 控制器 对整个框架的控制
+```

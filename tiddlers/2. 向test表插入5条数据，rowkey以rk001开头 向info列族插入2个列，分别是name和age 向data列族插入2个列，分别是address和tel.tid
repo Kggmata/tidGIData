@@ -1,0 +1,12 @@
+created: 20220908133235830
+modified: 20220908133250456
+tags: ? flink
+title: 2. 向test表插入5条数据，rowkey以rk001开头 向info列族插入2个列，分别是name和age 向data列族插入2个列，分别是address和tel
+type: text/vnd.tiddlywiki
+
+```
+put 'test','rk001', 'info','scott'
+put 'test','rk002', 'info','12'
+put 'test','rk001', 'data','wuhu'
+put 'test','rk002', 'data','123332123'
+```

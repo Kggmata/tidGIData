@@ -1,0 +1,27 @@
+created: 20220605234312245
+difficulty: 1
+due: 20220915234848445
+grade: 2
+history: [{"due":"20220610023334482","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609023334482"},{"due":"20220628120916911","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220612120916911"}]
+interval: 17
+lapses: 0
+modified: 20220629234848445
+reps: 3
+retrievability: 0.8921371599187098
+review: 20220629234848445
+stability: 77.52610262038272
+tags: hbase ?
+title: 为什么需要compact
+type: text/vnd.tiddlywiki
+
+[img[20220605171937.png]]
+
+如图，经过从Memstore向HDFS刷新成为HFile多次后，在列族的HDFS文件夹内，就可能出现多个HFile文件。
+
+
+
+由于HFile都是有序的，它们之间的Rowkey范围是可能重叠的(没有办法锁定某一个HFile）。
+
+这种场景下，虽然不是太影响太多性能，但是依旧是会影响不少的查询时间的。
+
+''解决方式：让多个HFile合并成一个HFile即可。''

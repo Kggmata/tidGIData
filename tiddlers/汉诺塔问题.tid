@@ -1,0 +1,24 @@
+created: 20220525231224040
+difficulty: 1.0953239134772894
+due: 20220915010103224
+grade: 1
+history: [{"due":"20220531130121159","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130121159"},{"due":"20220621144526498","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220602144526498"}]
+interval: 20
+lapses: 0
+modified: 20220622010103224
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220622010103224
+stability: 84.71832744247013
+tags: spark ?
+title: 汉诺塔问题
+type: text/vnd.tiddlywiki
+
+`def hanoi(n, a, b, c):
+    if n > 0:
+        hanoi(n - 1, a, c, b)
+        print(f"moving from {a} to {c}")
+        hanoi(n - 1, b, a, c)
+
+
+hanoi(3, 'A', 'B', 'C')`

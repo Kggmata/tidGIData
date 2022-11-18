@@ -1,0 +1,64 @@
+created: 20220609065111659
+difficulty: 1
+due: 20221001072542081
+grade: 2
+history: [{"due":"20220613141952088","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612141952087"},{"due":"20220701062216743","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615062216743"}]
+interval: 20
+lapses: 0
+modified: 20220705072542081
+reps: 3
+retrievability: 0.8731304672290258
+review: 20220705072542081
+stability: 88.3647639214822
+tags: kafka ?
+title: kafka当中的segment说明
+type: text/vnd.tiddlywiki
+
+一个partition当中有多个segment文件组成，每个segment文件，包含两部分，一个是.log文件，另外一个是.index文件，其中.log文件包含了我们发送的数据存储，.index文件，记录的是我们.log文件的数据索引值，以便于我们加快数据的查询速度
+
+''索引文件与数据文件的关系''
+
+既然它们是一一对应成对出现，必然有关系。索引文件中元数据指向对应数据文件中message的物理偏移地址
+
+比如：索引文件中3,497代表：数据文件中的第三个message,它的偏移地址为497。再来看数据文件中，
+
+Message 368772表示：在全局partiton中是第368772个message。
+
+https://cloud.tencent.com/developer/article/1767848
+
+https://midkuro.github.io/2021/02/27/kafka-index/
+
+```
+注：segment index file采取稀疏索引存储方式，稀疏索引代表写入达到一定量才会更新索引.通过 log.index.interval.bytes 参数进行控制，默认大小为 4 KB，意味着 Kafka 至少写入 4KB 消息数据之后，才会在索引文件中增加一个索引项。
+
+它减少索引文件大小，通过mmap可以直接内存操作，稀疏索引为数据文件的每个对应message设置一个元数据指针,它比稠密索引节省了更多的存储空间，但查找起来需要消耗更多的时间。
+```
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+2022-06-09 14_51_43.png]]
+
+log默认1gb分段
+
+为什么分段和索引
+
+```
+为什么要消息要分段、加索引
+我们首先试想一下，如果对于Kafka的一个topic而言，如果topic的partition中只有一个数据文件的话会怎么样？
+
+新数据是添加在文件末尾的，不论文件有多大，时间复杂度永远是O(1)
+查找某个offset的Message永远是顺序查找，如果数据量很大，查找效率就很低，和ArrayList一样
+
+如何解决这个问题？Kafka有2大法宝：分段和索引
+
+数据文件的分段：
+这个是比较好理解的，加入有100条message，它们的offset是从0到99，假设将数据文件分为5端，第一段为0-19，第二段为20-39，依次类推，每段放在一个单独的数据文件里面，数据文件以该段中最小的offset命名。这样在查找指定offset的Message的时候，用二分查找就可以定位到该Message在哪个段中。
+为数据文件建索引：数据文件分段使得可以在一个较小的数据文件中查找对应offset的message了，但是这依然需要顺序扫描才能找到对应offset的message。为了进一步提高查找的效率，Kafka为每个分段后的数据文件建立了索引文件，文件名与数据文件的名字是一样的，只是文件扩展名为.index。
+
+索引文件中包含若干个索引条目，每个条目表示数据文件中一条message的索引。索引包含两个部分（均为4个字节的数字），分别为相对offset和position
+
+相对offset ：因为数据文件分段以后，每个数据文件的起始offset不为0，相对offset表示这条message相对于其所属数据文件中最小的offset的大小。举例，分段后的一个数据文件的offset是从20开始，那么offset为25的message在index文件中的相对offset就是25-20 = 5。存储相对offset可以减小索引文件占用的空间。
+position：表示该条message在数据文件中的绝对位置。只要打开文件并移动文件指针到这个position就可以读取对应的message了。
+
+作者：selrain001
+链接：https://juejin.cn/post/6844903679380684813
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+```

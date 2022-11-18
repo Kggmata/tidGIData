@@ -1,0 +1,17 @@
+created: 20220714024353726
+difficulty: 1
+due: 20221204092206585
+grade: 2
+history: [{"due":"20220720150411389","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719150411389"},{"due":"20220815015343364","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":2,"lapses":0,"reps":2,"review":"20220730015343364"}]
+interval: 24
+lapses: 0
+modified: 20220823092206585
+reps: 3
+retrievability: 0.8574307099240628
+review: 20220823092206585
+stability: 102.78038038016865
+tags: ?
+title: pipeline简单理解
+type: text/vnd.tiddlywiki
+
+流水线

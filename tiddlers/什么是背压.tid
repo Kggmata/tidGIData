@@ -1,0 +1,20 @@
+created: 20220723141218572
+difficulty: 1
+due: 20221012005558760
+grade: 2
+history: [{"due":"20220823062509691","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220822062509691"}]
+interval: 35
+lapses: 0
+modified: 20220926005558760
+reps: 2
+retrievability: 9.657805291589202e-17
+review: 20220926005558759
+stability: 16.439759152464664
+tags: flink ?
+title: 什么是背压
+type: text/vnd.tiddlywiki
+
+```
+背压是back pressure. an indicator that the machines or operators are overloaded
+it means producing data faster than the downstream operators can consume 
+```

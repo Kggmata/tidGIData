@@ -1,0 +1,19 @@
+caption: {{||Question}}
+created: 20220519092639945
+difficulty: 4.048420140656503
+due: 20220908042425718
+grade: 2
+history: [{"due":"20220521233910472","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220519233910472"},{"due":"20220523002707564","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522002707563"},{"due":"20220524000306459","interval":1,"difficulty":7.231358589403242,"stability":1.097623272188053,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220523000306459"},{"due":"20220524233515807","interval":0,"difficulty":8.431358589403242,"stability":0.23377755435084455,"retrievability":1,"grade":0,"lapses":3,"reps":1,"review":"20220523233515807"},{"due":"20220525231442716","interval":0,"difficulty":7.631358589403242,"stability":0.23377755435084455,"retrievability":1,"grade":2,"lapses":3,"reps":2,"review":"20220524231442716"},{"due":"20220609102813758","interval":6,"difficulty":5.898287632246423,"stability":8.587027271637977,"retrievability":0.06692904284318071,"grade":2,"lapses":3,"reps":3,"review":"20220531102813758"},{"due":"20220707012152310","interval":12,"difficulty":4.961377228877773,"stability":24.61244118199815,"retrievability":0.8630895966313505,"grade":2,"lapses":3,"reps":4,"review":"20220612012152310"}]
+interval: 28
+lapses: 3
+modified: 20220710042425718
+reps: 5
+retrievability: 0.887042911778729
+review: 20220710042425718
+stability: 59.5785875503577
+tags: spark ?
+title: 数据计算包括什么
+type: text/vnd.tiddlywiki
+
+MR + YARN、Tez, Presto、Impala、Spark、Flink
+实现对数据的处理计算

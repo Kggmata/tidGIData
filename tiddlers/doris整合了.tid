@@ -1,0 +1,9 @@
+created: 20220727031125707
+modified: 20220727114945594
+tags: ? flink
+title: doris整合了
+type: text/vnd.tiddlywiki
+
+```
+Doris主要整合了Google Mesa（数据模型），Apache Impala（MPP Query Engine)和Apache ORCFile (存储格式，编码和压缩) 的技术。
+```

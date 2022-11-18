@@ -1,0 +1,19 @@
+created: 20220607031553040
+difficulty: 1
+due: 20221005001255044
+grade: 2
+history: [{"due":"20220611042224618","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610042224618"},{"due":"20220629234628555","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613234628555"}]
+interval: 21
+lapses: 0
+modified: 20220705001255045
+reps: 3
+retrievability: 0.8684973211750646
+review: 20220705001255044
+stability: 91.99210777408436
+tags: hbase ?
+title: Region的Split分裂能带来什么好处？
+type: text/vnd.tiddlywiki
+
+单个Hfile过大会带来热点问题, 读取都在一个regionserver, 无法保证负载均衡
+
+region越多,代表查询的时候,排除掉的无关数据越多

@@ -1,0 +1,17 @@
+created: 20220519135830647
+difficulty: 2.229344411327985
+due: 20220919081122469
+grade: 2
+history: [{"due":"20220523011648497","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521011648497"},{"due":"20220529004021190","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523004021190"},{"due":"20220628135031480","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602135031480"}]
+interval: 29
+lapses: 0
+modified: 20220701081122469
+reps: 4
+retrievability: 0.8881668944602166
+review: 20220701081122468
+stability: 80.25328821558121
+tags: spark ?
+title: SparkCore中的函数叫
+type: text/vnd.tiddlywiki
+
+算子

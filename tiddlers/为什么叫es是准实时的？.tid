@@ -1,0 +1,17 @@
+created: 20220618000418453
+difficulty: 1.0824752287483903
+due: 20220915060532436
+grade: 1
+history: [{"due":"20220620135746024","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619135746024"},{"due":"20220704020643147","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621020643146"}]
+interval: 16
+lapses: 0
+modified: 20220707060532437
+reps: 3
+retrievability: 0.8824752287483904
+review: 20220707060532436
+stability: 70.21185375754096
+tags: 用户画像 ?
+title: 为什么叫es是准实时的？
+type: text/vnd.tiddlywiki
+
+NRT，near real-time，准实时。默认是每隔1秒refresh一次的，所以es是准实时的，因为写入的数据1秒之后才能被看到。

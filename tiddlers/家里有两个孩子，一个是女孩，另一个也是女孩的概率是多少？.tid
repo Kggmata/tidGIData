@@ -1,0 +1,34 @@
+created: 20220721123533770
+difficulty: 1
+due: 20230613134316474
+grade: 2
+history: [{"due":"20220802100759232","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801100759232"},{"due":"20220823005040787","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220807005040786"}]
+interval: 65
+lapses: 0
+modified: 20221011134316475
+reps: 3
+retrievability: 0.6585224129237505
+review: 20221011134316474
+stability: 245.22002005146214
+tags: ?
+title: 家里有两个孩子，一个是女孩，另一个也是女孩的概率是多少？
+type: text/vnd.tiddlywiki
+
+其中之一是女孩, 代表至少一个女孩
+
+```
+男男-排除
+男女
+女男
+女女
+```
+所以另一个女孩的概率为1/3
+
+A是女孩
+
+```
+A女B男
+A女B女
+```
+
+所以两个女孩的概率1/2

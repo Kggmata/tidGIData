@@ -1,0 +1,7 @@
+解决2：利用ZK中节点的创建来辅助实现一个选举和监听机制
+
+- 所有Master都去ZK中创建一个临时节点
+
+- 所有Standby会监听Active这个临时节点
+- 如果Active Master故障，临时节点被删除，所有Standby会收到通知
+- 所有Standby会重新创建这个临时节点，谁创建成功谁就是Active

@@ -1,0 +1,23 @@
+created: 20220712014332982
+difficulty: 1
+due: 20221125143644889
+grade: 2
+history: [{"due":"20220716060103415","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715060103415"},{"due":"20220723015818238","interval":7,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220722015818238"},{"due":"20220803084205892","interval":11,"difficulty":1.2000001605946278,"stability":0.0548811791474709,"retrievability":1.6059462786757528e-7,"grade":0,"lapses":2,"reps":1,"review":"20220802084205892"},{"due":"20220818121734304","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":2,"lapses":2,"reps":2,"review":"20220808121734304"}]
+interval: 20
+lapses: 2
+modified: 20220828143644889
+reps: 3
+retrievability: 0.81278353636389
+review: 20220828143644889
+stability: 89.13978961303398
+tags: ?
+title: spark生产调优
+type: text/vnd.tiddlywiki
+
+1：我们可以根据每次计算的数据量来动态的调整执行核数和执行大小【标准！！ 每次试】
+
+​	2：spark数据倾斜的分析思路：4040  每一个任务的数据时间！！如果出现那种处理时间是其他任务处理时间的好几十倍！！判断产生数据倾斜了
+
+​	3：去分析一下DAG，看一下数据在执行过程中，主要是卡在那个算子了groupby这个算子 。
+
+​	 我需要分析groupby算子这里的数据逻辑 。【集中 】-进行打散   

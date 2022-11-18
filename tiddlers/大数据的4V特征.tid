@@ -1,0 +1,40 @@
+created: 20220614014128853
+difficulty: 1
+due: 20230318115846545
+grade: 2
+history: [{"due":"20220617033845090","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616033845090"},{"due":"20220626005741682","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617005741682"},{"due":"20220816031018855","interval":10,"difficulty":1,"stability":49.62805757902991,"retrievability":0.8875472375963519,"grade":2,"lapses":0,"reps":3,"review":"20220627031018855"}]
+interval: 55
+lapses: 0
+modified: 20220821115846545
+reps: 4
+retrievability: 0.8897941229073937
+review: 20220821115846545
+stability: 208.515101362186
+tags: 用户画像web界面 ?
+title: 大数据的4V特征
+type: text/vnd.tiddlywiki
+
+```
+规模性（Volume）、
+高速性（Velocity）、
+多样性（Variety）、
+价值性（Value）
+```
+
+The first three characteristics of big data are ''volume, velocity, and variety''. Additional characteristics of big data are ''variability, veracity, visualization, and value. ''
+
+```
+* 大数据4V特征
+* 数据量大：KB-MB-GB-PB-ZB 倍数关系1024=2**10 高中数学 指数 目前数据量呈现指数级别增长
+  * HDFS 数据量大的存储问题
+  * MR 数据量大的计算问题
+* 速度块：离线(MR，Hive，SparkSQL)--近实时(SparkStreaming)--实时(Flink，StructuredStreaming) 
+  * MR
+  * HIve
+  * Spark
+* 数据多样：结构化，半结构化(Json)，非结构化，对于半结构化和非结构化的数据需要结构化处理
+  * 需要通过Python代码处理
+  * spark.read.json().option(schema).load(path) 
+* 价值密度低：如何从大量的数据中提取有价值的数据？
+  * 纯粹大数据技术无法解决，需要借助于机器学习相关技术，做预测算法
+```

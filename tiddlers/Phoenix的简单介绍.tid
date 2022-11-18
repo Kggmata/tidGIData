@@ -1,0 +1,19 @@
+created: 20220608004446891
+difficulty: 1.074347896883307
+due: 20220927235351424
+grade: 1
+history: [{"due":"20220611235218157","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610235218157"},{"due":"20220630023522322","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220614023522322"}]
+interval: 20
+lapses: 0
+modified: 20220704235351424
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704235351424
+stability: 84.82124350335246
+tags: hbase ?
+title: Phoenix的简单介绍
+type: text/vnd.tiddlywiki
+
+Phoenix是Apache的顶级项目
+
+它的官方宗旨是：让SQL运行在NoSQL之上。

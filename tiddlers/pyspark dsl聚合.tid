@@ -1,0 +1,17 @@
+created: 20220621013932425
+difficulty: 1
+due: 20220919010234726
+grade: 2
+history: [{"due":"20220625121801224","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121801224"},{"due":"20220709150114891","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626150114891"}]
+interval: 15
+lapses: 0
+modified: 20220711010234726
+reps: 3
+retrievability: 0.8893785641845435
+review: 20220711010234726
+stability: 69.7164941253289
+tags: 用户画像 ?
+title: pyspark dsl聚合
+type: text/vnd.tiddlywiki
+
+groupBy.聚合

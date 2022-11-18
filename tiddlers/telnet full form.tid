@@ -1,0 +1,19 @@
+created: 20220615062711791
+difficulty: 1
+due: 20220922002248325
+grade: 2
+history: [{"due":"20220619021745884","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618021745884"},{"due":"20220703141827743","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620141827743"}]
+interval: 17
+lapses: 0
+modified: 20220707002248325
+reps: 3
+retrievability: 0.8756310680305948
+review: 20220707002248324
+stability: 77.17545152839092
+tags: 用户画像 ?
+title: telnet full form
+type: text/vnd.tiddlywiki
+
+Terminal over network
+
+Telnet is an old network protocol that is used to connect to remote systems over a TCP/IP network.

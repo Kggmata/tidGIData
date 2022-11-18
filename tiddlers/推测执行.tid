@@ -1,0 +1,42 @@
+created: 20220521030942420
+difficulty: 3.7078120456703063
+due: 20230130135428599
+grade: 1
+history: [{"due":"20220524021805899","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021805899"},{"due":"20220602112838534","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112838534"},{"due":"20220707115924668","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606115924668"},{"due":"20220711055553088","interval":34,"difficulty":4.200038941363643,"stability":0.07408215765534414,"retrievability":0.8895462481526426,"grade":0,"lapses":1,"reps":1,"review":"20220710055553088"},{"due":"20220713014027911","interval":2,"difficulty":4.4582067312676,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712014027911"},{"due":"20220721073533894","interval":8,"difficulty":4.658206945055691,"stability":0.04065705806113247,"retrievability":2.1378809139958575e-7,"grade":0,"lapses":3,"reps":1,"review":"20220720073533894"},{"due":"20220731104004202","interval":8,"difficulty":3.858206946047434,"stability":3.131554135772404,"retrievability":9.917429036741347e-10,"grade":1,"lapses":3,"reps":2,"review":"20220728104004201"},{"due":"20220824071958301","interval":8,"difficulty":3.8222291649966342,"stability":18.70044652892132,"retrievability":0.7640222189491996,"grade":1,"lapses":3,"reps":3,"review":"20220805071958301"}]
+interval: 67
+lapses: 3
+modified: 20221011135428599
+reps: 4
+retrievability: 0.6855828806736718
+review: 20221011135428599
+stability: 110.91911653003436
+tags: mapreduce ?
+title: 推测执行
+type: text/vnd.tiddlywiki
+
+1）作业完成时间取决于最慢的任务完成时间
+
+一个作业由若干个Map任务和Reduce任务构成。因硬件老化、软件Bug等，某些任务可能运行非常慢。
+
+典型案例：系统中有99%的Map任务都完成了，只有少数几个Map老是进度很慢，完不成，怎么办？
+
+2）推测执行机制：
+
+发现拖后腿的任务，比如某个任务运行速度远慢于任务平均速度。为拖后腿任务启动一个备份任务，同时运行。
+谁先运行完，则采用谁的结果。
+
+3）执行推测任务的前提条件
+
+（1）每个task只能有一个备份任务；
+
+（2）当前job已完成的task必须不小于0.05（5%）
+
+（3）开启推测执行参数设置。Hadoop2.7.2 mapred-site.xml文件中默认是打开的。
+
+4）不能启用推测执行机制情况
+
+（1）任务间存在严重的负载倾斜；
+
+（2）特殊任务，比如任务向数据库中写数据。
+
+[img[Snipaste_2022-05-21_13-51-16.jpg]]

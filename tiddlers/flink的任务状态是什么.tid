@@ -1,0 +1,32 @@
+created: 20220720233947831
+difficulty: 1.6008162182229808
+due: 20220909133104726
+grade: 0
+history: [{"due":"20220802061818158","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801061818158"},{"due":"20220808011307380","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011307380"},{"due":"20220813081640357","interval":5,"difficulty":1.2008160044497336,"stability":0.05488116409496729,"retrievability":0.0008160044497337299,"grade":0,"lapses":2,"reps":1,"review":"20220812081640357"},{"due":"20220821044343726","interval":8,"difficulty":1.4008162182229809,"stability":0.040656966333775045,"retrievability":2.13773247238443e-7,"grade":0,"lapses":3,"reps":1,"review":"20220820044343725"}]
+interval: 19
+lapses: 4
+modified: 20220908133104726
+reps: 1
+retrievability: 4.1342774845283596e-22
+review: 20220908133104725
+stability: 0.03011942145770373
+tags: ?
+title: flink的任务状态是什么
+type: text/vnd.tiddlywiki
+
+```
+基本类型划分
+Flink Checkpoint 会将实时任务的状态存储到远端存储，比如 HDFS ，亚马逊的 S3 等等。Flink 任务状态可以理解为实时任务计算过程中，中间产生的数据结果，同时这些计算结果会在后续实时任务处理时，能够继续进行使用。实时任务的状态可以是一个聚合结果值，比如 WordCount 统计的每个单词的数量，也可以是消息流中的明细数据。
+
+Flink 任务状态整体可以划分两种：Operator 状态和 KeyedState。常见的 Operator 状态，比如 Kafka Topic 每个分区的偏移量。KeyedState 是基于 KeyedStream 来使用的，所以在使用前，你需要对你的流通过 keyby 来进行分区，常见的状态比如有 MapState、ListState、ValueState 等等。
+```
+[img[Snipaste_2022-08-01_14-07-19.jpg]]
+
+```
+组织形式划分
+FLink任务两种状态
+Managed state
+
+raw state
+```
+[img[Snipaste_2022-08-01_14-14-48.jpg]]

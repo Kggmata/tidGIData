@@ -1,0 +1,29 @@
+created: 20220718134212802
+difficulty: 1.6001970164642014
+due: 20221012133252456
+grade: 0
+history: [{"due":"20220801122456781","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731122456781"},{"due":"20220808002403978","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002403978"},{"due":"20220814091534707","interval":6,"difficulty":1.2001968026909542,"stability":0.05488116409496729,"retrievability":0.00019680269095417443,"grade":0,"lapses":2,"reps":1,"review":"20220813091534707"},{"due":"20220822114743451","interval":8,"difficulty":1.4001970164642015,"stability":0.040656966333775045,"retrievability":2.13773247238443e-7,"grade":0,"lapses":3,"reps":1,"review":"20220821114743451"}]
+interval: 51
+lapses: 4
+modified: 20221011133252456
+reps: 1
+retrievability: 3.998662736656592e-58
+review: 20221011133252456
+stability: 0.03011942145770373
+tags: ?
+title: sparksql分区数
+type: text/vnd.tiddlywiki
+
+https://stackoverflow.com/questions/39368516/number-of-partitions-of-spark-dataframe
+
+```
+In general:
+
+Datasets generated locally using methods like range or toDF on local collection will use spark.default.parallelism.
+Datasets created from RDD inherit number of partitions from its parent.
+Datsets created using data source API:
+
+In Spark 1.x typically depends on the Hadoop configuration (min / max split size).
+In Spark 2.x there is a Spark SQL specific configuration in use.
+Some data sources may provide additional options which give more control over partitioning. For example JDBC source allows you to set partitioning column, values range and desired number of partitions.
+```

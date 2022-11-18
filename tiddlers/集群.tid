@@ -1,0 +1,17 @@
+created: 20220519125755330
+difficulty: 1.6086616848798603
+due: 20221211094537626
+grade: 1
+history: [{"due":"20220522001831301","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001831301"},{"due":"20220528005409185","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522005409185"},{"due":"20220627014525548","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220601014525548"},{"due":"20220630062901059","interval":28,"difficulty":4.232984010198816,"stability":0.07408316441686115,"retrievability":0.8918064933310472,"grade":0,"lapses":1,"reps":1,"review":"20220629062901059"},{"due":"20220710090624105","interval":4,"difficulty":2.436367763566377,"stability":6.928558135231895,"retrievability":0.0033837533675606132,"grade":2,"lapses":1,"reps":2,"review":"20220703090624105"},{"due":"20220812013006621","interval":8,"difficulty":1.5218227896743108,"stability":32.46128769035684,"retrievability":0.8854550261079341,"grade":2,"lapses":1,"reps":3,"review":"20220711013006620"}]
+interval: 37
+lapses: 1
+modified: 20220817094537626
+reps: 4
+retrievability: 0.8868388952055494
+review: 20220817094537625
+stability: 115.87165633764569
+tags: hadoop ?
+title: 集群
+type: text/vnd.tiddlywiki
+
+一般由多个提供相同服务的机器共同协作，称为集群或者群集，强调个体与群体的关系

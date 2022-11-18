@@ -1,0 +1,23 @@
+created: 20220607025853564
+difficulty: 1.074347896883307
+due: 20220927143345191
+grade: 1
+history: [{"due":"20220611020224157","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610020224157"},{"due":"20220629234014236","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613234014236"}]
+interval: 20
+lapses: 0
+modified: 20220704143345191
+reps: 3
+retrievability: 0.8743478968833069
+review: 20220704143345191
+stability: 84.82124350335246
+tags: hbase ?
+title: Memstore的作用是什么？为什么不直接写入HFile
+type: text/vnd.tiddlywiki
+
+memstore将数据按照rowkey排序, 排序可以大大加快按照rowkey单条查询和范围查询的速度
+
+```
+这是LSM(log structured merge tree)的思想,写入的数据在内存中缓存排序,然后一批写入磁盘,
+这样磁盘的每个小文件内部都是有序的.
+相比于mysql的b树,查询速度下降,因为可能需要需要查询多个小文件.但是写入的性能强,因为不需要每次写入都进行调整
+```

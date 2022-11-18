@@ -1,0 +1,32 @@
+created: 20220529012411499
+difficulty: 1
+due: 20220918065705611
+grade: 2
+history: [{"due":"20220601053349879","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053349879"},{"due":"20220622130310091","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130310091"},{"due":"20220624142149890","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623142149890"},{"due":"20220707135136591","interval":2,"difficulty":1,"stability":11.77883909930856,"retrievability":0.05817903264660851,"grade":2,"lapses":1,"reps":2,"review":"20220625135136591"}]
+interval: 15
+lapses: 1
+modified: 20220710065705612
+reps: 3
+retrievability: 0.8744383611129658
+review: 20220710065705611
+stability: 69.51406026274908
+tags: spark ?
+title: rdd vs dataframe vs dataset
+type: text/vnd.tiddlywiki
+
+rdd支持泛型, 允许存储不同的类型, rdd[int],rdd[str]
+没有 schema字段信息
+
+dataframe不支持泛型,每一行都是row类型
+有schema字段信息
+
+Spark Datasets is an extension of Dataframes API with the benefits of both RDDs and the Datasets. 
+既支持泛型,也有schema字段信息
+
+Rdd[t]+schema=dataset
+Rdd[row]+schema=dataframe
+dataset/dataframe-schema=Rdd
+
+工作中优先使用dataset/dataframe,不建议Rdd,dataset/dataframe性能高于rdd
+
+[img[Snipaste_2022-05-29_09-30-58.jpg]]

@@ -1,0 +1,60 @@
+created: 20220525093433797
+difficulty: 1
+due: 20220923122843611
+grade: 2
+history: [{"due":"20220529152301017","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528152301017"},{"due":"20220603004523638","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602004523638"},{"due":"20220607120600112","interval":4,"difficulty":3.487837552679764,"stability":0.058954374971038004,"retrievability":0.012442954570255769,"grade":0,"lapses":2,"reps":1,"review":"20220606120600112"},{"due":"20220610010635032","interval":3,"difficulty":3.6925315985819,"stability":0.042165720570753545,"retrievability":0.004694045902135523,"grade":0,"lapses":3,"reps":1,"review":"20220609010635031"},{"due":"20220617120650545","interval":3,"difficulty":1.8930868035177266,"stability":5.275908652362351,"retrievability":0.0005552049358268727,"grade":2,"lapses":3,"reps":2,"review":"20220612120650545"},{"due":"20220715011706816","interval":5,"difficulty":1,"stability":27.903385928247445,"retrievability":0.9049726221991478,"grade":2,"lapses":3,"reps":3,"review":"20220617011706816"},{"due":"20220722053427825","interval":34,"difficulty":2.0795184412806997,"stability":0.030119455301110827,"retrievability":0.8795184412806997,"grade":0,"lapses":4,"reps":1,"review":"20220721053427825"},{"due":"20220805022559880","interval":9,"difficulty":1,"stability":6.286502616923181,"retrievability":2.124201917654503e-14,"grade":2,"lapses":4,"reps":2,"review":"20220730022559879"}]
+interval: 9
+lapses: 4
+modified: 20220808122843611
+reps: 3
+retrievability: 0.8599868466940899
+review: 20220808122843610
+stability: 45.533417195196606
+tags: spark ?
+title: 其他KV类型算子
+type: text/vnd.tiddlywiki
+
+*keys
+
+- 功能：针对二元组KV类型的RDD，返回RDD中所有的Key，放入一个新的RDD中
+
+- 分类：转换算子
+
+- 语法
+python
+  def keys( self: RDD[Tuple[K,V]] ) -> RDD[K]
+
+*values
+
+- 功能：针对二元组KV类型的RDD，返回RDD中所有的Value，放入一个新的RDD中
+
+- 分类：转换算子
+
+- 语法
+`python
+  def values( self: RDD[Tuple[K,V]] ) -> RDD[V]`
+
+*mapValues
+
+- 功能：针对二元组KV类型的RDD，对RDD中每个元素的Value进行map处理，结果放入一个新的RDD中
+
+- 分类：转换算子
+
+- 语法
+
+`python
+  def mapValues(self: RDD[Tuple[K,V]], f: (V) -> U) -> RDD[Tuple[K,U]]`
+
+*collectAsMap
+
+- 功能：将二元组类型的RDD转换成一个Map字典
+
+- 分类：触发算子
+
+- 特点：类似于collect，将RDD中元素的结果放入Driver内存中的一个字典中，数据量必须比较小
+
+- 语法
+
+`python
+  def collectAsMap(self: RDD[Tuple[K,V]]) -> Dict[K,V]`
+

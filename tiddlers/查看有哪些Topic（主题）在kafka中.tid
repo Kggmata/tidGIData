@@ -1,0 +1,23 @@
+created: 20220609110550248
+difficulty: 1
+due: 20220928092208868
+grade: 2
+history: [{"due":"20220614100822589","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100822588"},{"due":"20220702022611837","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616022611836"}]
+interval: 19
+lapses: 0
+modified: 20220705092208868
+reps: 3
+retrievability: 0.8790734948134195
+review: 20220705092208868
+stability: 84.74278121619727
+tags: kafka ?
+title: 查看有哪些Topic（主题）在kafka中
+type: text/vnd.tiddlywiki
+
+```
+bin/kafka-topics.sh --list --zookeeper zk地址
+--list 表示 列出的意思
+--zookeeper 表示给出ZK的地址，可以给一台ZK也可以3台都给
+# 演示
+bin/kafka-topics.sh --list --zookeeper node1:2181
+```

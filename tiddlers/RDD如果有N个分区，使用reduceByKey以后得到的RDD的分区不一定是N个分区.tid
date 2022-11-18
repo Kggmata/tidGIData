@@ -1,0 +1,17 @@
+created: 20220529053056430
+difficulty: 1
+due: 20220920142407879
+grade: 2
+history: [{"due":"20220601060235152","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531060235152"},{"due":"20220622130439380","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603130439380"}]
+interval: 20
+lapses: 0
+modified: 20220623142407879
+reps: 3
+retrievability: 0.8953239134772895
+review: 20220623142407878
+stability: 89.0394510841741
+tags: spark ?
+title: RDD如果有N个分区，使用reduceByKey以后得到的RDD的分区不一定是N个分区
+type: text/vnd.tiddlywiki
+
+正确：reduceByKey允许指定Shuffle以后的分区个数

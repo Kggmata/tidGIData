@@ -1,0 +1,25 @@
+created: 20220602001140112
+difficulty: 1
+due: 20220926022453511
+grade: 2
+history: [{"due":"20220605060120881","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604060120881"},{"due":"20220626002559162","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002559162"}]
+interval: 20
+lapses: 0
+modified: 20220629022453511
+reps: 3
+retrievability: 0.8847461089172606
+review: 20220629022453510
+stability: 88.60191707719252
+tags: hbase ?
+title: hbase会排序吗
+type: text/vnd.tiddlywiki
+
+Hbase会对表中的数据按照rowkey排序(字典顺序)
+
+存储时，数据按照Row key的字典序(byte order)排序存储。设计key时，要充分排序存储这个特性，将经常一起读取的行存储放到一起。(位置相关性)。
+
+注意：
+
+字典序对int排序的结果是
+
+1,10,100,11,12,13,14,15,16,17,18,19,2,20,21 … 。要保持整形的自然序，行键必须用0作左填充。

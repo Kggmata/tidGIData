@@ -1,0 +1,50 @@
+created: 20220618090136453
+difficulty: 1
+due: 20230501002942496
+grade: 2
+history: [{"due":"20220621003913342","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003913342"},{"due":"20220630145242172","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":1,"lapses":0,"reps":2,"review":"20220621145242172"},{"due":"20220822153814503","interval":11,"difficulty":1.0770024421488429,"stability":51.41655908444445,"retrievability":0.8770024421488429,"grade":1,"lapses":0,"reps":3,"review":"20220702153814502"}]
+interval: 65
+lapses: 0
+modified: 20220905002942496
+reps: 4
+retrievability: 0.8752943091245999
+review: 20220905002942496
+stability: 237.74570990944014
+tags: 用户画像 ?
+title: 保险数仓平台数据接入
+type: text/vnd.tiddlywiki
+
+Sqoop导入MySQL中10张表
+
+疑问：数据源来源于mysql，oracle，postgresql，这里为了教学层面统一放在mysql中
+
+步骤：
+
+1-明确导入10张表，从mysql中
+
+[img[image-20220618163801949.png]]
+
+2-编写sqoop脚本
+
+```
+/export/server/sqoop/bin/sqoop import \
+--connect jdbc:mysql://192.168.88.163:3306/insurance \
+--username root \
+--password 123456 \
+--table mort_10_13 \
+--hive-table insurance_ods.mort_10_13 \
+--hive-import \
+--hive-overwrite \
+--fields-terminated-by '\t' \
+-m 1; #maptask数量
+```
+提前简历hive表：insurance_ods.mort_10_13
+
+连接业务库是mysql的insurance
+
+* 3-调试代码
+
+* 4-执行脚本
+
+* 5-验证结果
+[img[image-20220618164158173.png]]

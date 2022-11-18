@@ -1,0 +1,32 @@
+created: 20220601095741139
+difficulty: 1.0471902465650784
+due: 20220930065819915
+grade: 1
+history: [{"due":"20220605024749471","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604024749471"},{"due":"20220610004143100","interval":5,"difficulty":1.682183313336022,"stability":0.07683095218398285,"retrievability":0.007416462463435239,"grade":0,"lapses":1,"reps":1,"review":"20220609004143100"},{"due":"20220626111319415","interval":4,"difficulty":1,"stability":13.223685166295688,"retrievability":0.004147223738198656,"grade":2,"lapses":1,"reps":2,"review":"20220613111319415"},{"due":"20220630062032892","interval":16,"difficulty":2.0803101654109373,"stability":0.054882158045770235,"retrievability":0.8803101654109373,"grade":0,"lapses":2,"reps":1,"review":"20220629062032892"},{"due":"20220715045619004","interval":6,"difficulty":1,"stability":10.165641185718835,"retrievability":0.00000994387404859016,"grade":2,"lapses":2,"reps":2,"review":"20220705045619004"}]
+interval: 16
+lapses: 2
+modified: 20220721065819915
+reps: 3
+retrievability: 0.8471902465650784
+review: 20220721065819915
+stability: 71.48490269607814
+tags: hbase ?
+title: zookeeper在hbase的作用
+type: text/vnd.tiddlywiki
+
+Hbase集群主要的服务组件是Zookeeper，Hmaster和RegionServer。其中Hbase集群强依赖与Zookeeper提供的服务.为什么Hbase离不开ZK?
+
+Zookeeper在Hbase集群中的作用
+        Apache ZooKeeper是一个用于分布式协调的客户端/服务器系统，它公开一个类似于文件系统的接口，其中每个节点（称为znode）可能包含数据和一组子节点。每个 znode 都有一个名称，可以使用类似文件系统的路径（例如，/root-znode/sub-znode/my-znode）进行标识。节点创建完以后ZK会去追踪节点的状态。
+
+在 Apache HBase 中，ZooKeeper 在 Masters 和 RegionServers 之间协调、通信和共享状态。HBase 的设计策略是仅将 ZooKeeper 用于瞬态数据（即用于协调和状态通信）。因此，如果 HBase 的 ZooKeeper 数据被删除，只会影响临时操作——数据可以继续写入/读取 HBase。
+
+Zookeeper集群在Hbase集群中主要作用有如下几个：
+
+实现Hmaster节点的高可用管理，HA
+
+对集群所有RegionServer状态监控，宕机后会通知Hmaster;每个RS启动时都会在ZK上注册,然后master会去监控这个znode
+
+分布式一致锁的提供，保证数据写入的事务性，表的删除，新建，更新需要维护全局锁
+
+维护管理了Hbase相关元数据信息

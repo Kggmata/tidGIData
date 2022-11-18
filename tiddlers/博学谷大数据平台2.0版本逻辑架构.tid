@@ -1,0 +1,28 @@
+created: 20220724064552236
+difficulty: 0.025386988635295055
+due: 20220827134125603
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20220826134125603
+reps: 1
+retrievability: 1
+review: 20220826134125603
+stability: 0.10000000088475645
+tags: flink ?
+title: 博学谷大数据平台2.0版本逻辑架构
+type: text/vnd.tiddlywiki
+
+[img[BillfishKHCtlL2022-07-24 14_46_05.PNG]]
+
+```
+mysql5.7+JDK1.8+flinkCDC2.2+hadoop3.3.0+hive3.1.2+flink1.14.5+hudi0.11.1+doris1.1.0+dinky0.6.5
+```
+```
+- 业务数据在mysql的bxg和crm库当中
+- flinkCDC读取mysql的binlog日志, 实时获取数据变更, 将数据分别同步到Hudi和Doris的ods层
+- 使用flinkCDC采集数据进行拉宽, 写入到doris的dwd层
+- 对于一些数据展示需求, flinkSQL,将流处理拉宽和聚合写入doris的dws层. 写入到java web后端进行展示
+```
+[img[BillfishRsINTg2022-07-25 09_10_48.PNG]]

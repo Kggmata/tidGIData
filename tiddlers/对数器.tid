@@ -1,0 +1,21 @@
+created: 20220610124934070
+difficulty: 1
+due: 20220928092623454
+grade: 2
+history: [{"due":"20220614105352341","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613105352341"},{"due":"20220702022648007","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616022648006"}]
+interval: 19
+lapses: 0
+modified: 20220705092623454
+reps: 3
+retrievability: 0.8790734948134195
+review: 20220705092623454
+stability: 84.74278121619727
+tags: kafka ?
+title: 对数器
+type: text/vnd.tiddlywiki
+
+方法a是想测的方法
+
+方法b是暴力解法
+
+随机样本产生器,产生的样本在a,b分别跑,看结果一不一样

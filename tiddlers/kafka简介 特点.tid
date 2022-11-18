@@ -1,0 +1,52 @@
+created: 20220609014516271
+difficulty: 1.067251759178322
+due: 20220913140357395
+grade: 1
+history: [{"due":"20220613132449713","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612132449713"},{"due":"20220616232433494","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615232433494"},{"due":"20220630115025021","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":1,"lapses":1,"reps":2,"review":"20220618115025021"}]
+interval: 16
+lapses: 1
+modified: 20220704140357395
+reps: 3
+retrievability: 0.867251759178322
+review: 20220704140357394
+stability: 70.59923194267195
+tags: kafka ?
+title: kafka简介 特点
+type: text/vnd.tiddlywiki
+
+kafka是一个分布式, 去中心化的, 高吞吐低延迟的, 多分区的, 多副本的，多订阅者的消息发布订阅系统（分布式MQ系统），可以用于搜索日志，监控日志，访问日志等。
+
+```
+分布式: 分布式集群, 堆叠数量提高性能
+
+去中心化(公平的分布式架构): 和传统分布式的主从架构不同, 没有主节点,每台服务器都是从节点干活, 任务大家协商工作
+
+>比如ZK,就是典型的去中心化架构
+
+高吞吐低延迟: 高吞吐代表一批数据,低延迟代表处理时间快
+
+多分区: 将数据分区处理
+
+多副本: 类似hdfs, 数据安全
+
+耐用性: 数据是持久化中转
+```
+最初由linkedin公司开发，使用scala语言编写，
+
+```
+Kafka is a distributed,partitioned,replicated commit logservice。
+```
+
+kafka对消息保存时根据Topic进行归类，发送消息者成为Producer,消息接受者成为Consumer,此外kafka集群有多个kafka实例组成，每个实例(server)成为broker。无论是kafka集群，还是producer和consumer都依赖于zookeeper来保证系统可用性集群保存一些meta信息。
+
+```
+Kafka:是一个分布式的（可以多节点），分区的，多副本的，多订阅者的消息发布订阅系统。
+
+	Kafka对消息分类使用topic（一个分类，一个类别）
+	
+	生产者：Producer(制造数据、生产数据的，将消息推送到队列的)
+	消费者：Consumer（读取数据的，浏览数据的，在队列中获取数据）
+	服务器：Broker
+```
+
+[img[快速认识Kafka阶段（1）——最详细的Kafka介绍 - 云+6.png]]

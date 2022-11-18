@@ -1,0 +1,34 @@
+created: 20220617101500452
+difficulty: 1.3229815390889195
+due: 20221007032907232
+grade: 1
+history: [{"due":"20220620041514261","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619041514261"},{"due":"20220704012039356","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621012039356"},{"due":"20220711073944156","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707024750918"},{"due":"20220723011452577","interval":5,"difficulty":1.2832912592789396,"stability":10.854313941126708,"retrievability":0.0008160305305493356,"grade":1,"lapses":1,"reps":2,"review":"20220712011452577"}]
+interval: 18
+lapses: 1
+modified: 20220730032907232
+reps: 3
+retrievability: 0.83969027980998
+review: 20220730032907232
+stability: 68.63479017376156
+tags: 用户画像 ?
+title: 批量加载数据到ES中
+type: text/vnd.tiddlywiki
+
+* 1-准备好Json文件格式，直接使用curl导入即可
+
+* 2-在Linux中操作curl的命令
+
+```
+curl -H "Content-Type: application/json" -XPOST "node1.itcast.cn:9200/job_idx/_bulk?pretty&refresh" --data-binary "@job_info.json" 
+```
+[img[image-20220617145605214.png]]
+4-确定上传的文件夹和文件，按照下图执行
+[img[image-20220617145750940.png]]
+5-执行导入
+[img[image-20220617150008077.png]]
+6-Web界面还可以查看
+[img[image-20220617150047078.png]]
+
+```
+完成数据批量导入，关键的地方注意需要将json数据传输到linux中指定位置使用curl进行导入，千万不要在plugins目录中导入
+```

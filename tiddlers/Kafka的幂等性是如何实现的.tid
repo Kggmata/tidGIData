@@ -1,0 +1,20 @@
+created: 20220718085850292
+difficulty: 1.8543036435229179
+due: 20221013002657861
+grade: 0
+history: [{"due":"20220801114829763","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114829762"},{"due":"20220822235253017","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220806235253016"}]
+interval: 66
+lapses: 1
+modified: 20221012002657861
+reps: 1
+retrievability: 0.6543036435229179
+review: 20221012002657861
+stability: 0.07408182272361549
+tags: ?
+title: Kafka的幂等性是如何实现的
+type: text/vnd.tiddlywiki
+
+Kafka为了实现幂等性，它在底层设计架构中引入了ProducerID和SequenceNumber。那这两个概念的用途是什么呢？
+
+ProducerID：在每个新的Producer初始化时，会被分配一个唯一的ProducerID，这个ProducerID对客户端使用者是不可见的。
+SequenceNumber：对于每个ProducerID，Producer发送数据的每个Topic和Partition都对应一个从0开始单调递增的SequenceNumber值。

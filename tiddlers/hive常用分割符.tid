@@ -1,0 +1,19 @@
+created: 20220712072903293
+difficulty: 1.0684790324894466
+due: 20221117120257719
+grade: 1
+history: [{"due":"20220718073602606","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717073602606"},{"due":"20220811080640837","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":2,"lapses":0,"reps":2,"review":"20220726080640837"}]
+interval: 22
+lapses: 0
+modified: 20220817120257719
+reps: 3
+retrievability: 0.8684790324894467
+review: 20220817120257718
+stability: 92.04422656680089
+tags: ?
+title: hive常用分割符
+type: text/vnd.tiddlywiki
+
+\t
+
+\001

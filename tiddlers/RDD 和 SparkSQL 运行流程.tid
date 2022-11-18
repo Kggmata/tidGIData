@@ -1,0 +1,48 @@
+created: 20220618013342192
+difficulty: 1.4143020276038654
+due: 20220908144202656
+grade: 1
+history: [{"due":"20220620145053215","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619145053215"},{"due":"20220624141925981","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621063115521"},{"due":"20220626135002848","interval":4,"difficulty":1.2033889878266264,"stability":0.054885141354873004,"retrievability":0.003388987826626389,"grade":0,"lapses":2,"reps":1,"review":"20220625135002848"},{"due":"20220709044003353","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":1,"lapses":2,"reps":2,"review":"20220629044003353"},{"due":"20220712011406044","interval":12,"difficulty":2.0829773710888153,"stability":0.04065715014820503,"retrievability":0.882977371088815,"grade":0,"lapses":3,"reps":1,"review":"20220711011406044"},{"due":"20220727151936954","interval":8,"difficulty":1,"stability":7.994100533111112,"retrievability":9.917894733222074e-10,"grade":2,"lapses":3,"reps":2,"review":"20220719151936953"},{"due":"20220804125040723","interval":15,"difficulty":2.020618663883727,"stability":0.03011942545495654,"retrievability":0.8206186638837268,"grade":0,"lapses":4,"reps":1,"review":"20220803125040723"},{"due":"20220813113202979","interval":5,"difficulty":1.2206186892344373,"stability":5.471598533740615,"retrievability":2.535071061321876e-8,"grade":1,"lapses":4,"reps":2,"review":"20220808113202979"},{"due":"20220821013337651","interval":12,"difficulty":2.2143020276038654,"stability":0.02231301621225883,"retrievability":0.7936833383694278,"grade":0,"lapses":5,"reps":1,"review":"20220820013337651"}]
+interval: 15
+lapses: 5
+modified: 20220904144202656
+reps: 2
+retrievability: 1.7352956271111043e-31
+review: 20220904144202655
+stability: 3.883428200649386
+tags: 用户画像 ?
+title: RDD 和 SparkSQL 运行流程
+type: text/vnd.tiddlywiki
+
+RDD 的运行流程
+
+[img[BillfishRguawO2022-06-18 09_33_55.PNG]]
+
+大致运行步骤
+
+```
+1	先将 RDD 解析为由 Stage 组成的 DAG, 后将 Stage 转为 Task 直接运行
+问题
+2	任务会按照代码所示运行, 依赖开发者的优化, 开发者的会在很大程度上影响运行效率
+解决办法
+3	创建一个组件, 帮助开发者修改和优化代码, 但这在 RDD 上是无法实现的
+为什么 RDD 无法自我优化?
+4	RDD 没有 Schema 信息
+5	RDD 可以同时处理结构化和非结构化的数据
+```
+SparkSQL 提供了什么?
+[img[BillfishRvsHav2022-06-18 09_35_44.PNG]]
+
+```
+和 RDD 不同, SparkSQL 的 Dataset 和 SQL 并不是直接生成计划交给集群执行, 而是经过了一个叫做 Catalyst 的优化器, 这个优化器能够自动帮助开发者优化代码
+也就是说, 在 SparkSQL 中, 开发者的代码即使不够优化, 也会被优化为相对较好的形式去执行
+
+为什么 SparkSQL 提供了这种能力?
+
+首先, SparkSQL 大部分情况用于处理结构化数据和半结构化数据, 所以 SparkSQL 可以获知数据的 Schema, 从而根据其 Schema 来进行优化
+```
+Tungsten optimizer
+
+```
+"Tungsten is the codename for the umbrella project to make changes to Apache Spark's execution engine that focuses on substantially improving the efficiency of memory and CPU for Spark applications, to push performance closer to the limits of modern hardware."
+```

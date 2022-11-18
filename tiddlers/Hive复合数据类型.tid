@@ -1,0 +1,11 @@
+created: 20220728113905335
+modified: 20220728114202094
+tags: ? flink
+title: Hive复合数据类型
+type: text/vnd.tiddlywiki
+
+```
+数组 array: 基于数据的数据结构形式, array通过下标访问对应的值
+字典 map: 基于key-value的数据结构形式, map通过[key名称]访问对应的值
+结构体 struct: 基于对象的数据结构形式, struct内部的数据可以通过.来存取.
+```

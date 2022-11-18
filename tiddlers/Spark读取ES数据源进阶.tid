@@ -1,0 +1,224 @@
+created: 20220618105233389
+difficulty: 1.0687910512583556
+due: 20220926035107096
+grade: 1
+history: [{"due":"20220621004926448","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004926448"},{"due":"20220705133241334","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622133241334"}]
+interval: 18
+lapses: 0
+modified: 20220710035107096
+reps: 3
+retrievability: 0.8687910512583555
+review: 20220710035107095
+stability: 77.83147630042302
+tags: 用户画像 ?
+title: Spark读取ES数据源进阶
+type: text/vnd.tiddlywiki
+
+上午的代码，对于相关的配置我们可以抽取基类和专门配置
+
+[img[image-20220618172924616.png]]
+
+调整后的代码
+[img[image-20220618173025415.png]]
+
+* 代码实战：
+* 思考如何实现目标：
+* 1-spark整合es中实现ESMeta的对象中调用具体的属性的方法（对象.属性）
+* 2-新建一个ESMetaTools.py文件，在这个文件中初始化ESMeta.fromdict方法，该类测试类
+* 3-新建一个ESMetaBase.py文件，文件里面有ESMeta的class，有__init__的初始化方法和fromDict从字段获取值的方法
+
+代码1
+
+```
+#!/usr/bin/env python
+# @desc :
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+
+# 上述步骤3，新建ESMetaBase.py文件
+class ESMeta:
+    inType: str
+    esNodes: str
+    esIndex: str
+    esType: str
+    selectFields: str
+    # 初始化
+    def __init__(self,intype,esNodes,esIndex,esType,selectFields):
+        self.inType=intype
+        self.esNodes=esNodes
+        self.esIndex=esIndex
+        self.esType=esType
+        self.selectFields=selectFields
+
+    def fromDict(ruleDict:dict):
+        return ESMeta(ruleDict.get("inType",""),ruleDict.get("esNodes",""),ruleDict.get("esIndex",""),ruleDict.get("esType",""),ruleDict.get("selectFields",""),)
+
+```
+
+代码2
+
+测试代码
+
+```
+#!/usr/bin/env python
+# @desc :
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from cn.test59Scripts.tool.ESMetaBase import ESMeta
+
+ruleDict = {"inType":"ElasticSearch",
+            "esNodes":"192.168.88.166:9200",
+            "esIndex":"insurance-profile-result",
+            "esType":"_doc",
+            "selectFields":"userId,tagsId"}
+# 直接初始化，不支持直接传入字典的类型
+# esMeta的对象就可以直接输出属性
+esMeta = ESMeta.fromDict(ruleDict)
+# 下面通过对象.属性调用
+print(esMeta.esType)
+print(esMeta.esNodes)
+print(esMeta.esIndex)
+print(esMeta.inType)
+print(esMeta.selectFields)
+# 接下来才要和Spark整合
+```
+代码2
+
+测试代码
+
+```
+#!/usr/bin/env python
+# @desc :
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from cn.test59Scripts.tool.ESMetaBase import ESMeta
+
+ruleDict = {"inType":"ElasticSearch",
+            "esNodes":"192.168.88.166:9200",
+            "esIndex":"insurance-profile-result",
+            "esType":"_doc",
+            "selectFields":"userId,tagsId"}
+# 直接初始化，不支持直接传入字典的类型
+# esMeta的对象就可以直接输出属性
+esMeta = ESMeta.fromDict(ruleDict)
+# 下面通过对象.属性调用
+print(esMeta.esType)
+print(esMeta.esNodes)
+print(esMeta.esIndex)
+print(esMeta.inType)
+print(esMeta.selectFields)
+# 接下来才要和Spark整合
+```
+
+代码3
+
+和Spark整合
+
+```
+#!/usr/bin/env python
+# @desc :通过pyspark读取csv的数据
+__coding__ = "utf-8"
+__author__ = "itcast team"
+
+from pyspark import SparkContext
+from pyspark.sql.types import StructField, StructType, StringType
+
+from cn.test59Scripts.tool.ESMetaTools import esMeta
+
+'''
+1-准备Spark的环境
+2-读取csv的数据
+3-对csv的数据基本信息查看，printSchema，show
+4-做一些简单的操作
+
+es.index.auto.create (default yes)
+Whether elasticsearch-hadoop should create an index (if its missing) when writing data to Elasticsearch or fail.当将数据到es中的时候是否会自动创建索引，默认会自动创建索引或索引库
+---------------------------------------------------------------
+es.index.read.missing.as.empty (default no)
+Whether elasticsearch-hadoop will allow reading of non existing indices (and return an empty data set) or not (and throw an exception)是否可以读取空索引，默认是no不读取
+---------------------------------------------------------------
+es.query (default none)
+Holds the query used for reading data from the specified es.resource. By default it is not set/empty, meaning the entire data under the specified index/type is returned. es.query can have three forms:
+保存用于从指定es读取数据的查询。资源默认情况下，它不设置/为空，这意味着返回指定索引/类型下的整个数据。锿。查询可以
+uri query 作为上述的参数
+using the form ?uri_query, one can specify a query string. Notice the leading ?.
+----------------------------------------------------------------------
+es.write.operation (default index)
+The write operation elasticsearch-hadoop should perform - can be any of:
+
+（1）index (default)
+new data is added while existing data (based on its id) is replaced (reindexed).
+添加新数据的同时替换（重新索引）现有数据（基于其id）。
+（2）create
+添加新数据-如果数据已经存在（基于其id），将引发异常。
+adds new data - if the data already exists (based on its id), an exception is thrown.
+（3）update
+updates existing data (based on its id). If no data is found, an exception is thrown.
+更新现有数据（基于其id）。如果找不到数据，将引发异常。
+（4）upsert
+known as merge or insert if the data does not exist, updates if the data exists (based on its id).
+如果数据不存在，则称为合并或插入；如果数据存在，则更新（基于其id）。
+（5）delete
+deletes existing data (based on its id). If no data is found, an exception is thrown.
+删除现有数据（基于其id）。如果找不到数据，将引发异常。
+'''
+from pyspark.sql import SparkSession
+import os
+
+SPARK_HOME = 'F:\\ProgramCJ\\spark-2.4.8-bin-hadoop2.7'
+PYSPARK_PYTHON = 'F:\\ProgramCJ\\Python\\Python37\\python'
+# 2-服务器路径
+# SPARK_HOME = '/export/server/spark'
+# PYSPARK_PYTHON = '/root/anaconda3/envs/pyspark_env/bin/python'
+# 导入路径
+os.environ['SPARK_HOME'] = SPARK_HOME
+os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+
+if __name__ == '__main__':
+    # 1-准备Spark的环境
+    spark = SparkSession \
+        .builder \
+        .appName("testSparkLoadCSV") \
+        .master("local[*]") \
+        .config("spark.sql.shuffle.partitions", 10) \
+        .getOrCreate()
+    sc: SparkContext = spark.sparkContext
+    sc.setLogLevel("WARN")
+    # 可以使用StructType和StructField完成动态增加scheme，userid的scheme和tagsid的scheme
+    # 什么是scheme：字段的类型和字段名称
+    schema = StructType([StructField("userId", StringType(), True), StructField("tagsId", StringType(), False)])
+    # 2-读取es的数据
+    # inferSchema spark读取数据的时候默认读取内置的scheme(解析器认为字段的类型)
+    esDF = spark.read.format("es") \
+        .option("es.nodes", f"{esMeta.esNodes}") \
+        .option("es.resource", f"{esMeta.esIndex}/{esMeta.esType}") \
+        .option("es.index.read.missing.as.empty", "yes") \
+        .option("es.query", "?q=*") \
+        .option("es.read.field.include", "userId,tagsId") \
+        .schema(schema) \
+        .load()
+    # 3-对csv的数据基本信息查看，printSchema，show
+    esDF.printSchema()
+    '''
+    root
+     |-- userId: string (nullable = true)
+     |-- tagsId: string (nullable = false)
+    '''
+    esDF.show()
+    '''
+    +--------+------+
+    |  userId|tagsId|
+    +--------+------+
+    |140-1179|    17|
+    |   38-36|    15|
+    | 259-473|    15|
+    | 71-1477|    15|
+    '''
+    # 4-做一些简单的操作
+    # spark.stop()
+
+```
+[img[image-20220618184441031.png]]

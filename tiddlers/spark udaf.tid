@@ -1,0 +1,7 @@
+created: 20220803074800332
+modified: 20220803083027212
+tags: ? flink
+title: spark udaf
+type: text/vnd.tiddlywiki
+
+https://spark.apache.org/docs/latest/sql-ref-functions-udf-aggregate.html

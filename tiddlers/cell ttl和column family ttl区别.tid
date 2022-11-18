@@ -1,0 +1,17 @@
+created: 20220711005432212
+difficulty: 1
+due: 20221111074640485
+grade: 2
+history: [{"due":"20220713035015847","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712035015847"},{"due":"20220806024145003","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721024145003"}]
+interval: 21
+lapses: 0
+modified: 20220811074640485
+reps: 3
+retrievability: 0.8740635389832213
+review: 20220811074640484
+stability: 92.05363191623492
+tags: ?
+title: cell ttl和column family ttl区别
+type: text/vnd.tiddlywiki
+
+Cell TTL处理和ColumnFamily TTL之间存在两个显着差异： • Cell TTL以毫秒而不是秒为单位表示。 • Cell TTL的TTL不能超过ColumnFamily 的TTL。

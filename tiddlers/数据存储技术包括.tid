@@ -1,0 +1,27 @@
+caption: {{||Question}}
+created: 20220519092610142
+difficulty: 5.44462891654776
+due: 20220925053724404
+grade: 1
+history: [{"due":"20220521144832522","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220519144832522"},{"due":"20220522004607935","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220521004607935"},{"due":"20220523002622153","interval":1,"difficulty":7.231358589403242,"stability":1.097623272188053,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220522002622153"},{"due":"20220526000238481","interval":1,"difficulty":7.339831973419959,"stability":2.632619629218757,"retrievability":0.9084733840167178,"grade":1,"lapses":2,"reps":2,"review":"20220523000238481"},{"due":"20220614102742997","interval":8,"difficulty":6.265858044869707,"stability":13.986249043816784,"retrievability":0.7260260714497468,"grade":2,"lapses":2,"reps":3,"review":"20220531102742997"},{"due":"20220716012858975","interval":15,"difficulty":5.3590111576347015,"stability":31.22568049247527,"retrievability":0.8931531127649948,"grade":2,"lapses":2,"reps":4,"review":"20220615012858975"}]
+interval: 36
+lapses: 2
+modified: 20220828141801240
+reps: 5
+retrievability: 0.8856177589130585
+review: 20220721053724404
+stability: 66.0607028597075
+tags: spark ?
+title: 数据存储技术包括
+type: text/vnd.tiddlywiki
+
+```
+HDFS、Hive、Kafka、Redis、Hbase, ElasticSearch, clickhouse
+实现整个公司所有数据的统一化数据存储，提供数据读写
+Doris
+rocksDB
+
+数据湖: datalake, hudi, iceberg
+
+Mysql Oracle PostgreSQL
+```

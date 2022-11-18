@@ -1,0 +1,49 @@
+created: 20220523073614584
+difficulty: 1.7915085895270841
+due: 20221230122140512
+grade: 1
+history: [{"due":"20220526133407277","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133407277"},{"due":"20220601142559033","interval":6,"difficulty":3.33907145297699,"stability":0.11806790392114878,"retrievability":0.15365033134485093,"grade":0,"lapses":1,"reps":1,"review":"20220531142559033"},{"due":"20220615130333269","interval":3,"difficulty":1.6078325865712906,"stability":12.095009760531052,"retrievability":0.06876113359430071,"grade":2,"lapses":1,"reps":2,"review":"20220603130333268"},{"due":"20220801104446399","interval":13,"difficulty":1.700765387461441,"stability":46.442764114452665,"retrievability":0.8929328008901507,"grade":1,"lapses":1,"reps":3,"review":"20220616104446398"}]
+interval: 51
+lapses: 1
+modified: 20220806122140512
+reps: 4
+retrievability: 0.8907432020656432
+review: 20220806122140512
+stability: 145.7136137031854
+tags: spark ?
+title: Rdd的创建方式
+type: text/vnd.tiddlywiki
+
+官方提供了两种RDD的创建方式
+
+`Spark revolves around the concept of a resilient distributed dataset (RDD), which is a fault-tolerant collection of elements that can be operated on in parallel. There are two ways to create RDDs: parallelizing an existing collection in your driver program, or referencing a dataset in an external storage system, such as a shared filesystem, HDFS, HBase, or any data source offering a Hadoop InputFormat.`
+
+*方式一：并行化一个已存在的集合**
+
+- 方法：parallelize
+
+  [img[image-20211201205113092.png]]
+
+- 功能：将一个集合转换为RDD
+
+- 测试
+
+`# 创建一个Python的集合，比如列表、字典等
+data = [1,2,3,4,5,6,7,8,9,10]
+# 将集合转换为RDD
+list_rdd = sc.parallelize(data)
+# 输出RDD的内容
+list_rdd.foreach(lambda member:print(member))`
+
+方式二：读取外部共享存储系统
+
+- 方法：textFile、wholeTextFile、newAPIHadoopRDD等
+
+[img[image-20211201205221532.png]]
+
+测试
+
+`# 读取文件数据变为RDD
+file_rdd = sc.textFile("../datas/wordcount/word.txt")
+# 输出RDD的内容
+file_rdd.foreach(lambda line : print(line))`

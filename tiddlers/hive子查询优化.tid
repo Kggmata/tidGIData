@@ -1,0 +1,19 @@
+created: 20220712072046536
+difficulty: 1
+due: 20221209025724829
+grade: 2
+history: [{"due":"20220718073559022","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717073559022"},{"due":"20220727082259177","interval":9,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220726082259177"},{"due":"20220817132853344","interval":9,"difficulty":1,"stability":12.927341248345753,"retrievability":0.0000027608925165954863,"grade":2,"lapses":1,"reps":2,"review":"20220804132853344"}]
+interval: 24
+lapses: 1
+modified: 20220828025724829
+reps: 3
+retrievability: 0.8223370069475472
+review: 20220828025724829
+stability: 103.31427337216296
+tags: ?
+title: hive子查询优化
+type: text/vnd.tiddlywiki
+
+
+
+3.0之后不需要了

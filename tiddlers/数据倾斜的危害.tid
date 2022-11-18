@@ -1,0 +1,22 @@
+created: 20220718125939048
+difficulty: 1
+due: 20230412010050759
+grade: 1
+history: [{"due":"20220801121123595","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121123595"},{"due":"20220822123537651","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220806123537651"}]
+interval: 51
+lapses: 0
+modified: 20220926010050759
+reps: 3
+retrievability: 0.7205227050402994
+review: 20220926010050758
+stability: 197.66597977423405
+tags: ?
+title: 数据倾斜的危害
+type: text/vnd.tiddlywiki
+
+```
+二、数据倾斜的危害
+当出现数据倾斜时，小量任务耗时远高于其它任务，从而使得整体耗时过大，未能充分发挥分布式系统的并行计算优势。　　
+
+另外，当发生数据倾斜时，部分任务处理的数据量过大，可能造成内存不足使得任务失败，并进而引进整个应用失败。
+```

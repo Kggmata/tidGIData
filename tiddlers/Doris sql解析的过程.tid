@@ -1,0 +1,11 @@
+created: 20220727052945925
+modified: 20220728085444506
+tags: ? flink
+title: Doris sql解析的过程
+type: text/vnd.tiddlywiki
+
+https://www.modb.pro/db/44960
+
+```
+Parse, Analyze, SinglePlan, DistributedPlan, Schedule。
+```

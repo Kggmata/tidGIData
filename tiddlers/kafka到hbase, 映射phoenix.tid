@@ -1,0 +1,200 @@
+created: 20220612065545332
+difficulty: 1.0525457184892149
+due: 20220830074047037
+grade: 1
+history: [{"due":"20220616062907216","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615062907216"},{"due":"20220618002241880","interval":2,"difficulty":1.2801254823962773,"stability":0.07425364270040997,"retrievability":0.12395450234099842,"grade":0,"lapses":1,"reps":1,"review":"20220617002241880"},{"due":"20220620022223465","interval":2,"difficulty":1.5386766373737528,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220619022223465"},{"due":"20220622061720446","interval":2,"difficulty":1.7602270030294527,"stability":0.04066875311934658,"retrievability":0.021550365655700003,"grade":0,"lapses":3,"reps":1,"review":"20220621061720446"},{"due":"20220701135022037","interval":2,"difficulty":1,"stability":7.925396674062996,"retrievability":0.005620139088568989,"grade":1,"lapses":3,"reps":2,"review":"20220623135022037"}]
+interval: 12
+lapses: 3
+modified: 20220705074047037
+reps: 3
+retrievability: 0.8525457184892149
+review: 20220705074047037
+stability: 56.10568933072282
+tags: [[structed streaming]] ?
+title: kafka到hbase, 映射phoenix
+type: text/vnd.tiddlywiki
+
+`1. hbase建表, row_key设计
+
+2. python代码
+
+ *导包kafka-python, happybase
+ *消费者接受数据
+ **consumer=KafkaConsumer
+ **for message in consumer
+
+ *将消息使用happybase写入
+ **table = Hbase_connection()
+ **table.put
+
+3. 映射phoenix视图 create view`
+
+目前，kafka中已经有数据了，现在可以用python：
+
+- 从kafka中读取数据
+- 将数据写入到HBase
+
+*准备工作
+
+既然要写入HBase，那么HBase要有表：
+
+```shell
+# 1. 创建一个NameSpace叫做MOMO_CHAT
+create_namespace 'MOMO_CHAT'
+# 2. 创建一个表，存储数据
+create 'MOMO_CHAT:MOMO_MSG', {NAME => 'C1', COMPRESSION => 'GZ'}, {NUMREGIONS => 6, SPLITALGO => 'HexStringSplit'}
+```
+
+> - 列族叫C1，设置了GZ压缩算法
+> - 开启了6个region，按照16进制均分的模式分区
+
+*Rowkey设计
+
+Rowkey：`MD5(发件人账户_收件人账户)_发件人账户_收件人账户_时间`
+
+- MD5拼接的目的是为了散列
+- Rowkey中明文带上收发件人账户，是为了查看，从Rowkey中就能看出谁发给谁
+- 时间，带上时间，方便针对这一对收发人做时间范围过滤
+
+示例：
+
+```
+发件人：张三
+收件人：李四
+张三_李四 被MD5后是：aef11223311eff
+Rowkey：
+- aef11223311eff_张三_李四_15699990000123
+- aef11223311eff_张三_李四_15699990000133
+- aef11223311eff_张三_李四_15699990000333
+
+MD5在前散列，写入均衡，单条查询OK
+范围：
+	针对收发件人这一对，做时间范围
+	aef11223311eff_张三_李四，正好可以锁定这一对，后面是时间，可以做范围查询
+```
+
+
+
+*代码编写
+
+==我们的数据的分隔符是一个特殊符号：\x01==
+
+```python
+# coding:utf8
+"""
+momo案例，从kafka读，写hbase表
+1. 先完成读取kafka
+2. 完成写入hbase
+"""
+import hashlib
+import time
+import happybase
+from kafka import KafkaConsumer
+
+kafka_topic = "MOMO"
+kafka_group_id = "MOMO_GROUP"
+bootstrap_servers = ['node1:9092', 'node2:9092', 'node3:9092']
+data_sep = "\x01"
+hbase_host = "node1"
+hbase_thrift_port = 9090
+hbase_table_name = "MOMO_CHAT:MOMO_MSG"
+
+hbase_connection = happybase.Connection(
+    host=hbase_host,
+    port=hbase_thrift_port,
+    timeout=60000
+)
+
+consumer = KafkaConsumer(
+    kafka_topic,                            # topic
+    group_id=kafka_group_id,                # 消费者组
+    bootstrap_servers=bootstrap_servers,    # broker地址
+    auto_offset_reset="earliest",           # 从上一次记录的offset开始读
+    enable_auto_commit=True,                # 允许自动提交
+    auto_commit_interval_ms=1000,           # 自动提交的时间间隔，单位毫秒
+    client_id="momo_python",                # 客户端ID
+    fetch_min_bytes=1,  # 从kafka一次抓取数据的最小byte量，如果kafka提供不了这个大，就等一会积攒到这么大
+    fetch_max_wait_ms=500,  # 和上面参数匹配，如果500ms还积攒不够量，那么就抓取了
+    fetch_max_bytes=52428800    # 一次抓取最大的量，默认（50MB）
+)
+
+for message in consumer:
+    value = message.value.decode('utf-8')
+
+    # 通过分隔符，分隔数据字段
+    arr = value.split(data_sep)
+
+    time_str = arr[0]               # 消息的时间
+    sender_account = arr[2]         # 发件人账户
+    receiver_account = arr[11]      # 收件人账户
+    # 将时间字符串，转换为时间戳（毫秒级）
+    ts = int(time.mktime(time.strptime(time_str, "%Y-%m-%d %H:%M:%S"))) * 1000
+    # 组装Rowkey
+    # 构建MD5的部分,python中提供hashlib的库，可以完成hash md5计算
+    md5hash = hashlib.md5(f"{sender_account}_{receiver_account}".encode("UTF-8")).\
+        hexdigest()[0:8]
+    # hashlib.md5(被转md5的字符串).hexdigest()
+    # hexdigest()将结果转换成16进制字符串
+    # 基于MD5 hash值和收发账户和时间戳封装rowkey
+    rowkey_byte = f"{md5hash}_{sender_account}_{receiver_account}_{ts}".encode("UTF-8")
+    # 组装HBase的数据
+    data_dict = {
+        b'C1:msg_time': bytes(arr[0], encoding="UTF-8"),
+        b'C1:sender_nickname': bytes(arr[1], encoding="UTF-8"),
+        b'C1:sender_account': bytes(arr[2], encoding="UTF-8"),
+        b'C1:sender_sex': bytes(arr[3], encoding="UTF-8"),
+        b'C1:sender_ip': bytes(arr[4], encoding="UTF-8"),
+        b'C1:sender_os': bytes(arr[5], encoding="UTF-8"),
+        b'C1:sender_phone_type': bytes(arr[6], encoding="UTF-8"),
+        b'C1:sender_network': bytes(arr[7], encoding="UTF-8"),
+        b'C1:sender_gps': bytes(arr[8], encoding="UTF-8"),
+        b'C1:receiver_nickname': bytes(arr[9], encoding="UTF-8"),
+        b'C1:receiver_ip': bytes(arr[10], encoding="UTF-8"),
+        b'C1:receiver_account': bytes(arr[11], encoding="UTF-8"),
+        b'C1:receiver_os': bytes(arr[12], encoding="UTF-8"),
+        b'C1:receiver_phone_type': bytes(arr[13], encoding="UTF-8"),
+        b'C1:receiver_network': bytes(arr[14], encoding="UTF-8"),
+        b'C1:receiver_gps': bytes(arr[15], encoding="UTF-8"),
+        b'C1:receiver_sex': bytes(arr[16], encoding="UTF-8"),
+        b'C1:msg_type': bytes(arr[17], encoding="UTF-8"),
+        b'C1:distance': bytes(arr[18], encoding="UTF-8"),
+        b'C1:message': bytes(arr[19], encoding="UTF-8")
+    }
+
+    # 获取到HBase的table对象
+    table = hbase_connection.table(hbase_table_name)
+    # 调用表对象的put写入
+    table.put(rowkey_byte, data_dict)
+    print(f"向HBase写入一条数据，数据是：{arr}")
+
+consumer.close()
+hbase_connection.close()
+
+```
+*映射Phoenix视图
+
+```shell
+create view MOMO_CHAT.MOMO_MSG (
+  id varchar primary key,
+  C1."msg_time"   varchar,
+  C1."sender_nickyname"   varchar,
+  C1."sender_account"   varchar,
+  C1."sender_sex"   varchar,
+  C1."sender_ip"   varchar,
+  C1."sender_os"   varchar,
+  C1."sender_phone_type"   varchar,
+  C1."sender_network"   varchar,
+  C1."sender_gps"   varchar,
+  C1."receiver_nickyname"   varchar,
+  C1."receiver_ip"   varchar,
+  C1."receiver_account"   varchar,
+  C1."receiver_os"   varchar,
+  C1."receiver_phone_type"   varchar,
+  C1."receiver_network"   varchar,
+  C1."receiver_gps"   varchar,
+  C1."receiver_sex"   varchar,
+  C1."msg_type"   varchar,
+  C1."distance"   varchar,
+  C1."message"   varchar
+);
+```

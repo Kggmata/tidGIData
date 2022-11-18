@@ -1,0 +1,27 @@
+created: 20220601034616324
+difficulty: 1
+due: 20221006075707662
+grade: 2
+history: [{"due":"20220604130549688","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220603130549688"},{"due":"20220624005427373","interval":4,"difficulty":1,"stability":16.874327987238487,"retrievability":0.019776864699927257,"grade":2,"lapses":0,"reps":2,"review":"20220607005427373"},{"due":"20220626123018361","interval":18,"difficulty":2.093696518950571,"stability":0.07408719146292923,"retrievability":0.893696518950571,"grade":0,"lapses":1,"reps":1,"review":"20220625123018361"},{"due":"20220712013627932","interval":4,"difficulty":1,"stability":12.859429240324747,"retrievability":0.003384799839695139,"grade":2,"lapses":1,"reps":2,"review":"20220629013627932"}]
+interval: 18
+lapses: 1
+modified: 20220717075707662
+reps: 3
+retrievability: 0.862880993644973
+review: 20220717075707662
+stability: 80.89584863413283
+tags: hbase ?
+title: HBase VS HDFS
+type: text/vnd.tiddlywiki
+
+`架构上：
+  - 都是分布式系统，主从模式（master + slaves）
+- 事务上：都不怎么支持
+- 场景上：
+  - HDFS：海量数据的`存储`，存储的是文件（可以认为就是一个分布式的硬盘）
+  - HBase：海量数据的`存储` + 海量数据下的`随机访问`（构建在分布式硬盘上的数据库）
+- 数据量：都支持海量数据的存储`
+
+> HBase 和 HDFS 都是用于分布式海量数据存储
+>
+> 方向不同，HDFS只存储，HBase存+随机访问

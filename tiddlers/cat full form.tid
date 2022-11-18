@@ -1,0 +1,21 @@
+created: 20220712013232519
+difficulty: 1.2737560984145848
+due: 20220830081427722
+grade: 1
+history: [{"due":"20220716060020814","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715060020814"},{"due":"20220806143931565","interval":6,"difficulty":1,"stability":16.39340778750448,"retrievability":0.0017970617608469364,"grade":1,"lapses":0,"reps":2,"review":"20220721143931565"},{"due":"20220812074616224","interval":21,"difficulty":2.0737446509856596,"stability":0.07408182337905919,"retrievability":0.8737446509856597,"grade":0,"lapses":1,"reps":1,"review":"20220811074616224"}]
+interval: 8
+lapses: 1
+modified: 20220819081427722
+reps: 2
+retrievability: 0.000011447428925309354
+review: 20220819081427721
+stability: 10.92450608477081
+tags: ?
+title: cat full form
+type: text/vnd.tiddlywiki
+
+```
+concatenate连接
+
+The cat (short for “concatenate“) command is one of the most frequently used commands in Linux/Unix-like operating systems. cat command allows us to create single or multiple files, view content of a file, concatenate files and redirect output in terminal or files
+```

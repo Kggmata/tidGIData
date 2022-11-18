@@ -1,0 +1,21 @@
+created: 20220721105043141
+difficulty: 1
+due: 20230613140544459
+grade: 2
+history: [{"due":"20220802092236739","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092236739"},{"due":"20220823010547436","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220807010547436"}]
+interval: 65
+lapses: 0
+modified: 20221011140544459
+reps: 3
+retrievability: 0.6585224129237505
+review: 20221011140544458
+stability: 245.22002005146214
+tags: ?
+title: flink checkpoint exactly once vs at least once
+type: text/vnd.tiddlywiki
+
+```
+在某些需要极端低延迟的场景, flink会skip stream alignment during checkpoint, 意思就是会跳过barrier对齐
+
+这会导致, 即便在做checkpoint n的时候barrier n+1到了, 这部分数据仍然会包含在checkpoint n当中, 这会导致一部分数据重复
+```

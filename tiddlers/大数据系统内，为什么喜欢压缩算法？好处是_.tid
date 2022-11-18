@@ -1,0 +1,19 @@
+created: 20220607054451862
+difficulty: 1.0861675498643524
+due: 20220916115746570
+grade: 1
+history: [{"due":"20220611043736570","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220610043736570"},{"due":"20220629111423738","interval":3,"difficulty":1,"stability":15.693018113617368,"retrievability":0.04746718678804762,"grade":2,"lapses":0,"reps":2,"review":"20220613111423738"}]
+interval: 18
+lapses: 0
+modified: 20220701115746570
+reps: 3
+retrievability: 0.8861675498643524
+review: 20220701115746570
+stability: 77.46728430369387
+tags: hbase ?
+title: 大数据系统内，为什么喜欢压缩算法？好处是?
+type: text/vnd.tiddlywiki
+
+压缩算法相当于使用cpu的算力,换取磁盘空间和网络传输效率
+
+在cpu,内存资源充足的情况下,能提高效率

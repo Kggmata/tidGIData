@@ -1,0 +1,11 @@
+created: 20220908133357981
+modified: 20220908133412199
+tags: ? flink
+title: hbase get 和scan区别
+type: text/vnd.tiddlywiki
+
+```
+get 'test','rk001','FILTER=>ValueFilter(=,'binary:zhangsan')'
+
+get和scan区别:get必须指定rowkey, scan是全表扫描
+```

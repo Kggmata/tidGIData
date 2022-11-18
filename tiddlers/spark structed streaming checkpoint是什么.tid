@@ -1,0 +1,48 @@
+created: 20220612113031334
+difficulty: 1.066799247229585
+due: 20220914074414694
+grade: 1
+history: [{"due":"20220616065647242","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615065647242"},{"due":"20220618004123108","interval":2,"difficulty":1.2801254823962773,"stability":0.07425364270040997,"retrievability":0.12395450234099842,"grade":0,"lapses":1,"reps":1,"review":"20220617004123107"},{"due":"20220701074912418","interval":2,"difficulty":1,"stability":11.792887567465318,"retrievability":0.05855115497747565,"grade":2,"lapses":1,"reps":2,"review":"20220619074912418"}]
+interval: 16
+lapses: 1
+modified: 20220705074414694
+reps: 3
+retrievability: 0.866799247229585
+review: 20220705074414694
+stability: 70.61509987037478
+tags: [[structed streaming]] ?
+title: spark structed streaming checkpoint是什么
+type: text/vnd.tiddlywiki
+
+可以理解为，类似虚拟机的快照，每隔一个时间，将当前Spark的程序运行的各种状态保存在CheckPoint中（快照）
+
+CheckPoint翻译过来：检查点。
+
+这是Spark执行的时候的自动化机制，自动做检查点（快照）
+
+[img[20220612173331.png]]
+
+```
+offset：当前Spark从Source哪里获取的数据的偏移量记录（类型Kafka的消费者Offset记录）
+
+- commits：每一次处理完数据，做的提交记录，代表一个批次的完成，比如某个批次完成到了某个offset的位置
+
+- metadata：Spark的各类元数据信息
+
+- sources：source相关的元数据信息，比如一些连接信息等
+
+- sinks：输出端的元数据信息，比如一些连接信息
+
+- state：状态信息的快照，比如无界DF某个批次的状态
+```
+
+  > 无界DF数据是在内存，每个检查点就可以通过CheckPoint（快照）将状态保存到硬盘一份做备份恢复用。
+
+
+
+> 检查点的间隔是和批次同步
+>
+> 每完成一个批次，当前的各类元数据、程序的状态都被快照（CheckPoint）到磁盘做此持久化备份
+>
+> 程序安全性更高。
+

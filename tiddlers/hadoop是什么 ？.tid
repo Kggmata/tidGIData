@@ -1,0 +1,36 @@
+created: 20220521075839937
+difficulty: 2.187648325255764
+due: 20221013005055486
+grade: 2
+history: [{"due":"20220524054938094","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054938094"},{"due":"20220605093359038","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526093359038"},{"due":"20220709015331423","interval":12,"difficulty":3.0941541016100915,"stability":31.809656917503407,"retrievability":0.8841541016100911,"grade":2,"lapses":0,"reps":3,"review":"20220607015331423"}]
+interval: 34
+lapses: 0
+modified: 20220711005055486
+reps: 4
+retrievability: 0.893494223645672
+review: 20220711005055485
+stability: 93.88512859234598
+tags: hadoop ?
+title: hadoop是什么 ？
+type: text/vnd.tiddlywiki
+
+Hadoop 是 Apache 旗下的一个用 java 语言实现开源软件框架，可以使用简单的编程模型在计算机集群上对数据进行分布式处理。
+
+狭义上说，Hadoop 指 Apache 这款开源框架，它的核心组件有： 
+HDFS（分布式文件系统）：解决海量数据存储 
+YARN（作业调度和集群资源管理的框架）：解决资源任务调度 
+MAPREDUCE（分布式运算编程框架）：解决海量数据计算
+
+广义上来说，Hadoop 通常是指一个更广泛的概念——Hadoop 生态圈。
+
+当下的 Hadoop 已经成长为一个庞大的体系，随着生态系统的成长，新出现
+的项目越来越多，其中不乏一些非 Apache 主管的项目，这些项目对 HADOOP 是很
+好的补充或者更高层的抽象。
+
+Hadoop是Apache Lucene创始人 Doug Cutting 创建的。最早起源于Nutch，它是Lucene的子项目。Nutch的设计目标是构建一个大型的全网搜索引擎，包括网页抓取、索引、查询等功能，但随着抓取网页数量的增加，遇到了严重的可扩展性问题：如何解决数十亿网页的存储和索引问题。
+2003年Google发表了一篇论文为该问题提供了可行的解决方案。论文中描述的是谷歌的产品架构，该架构称为：谷歌分布式文件系统（GFS）,可以解决他们在网页爬取和索引过程中产生的超大文件的存储需求。
+2004年 Google发表论文向全世界介绍了谷歌版的MapReduce系统。
+同时期，Nutch的开发人员完成了相应的开源实现HDFS和MAPREDUCE，并从Nutch中剥离成为独立项目HADOOP，到2008年1月，HADOOP成为Apache顶级项目，迎来了它的快速发展期。
+
+2006年Google发表了论文是关于BigTable的，这促使了后来的Hbase的发展。
+因此，Hadoop及其生态圈的发展离不开Google的贡献。
