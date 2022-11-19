@@ -1,15 +1,17 @@
 created: 20220721130458144
+creator: Yangqing QU
 difficulty: 1
-due: 20220824090200780
+due: 20231121123125633
 grade: 2
-history: [{"due":"20220803110547655","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110547655"}]
-interval: 6
+history: [{"due":"20220803110547655","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110547655"},{"due":"20220824090200780","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220808090200780"}]
+interval: 103
 lapses: 0
-modified: 20220808090200780
-reps: 2
-retrievability: 0.0017970135161932011
-review: 20220808090200780
-stability: 16.39335325161452
+modified: 20221119123125633
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.5158270579024493
+review: 20221119123125633
+stability: 366.545343699897
 tags: ?
 title: 13个石头，有一个比较重其他都一样，用天平测量最多需要几次才能测出重的那个
 type: text/vnd.tiddlywiki
