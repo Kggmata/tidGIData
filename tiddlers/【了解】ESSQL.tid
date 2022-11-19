@@ -1,15 +1,15 @@
 created: 20220617102223328
-difficulty: 1
-due: 20220825115122999
-grade: 2
-history: [{"due":"20220620131118922","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619131118922"},{"due":"20220620233251515","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220619233251515"},{"due":"20220630143816864","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621143816864"}]
-interval: 11
-lapses: 0
-modified: 20220702115122999
-reps: 4
-retrievability: 0.8770024421488429
-review: 20220702115122998
-stability: 53.686353537936405
+difficulty: 1.9597599659345497
+due: 20221120011629218
+grade: 0
+history: [{"due":"20220620131118922","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619131118922"},{"due":"20220620233251515","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220619233251515"},{"due":"20220630143816864","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621143816864"},{"due":"20220825115122999","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":4,"review":"20220702115122998"}]
+interval: 140
+lapses: 1
+modified: 20221119011629218
+reps: 1
+retrievability: 0.7597599659345498
+review: 20221119011629218
+stability: 1.4816364413634358
 tags: 用户画像 ?
 title: 【了解】ESSQL
 type: text/vnd.tiddlywiki
