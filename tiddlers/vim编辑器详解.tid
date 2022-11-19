@@ -5,7 +5,7 @@ grade: 2
 history: [{"due":"20220524065149702","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065149702"},{"due":"20220615073044471","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529073044471"},{"due":"20220617105458239","interval":18,"difficulty":4.983494477388395,"stability":0.07425364270040997,"retrievability":0.8919043531095704,"grade":0,"lapses":1,"reps":1,"review":"20220616105458239"},{"due":"20220624005221817","interval":3,"difficulty":4.197662302900902,"stability":4.686793696728159,"retrievability":0.01416782551250646,"grade":1,"lapses":1,"reps":2,"review":"20220619005221817"},{"due":"20220710234619452","interval":6,"difficulty":4.271481508101014,"stability":14.7359150647278,"retrievability":0.8738192052001121,"grade":1,"lapses":1,"reps":3,"review":"20220625234619452"},{"due":"20220824011648513","interval":19,"difficulty":4.344456514237335,"stability":39.74295969125376,"retrievability":0.8729750061363204,"grade":1,"lapses":1,"reps":4,"review":"20220715011648512"}]
 interval: 126
 lapses: 1
-modified: 20221118093756481
+modified: 20221118235943554
 reps: 5
 retrievability: 0.7160307848923209
 review: 20221118093756481
