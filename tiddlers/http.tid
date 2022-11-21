@@ -1,0 +1,16 @@
+created: 20221121082416338
+creator: Yangqing QU
+modified: 20221121090740428
+modifier: Yangqing QU
+tags: ? web
+title: http
+type: text/vnd.tiddlywiki
+
+hypertext transfer protocol
+
+```
+超文本传输协定
+通俗理解就是用来传输网页数据的协议
+是client和server沟通的桥梁
+```
+[[http方法]]
