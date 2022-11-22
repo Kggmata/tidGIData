@@ -1,0 +1,20 @@
+created: 20221105005047588
+difficulty: 4.010000000000001
+due: 20221123062158807
+grade: 2
+history: [{"due":"20221111101229757","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109101229757"}]
+interval: 4
+lapses: 0
+modified: 20221113062158807
+reps: 2
+retrievability: 0.81
+review: 20221113062158806
+stability: 10.268730125807526
+tags: 7505 ?
+title: 二叉树遍历
+type: text/vnd.tiddlywiki
+
+DFS
+[img[Snipaste_2022-11-05_08-50-54.png]]
+BFS
+[img[Snipaste_2022-11-05_09-37-30.png]]

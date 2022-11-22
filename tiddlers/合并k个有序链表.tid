@@ -1,0 +1,22 @@
+created: 20221119020651736
+creator: Yangqing QU
+modified: 20221119044932029
+modifier: Yangqing QU
+tags: ? linkedList
+title: 合并k个有序链表
+type: text/vnd.tiddlywiki
+
+
+```markdown
+* [合并-k-个有序链表](https://labuladong.github.io/algo/1/4/#合并-k-个有序链表) #algorithm #linkedList
+	* [23. 合并K个升序链表 - 力扣（LeetCode）](https://leetcode.cn/problems/merge-k-sorted-lists/)
+	* 思路
+		* 初始化一个优先队列pq(可以使用python的heapq, 或者java的PriorityQueue)[[pirority_queue]]
+		* 将list当中的头节点插入倒pq
+		* 每次popmin, 然后获取head.next再存入pq
+		* 直到pq空为止
+	* time complexity
+		* 优先队列最多k个元素, 一次pull或者add是 $O(logk)$, 所有链表节点都要加入和弹出pq, 因此 $O(Nlog(k))$
+```
+
+

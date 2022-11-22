@@ -1,0 +1,10 @@
+created: 20221115014142024
+modified: 20221115014418362
+tags: ? 7203
+title: When we use imputation and why use normalization
+type: text/vnd.tiddlywiki
+
+```
+1. use imputation when data not follow gaussian distribution
+2. use normalization when data follow distribution
+```

@@ -1,0 +1,22 @@
+created: 20221028124408940
+difficulty: 5
+due: 20221115073237486
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113073237486
+reps: 1
+retrievability: 1
+review: 20221113073237486
+stability: 2
+tags: 7203 ?
+title: decision tree split by continuous valued features
+type: text/vnd.tiddlywiki
+
+```
+split by Bi-partition
+the feature needs to be considered in future splitting
+```
+
+排序, bi-partition

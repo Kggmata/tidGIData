@@ -1,0 +1,15 @@
+created: 20221113042833076
+modified: 20221113042938275
+tags: ? 7505
+title: what is the limitation of association rule mining
+type: text/vnd.tiddlywiki
+
+```
+It is a naive solution
+
+列出全部associationrule
+然后计算support和confidence
+然后保留strong rules
+
+low efficiency
+```

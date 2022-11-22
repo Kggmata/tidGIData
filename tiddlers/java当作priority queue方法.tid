@@ -1,0 +1,21 @@
+created: 20221119034309424
+creator: Yangqing QU
+difficulty: 5
+due: 20221123032916682
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221121032916683
+modifier: Yangqing QU
+reps: 1
+retrievability: 1
+review: 20221121032916682
+stability: 2
+tags: linkedList priorityQueue ?
+title: java当作priority queue方法
+type: text/vnd.tiddlywiki
+
+```
+PriorityQueue<type> name=new PriorityQueue<>(length, compare function)
+```

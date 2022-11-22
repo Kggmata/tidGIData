@@ -1,0 +1,24 @@
+created: 20221030013936360
+difficulty: 4.010000000000001
+due: 20221123060308878
+grade: 2
+history: [{"due":"20221111140217662","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109140217662"}]
+interval: 4
+lapses: 0
+modified: 20221113060308878
+reps: 2
+retrievability: 0.81
+review: 20221113060308877
+stability: 10.268730125807526
+tags: 7231 ?
+title: cat
+type: text/vnd.tiddlywiki
+
+concatenate
+
+```
+|grep
+-v inverse match
+
+-v 和匹配字符串没有顺序要求
+```

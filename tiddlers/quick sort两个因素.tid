@@ -1,0 +1,19 @@
+created: 20221108080818875
+difficulty: 5
+due: 20221115143849016
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113143849016
+reps: 1
+retrievability: 1
+review: 20221113143849016
+stability: 2
+tags: 7505 ?
+title: quick sort两个因素
+type: text/vnd.tiddlywiki
+
+1. 初始基准数pivot的选择
+
+2. 初始数组的排序

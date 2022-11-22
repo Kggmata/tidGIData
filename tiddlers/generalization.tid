@@ -1,0 +1,21 @@
+created: 20221028105734209
+difficulty: 5
+due: 20221115091148678
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113091148678
+reps: 1
+retrievability: 1
+review: 20221113091148678
+stability: 2
+tags: 7203 ?
+title: generalization
+type: text/vnd.tiddlywiki
+
+```
+The classifier's ability to classify unseen data
+
+欠拟合和过拟合都有差的generalization
+```

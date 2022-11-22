@@ -1,0 +1,23 @@
+created: 20221028110646132
+difficulty: 5
+due: 20221115130033152
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113130033153
+reps: 1
+retrievability: 1
+review: 20221113130033152
+stability: 2
+tags: 7203 ?
+title: normalization
+type: text/vnd.tiddlywiki
+
+```
+min-max scaler
+
+standarization
+sample standard deviation
+```
+[img[Snipaste_2022-11-05_16-49-16.png]]

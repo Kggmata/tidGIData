@@ -1,0 +1,23 @@
+created: 20221111064810640
+difficulty: 5
+due: 20221115065027037
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113065027037
+reps: 1
+retrievability: 1
+review: 20221113065027037
+stability: 2
+tags: 7203 ?
+title: apriori approach
+type: text/vnd.tiddlywiki
+
+```
+if an itemset is frequent, then all its subset is frequent
+
+if an itemset is not frequent, then all its superset is not frequent
+
+for k-itemset, k+1itemset is superset, k-1itemset is subset
+```

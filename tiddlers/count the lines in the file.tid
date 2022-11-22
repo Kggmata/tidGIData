@@ -1,0 +1,30 @@
+created: 20221030014524494
+difficulty: 5
+due: 20221115072010809
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113072010809
+reps: 1
+retrievability: 1
+review: 20221113072010809
+stability: 2
+tags: 7231 ?
+title: count the lines in the file
+type: text/vnd.tiddlywiki
+
+wc
+
+```
+word count
+-c, --bytes
+              print the byte counts
+
+-m, --chars
+              print the character counts
+
+-l, --lines
+              print the newline counts
+
+```

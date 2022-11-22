@@ -1,0 +1,19 @@
+created: 20221107070654043
+difficulty: 5.010000000000001
+due: 20221122060413035
+grade: 1
+history: [{"due":"20221111144257808","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109144257808"}]
+interval: 4
+lapses: 0
+modified: 20221113060413036
+reps: 2
+retrievability: 0.81
+review: 20221113060413035
+stability: 9.075440292178332
+tags: 7203 ?
+title: cluster based outlier detection
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-07_15-07-05.png]]
+[img[Snipaste_2022-11-07_15-07-11.png]]
+[img[Snipaste_2022-11-07_15-07-36.png]]

@@ -1,0 +1,21 @@
+created: 20221110122417320
+difficulty: 5
+due: 20221115074810885
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113074810885
+reps: 1
+retrievability: 1
+review: 20221113074810885
+stability: 2
+tags: 7203 ?
+title: explain cuse of dimensionality impact
+type: text/vnd.tiddlywiki
+
+```
+1. As the dimensionality/feature increase, the data size increase dramatically. That slows down the efficiency dramatically 
+
+2. It make the data distributed sparse
+```

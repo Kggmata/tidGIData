@@ -1,0 +1,24 @@
+created: 20221111084436629
+difficulty: 5
+due: 20221115064945778
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113064945778
+reps: 1
+retrievability: 1
+review: 20221113064945777
+stability: 2
+tags: 7203 ?
+title: advantage of DBSCAN
+type: text/vnd.tiddlywiki
+
+```
+pros:
+1. no require of data distribution to be gaussian distribution
+
+cons:
+1. low efficiency
+2. Not work well for data will variation of density
+```

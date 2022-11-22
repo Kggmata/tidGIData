@@ -1,0 +1,23 @@
+created: 20221028130014789
+difficulty: 5
+due: 20221115125307622
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113125307622
+reps: 1
+retrievability: 1
+review: 20221113125307622
+stability: 2
+tags: 7203 ?
+title: naive bayes
+type: text/vnd.tiddlywiki
+
+```
+why naive?
+attribute conditional independent
+p(y|x)
+
+```
+[img[BillfishtddHzz.PNG]]

@@ -1,0 +1,9 @@
+created: 20221115030012622
+modified: 20221115030108956
+tags: ? 7203
+title: can the kmeans iteration always end
+type: text/vnd.tiddlywiki
+
+```
+Yes, it can be proved that k means will always converge to some local optimum if using the euclidean distance
+```

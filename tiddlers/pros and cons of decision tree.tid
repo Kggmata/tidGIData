@@ -1,0 +1,26 @@
+created: 20221105094025439
+difficulty: 5
+due: 20221115140655657
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113140655657
+reps: 1
+retrievability: 1
+review: 20221113140655657
+stability: 2
+tags: 7203 ?
+title: pros and cons of decision tree
+type: text/vnd.tiddlywiki
+
+```
+优点:
+1. 可解释性好
+2. 训练快, 效率快
+3. redundant feature对结果不影响
+
+缺点:
+1. 只考虑了一个feature
+2. 没考虑多个feature
+```

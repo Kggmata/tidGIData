@@ -1,0 +1,18 @@
+created: 20221119045641708
+creator: Yangqing QU
+modified: 20221119045753709
+modifier: Yangqing QU
+tags: ?
+title: 单链表的倒数第k个节点
+type: text/vnd.tiddlywiki
+
+```markdown
+* [单链表的倒数第-k-个节点](https://labuladong.github.io/algo/1/4/#单链表的倒数第-k-个节点)
+	* [[剑指 Offer 22. 链表中倒数第k个节点](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)](<https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/>)
+	* 思路
+		* 初始化两个节点指向dummy
+		* 让第一个先走k步,
+	* time complexity
+		* $O(n)$
+```
+[img[Snipaste_2022-11-19_12-57-17.png]]

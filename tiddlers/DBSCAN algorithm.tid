@@ -1,0 +1,47 @@
+created: 20221111022657966
+difficulty: 5
+due: 20221115072128531
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221115031640402
+reps: 1
+retrievability: 1
+review: 20221113072128530
+stability: 2
+tags: 7203 ?
+title: DBSCAN algorithm
+type: text/vnd.tiddlywiki
+
+```
+algorithm:
+Label all points as noise, core, border
+
+Initialization: cluster_index 0
+
+for all core points,
+ if it is not assigned a cluster_index
+  cluster_index=cluster_index+1
+  assign the core point cluster_index
+ for all points with in Eps circle of core point
+  if not assigned a cluster_index
+   assign the point the cluster_index
+```
+```
+determine Eps:
+1.Fix MinPts to be k
+2.calculate all points distance to its k-1th nearest neighbour
+3.sort the distance in ascending order and plot
+4.find elbow point
+```
+[img[Snipaste_2022-11-15_11-15-28.png]]
+
+```
+Pros:
+No assumption on data distribution
+
+cons:
+1. curse of dimensionality
+2. Can not cluster datasets with large differences in densities well 
+```

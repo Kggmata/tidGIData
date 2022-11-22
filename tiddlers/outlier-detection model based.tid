@@ -1,0 +1,27 @@
+created: 20221107070436175
+difficulty: 5
+due: 20221115130554601
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113130554601
+reps: 1
+retrievability: 1
+review: 20221113130554601
+stability: 2
+tags: 7203 ?
+title: outlier-detection model based
+type: text/vnd.tiddlywiki
+
+```
+为数据建模, 看拟合程度, 拟合度低的是outlier
+
+比如高斯分布, 算概率, 或者(x-/mu)/ /lambda
+
+百分之68在一个sample standard deviation 内
+百分之95在两个sample standard deviation内
+百分之99.7在三个sample standard deviation内
+```
+[img[Snipaste_2022-11-07_15-04-58.png]]
+[img[Snipaste_2022-11-07_15-05-56.png]]

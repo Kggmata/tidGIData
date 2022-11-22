@@ -1,0 +1,20 @@
+created: 20221105091340498
+difficulty: 4.010000000000001
+due: 20221123062440936
+grade: 2
+history: [{"due":"20221111115226697","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109115226697"}]
+interval: 4
+lapses: 0
+modified: 20221113062440936
+reps: 2
+retrievability: 0.81
+review: 20221113062440935
+stability: 10.268730125807526
+tags: 7203 ?
+title: 信息熵的最大值最小值
+type: text/vnd.tiddlywiki
+
+```
+1. 最大值, log_2^m
+2. 最小值, 0
+```

@@ -1,0 +1,17 @@
+created: 20221104122100873
+difficulty: 4.010000000000001
+due: 20221123064223026
+grade: 2
+history: [{"due":"20221111094103403","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109094103402"}]
+interval: 4
+lapses: 0
+modified: 20221113064223026
+reps: 2
+retrievability: 0.81
+review: 20221113064223025
+stability: 10.268730125807526
+tags: 7505 ?
+title: 递归类型
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-04_20-21-08.png]]

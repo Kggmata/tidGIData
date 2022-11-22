@@ -1,0 +1,41 @@
+created: 20221028130642112
+difficulty: 5
+due: 20221115091934643
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221115031239305
+reps: 1
+retrievability: 1
+review: 20221113091934643
+stability: 2
+tags: 7203 ?
+title: kmeans
+type: text/vnd.tiddlywiki
+
+```
+also called prototype-based clustering
+
+Initialization:
+randomly pick k points as the initial centroids
+Repeat the following 
+update belonging objects: assign all point class according to the closest centroid
+update the centroids: the mean of all points in the cluster
+```
+```
+To set K:
+
+setting k by the elbow method
+normally k is between2 to sqrt(n)
+
+elbow method:
+plot Mean SSE versus k
+```
+```
+pros:
+kmeans work well on spherical distributed data
+
+cons:
+kmeans
+```

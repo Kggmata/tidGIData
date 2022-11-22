@@ -1,0 +1,40 @@
+created: 20221112053518913
+difficulty: 5
+due: 20221115124305721
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221116014320472
+reps: 1
+retrievability: 1
+review: 20221113124305721
+stability: 2
+tags: 7505 ?
+title: minimum spanning tree
+type: text/vnd.tiddlywiki
+
+```
+Tree: connected acyclic graph
+
+cycle property: MST should have no cycles
+for n vertices, there are n-1 edges
+```
+[img[Snipaste_2022-11-12_14-21-21.png]]
+
+```
+Prim-jarnik's Algorithm
+O((n+m)log(n))
+```
+[img[Snipaste_2022-11-12_14-21-40.png]]
+
+```
+Kruskal's Algorithm
+O(n+m)log(n)
+```
+[img[Snipaste_2022-11-12_14-24-33.png]]
+
+```
+Floyd-Warshall 演算法
+```
+https://ithelp.ithome.com.tw/articles/10209186

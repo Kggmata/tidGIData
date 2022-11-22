@@ -1,0 +1,34 @@
+created: 20221112045104132
+difficulty: 5
+due: 20221115144640072
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113144640072
+reps: 1
+retrievability: 1
+review: 20221113144640072
+stability: 2
+tags: 7505 ?
+title: shortest path algorithm
+type: text/vnd.tiddlywiki
+
+```
+Dijkstra's Algorithm
+
+assumption:
+1. connected
+2. undirected
+3. no negative edge weight
+```
+[img[Snipaste_2022-11-12_13-04-06.png]]
+
+```
+DAG based algorithm
+Why use DAG based algorithm?
+as Dijkstra's algorithm not work with negative weight
+
+runing time O(m+n)
+```
+[img[Snipaste_2022-11-12_13-30-29.png]]

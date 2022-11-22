@@ -1,0 +1,22 @@
+created: 20221105085317938
+difficulty: 4.010000000000001
+due: 20221123064026584
+grade: 2
+history: [{"due":"20221111115128813","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109115128813"}]
+interval: 4
+lapses: 0
+modified: 20221115014402418
+reps: 2
+retrievability: 0.81
+review: 20221113064026583
+stability: 10.268730125807526
+tags: 7203 ?
+title: 维度灾难
+type: text/vnd.tiddlywiki
+
+curse of dimensionlity
+
+```
+1. The amount of training data need to generalize increase exponentially
+2. The data distribution becomes sparse, most data tend to lie close to the boundary of the space
+```

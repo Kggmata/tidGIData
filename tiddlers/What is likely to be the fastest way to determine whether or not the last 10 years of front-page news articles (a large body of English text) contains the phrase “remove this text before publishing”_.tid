@@ -1,0 +1,7 @@
+created: 20221116013144499
+modified: 20221116013159671
+tags: ? 7505
+title: What is likely to be the fastest way to determine whether or not the last 10 years of front-page news articles (a large body of English text) contains the phrase “remove this text before publishing”?
+type: text/vnd.tiddlywiki
+
+Choice 3 of 5:To search for the phrase in a Suffix Trie containing all of the suffixes of the text of each article, assuming that the Suffix Trie has already been built.

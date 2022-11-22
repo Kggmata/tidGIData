@@ -1,0 +1,19 @@
+created: 20221105081745688
+difficulty: 4.010000000000001
+due: 20221123054331275
+grade: 2
+history: [{"due":"20221111132006682","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109132006682"}]
+interval: 4
+lapses: 0
+modified: 20221113054331275
+reps: 2
+retrievability: 0.81
+review: 20221113054331274
+stability: 10.268730125807526
+tags: 7203 ?
+title: Acc的limitation
+type: text/vnd.tiddlywiki
+
+```
+训练数据分布不均匀的情况下, 比较不能代表真实性能. 
+```

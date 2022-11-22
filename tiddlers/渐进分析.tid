@@ -1,0 +1,17 @@
+created: 20221104082925628
+difficulty: 4.010000000000001
+due: 20221123063835653
+grade: 2
+history: [{"due":"20221111114306732","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109114306732"}]
+interval: 4
+lapses: 0
+modified: 20221113063835653
+reps: 2
+retrievability: 0.81
+review: 20221113063835652
+stability: 10.268730125807526
+tags: 7505 ?
+title: 渐进分析
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-04_16-29-12.png]]

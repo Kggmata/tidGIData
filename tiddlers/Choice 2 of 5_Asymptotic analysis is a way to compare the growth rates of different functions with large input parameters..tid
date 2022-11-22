@@ -1,0 +1,17 @@
+created: 20221028104021284
+difficulty: 4.010000000000001
+due: 20221123060313584
+grade: 2
+history: [{"due":"20221111140225844","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109140225844"}]
+interval: 4
+lapses: 0
+modified: 20221113060313584
+reps: 2
+retrievability: 0.81
+review: 20221113060313584
+stability: 10.268730125807526
+tags: 7505 ?
+title: Choice 2 of 5:Asymptotic analysis is a way to compare the growth rates of different functions with large input parameters.
+type: text/vnd.tiddlywiki
+
+true

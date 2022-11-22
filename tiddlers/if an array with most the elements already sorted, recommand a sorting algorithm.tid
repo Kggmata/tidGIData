@@ -1,0 +1,19 @@
+created: 20221111124638474
+difficulty: 5
+due: 20221115091531839
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113091531839
+reps: 1
+retrievability: 1
+review: 20221113091531839
+stability: 2
+tags: 7505 ?
+title: if an array with most the elements already sorted, recommand a sorting algorithm
+type: text/vnd.tiddlywiki
+
+```
+insertion sort, it will benefit from already sorted list 
+```

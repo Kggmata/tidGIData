@@ -1,0 +1,24 @@
+created: 20221107142828000
+difficulty: 5.141358589403242
+due: 20221117064724592
+grade: 2
+history: [{"due":"20221111133110945","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109133110945"},{"due":"20221114054602207","interval":4,"difficulty":6.010000000000001,"stability":1.4816364413634358,"retrievability":0.81,"grade":0,"lapses":1,"reps":1,"review":"20221113054602207"}]
+interval: 1
+lapses: 1
+modified: 20221114064724592
+reps: 2
+retrievability: 0.9313585894032408
+review: 20221114064724592
+stability: 3.3375886721050403
+tags: 7505 ?
+title: Array list increase size time complexity
+type: text/vnd.tiddlywiki
+
+```
+increase size
+1. doubly
+amortisation time O(1)
+
+2. incremental
+O(n)
+```

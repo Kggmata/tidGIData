@@ -1,0 +1,21 @@
+created: 20221028104448244
+difficulty: 5
+due: 20221116065524619
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221114065524619
+reps: 1
+retrievability: 1
+review: 20221114065524619
+stability: 2
+tags: 7203 ?
+title: training set
+type: text/vnd.tiddlywiki
+
+```
+a collection of samples, each contains
+1. features
+2. label
+```

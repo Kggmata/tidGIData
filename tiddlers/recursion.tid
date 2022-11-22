@@ -1,0 +1,29 @@
+created: 20221031050023944
+difficulty: 5
+due: 20221115144038426
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113144038426
+reps: 1
+retrievability: 1
+review: 20221113144038426
+stability: 2
+tags: 7505 ?
+title: recursion
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-10-31_13-00-21.png]]
+[img[Snipaste_2022-10-31_13-00-33.png]]
+
+```
+线性递归
+简单的调用自己
+
+尾递归
+函数最后调用自己
+
+二分递归/多路递归
+每一层递归一分为二, 多
+```

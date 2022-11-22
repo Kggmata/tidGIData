@@ -1,0 +1,15 @@
+created: 20221119114116973
+creator: Yangqing QU
+modified: 20221119114220594
+modifier: Yangqing QU
+tags: ? linkedList
+title: 判断链表是否存在环
+type: text/vnd.tiddlywiki
+
+```markdown
+* [判断链表环](https://labuladong.github.io/algo/1/4/#判断链表是否包含环)
+	* [链表中环的入口节点](https://leetcode.cn/problems/c32eOV/)
+	* 思路
+			* 所以相遇点就是k
+```
+[img[Snipaste_2022-11-19_19-41-51.png]]

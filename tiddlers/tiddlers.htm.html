@@ -1,0 +1,65 @@
+* 思路
+	* 遍历一遍二叉树得到答案
+		* 回溯算法
+	* 分解问题计算得到答案
+	* 基本就是穷举, 有机会的话通过剪枝或者备忘录的方式减少冗余计算, 提高效率
+
+* 思维模式
+	* 遍历一遍二叉树获得答案
+	* 定义一个递归函数, 通过子问题的答案推导出原答案
+		* 这也叫做分解问题的思维模式
+
+> 无论哪种思维模式, 都要思考子树要干什么
+
+* [两种解题思路](https://labuladong.github.io/algo/1/6/#两种解题思路)
+	* [104. 二叉树的最大深度 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
+	*```
+PriorityQueue<type> name=new PriorityQueue<>(length, compare function)
+```* Heapq<$echarts $tiddler="$:/plugins/Gk0Wk/echarts/addons/TheBrain.js" aliasField="caption" levels="2" graphTitle="The Barin View" $fillSidebar="no" $height="100%" />https://leetcode.cn/problems/partition-list/
+
+```
+1. 根据base, 将链表切分为两部分. 第一部分是小于base的
+2. 然后切断原指针
+3. 连接新的两段链表
+``````markdown
+* [判断链表环](https://labuladong.github.io/algo/1/4/#判断链表是否包含环)
+	* [链表中环的入口节点](https://leetcode.cn/problems/c32eOV/)
+	* 思路
+			* 所以相遇点就是k
+```
+[img[Snipaste_2022-11-19_19-41-51.png]]```markdown
+- [单链表中点](https://labuladong.github.io/algo/1/4/#单链表的中点)
+	- [876. 链表的中间结点 - 力扣（LeetCode）](https://leetcode.cn/problems/middle-of-the-linked-list/) #doublePointer
+	- 思路
+		- 设置两个pointer
+		- 一个每次一步, 另一个两步
+``````markdown
+* [单链表的倒数第-k-个节点](https://labuladong.github.io/algo/1/4/#单链表的倒数第-k-个节点)
+	* [[剑指 Offer 22. 链表中倒数第k个节点](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)](<https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/>)
+	* 思路
+		* 初始化两个节点指向dummy
+		* 让第一个先走k步,
+	* time complexity
+		* $O(n)$
+```
+[img[Snipaste_2022-11-19_12-57-17.png]]
+```markdown
+* [合并-k-个有序链表](https://labuladong.github.io/algo/1/4/#合并-k-个有序链表) #algorithm #linkedList
+	* [23. 合并K个升序链表 - 力扣（LeetCode）](https://leetcode.cn/problems/merge-k-sorted-lists/)
+	* 思路
+		* 初始化一个优先队列pq(可以使用python的heapq, 或者java的PriorityQueue)[[pirority_queue]]
+		* 将list当中的头节点插入倒pq
+		* 每次popmin, 然后获取head.next再存入pq
+		* 直到pq空为止
+	* time complexity
+		* 优先队列最多k个元素, 一次pull或者add是 $O(logk)$, 所有链表节点都要加入和弹出pq, 因此 $O(Nlog(k))$
+```
+
+
+
+- [21](https://leetcode.cn/problems/merge-two-sorted-lists/)
+
+```
+		- 虚拟节点, 也就是dummy node, 可以简化边界处理, 这里可以避免出现空指针的情况
+```[160. 相交链表 - 力扣（LeetCode）](https://leetcode.cn/problems/intersection-of-two-linked-lists/)
+[两个链表是否相交](https://labuladong.github.io/algo/1/4/#两个链表是否相交)

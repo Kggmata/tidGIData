@@ -1,0 +1,46 @@
+created: 20221104235901709
+difficulty: 4.010000000000001
+due: 20221123063804979
+grade: 2
+history: [{"due":"20221111094900423","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109094900423"}]
+interval: 4
+lapses: 0
+modified: 20221113063804979
+reps: 2
+retrievability: 0.81
+review: 20221113063804978
+stability: 10.268730125807526
+tags: 7505 ?
+title: 堆Heap
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-05_07-59-10.png]]
+
+```
+1 一定是complete binary tree
+2. heap order: parent的priority高于child
+
+插入
+1. 插入到last node position
+2. up heap
+
+removeMin
+1 last node和root node交换
+2. remove last node
+3. down heap
+
+up heap
+如果parent的priority更小, 则交换
+
+down heap
+和更高priority的child交换, 直到child的priority都更小
+
+heap sort
+1 构建堆
+  插入node到last
+  up heap
+2 交换root和last
+removeMin
+  3 删除last
+  4 down heap
+```

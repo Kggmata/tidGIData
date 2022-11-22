@@ -1,0 +1,43 @@
+created: 20221108141614819
+difficulty: 5
+due: 20221115091252559
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221116012740654
+reps: 1
+retrievability: 1
+review: 20221113091252559
+stability: 2
+tags: 7505 ?
+title: graph
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-09_10-38-52.png]]
+
+```
+indegree入度
+outdegree出度
+```
+[img[Snipaste_2022-11-09_10-39-26.png]]
+
+```
+graph ADT
+1. Ajacency list structure
+store each vertex, for each vertex, store connected edges
+
+2. Ajacency map
+store each vertex, for each vertex store a hash map where key is the vertex it can reach and value is the edge to traverse to reach vertex
+
+3. Ajacency matrix structure
+```
+[img[Snipaste_2022-11-15_13-30-04.png]]
+
+```
+DFS, good at path finding
+Om+n
+
+BFS, good at compute a spanning tree, find a sample cycle, find the shorest path
+Om+n
+```

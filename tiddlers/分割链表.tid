@@ -1,0 +1,15 @@
+created: 20221118071911554
+creator: Yangqing QU
+modified: 20221121044334705
+modifier: Yangqing QU
+tags: ? algorithm/linkedlist
+title: 分割链表
+type: text/vnd.tiddlywiki
+
+https://leetcode.cn/problems/partition-list/
+
+```
+1. 根据base, 将链表切分为两部分. 第一部分是小于base的
+2. 然后切断原指针
+3. 连接新的两段链表
+```

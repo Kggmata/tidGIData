@@ -1,0 +1,23 @@
+created: 20221111003618648
+difficulty: 5
+due: 20221115140754199
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113140754199
+reps: 1
+retrievability: 1
+review: 20221113140754199
+stability: 2
+tags: 7203 ?
+title: principle of isolation-based anomaly detection
+type: text/vnd.tiddlywiki
+
+```
+anomaly is few and different, and easier to be isolated
+
+all datapoints can be divided into a leaf node in a random tree
+
+The nodes with shorter path length are more likely to be the outliers
+```

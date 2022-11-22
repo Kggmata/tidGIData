@@ -1,0 +1,12 @@
+created: 20221118092020847
+modified: 20221118092232370
+tags: ?
+title: 合并链表
+type: text/vnd.tiddlywiki
+
+
+- [21](https://leetcode.cn/problems/merge-two-sorted-lists/)
+
+```
+		- 虚拟节点, 也就是dummy node, 可以简化边界处理, 这里可以避免出现空指针的情况
+```

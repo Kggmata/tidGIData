@@ -1,0 +1,24 @@
+created: 20221111090012032
+difficulty: 5
+due: 20221115091745971
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113091745972
+reps: 1
+retrievability: 1
+review: 20221113091745971
+stability: 2
+tags: 7505 ?
+title: is s.size() where size means the length of the string a good hash function?
+type: text/vnd.tiddlywiki
+
+```
+No, a good hash function means
+1. minimize hash collusion
+
+For example We can use ASCII as hash function
+like 
+h(s)=1+(1+c1)+(1+c1+c2)+... where c is the ASCII value of the character
+```

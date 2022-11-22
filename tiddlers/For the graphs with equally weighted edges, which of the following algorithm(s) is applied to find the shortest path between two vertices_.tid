@@ -1,0 +1,7 @@
+created: 20221116013439332
+modified: 20221116013615665
+tags: ? 7505
+title: For the graphs with equally weighted edges, which of the following algorithm(s) is applied to find the shortest path between two vertices?
+type: text/vnd.tiddlywiki
+
+Dijkstra and BFS

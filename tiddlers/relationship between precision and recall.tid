@@ -1,0 +1,19 @@
+created: 20221110122716739
+difficulty: 5
+due: 20221115144106959
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113144106959
+reps: 1
+retrievability: 1
+review: 20221113144106959
+stability: 2
+tags: 7203 ?
+title: relationship between precision and recall
+type: text/vnd.tiddlywiki
+
+```
+They are reverse proportional, 1 increase with  the other decrease
+```

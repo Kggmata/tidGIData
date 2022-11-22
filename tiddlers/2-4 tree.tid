@@ -1,0 +1,34 @@
+created: 20221108092208510
+difficulty: 4.010000000000001
+due: 20221123054219885
+grade: 2
+history: [{"due":"20221111094044800","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109094044799"}]
+interval: 4
+lapses: 0
+modified: 20221113054219885
+reps: 2
+retrievability: 0.81
+review: 20221113054219884
+stability: 10.268730125807526
+tags: 7505 ?
+title: 2-4 tree
+type: text/vnd.tiddlywiki
+
+```
+1node-2child
+2node-3child
+3node-4child
+叶子节点都在一个level
+
+一颗阶为4的B树, 优势是树的高度更低, 查找更快
+1. 插入考虑overflow, 那就分裂
+```
+
+```
+2-4 树的删除
+
+叶子节点: 如果超过1 node, 那么正常删除
+如果1node, 那么看sibling, 3,4nodesibling就transfer
+2nodesibling就fusion
+```
+[img[Snipaste_2022-11-12_18-35-29.png]]

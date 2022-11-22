@@ -1,0 +1,10 @@
+created: 20221115013905524
+modified: 20221115014125546
+tags: ? 7203
+title: Why we need normalization?
+type: text/vnd.tiddlywiki
+
+```
+1. different features can have different magnitude
+The magnitude may impact the classification
+```

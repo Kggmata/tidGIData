@@ -1,0 +1,30 @@
+created: 20221112111614598
+difficulty: 5
+due: 20221115124318624
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113124318624
+reps: 1
+retrievability: 1
+review: 20221113124318624
+stability: 2
+tags: 7505 ?
+title: minimum spinning tree
+type: text/vnd.tiddlywiki
+
+```
+用最多m-1个边连接m个顶点
+
+1. Prim
+
+2. Krusal
+```
+[img[Snipaste_2022-11-12_19-19-48.png]]
+
+```
+再无向有权图, 两个顶点的最短weight的edge一定是最小生成树的一条边吗?
+
+不一定, 比如边为1的三角形
+```

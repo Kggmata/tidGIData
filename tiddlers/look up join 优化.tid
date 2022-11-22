@@ -1,20 +1,22 @@
 created: 20220720083728976
+creator: Yangqing QU
 difficulty: 1
 due: 20220824081928918
 grade: 1
 history: [{"due":"20220802060339292","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060339292"}]
 interval: 7
 lapses: 0
-modified: 20220808081928918
+modified: 20221122131406247
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.0006265800565729012
 review: 20220808081928917
 stability: 16.423571292705216
-tags: ?
+tags: ? flink
 title: look up join 优化
 type: text/vnd.tiddlywiki
 
-高qps(queries per second)下的背压问题
+高[[qps]]下的[[背压]]问题
 
 ```
 主要是从外部存储介质到flink的延迟问题. 没有维表的话, 假设数据从source到sink的延时为0.1ms, qps为1w

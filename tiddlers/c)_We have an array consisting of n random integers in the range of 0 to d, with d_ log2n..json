@@ -1,0 +1,20 @@
+[
+    {
+        "created": "20221111124751391",
+        "text": "use radix sort as it is integer and d<log2n means no much bucket. O(n+d)",
+        "tags": "7505 ?",
+        "title": "c)\tWe have an array consisting of n random integers in the range of 0 to d, with d< log2n.",
+        "modified": "20221113071456302",
+        "type": "text/vnd.tiddlywiki",
+        "due": "20221115071456302",
+        "interval": "0",
+        "difficulty": "5",
+        "stability": "2",
+        "retrievability": "1",
+        "lapses": "0",
+        "reps": "1",
+        "grade": "-1",
+        "review": "20221113071456302",
+        "history": "[]"
+    }
+]

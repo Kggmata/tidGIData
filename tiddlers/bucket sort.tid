@@ -1,0 +1,20 @@
+created: 20221102090632570
+difficulty: 4.010000000000001
+due: 20221123060106655
+grade: 2
+history: [{"due":"20221111140035457","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109140035457"}]
+interval: 4
+lapses: 0
+modified: 20221113060106655
+reps: 2
+retrievability: 0.81
+review: 20221113060106655
+stability: 10.268730125807526
+tags: 7505 ?
+title: bucket sort
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-02_17-06-28.png]]
+[img[Snipaste_2022-11-02_17-06-43.png]]
+[img[Snipaste_2022-11-02_17-06-49.png]]
+[img[Snipaste_2022-11-02_17-06-55.png]]

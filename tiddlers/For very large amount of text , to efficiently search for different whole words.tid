@@ -1,0 +1,7 @@
+created: 20221116012831026
+modified: 20221116012938970
+tags: ? 7505
+title: For very large amount of text , to efficiently search for different whole words
+type: text/vnd.tiddlywiki
+
+preprocessing and store the string using a compression tie, and then search for occurrences of any given word in the tie

@@ -1,0 +1,21 @@
+created: 20221111080909571
+difficulty: 5
+due: 20221115140931239
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113140931239
+reps: 1
+retrievability: 1
+review: 20221113140931239
+stability: 2
+tags: 7203 ?
+title: prove that all nonempty subet of frequent itemset are still frequent
+type: text/vnd.tiddlywiki
+
+support_rate(s)=#s/#transaction>=min_support_rate
+
+#s'>=#s
+
+support_rate(s')>=support rate(s)>=min_support_rate

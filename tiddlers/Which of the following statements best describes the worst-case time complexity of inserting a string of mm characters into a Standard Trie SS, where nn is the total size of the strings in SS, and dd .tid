@@ -1,0 +1,7 @@
+created: 20221116012742755
+modified: 20221116012755794
+tags: ? 7505
+title: Which of the following statements best describes the worst-case time complexity of inserting a string of mm characters into a Standard Trie SS, where nn is the total size of the strings in SS, and dd is the size of the alphabet. Assume that the children of each node in the Standard Trie are stored as a linked list.
+type: text/vnd.tiddlywiki
+
+O m*d

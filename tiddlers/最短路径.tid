@@ -1,0 +1,15 @@
+created: 20221112111109824
+modified: 20221112111927831
+tags: ? 7505
+title: 最短路径
+type: text/vnd.tiddlywiki
+
+```
+1. Dijkstra 
+不使用负权重
+为什么?
+比如A- 5 -B- -1 -C- 4 -D
+那么算法会重复loopBC, 因为总的cost会一直降低
+
+2. DAG based
+```

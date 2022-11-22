@@ -1,0 +1,32 @@
+created: 20221028125045419
+difficulty: 5
+due: 20221115143939026
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221115020812915
+reps: 1
+retrievability: 1
+review: 20221113143939026
+stability: 2
+tags: 7203 ?
+title: random forest
+type: text/vnd.tiddlywiki
+
+```
+construct several decision trees instead of only one
+
+ tree-construction: increase diversity
+1. 随机选择samples from dataset
+2. 随机选择k features
+  后面和decision tree一样, 找optimal split feature然后split
+
+combine of the output of all the trees together
+ majority voting
+```
+```
+1. random dataset
+
+2. random feature
+```

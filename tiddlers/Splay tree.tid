@@ -1,0 +1,22 @@
+created: 20221108073159584
+difficulty: 5
+due: 20221115144752480
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113144752480
+reps: 1
+retrievability: 1
+review: 20221113144752479
+stability: 2
+tags: 7505 ?
+title: Splay tree
+type: text/vnd.tiddlywiki
+
+```
+1. 吧插入的节点通过旋转移到root
+2. 旋转插入位置和father和grandfather
+3. 访问也是移到root
+4. 删除的话, 父节点移到root
+```

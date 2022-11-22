@@ -1,0 +1,19 @@
+created: 20221105082719216
+difficulty: 5
+due: 20221115140721510
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113140721510
+reps: 1
+retrievability: 1
+review: 20221113140721510
+stability: 2
+tags: 7203 ?
+title: precision和recall关系
+type: text/vnd.tiddlywiki
+
+```
+负相关一个增大, 另一个变小
+```

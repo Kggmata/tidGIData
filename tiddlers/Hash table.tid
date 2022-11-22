@@ -1,0 +1,36 @@
+created: 20221105015553656
+difficulty: 5
+due: 20221115091432608
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221116011128032
+reps: 1
+retrievability: 1
+review: 20221113091432608
+stability: 2
+tags: 7505 ?
+title: Hash table
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-05_09-55-47.png]]
+
+```
+一般输入的key由两部分,一个hash function, 一个compression function, 来算index
+
+hash function常见包括
+1. component sum
+2. polynomial accumulation
+3. cyclic shift
+
+compression function包括
+1. Division
+2. multiple, add & divide
+
+如果算的hash code相同, 那么发生hash collision,一般有四种方案
+1. linear probing
+2. separate chaining
+3. quadratic probing
+4. double hashing
+```

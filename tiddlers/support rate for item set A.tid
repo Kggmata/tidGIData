@@ -1,0 +1,17 @@
+created: 20221111080601349
+difficulty: 5
+due: 20221115144811941
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113144811941
+reps: 1
+retrievability: 1
+review: 20221113144811941
+stability: 2
+tags: 7203 ?
+title: support rate for item set A
+type: text/vnd.tiddlywiki
+
+suport_rate(A)=#A/#transaction

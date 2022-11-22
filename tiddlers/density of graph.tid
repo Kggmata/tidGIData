@@ -1,0 +1,25 @@
+created: 20221112044837873
+difficulty: 5
+due: 20221115074024482
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221115052417010
+reps: 1
+retrievability: 1
+review: 20221113074024482
+stability: 2
+tags: 7505 ?
+title: density of graph
+type: text/vnd.tiddlywiki
+
+```
+1. max_edges=v(v-1)/2
+2. D=E/max_edge
+for undirected E=2m
+For directed E=m
+
+D<1/2 is sparse
+```
+[img[Snipaste_2022-11-15_13-24-07.png]]

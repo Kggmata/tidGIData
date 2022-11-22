@@ -1,0 +1,17 @@
+created: 20221030013627786
+difficulty: 5
+due: 20221115144826160
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113144826160
+reps: 1
+retrievability: 1
+review: 20221113144826160
+stability: 2
+tags: 7231 ?
+title: svn save changes with log message"Fixed bug 1234"
+type: text/vnd.tiddlywiki
+
+svn commit . -m "Fixed bug 1234"

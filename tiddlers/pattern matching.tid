@@ -1,0 +1,58 @@
+created: 20221110131942278
+difficulty: 5
+due: 20221115135829727
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113135829727
+reps: 1
+retrievability: 1
+review: 20221113135829727
+stability: 2
+tags: 7203 ?
+title: pattern matching
+type: text/vnd.tiddlywiki
+
+```
+1. boyer moore pattern matching
+running time: O(nm+s)
+n is the length of text, m is pattern
+s is size of alphabet
+if mismatch
+ 1. align the c with the last occurrence of c in P
+ 2. shift by the size of P if c not in P
+
+last occurance function to determine how far to jump
+
+```
+[img[Snipaste_2022-11-10_21-59-14.png]]
+
+```
+KMP
+failure function
+遍历找真前缀真后缀
+```
+```
+Both algorithms are fast when they can skip many positions
+
+BM when it find a character not in the pattern
+worst case for BM
+T = aaaaaaaaaaaaaaa, P = baaaa
+
+KMP will skip as much as possible while matching left to right.
+The more characters it matches before finding a mismatch, the larger the potential increment.
+```
+```
+tries
+
+standard tries
+Compressed Tries
+```
+```
+text compression & encoding tries
+Huffman algorithm
+runtime O(n+dlogd)
+
+```
+[img[Snipaste_2022-11-10_22-46-17.png]]

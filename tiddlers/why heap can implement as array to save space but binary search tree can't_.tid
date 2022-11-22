@@ -1,0 +1,13 @@
+created: 20221116031728180
+creator: Yangqing QU
+modified: 20221121022740902
+modifier: Yangqing QU
+tags: ? 7505
+title: why heap can implement as array to save space but binary search tree can't?
+type: text/vnd.tiddlywiki
+
+```
+Array-representation is based on level-order traversal. They are best suitable for full layers.
+Heaps are complete binary trees, therefore first h-1 layer are full. 
+BST is not required to be a complete binary tree.
+```

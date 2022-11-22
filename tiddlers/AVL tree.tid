@@ -1,0 +1,29 @@
+created: 20221108073135262
+difficulty: 4.010000000000001
+due: 20221123055855214
+grade: 2
+history: [{"due":"20221111135421123","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109135421122"}]
+interval: 4
+lapses: 0
+modified: 20221116012052008
+reps: 2
+retrievability: 0.81
+review: 20221113055855214
+stability: 10.268730125807526
+tags: 7505 ?
+title: AVL tree
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-11-08_15-31-52.png]]
+
+```
+height: Ologn
+
+Space: On
+
+time complexity
+1. single reconstruction: O1
+2. search: Ologn
+3. insertion: Ologn
+4. Removal: Ologn
+```

@@ -1,0 +1,15 @@
+created: 20221116031009766
+modified: 20221116031222442
+tags: ? 7505
+title: Singly linked list vs doubly linked list
+type: text/vnd.tiddlywiki
+
+```
+For memory space, singly linked list occupy slightly less memory space
+
+For insertion, singly linked list slightly faster
+
+For deletion, doubly linked list is O(1) while singly list is O(n)
+
+DLL also support reverse iterations
+```

@@ -1,0 +1,40 @@
+created: 20221107145554567
+difficulty: 5
+due: 20221115091509340
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221113091509340
+reps: 1
+retrievability: 1
+review: 20221113091509340
+stability: 2
+tags: 7505 ?
+title: heap
+type: text/vnd.tiddlywiki
+
+```
+insert into a heap
+1. 插入到heap末尾
+2. upheap
+```
+```
+up heap
+```
+```
+removeMin
+1. swap root node with last node
+2. remove last node
+3. restore heap order
+```
+[img[Snipaste_2022-11-07_22-59-04.png]]
+
+```
+heap construction
+1. insert the node
+2. up heap
+
+```
+[img[Snipaste_2022-11-07_23-01-38.png]]
+[img[Snipaste_2022-11-07_23-01-50.png]]
