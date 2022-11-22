@@ -1,27 +1,31 @@
 created: 20220721082809546
-difficulty: 1.4001968340083484
-due: 20220824091749858
+creator: Yangqing QU
+difficulty: 1.6001968340083483
+due: 20221123111822016
 grade: 0
-history: [{"due":"20220802090959612","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801090959612"},{"due":"20220809081534191","interval":7,"difficulty":1,"stability":0.07408182337905919,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220808081534191"},{"due":"20220815082828984","interval":6,"difficulty":1.2001968026612373,"stability":0.05488116409496729,"retrievability":0.00019680266123736466,"grade":0,"lapses":2,"reps":1,"review":"20220814082828983"}]
-interval: 9
-lapses: 3
-modified: 20220823091749858
+history: [{"due":"20220802090959612","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801090959612"},{"due":"20220809081534191","interval":7,"difficulty":1,"stability":0.07408182337905919,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220808081534191"},{"due":"20220815082828984","interval":6,"difficulty":1.2001968026612373,"stability":0.05488116409496729,"retrievability":0.00019680266123736466,"grade":0,"lapses":2,"reps":1,"review":"20220814082828983"},{"due":"20220824091749858","interval":9,"difficulty":1.4001968340083484,"stability":0.040656966333775045,"retrievability":3.134711113123891e-8,"grade":0,"lapses":3,"reps":1,"review":"20220823091749858"}]
+interval: 91
+lapses: 4
+modified: 20221122111822016
+modifier: Yangqing QU
 reps: 1
-retrievability: 3.134711113123891e-8
-review: 20220823091749858
-stability: 0.040656966333775045
-tags: ?
+retrievability: 3.8353828072745393e-103
+review: 20221122111822016
+stability: 0.6023884238244042
+tags: hive ?
 title: hive update
 type: text/vnd.tiddlywiki
 
 https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions
 
-能够支持, 需要看起hive transaction
+*能够支持, 需要看起hive transaction
 
-update tablename set column = value where expression
+**update tablename set column = value where expression
 
 hive的update很慢, 尽量别用. 因为底层基于hdfs, hdfs本身不支持修改文件. 所以update实际上是读取到内存, 修改特定数据 ,然后删除hdfs上文件再存一遍
 或者
+
+*可用借助临时表
 
 ```
 insert overwrite table A partition(mon_par='201505') select f1, f2, f3, f4 from A where mon_par='2011505' and id=1

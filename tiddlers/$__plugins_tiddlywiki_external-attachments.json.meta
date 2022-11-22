@@ -1,0 +1,8 @@
+dependents: 
+description: External attachments for TiddlyDesktop
+list: readme settings
+name: External Attachments
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/external-attachments
+type: application/json
+version: 5.2.1
