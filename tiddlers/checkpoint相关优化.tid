@@ -1,11 +1,13 @@
 created: 20220720011726520
+creator: Yangqing QU
 difficulty: 1.8585224129237503
 due: 20221012135749941
 grade: 0
 history: [{"due":"20220802035559701","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801035559701"},{"due":"20220823010251965","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":1,"lapses":0,"reps":2,"review":"20220807010251965"}]
 interval: 65
 lapses: 1
-modified: 20221011135749941
+modified: 20221122140238690
+modifier: Yangqing QU
 reps: 1
 retrievability: 0.6585224129237505
 review: 20221011135749940
@@ -16,9 +18,13 @@ type: text/vnd.tiddlywiki
 
 ```
 当 Checkpoint 时间比设置的 Checkpoint 间隔时间要长时，可以设置 Checkpoint 间最小时间间隔。这样在上次 Checkpoint 完成时，不会立马进行下一次 Checkpoint，而是会等待一个最小时间间隔，之后再进行 Checkpoint。否则，每次 Checkpoint 完成时，就会立马开始下一次 Checkpoint，系统会有很多资源消耗 Checkpoint 方面，而真正任务计算的资源就会变少。
-
+```
+```
 如果Flink状态很大，在进行恢复时，需要从远程存储上读取状态进行恢复，如果状态文件过大，此时可能导致任务恢复很慢，大量的时间浪费在网络传输方面。此时可以设置 Flink Task 本地状态恢复，任务状态本地恢复默认没有开启，可以设置参数 state.backend.local-recovery 值为 true 进行激活。
-
+```
+```
 Checkpoint 保存数，Checkpoint 保存数默认是1，也就是只保存最新的 Checkpoint 的状态文件，当进行状态恢复时，如果最新的 Checkpoint 文件不可用时(比如 HDFS 文件所有副本都损坏或者其他原因)，那么状态恢复就会失败，如果设置 Checkpoint 保存数 2，即使最新的Checkpoint恢复失败，那么Flink 会回滚到之前那一次 Checkpoint 的状态文件进行恢复。考虑到这种情况，用户可以增加 Checkpoint 保存数。
+```
+```
 建议设置的 Checkpoint 的间隔时间最好大于 Checkpoint 的完成时间。
 ```

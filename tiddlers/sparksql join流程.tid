@@ -1,15 +1,17 @@
 created: 20220719142956276
-difficulty: 1
-due: 20220824083645036
-grade: 1
-history: [{"due":"20220802034747941","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801034747941"}]
-interval: 7
-lapses: 0
-modified: 20220808083645036
-reps: 2
-retrievability: 0.0006265800565729012
-review: 20220808083645035
-stability: 16.423571292705216
+creator: Yangqing QU
+difficulty: 1.7066112492927268
+due: 20221123141813818
+grade: 0
+history: [{"due":"20220802034747941","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801034747941"},{"due":"20220824083645036","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220808083645035"}]
+interval: 106
+lapses: 1
+modified: 20221122141813818
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.5066112492927269
+review: 20221122141813818
+stability: 1.4816364413634358
 tags: ?
 title: sparksql join流程
 type: text/vnd.tiddlywiki

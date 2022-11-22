@@ -1,16 +1,18 @@
 created: 20220721105043141
+creator: Yangqing QU
 difficulty: 1
 due: 20230613140544459
 grade: 2
 history: [{"due":"20220802092236739","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092236739"},{"due":"20220823010547436","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220807010547436"}]
 interval: 65
 lapses: 0
-modified: 20221011140544459
+modified: 20221122140301480
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.6585224129237505
 review: 20221011140544458
 stability: 245.22002005146214
-tags: ?
+tags: ? flink
 title: flink checkpoint exactly once vs at least once
 type: text/vnd.tiddlywiki
 

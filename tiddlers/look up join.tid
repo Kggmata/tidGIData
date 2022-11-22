@@ -1,0 +1,17 @@
+created: 20221122133510480
+creator: Yangqing QU
+modified: 20221122134846576
+modifier: Yangqing QU
+tags: ? flink
+title: look up join
+type: text/vnd.tiddlywiki
+
+[官网]https://nightlies.apache.org/flink/flink-docs-master/docs/dev/table/sql/queries/joins/#lookup-join
+
+[51cto]https://www.51cto.com/article/693159.html
+
+
+和external system join. 
+
+需要processing time [[flink的时间属性]]
+

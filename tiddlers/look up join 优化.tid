@@ -1,20 +1,22 @@
 created: 20220720083728976
 creator: Yangqing QU
-difficulty: 1
-due: 20220824081928918
-grade: 1
-history: [{"due":"20220802060339292","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060339292"}]
-interval: 7
-lapses: 0
-modified: 20221122131406247
+difficulty: 1.7066112492927268
+due: 20221123134852512
+grade: 0
+history: [{"due":"20220802060339292","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060339292"},{"due":"20220824081928918","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220808081928917"}]
+interval: 106
+lapses: 1
+modified: 20221122134852512
 modifier: Yangqing QU
-reps: 2
-retrievability: 0.0006265800565729012
-review: 20220808081928917
-stability: 16.423571292705216
-tags: ? flink
+reps: 1
+retrievability: 0.5066112492927269
+review: 20221122134852512
+stability: 1.4816364413634358
+tags: flink ?
 title: look up join 优化
 type: text/vnd.tiddlywiki
+
+[[look up join]]
 
 高[[qps]]下的[[背压]]问题
 
@@ -25,4 +27,5 @@ type: text/vnd.tiddlywiki
 ```
 1 redis维表的key分桶+local cache, 就是把访问的维表读入内存数据库
 2 异步访问外存, 也就是一批批的去读外存, 利用线程池
+3 批量访问外存
 ```

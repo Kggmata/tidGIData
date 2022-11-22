@@ -1,0 +1,31 @@
+created: 20220717070722451
+creator: Yangqing QU
+difficulty: 1.5584063127490368
+due: 20221123135127716
+grade: 0
+history: [{"due":"20220727142437702","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142437702"},{"due":"20220805125642416","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617775707182952,"grade":0,"lapses":1,"reps":1,"review":"20220804125642416"},{"due":"20220810042618047","interval":5,"difficulty":1.200816005065809,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220809042618047"},{"due":"20220825060244841","interval":6,"difficulty":1,"stability":10.165493806888515,"retrievability":0.000009941800865523385,"grade":2,"lapses":2,"reps":2,"review":"20220815060244841"}]
+interval: 99
+lapses: 3
+modified: 20221122135127717
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.35840631274903695
+review: 20221122135127716
+stability: 0.8131393194811983
+tags: flink ?
+title: flink的时间属性
+type: text/vnd.tiddlywiki
+
+https://nightlies.apache.org/flink/flink-docs-master/zh/docs/dev/table/concepts/time_attributes/#%e6%97%b6%e9%97%b4%e5%b1%9e%e6%80%a7
+
+```
+事件时间 event time: 事件产生的时间, 一般结合水印watermark, 使用rowtime指定,有序处理的时候使用
+
+处理时间 processing time: transfermation时间, 使用proctime()指定, 一般再数据本身有序或者业务允许无序的情况下使用
+
+摄入时间 ingestion time: 进入flink source的时间
+
+使用方式: 
+创建table的ddl指定
+datastream指定, 需要把table转化为datastream指定
+```

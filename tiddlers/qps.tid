@@ -1,16 +1,18 @@
 created: 20220720090148485
+creator: Yangqing QU
 difficulty: 1
-due: 20220824082335361
+due: 20231203135913723
 grade: 2
-history: [{"due":"20220802060507884","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060507884"}]
-interval: 7
+history: [{"due":"20220802060507884","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060507884"},{"due":"20220824082335361","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220808082335361"}]
+interval: 106
 lapses: 0
-modified: 20220808082335361
-reps: 2
-retrievability: 0.0006265800565729012
-review: 20220808082335361
-stability: 16.423571292705216
-tags: ?
+modified: 20221122135933416
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.5066112492927269
+review: 20221122135913723
+stability: 375.5511315812908
+tags: ? concept
 title: qps
 type: text/vnd.tiddlywiki
 

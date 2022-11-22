@@ -1,11 +1,13 @@
 created: 20220621133022112
+creator: Yangqing QU
 difficulty: 1
 due: 20221027003019582
 grade: 2
 history: [{"due":"20220625125323016","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624125323016"},{"due":"20220712001128308","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":1,"lapses":0,"reps":2,"review":"20220627001128307"}]
 interval: 23
 lapses: 0
-modified: 20220720003019582
+modified: 20221122141109708
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8541153584120541
 review: 20220720003019581
@@ -15,6 +17,8 @@ title: spark join的五种策略
 type: text/vnd.tiddlywiki
 
 https://jiamaoxiang.top/2020/11/01/Spark%E7%9A%84%E4%BA%94%E7%A7%8DJOIN%E6%96%B9%E5%BC%8F%E8%A7%A3%E6%9E%90/
+
+[[spark join的过程]]
 
 JOIN的条件
 

@@ -1,19 +1,24 @@
 created: 20220721103714968
-difficulty: 1
-due: 20220824082454119
-grade: 2
-history: [{"due":"20220802092224468","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092224468"}]
-interval: 7
-lapses: 0
-modified: 20220808082454119
-reps: 2
-retrievability: 0.0006265800565729012
-review: 20220808082454119
-stability: 16.423571292705216
-tags: ?
+creator: Yangqing QU
+difficulty: 1.7066112492927268
+due: 20221123140259696
+grade: 0
+history: [{"due":"20220802092224468","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092224468"},{"due":"20220824082454119","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220808082454119"}]
+interval: 106
+lapses: 1
+modified: 20221122140259696
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.5066112492927269
+review: 20221122140259696
+stability: 1.4816364413634358
+tags: flink ?
 title: savepoint和checkpoint区别
 type: text/vnd.tiddlywiki
 
+```
 1 savepoint由用户手动触发trigger
 
 2 savepoint不会随着下一个checkpoint而过期
+```
+[[checkpoint原理]]

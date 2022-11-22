@@ -1,11 +1,13 @@
 created: 20220715035622907
+creator: Yangqing QU
 difficulty: 2.0223256595695953
 due: 20220831001214880
 grade: 0
 history: [{"due":"20220722091753583","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721091753583"},{"due":"20220731035612855","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220730035612854"},{"due":"20220819111048634","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806111048634"}]
 interval: 24
 lapses: 2
-modified: 20220830001214880
+modified: 20221122140249541
+modifier: Yangqing QU
 reps: 1
 retrievability: 0.8223256595695952
 review: 20220830001214879
@@ -14,25 +16,13 @@ tags: ?
 title: checkpoint原理
 type: text/vnd.tiddlywiki
 
+定义
+
 ```
 flink的每个算子都是有状态的, 相当于每个算子会缓存处理的数据. checkpoint相当于state的容错机制
-```
-```
-exactly once和at least once. 区别是barrier到达算子后, exactly once会阻塞管道, 而at least once不会,  所以at least once可能会导致重复数据
-大部分场景下使用exactly once, 在某些需求超低延迟的场景, 使用at least once
-```
-```
-checkpoint超时, 如果checkpoint执行时间超过改配置的阈值, 那么还在进行的checkpoint操作会被抛弃
-```
-```
-checkpoint之间的最小间隔时间: 防止checkpoint不间断, 会影响性能
-```
-```
-可容忍失败次数: 定义可容忍多少次连续的checkpoint失败, 超过阈值回触发作业错误failover
-```
-```
-并发checkpoint数量: 默认为1, 代表上一个checkpoint未完成之前, 不会进行下一个
-```
-```
 checkpoint可存储在外部存储介质
 ```
+
+[[flink checkpoint exactly once vs at least once]]
+
+[[checkpoint相关优化]]
