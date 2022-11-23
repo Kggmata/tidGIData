@@ -6,7 +6,7 @@ grade: 2
 history: [{"due":"20220802111237482","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721092207256"}]
 interval: 18
 lapses: 0
-modified: 20221122141835113
+modified: 20221123110151169
 modifier: Yangqing QU
 reps: 2
 retrievability: 5.8031129902869065e-9
@@ -15,6 +15,8 @@ stability: 16.439773802836015
 tags: ? spark
 title: sparkSQL指定分区数
 type: text/vnd.tiddlywiki
+
+https://blog.csdn.net/eylier/article/details/115660479
 
 1 配置 spark.sql.shuffle.partitions，适用场景spark.sql()合并分区
 
