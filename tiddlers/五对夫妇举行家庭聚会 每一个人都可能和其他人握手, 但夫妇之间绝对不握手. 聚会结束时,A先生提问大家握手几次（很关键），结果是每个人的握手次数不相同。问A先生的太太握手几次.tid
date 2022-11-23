@@ -1,16 +1,18 @@
 created: 20220721130839042
+creator: Yangqing QU
 difficulty: 1
 due: 20220824110340626
 grade: 2
 history: [{"due":"20220803110838409","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110838409"}]
 interval: 6
 lapses: 0
-modified: 20220808110340626
+modified: 20221123135503362
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.0017970135161932011
 review: 20220808110340626
 stability: 16.39335325161452
-tags: ?
+tags: ? IQ
 title: 五对夫妇举行家庭聚会 每一个人都可能和其他人握手, 但夫妇之间绝对不握手. 聚会结束时,A先生提问大家握手几次（很关键），结果是每个人的握手次数不相同。问A先生的太太握手几次
 type: text/vnd.tiddlywiki
 
