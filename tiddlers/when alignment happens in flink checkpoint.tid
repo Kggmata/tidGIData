@@ -1,0 +1,19 @@
+created: 20220721105346627
+creator: Yangqing QU
+difficulty: 1
+due: 20231207122109991
+grade: 2
+history: [{"due":"20220802092348933","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092348933"},{"due":"20220824085104656","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220808085104656"}]
+interval: 107
+lapses: 0
+modified: 20221123122109991
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.5033716386430307
+review: 20221123122109991
+stability: 378.54338121635834
+tags: flink ?
+title: when alignment happens in flink checkpoint
+type: text/vnd.tiddlywiki
+
+alignment主要是在flink checkpoint, exactly once语义之下, 多个上游数据源, 需要等待对齐, 保证数据不被重复存进下一个n+1checkpoint

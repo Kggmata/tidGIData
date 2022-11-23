@@ -1,15 +1,17 @@
 created: 20220721101928382
+creator: Yangqing QU
 difficulty: 1
-due: 20220824084443687
+due: 20231207121834330
 grade: 1
-history: [{"due":"20220802092033771","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092033770"}]
-interval: 7
+history: [{"due":"20220802092033771","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092033770"},{"due":"20220824084443687","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":1,"lapses":0,"reps":2,"review":"20220808084443687"}]
+interval: 107
 lapses: 0
-modified: 20220808084443687
-reps: 2
-retrievability: 0.0006265800565729012
-review: 20220808084443687
-stability: 16.423571292705216
+modified: 20221123121834330
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.5033716386430307
+review: 20221123121834330
+stability: 378.54338121635834
 tags: ?
 title: stream barriers
 type: text/vnd.tiddlywiki
