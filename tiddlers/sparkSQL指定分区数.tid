@@ -1,18 +1,18 @@
 created: 20220715235040691
 creator: Yangqing QU
-difficulty: 1
-due: 20220824083721573
-grade: 2
-history: [{"due":"20220802111237482","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721092207256"}]
-interval: 18
-lapses: 0
-modified: 20221123110151169
+difficulty: 1.7037122947541883
+due: 20221124115919445
+grade: 0
+history: [{"due":"20220802111237482","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721092207256"},{"due":"20220824083721573","interval":18,"difficulty":1,"stability":16.439773802836015,"retrievability":5.8031129902869065e-9,"grade":2,"lapses":0,"reps":2,"review":"20220808083721573"}]
+interval: 107
+lapses: 1
+modified: 20221123115919445
 modifier: Yangqing QU
-reps: 2
-retrievability: 5.8031129902869065e-9
-review: 20220808083721573
-stability: 16.439773802836015
-tags: ? spark
+reps: 1
+retrievability: 0.5037122947541884
+review: 20221123115919444
+stability: 1.4816364413634358
+tags: spark ?
 title: sparkSQL指定分区数
 type: text/vnd.tiddlywiki
 

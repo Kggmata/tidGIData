@@ -1,15 +1,17 @@
 created: 20220519134232533
-difficulty: 3.3808148439377677
-due: 20220825035910213
-grade: 1
-history: [{"due":"20220522005939763","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520005939763"},{"due":"20220523012049555","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522012049555"},{"due":"20220524003759640","interval":1,"difficulty":7.231358589403242,"stability":0.5762522178987278,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220523003759640"},{"due":"20220530072720711","interval":6,"difficulty":7.7652214364268355,"stability":0.06479703952115799,"retrievability":0.3338628470235931,"grade":0,"lapses":3,"reps":1,"review":"20220529072720711"},{"due":"20220605143108713","interval":4,"difficulty":5.966718824938652,"stability":3.364278237359519,"retrievability":0.0014973885118161902,"grade":2,"lapses":3,"reps":2,"review":"20220602143108713"},{"due":"20220624004003221","interval":7,"difficulty":4.969862271812608,"stability":14.579851728750564,"retrievability":0.8031434468739564,"grade":2,"lapses":3,"reps":3,"review":"20220609004003221"},{"due":"20220626231733244","interval":16,"difficulty":6.060673142055916,"stability":0.030121604224219757,"retrievability":0.8908108702433076,"grade":0,"lapses":4,"reps":1,"review":"20220625231733243"},{"due":"20220701141307482","interval":3,"difficulty":5.260700857621489,"stability":1.9871564529374914,"retrievability":0.000027715565573423806,"grade":1,"lapses":4,"reps":2,"review":"20220629141307482"},{"due":"20220719091715368","interval":6,"difficulty":4.188213086752029,"stability":13.931891070918697,"retrievability":0.7275122291305395,"grade":2,"lapses":4,"reps":3,"review":"20220705091715368"},{"due":"20220727102218068","interval":21,"difficulty":5.241368639527163,"stability":0.02231302864945722,"retrievability":0.8531555527751344,"grade":0,"lapses":5,"reps":1,"review":"20220726102218068"},{"due":"20220805125115652","interval":8,"difficulty":3.4413686395271634,"stability":2.0942695051437683,"retrievability":3.929539539526536e-17,"grade":2,"lapses":5,"reps":2,"review":"20220803125115652"}]
-interval: 6
-lapses: 5
-modified: 20220809035910213
-reps: 3
-retrievability: 0.7394462044106044
-review: 20220809035910213
-stability: 15.846275786576655
+creator: Yangqing QU
+difficulty: 4.075029750924648
+due: 20221124120542803
+grade: 0
+history: [{"due":"20220522005939763","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520005939763"},{"due":"20220523012049555","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220522012049555"},{"due":"20220524003759640","interval":1,"difficulty":7.231358589403242,"stability":0.5762522178987278,"retrievability":0.9313585894032408,"grade":0,"lapses":2,"reps":1,"review":"20220523003759640"},{"due":"20220530072720711","interval":6,"difficulty":7.7652214364268355,"stability":0.06479703952115799,"retrievability":0.3338628470235931,"grade":0,"lapses":3,"reps":1,"review":"20220529072720711"},{"due":"20220605143108713","interval":4,"difficulty":5.966718824938652,"stability":3.364278237359519,"retrievability":0.0014973885118161902,"grade":2,"lapses":3,"reps":2,"review":"20220602143108713"},{"due":"20220624004003221","interval":7,"difficulty":4.969862271812608,"stability":14.579851728750564,"retrievability":0.8031434468739564,"grade":2,"lapses":3,"reps":3,"review":"20220609004003221"},{"due":"20220626231733244","interval":16,"difficulty":6.060673142055916,"stability":0.030121604224219757,"retrievability":0.8908108702433076,"grade":0,"lapses":4,"reps":1,"review":"20220625231733243"},{"due":"20220701141307482","interval":3,"difficulty":5.260700857621489,"stability":1.9871564529374914,"retrievability":0.000027715565573423806,"grade":1,"lapses":4,"reps":2,"review":"20220629141307482"},{"due":"20220719091715368","interval":6,"difficulty":4.188213086752029,"stability":13.931891070918697,"retrievability":0.7275122291305395,"grade":2,"lapses":4,"reps":3,"review":"20220705091715368"},{"due":"20220727102218068","interval":21,"difficulty":5.241368639527163,"stability":0.02231302864945722,"retrievability":0.8531555527751344,"grade":0,"lapses":5,"reps":1,"review":"20220726102218068"},{"due":"20220805125115652","interval":8,"difficulty":3.4413686395271634,"stability":2.0942695051437683,"retrievability":3.929539539526536e-17,"grade":2,"lapses":5,"reps":2,"review":"20220803125115652"},{"due":"20220825035910213","interval":6,"difficulty":3.3808148439377677,"stability":15.846275786576655,"retrievability":0.7394462044106044,"grade":1,"lapses":5,"reps":3,"review":"20220809035910213"}]
+interval: 106
+lapses: 6
+modified: 20221123120542803
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4942149069868802
+review: 20221123120542803
+stability: 0.3305977764431731
 tags: spark ?
 title: spark模块
 type: text/css

@@ -1,24 +1,26 @@
 created: 20220717064136967
-difficulty: 1
-due: 20220824102717355
-grade: 2
-history: [{"due":"20220727142343814","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142343814"},{"due":"20220806063053922","interval":10,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.000026561557352673388,"grade":0,"lapses":1,"reps":1,"review":"20220805063053919"}]
-interval: 6
-lapses: 1
-modified: 20220811102717355
-reps: 2
-retrievability: 0.00019680286925510766
-review: 20220811102717355
-stability: 12.92339166423087
-tags: ?
+creator: Yangqing QU
+difficulty: 1.6283217375448664
+due: 20221124121422455
+grade: 0
+history: [{"due":"20220727142343814","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142343814"},{"due":"20220806063053922","interval":10,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.000026561557352673388,"grade":0,"lapses":1,"reps":1,"review":"20220805063053919"},{"due":"20220824102717355","interval":6,"difficulty":1,"stability":12.92339166423087,"retrievability":0.00019680286925510766,"grade":2,"lapses":1,"reps":2,"review":"20220811102717355"}]
+interval: 104
+lapses: 2
+modified: 20221123121422455
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.42832173754486635
+review: 20221123121422455
+stability: 1.097623272188053
+tags: flink ?
 title: SQL 指定时间属性的两种方式
 type: text/vnd.tiddlywiki
 
-```
+
 如果要满足 Flink SQL 时间窗口类的聚合操作，SQL 或 Table API 中的 数据源表 就需要提供时间属性（相当于我们把这个时间属性在 数据源表 上面进行声明），以及支持时间相关的操作。
 那么来看看 Flink SQL 为我们提供的两种指定时间戳的方式：
-	CREATE TABLE DDL 创建表的时候指定（推荐）
-	可以在 DataStream 中指定，在后续的 DataStream 转的 Table 中使用（略过，授课以Flink SQL为主）
-一旦时间属性定义好，它就可以像普通列一样使用，也可以在时间相关的操作中使用。
 
-```
+''1.	CREATE TABLE DDL 创建表的时候指定（推荐）
+2.	可以在 DataStream 中指定，在后续的 DataStream 转的 Table 中使用（略过，授课以Flink SQL为主）''
+
+一旦时间属性定义好，它就可以像普通列一样使用，也可以在时间相关的操作中使用。
