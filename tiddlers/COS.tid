@@ -1,0 +1,20 @@
+created: 20221124061747689
+creator: Yangqing QU
+modified: 20221124061931025
+modifier: Yangqing QU
+tags: ? api
+title: COS
+type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/product/cos#:~:text=%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS,%E6%8E%A5%E5%8F%A3%E5%AD%98%E5%82%A8%E5%92%8C%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE%E3%80%82
+
+cloud object storage
+
+特点:
+
+```
+1. 无目录层次结构
+2. 无数据格式限制
+3. 可容纳海量数据
+4. 支持http/https访问
+```
