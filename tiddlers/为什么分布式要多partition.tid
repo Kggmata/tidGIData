@@ -1,0 +1,13 @@
+created: 20221125023815001
+creator: Yangqing QU
+modified: 20221125023837498
+modifier: Yangqing QU
+tags: ?
+title: 为什么分布式要多partition
+type: text/vnd.tiddlywiki
+
+*高吞吐
+
+*低延迟
+
+*容错

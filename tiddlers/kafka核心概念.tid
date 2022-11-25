@@ -1,0 +1,24 @@
+created: 20221125023432470
+creator: Yangqing QU
+modified: 20221125072930518
+modifier: Yangqing QU
+tags: ? kafka concept
+title: kafka核心概念
+type: text/vnd.tiddlywiki
+
+https://juejin.cn/post/6844904190439849992
+
+kafka是一个发布订阅式的, publish&subscribe的消息队列message queue
+
+topic
+主题
+
+partition
+一个topic分为多个partition, [[为什么分布式要多partition]]
+每个partition是有序的, 但是整体无序
+[[kafka如何实现整体有序]]
+
+replica
+为了可用性availiblity, 设置多个replica
+replica分为leader, follower
+replica分布在不同的节点上, 这样保证节点宕机, 副本仍然可用

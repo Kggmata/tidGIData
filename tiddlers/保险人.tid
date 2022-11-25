@@ -1,15 +1,17 @@
 created: 20220618091659143
-difficulty: 1
-due: 20220825153633238
-grade: 2
-history: [{"due":"20220621004119232","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004119232"},{"due":"20220630145024694","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145024694"}]
-interval: 11
-lapses: 0
-modified: 20220702153633238
-reps: 3
-retrievability: 0.8770024421488429
-review: 20220702153633237
-stability: 53.686353537936405
+creator: Yangqing QU
+difficulty: 1.9508661689601456
+due: 20221126021517715
+grade: 0
+history: [{"due":"20220621004119232","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004119232"},{"due":"20220630145024694","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145024694"},{"due":"20220825153633238","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":3,"review":"20220702153633237"}]
+interval: 146
+lapses: 1
+modified: 20221125021517715
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7508661689601456
+review: 20221125021517715
+stability: 1.4816364413634358
 tags: 用户画像 ?
 title: 保险人
 type: text/vnd.tiddlywiki

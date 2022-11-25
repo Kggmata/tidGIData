@@ -1,0 +1,8 @@
+created: 20221125024121022
+creator: Yangqing QU
+modified: 20221125024124314
+modifier: Yangqing QU
+title: kafka如何实现整体有序
+type: text/vnd.tiddlywiki
+
+分区设置为一个

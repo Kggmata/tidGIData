@@ -1,16 +1,18 @@
 created: 20220615225326640
+creator: Yangqing QU
 difficulty: 1
 due: 20220925031147522
 grade: 2
 history: [{"due":"20220619233438894","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618233438894"},{"due":"20220622061741443","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621061741443"},{"due":"20220705135036509","interval":2,"difficulty":1,"stability":11.780200635877742,"retrievability":0.05821501375612986,"grade":2,"lapses":1,"reps":2,"review":"20220623135036509"}]
 interval: 17
 lapses: 1
-modified: 20220710031147522
+modified: 20221125024752976
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.858949032118042
 review: 20220710031147522
 stability: 77.15919835906939
-tags: 用户画像 ?
+tags: ? kafka
 title: kafka默认replication factor
 type: text/vnd.tiddlywiki
 

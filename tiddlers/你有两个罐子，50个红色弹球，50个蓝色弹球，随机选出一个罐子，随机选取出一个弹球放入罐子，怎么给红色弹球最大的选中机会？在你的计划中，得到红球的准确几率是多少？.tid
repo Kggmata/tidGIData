@@ -1,16 +1,18 @@
 created: 20220721133331518
-difficulty: 1
-due: 20220824122809873
-grade: 2
-history: [{"due":"20220804021725263","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803021725263"}]
-interval: 5
-lapses: 0
-modified: 20220808122809873
-reps: 2
-retrievability: 0.005153779050734244
-review: 20220808122809873
-stability: 16.30688294756679
-tags: ?
+creator: Yangqing QU
+difficulty: 1.6944740217640024
+due: 20221126021510546
+grade: 0
+history: [{"due":"20220804021725263","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803021725263"},{"due":"20220824122809873","interval":5,"difficulty":1,"stability":16.30688294756679,"retrievability":0.005153779050734244,"grade":2,"lapses":0,"reps":2,"review":"20220808122809873"}]
+interval: 109
+lapses: 1
+modified: 20221125021531413
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4944740217640024
+review: 20221125021510546
+stability: 1.4816364413634358
+tags: ? IQ
 title: 你有两个罐子，50个红色弹球，50个蓝色弹球，随机选出一个罐子，随机选取出一个弹球放入罐子，怎么给红色弹球最大的选中机会？在你的计划中，得到红球的准确几率是多少？
 type: text/vnd.tiddlywiki
 
