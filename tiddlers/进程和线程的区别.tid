@@ -1,30 +1,25 @@
 created: 20220711130607551
-difficulty: 1.8006593364891343
-due: 20220824120234602
+creator: Yangqing QU
+difficulty: 2.0006593364891345
+due: 20221126124849152
 grade: 0
-history: [{"due":"20220722020629524","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712071546951"},{"due":"20220731032818056","interval":18,"difficulty":1,"stability":0.07408184304237006,"retrievability":5.803486909611992e-9,"grade":0,"lapses":1,"reps":1,"review":"20220730032818056"},{"due":"20220806080802432","interval":6,"difficulty":1.2001968031069898,"stability":0.054881171378436774,"retrievability":0.00019680310698987739,"grade":0,"lapses":2,"reps":1,"review":"20220805080802431"},{"due":"20220810075445446","interval":4,"difficulty":1.4006591597690639,"stability":0.04065696669349018,"retrievability":0.00046235666207404937,"grade":0,"lapses":3,"reps":1,"review":"20220809075445445"},{"due":"20220816053349309","interval":6,"difficulty":1.6006593364884323,"stability":0.03011942145770373,"retrievability":1.7671936852144708e-7,"grade":0,"lapses":4,"reps":1,"review":"20220815053349309"}]
-interval: 8
-lapses: 5
-modified: 20220823120234602
+history: [{"due":"20220722020629524","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712071546951"},{"due":"20220731032818056","interval":18,"difficulty":1,"stability":0.07408184304237006,"retrievability":5.803486909611992e-9,"grade":0,"lapses":1,"reps":1,"review":"20220730032818056"},{"due":"20220806080802432","interval":6,"difficulty":1.2001968031069898,"stability":0.054881171378436774,"retrievability":0.00019680310698987739,"grade":0,"lapses":2,"reps":1,"review":"20220805080802431"},{"due":"20220810075445446","interval":4,"difficulty":1.4006591597690639,"stability":0.04065696669349018,"retrievability":0.00046235666207404937,"grade":0,"lapses":3,"reps":1,"review":"20220809075445445"},{"due":"20220816053349309","interval":6,"difficulty":1.6006593364884323,"stability":0.03011942145770373,"retrievability":1.7671936852144708e-7,"grade":0,"lapses":4,"reps":1,"review":"20220815053349309"},{"due":"20220824120234602","interval":8,"difficulty":1.8006593364891343,"stability":0.02231301621225883,"retrievability":7.020735429696087e-13,"grade":0,"lapses":5,"reps":1,"review":"20220823120234602"}]
+interval: 94
+lapses: 6
+modified: 20221125124849152
+modifier: Yangqing QU
 reps: 1
-retrievability: 7.020735429696087e-13
-review: 20220823120234602
-stability: 0.02231301621225883
-tags: ?
+retrievability: 1.7116189794428334e-193
+review: 20221125124849151
+stability: 0.3305977764431731
+tags: OS concept ?
 title: 进程和线程的区别
 type: text/vnd.tiddlywiki
 
+https://cloud.tencent.com/developer/article/1688297#:~:text=%E8%BF%9B%E7%A8%8B%E6%98%AF%E5%AF%B9%E8%BF%90%E8%A1%8C%E6%97%B6,%E8%AE%A1%E6%95%B0%E5%99%A8%E5%92%8C%E5%A4%84%E7%90%86%E5%99%A8%E7%8A%B6%E6%80%81%E3%80%82
+
 ```
-（2） 线程和进程的比较
-1） 调度：在引入线程的操作系统中，线程是独立调度的基本单位，进程是资源拥有的基本单位。
+进程是对运行时程序的封装，是系统进行资源调度和分配的的基本单位，实现了操作系统的并发；
 
-2） 拥有资源：进程是拥有资源的基本单位，而线程不拥有系统资源，单线程可以防伪其隶属进程的系统资源。
-
-3） 并发性：在引入线程的操作系统中，不仅进程之间可以并发执行，线程之间也可以并发执行，从而是操作系统具有更好的并发性，大大提高了系统的吞吐量。
-
-4） 系统开销：线程开销极小。
-
-5） 地址空间和其他资源：进程的地址空间之间相互独立，同一进程的各线程间共享进程的资源，进程内的线程对进程外的其他进程不可见。
-
-6） 通信方面：进程间通信需要进程同步和互斥手段的辅助，以保证数据的一致性，而线程间可以直接读写进程数据段来进行通信。
+线程是进程的子任务，是CPU调度和分派的基本单位，用于保证程序的实时性，实现进程内部的并发；线程是操作系统可识别的最小执行和调度单位。每个线程都独自占用一个虚拟处理器：独自的寄存器组，指令计数器和处理器状态。每个线程完成不同的任务，但是共享同一地址空间（也就是同样的动态内存，映射文件，目标代码等等），打开的文件队列和其他内核资源。
 ```
