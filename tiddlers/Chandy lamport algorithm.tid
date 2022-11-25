@@ -1,0 +1,11 @@
+created: 20221125151535385
+creator: Yangqing QU
+modified: 20221125151642713
+modifier: Yangqing QU
+tags: ? flink concept
+title: Chandy lamport algorithm
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/53482103
+
+lamport就是那个发明Paxos的作者

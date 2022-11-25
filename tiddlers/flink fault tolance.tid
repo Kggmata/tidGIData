@@ -1,29 +1,28 @@
 created: 20220721101707621
-difficulty: 1
-due: 20220825080914300
-grade: 2
-history: [{"due":"20220802091323248","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801091323248"},{"due":"20220808010806702","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807010806701"}]
-interval: 5
-lapses: 1
-modified: 20220812080914300
-reps: 2
-retrievability: 0.0008160044497337299
-review: 20220812080914300
-stability: 12.910806318862917
-tags: ?
+creator: Yangqing QU
+difficulty: 1.6244895905722772
+due: 20221126151854375
+grade: 0
+history: [{"due":"20220802091323248","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801091323248"},{"due":"20220808010806702","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807010806701"},{"due":"20220825080914300","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812080914300"}]
+interval: 105
+lapses: 2
+modified: 20221125151854375
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4244895905722773
+review: 20221125151854375
+stability: 1.097623272188053
+tags: flink concept ?
 title: flink fault tolance
 type: text/vnd.tiddlywiki
 
-```
-flink的fault tolerance机制包含两部分checkpoint和stream relay. 一个数据流可以从一个checkpoint恢复, 包括恢复算子的state和relay checkpoint数据点对应的records
+https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/learn-flink/fault_tolerance/
 
-The checkpoint interval is a means of trading off the overhead of fault tolerance during execution with the recovery time (the number of records that need to be replayed).
+https://cloud.tencent.com/developer/article/1886634
 
-The fault tolerance mechanism continuously draws snapshots of the distributed streaming data flow. For streaming applications with small state, these snapshots are very light-weight and can be drawn frequently without much impact on performance. The state of the streaming applications is stored at a configurable place, usually in a distributed file system.
+依赖checkpoint
+原理就是Jobmanager创建checkpoint coordinator, 定时向stream插入barrier, 触发备份, 然后传递到下游, 直到备份完成
 
-In case of a program failure (due to machine-, network-, or software failure), Flink stops the distributed streaming dataflow. The system then restarts the operators and resets them to the latest successful checkpoint. The input streams are reset to the point of the state snapshot. Any records that are processed as part of the restarted parallel dataflow are guaranteed to not have affected the previously checkpointed state.
+底层使用[[Chandy lamport algorithm]]实现分布式一致性
 
-By default, checkpointing is disabled. See Checkpointing for details on how to enable and configure checkpointing.
-For this mechanism to realize its full guarantees, the data stream source (such as message queue or broker) needs to be able to rewind the stream to a defined recent point. Apache Kafka has this ability and Flink’s connector to Kafka exploits this. See Fault Tolerance Guarantees of Data Sources and Sinks for more information about the guarantees provided by Flink’s connectors.
-Because Flink’s checkpoints are realized through distributed snapshots, we use the words snapshot and checkpoint interchangeably. Often we also use the term snapshot to mean either checkpoint or savepoint.
-```
+在往介质当中写入数据是异步asynchronous的, 为了保证性能
