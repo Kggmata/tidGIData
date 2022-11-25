@@ -1,16 +1,18 @@
 created: 20220618013036017
+creator: Yangqing QU
 difficulty: 1
-due: 20220825154025620
-grade: 2
-history: [{"due":"20220620144745006","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619144745006"},{"due":"20220620235619814","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":1,"lapses":0,"reps":2,"review":"20220619235619813"},{"due":"20220630145550469","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621145550469"}]
-interval: 11
+due: 20240304103739544
+grade: 1
+history: [{"due":"20220620144745006","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619144745006"},{"due":"20220620235619814","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":1,"lapses":0,"reps":2,"review":"20220619235619813"},{"due":"20220630145550469","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621145550469"},{"due":"20220825154025620","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":4,"review":"20220702154025620"}]
+interval: 146
 lapses: 0
-modified: 20220702154025620
-reps: 4
-retrievability: 0.8770024421488429
-review: 20220702154025620
-stability: 53.686353537936405
-tags: 用户画像 ?
+modified: 20221125103739544
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7508661689601456
+review: 20221125103739543
+stability: 464.54873389311336
+tags: optimization concept ?
 title: 常量折叠
 type: text/vnd.tiddlywiki
 
@@ -29,3 +31,4 @@ Constant folding can make use of arithmetic identities. If x is numeric, the val
 
 Constant folding may apply to more than just numbers. Concatenation of string literals and constant strings can be constant folded. Code such as "abc" + "def" may be replaced with "abcdef".
 ```
+简单来说就是把常数预先计算, 比如数值表达式, 直接转化为计算结果, 字符串相加等, 直接使用相加的结果代替原表达式

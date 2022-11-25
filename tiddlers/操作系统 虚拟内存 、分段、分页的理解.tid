@@ -1,18 +1,22 @@
 created: 20220713052704638
-difficulty: 2.2796701658992524
-due: 20220824092813937
-grade: 0
-history: [{"due":"20220719081808589","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718081808588"},{"due":"20220811102707752","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726102707751"},{"due":"20220816084734757","interval":20,"difficulty":2.0796587184714794,"stability":0.07408182272361549,"retrievability":0.8796587184714795,"grade":0,"lapses":1,"reps":1,"review":"20220815084734757"}]
-interval: 8
+creator: Yangqing QU
+difficulty: 1.4796701658992524
+due: 20221203104752713
+grade: 1
+history: [{"due":"20220719081808589","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718081808588"},{"due":"20220811102707752","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726102707751"},{"due":"20220816084734757","interval":20,"difficulty":2.0796587184714794,"stability":0.07408182272361549,"retrievability":0.8796587184714795,"grade":0,"lapses":1,"reps":1,"review":"20220815084734757"},{"due":"20220824092813937","interval":8,"difficulty":2.2796701658992524,"stability":0.05488116409496729,"retrievability":0.000011447427772950137,"grade":0,"lapses":2,"reps":1,"review":"20220823092813937"}]
+interval: 94
 lapses: 2
-modified: 20220823092813937
-reps: 1
-retrievability: 0.000011447427772950137
-review: 20220823092813937
-stability: 0.05488116409496729
+modified: 20221125104752713
+modifier: Yangqing QU
+reps: 2
+retrievability: 4.2359606070832164e-79
+review: 20221125104752713
+stability: 7.740323303203746
 tags: ?
 title: 操作系统 虚拟内存 、分段、分页的理解
 type: text/vnd.tiddlywiki
+
+https://cloud.tencent.com/developer/article/1344772
 
 一 早期的内存分配机制
 [img[操作系统 虚拟内存 、分段、分页的理解 - myseries -2022-07-13 13_31_35.png]]

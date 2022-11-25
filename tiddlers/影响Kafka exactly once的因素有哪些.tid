@@ -1,15 +1,17 @@
 created: 20220718085819495
+creator: Yangqing QU
 difficulty: 1
-due: 20220824140625603
-grade: 2
-history: [{"due":"20220801114704725","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114704725"},{"due":"20220807123829784","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806123829784"}]
-interval: 5
+due: 20231207104000258
+grade: 1
+history: [{"due":"20220801114704725","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114704725"},{"due":"20220807123829784","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806123829784"},{"due":"20220824140625603","interval":5,"difficulty":1,"stability":12.910806680748394,"retrievability":0.0008160046550921422,"grade":2,"lapses":1,"reps":2,"review":"20220811140625603"}]
+interval: 106
 lapses: 1
-modified: 20220811140625603
-reps: 2
-retrievability: 0.0008160046550921422
-review: 20220811140625603
-stability: 12.910806680748394
+modified: 20221125104000258
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.42103958795508223
+review: 20221125104000258
+stability: 377.10346204368653
 tags: ?
 title: 影响Kafka exactly once的因素有哪些
 type: text/vnd.tiddlywiki
