@@ -1,16 +1,18 @@
 created: 20220721125500647
+creator: Yangqing QU
 difficulty: 1
-due: 20220824110410795
+due: 20231215122126189
 grade: 2
-history: [{"due":"20220803110233861","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110233861"}]
-interval: 6
+history: [{"due":"20220803110233861","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110233861"},{"due":"20220824110410795","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220808110410795"}]
+interval: 109
 lapses: 0
-modified: 20220808110410795
-reps: 2
-retrievability: 0.0017970135161932011
-review: 20220808110410795
-stability: 16.39335325161452
-tags: ?
+modified: 20221125122126189
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.4963142979378569
+review: 20221125122126189
+stability: 384.52253580208236
+tags: IQ ?
 title: 有无限的水，5L和6L 的桶精确装4L 水
 type: text/vnd.tiddlywiki
 
