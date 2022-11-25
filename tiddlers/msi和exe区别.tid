@@ -1,0 +1,13 @@
+created: 20221124130249643
+creator: Yangqing QU
+modified: 20221124150255652
+modifier: Yangqing QU
+tags: ? windows concept
+title: msi和exe区别
+type: text/vnd.tiddlywiki
+
+https://blog.csdn.net/CNHK1225/article/details/46983179#:~:text=.msi%20.-,msi%E6%96%87%E4%BB%B6%E6%98%AFWindows%20Installer%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85%EF%BC%8C%E5%AE%83%E5%AE%9E%E9%99%85,installer%E6%94%AF%E6%8C%81%E5%B0%B1%E8%83%BD%E5%A4%9F%E4%BD%BF%E7%94%A8%E3%80%82%20.
+
+msi是window installer开发的安装包
+
+exe就是windows的可执行文件
