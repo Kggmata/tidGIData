@@ -1,0 +1,11 @@
+created: 20221125135455595
+creator: Yangqing QU
+modified: 20221125135647527
+modifier: Yangqing QU
+tags: ? download protocol concept
+title: tracker
+type: text/vnd.tiddlywiki
+
+https://zh.wikipedia.org/zh-tw/BitTorrent_tracker
+
+bt客户端一开始要连接到tracker, tracker可以帮助获得其他用户的ip

@@ -1,0 +1,20 @@
+created: 20221125134821860
+creator: Yangqing QU
+modified: 20221125135918869
+modifier: Yangqing QU
+tags: ? concept protocol
+title: BT 协议
+type: text/vnd.tiddlywiki
+
+bit torrent protocol
+https://zh.wikipedia.org/wiki/BitTorrent_(%E5%8D%8F%E8%AE%AE)
+
+和传统的点对点协议不同, BT是用户群对用户群, 下载的用户越多, 速度越快
+[[p2p]]
+
+bt种子本质上是一个文本文件. 包含tracker信息和文本信息两部分. 
+tracker信息主要是tracker服务器
+文本信息是文件一些元数据信息
+
+BT客户端首先解析种子得到[[tracker]]的地址, 然后连接Tracker服务器。Tracker服务器回应下载者的请求，提供下载者其他下载者（包括发布者）的IP。下载者再连接其他下载者，根据种子文件，两者分别告知对方自己已经有的块，然后交换对方所没有的数据。此时不需要其他服务器参与，分散了单个线路上的数据流量，因此减轻了服务器负担。
+
