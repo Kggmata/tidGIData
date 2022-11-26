@@ -1,0 +1,36 @@
+created: 20220717063525215
+creator: Yangqing QU
+difficulty: 1.697296666353915
+due: 20221127025753700
+grade: 0
+history: [{"due":"20220805134308910","interval":0,"difficulty":0.07897385645727227,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726114546683"},{"due":"20220825073603961","interval":14,"difficulty":1,"stability":16.43975634590915,"retrievability":3.926042068775345e-7,"grade":2,"lapses":0,"reps":2,"review":"20220809073603960"}]
+interval: 109
+lapses: 1
+modified: 20221126025753700
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.49729666635391506
+review: 20221126025753699
+stability: 1.4816364413634358
+tags: flink ?
+title: Flink SQL 动态表和连续查询
+type: text/vnd.tiddlywiki
+
+https://www.51cto.com/article/708381.html
+
+更新（Update）查询 & 追加（Append）查询
+
+```
+1. 流批的异同
+输入 stream是源源不断的, batch是有界数据
+处理 stream无法访问完整的数据, 每次计算的都是中间结果, batch能够访问完整数据, 计算并输出完整结果
+输出 stream数据无限, batch数据有限
+
+因此, 动态表就是把stream的输入输出映射为动态表
+连续查询 就是实时处理数据的过程
+```
+```
+更新(Update)查询 & 追加(Append)查询
+更新查询会更新历史数据
+追加查询只追加数据
+```

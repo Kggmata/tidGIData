@@ -1,19 +1,25 @@
 created: 20220719031810541
-difficulty: 1
-due: 20220825081334885
-grade: 2
-history: [{"due":"20220801131513853","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131513853"},{"due":"20220808002551173","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002551173"}]
-interval: 5
-lapses: 1
-modified: 20220812081334885
-reps: 2
-retrievability: 0.0008160044497337299
-review: 20220812081334885
-stability: 12.910806318862917
-tags: ?
+creator: Yangqing QU
+difficulty: 1.621039577746367
+due: 20221127030159745
+grade: 0
+history: [{"due":"20220801131513853","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131513853"},{"due":"20220808002551173","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002551173"},{"due":"20220825081334885","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812081334885"}]
+interval: 106
+lapses: 2
+modified: 20221126030159745
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.421039577746367
+review: 20221126030159744
+stability: 1.097623272188053
+tags: flink ?
 title: flink standalone模式下包含的部署方式
 type: text/vnd.tiddlywiki
 
-session模式和application模式
+https://nightlies.apache.org/flink/flink-docs-master/docs/deployment/overview/
 
-非常相似 区别是jobmaster启动的时间点. 会话模式是预先启动, 应用模式是提交作业时启动.
+```
+session模式一个jobmanager,然后多个job share它. jobmanager先启动
+pre-job一个job一个job manager, jobmanager在作业提交后才启动, main在client
+application模式和prejob类似, 区别在于main在job manager
+```

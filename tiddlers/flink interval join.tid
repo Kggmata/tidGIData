@@ -1,18 +1,18 @@
 created: 20220720063607447
 creator: Yangqing QU
 difficulty: 1
-due: 20220825080936816
-grade: 2
-history: [{"due":"20220802050809886","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801050809886"},{"due":"20220808011008821","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011008821"}]
-interval: 5
+due: 20231208024830484
+grade: 1
+history: [{"due":"20220802050809886","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801050809886"},{"due":"20220808011008821","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011008821"},{"due":"20220825080936816","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812080936816"}]
+interval: 106
 lapses: 1
-modified: 20221125152030804
+modified: 20221126024830484
 modifier: Yangqing QU
-reps: 2
-retrievability: 0.0008160044497337299
-review: 20220812080936816
-stability: 12.910806318862917
-tags: ? flink
+reps: 3
+retrievability: 0.421039577746367
+review: 20221126024830484
+stability: 377.10346197434876
+tags: flink ?
 title: flink interval join
 type: text/vnd.tiddlywiki
 
