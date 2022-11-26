@@ -6,7 +6,7 @@ grade: 2
 history: [{"due":"20220802050809886","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801050809886"},{"due":"20220808011008821","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011008821"}]
 interval: 5
 lapses: 1
-modified: 20221125151904026
+modified: 20221125152030804
 modifier: Yangqing QU
 reps: 2
 retrievability: 0.0008160044497337299
@@ -16,12 +16,12 @@ tags: ? flink
 title: flink interval join
 type: text/vnd.tiddlywiki
 
+https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/joining/#interval-join	
+
 ```
-interval join可以让一条流去join另一条流前后一段时间的数据.可以理解成用来消除回撤流的
-```
-```
+interval join可以让一条流去join另一条流前后一段时间的数据.
+
 相当于给state设置个ttl
-```
-```
+
 同样等值是hash, 非等值是global
 ```
