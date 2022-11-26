@@ -1,15 +1,17 @@
 created: 20220716125959588
-difficulty: 1
-due: 20220825084255577
-grade: 1
-history: [{"due":"20220726124559625","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220725124559625"},{"due":"20220804034017734","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220803034017734"},{"due":"20220810035736329","interval":6,"difficulty":1.2001968028692551,"stability":0.054881164580531924,"retrievability":0.00019680286925510766,"grade":0,"lapses":2,"reps":1,"review":"20220809035736329"}]
-interval: 6
-lapses: 2
-modified: 20220815084255577
-reps: 2
-retrievability: 0.000009941800865523385
-review: 20220815084255576
-stability: 10.165493806888515
+creator: Yangqing QU
+difficulty: 1.5438512648543972
+due: 20221127053726865
+grade: 0
+history: [{"due":"20220726124559625","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220725124559625"},{"due":"20220804034017734","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220803034017734"},{"due":"20220810035736329","interval":6,"difficulty":1.2001968028692551,"stability":0.054881164580531924,"retrievability":0.00019680286925510766,"grade":0,"lapses":2,"reps":1,"review":"20220809035736329"},{"due":"20220825084255577","interval":6,"difficulty":1,"stability":10.165493806888515,"retrievability":0.000009941800865523385,"grade":1,"lapses":2,"reps":2,"review":"20220815084255576"}]
+interval: 103
+lapses: 3
+modified: 20221126053726865
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.3438512648543972
+review: 20221126053726865
+stability: 0.8131393194811983
 tags: ?
 title: flink运行时架构
 type: text/vnd.tiddlywiki
