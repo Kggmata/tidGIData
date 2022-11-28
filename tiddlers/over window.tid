@@ -1,26 +1,29 @@
 created: 20220718062516951
 creator: Yangqing QU
-difficulty: 1
-due: 20220825045925104
-grade: 1
-history: [{"due":"20220731041950991","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041950991"},{"due":"20220807122112025","interval":7,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806122112025"}]
-interval: 6
-lapses: 1
-modified: 20221126085254973
+difficulty: 1.6145791016619588
+due: 20221129055846543
+grade: 0
+history: [{"due":"20220731041950991","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730041950991"},{"due":"20220807122112025","interval":7,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806122112025"},{"due":"20220825045925104","interval":6,"difficulty":1,"stability":12.923390933819324,"retrievability":0.00019680275038780497,"grade":1,"lapses":1,"reps":2,"review":"20220812045925104"}]
+interval: 108
+lapses: 2
+modified: 20221128055846543
 modifier: Yangqing QU
-reps: 2
-retrievability: 0.00019680275038780497
-review: 20220812045925104
-stability: 12.923390933819324
-tags: ? flink
+reps: 1
+retrievability: 0.4145791016619588
+review: 20221128055846543
+stability: 1.097623272188053
+tags: flink ?
 title: over window
 type: text/vnd.tiddlywiki
 
-```
 Over 聚合定义（支持 Batch\Streaming）：可以理解为是一种特殊的滑动窗口聚合函数。
 那这里我们拿 Over 聚合 与 窗口聚合 做一个对比，其之间的最大不同之处在于：
-	窗口聚合：不在 group by 中的字段，不能直接在 select 中拿到
-	Over 聚合：能够保留原始字段
+
+```
+1.	窗口聚合：不在 group by 中的字段，不能直接在 select 中拿到
+2.	Over 聚合：能够保留原始字段
+```
+```
 注意：
 其实在生产环境中，Over 聚合的使用场景还是比较少的。在 Hive 中也有相同的聚合，但是可以想想你在离线数仓经常使用嘛？
 应用场景：计算最近一段滑动窗口的聚合结果数据。
@@ -41,9 +44,9 @@ SELECT
   ...
 FROM ...
 其中：
-	ORDER BY：必须是时间戳列（事件时间、处理时间）
-	PARTITION BY：标识了聚合窗口的聚合粒度，如上述案例是按照 product 进行聚合
-	range_definition：这个标识聚合窗口的聚合数据范围，在 Flink 中有两种指定数据范围的方式。第一种为 按照行数聚合，第二种为 按照时间区间聚合。如下案例所示：
+-	ORDER BY：必须是时间戳列（事件时间、处理时间）
+-	PARTITION BY：标识了聚合窗口的聚合粒度，如上述案例是按照 product 进行聚合
+-	range_definition：这个标识聚合窗口的聚合数据范围，在 Flink 中有两种指定数据范围的方式。第一种为 按照行数聚合，第二种为 按照时间区间聚合。如下案例所示：
 ```
 ```
 1.6.3.1 	时间区间聚合
