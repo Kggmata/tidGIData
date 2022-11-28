@@ -1,15 +1,17 @@
 created: 20220714064718760
+creator: Yangqing QU
 difficulty: 1
-due: 20220825052225833
+due: 20231204055956334
 grade: 1
-history: [{"due":"20220722085253107","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721085253107"},{"due":"20220802110923870","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261508688753902,"grade":0,"lapses":1,"reps":1,"review":"20220801110923869"},{"due":"20220809083125037","interval":7,"difficulty":1.200047464685643,"stability":0.054881164580531924,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220808083125037"}]
-interval: 7
+history: [{"due":"20220722085253107","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721085253107"},{"due":"20220802110923870","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261508688753902,"grade":0,"lapses":1,"reps":1,"review":"20220801110923869"},{"due":"20220809083125037","interval":7,"difficulty":1.200047464685643,"stability":0.054881164580531924,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220808083125037"},{"due":"20220825052225833","interval":7,"difficulty":1,"stability":10.165629507147264,"retrievability":0.000001457837900184362,"grade":1,"lapses":2,"reps":2,"review":"20220815052225833"}]
+interval: 105
 lapses: 2
-modified: 20220815052225833
-reps: 2
-retrievability: 0.000001457837900184362
-review: 20220815052225833
-stability: 10.165629507147264
+modified: 20221128055956335
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.33680181502521855
+review: 20221128055956334
+stability: 371.11285672053367
 tags: ?
 title: Spark与Flink的区别
 type: text/vnd.tiddlywiki
