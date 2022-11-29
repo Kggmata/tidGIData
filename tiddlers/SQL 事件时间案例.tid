@@ -1,16 +1,18 @@
 created: 20220717074331378
+creator: Yangqing QU
 difficulty: 1
 due: 20220825074322342
 grade: 2
 history: [{"due":"20220805134344704","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142828305"}]
 interval: 14
 lapses: 0
-modified: 20220809074322342
+modified: 20221129115459918
+modifier: Yangqing QU
 reps: 2
 retrievability: 3.926042068775345e-7
 review: 20220809074322342
 stability: 16.43975634590915
-tags: ?
+tags: ? flink
 title: SQL 事件时间案例
 type: text/vnd.tiddlywiki
 

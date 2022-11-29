@@ -1,0 +1,27 @@
+created: 20221129002907113
+creator: Yangqing QU
+modified: 20221129115511224
+modifier: Yangqing QU
+tags: ? web concept js
+title: node.js
+type: text/vnd.tiddlywiki
+
+https://tw.alphacamp.co/blog/node-js-and-javascript
+
+
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+[img[Snipaste_2022-11-29_08-29-56.png]]
+
+简单来说就是一个JS环境, 帮助JS能够脱离浏览器运行
+会附带一个[[npm]]
+
+https://www.zhihu.com/question/33578075
+那么node.js的优势是什么?
+
+```
+浏览器给网站发请求的过程大致上是浏览器发送请求, 服务器收到请求, 然后搜索被请求的资源, 有需要的话查询一下服务器, 然后返回相应的结果
+
+后来
+
+```
