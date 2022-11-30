@@ -1,0 +1,21 @@
+created: 20221130120223167
+creator: Yangqing QU
+modified: 20221130120856999
+modifier: Yangqing QU
+tags: ? internet
+title: 梯子和加速器区别
+type: text/vnd.tiddlywiki
+
+https://www.bilibili.com/video/BV1c841157Zk/?spm_id_from=444.41.list.card_archive.click&vd_source=4f6d50d66170c924d3ffac39bc223c45
+
+vpn, virtual private network
+
+这两个概念原理上一样的, 但是也有区别
+
+首先, 目的上, vpn是保证能够连接, 但是不在乎稳定性包括丢包和延时. 而加速器更看重稳定性.
+
+vpn一般是访问外网, 浏览网站或者看视频,因为它目的就是这个. 加速器的主业是降低游戏延迟,提高网络稳定性, 不一定能够访问外网, 要看服务提供商
+
+加速器一般按照时间计费, vpn一般按照流量计费
+
+加速器的流量和带宽要求不高, vpn较高
