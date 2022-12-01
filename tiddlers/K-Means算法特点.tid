@@ -1,0 +1,32 @@
+created: 20220624091547410
+creator: Yangqing QU
+difficulty: 1
+due: 20231030140759005
+grade: 1
+history: [{"due":"20220626051447700","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625051447700"},{"due":"20220630024933941","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629024933941"},{"due":"20220717121728910","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220704121728910"},{"due":"20220723015414896","interval":18,"difficulty":2.0633893610356058,"stability":0.054881225761675624,"retrievability":0.8633893610356056,"grade":0,"lapses":2,"reps":1,"review":"20220722015414896"},{"due":"20220810101300226","interval":10,"difficulty":1.2633893656323576,"stability":8.63925531003417,"retrievability":4.596751868176597e-9,"grade":1,"lapses":2,"reps":2,"review":"20220801101300225"},{"due":"20220815082919571","interval":13,"difficulty":2.316776299895977,"stability":0.040656966333775045,"retrievability":0.8533869342636191,"grade":0,"lapses":3,"reps":1,"review":"20220814082919571"},{"due":"20220827113532143","interval":7,"difficulty":1.516776313134253,"stability":5.982327113058386,"retrievability":1.32382762586235e-8,"grade":1,"lapses":3,"reps":2,"review":"20220821113532143"}]
+interval: 102
+lapses: 3
+modified: 20221201140759005
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.165891704226027
+review: 20221201140759005
+stability: 332.9551888809837
+tags: dataMining clustering ?
+title: K-Means算法特点
+type: text/vnd.tiddlywiki
+
+优点：
+
+```
+1 很好的应对高斯分布
+2. 简单容易理解
+```
+缺点：
+
+```
+1  初始点的选择会导致迭代次数和聚类结果不同
+2	超参数k难以选择
+3	每次迭代需要计算每个点的distance, curse of dimensionality. 效率差
+4	对噪声点和孤立点数据敏感
+```
