@@ -1,17 +1,27 @@
 created: 20220521053723671
-difficulty: 2.2556019210869556
-due: 20220826030913503
-grade: 2
-history: [{"due":"20220524023854932","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023854932"},{"due":"20220527234203911","interval":1,"difficulty":4.148683298050514,"stability":4.03183163653078,"retrievability":0.9486832980505138,"grade":2,"lapses":0,"reps":2,"review":"20220523234203911"},{"due":"20220622005743146","interval":8,"difficulty":3.1600319838664648,"stability":21.015749968210223,"retrievability":0.8113486858159505,"grade":2,"lapses":0,"reps":3,"review":"20220601005743146"}]
-interval: 22
+creator: Yangqing QU
+difficulty: 2.2219199315600764
+due: 20231012090730895
+grade: 1
+history: [{"due":"20220524023854932","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023854932"},{"due":"20220527234203911","interval":1,"difficulty":4.148683298050514,"stability":4.03183163653078,"retrievability":0.9486832980505138,"grade":2,"lapses":0,"reps":2,"review":"20220523234203911"},{"due":"20220622005743146","interval":8,"difficulty":3.1600319838664648,"stability":21.015749968210223,"retrievability":0.8113486858159505,"grade":2,"lapses":0,"reps":3,"review":"20220601005743146"},{"due":"20220826030913503","interval":22,"difficulty":2.2556019210869556,"stability":63.73297286355271,"retrievability":0.8955699372204909,"grade":2,"lapses":0,"reps":4,"review":"20220623030913502"}]
+interval: 161
 lapses: 0
-modified: 20220623030913503
-reps: 4
-retrievability: 0.8955699372204909
-review: 20220623030913502
-stability: 63.73297286355271
-tags: hadoop ?
+modified: 20221201090730896
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7663180104731206
+review: 20221201090730895
+stability: 314.5107517622469
+tags: hadoop hdfs ?
 title: 参考下面的MR系统的场景: --hdfs块的大小为128MB --输入类型为FileInputFormat --有三个文件的大小分别是:64KB 130MB 260MB Hadoop框架会把这些文件拆分为多少块？
 type: text/vnd.tiddlywiki
+
+https://www.jianshu.com/p/6ecfc8c05f31
+
+```
+private static final double SPLIT_SLOP = 1.1;
+```
+
+map的split切分是按照128mb的1.1倍也就是140mb作为maxsize, 大于140mb的切成两块, 128mb+..., 小于140mb的正常
 
 4块：64K，130M，128M，132M
