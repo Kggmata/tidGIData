@@ -1,0 +1,21 @@
+created: 20220724124229585
+creator: Yangqing QU
+difficulty: 1
+due: 20221202123148703
+grade: 0
+history: [{"due":"20220827143612757","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826143612757"}]
+interval: 97
+lapses: 1
+modified: 20221201123148703
+modifier: Yangqing QU
+reps: 1
+retrievability: 4.1232014016533527e-45
+review: 20221201123148702
+stability: 1.4816364413634358
+tags: flink ?
+title: java string是对象吗
+type: text/vnd.tiddlywiki
+
+```
+java中string属于对象
+```

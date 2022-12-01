@@ -1,22 +1,26 @@
 created: 20220724090219748
-difficulty: 0.025386988635295055
-due: 20220827143128216
-grade: -1
-history: []
-interval: 0
-lapses: 0
-modified: 20220826143128216
+creator: Yangqing QU
+difficulty: 1
+due: 20221202122919094
+grade: 0
+history: [{"due":"20220827143128216","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826143128216"}]
+interval: 97
+lapses: 1
+modified: 20221201122919094
+modifier: Yangqing QU
 reps: 1
-retrievability: 1
-review: 20220826143128216
-stability: 0.10000000088475645
+retrievability: 4.1232014016533527e-45
+review: 20221201122919093
+stability: 1.4816364413634358
 tags: flink ?
 title: FlinkCDC2.x
 type: text/vnd.tiddlywiki
 
 ```
 5.2 	Flink CDC 2.x 设计 (以MySQL为例)
-通过上面的分析，可以知道  Flink CDC 2.0.0 的设计方案，核心要解决上述的三个问题，即支持无锁、水平扩展、checkpoint。
+
+核心要解决上述的三个问题，即支持无锁、水平扩展、checkpoint。
+
 	对于大部分用户来讲，其实无需过于关注如何无锁算法和分片的细节，了解整体的流程就好。
 	整体流程可以概括为，首先通过主键对表进行 Snapshot Chunk 划分，再将 Snapshot Chunk 分发给多个 SourceReader，每个 Snapshot Chunk 读取时通过算法实现无锁条件下的一致性读，SourceReader 读取时支持 chunk 粒度的 checkpoint，在所有 Snapshot Chunk 读取完成后，下发一个 binlog chunk 进行增量部分的 binlog 读取，这便是 Flink CDC 2.0 的整体流程，如下图2.10所示：
 

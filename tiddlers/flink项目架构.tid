@@ -1,15 +1,17 @@
 created: 20220724030344639
-difficulty: 0.025386988635295055
-due: 20220827134017278
-grade: -1
-history: []
-interval: 0
-lapses: 0
-modified: 20220826134017278
+creator: Yangqing QU
+difficulty: 1
+due: 20221202123048913
+grade: 0
+history: [{"due":"20220827134017278","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826134017278"}]
+interval: 97
+lapses: 1
+modified: 20221201123048913
+modifier: Yangqing QU
 reps: 1
-retrievability: 1
-review: 20220826134017278
-stability: 0.10000000088475645
+retrievability: 4.1232014016533527e-45
+review: 20221201123048912
+stability: 1.4816364413634358
 tags: flink ?
 title: flink项目架构
 type: text/vnd.tiddlywiki

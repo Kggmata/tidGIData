@@ -1,9 +1,11 @@
 created: 20221125135317678
 creator: Yangqing QU
-modified: 20221125135356133
+modified: 20221201121434542
 modifier: Yangqing QU
-tags: ? concept download protocol
+tags: ? concept download protocol business
 title: p2p
 type: text/vnd.tiddlywiki
 
 peer to peer 对等的传输协议, 是去中心化的
+
+商业上也是存在这个概念的, 意思就是借款人向p2p平台借钱, p2p去找投资者, p2p平台赚取的就是中间的差价

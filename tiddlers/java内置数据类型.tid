@@ -1,15 +1,17 @@
 created: 20220724120519867
-difficulty: 0.025386988635295055
-due: 20220827143251625
-grade: -1
-history: []
-interval: 0
+creator: Yangqing QU
+difficulty: 1
+due: 20221217124007584
+grade: 1
+history: [{"due":"20220827143251625","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826143251625"}]
+interval: 97
 lapses: 0
-modified: 20220826143251625
-reps: 1
-retrievability: 1
-review: 20220826143251625
-stability: 0.10000000088475645
+modified: 20221201124007584
+modifier: Yangqing QU
+reps: 2
+retrievability: 4.1232014016533527e-45
+review: 20221201124007584
+stability: 16.439759152464664
 tags: flink ?
 title: java内置数据类型
 type: text/vnd.tiddlywiki

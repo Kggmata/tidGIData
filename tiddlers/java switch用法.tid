@@ -1,0 +1,28 @@
+created: 20220724123822953
+creator: Yangqing QU
+difficulty: 1
+due: 20221217123450956
+grade: 2
+history: [{"due":"20220827143456548","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826143456548"}]
+interval: 97
+lapses: 0
+modified: 20221201123450957
+modifier: Yangqing QU
+reps: 2
+retrievability: 4.1232014016533527e-45
+review: 20221201123450956
+stability: 16.439759152464664
+tags: java ?
+title: java switch用法
+type: text/vnd.tiddlywiki
+
+```
+switch case
+
+switch(expression){
+  case value:
+    break
+  case ..
+  default:
+}
+```
