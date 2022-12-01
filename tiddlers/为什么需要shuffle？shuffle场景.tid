@@ -1,15 +1,17 @@
 created: 20220523065638959
-difficulty: 1.8724576732812046
-due: 20220827142504891
-grade: 1
-history: [{"due":"20220526133339756","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133339756"},{"due":"20220628140342697","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531140342697"},{"due":"20220701000559668","interval":30,"difficulty":2.4310166691941744,"stability":0.07408316441686115,"retrievability":0.8919452162171847,"grade":0,"lapses":1,"reps":1,"review":"20220630000559668"},{"due":"20220706054949835","interval":5,"difficulty":2.6318327785868973,"stability":0.05488141221849455,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220705054949835"},{"due":"20220717044139938","interval":5,"difficulty":1.831900580148061,"stability":6.672594838355014,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220710044139938"}]
-interval: 11
-lapses: 2
-modified: 20220721142504891
-reps: 3
-retrievability: 0.8405570931331439
-review: 20220721142504890
-stability: 37.19272409925766
+creator: Yangqing QU
+difficulty: 2.7585343681868646
+due: 20221202142956230
+grade: 0
+history: [{"due":"20220526133339756","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525133339756"},{"due":"20220628140342697","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531140342697"},{"due":"20220701000559668","interval":30,"difficulty":2.4310166691941744,"stability":0.07408316441686115,"retrievability":0.8919452162171847,"grade":0,"lapses":1,"reps":1,"review":"20220630000559668"},{"due":"20220706054949835","interval":5,"difficulty":2.6318327785868973,"stability":0.05488141221849455,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220705054949835"},{"due":"20220717044139938","interval":5,"difficulty":1.831900580148061,"stability":6.672594838355014,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220710044139938"},{"due":"20220827142504891","interval":11,"difficulty":1.8724576732812046,"stability":37.19272409925766,"retrievability":0.8405570931331439,"grade":1,"lapses":2,"reps":3,"review":"20220721142504890"}]
+interval: 133
+lapses: 3
+modified: 20221201142956230
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.6860766949056598
+review: 20221201142956230
+stability: 0.8131393194811983
 tags: spark ?
 title: 为什么需要shuffle？shuffle场景
 type: text/vnd.tiddlywiki

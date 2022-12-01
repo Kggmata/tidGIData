@@ -1,16 +1,18 @@
 created: 20220718144006102
-difficulty: 1
-due: 20220826090637003
-grade: 2
-history: [{"due":"20220801122755634","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731122755634"},{"due":"20220808000949654","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807000949653"}]
-interval: 6
-lapses: 1
-modified: 20220813090637003
-reps: 2
-retrievability: 0.00019680269095417443
-review: 20220813090637003
-stability: 12.923390568613549
-tags: ?
+creator: Yangqing QU
+difficulty: 1.6078740270380847
+due: 20221202142850531
+grade: 0
+history: [{"due":"20220801122755634","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731122755634"},{"due":"20220808000949654","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807000949653"},{"due":"20220826090637003","interval":6,"difficulty":1,"stability":12.923390568613549,"retrievability":0.00019680269095417443,"grade":2,"lapses":1,"reps":2,"review":"20220813090637003"}]
+interval: 110
+lapses: 2
+modified: 20221201142850531
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4078740270380848
+review: 20221201142850531
+stability: 1.097623272188053
+tags: spark ?
 title: spark sql翻译底层流程
 type: text/vnd.tiddlywiki
 
