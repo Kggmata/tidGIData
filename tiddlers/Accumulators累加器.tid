@@ -1,15 +1,17 @@
 created: 20220526133116549
-difficulty: 1.5080444161014233
-due: 20220827111750762
-grade: 1
-history: [{"due":"20220531130626857","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130626857"},{"due":"20220604015927808","interval":4,"difficulty":2.7187326055546124,"stability":0.08507834253141604,"retrievability":0.07105206550140858,"grade":0,"lapses":1,"reps":1,"review":"20220603015927808"},{"due":"20220608005342289","interval":4,"difficulty":2.925790727214314,"stability":0.058954374971038004,"retrievability":0.007058121659701603,"grade":0,"lapses":2,"reps":1,"review":"20220607005342289"},{"due":"20220622013513908","interval":5,"difficulty":1.1259223240824332,"stability":9.910676682534941,"retrievability":0.00013159686811918498,"grade":2,"lapses":2,"reps":2,"review":"20220612013513908"},{"due":"20220810071542408","interval":11,"difficulty":1.2155598938816652,"stability":48.16644910978258,"retrievability":0.8896375697992318,"grade":1,"lapses":2,"reps":3,"review":"20220623071542407"},{"due":"20220815081132861","interval":52,"difficulty":2.308044402863147,"stability":0.040656966333775045,"retrievability":0.8924845089814819,"grade":0,"lapses":3,"reps":1,"review":"20220814081132861"}]
-interval: 7
-lapses: 3
-modified: 20220821111750762
-reps: 2
-retrievability: 1.32382762586235e-8
-review: 20220821111750762
-stability: 6.006388720257761
+creator: Yangqing QU
+difficulty: 1.8751342598605016
+due: 20221202113447105
+grade: 0
+history: [{"due":"20220531130626857","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220530130626857"},{"due":"20220604015927808","interval":4,"difficulty":2.7187326055546124,"stability":0.08507834253141604,"retrievability":0.07105206550140858,"grade":0,"lapses":1,"reps":1,"review":"20220603015927808"},{"due":"20220608005342289","interval":4,"difficulty":2.925790727214314,"stability":0.058954374971038004,"retrievability":0.007058121659701603,"grade":0,"lapses":2,"reps":1,"review":"20220607005342289"},{"due":"20220622013513908","interval":5,"difficulty":1.1259223240824332,"stability":9.910676682534941,"retrievability":0.00013159686811918498,"grade":2,"lapses":2,"reps":2,"review":"20220612013513908"},{"due":"20220810071542408","interval":11,"difficulty":1.2155598938816652,"stability":48.16644910978258,"retrievability":0.8896375697992318,"grade":1,"lapses":2,"reps":3,"review":"20220623071542407"},{"due":"20220815081132861","interval":52,"difficulty":2.308044402863147,"stability":0.040656966333775045,"retrievability":0.8924845089814819,"grade":0,"lapses":3,"reps":1,"review":"20220814081132861"},{"due":"20220827111750762","interval":7,"difficulty":1.5080444161014233,"stability":6.006388720257761,"retrievability":1.32382762586235e-8,"grade":1,"lapses":3,"reps":2,"review":"20220821111750762"}]
+interval: 102
+lapses: 4
+modified: 20221201113447105
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.1670898437590785
+review: 20221201113447104
+stability: 0.6023884238244042
 tags: spark ?
 title: Accumulators累加器
 type: text/vnd.tiddlywiki
