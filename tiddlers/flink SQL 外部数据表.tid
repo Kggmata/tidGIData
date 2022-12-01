@@ -1,22 +1,24 @@
 created: 20220717022526338
-difficulty: 1
-due: 20220825074345858
-grade: 2
-history: [{"due":"20220805134405970","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726065231404"}]
-interval: 14
-lapses: 0
-modified: 20220809074345858
-reps: 2
-retrievability: 3.9260748606056117e-7
-review: 20220809074345858
-stability: 16.439763804276993
-tags: ?
-title: SQL 外部数据表
+creator: Yangqing QU
+difficulty: 1.6816138569395085
+due: 20221202053743343
+grade: 0
+history: [{"due":"20220805134405970","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726065231404"},{"due":"20220825074345858","interval":14,"difficulty":1,"stability":16.439763804276993,"retrievability":3.9260748606056117e-7,"grade":2,"lapses":0,"reps":2,"review":"20220809074345858"}]
+interval: 114
+lapses: 1
+modified: 20221201053743343
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.48161385693950853
+review: 20221201053743342
+stability: 1.4816364413634358
+tags: flink ?
+title: flink SQL 外部数据表
 type: text/vnd.tiddlywiki
 
 ```
 由于目前在实时数据的场景中多以消息队列作为数据表。此处就以 Kafka 为例创建一个外部数据表。
-	SQL 创建外部数据表
+*	SQL 创建外部数据表
 
 ```
 ```

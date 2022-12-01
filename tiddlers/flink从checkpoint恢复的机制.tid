@@ -1,0 +1,25 @@
+created: 20220721103127323
+creator: Yangqing QU
+difficulty: 1.604205579959891
+due: 20221202054059107
+grade: 0
+history: [{"due":"20220802092200005","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092200005"},{"due":"20220808004919163","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807004919163"},{"due":"20220825051307280","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":1,"lapses":1,"reps":2,"review":"20220812051307279"}]
+interval: 111
+lapses: 2
+modified: 20221201054059108
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4042055799598912
+review: 20221201054059107
+stability: 1.097623272188053
+tags: flink ?
+title: flink从checkpoint恢复的机制
+type: text/vnd.tiddlywiki
+
+```
+当遭遇failure, flink选择最近的checkpoint k恢复.
+重新部署分布式dataflow, 给每个算子包含在checkpointk当中的对应快照k, 同时source从offset Sk开始重新读取
+```
+```
+如果是增量的snapshot, 算子会从latest完整的snapshot开始, 然后从增量snapshot逐步恢复
+```
