@@ -1,20 +1,22 @@
 [
     {
         "created": "20220724072248006",
+        "creator": "Yangqing QU",
         "text": "```\nCDC全称 change data capture\n```\n```\n应用场景\n数据同步: 数据备份, 容灾\n数据分发: 一个数据源分发多个下游系统\n数据采集: 面向数据仓库/数据湖的ETL数据集成\n```\n```\nCDC的实现机制\n- 基于主动查询的cdc, 数据库当中保存着上次更新的时间戳, 或者版本号等信息. 下游通过对比, 来确定数据是否由变动, 是否需要同步:\n1 离线调度查询作业, 批处理. 把一张表同步到其他系统. 每次通过查询去获取表最新的数据\n2 无法包装数据最新\n3 对数据库的性能有影响\n4 不保证实时性\n- 基于事件接受CDC\n触发器Trigger或者日志(transaction log, binlog, WAL, Translog)\n1 实时消费日志\n2 数据一致性, (binlog包含所有的数据明细, 默认未开启, 同时需要设置合适的ttl防止过大)\n3 保障实时性\n```\n\n\n",
         "tags": "flink ?",
         "title": "CDC概述",
-        "modified": "20220826134457995",
+        "modified": "20221201115349337",
         "type": " ",
-        "due": "20220827134457995",
-        "interval": "0",
-        "difficulty": "0.025386988635295055",
-        "stability": "0.10000000088475645",
-        "retrievability": "1",
-        "lapses": "0",
+        "modifier": "Yangqing QU",
+        "due": "20221202115349337",
+        "interval": "97",
+        "difficulty": "1",
+        "stability": "1.4816364413634358",
+        "retrievability": "4.1232014016533527e-45",
+        "lapses": "1",
         "reps": "1",
-        "grade": "-1",
-        "review": "20220826134457995",
-        "history": "[]"
+        "grade": "0",
+        "review": "20221201115349336",
+        "history": "[{\"due\":\"20220827134457995\",\"interval\":0,\"difficulty\":0.025386988635295055,\"stability\":0.10000000088475645,\"retrievability\":1,\"grade\":-1,\"lapses\":0,\"reps\":1,\"review\":\"20220826134457995\"}]"
     }
 ]
