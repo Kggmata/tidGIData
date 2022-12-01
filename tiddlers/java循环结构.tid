@@ -1,16 +1,18 @@
 created: 20220724123633933
-difficulty: 0.025386988635295055
-due: 20220827143448179
-grade: -1
-history: []
-interval: 0
+creator: Yangqing QU
+difficulty: 1
+due: 20221217125157671
+grade: 2
+history: [{"due":"20220827143448179","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826143448179"}]
+interval: 97
 lapses: 0
-modified: 20220826143448179
-reps: 1
-retrievability: 1
-review: 20220826143448179
-stability: 0.10000000088475645
-tags: flink ?
+modified: 20221201125204387
+modifier: Yangqing QU
+reps: 2
+retrievability: 4.1232014016533527e-45
+review: 20221201125157670
+stability: 16.439759152464664
+tags: ? java
 title: java循环结构
 type: text/vnd.tiddlywiki
 
