@@ -1,11 +1,13 @@
 created: 20220614074319476
+creator: Yangqing QU
 difficulty: 1
 due: 20220826000218127
 grade: 2
 history: [{"due":"20220617053550687","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616053550687"},{"due":"20220626133852427","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":1,"lapses":0,"reps":2,"review":"20220617133852427"}]
 interval: 12
 lapses: 0
-modified: 20220629000218127
+modified: 20221201111059570
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8666100007084099
 review: 20220629000218126

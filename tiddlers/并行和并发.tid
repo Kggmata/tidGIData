@@ -1,15 +1,17 @@
 created: 20220521030049415
-difficulty: 2.2556019210869556
-due: 20220826030851619
+creator: Yangqing QU
+difficulty: 1.2219199315600762
+due: 20240219110816165
 grade: 2
-history: [{"due":"20220524021511224","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021511224"},{"due":"20220527234110131","interval":1,"difficulty":4.148683298050514,"stability":4.03183163653078,"retrievability":0.9486832980505138,"grade":2,"lapses":0,"reps":2,"review":"20220523234110131"},{"due":"20220622005731742","interval":8,"difficulty":3.1600319838664648,"stability":21.015749968210223,"retrievability":0.8113486858159505,"grade":2,"lapses":0,"reps":3,"review":"20220601005731742"}]
-interval: 22
+history: [{"due":"20220524021511224","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021511224"},{"due":"20220527234110131","interval":1,"difficulty":4.148683298050514,"stability":4.03183163653078,"retrievability":0.9486832980505138,"grade":2,"lapses":0,"reps":2,"review":"20220523234110131"},{"due":"20220622005731742","interval":8,"difficulty":3.1600319838664648,"stability":21.015749968210223,"retrievability":0.8113486858159505,"grade":2,"lapses":0,"reps":3,"review":"20220601005731742"},{"due":"20220826030851619","interval":22,"difficulty":2.2556019210869556,"stability":63.73297286355271,"retrievability":0.8955699372204909,"grade":2,"lapses":0,"reps":4,"review":"20220623030851618"}]
+interval: 161
 lapses: 0
-modified: 20220623030851619
-reps: 4
-retrievability: 0.8955699372204909
-review: 20220623030851618
-stability: 63.73297286355271
+modified: 20221201110816165
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7663180104731206
+review: 20221201110816164
+stability: 444.85935355080346
 tags: 基础概念 ?
 title: 并行和并发
 type: text/vnd.tiddlywiki

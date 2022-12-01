@@ -1,15 +1,17 @@
 created: 20220521075253582
-difficulty: 3.2508942029413816
-due: 20220826150405593
+creator: Yangqing QU
+difficulty: 3.2114235686869357
+due: 20230809111029147
 grade: 1
-history: [{"due":"20220524054849265","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054849265"},{"due":"20220530073047748","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220524073047748"},{"due":"20220626140214970","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220602140214970"}]
-interval: 25
+history: [{"due":"20220524054849265","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054849265"},{"due":"20220530073047748","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220524073047748"},{"due":"20220626140214970","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220602140214970"},{"due":"20220826150405593","interval":25,"difficulty":3.2508942029413816,"stability":60.428024634461686,"retrievability":0.8950417678954212,"grade":1,"lapses":0,"reps":4,"review":"20220627150405593"}]
+interval: 157
 lapses: 0
-modified: 20220810032852898
-reps: 4
-retrievability: 0.8950417678954212
-review: 20220627150405593
-stability: 60.428024634461686
+modified: 20221201111029147
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7605293657455535
+review: 20221201111029147
+stability: 251.3005965921055
 tags: hive ?
 title: 拉链表步骤
 type: text/vnd.tiddlywiki
