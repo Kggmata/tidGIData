@@ -1,21 +1,21 @@
 created: 20220724033245316
-difficulty: 0.025386988635295055
-due: 20220827134020687
-grade: -1
-history: []
-interval: 0
-lapses: 0
-modified: 20220826134020687
+creator: Yangqing QU
+difficulty: 1
+due: 20221203095238197
+grade: 0
+history: [{"due":"20220827134020687","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826134020686"}]
+interval: 98
+lapses: 1
+modified: 20221202095238197
+modifier: Yangqing QU
 reps: 1
-retrievability: 1
-review: 20220826134020686
-stability: 0.10000000088475645
-tags: flink ?
+retrievability: 1.4376714463483725e-45
+review: 20221202095238197
+stability: 1.4816364413634358
+tags: bigData ?
 title: 大数据平台
 type: text/vnd.tiddlywiki
 
-```
-CDH
-TDH
+[[CDH]]
+[[tdh]]
 Dinky
-```

@@ -1,18 +1,18 @@
 created: 20220612065312297
 creator: Yangqing QU
-difficulty: 2.1587821886085186
-due: 20220827133425918
-grade: 0
-history: [{"due":"20220616062817046","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615062817046"},{"due":"20220617112129294","interval":1,"difficulty":1.5082427090268031,"stability":0.07425364270040997,"retrievability":0.3520717289715242,"grade":0,"lapses":1,"reps":1,"review":"20220616112129294"},{"due":"20220618062224785","interval":1,"difficulty":1.9502161682686705,"stability":0.05494480753692821,"retrievability":0.24197345924186736,"grade":0,"lapses":2,"reps":1,"review":"20220617062224784"},{"due":"20220620020854346","interval":2,"difficulty":2.171814481922527,"stability":0.04068054026463326,"retrievability":0.021598313653856723,"grade":0,"lapses":3,"reps":1,"review":"20220619020854346"},{"due":"20220629021310197","interval":2,"difficulty":1,"stability":7.927130916460668,"retrievability":0.005628582968693983,"grade":2,"lapses":3,"reps":2,"review":"20220621021310197"},{"due":"20220818141841711","interval":10,"difficulty":1.0755427624276723,"stability":47.52124753822195,"retrievability":0.8755427624276725,"grade":1,"lapses":3,"reps":3,"review":"20220701141841711"}]
-interval: 56
+difficulty: 1.3587821886085185
+due: 20221207094835726
+grade: 1
+history: [{"due":"20220616062817046","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615062817046"},{"due":"20220617112129294","interval":1,"difficulty":1.5082427090268031,"stability":0.07425364270040997,"retrievability":0.3520717289715242,"grade":0,"lapses":1,"reps":1,"review":"20220616112129294"},{"due":"20220618062224785","interval":1,"difficulty":1.9502161682686705,"stability":0.05494480753692821,"retrievability":0.24197345924186736,"grade":0,"lapses":2,"reps":1,"review":"20220617062224784"},{"due":"20220620020854346","interval":2,"difficulty":2.171814481922527,"stability":0.04068054026463326,"retrievability":0.021598313653856723,"grade":0,"lapses":3,"reps":1,"review":"20220619020854346"},{"due":"20220629021310197","interval":2,"difficulty":1,"stability":7.927130916460668,"retrievability":0.005628582968693983,"grade":2,"lapses":3,"reps":2,"review":"20220621021310197"},{"due":"20220818141841711","interval":10,"difficulty":1.0755427624276723,"stability":47.52124753822195,"retrievability":0.8755427624276725,"grade":1,"lapses":3,"reps":3,"review":"20220701141841711"},{"due":"20220827133425918","interval":56,"difficulty":2.1587821886085186,"stability":0.03011942145770373,"retrievability":0.883239426180846,"grade":0,"lapses":4,"reps":1,"review":"20220826133425917"}]
+interval: 98
 lapses: 4
-modified: 20221201143034102
+modified: 20221202094835726
 modifier: Yangqing QU
-reps: 1
-retrievability: 0.883239426180846
-review: 20220826133425917
-stability: 0.03011942145770373
-tags: ? flume
+reps: 2
+retrievability: 1.3127648503260843e-149
+review: 20221202094835725
+stability: 5.078104428668841
+tags: flume ?
 title: 向Flume提供数据 如何向44444端口发送数据呢？
 type: text/vnd.tiddlywiki
 

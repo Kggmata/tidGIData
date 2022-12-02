@@ -1,16 +1,18 @@
 created: 20220625005952589
-difficulty: 1.5512978025902366
-due: 20220827020220712
+creator: Yangqing QU
+difficulty: 1
+due: 20231122095338045
 grade: 1
-history: [{"due":"20220630084623197","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629084623197"},{"due":"20220717154805889","interval":3,"difficulty":1,"stability":15.367048766557211,"retrievability":0.04239358618575581,"grade":1,"lapses":0,"reps":2,"review":"20220702154805889"},{"due":"20220722141052086","interval":19,"difficulty":2.0778592709133124,"stability":0.07408190596496488,"retrievability":0.8778592709133122,"grade":0,"lapses":1,"reps":1,"review":"20220721141052086"},{"due":"20220810022015121","interval":9,"difficulty":1.2778620318258398,"stability":10.900248158717487,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730022015121"},{"due":"20220814112009396","interval":14,"difficulty":2.3512963447525097,"stability":0.05488116409496729,"retrievability":0.8734343129266695,"grade":0,"lapses":2,"reps":1,"review":"20220813112009395"}]
-interval: 7
+history: [{"due":"20220630084623197","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629084623197"},{"due":"20220717154805889","interval":3,"difficulty":1,"stability":15.367048766557211,"retrievability":0.04239358618575581,"grade":1,"lapses":0,"reps":2,"review":"20220702154805889"},{"due":"20220722141052086","interval":19,"difficulty":2.0778592709133124,"stability":0.07408190596496488,"retrievability":0.8778592709133122,"grade":0,"lapses":1,"reps":1,"review":"20220721141052086"},{"due":"20220810022015121","interval":9,"difficulty":1.2778620318258398,"stability":10.900248158717487,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730022015121"},{"due":"20220814112009396","interval":14,"difficulty":2.3512963447525097,"stability":0.05488116409496729,"retrievability":0.8734343129266695,"grade":0,"lapses":2,"reps":1,"review":"20220813112009395"},{"due":"20220827020220712","interval":7,"difficulty":1.5512978025902366,"stability":7.490149962980107,"retrievability":0.0000014578377268496457,"grade":1,"lapses":2,"reps":2,"review":"20220820020220712"}]
+interval: 104
 lapses: 2
-modified: 20220820020220712
-reps: 2
-retrievability: 0.0000014578377268496457
-review: 20220820020220712
-stability: 7.490149962980107
-tags: 用户画像 ?
+modified: 20221202095338045
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.23155902742485143
+review: 20221202095338045
+stability: 354.90821576345166
+tags: 用户画像 dataMining kmeans ?
 title: 对kmeans算法校验：
 type: text/vnd.tiddlywiki
 

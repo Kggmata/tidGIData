@@ -1,17 +1,19 @@
 created: 20220722080433619
+creator: Yangqing QU
 difficulty: 1
 due: 20221012133343869
 grade: 0
 history: [{"due":"20220822133922449","interval":0,"difficulty":0.027592619143141373,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220821133922449"}]
 interval: 51
 lapses: 1
-modified: 20221011133343869
+modified: 20221202095157064
+modifier: Yangqing QU
 reps: 1
 retrievability: 4.609778101934696e-24
 review: 20221011133343869
 stability: 0.07408182272361549
 tags: ?
-title: tdh full form
+title: tdh
 type: text/vnd.tiddlywiki
 
 ```
