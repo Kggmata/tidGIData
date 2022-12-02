@@ -1,15 +1,17 @@
 created: 20220724080157276
-difficulty: 0.025386988635295055
-due: 20220827134922640
-grade: -1
-history: []
-interval: 0
-lapses: 0
-modified: 20220826134922640
+creator: Yangqing QU
+difficulty: 1
+due: 20221203112038443
+grade: 0
+history: [{"due":"20220827134922640","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826134922640"}]
+interval: 98
+lapses: 1
+modified: 20221202112038444
+modifier: Yangqing QU
 reps: 1
-retrievability: 1
-review: 20220826134922640
-stability: 0.10000000088475645
+retrievability: 1.4376714463483725e-45
+review: 20221202112038443
+stability: 1.4816364413634358
 tags: flink ?
 title: 常见的CDC方案
 type: text/vnd.tiddlywiki
