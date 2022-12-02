@@ -1,0 +1,28 @@
+created: 20221201235132388
+creator: Yangqing QU
+modified: 20221202000757522
+modifier: Yangqing QU
+tags: ? deepLearning
+title: 对抗样本
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/42667844
+
+简单来说就是通过给输入样本一些干扰, 导致ai给出高置信度的错误输出
+
+[img[Snipaste_2022-12-02_07-52-59.png]]
+[img[Snipaste_2022-12-02_08-01-38.png]]
+[img[Snipaste_2022-12-02_08-02-01.png]]
+
+那么如何理解对抗样本?
+[img[Snipaste_2022-12-02_08-02-45.png]]
+
+```
+机器学习就是从训练数据当中学习, 然后泛化到unseen data
+
+因此一种对抗样本的方法就是从一个类别的方法出发, 做微小修改, 让模型将修改后的数据识别为另一个类别. 
+
+另一种方法是利用分类边界的不确定性, 一遍而言, 边界的数据概率是极低的, 因此很容易取到对抗样本
+
+大概可以推断, 对抗样本的存在是因为数据维度过高, 即便考虑子区域, 仍然过高, 无法对整个space搜索
+```
