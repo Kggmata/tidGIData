@@ -1,16 +1,18 @@
 created: 20220605234905052
+creator: Yangqing QU
 difficulty: 2.5802466797590022
 due: 20220827133547787
 grade: 0
 history: [{"due":"20220610111738521","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220609111738521"},{"due":"20220613121111344","interval":3,"difficulty":1.5162196541321282,"stability":0.07545638712607733,"retrievability":0.04746718678804762,"grade":0,"lapses":1,"reps":1,"review":"20220612121111343"},{"due":"20220616023238427","interval":3,"difficulty":1.7313821495317412,"stability":0.055390315029607076,"retrievability":0.01516249539961304,"grade":0,"lapses":2,"reps":1,"review":"20220615023238426"},{"due":"20220624112215423","interval":1,"difficulty":1,"stability":8.007071752227509,"retrievability":0.1492478557873414,"grade":2,"lapses":2,"reps":2,"review":"20220616112215423"},{"due":"20220807113547805","interval":9,"difficulty":1.0883176417377023,"stability":43.297995972416544,"retrievability":0.8883176417377022,"grade":1,"lapses":2,"reps":3,"review":"20220625113547804"},{"due":"20220812065719562","interval":47,"difficulty":2.180246503039612,"stability":0.04065696669349018,"retrievability":0.8919288613019096,"grade":0,"lapses":3,"reps":1,"review":"20220811065719562"},{"due":"20220818103617229","interval":6,"difficulty":2.3802466797589807,"stability":0.03011942145770373,"retrievability":1.7671936852144708e-7,"grade":0,"lapses":4,"reps":1,"review":"20220817103617229"}]
 interval: 9
 lapses: 5
-modified: 20220826133547787
+modified: 20221203123935432
+modifier: Yangqing QU
 reps: 1
 retrievability: 2.1241267745989646e-14
 review: 20220826133547787
 stability: 0.02231301621225883
-tags: hbase ?
+tags: hbase
 title: 预分区、Flush、合并、分裂的Shell命令
 type: text/vnd.tiddlywiki
 

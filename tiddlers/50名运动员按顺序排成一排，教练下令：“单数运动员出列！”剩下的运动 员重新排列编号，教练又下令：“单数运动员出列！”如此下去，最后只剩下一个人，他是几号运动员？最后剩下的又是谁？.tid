@@ -1,16 +1,18 @@
 created: 20220722013822890
-difficulty: 1
-due: 20220827103204283
-grade: 2
-history: [{"due":"20220807130353138","interval":0,"difficulty":0.04608231733006508,"stability":0.10000000707805157,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220806130353138"}]
-interval: 5
-lapses: 0
-modified: 20220811103204283
-reps: 2
-retrievability: 0.005153777129026956
-review: 20220811103204283
-stability: 16.306882072202722
-tags: ?
+creator: Yangqing QU
+difficulty: 1.6787550270301554
+due: 20221204141613130
+grade: 0
+history: [{"due":"20220807130353138","interval":0,"difficulty":0.04608231733006508,"stability":0.10000000707805157,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220806130353138"},{"due":"20220827103204283","interval":5,"difficulty":1,"stability":16.306882072202722,"retrievability":0.005153777129026956,"grade":2,"lapses":0,"reps":2,"review":"20220811103204283"}]
+interval: 114
+lapses: 1
+modified: 20221203141613130
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4787550270301556
+review: 20221203141613130
+stability: 1.4816364413634358
+tags: IQ ?
 title: 50名运动员按顺序排成一排，教练下令：“单数运动员出列！”剩下的运动 员重新排列编号，教练又下令：“单数运动员出列！”如此下去，最后只剩下一个人，他是几号运动员？最后剩下的又是谁？
 type: text/vnd.tiddlywiki
 
