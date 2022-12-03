@@ -1,0 +1,12 @@
+created: 20221203003537567
+creator: Yangqing QU
+modified: 20221203003556903
+modifier: Yangqing QU
+tags: ? 矩阵 数组
+title: 下三角矩阵
+type: text/vnd.tiddlywiki
+
+https://zh.wikipedia.org/zh-tw/%E4%B8%89%E8%A7%92%E7%9F%A9%E9%98%B5
+
+三角矩阵是方形矩阵的一种, 分为上三角下三角, 上三角左下方0
+下三角右上方0

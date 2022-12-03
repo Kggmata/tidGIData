@@ -1,0 +1,11 @@
+created: 20221203004220148
+creator: Yangqing QU
+modified: 20221203004304489
+modifier: Yangqing QU
+tags: ?
+title: 链接：https://www.nowcoder.com/questionTerminal/1c050f8e132248d2b27b72b81fdfc1be 来源：牛客网  请问下面哪种方式可以在不改变原来数组的情况下，拷贝出数组 b ，且满足 b!=a 。例如数组 a 为 [1,2,3] 。  let b=a; let b=a.slice(); let b=a.splice(0,0); let b=a.concat();
+type: text/vnd.tiddlywiki
+
+B, D
+
+splice是截取

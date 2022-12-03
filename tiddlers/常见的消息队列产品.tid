@@ -1,15 +1,17 @@
 created: 20220609024638746
-difficulty: 1.6520945678857053
-due: 20220827083703896
-grade: 1
-history: [{"due":"20220613140522238","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612140522238"},{"due":"20220701010757410","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615010757410"},{"due":"20220706050319709","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220705050319709"},{"due":"20220711035324324","interval":5,"difficulty":2.2739464977595754,"stability":0.05488141221849455,"retrievability":0.0008160305305493356,"grade":0,"lapses":2,"reps":1,"review":"20220710035324324"},{"due":"20220717091937673","interval":1,"difficulty":1.6205849738841998,"stability":5.71021197185967,"retrievability":0.14663847612462463,"grade":1,"lapses":2,"reps":2,"review":"20220711091937673"}]
-interval: 10
-lapses: 2
-modified: 20220721083703896
-reps: 3
-retrievability: 0.8315095940015054
-review: 20220721083703896
-stability: 36.93680482637967
+creator: Yangqing QU
+difficulty: 2.5324899447692175
+due: 20221204000847478
+grade: 0
+history: [{"due":"20220613140522238","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612140522238"},{"due":"20220701010757410","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615010757410"},{"due":"20220706050319709","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220705050319709"},{"due":"20220711035324324","interval":5,"difficulty":2.2739464977595754,"stability":0.05488141221849455,"retrievability":0.0008160305305493356,"grade":0,"lapses":2,"reps":1,"review":"20220710035324324"},{"due":"20220717091937673","interval":1,"difficulty":1.6205849738841998,"stability":5.71021197185967,"retrievability":0.14663847612462463,"grade":1,"lapses":2,"reps":2,"review":"20220711091937673"},{"due":"20220827083703896","interval":10,"difficulty":1.6520945678857053,"stability":36.93680482637967,"retrievability":0.8315095940015054,"grade":1,"lapses":2,"reps":3,"review":"20220721083703896"}]
+interval: 135
+lapses: 3
+modified: 20221203000847478
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.6803953768835121
+review: 20221203000847478
+stability: 0.8131393194811983
 tags: kafka ?
 title: 常见的消息队列产品
 type: text/vnd.tiddlywiki

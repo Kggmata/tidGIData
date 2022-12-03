@@ -1,0 +1,13 @@
+created: 20221203004431837
+creator: Yangqing QU
+modified: 20221203004534917
+modifier: Yangqing QU
+tags: ? programming
+title: 实参和形参
+type: text/vnd.tiddlywiki
+
+http://c.biancheng.net/view/1853.html
+
+实参代表已分配内存空间的参数
+
+形参则未分配

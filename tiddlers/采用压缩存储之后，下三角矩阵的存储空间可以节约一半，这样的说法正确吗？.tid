@@ -1,0 +1,15 @@
+created: 20221203003251741
+creator: Yangqing QU
+modified: 20221203003735223
+modifier: Yangqing QU
+tags: ? 数组
+title: 采用压缩存储之后，下三角矩阵的存储空间可以节约一半，这样的说法正确吗？
+type: text/vnd.tiddlywiki
+
+[[下三角矩阵]]
+
+[[压缩存储]]
+
+https://www.nowcoder.com/questionTerminal/893840cc4307449c9b8e58c1d177fe49
+
+这题很坑, 指的是严格的一半所以不对, 如果是泛指的一半是对的

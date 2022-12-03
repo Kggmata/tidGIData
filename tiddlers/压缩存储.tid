@@ -1,0 +1,11 @@
+created: 20221203003602682
+creator: Yangqing QU
+modified: 20221203003916016
+modifier: Yangqing QU
+tags: ?
+title: 压缩存储
+type: text/vnd.tiddlywiki
+
+https://bbs.huaweicloud.com/blogs/358102
+
+压缩存储即不存储零值和相同元素

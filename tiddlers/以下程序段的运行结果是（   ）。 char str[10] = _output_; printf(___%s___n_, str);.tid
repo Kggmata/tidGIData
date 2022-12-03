@@ -1,0 +1,11 @@
+created: 20221203003824493
+creator: Yangqing QU
+modified: 20221203003906419
+modifier: Yangqing QU
+tags: ?
+title: 以下程序段的运行结果是（   ）。 char str[10] = "output"; printf("\"%s\"\n", str);
+type: text/vnd.tiddlywiki
+
+\是转义字符
+
+结果为"output"
