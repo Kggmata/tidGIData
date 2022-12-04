@@ -1,0 +1,15 @@
+created: 20221204065625946
+creator: Yangqing QU
+modified: 20221204070333154
+modifier: Yangqing QU
+tags: ? physics
+title: 比热容和导热系数
+type: text/vnd.tiddlywiki
+
+Specific heat capacity即单位物体温度改变吸收或者释放的热能
+[img[Snipaste_2022-12-04_14-59-33.png]]
+
+导热系数
+Thermal conductivity即材料传递热量的固有能力
+[img[Snipaste_2022-12-04_15-01-02.png]]
+通常情况下, 为1m厚的材料, 两侧表面温差为1摄氏度, 一秒内, 一平方米传递的热量
