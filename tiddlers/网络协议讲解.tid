@@ -1,17 +1,17 @@
 created: 20220602023316477
 creator: Yangqing QU
-difficulty: 1.0925086686397398
-due: 20220828061243411
-grade: 1
-history: [{"due":"20220607061659626","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606061659626"},{"due":"20220610011244323","interval":3,"difficulty":1.7275041739949726,"stability":0.07683095218398285,"retrievability":0.05273732312238567,"grade":0,"lapses":1,"reps":1,"review":"20220609011244323"},{"due":"20220625120840912","interval":3,"difficulty":1,"stability":12.970977028956497,"retrievability":0.016342485160406536,"grade":1,"lapses":1,"reps":2,"review":"20220612120840912"}]
-interval: 14
-lapses: 1
-modified: 20221204034448610
+difficulty: 2.0554534426185955
+due: 20221205051620450
+grade: 0
+history: [{"due":"20220607061659626","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220606061659626"},{"due":"20220610011244323","interval":3,"difficulty":1.7275041739949726,"stability":0.07683095218398285,"retrievability":0.05273732312238567,"grade":0,"lapses":1,"reps":1,"review":"20220609011244323"},{"due":"20220625120840912","interval":3,"difficulty":1,"stability":12.970977028956497,"retrievability":0.016342485160406536,"grade":1,"lapses":1,"reps":2,"review":"20220612120840912"},{"due":"20220828061243411","interval":14,"difficulty":1.0925086686397398,"stability":62.69381746337607,"retrievability":0.8925086686397399,"grade":1,"lapses":1,"reps":3,"review":"20220626061243411"}]
+interval: 161
+lapses: 2
+modified: 20221204051620450
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.8925086686397399
-review: 20220626061243411
-stability: 62.69381746337607
+reps: 1
+retrievability: 0.7629447739788555
+review: 20221204051620450
+stability: 1.097623272188053
 tags: hbase ?
 title: 网络协议讲解
 type: text/vnd.tiddlywiki

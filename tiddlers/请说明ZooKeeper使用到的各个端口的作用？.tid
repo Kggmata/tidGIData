@@ -1,15 +1,17 @@
 created: 20220524073505790
-difficulty: 1.5108431385621046
-due: 20220828131910711
-grade: 1
-history: [{"due":"20220529141705757","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141705757"},{"due":"20220603004558416","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602004558416"},{"due":"20220607120649171","interval":4,"difficulty":3.487837552679764,"stability":0.058954374971038004,"retrievability":0.012442954570255769,"grade":0,"lapses":2,"reps":1,"review":"20220606120649171"},{"due":"20220616010649974","interval":3,"difficulty":1.6925315985818996,"stability":7.411763538872845,"retrievability":0.004694045902135523,"grade":2,"lapses":2,"reps":2,"review":"20220609010649974"},{"due":"20220723110747933","interval":7,"difficulty":1,"stability":37.008517660729524,"retrievability":0.9052834595561562,"grade":2,"lapses":2,"reps":3,"review":"20220616110747933"},{"due":"20220731033232940","interval":44,"difficulty":2.0822632930200777,"stability":0.04065697748494399,"retrievability":0.8822632930200776,"grade":0,"lapses":3,"reps":1,"review":"20220730033232940"},{"due":"20220812071729532","interval":6,"difficulty":1.2822634697401754,"stability":6.723626933728739,"retrievability":1.7672009785144746e-7,"grade":1,"lapses":3,"reps":2,"review":"20220805071729531"},{"due":"20220818094733332","interval":12,"difficulty":2.3108431377951195,"stability":0.03011942145770373,"retrievability":0.8285796680549439,"grade":0,"lapses":4,"reps":1,"review":"20220817094733332"}]
-interval: 6
-lapses: 4
-modified: 20220823131910711
-reps: 2
-retrievability: 7.669851501271256e-10
-review: 20220823131910711
-stability: 4.7168434774427475
+creator: Yangqing QU
+difficulty: 1.8110298858879228
+due: 20221205051635037
+grade: 0
+history: [{"due":"20220529141705757","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141705757"},{"due":"20220603004558416","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602004558416"},{"due":"20220607120649171","interval":4,"difficulty":3.487837552679764,"stability":0.058954374971038004,"retrievability":0.012442954570255769,"grade":0,"lapses":2,"reps":1,"review":"20220606120649171"},{"due":"20220616010649974","interval":3,"difficulty":1.6925315985818996,"stability":7.411763538872845,"retrievability":0.004694045902135523,"grade":2,"lapses":2,"reps":2,"review":"20220609010649974"},{"due":"20220723110747933","interval":7,"difficulty":1,"stability":37.008517660729524,"retrievability":0.9052834595561562,"grade":2,"lapses":2,"reps":3,"review":"20220616110747933"},{"due":"20220731033232940","interval":44,"difficulty":2.0822632930200777,"stability":0.04065697748494399,"retrievability":0.8822632930200776,"grade":0,"lapses":3,"reps":1,"review":"20220730033232940"},{"due":"20220812071729532","interval":6,"difficulty":1.2822634697401754,"stability":6.723626933728739,"retrievability":1.7672009785144746e-7,"grade":1,"lapses":3,"reps":2,"review":"20220805071729531"},{"due":"20220818094733332","interval":12,"difficulty":2.3108431377951195,"stability":0.03011942145770373,"retrievability":0.8285796680549439,"grade":0,"lapses":4,"reps":1,"review":"20220817094733332"},{"due":"20220828131910711","interval":6,"difficulty":1.5108431385621046,"stability":4.7168434774427475,"retrievability":7.669851501271256e-10,"grade":1,"lapses":4,"reps":2,"review":"20220823131910711"}]
+interval: 103
+lapses: 5
+modified: 20221204051635037
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.10018674732581812
+review: 20221204051635037
+stability: 0.44626032029685964
 tags: zookeeper ?
 title: 请说明ZooKeeper使用到的各个端口的作用？
 type: text/vnd.tiddlywiki
