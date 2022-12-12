@@ -1,0 +1,9 @@
+created: 20221212015157993
+creator: Yangqing QU
+modified: 20221212015412474
+modifier: Yangqing QU
+tags: ? js(javaScript) nodeJs npm(nodePackageManager)
+title: node.js和npm
+type: text/vnd.tiddlywiki
+
+Node.js是一个开源的、跨平台的JavaScript运行环境。它使用事件驱动、非阻塞I/O模型，使其轻量又高效。Node.js的目标是通过提供一个简单的JavaScript编程接口，来帮助开发人员构建高性能、可伸缩的网络应用程序。 Node.js本身是用C++编写的，但它的核心API是用JavaScript编写的，并且可以通过JavaScript编写的扩展模块来扩展Node.js的功能。
