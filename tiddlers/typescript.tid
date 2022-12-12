@@ -1,0 +1,9 @@
+created: 20221208152519448
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript) ts(typeScript)
+title: typescript
+type: text/vnd.tiddlywiki
+
+TypeScript 是一种由微软开发的开源编程语言。它是 JavaScript 的一个超集，并添加了静态类型和类等功能。TypeScript 编译器可以将 TypeScript 代码转换成纯 JavaScript 代码，这样就可以在没有 TypeScript 的环境中运行这些代码。因为 TypeScript 是 JavaScript 的超集，所以 JavaScript 代码也可以在 TypeScript 中运行。使用 TypeScript 开发应用可以让你更清晰地组织和管理你的代码，并且可以在编写代码时捕获更多错误。

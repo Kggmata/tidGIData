@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630104245624","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629104245624"},{"due":"20220704080249456","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014782011698955301,"grade":0,"lapses":1,"reps":1,"review":"20220703080249456"},{"due":"20220720020637012","interval":4,"difficulty":1,"stability":12.858890454366344,"retrievability":0.0033837533675606132,"grade":1,"lapses":1,"reps":2,"review":"20220707020637012"},{"due":"20220727102901772","interval":19,"difficulty":2.055834495214906,"stability":0.05488119468553914,"retrievability":0.8558344952149057,"grade":0,"lapses":2,"reps":1,"review":"20220726102901772"},{"due":"20220804030845040","interval":8,"difficulty":2.2558347089899833,"stability":0.04065697172950195,"retrievability":2.137750772920513e-7,"grade":0,"lapses":3,"reps":1,"review":"20220803030845040"},{"due":"20220814110010594","interval":5,"difficulty":1.45583706804185,"stability":6.155328157421887,"retrievability":0.000002359051866785058,"grade":1,"lapses":3,"reps":2,"review":"20220808110010594"}]
 interval: 12
 lapses: 3
-modified: 20220820020520044
+modified: 20221210005806791
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8143186406827743
 review: 20220820020520044
 stability: 46.15994361003586
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 机器学习的优点和缺点都有哪些？
 type: text/vnd.tiddlywiki
 

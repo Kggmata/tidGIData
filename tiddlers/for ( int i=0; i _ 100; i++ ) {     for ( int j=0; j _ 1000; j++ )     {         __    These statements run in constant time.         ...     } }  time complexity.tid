@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221113090146885
+modified: 20221210005645772
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113090146885
 stability: 2
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: for ( int i=0; i < 100; i++ ) {     for ( int j=0; j < 1000; j++ )     {         //    These statements run in constant time.         ...     } }  time complexity
 type: text/vnd.tiddlywiki
 

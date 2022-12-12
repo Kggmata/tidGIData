@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220707034500128","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706034500128"},{"due":"20220726060053138","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":2,"lapses":0,"reps":2,"review":"20220710060053137"}]
 interval: 23
 lapses: 0
-modified: 20220802121933733
+modified: 20221210005806782
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.859946790337357
 review: 20220802121933733
 stability: 99.20238880625153
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 为什么dataframe的show会降低性能
 type: text/vnd.tiddlywiki
 

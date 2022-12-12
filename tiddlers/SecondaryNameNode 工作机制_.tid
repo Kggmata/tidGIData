@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220523084055471","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521084055471"},{"due":"20220529003358526","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523003358526"},{"due":"20220624134127715","interval":10,"difficulty":4.126014725196352,"stability":22.07656732651434,"retrievability":0.826014725196352,"grade":2,"lapses":0,"reps":3,"review":"20220602134127715"},{"due":"20220821135851818","interval":23,"difficulty":3.2220570745727954,"stability":56.52974986544732,"retrievability":0.8960423493764428,"grade":2,"lapses":0,"reps":4,"review":"20220625135851818"}]
 interval: 71
 lapses: 0
-modified: 20220904144301689
+modified: 20221210010743382
+modifier: Yangqing QU
 reps: 5
 retrievability: 0.8760516207181079
 review: 20220904144301688
 stability: 168.0740484852633
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: SecondaryNameNode 工作机制?
 type: text/vnd.tiddlywiki
 

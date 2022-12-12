@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220617115542121","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616115542121"},{"due":"20220701020456887","interval":2,"difficulty":1,"stability":13.492063749360467,"retrievability":0.12217091235547979,"grade":1,"lapses":0,"reps":2,"review":"20220618020456887"}]
 interval: 17
 lapses: 0
-modified: 20220705060417940
+modified: 20221210012122805
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8756802665476839
 review: 20220705060417939
 stability: 74.00540219505169
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 用户画像Hive 还是 Spark?
 type: text/vnd.tiddlywiki
 

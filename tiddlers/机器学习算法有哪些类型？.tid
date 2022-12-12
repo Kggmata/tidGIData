@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220626020448466","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625020448466"},{"due":"20220628145652089","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220627145652088"},{"due":"20220711143814664","interval":2,"difficulty":1,"stability":11.778612134693832,"retrievability":0.05817303643692872,"grade":1,"lapses":1,"reps":2,"review":"20220629143814663"}]
 interval: 13
 lapses: 1
-modified: 20220712010256154
+modified: 20221210005806791
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8902206584065046
 review: 20220712010256154
 stability: 61.85160007980028
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 机器学习算法有哪些类型？
 type: text/vnd.tiddlywiki
 

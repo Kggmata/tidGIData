@@ -1,0 +1,28 @@
+created: 20221208095310016
+creator: Yangqing QU
+modified: 20221210033338516
+modifier: Yangqing QU
+tags: ? react js(javaScript)
+title: Hook
+type: text/vnd.tiddlywiki
+
+钩子是一种在React中的新特性，它允许你在不写类的情况下使用state和其它React功能。它们在React 16.8中被引入，并且此后被广泛使用。钩子可以使得组件中的逻辑得到组织，使它们易于重用、测试和共享。
+
+举个例子，假设我们有一个简单的计算器应用程序，它只支持加法运算。我们可以使用hook来扩展它的功能，让它支持减法运算。我们可以在应用程序的某个地方添加一个hook，在用户输入减号时触发，并计算两个数的差。
+
+例如，假设我们在应用程序的运算函数中添加了一个hook：
+
+```
+function calculate(input) {
+  if (input.contains("+")) {
+    // Perform addition
+  } else if (input.contains("-")) {
+    // Perform subtraction
+  }
+}
+```
+在这个例子中，我们在calculate函数中添加了一个hook，当用户输入一个减号时，它会执行减法运算。这样，我们就可以通过添加hook来扩展应用程序的功能，让它支持更多的运算类型。
+
+hook通常被用来在特定的事件触发时执行某些操作。例如，当用户点击了一个按钮，或者当程序检测到某个文件被修改时，hook就可以被用来触发相应的操作。
+
+不过，也有一些情况下，hook并不一定要跟事件触发相关。它可以在任何特定的点上被触发，比如在一个函数的特定位置，或者在程序执行到某个特定步骤时。总之，hook可以被用来在程序的执行过程中的各个地方插入额外的操作，以改变或扩展程序的默认行为。

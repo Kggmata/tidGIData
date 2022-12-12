@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220625121727555","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121727554"},{"due":"20220713135207236","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626061903223"},{"due":"20220721090809211","interval":24,"difficulty":2.0289696920145737,"stability":0.07408198986175796,"retrievability":0.8289696920145737,"grade":0,"lapses":1,"reps":1,"review":"20220720090809211"},{"due":"20220811144240098","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":2,"lapses":1,"reps":2,"review":"20220729144240098"}]
 interval: 17
 lapses: 1
-modified: 20220815060109076
+modified: 20221210005806793
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8706168098837029
 review: 20220815060109076
 stability: 74.14705774544377
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 用户画像gender_tag
 type: text/vnd.tiddlywiki
 

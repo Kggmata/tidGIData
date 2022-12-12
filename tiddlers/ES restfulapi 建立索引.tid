@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620004232486","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619004232486"},{"due":"20220704025132260","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621025132260"},{"due":"20220708131328787","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707131328787"},{"due":"20220721085730990","interval":3,"difficulty":1.2965041360164287,"stability":10.55493417531687,"retrievability":0.014028907268038276,"grade":1,"lapses":1,"reps":2,"review":"20220710085730990"}]
 interval: 19
 lapses: 1
-modified: 20220729144835565
+modified: 20221210005806767
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8272402709035958
 review: 20220729144835565
 stability: 71.81106134369482
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES restfulapi 建立索引
 type: text/vnd.tiddlywiki
 

@@ -1,0 +1,23 @@
+created: 20221210002357675
+creator: Yangqing QU
+modified: 20221210011244417
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: ES6
+type: text/vnd.tiddlywiki
+
+[[ECMA]]Script 6（又称 ES6）是 JavaScript 语言的下一代标准，也是下一代 ECMAScript 标准的正式称呼。ECMAScript 是一种由 ECMA International 制定的计算机语言标准，JavaScript 和 JScript 都是这种标准的一种实现。ECMAScript 6 是从 2009 年开始制定的，并于 2015 年 6 月正式发布。ES6 在语言的基础上增加了很多新的特性，主要包括：
+
+```
+类和模块
+箭头函数
+解构赋值
+模板字符串
+参数默认值
+扩展运算符
+解构
+Symbol 类型
+Promises 对象
+等等
+```
+ES6 是 JavaScript 语言发展的一个重要里程碑，它让 JavaScript 语言变得更强大、更具有表现力，同时也更容易学习和使用。但是，由于各浏览器对 ES6 的支持并不完全一致，因此在实际项目中使用 ES6 需要注意一些问题，比如需要使用一些工具来转换 ES6 代码为 ES5 代码，以便在所有浏览器中运行。

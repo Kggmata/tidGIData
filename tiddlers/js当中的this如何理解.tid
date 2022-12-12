@@ -1,0 +1,9 @@
+created: 20221208110905962
+creator: Yangqing QU
+modified: 20221210011244417
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: js当中的this如何理解
+type: text/vnd.tiddlywiki
+
+在 JavaScript 中，this 是一个特殊的关键字，它代表函数正在执行的上下文对象。这个对象可能是一个 DOM 元素，一个 JavaScript 对象，或者是全局作用域。

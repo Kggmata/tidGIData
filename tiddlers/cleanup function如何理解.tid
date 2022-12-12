@@ -1,0 +1,11 @@
+created: 20221208095512598
+creator: Yangqing QU
+modified: 20221210033535872
+modifier: Yangqing QU
+tags: ? react
+title: cleanup function如何理解
+type: text/vnd.tiddlywiki
+
+清理函数是指在一个程序执行完某个操作后执行的函数，它的作用是用来清理工作环境或释放资源。
+
+总之，清理函数是一种用来在程序执行完某个操作后清理工作环境或释放资源的函数，它可以帮助我们维护程序的正确性和性能。

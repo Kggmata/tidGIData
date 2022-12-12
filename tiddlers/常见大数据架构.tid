@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220617120402085","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616120402085"},{"due":"20220626005650533","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":1,"lapses":0,"reps":2,"review":"20220617005650532"},{"due":"20220628024833894","interval":10,"difficulty":2.087536890874819,"stability":0.07408450676555052,"retrievability":0.8875368908748189,"grade":0,"lapses":1,"reps":1,"review":"20220627024833893"},{"due":"20220711142648605","interval":2,"difficulty":1,"stability":11.778612134693832,"retrievability":0.05817303643692872,"grade":2,"lapses":1,"reps":2,"review":"20220629142648605"},{"due":"20220712091732789","interval":12,"difficulty":2.0982194665518623,"stability":0.05488141221849455,"retrievability":0.8982194665518624,"grade":0,"lapses":2,"reps":1,"review":"20220711091732788"},{"due":"20220725012149622","interval":4,"difficulty":1,"stability":10.158295607157797,"retrievability":0.0004623722433273712,"grade":2,"lapses":2,"reps":2,"review":"20220715012149622"},{"due":"20220803091749997","interval":18,"difficulty":2.0296978756316317,"stability":0.04065697748494399,"retrievability":0.8296978756316318,"grade":0,"lapses":3,"reps":1,"review":"20220802091749997"},{"due":"20220814004833713","interval":5,"difficulty":1.2297002346878256,"stability":6.922307586907834,"retrievability":0.0000023590561938593084,"grade":1,"lapses":3,"reps":2,"review":"20220807004833713"}]
 interval: 13
 lapses: 3
-modified: 20220820020025889
+modified: 20221210012122804
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8204800993526272
 review: 20220820020025888
 stability: 54.362776013328954
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 常见大数据架构
 type: text/vnd.tiddlywiki
 

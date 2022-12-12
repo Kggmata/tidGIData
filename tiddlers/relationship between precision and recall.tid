@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221113144106959
+modified: 20221210005532893
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113144106959
 stability: 2
-tags: 7203 ?
+tags: 7203DataMining数据挖掘 ?
 title: relationship between precision and recall
 type: text/vnd.tiddlywiki
 

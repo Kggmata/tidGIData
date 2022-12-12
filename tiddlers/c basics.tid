@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20221103134158815","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221101134158815"}]
 interval: 8
 lapses: 0
-modified: 20221109080328372
+modified: 20221210011811340
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.6561
 review: 20221109080328371
 stability: 18.669346285737497
-tags: 7231 ?
+tags: 7231ComputerSystem计算机系统 ?
 title: c basics
 type: text/vnd.tiddlywiki
 

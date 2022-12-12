@@ -1,0 +1,19 @@
+created: 20221206152206638
+creator: Yangqing QU
+modified: 20221210010410092
+modifier: Yangqing QU
+tags: ? internet网络
+title: HTTP
+type: text/vnd.tiddlywiki
+
+hypertext transfer protocol
+
+ 协议简单来说就是在计算机之间的一种规范
+ 
+ 超文本代表超越文本的概念, 可以传输图片, 视频, 超链接等等
+ 
+ [[http状态码]]
+ 
+[[get和post区别]]
+
+[[http缓存方式]]

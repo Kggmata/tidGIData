@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220712072239888","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072239888"},{"due":"20220720151537426","interval":8,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220719151537426"},{"due":"20220808124438668","interval":7,"difficulty":1,"stability":12.926473287254842,"retrievability":0.00004746669245620781,"grade":1,"lapses":1,"reps":2,"review":"20220726124438668"}]
 interval: 17
 lapses: 1
-modified: 20220812045940900
+modified: 20221210005806775
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8706085461455632
 review: 20220812045940900
 stability: 77.14211098680948
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: presto资源调度
 type: text/vnd.tiddlywiki
 

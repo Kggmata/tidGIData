@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220803110509135","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110509135"},{"due":"20220824090257745","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220808090257745"}]
 interval: 103
 lapses: 1
-modified: 20221121023350168
+modified: 20221210011446007
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.5158270579024493
 review: 20221119123429863
 stability: 1.4816364413634358
-tags: ? IQ
+tags: ? [[IQ(intelligent quotient)]]
 title: 25匹马，5个赛道，最少需要比赛几次才能知道前3名
 type: text/vnd.tiddlywiki
 

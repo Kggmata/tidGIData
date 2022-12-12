@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220620134817850","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619134817850"},{"due":"20220704022338708","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621022338708"}]
 interval: 16
 lapses: 0
-modified: 20220707131245444
+modified: 20221210005806766
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8824752287483904
 review: 20220707131245443
 stability: 73.44779868247726
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Elastic Stack生态
 type: text/vnd.tiddlywiki
 

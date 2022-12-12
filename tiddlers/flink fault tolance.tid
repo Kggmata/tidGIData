@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220802091323248","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801091323248"},{"due":"20220808010806702","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807010806701"},{"due":"20220825080914300","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812080914300"}]
 interval: 105
 lapses: 2
-modified: 20221125151854375
+modified: 20221210005221285
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.4244895905722773
 review: 20221125151854375
 stability: 1.097623272188053
-tags: flink concept ?
+tags: flink concept概念 ?
 title: flink fault tolance
 type: text/vnd.tiddlywiki
 

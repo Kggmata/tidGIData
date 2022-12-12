@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621003141883","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003141883"},{"due":"20220705023515592","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622023515592"}]
 interval: 17
 lapses: 0
-modified: 20220709081241144
+modified: 20221210005806784
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8756064079789342
 review: 20220709081241143
 stability: 74.00721729876608
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 使用ES-Hadoop方法数据接入hive
 type: text/vnd.tiddlywiki
 

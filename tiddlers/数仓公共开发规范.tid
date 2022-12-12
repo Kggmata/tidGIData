@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220720074933799","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719074933797"},{"due":"20220729103701628","interval":9,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220728103701628"},{"due":"20220806065515686","interval":8,"difficulty":1.2000114475003718,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220805065515685"},{"due":"20220810080346419","interval":4,"difficulty":1.4004738041624458,"stability":0.04065696669349018,"retrievability":0.00046235666207404937,"grade":0,"lapses":3,"reps":1,"review":"20220809080346419"},{"due":"20220816054422242","interval":6,"difficulty":1.6004739808818143,"stability":0.03011942145770373,"retrievability":1.7671936852144708e-7,"grade":0,"lapses":4,"reps":1,"review":"20220815054422242"},{"due":"20220824121033857","interval":8,"difficulty":1.8004739808825163,"stability":0.02231301621225883,"retrievability":7.020735429696087e-13,"grade":0,"lapses":5,"reps":1,"review":"20220823121033857"}]
 interval: 94
 lapses: 6
-modified: 20221125110037746
+modified: 20221210010210122
 modifier: Yangqing QU
 reps: 1
 retrievability: 1.7116189794428334e-193
 review: 20221125110037746
 stability: 0.3305977764431731
-tags: datawarehouse specification ?
+tags: datawarehouse数仓 specification ?
 title: 数仓公共开发规范
 type: text/vnd.tiddlywiki
 

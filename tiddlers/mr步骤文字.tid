@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220529145954590","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528145954590"},{"due":"20220624133542988","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602133542988"}]
 interval: 23
 lapses: 0
-modified: 20220625125950930
+modified: 20221210011916632
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.897843755714891
 review: 20220625125950930
 stability: 100.35422359618087
-tags: mapreduce ?
+tags: mapReduce ?
 title: mr步骤文字
 type: text/vnd.tiddlywiki
 

@@ -1,0 +1,9 @@
+created: 20221208095714577
+creator: Yangqing QU
+modified: 20221208095730439
+modifier: Yangqing QU
+tags: ? react
+title: 如何理解react的state
+type: text/vnd.tiddlywiki
+
+React 的 state 是一个 JavaScript 对象，它用于存储组件内部可变的数据。当组件的 state 发生改变时，组件会重新渲染以展示新的数据。通常情况下，您应该使用 props 来传递数据给子组件，而将 state 用于存储用户输入、服务器响应等内部数据。通过将数据存储在 state 中，您可以确保组件内部的数据在更改时能够触发组件的重新渲染。

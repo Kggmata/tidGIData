@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220620143214964","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619143214964"},{"due":"20220624132429011","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621034807790"},{"due":"20220708114736108","interval":4,"difficulty":1,"stability":12.861584262967543,"retrievability":0.003388987826626389,"grade":1,"lapses":1,"reps":2,"review":"20220625114736108"},{"due":"20220711090049116","interval":15,"difficulty":2.0843714129009734,"stability":0.05488141221849455,"retrievability":0.8843714129009733,"grade":0,"lapses":2,"reps":1,"review":"20220710090049115"},{"due":"20220714005044948","interval":3,"difficulty":2.2875245569839384,"stability":0.04065715014820503,"retrievability":0.0031531440829650446,"grade":0,"lapses":3,"reps":1,"review":"20220713005044948"},{"due":"20220727050812691","interval":8,"difficulty":1.4875245579757277,"stability":6.063898877611692,"retrievability":9.917894733222074e-10,"grade":1,"lapses":3,"reps":2,"review":"20220721050812691"},{"due":"20220804033114752","interval":13,"difficulty":2.485341914282913,"stability":0.03011942545495654,"retrievability":0.7978173563071852,"grade":0,"lapses":4,"reps":1,"review":"20220803033114752"},{"due":"20220812110809709","interval":5,"difficulty":1.6853419396336233,"stability":4.371634936537424,"retrievability":2.535071061321876e-8,"grade":1,"lapses":4,"reps":2,"review":"20220808110809709"}]
 interval: 9
 lapses: 4
-modified: 20220817104147411
+modified: 20221210005806768
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8050036487570817
 review: 20220817104147411
 stability: 46.4175304871248
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES写入memory buffer和translog的先后顺序
 type: text/vnd.tiddlywiki
 

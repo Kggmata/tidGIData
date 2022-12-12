@@ -1,0 +1,11 @@
+created: 20221206021748873
+creator: Yangqing QU
+modified: 20221210012422676
+modifier: Yangqing QU
+tags: ? programming编程
+title: 方法重写和重载的区别
+type: text/vnd.tiddlywiki
+
+重写就是子类对于父类的方法不满意, 自己重新实现, 需要注意函数名, 参数类型个数,返回值都需要相同才叫重写
+
+重载是一个类定义了多个相同函数名, 但是参数返回值不同, 用来处理不同的数据的多态手段

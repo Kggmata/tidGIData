@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630084400768","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629084400768"},{"due":"20220720142941490","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":2,"lapses":0,"reps":2,"review":"20220704142941489"}]
 interval: 22
 lapses: 0
-modified: 20220726114806135
+modified: 20221210005806773
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8674977020971539
 review: 20220726114806134
 stability: 92.07922912361714
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: KMeans算法原理
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220524053606648","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522053606648"},{"due":"20220602112521959","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112521959"},{"due":"20220707115200879","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606115200878"},{"due":"20220711055217424","interval":34,"difficulty":4.200038941363643,"stability":0.07408215765534414,"retrievability":0.8895462481526426,"grade":0,"lapses":1,"reps":1,"review":"20220710055217424"},{"due":"20220717013409014","interval":2,"difficulty":3.4582067312676,"stability":4.984867408291752,"retrievability":0.058167789903956296,"grade":1,"lapses":1,"reps":2,"review":"20220712013409013"},{"due":"20220812142412182","interval":9,"difficulty":3.484980112546469,"stability":22.104999232313464,"retrievability":0.8267733812788687,"grade":1,"lapses":1,"reps":3,"review":"20220721142412182"},{"due":"20220818095010856","interval":27,"difficulty":4.564224948715508,"stability":0.05488116409496729,"retrievability":0.879244836169039,"grade":0,"lapses":2,"reps":1,"review":"20220817095010856"},{"due":"20220824132052583","interval":6,"difficulty":4.764234890515361,"stability":0.040656966333775045,"retrievability":0.00000994179985232475,"grade":0,"lapses":3,"reps":1,"review":"20220823132052583"}]
 interval: 49
 lapses: 4
-modified: 20221011134803775
+modified: 20221210010224007
+modifier: Yangqing QU
 reps: 1
 retrievability: 7.125577672039996e-56
 review: 20221011134803774
 stability: 0.03011942145770373
-tags: 项目 ?
+tags: project项目 ?
 title: 使用的版本
 type: text/vnd.tiddlywiki
 

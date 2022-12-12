@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220625123248092","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624123248092"},{"due":"20220712002255756","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":2,"lapses":0,"reps":2,"review":"20220627002255756"}]
 interval: 23
 lapses: 0
-modified: 20220720003042151
+modified: 20221210005806779
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8541153584120541
 review: 20220720003042151
 stability: 99.2184412429942
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Spark的DSL相关操作详解
 type: text/vnd.tiddlywiki
 

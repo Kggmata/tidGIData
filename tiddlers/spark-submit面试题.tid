@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220619022021249","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618022021249"},{"due":"20220703140918391","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620140918391"}]
 interval: 17
 lapses: 0
-modified: 20220707002059174
+modified: 20221210005806778
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8756310680305948
 review: 20220707002059173
 stability: 74.00661040542201
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: spark-submit面试题
 type: text/vnd.tiddlywiki
 

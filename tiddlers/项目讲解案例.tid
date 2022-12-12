@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220617053357038","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616053357037"},{"due":"20220626062248160","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":1,"lapses":0,"reps":2,"review":"20220617062248159"},{"due":"20220629061127699","interval":11,"difficulty":2.077011029366089,"stability":0.07408450676555052,"retrievability":0.8770110293660888,"grade":0,"lapses":1,"reps":1,"review":"20220628061127699"}]
 interval: 3
 lapses: 1
-modified: 20220721024000735
+modified: 20221210012122806
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.014030805349029462
 review: 20220701141903676
 stability: 12.644453482888508
-tags: 用户画像web界面
+tags: userProfile用户画像web
 title: 项目讲解案例
 type: text/vnd.tiddlywiki
 

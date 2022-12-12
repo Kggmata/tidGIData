@@ -1,0 +1,9 @@
+created: 20221212014046905
+creator: Yangqing QU
+modified: 20221212014128086
+modifier: Yangqing QU
+tags: ? programming编程
+title: manifest
+type: text/vnd.tiddlywiki
+
+Manifest是一种用于记录文件的方式。通常，它包含一个列表，每个项目都描述了一个文件的名称、大小、位置等信息。这对于组织文件和确定文件集合中的内容非常有用。在计算机领域中，manifest通常用于软件安装程序或Web应用程序，用于描述安装程序或应用程序所需的文件。

@@ -1,0 +1,11 @@
+created: 20221209114737981
+creator: Yangqing QU
+modified: 20221210010329596
+modifier: Yangqing QU
+tags: ? deepLearning深度学习
+title: GAN
+type: text/vnd.tiddlywiki
+
+Generative adversarial networks
+
+生成式对抗网络（GAN）是一种用于生成新图像的人工神经网络。它由两个网络构成：生成器和鉴别器。生成器的作用是从随机噪声中生成新的图像，而鉴别器的作用是区分真实图像和生成器生成的图像。通过不断调整两个网络的参数，GAN可以逐渐改进生成器的输出，使其看起来更像真实图像。

@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221114064829080
+modified: 20221210005645774
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221114064829080
 stability: 2
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: The execution time of an algorithm will depend on the computer system it is executed on.
 type: text/vnd.tiddlywiki
 

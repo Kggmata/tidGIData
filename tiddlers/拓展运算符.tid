@@ -1,0 +1,30 @@
+created: 20221208122410373
+creator: Yangqing QU
+modified: 20221210011244419
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: 拓展运算符
+type: text/vnd.tiddlywiki
+
+在 JavaScript 中，拓展运算符（又称展开运算符）是用来将一个数组展开成一系列单独的值的运算符。拓展运算符使用三个点（...）表示。例如，如果要将一个数组赋值给多个变量，可以使用拓展运算符，而不必写出数组的每个元素，如下所示：
+
+```
+let arr = [1, 2, 3];
+let [a, b, c] = arr;
+
+console.log(a);  // 1
+console.log(b);  // 2
+console.log(c);  // 3
+```
+另一个常见的用途是将函数的参数展开成一个数组。例如：
+
+```
+function foo(a, b, c) {
+  console.log(a);  // 1
+  console.log(b);  // 2
+  console.log(c);  // 3
+}
+```
+
+foo(...arr);
+总之，拓展运算符在 JavaScript 中是一种很方便的工具，可以让你更容易地处理数组和函数参数。

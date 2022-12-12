@@ -1,0 +1,19 @@
+created: 20221208123501059
+creator: Yangqing QU
+modified: 20221210011244417
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: map和object的区别
+type: text/vnd.tiddlywiki
+
+map和Object都是用来存储键值对的数据结构。但是，map和Object有一些重要的区别。
+
+首先，map是一种内置的[[ES6]]数据类型，而Object是JavaScript中的一个基础对象。因此，map可以说是Object的一个扩展。
+
+其次，map可以存储任何类型的键值对，而Object只能存储字符串类型的键。这意味着，如果要存储非字符串类型的键，则需要使用map。
+
+此外，map的键值对是有序的，这意味着map中的键值对会按照它们插入时的顺序排列。这一点与Object不同，因为Object中的键值对没有任何固定的顺序。
+
+最后，map提供了一些有用的方法，例如map.get()和map.set()，可以方便地获取和设置键值对。 Object没有提供这样的方法，因此在Object中获取或设置键值对需要使用更加复杂的语法。
+
+总之，map提供了更强大和更灵活的键值对存储功能，因此当需要存储非字符串类型的键或者需要一个有序的键值对存储结构时，应该使用map。

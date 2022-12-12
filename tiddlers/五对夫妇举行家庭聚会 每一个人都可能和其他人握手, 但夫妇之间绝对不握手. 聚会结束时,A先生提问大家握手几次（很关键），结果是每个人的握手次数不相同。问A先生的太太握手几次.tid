@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220803110838409","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220802110838409"},{"due":"20220824110340626","interval":6,"difficulty":1,"stability":16.39335325161452,"retrievability":0.0017970135161932011,"grade":2,"lapses":0,"reps":2,"review":"20220808110340626"}]
 interval: 108
 lapses: 1
-modified: 20221124150511301
+modified: 20221210011446008
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.49951439562042865
 review: 20221124150511301
 stability: 1.4816364413634358
-tags: IQ ?
+tags: [[IQ(intelligent quotient)]] ?
 title: 五对夫妇举行家庭聚会 每一个人都可能和其他人握手, 但夫妇之间绝对不握手. 聚会结束时,A先生提问大家握手几次（很关键），结果是每个人的握手次数不相同。问A先生的太太握手几次
 type: text/vnd.tiddlywiki
 

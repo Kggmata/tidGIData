@@ -1,0 +1,32 @@
+created: 20221208111912114
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: var和let区别
+type: text/vnd.tiddlywiki
+
+JavaScript 是一种动态类型语言，它允许你在程序运行时声明并初始化变量。在 JavaScript 中，你可以使用 var 关键字来声明一个变量。
+
+Copy code
+var x = 5;
+从语法上看，var 声明的变量可以在声明之后的任何地方被访问和修改。例如，你可以在声明之后重新赋值：
+
+Copy code
+var x = 5;
+x = 10;
+此外，var 声明的变量可以在声明前被访问和使用。这个行为被称为“提升”，即在执行代码时，变量声明会被自动提升到代码的顶部。
+
+```
+console.log(x);  // 输出 undefined
+```
+
+var x = 5;
+在 ECMAScript 2015 标准中，引入了一种新的变量声明方式：let 关键字。let 声明的变量只能在声明的代码块中访问和修改，且不会被提升。例如：
+
+```
+console.log(x);  // 抛出 ReferenceError
+let x = 5;
+```
+
+在上面的例子中，由于 let 声明的变量不会被提升，所以在声明前访问它会抛出一个 ReferenceError 错误。

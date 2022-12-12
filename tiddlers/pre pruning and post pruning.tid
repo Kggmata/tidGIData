@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221114132915717
+modified: 20221210005532892
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221114132915716
 stability: 2
-tags: 7203 ?
+tags: 7203DataMining数据挖掘 ?
 title: pre pruning and post pruning
 type: text/vnd.tiddlywiki
 

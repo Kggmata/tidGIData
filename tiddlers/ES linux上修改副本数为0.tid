@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621050004627","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620050004627"},{"due":"20220705103754010","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622103754009"},{"due":"20220712033315295","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709130815028"},{"due":"20220718063007651","interval":8,"difficulty":2.2756178559955753,"stability":0.05488141221849455,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220717063007651"},{"due":"20220723031839417","interval":5,"difficulty":2.475685657556739,"stability":0.040657012017596195,"retrievability":0.00006780156116384973,"grade":0,"lapses":3,"reps":1,"review":"20220722031839417"},{"due":"20220731035816679","interval":8,"difficulty":2.675685658548459,"stability":0.030119429718692865,"retrievability":9.91719619591007e-10,"grade":0,"lapses":4,"reps":1,"review":"20220730035816679"},{"due":"20220806072734037","interval":6,"difficulty":2.8756856593154487,"stability":0.022313019173496543,"retrievability":7.669895653844982e-10,"grade":0,"lapses":5,"reps":1,"review":"20220805072734037"},{"due":"20220812041700582","interval":4,"difficulty":2.0756856655840026,"stability":2.974060518232981,"retrievability":6.268553660991224e-9,"grade":1,"lapses":5,"reps":2,"review":"20220809041700582"}]
 interval: 8
 lapses: 5
-modified: 20220817104027548
+modified: 20221210005806767
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.753209481258377
 review: 20220817104027547
 stability: 42.346400234420166
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES linux上修改副本数为0
 type: text/vnd.tiddlywiki
 

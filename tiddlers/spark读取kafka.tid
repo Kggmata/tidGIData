@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630132746676","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629132746676"},{"due":"20220721005726493","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":1,"lapses":0,"reps":2,"review":"20220705005726492"},{"due":"20220731020104286","interval":25,"difficulty":2.0515701337094803,"stability":0.07408184304237006,"retrievability":0.8515701337094802,"grade":0,"lapses":1,"reps":1,"review":"20220730020104286"},{"due":"20220816075428689","interval":6,"difficulty":1.2517669368164699,"stability":11.054361894149821,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220805075428688"}]
 interval: 18
 lapses: 1
-modified: 20220823092354991
+modified: 20221210005806780
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8423495003259222
 review: 20220823092354991
 stability: 81.09604357941797
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: spark读取kafka
 type: text/vnd.tiddlywiki
 

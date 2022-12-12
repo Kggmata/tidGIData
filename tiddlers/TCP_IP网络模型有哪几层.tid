@@ -1,0 +1,46 @@
+created: 20221205011515660
+creator: Yangqing QU
+modified: 20221210010410093
+modifier: Yangqing QU
+tags: ? internet网络
+title: TCP/IP网络模型有哪几层
+type: text/vnd.tiddlywiki
+
+首先为什么需要TCP/IP网络模型?
+
+```
+同设备进程之间的通信方式有共享内存sharedMemory, 信号signal, 消息队列mq, 管道pipe
+网络通信是不同设备的进程之间通信需要的, 而就如同语言一样, 不同设备需要一套语言/标准, 也就是网络协议
+```
+```
+TCP/IP网络模型就是其中的一种, 包括Application, Presentation, Session, Transport, Network, Datalink, Physical.
+
+应用层也就是Application&Presentation&Session
+也是用户能够接触到的层, 应用程序都是在应用层实现
+常见的应用层协议HTTP, FTP, Telnet(teletype network protocol), DNS(Domain name system), SMTP(simple mail transfer protocol)
+应用层工作在用户态
+包括传输层以下的层工作在内核态
+```
+```
+传输层是transport layer, TCP, UDP
+TCP可靠性能略差, 流量控制, 超时重传, 拥塞控制等特性
+UDP不可靠性能优秀
+
+应用层的数据包如果超过MSS(maximum segment size), 那么就会分块, 每个分块是TCP segment. 为了更好的控制
+
+```
+```
+network layer网络层, 主要作用是寻址, 最常用的就是IP协议, 会将传输层transport layer的报文作为数据, 加上IP报头, 组成IP报文. IP报文超过MTU(maximum transmission unit)会再次分片(1500字节), 得到一个即将发送的IP报文
+```
+[[IP address]], 网络号标记子网, 主机号,是子网内的哪个主机
+
+```
+接口层Datalink+physical, 在网络层基础上加上mac地址报头, 封装为数据帧发送到网络上
+以太网通过arp(address resolution protocol)来解析地址, 确定目标主机
+```
+[img[Snipaste_2022-12-06_15-32-14.png]]
+[img[Snipaste_2022-12-06_15-32-22.png]]
+
+```
+网络接口层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段（segment），HTTP 的传输单位则是消息或报文（message）。但这些名词并没有什么本质的区分，可以统称为数据包。
+```

@@ -1,0 +1,41 @@
+created: 20221206151432830
+creator: Yangqing QU
+modified: 20221210010410092
+modifier: Yangqing QU
+tags: ? internet网络
+title: linux系统如何收发网络包的
+type: text/vnd.tiddlywiki
+
+https://xiaolincoding.com/network/1_base/how_os_deal_network_package.html
+
+自带的网络模型是OSI(Open system interconnection reference model)APSTNDP
+
+application给应用程序提供统一接口
+
+presentation负责加密或者格式转化
+
+session负责管理维护终止会话
+
+transport负责端到端的传输
+
+network负责数据的路由转发分片
+
+数据链路层datalink, 数据的封帧, mac寻址, 差错检测
+
+物理层physical 传输frame
+
+---
+通用的标准模型是四层
+
+application应用层
+
+network网络层
+
+transport传输层
+
+interface接口层
+[img[Snipaste_2022-12-06_23-20-44.png]]
+
+linux的协议栈就是
+
+应用数据->tcp头+应用数据->Ip头+tcp头+应用数据->帧头+ip+tcp+应用数据

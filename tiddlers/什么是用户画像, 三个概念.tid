@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220617054654346","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616054654345"},{"due":"20220618025121250","interval":1,"difficulty":1.3856845391270254,"stability":0.07416773238429089,"retrievability":0.3495295586291377,"grade":0,"lapses":1,"reps":1,"review":"20220617025121250"},{"due":"20220701020811346","interval":2,"difficulty":1,"stability":11.78564247889958,"retrievability":0.05835900413182145,"grade":2,"lapses":1,"reps":2,"review":"20220619020811345"},{"due":"20220706051635445","interval":16,"difficulty":2.066723080099495,"stability":0.05488141221849455,"retrievability":0.8667230800994952,"grade":0,"lapses":2,"reps":1,"review":"20220705051635445"},{"due":"20220711042328787","interval":5,"difficulty":2.266790881660659,"stability":0.04065715014820503,"retrievability":0.00006780156116384973,"grade":0,"lapses":3,"reps":1,"review":"20220710042328787"},{"due":"20220718012400227","interval":2,"difficulty":1.4724027164055846,"stability":6.053428234351669,"retrievability":0.005611834744925829,"grade":1,"lapses":3,"reps":2,"review":"20220712012400227"}]
 interval: 10
 lapses: 3
-modified: 20220722031124638
+modified: 20221210012122804
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8402540548581464
 review: 20220722031124638
 stability: 49.94006322703107
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 什么是用户画像, 三个概念
 type: text/vnd.tiddlywiki
 

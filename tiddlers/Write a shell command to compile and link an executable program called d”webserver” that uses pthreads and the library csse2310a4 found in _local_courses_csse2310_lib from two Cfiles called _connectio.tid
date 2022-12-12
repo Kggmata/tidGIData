@@ -1,6 +1,7 @@
 created: 20221030010822316
-modified: 20221030013625427
-tags: ? 7231
+modified: 20221210011811342
+modifier: Yangqing QU
+tags: ? 7231ComputerSystem计算机系统
 title: Write a shell command to compile and link an executable program called d”webserver” that uses pthreads and the library csse2310a4 found in /local/courses/csse2310/lib from two Cfiles called "connections.c” and"server.c.AIl input and output files are in the current working directory.
 type: text/vnd.tiddlywiki
 

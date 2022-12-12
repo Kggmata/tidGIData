@@ -1,0 +1,11 @@
+created: 20221210003446309
+creator: Yangqing QU
+modified: 20221210003553723
+modifier: Yangqing QU
+tags: ? reactNative
+title: components
+type: text/vnd.tiddlywiki
+
+React Native 是一种用于构建移动应用的 JavaScript 框架，它是由 Facebook 开发的。React Native 的核心思想是使用 JavaScript 和 React 来构建原生应用程序，而不是使用原生平台的 UI 组件。React Native 中的组件是构成应用界面的基本构建块，它们可以被重用和复合，以构建复杂的用户界面。
+
+React Native 中有两种组件：原生组件和普通组件。原生组件是与平台相关的，它们对应于平台的原生 UI 组件，比如 View 对应于 iOS 中的 UIView，Text 对应于 iOS 中的 UILabel。而普通组件则是通用的，它们在不同的平台上都有相同的表现。普通组件通常用于封装一些通用的功能，比如输入框、按钮等。

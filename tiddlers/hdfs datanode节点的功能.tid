@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524021518683","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021518683"},{"due":"20220605010730998","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526010730998"},{"due":"20220608014540173","interval":12,"difficulty":5.0941541016100915,"stability":0.07683095218398285,"retrievability":0.8841541016100911,"grade":0,"lapses":1,"reps":1,"review":"20220607014540173"},{"due":"20220618063829285","interval":5,"difficulty":3.2952065403650215,"stability":5.810511312430495,"retrievability":0.0010524387549298876,"grade":2,"lapses":1,"reps":2,"review":"20220612063829284"},{"due":"20220712021117108","interval":7,"difficulty":2.376002562453955,"stability":22.748528211030216,"retrievability":0.8807960220889333,"grade":2,"lapses":1,"reps":3,"review":"20220619021117108"},{"due":"20220718083639002","interval":28,"difficulty":3.454376507485668,"stability":0.05488141221849455,"retrievability":0.8783739450317126,"grade":0,"lapses":2,"reps":1,"review":"20220717083639001"},{"due":"20220724090626371","interval":6,"difficulty":3.654386449803276,"stability":0.040657012017596195,"retrievability":0.000009942317607937474,"grade":0,"lapses":3,"reps":1,"review":"20220723090626370"},{"due":"20220807000015510","interval":10,"difficulty":1.8543864498088414,"stability":5.202607594131547,"retrievability":5.565268620860591e-12,"grade":2,"lapses":3,"reps":2,"review":"20220802000015510"}]
 interval: 9
 lapses: 3
-modified: 20220811100528232
+modified: 20221210010743380
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8333818480829814
 review: 20220811100528232
 stability: 45.896884765723044
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: hdfs datanode节点的功能
 type: text/vnd.tiddlywiki
 

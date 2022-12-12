@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20221030063244114","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221028063244114"},{"due":"20221105104436805","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20221030104436804"}]
 interval: 10
 lapses: 0
-modified: 20221109080430749
+modified: 20221210005645771
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8411775168677682
 review: 20221109080430748
 stability: 25.7636430941571
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: Arrays特点, 时间复杂度
 type: text/vnd.tiddlywiki
 

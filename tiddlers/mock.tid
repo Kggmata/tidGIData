@@ -1,0 +1,11 @@
+created: 20221209022558016
+creator: Yangqing QU
+modified: 20221210011130278
+modifier: Yangqing QU
+tags: ? test测试
+title: mock
+type: text/vnd.tiddlywiki
+
+multiple option checking test
+
+mock 是一种用于测试代码的技术。它允许测试程序模拟外部环境和情况，以便在进行测试时可以对代码进行统一、可控的测试。通常，mock 技术会创建一个替代版本的外部依赖，以便测试程序可以控制它并进行测试。这可以帮助测试程序更好地控制测试环境，从而提高测试的准确性和可靠性。

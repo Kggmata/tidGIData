@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220617073042195","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616073042195"},{"due":"20220626133406456","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617133406456"},{"due":"20220629234753920","interval":11,"difficulty":2.077011029366089,"stability":0.07408450676555052,"retrievability":0.8770110293660888,"grade":0,"lapses":1,"reps":1,"review":"20220628234753919"},{"due":"20220717073223334","interval":5,"difficulty":1,"stability":12.911176525841272,"retrievability":0.0008162145508085445,"grade":2,"lapses":1,"reps":2,"review":"20220704073223334"}]
 interval: 17
 lapses: 1
-modified: 20220721143132583
+modified: 20221210012122805
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8704656344709181
 review: 20220721143132583
 stability: 74.15180143221663
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 用户画像瓶颈
 type: text/vnd.tiddlywiki
 

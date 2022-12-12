@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220802033926584","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801033926584"},{"due":"20220808030304637","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807030304637"},{"due":"20220825081754996","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":1,"lapses":1,"reps":2,"review":"20220812081754996"}]
 interval: 106
 lapses: 2
-modified: 20221126053858593
+modified: 20221210011752003
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.421039577746367
 review: 20221126053858593
 stability: 1.097623272188053
-tags: dataType OS ?
+tags: dataType数据类型 os(operationSystem)操作系统 ?
 title: float和double的区别
 type: text/vnd.tiddlywiki
 

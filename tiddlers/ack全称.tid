@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524115116024","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522115116024"},{"due":"20220605010515615","interval":4,"difficulty":4.010000000000001,"stability":10.268730125807526,"retrievability":0.81,"grade":2,"lapses":0,"reps":2,"review":"20220526010515615"},{"due":"20220709014512324","interval":12,"difficulty":3.0941541016100915,"stability":31.809656917503407,"retrievability":0.8841541016100911,"grade":2,"lapses":0,"reps":3,"review":"20220607014512324"}]
 interval: 33
 lapses: 0
-modified: 20220710132813045
+modified: 20221210011006899
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8964585778076517
 review: 20220710132813045
 stability: 92.00936191664432
-tags: 基础概念 ?
+tags: concept概念 ?
 title: ack全称
 type: text/vnd.tiddlywiki
 

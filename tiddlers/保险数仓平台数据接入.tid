@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621003913342","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003913342"},{"due":"20220630145242172","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":1,"lapses":0,"reps":2,"review":"20220621145242172"},{"due":"20220822153814503","interval":11,"difficulty":1.0770024421488429,"stability":51.41655908444445,"retrievability":0.8770024421488429,"grade":1,"lapses":0,"reps":3,"review":"20220702153814502"}]
 interval: 65
 lapses: 0
-modified: 20220905002942496
+modified: 20221210005806785
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8752943091245999
 review: 20220905002942496
 stability: 237.74570990944014
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 保险数仓平台数据接入
 type: text/vnd.tiddlywiki
 

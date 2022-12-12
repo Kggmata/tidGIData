@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620142848901","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619142848901"},{"due":"20220704021014341","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621021014340"},{"due":"20220711075541056","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707063320820"},{"due":"20220713015017995","interval":5,"difficulty":2.28329125927894,"stability":0.05488141221849455,"retrievability":0.0008160305305493356,"grade":0,"lapses":2,"reps":1,"review":"20220712015017994"},{"due":"20220728073953088","interval":8,"difficulty":1.483291473067031,"stability":7.727209626706359,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220720073953088"}]
 interval: 15
 lapses: 2
-modified: 20220804124311178
+modified: 20221210005806789
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8150343461888092
 review: 20220804124311177
 stability: 54.88134764568039
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 文档索引过程详解 整体的索引流程
 type: text/vnd.tiddlywiki
 

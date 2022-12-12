@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220626053252230","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625053252230"},{"due":"20220630001751013","interval":4,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629001751013"},{"due":"20220705095352437","interval":5,"difficulty":1.2008162145508086,"stability":0.05488166082758644,"retrievability":0.0008162145508085445,"grade":0,"lapses":2,"reps":1,"review":"20220704095352437"},{"due":"20220719111951309","interval":5,"difficulty":1,"stability":10.164641955856537,"retrievability":0.00006780450939486909,"grade":2,"lapses":2,"reps":2,"review":"20220709111951309"}]
 interval: 15
 lapses: 2
-modified: 20220724092642208
+modified: 20221210005806792
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8560034217733742
 review: 20220724092642208
 stability: 67.346066487961
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 正态分布
 type: text/vnd.tiddlywiki
 

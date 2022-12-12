@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620023620803","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619023620803"},{"due":"20220704015803010","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621015803010"}]
 interval: 16
 lapses: 0
-modified: 20220707053839195
+modified: 20221210005806784
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8824752287483904
 review: 20220707053839195
 stability: 70.21185375754096
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 使用ik分词建立索引库
 type: text/vnd.tiddlywiki
 

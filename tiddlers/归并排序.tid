@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220617031809729","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031809729"},{"due":"20220626005928966","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617005928966"},{"due":"20220816052902738","interval":10,"difficulty":1,"stability":49.62805757902991,"retrievability":0.8875472375963519,"grade":2,"lapses":0,"reps":3,"review":"20220627052902738"}]
 interval: 55
 lapses: 0
-modified: 20220821120201235
+modified: 20221210012019243
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8897941229073937
 review: 20220821120201234
 stability: 208.515101362186
-tags: 数据结构 ?
+tags: dataStructure数据结构 ?
 title: 归并排序
 type: text/vnd.tiddlywiki
 

@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20220625125323016","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624125323016"},{"due":"20220712001128308","interval":3,"difficulty":1,"stability":15.367537632833322,"retrievability":0.04240087022375615,"grade":1,"lapses":0,"reps":2,"review":"20220627001128307"}]
 interval: 23
 lapses: 0
-modified: 20221122141109708
+modified: 20221210005806777
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8541153584120541
 review: 20220720003019581
 stability: 99.2184412429942
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: spark join的五种策略
 type: text/vnd.tiddlywiki
 

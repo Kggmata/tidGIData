@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20220713033050910","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712033050909"},{"due":"20220722012233471","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721012233471"},{"due":"20220812023628004","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":2,"lapses":1,"reps":2,"review":"20220730023628003"},{"due":"20220818103747777","interval":18,"difficulty":2.063549949018463,"stability":0.05488116409496729,"retrievability":0.863549949018463,"grade":0,"lapses":2,"reps":1,"review":"20220817103747776"},{"due":"20220827133558692","interval":9,"difficulty":2.2635499803655743,"stability":0.040656966333775045,"retrievability":3.134711113123891e-8,"grade":0,"lapses":3,"reps":1,"review":"20220826133558691"}]
 interval: 98
 lapses: 3
-modified: 20221202094850021
+modified: 20221210005806786
 modifier: Yangqing QU
 reps: 2
 retrievability: 5.077385716027493e-111
 review: 20221202094850020
 stability: 7.99407159520789
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 在任务调度这块有没有什么设计规范 ？ -排班表&银行取款
 type: text/vnd.tiddlywiki
 

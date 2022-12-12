@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621002757037","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620002757037"}]
 interval: 2
 lapses: 0
-modified: 20220709131958337
+modified: 20221210005806768
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.12172520545485727
 review: 20220622084140536
 stability: 13.483496769392643
-tags: 用户画像
+tags: userProfile用户画像
 title: es和spark整合参考网站
 type: text/vnd.tiddlywiki
 

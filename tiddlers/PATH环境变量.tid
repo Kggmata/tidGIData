@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220613122122146","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612122122146"},{"due":"20220702000728806","interval":4,"difficulty":1,"stability":16.268360859893896,"retrievability":0.015960348310605277,"grade":2,"lapses":0,"reps":2,"review":"20220616000728806"}]
 interval: 20
 lapses: 0
-modified: 20220706094759581
+modified: 20221210011006900
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8785098781342142
 review: 20220706094759581
 stability: 84.72864024381416
-tags: 基础概念 ?
+tags: concept概念 ?
 title: PATH环境变量
 type: text/vnd.tiddlywiki
 

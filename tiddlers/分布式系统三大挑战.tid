@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220619234658213","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618234658213"},{"due":"20220620235858963","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220619235858963"},{"due":"20220705004340258","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":3,"review":"20220622004340258"}]
 interval: 16
 lapses: 0
-modified: 20220708135349315
+modified: 20221210005806785
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8824752287483904
 review: 20220708135349315
 stability: 73.44779868247726
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 分布式系统三大挑战
 type: text/vnd.tiddlywiki
 

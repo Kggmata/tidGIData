@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220617033845090","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616033845090"},{"due":"20220626005741682","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617005741682"},{"due":"20220816031018855","interval":10,"difficulty":1,"stability":49.62805757902991,"retrievability":0.8875472375963519,"grade":2,"lapses":0,"reps":3,"review":"20220627031018855"}]
 interval: 55
 lapses: 0
-modified: 20220821115846545
+modified: 20221210012122804
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8897941229073937
 review: 20220821115846545
 stability: 208.515101362186
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 大数据的4V特征
 type: text/vnd.tiddlywiki
 

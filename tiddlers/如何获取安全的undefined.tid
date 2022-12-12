@@ -1,0 +1,25 @@
+created: 20221208115923937
+creator: Yangqing QU
+modified: 20221208120216505
+modifier: Yangqing QU
+tags: 
+title: 如何获取安全的undefined
+type: text/vnd.tiddlywiki
+
+在 JavaScript 中，我们可以通过 typeof 操作符来检查一个值是否为 undefined。例如：
+
+```
+let a;
+console.log(typeof a === 'undefined');  // 输出 true
+```
+上面的代码中，我们定义了一个变量 a，但没有对它进行赋值。因此，变量 a 的值为 undefined。我们使用 typeof 操作符检查变量 a 的数据类型是否为 undefined，输出结果为 true。
+
+另外，我们还可以通过 void 运算符来获取一个安全的 undefined 值。例如：
+
+```
+let a;
+console.log(a === void 0);  // 输出 true
+```
+上面的代码中，我们定义了一个变量 a，但没有对它进行赋值。因此，变量 a 的值为 undefined。我们使用 void 运算符检查变量 a 的值是否为 undefined，输出结果为 true。
+
+总之，我们可以通过 typeof 操作符和 void 运算符来获取安全的 undefined 值。

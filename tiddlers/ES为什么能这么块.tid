@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621021336747","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620021336747"},{"due":"20220623084533326","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622084533325"},{"due":"20220708075853357","interval":3,"difficulty":1,"stability":12.644777089702036,"retrievability":0.01403297475148654,"grade":2,"lapses":1,"reps":2,"review":"20220625075853356"},{"due":"20220711085926750","interval":15,"difficulty":2.0825101212717465,"stability":0.05488141221849455,"retrievability":0.8825101212717463,"grade":0,"lapses":2,"reps":1,"review":"20220710085926750"},{"due":"20220714004341858","interval":3,"difficulty":2.2856632653547115,"stability":0.04065715014820503,"retrievability":0.0031531440829650446,"grade":0,"lapses":3,"reps":1,"review":"20220713004341858"},{"due":"20220727044145170","interval":8,"difficulty":1.4856632663465008,"stability":6.069180177069475,"retrievability":9.917894733222074e-10,"grade":1,"lapses":3,"reps":2,"review":"20220721044145169"}]
 interval: 13
 lapses: 3
-modified: 20220803032830172
+modified: 20221210005806768
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7979741852496296
 review: 20220803032830172
 stability: 49.19529644248836
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES为什么能这么块
 type: text/vnd.tiddlywiki
 

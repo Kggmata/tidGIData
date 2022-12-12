@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620002651918","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619002651918"},{"due":"20220704062454738","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621062454738"}]
 interval: 17
 lapses: 0
-modified: 20220708102516019
+modified: 20221210005806775
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8756064079789342
 review: 20220708102516019
 stability: 74.00721729876608
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Python的package如何能够快速下载？
 type: text/vnd.tiddlywiki
 

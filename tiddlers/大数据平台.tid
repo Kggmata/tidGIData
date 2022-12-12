@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220827134020687","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826134020686"}]
 interval: 98
 lapses: 1
-modified: 20221202095238197
+modified: 20221210005740736
 modifier: Yangqing QU
 reps: 1
 retrievability: 1.4376714463483725e-45
 review: 20221202095238197
 stability: 1.4816364413634358
-tags: bigData ?
+tags: bigData大数据 ?
 title: 大数据平台
 type: text/vnd.tiddlywiki
 

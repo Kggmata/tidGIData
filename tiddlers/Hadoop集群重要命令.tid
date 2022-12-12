@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220625233216367","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624233216367"},{"due":"20220630011902823","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629011902823"},{"due":"20220717101902424","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":1,"lapses":1,"reps":2,"review":"20220704101902424"},{"due":"20220722144307752","interval":17,"difficulty":2.070463901503343,"stability":0.054881225761675624,"retrievability":0.8704639015033426,"grade":0,"lapses":2,"reps":1,"review":"20220721144307752"},{"due":"20220808024549010","interval":9,"difficulty":1.2704639328510623,"stability":8.605765523044708,"retrievability":3.1347719722603765e-8,"grade":1,"lapses":2,"reps":2,"review":"20220730024549010"}]
 interval: 13
 lapses: 2
-modified: 20220812034302299
+modified: 20221210005806771
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8528605779589593
 review: 20220812034302298
 stability: 52.346701562216296
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Hadoop集群重要命令
 type: text/vnd.tiddlywiki
 

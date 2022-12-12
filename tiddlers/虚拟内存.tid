@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20221111120308414","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109120308414"}]
 interval: 4
 lapses: 0
-modified: 20221113064054571
+modified: 20221210011811342
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.81
 review: 20221113064054570
 stability: 9.075440292178332
-tags: 7231 ?
+tags: 7231ComputerSystem计算机系统 ?
 title: 虚拟内存
 type: text/vnd.tiddlywiki
 

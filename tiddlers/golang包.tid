@@ -1,0 +1,15 @@
+created: 20221207033653081
+creator: Yangqing QU
+modified: 20221207034848063
+modifier: Yangqing QU
+tags: golang ?
+title: golang包
+type: text/vnd.tiddlywiki
+
+每个golang程序都是由包组成
+
+main是程序主入口
+
+导包使用import, 多个包用()包围或者多个import, 换行分割
+
+包的导出名大写代表已导出, 小写代表未导出, 比如math.pi和math.Pi

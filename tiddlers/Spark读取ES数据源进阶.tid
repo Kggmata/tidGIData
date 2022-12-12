@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621004926448","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004926448"},{"due":"20220705133241334","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622133241334"}]
 interval: 18
 lapses: 0
-modified: 20220710035107096
+modified: 20221210005806780
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8687910512583555
 review: 20220710035107095
 stability: 77.83147630042302
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Spark读取ES数据源进阶
 type: text/vnd.tiddlywiki
 

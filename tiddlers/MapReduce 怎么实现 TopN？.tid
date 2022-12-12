@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220524023704514","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023704514"},{"due":"20220530015749726","interval":7,"difficulty":5.8915901242788244,"stability":0.16205398577412577,"retrievability":0.6915901242788246,"grade":0,"lapses":1,"reps":1,"review":"20220529015749726"},{"due":"20220603141629711","interval":4,"difficulty":6.165817105522132,"stability":0.07117400905594407,"retrievability":0.07422698124330701,"grade":0,"lapses":2,"reps":1,"review":"20220602141629711"},{"due":"20220610123913873","interval":4,"difficulty":4.368498839708095,"stability":4.487146145825672,"retrievability":0.002681734185962407,"grade":2,"lapses":2,"reps":2,"review":"20220606123913873"},{"due":"20220701070120303","interval":7,"difficulty":3.4169322932756794,"stability":18.294587058100884,"retrievability":0.8484334535675848,"grade":2,"lapses":2,"reps":3,"review":"20220613070120303"},{"due":"20220825074149474","interval":22,"difficulty":3.4979298806104397,"stability":50.579127866148376,"retrievability":0.8809975873347601,"grade":1,"lapses":2,"reps":4,"review":"20220705074149473"}]
 interval: 140
 lapses: 3
-modified: 20221122135627650
+modified: 20221210011916632
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.7470436931425093
 review: 20221122135627649
 stability: 0.8131393194811983
-tags: mapreduce ?
+tags: mapReduce ?
 title: MapReduce 怎么实现 TopN？
 type: text/vnd.tiddlywiki
 

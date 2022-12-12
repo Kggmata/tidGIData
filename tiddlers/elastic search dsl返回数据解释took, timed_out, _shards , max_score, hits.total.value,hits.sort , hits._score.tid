@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620135449427","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619135449427"},{"due":"20220704022254422","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621022254422"}]
 interval: 16
 lapses: 0
-modified: 20220707131207742
+modified: 20221210005806766
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8824752287483904
 review: 20220707131207741
 stability: 70.21185375754096
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: elastic search dsl返回数据解释took, timed_out, _shards , max_score, hits.total.value,hits.sort , hits._score
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220713040640787","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040640787"},{"due":"20220805073441748","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220720073441748"}]
 interval: 19
 lapses: 0
-modified: 20220808123145000
+modified: 20221210012019243
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8853163826700388
 review: 20220808123144999
 stability: 84.88710990001034
-tags: 数据结构 ?
+tags: dataStructure数据结构 ?
 title: 数据结构按照逻辑分类
 type: text/vnd.tiddlywiki
 

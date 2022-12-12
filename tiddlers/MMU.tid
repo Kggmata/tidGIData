@@ -1,0 +1,20 @@
+created: 20221030030334895
+creator: Yangqing QU
+difficulty: 5
+due: 20221115124326008
+grade: -1
+history: []
+interval: 0
+lapses: 0
+modified: 20221210011811342
+modifier: Yangqing QU
+reps: 1
+retrievability: 1
+review: 20221113124326008
+stability: 2
+tags: 7231ComputerSystem计算机系统 ?
+title: MMU
+type: text/vnd.tiddlywiki
+
+memory management unit
+将逻辑地址映射到物理地址

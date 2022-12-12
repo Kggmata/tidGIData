@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220620023624903","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619023624903"},{"due":"20220708072434310","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621021702135"},{"due":"20220711075659817","interval":19,"difficulty":2.0620287424446966,"stability":0.07408215765534414,"retrievability":0.8620287424446965,"grade":0,"lapses":1,"reps":1,"review":"20220710075659817"},{"due":"20220713015358151","interval":2,"difficulty":2.320196532348653,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712015358151"},{"due":"20220730074028407","interval":8,"difficulty":1,"stability":10.165686151249597,"retrievability":2.1378809139958575e-7,"grade":2,"lapses":2,"reps":2,"review":"20220720074028407"}]
 interval: 16
 lapses: 2
-modified: 20220805065530853
+modified: 20221210005806795
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8471908679879404
 review: 20220805065530853
 stability: 73.49641120553474
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 项目索引插入数据
 type: text/vnd.tiddlywiki
 

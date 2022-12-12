@@ -1,0 +1,26 @@
+created: 20221208114625560
+creator: Yangqing QU
+modified: 20221208114704460
+modifier: Yangqing QU
+tags: 
+title: 为什么0.1+0.2 ! == 0.3，如何让其相等
+type: text/vnd.tiddlywiki
+
+在 JavaScript 中，浮点数的运算会产生精度误差。例如，我们来比较 0.1 + 0.2 和 0.3 是否相等：
+
+```
+console.log(0.1 + 0.2 === 0.3);  // 输出 false
+```
+上面的代码中，我们用 === 运算符比较了 0.1 + 0.2 和 0.3 是否严格相等，输出结果为 false。这是因为 0.1 + 0.2 的精确值是 0.30000000000000004，而不是 0.3。
+
+为了解决浮点数的精度误差问题，我们可以使用一些第三方的库，例如 bignumber.js，它可以帮助我们进行精确的浮点数运算。例如：
+
+```
+const BigNumber = require('bignumber.js');
+
+console.log(new BigNumber(0.1).plus(new BigNumber(0.2)).eq(0.3));  // 输出 true
+```
+
+上面的代码中，我们使用 bignumber.js 库中的 BigNumber 类来创建一个大数字对象。然后，我们使用 plus 方法进行加法运算，并使用 eq 方法比较是否等于 0.3，输出结果为 true。
+
+总之，为了解决浮点数的精度误差问题，可以使用一些第三方的库，例如 bignumber.js。

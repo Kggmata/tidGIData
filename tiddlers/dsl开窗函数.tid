@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220626001844611","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625001844611"},{"due":"20220715003027578","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":1,"lapses":0,"reps":2,"review":"20220629003027578"},{"due":"20220722054215126","interval":22,"difficulty":2.065612726934808,"stability":0.07408190596496488,"retrievability":0.865612726934808,"grade":0,"lapses":1,"reps":1,"review":"20220721054215126"},{"due":"20220731023812330","interval":9,"difficulty":2.265615487847336,"stability":0.0548811791474709,"retrievability":0.0000027609125273187787,"grade":0,"lapses":2,"reps":1,"review":"20220730023812330"},{"due":"20220806072611738","interval":6,"difficulty":2.4656254296785973,"stability":0.04065697172950195,"retrievability":0.00000994183126152159,"grade":0,"lapses":3,"reps":1,"review":"20220805072611738"},{"due":"20220815041515878","interval":4,"difficulty":1.6656569209352636,"stability":5.605105714334633,"retrievability":0.0000314912566663105,"grade":1,"lapses":3,"reps":2,"review":"20220809041515878"},{"due":"20220822111907848","interval":12,"difficulty":2.6637206079693048,"stability":0.03011942145770373,"retrievability":0.798063687034041,"grade":0,"lapses":4,"reps":1,"review":"20220821111907847"}]
 interval: 15
 lapses: 5
-modified: 20220905092912956
+modified: 20221210005806765
+modifier: Yangqing QU
 reps: 1
 retrievability: 1.6291736931048457e-23
 review: 20220905092912956
 stability: 0.02231301621225883
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: dsl开窗函数
 type: text/vnd.tiddlywiki
 

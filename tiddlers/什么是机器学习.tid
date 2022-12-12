@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220626014855804","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625014855804"},{"due":"20220629025309983","interval":3,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.04240087022375615,"grade":0,"lapses":1,"reps":1,"review":"20220628025309983"},{"due":"20220714141425337","interval":3,"difficulty":1,"stability":12.644453482888508,"retrievability":0.014030805349029462,"grade":2,"lapses":1,"reps":2,"review":"20220701141425337"},{"due":"20220722022853712","interval":20,"difficulty":2.046495020297031,"stability":0.054881287913948605,"retrievability":0.8464950202970309,"grade":0,"lapses":2,"reps":1,"review":"20220721022853711"},{"due":"20220809022939671","interval":9,"difficulty":1,"stability":10.165670624565559,"retrievability":3.1348333116598453e-8,"grade":2,"lapses":2,"reps":2,"review":"20220730022939671"}]
 interval: 13
 lapses: 2
-modified: 20220812080258230
+modified: 20221210005806783
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8739461813439561
 review: 20220812080258230
 stability: 59.18733517475724
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 什么是机器学习
 type: text/vnd.tiddlywiki
 

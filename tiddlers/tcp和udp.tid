@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220713030627837","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712030627836"},{"due":"20220806014204544","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721014204544"}]
 interval: 19
 lapses: 0
-modified: 20220809074431385
+modified: 20221210005806781
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8853405116014387
 review: 20220809074431384
 stability: 81.07421184688711
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: tcp和udp
 type: text/vnd.tiddlywiki
 

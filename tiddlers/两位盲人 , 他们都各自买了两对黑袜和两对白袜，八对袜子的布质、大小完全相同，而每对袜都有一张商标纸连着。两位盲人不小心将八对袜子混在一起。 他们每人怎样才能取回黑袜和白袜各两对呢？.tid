@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220804022139195","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803022139195"},{"due":"20220824122519372","interval":5,"difficulty":1,"stability":16.30688294756679,"retrievability":0.005153779050734244,"grade":2,"lapses":0,"reps":2,"review":"20220808122519372"}]
 interval: 107
 lapses: 1
-modified: 20221123135457233
+modified: 20221210011446008
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.5009051838315501
 review: 20221123135430054
 stability: 1.4816364413634358
-tags: ? IQ
+tags: ? [[IQ(intelligent quotient)]]
 title: 两位盲人 , 他们都各自买了两对黑袜和两对白袜，八对袜子的布质、大小完全相同，而每对袜都有一张商标纸连着。两位盲人不小心将八对袜子混在一起。 他们每人怎样才能取回黑袜和白袜各两对呢？
 type: text/vnd.tiddlywiki
 

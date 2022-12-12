@@ -1,0 +1,15 @@
+created: 20221206152741135
+creator: Yangqing QU
+modified: 20221210011338981
+modifier: Yangqing QU
+tags: ? http(hypertextTransferProtocol) internet网络
+title: GET 和 POST 方法都是安全和幂等的吗？
+type: text/vnd.tiddlywiki
+
+首先, 安全代表不会破坏服务器上的资源
+
+幂等代表多次执行操作, 相同的结果
+
+因此get是安全且幂等, 因为是只读操作
+
+而post则不然, 因为新增或提交, 会修改服务器数据

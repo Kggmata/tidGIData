@@ -6,13 +6,13 @@ grade: 1
 history: [{"due":"20220713093439277","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712093439276"},{"due":"20220722023527629","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721023527629"},{"due":"20220731033919685","interval":9,"difficulty":1.200002760952549,"stability":0.0548811791474709,"retrievability":0.0000027609525491324836,"grade":0,"lapses":2,"reps":1,"review":"20220730033919685"},{"due":"20220807110059240","interval":7,"difficulty":1.4000042187956492,"stability":0.04065697172950195,"retrievability":0.0000014578431002339741,"grade":0,"lapses":3,"reps":1,"review":"20220806110059240"},{"due":"20220812103806443","interval":5,"difficulty":1.6000065778475159,"stability":0.030119421724187252,"retrievability":0.000002359051866785058,"grade":0,"lapses":4,"reps":1,"review":"20220811103806443"},{"due":"20220825080951255","interval":8,"difficulty":1,"stability":6.286497003686882,"retrievability":7.020737168007741e-13,"grade":1,"lapses":4,"reps":2,"review":"20220819080951255"}]
 interval: 104
 lapses: 4
-modified: 20221201054006577
+modified: 20221210011752004
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.1749910278145615
 review: 20221201054006576
 stability: 341.0459025279364
-tags: OS concept ?
+tags: os(operationSystem)操作系统 concept概念 ?
 title: 什么是死锁？
 type: text/vnd.tiddlywiki
 

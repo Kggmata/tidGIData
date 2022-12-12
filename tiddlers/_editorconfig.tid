@@ -1,0 +1,9 @@
+created: 20221212012525120
+creator: Yangqing QU
+modified: 20221212012549266
+modifier: Yangqing QU
+tags: ? programming编程
+title: .editorconfig
+type: text/vnd.tiddlywiki
+
+.editorconfig 是一个文件，它用于定义和维护一致的代码样式，以便在多个编辑器和IDE之间进行共享。它使开发团队能够定义和统一编码样式，而无需对共同修改的文件进行冗长乏味的手动格式化。

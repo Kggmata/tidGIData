@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630080356297","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629080356297"},{"due":"20220719080359141","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703080359141"}]
 interval: 20
 lapses: 0
-modified: 20220723145351211
+modified: 20221210005806791
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8770398141193532
 review: 20220723145351210
 stability: 88.42116896412756
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 机器学习概念
 type: text/vnd.tiddlywiki
 

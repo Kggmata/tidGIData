@@ -1,0 +1,11 @@
+created: 20221210033340534
+creator: Yangqing QU
+modified: 20221210033359241
+modifier: Yangqing QU
+tags: ? react
+title: 为什么叫hook
+type: text/vnd.tiddlywiki
+
+在计算机编程中，hook通常指的是一个可以被挂载到程序的某个特定点上的代码段。它的名字来源于这个概念：hook可以被用来“挂载”到程序的某个地方，以便在程序执行时执行一些额外的操作。
+
+React中的钩子也遵循了这个概念，它们被用来“挂载”到组件中，以在组件的生命周期中执行某些操作。因此，React钩子的名字也来源于这个概念。

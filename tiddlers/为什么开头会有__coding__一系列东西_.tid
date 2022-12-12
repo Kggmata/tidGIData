@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621015632583","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620015632583"},{"due":"20220705025841626","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622025841626"},{"due":"20220710082748839","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709082748838"},{"due":"20220723013329236","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":2,"lapses":1,"reps":2,"review":"20220711013329236"}]
 interval: 19
 lapses: 1
-modified: 20220730034229704
+modified: 20221210005806782
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8436992347740256
 review: 20220730034229704
 stability: 82.63191247371151
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 为什么开头会有__coding__一系列东西?
 type: text/vnd.tiddlywiki
 

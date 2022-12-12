@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630081056880","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081056880"},{"due":"20220706012547975","interval":6,"difficulty":1,"stability":0.07408249324251646,"retrievability":0.001797216149689106,"grade":0,"lapses":1,"reps":1,"review":"20220705012547975"},{"due":"20220723045108377","interval":5,"difficulty":1,"stability":12.910898599543607,"retrievability":0.0008160568173319206,"grade":1,"lapses":1,"reps":2,"review":"20220710045108377"}]
 interval: 22
 lapses: 1
-modified: 20220801111017671
+modified: 20221210005806779
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8356604393141842
 review: 20220801111017671
 stability: 93.85419115292933
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: SparkMl框架变迁
 type: text/vnd.tiddlywiki
 

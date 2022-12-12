@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220625121804370","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121804370"},{"due":"20220709150402053","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626150402053"},{"due":"20220712010353413","interval":15,"difficulty":2.0893785641845435,"stability":0.07408215765534414,"retrievability":0.8893785641845435,"grade":0,"lapses":1,"reps":1,"review":"20220711010353413"},{"due":"20220730151704176","interval":8,"difficulty":1.2893900122011843,"stability":10.832283533589449,"retrievability":0.000011448016640964715,"grade":1,"lapses":1,"reps":2,"review":"20220719151704176"}]
 interval: 17
 lapses: 1
-modified: 20220805065724695
+modified: 20221210005806775
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8475961572326313
 review: 20220805065724695
 stability: 77.27348560858083
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: pyspark join
 type: text/vnd.tiddlywiki
 

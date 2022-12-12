@@ -1,0 +1,22 @@
+created: 20221208112425318
+creator: Yangqing QU
+modified: 20221210011244417
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: js的数据类型
+type: text/vnd.tiddlywiki
+
+undefined, null, boolean, number, string, object, symbol, bigint
+
+原始数据类型:undefined, null, boolean, number, string
+
+引用数据类型:数组, object, 函数
+
+数据类型的检测方式:
+
+```
+1. type of
+2. instance of 
+3. constructor
+4. Object.prototype.toString.call()
+```

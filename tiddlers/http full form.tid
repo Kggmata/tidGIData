@@ -6,7 +6,7 @@ grade: 0
 history: [{"due":"20220720081104580","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719081104580"},{"due":"20220815014525409","interval":11,"difficulty":1,"stability":16.439579292548817,"retrievability":0.000009261873369942817,"grade":2,"lapses":0,"reps":2,"review":"20220730014525409"},{"due":"20220824092047530","interval":24,"difficulty":2.0574307099240627,"stability":0.07408182272361549,"retrievability":0.8574307099240628,"grade":0,"lapses":1,"reps":1,"review":"20220823092047530"}]
 interval: 91
 lapses: 2
-modified: 20221122125959170
+modified: 20221210011338981
 modifier: Yangqing QU
 reps: 1
 retrievability: 6.205867509944934e-57
@@ -19,4 +19,4 @@ type: text/vnd.tiddlywiki
 hypertext transfer protocol
 
 构建于[[TCP]]/[[IP]]之上
-[[http]]
+[[http(hypertextTransferProtocol)]]

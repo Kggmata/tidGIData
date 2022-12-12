@@ -1,0 +1,9 @@
+created: 20221208100228994
+creator: Yangqing QU
+modified: 20221210011244416
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: async和await
+type: text/vnd.tiddlywiki
+
+async/await 是 JavaScript 中的一种语法系统，它基于 Promise 来提供异步编程的功能。async/await 使用起来更像同步编程，因为它允许您使用类似同步代码的语法来编写异步代码。它可以让您更容易地处理异步任务，并且能够提高代码的可读性和可维护性。

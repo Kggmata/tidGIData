@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220722020629524","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712071546951"},{"due":"20220731032818056","interval":18,"difficulty":1,"stability":0.07408184304237006,"retrievability":5.803486909611992e-9,"grade":0,"lapses":1,"reps":1,"review":"20220730032818056"},{"due":"20220806080802432","interval":6,"difficulty":1.2001968031069898,"stability":0.054881171378436774,"retrievability":0.00019680310698987739,"grade":0,"lapses":2,"reps":1,"review":"20220805080802431"},{"due":"20220810075445446","interval":4,"difficulty":1.4006591597690639,"stability":0.04065696669349018,"retrievability":0.00046235666207404937,"grade":0,"lapses":3,"reps":1,"review":"20220809075445445"},{"due":"20220816053349309","interval":6,"difficulty":1.6006593364884323,"stability":0.03011942145770373,"retrievability":1.7671936852144708e-7,"grade":0,"lapses":4,"reps":1,"review":"20220815053349309"},{"due":"20220824120234602","interval":8,"difficulty":1.8006593364891343,"stability":0.02231301621225883,"retrievability":7.020735429696087e-13,"grade":0,"lapses":5,"reps":1,"review":"20220823120234602"}]
 interval: 94
 lapses: 6
-modified: 20221125124849152
+modified: 20221210011752004
 modifier: Yangqing QU
 reps: 1
 retrievability: 1.7116189794428334e-193
 review: 20221125124849151
 stability: 0.3305977764431731
-tags: OS concept ?
+tags: os(operationSystem)操作系统 concept概念 ?
 title: 进程和线程的区别
 type: text/vnd.tiddlywiki
 

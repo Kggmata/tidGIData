@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220619235257997","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618235257997"},{"due":"20220704062357436","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621062357436"},{"due":"20220709073752491","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708073752491"},{"due":"20220712010228582","interval":3,"difficulty":2.2896353152469726,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220711010228582"},{"due":"20220803142029772","interval":7,"difficulty":1.4896367731732758,"stability":7.704303036382615,"retrievability":0.000001457926303174977,"grade":1,"lapses":2,"reps":2,"review":"20220718025028781"}]
 interval: 21
 lapses: 2
-modified: 20220808082135870
+modified: 20221210005806774
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7503718683745467
 review: 20220808082135870
 stability: 75.20511257199914
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: md5为什么不安全
 type: text/vnd.tiddlywiki
 

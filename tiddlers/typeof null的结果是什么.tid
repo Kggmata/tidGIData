@@ -1,0 +1,26 @@
+created: 20221208114143197
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: typeof null的结果是什么
+type: text/vnd.tiddlywiki
+
+object
+
+在 JavaScript 中，typeof 操作符用来检查一个值的数据类型。它可以接受一个表达式作为参数，并返回表达式的数据类型。例如：
+
+```
+console.log(typeof 123);  // 输出 'number'
+console.log(typeof 'hello world');  // 输出 'string'
+```
+上面的代码中，我们分别使用 typeof 操作符检查了数字 123 和字符串 'hello world' 的数据类型。它们的数据类型分别为 number 和 string。
+
+如果我们用 typeof 操作符检查 null 值的数据类型，会发现它的数据类型为 object。例如：
+
+```
+console.log(typeof null);  // 输出 'object'
+```
+上面的代码中，我们检查了 null 值的数据类型，它的数据类型为 object。
+
+这是因为在早期版本的 JavaScript 中，null 和 object 是同一类型。在 JavaScript 引擎内部，它们都被表示为 0x00。由于历史原因，null 值的数据类型被指定为 object，至今仍然保留。

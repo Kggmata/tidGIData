@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220623133305986","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620094058188"},{"due":"20220626084415132","interval":5,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.005169532745280801,"grade":0,"lapses":1,"reps":1,"review":"20220625084415132"},{"due":"20220712050214938","interval":4,"difficulty":1,"stability":12.859429240324747,"retrievability":0.003384799839695139,"grade":2,"lapses":1,"reps":2,"review":"20220629050214938"}]
 interval: 21
 lapses: 1
-modified: 20220720004609577
+modified: 20221210005806779
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.84193013338732
 review: 20220720004609577
 stability: 89.89071596908339
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: spark全局识图和局部视图
 type: text/vnd.tiddlywiki
 

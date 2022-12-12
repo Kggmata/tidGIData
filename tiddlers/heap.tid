@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221113091509340
+modified: 20221210005645772
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113091509340
 stability: 2
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: heap
 type: text/vnd.tiddlywiki
 

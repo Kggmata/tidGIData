@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220622000552626","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220621000552626"},{"due":"20220624032856814","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220623032856814"},{"due":"20220707092530517","interval":2,"difficulty":1,"stability":11.77883909930856,"retrievability":0.05817903264660851,"grade":2,"lapses":1,"reps":2,"review":"20220625092530516"},{"due":"20220711050210539","interval":15,"difficulty":2.074438361112966,"stability":0.05488141221849455,"retrievability":0.8744383611129658,"grade":0,"lapses":2,"reps":1,"review":"20220710050210538"},{"due":"20220713010836764","interval":2,"difficulty":2.2959412037931184,"stability":0.04065715014820503,"retrievability":0.02150284268015211,"grade":0,"lapses":3,"reps":1,"review":"20220712010836763"},{"due":"20220728013749919","interval":8,"difficulty":1,"stability":7.994100533111112,"retrievability":9.917894733222074e-10,"grade":2,"lapses":3,"reps":2,"review":"20220720013749919"}]
 interval: 14
 lapses: 3
-modified: 20220803132257750
+modified: 20221210005806788
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8315058279852803
 review: 20220803132257750
 stability: 66.07769453861806
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 开发步骤
 type: text/vnd.tiddlywiki
 

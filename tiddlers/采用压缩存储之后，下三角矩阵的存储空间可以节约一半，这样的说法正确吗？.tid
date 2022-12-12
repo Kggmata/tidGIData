@@ -1,8 +1,8 @@
 created: 20221203003251741
 creator: Yangqing QU
-modified: 20221203003735223
+modified: 20221210011946492
 modifier: Yangqing QU
-tags: ? 数组
+tags: ? array数组
 title: 采用压缩存储之后，下三角矩阵的存储空间可以节约一半，这样的说法正确吗？
 type: text/vnd.tiddlywiki
 

@@ -1,0 +1,23 @@
+created: 20221209015104722
+creator: Yangqing QU
+modified: 20221210005206982
+modifier: Yangqing QU
+tags: ? android安卓
+title: kotlin是什么
+type: text/vnd.tiddlywiki
+
+(考特林)
+
+kotlin是一种静态类型编程语言, 具有和java相同的运行时性能
+
+被设计为一种更安全简介和易于使用的编程语言
+
+使用场景:
+
+1. android studio 3.0之后 kotlin成为安卓官方支持的开发语言
+
+2. 后端开发, 可以用于开发服务端程序, 和java完美结合
+
+3. web开发, 用于构建web应用程序和服务端渲染的web界面
+
+4. 跨平台开发, 

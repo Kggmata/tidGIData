@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524113903766","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522113903766"},{"due":"20220608120927853","interval":5,"difficulty":3.9684334714209166,"stability":12.372217148638658,"retrievability":0.7684334714209162,"grade":2,"lapses":0,"reps":2,"review":"20220527120927853"},{"due":"20220722070240464","interval":16,"difficulty":3.04105413555829,"stability":40.364930277688956,"retrievability":0.8726206641373735,"grade":2,"lapses":0,"reps":3,"review":"20220612070240464"},{"due":"20220731030105119","interval":48,"difficulty":4.123295530641314,"stability":0.07408184304237006,"retrievability":0.8822413950830236,"grade":0,"lapses":1,"reps":1,"review":"20220730030105119"},{"due":"20220812075111394","interval":6,"difficulty":2.3234923337483036,"stability":7.19573763976808,"retrievability":0.00019680310698987739,"grade":2,"lapses":1,"reps":2,"review":"20220805075111394"}]
 interval: 12
 lapses: 1
-modified: 20220817104616247
+modified: 20221210010743381
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8388655163687753
 review: 20220817104616247
 stability: 48.164779415111646
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: hdfs读数据流程图解
 type: text/vnd.tiddlywiki
 

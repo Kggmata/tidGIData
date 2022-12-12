@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621045955106","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620045955105"},{"due":"20220705015921125","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622015921125"},{"due":"20220710003244421","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709003244420"},{"due":"20220712013101299","interval":2,"difficulty":2.3337741978828905,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220711013101298"},{"due":"20220718062254029","interval":6,"difficulty":2.5337841402004986,"stability":0.04065715014820503,"retrievability":0.000009942317607937474,"grade":0,"lapses":3,"reps":1,"review":"20220717062254028"},{"due":"20220727030406624","interval":5,"difficulty":1.7337864993865078,"stability":5.451396856257389,"retrievability":0.000002359186009207673,"grade":1,"lapses":3,"reps":2,"review":"20220722030406624"}]
 interval: 12
 lapses: 3
-modified: 20220803032025709
+modified: 20221210005806794
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7930040004183047
 review: 20220803032025709
 stability: 42.00880259355786
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 结构化数据 半结构化数据 非结构化数据
 type: text/vnd.tiddlywiki
 

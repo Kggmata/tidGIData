@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220601052804316","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531052804316"},{"due":"20220622090852330","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603090852330"}]
 interval: 20
 lapses: 0
-modified: 20220623071325375
+modified: 20221210011006900
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8953239134772895
 review: 20220623071325374
 stability: 89.0394510841741
-tags: 基础概念 ?
+tags: concept概念 ?
 title: 字段信息的英文
 type: text/vnd.tiddlywiki
 

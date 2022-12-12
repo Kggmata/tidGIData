@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620144048480","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619144048480"},{"due":"20220709065535150","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621033617230"},{"due":"20220712004616188","interval":20,"difficulty":2.0553190686350757,"stability":0.07408215765534414,"retrievability":0.8553190686350756,"grade":0,"lapses":1,"reps":1,"review":"20220711004616188"},{"due":"20220718070152084","interval":6,"difficulty":2.255515878874211,"stability":0.05488141221849455,"retrievability":0.00019681023913521717,"grade":0,"lapses":2,"reps":1,"review":"20220717070152084"},{"due":"20220723114744171","interval":5,"difficulty":2.455583680435375,"stability":0.040657012017596195,"retrievability":0.00006780156116384973,"grade":0,"lapses":3,"reps":1,"review":"20220722114744171"},{"due":"20220805035954151","interval":8,"difficulty":1.6555836814270946,"stability":5.629066451336969,"retrievability":9.91719619591007e-10,"grade":1,"lapses":3,"reps":2,"review":"20220730035954150"},{"due":"20220810035309146","interval":10,"difficulty":2.6848845402410664,"stability":0.030119421724187252,"retrievability":0.8293008588139716,"grade":0,"lapses":4,"reps":1,"review":"20220809035309146"},{"due":"20220820081834878","interval":5,"difficulty":1,"stability":6.286496752787149,"retrievability":2.5350655691687196e-8,"grade":2,"lapses":4,"reps":2,"review":"20220814081834878"}]
 interval: 16
 lapses: 4
-modified: 20220830001959492
+modified: 20221210005806767
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7647876828801821
 review: 20220830001959492
 stability: 75.53567878123704
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES search过程详解
 type: text/vnd.tiddlywiki
 

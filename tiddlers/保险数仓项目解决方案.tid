@@ -6,13 +6,13 @@ grade: 1
 history: [{"due":"20220621004005958","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004005958"},{"due":"20220630145248305","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145248305"},{"due":"20220825153829123","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":3,"review":"20220702153829122"}]
 interval: 146
 lapses: 0
-modified: 20221125023156889
+modified: 20221210005806785
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.7508661689601456
 review: 20221125023156888
 stability: 464.54873389311336
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 保险数仓项目解决方案
 type: text/vnd.tiddlywiki
 

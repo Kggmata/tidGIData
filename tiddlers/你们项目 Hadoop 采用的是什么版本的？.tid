@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220713033444451","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712033444451"},{"due":"20220805015130616","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":2,"lapses":0,"reps":2,"review":"20220720015130615"},{"due":"20220809122716994","interval":19,"difficulty":2.085316382670039,"stability":0.07408182337905919,"retrievability":0.8853163826700388,"grade":0,"lapses":1,"reps":1,"review":"20220808122716994"},{"due":"20220825080115079","interval":4,"difficulty":1,"stability":12.858711031743239,"retrievability":0.003383404930733144,"grade":2,"lapses":1,"reps":2,"review":"20220812080115079"}]
 interval: 104
 lapses: 2
-modified: 20221124150802653
+modified: 20221210005806784
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.42649886682369614
 review: 20221124150802653
 stability: 1.097623272188053
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 你们项目 Hadoop 采用的是什么版本的？
 type: text/vnd.tiddlywiki
 

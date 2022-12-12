@@ -1,0 +1,21 @@
+created: 20221208150504416
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? reactNative js(javaScript)
+title: react native 组成部分
+type: text/vnd.tiddlywiki
+
+React Native 是一个跨平台的移动应用开发框架，用于开发 iOS 和 Android 应用。它由以下部分组成：
+
+React：用于构建用户界面的 JavaScript 库。
+
+JavaScript 桥：用于在 JavaScript 代码和原生代码之间传递数据和调用方法。
+
+原生模块：包含原生代码的模块，用于实现与平台相关的功能，如访问设备传感器或播放音频。
+
+原生 UI 组件：构建应用界面的组件，它们与平台的原生 UI 组件保持一致。
+
+开发工具：包括命令行工具、模拟器和调试器等，用于构建、运行和调试 React Native 应用。
+
+通常，开发人员使用 React 和 JavaScript 编写应用的逻辑和 UI，并使用原生模块和组件实现与平台相关的功能。然后使用开发工具构建、运行和调试应用，并将其部署到 iOS 或 Android 设备上。

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621004927739","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004927739"}]
 interval: 2
 lapses: 0
-modified: 20220709112614138
+modified: 20221210011645607
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.12172520545485727
 review: 20220622044217749
 stability: 13.483496769392643
-tags: Elasticsearch
+tags: elasticSearch
 title: elasticsearch node网站
 type: text/vnd.tiddlywiki
 

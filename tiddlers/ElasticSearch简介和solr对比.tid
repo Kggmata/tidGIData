@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220619064131004","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618064131004"},{"due":"20220707120035038","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":1,"lapses":0,"reps":2,"review":"20220620000756481"},{"due":"20220711062738226","interval":20,"difficulty":2.0553474083422647,"stability":0.07408215765534414,"retrievability":0.8553474083422645,"grade":0,"lapses":1,"reps":1,"review":"20220710062738226"},{"due":"20220717013715417","interval":1,"difficulty":1.4965274031676155,"stability":6.480973575512881,"retrievability":0.2411799948253509,"grade":1,"lapses":1,"reps":2,"review":"20220711013715417"},{"due":"20220723031613180","interval":11,"difficulty":2.532778914858542,"stability":0.054881225761675624,"retrievability":0.836251511690926,"grade":0,"lapses":2,"reps":1,"review":"20220722031613180"},{"due":"20220808235235687","interval":10,"difficulty":1.7327789194552936,"stability":6.936085930446192,"retrievability":4.596751868176597e-9,"grade":1,"lapses":2,"reps":2,"review":"20220801235235687"}]
 interval: 12
 lapses: 2
-modified: 20220814081734781
+modified: 20221210005806767
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8333659889176913
 review: 20220814081734781
 stability: 41.33735748643158
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ElasticSearch简介和solr对比
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220614124445919","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613124445919"},{"due":"20220702024132436","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024132436"}]
 interval: 19
 lapses: 0
-modified: 20220705093748227
+modified: 20221210012243757
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8790734948134195
 review: 20220705093748227
 stability: 84.74278121619727
-tags: [[structed streaming]] ?
+tags: sparkStructedStreaming结构化流 ?
 title: 流计算简单概念
 type: text/vnd.tiddlywiki
 

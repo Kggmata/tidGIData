@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220626025254671","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625025254671"},{"due":"20220715050733791","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":2,"lapses":0,"reps":2,"review":"20220629050733791"}]
 interval: 22
 lapses: 0
-modified: 20220721065618930
+modified: 20221210005806781
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.865612726934808
 review: 20220721065618930
 stability: 95.61179776281308
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: What is “Spark ML”?
 type: text/vnd.tiddlywiki
 

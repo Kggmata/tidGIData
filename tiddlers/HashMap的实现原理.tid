@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220713025753498","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712025753498"},{"due":"20220722012506403","interval":9,"difficulty":1,"stability":0.07408198986175796,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220721012506403"},{"due":"20220812024624934","interval":9,"difficulty":1,"stability":12.927358840355694,"retrievability":0.0000027609525491324836,"grade":1,"lapses":1,"reps":2,"review":"20220730024624933"}]
 interval: 18
 lapses: 1
-modified: 20220817104213400
+modified: 20221210005806771
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.863549949018463
 review: 20220817104213399
 stability: 80.89456385090092
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: HashMap的实现原理
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221116014320472
+modified: 20221210005645773
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113124305721
 stability: 2
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: minimum spanning tree
 type: text/vnd.tiddlywiki
 

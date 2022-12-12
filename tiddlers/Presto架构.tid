@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220712065901071","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711065901071"},{"due":"20220719065622168","interval":7,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220718065622168"},{"due":"20220727102047071","interval":8,"difficulty":1.2000114480166408,"stability":0.05488119468553914,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220726102047070"},{"due":"20220804124501985","interval":8,"difficulty":1.400011661791718,"stability":0.04065697172950195,"retrievability":2.137750772920513e-7,"grade":0,"lapses":3,"reps":1,"review":"20220803124501984"},{"due":"20220809112933386","interval":5,"difficulty":1.6000140208435847,"stability":0.030119421724187252,"retrievability":0.000002359051866785058,"grade":0,"lapses":4,"reps":1,"review":"20220808112933386"},{"due":"20220819081610134","interval":5,"difficulty":1,"stability":6.286496752787149,"retrievability":2.5350655691687196e-8,"grade":1,"lapses":4,"reps":2,"review":"20220813081610134"}]
 interval: 15
 lapses: 4
-modified: 20220828143426402
+modified: 20221210005806775
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7777133958311553
 review: 20220828143426401
 stability: 71.29260712920028
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Presto架构
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220524063356081","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523063356081"},{"due":"20220524234258877","interval":0,"difficulty":2.947800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220523234258876"},{"due":"20220525232328408","interval":0,"difficulty":2.147800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":3,"review":"20220524232328408"},{"due":"20220707103017712","interval":6,"difficulty":1,"stability":37.118523502356865,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":4,"review":"20220531103017712"}]
 interval: 40
 lapses: 0
-modified: 20220710045552296
+modified: 20221210011006900
+modifier: Yangqing QU
 reps: 5
 retrievability: 0.8926688865413943
 review: 20220710045552295
 stability: 152.23103552707514
-tags: 基础概念 ?
+tags: concept概念 ?
 title: 超认知阅读法
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220524024125846","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522024125845"},{"due":"20220615015738328","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529015738328"},{"due":"20220727091007103","interval":18,"difficulty":3.983494477388395,"stability":41.186951489203864,"retrievability":0.8919043531095704,"grade":1,"lapses":0,"reps":3,"review":"20220616091007103"},{"due":"20220804092134266","interval":48,"difficulty":5.067944735720732,"stability":0.07408183255527093,"retrievability":0.8844502583323368,"grade":0,"lapses":1,"reps":1,"review":"20220803092134266"},{"due":"20220809112556626","interval":5,"difficulty":5.268760740786542,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220808112556625"},{"due":"20220817081427174","interval":5,"difficulty":4.468828539411092,"stability":3.5997660491679233,"retrievability":0.00006779862455024804,"grade":1,"lapses":2,"reps":2,"review":"20220813081427174"},{"due":"20220824131525424","interval":10,"difficulty":5.415084132247805,"stability":0.040656966333775045,"retrievability":0.7462555928367128,"grade":0,"lapses":3,"reps":1,"review":"20220823131525424"}]
 interval: 50
 lapses: 4
-modified: 20221012003118911
+modified: 20221210011916632
+modifier: Yangqing QU
 reps: 1
 retrievability: 5.33786304754419e-57
 review: 20221012003118911
 stability: 0.03011942145770373
-tags: mapreduce ?
+tags: mapReduce ?
 title: mapreduce 优化方法
 type: text/vnd.tiddlywiki
 

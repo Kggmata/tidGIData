@@ -1,0 +1,11 @@
+created: 20221208104719755
+creator: Yangqing QU
+modified: 20221208105211658
+modifier: Yangqing QU
+tags: 
+title: react native asyncStorage
+type: text/vnd.tiddlywiki
+
+AsyncStorage 是一个 JavaScript 模块，可以在 React Native 应用中存储数据。它提供了一组简单的异步 API，可以用来读取和写入本地存储。
+
+AsyncStorage 使用了一个异步的、可持久化的 Key-Value 缓存系统来存储数据。它支持多种数据类型，包括字符串、数字、布尔值、对象等。它的 API 是简单易用的，可以让开发者快速实现数据的存储和读取。

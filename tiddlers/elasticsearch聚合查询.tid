@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620135539337","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619135539337"},{"due":"20220624130211061","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621024953634"},{"due":"20220714004224049","interval":4,"difficulty":1,"stability":12.861584262967543,"retrievability":0.003388987826626389,"grade":2,"lapses":1,"reps":2,"review":"20220625114355811"},{"due":"20220722043941540","interval":26,"difficulty":2.008165188060752,"stability":0.054881287913948605,"retrievability":0.8081651880607517,"grade":0,"lapses":2,"reps":1,"review":"20220721043941540"},{"due":"20220731023836602","interval":9,"difficulty":2.2081652194090853,"stability":0.04065697748494399,"retrievability":3.1348333116598453e-8,"grade":0,"lapses":3,"reps":1,"review":"20220730023836602"},{"due":"20220806072714308","interval":6,"difficulty":2.408165396129183,"stability":0.03011942545495654,"retrievability":1.7672009785144746e-7,"grade":0,"lapses":4,"reps":1,"review":"20220805072714308"},{"due":"20220810041629198","interval":4,"difficulty":2.6081662340290284,"stability":0.022313016409674678,"retrievability":8.378998451135208e-7,"grade":0,"lapses":5,"reps":1,"review":"20220809041629198"},{"due":"20220815081748244","interval":5,"difficulty":2.8081662340848057,"stability":0.016529888968407916,"retrievability":5.577735486701367e-11,"grade":0,"lapses":6,"reps":1,"review":"20220814081748243"},{"due":"20220822111920707","interval":7,"difficulty":3.008166234084806,"stability":0.012245642933642305,"retrievability":4.1959673393070505e-20,"grade":0,"lapses":7,"reps":1,"review":"20220821111920706"}]
 interval: 15
 lapses: 7
-modified: 20220905092923055
+modified: 20221210005806767
+modifier: Yangqing QU
 reps: 2
 retrievability: 8.922449369428509e-57
 review: 20220905092923055
 stability: 1.7613216640862601
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: elasticsearch聚合查询
 type: text/vnd.tiddlywiki
 

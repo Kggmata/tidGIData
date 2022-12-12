@@ -1,0 +1,27 @@
+created: 20221208111230690
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: 什么是hoisting
+type: text/vnd.tiddlywiki
+
+Hoisting 是 JavaScript 的一种语法行为，即在代码执行时，变量和函数声明会被自动提升到代码的顶部。这样做的目的是为了方便程序员，因为它允许你在使用变量或函数之前声明它们，而不会导致错误。
+
+例如，下面是一段 JavaScript 代码：
+
+```
+console.log(x);  // 输出 undefined
+```
+
+var x = 5;
+你可能会认为上面的代码会抛出一个错误，因为我们在调用 console.log(x) 时还没有声明 x 变量。但是，由于 hoisting 的存在，JavaScript 引擎在执行这段代码时会自动将变量声明提升到代码顶部，就像这样：
+
+```
+var x;
+
+console.log(x);  // 输出 undefined
+
+x = 5;
+```
+由于 hoisting，我们在调用 console.log(x) 之前就已经声明了 x 变量，所以上面的代码不会抛出错误。这个过程只适用于变量声明，

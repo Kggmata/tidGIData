@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221113091553158
+modified: 20221210005532891
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113091553158
 stability: 2
-tags: 7203 ?
+tags: 7203DataMining数据挖掘 ?
 title: impact of the number of features
 type: text/vnd.tiddlywiki
 

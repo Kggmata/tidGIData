@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220712070124883","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711070124883"},{"due":"20220719025414468","interval":7,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220718025414467"},{"due":"20220808090750715","interval":8,"difficulty":1,"stability":12.927205658998126,"retrievability":0.000011448016640964715,"grade":2,"lapses":1,"reps":2,"review":"20220726090750715"}]
 interval: 17
 lapses: 1
-modified: 20220812045930378
+modified: 20221210005806774
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8706153805127494
 review: 20220812045930378
 stability: 77.14213779598707
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: presto Connector 连接器
 type: text/vnd.tiddlywiki
 

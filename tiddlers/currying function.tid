@@ -1,0 +1,9 @@
+created: 20221208110023214
+creator: Yangqing QU
+modified: 20221210011244416
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: currying function
+type: text/vnd.tiddlywiki
+
+通过使用 currying 技术，你可以把多参数函数转换成一系列更灵活的单参数函数，以便在需要的时候计算结果。

@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614231737485","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613231737484"},{"due":"20220630070232853","interval":2,"difficulty":1,"stability":13.570489504250556,"retrievability":0.12633427211412301,"grade":2,"lapses":0,"reps":2,"review":"20220616070232853"}]
 interval: 17
 lapses: 0
-modified: 20220703135020612
+modified: 20221210012243757
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8763523509071041
 review: 20220703135020611
 stability: 73.98924420527824
-tags: [[structed streaming]] ?
+tags: sparkStructedStreaming结构化流 ?
 title: 结构化流入门案例-HelloWorld
 type: text/vnd.tiddlywiki
 

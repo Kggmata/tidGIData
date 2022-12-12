@@ -1,0 +1,16 @@
+created: 20221206051546470
+creator: Yangqing QU
+modified: 20221206075136786
+modifier: Yangqing QU
+tags: ? mysql
+title: mysql索引类型
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/111362942#:~:text=Mysql%E7%9B%AE%E5%89%8D%E4%B8%BB%E8%A6%81%E6%9C%89%E4%BB%A5%E4%B8%8B,%EF%BC%8CHASH%EF%BC%8CBTREE%EF%BC%8CRTREE%E3%80%82
+
+```
+fulltext
+hash
+btree
+b+tree
+```

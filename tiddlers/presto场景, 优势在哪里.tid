@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220719065452360","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072012861"},{"due":"20220727101923455","interval":15,"difficulty":1,"stability":0.07408186401656833,"retrievability":1.3690127966249522e-7,"grade":0,"lapses":1,"reps":1,"review":"20220726101923455"},{"due":"20220804124452668","interval":8,"difficulty":1.2000114475003718,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220803124452668"},{"due":"20220818112804340","interval":5,"difficulty":1,"stability":10.16456942996506,"retrievability":0.00006779870516182631,"grade":2,"lapses":2,"reps":2,"review":"20220808112804339"}]
 interval: 20
 lapses: 3
-modified: 20220828134550938
+modified: 20221210005806774
+modifier: Yangqing QU
 reps: 1
 retrievability: 0.8127681787299662
 review: 20220828134550938
 stability: 0.040656966333775045
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: presto场景, 优势在哪里
 type: text/vnd.tiddlywiki
 

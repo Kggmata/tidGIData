@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220626051308882","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625051308882"},{"due":"20220629035451242","interval":3,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.04240087022375615,"grade":0,"lapses":1,"reps":1,"review":"20220628035451241"},{"due":"20220702141802751","interval":3,"difficulty":1.2140308053490294,"stability":0.054882158045770235,"retrievability":0.014030805349029462,"grade":0,"lapses":2,"reps":1,"review":"20220701141802750"},{"due":"20220706100624272","interval":4,"difficulty":1.4144932258464433,"stability":0.04065715014820503,"retrievability":0.0004624204974138748,"grade":0,"lapses":3,"reps":1,"review":"20220705100624272"},{"due":"20220718042509981","interval":5,"difficulty":1,"stability":7.9940708619639755,"retrievability":0.000002359186009207673,"grade":2,"lapses":3,"reps":2,"review":"20220710042509980"}]
 interval: 12
 lapses: 3
-modified: 20220722031209542
+modified: 20221210005806794
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8537148919950663
 review: 20220722031209541
 stability: 57.85017449598214
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 算法五大特性
 type: text/vnd.tiddlywiki
 

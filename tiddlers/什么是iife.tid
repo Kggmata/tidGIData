@@ -1,0 +1,26 @@
+created: 20221208105824963
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: 什么是iife
+type: text/vnd.tiddlywiki
+
+IIFE 是一种 JavaScript 技术，即立即调用的函数表达式（Immediately Invoked Function Expression）。它是一种匿名函数，并且在定义后立即调用。这通常用于创建一个封闭的作用域，以防止命名冲突。例如：
+
+```
+(function() {
+  // 一些代码
+})();
+```
+在上面的例子中，我们定义了一个匿名函数，然后在函数的定义后面立即调用了它。这样就可以保证我们在整个脚本中都能使用这个函数，但是不会对全局作用域产生任何影响。
+
+以下是一个简单的 IIFE 的例子，它定义了一个匿名函数并立即调用：
+
+```
+(function() {
+  // 这里是函数体，可以执行任意代码
+  console.log('Hello, world!');
+})();
+```
+在上面的例子中，我们定义了一个匿名函数并立即调用了它。函数体中的代码将被执行，并在控制台中输出 Hello, world!。这个函数的好处是它可以创建一个封闭的作用域，避免命名冲突。

@@ -1,0 +1,11 @@
+created: 20221211063607438
+creator: Yangqing QU
+modified: 20221211063818846
+modifier: Yangqing QU
+tags: 
+title: ip和mac区别
+type: text/vnd.tiddlywiki
+
+ip是用于在网络中定位和路由的逻辑地址, 可以是动态也可以是静态的
+
+mac是物理地址, 由硬件决定的, 一般用来标识硬件

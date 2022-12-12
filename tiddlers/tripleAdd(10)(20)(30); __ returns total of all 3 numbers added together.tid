@@ -1,0 +1,9 @@
+created: 20221208105214599
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: tripleAdd(10)(20)(30); // returns total of all 3 numbers added together
+type: text/vnd.tiddlywiki
+
+利用回调函数

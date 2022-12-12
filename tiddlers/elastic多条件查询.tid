@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220624130126927","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619135507998"},{"due":"20220714004212028","interval":6,"difficulty":1,"stability":16.40079485925413,"retrievability":0.0018036054906273755,"grade":2,"lapses":0,"reps":2,"review":"20220625114349584"},{"due":"20220722043835977","interval":26,"difficulty":2.046176875484446,"stability":0.07408198986175796,"retrievability":0.8461768754844458,"grade":0,"lapses":1,"reps":1,"review":"20220721043835977"},{"due":"20220731023833555","interval":9,"difficulty":2.2461796364369953,"stability":0.0548811791474709,"retrievability":0.0000027609525491324836,"grade":0,"lapses":2,"reps":1,"review":"20220730023833555"},{"due":"20220806072656978","interval":6,"difficulty":2.446189578268257,"stability":0.04065697172950195,"retrievability":0.00000994183126152159,"grade":0,"lapses":3,"reps":1,"review":"20220805072656977"},{"due":"20220810041601480","interval":4,"difficulty":2.6462210695249233,"stability":0.030119421724187252,"retrievability":0.0000314912566663105,"grade":0,"lapses":4,"reps":1,"review":"20220809041601480"},{"due":"20220815081724064","interval":5,"difficulty":2.8462210948755793,"stability":0.02231301621225883,"retrievability":2.5350655691687196e-8,"grade":0,"lapses":5,"reps":1,"review":"20220814081724064"},{"due":"20220826111913981","interval":7,"difficulty":1.0462210948755837,"stability":4.790528149402493,"retrievability":4.41612089212157e-15,"grade":2,"lapses":5,"reps":2,"review":"20220821111913981"}]
 interval: 96
 lapses: 6
-modified: 20221125143951018
+modified: 20221210011645607
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.12107117327173052
 review: 20221125143951018
 stability: 0.3305977764431731
-tags: 用户画像 Elasticsearch ?
+tags: userProfile用户画像 elasticSearch ?
 title: elastic多条件查询
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220617034253763","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034253763"},{"due":"20220626062058576","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":1,"lapses":0,"reps":2,"review":"20220617062058576"},{"due":"20220818050759927","interval":11,"difficulty":1.0770222757871821,"stability":51.41610432436546,"retrievability":0.8770222757871822,"grade":1,"lapses":0,"reps":3,"review":"20220628050759926"}]
 interval: 59
 lapses: 0
-modified: 20220826131016362
+modified: 20221210012122804
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8861214745732311
 review: 20220826131016361
 stability: 220.62978478565782
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 为什么从传统数据到大数据平台
 type: text/vnd.tiddlywiki
 

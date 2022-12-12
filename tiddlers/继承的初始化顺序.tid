@@ -1,0 +1,13 @@
+created: 20221206022146283
+creator: Yangqing QU
+modified: 20221210012422676
+modifier: Yangqing QU
+tags: ? programming编程
+title: 继承的初始化顺序
+type: text/vnd.tiddlywiki
+
+1. 先父类再子类
+
+2. 先初始化对象的属性, 在初始化构造方法
+
+父类对象属性初始化---->父类对象构造方法---->子类对象属性初始化--->子类对象构造方法

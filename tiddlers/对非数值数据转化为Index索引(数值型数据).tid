@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630081205727","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081205727"},{"due":"20220717154342898","interval":3,"difficulty":1,"stability":15.367048766557211,"retrievability":0.04239358618575581,"grade":2,"lapses":0,"reps":2,"review":"20220702154342898"}]
 interval: 19
 lapses: 0
-modified: 20220721083726314
+modified: 20221210005806787
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8778592709133122
 review: 20220721083726314
 stability: 84.72185768110526
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 对非数值数据转化为Index索引(数值型数据)
 type: text/vnd.tiddlywiki
 

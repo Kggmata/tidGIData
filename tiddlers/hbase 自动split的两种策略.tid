@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220619021626943","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618021626943"},{"due":"20220703001243550","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220620001243550"},{"due":"20220707121819946","interval":16,"difficulty":2.082498620259361,"stability":0.07408215765534414,"retrievability":0.8824986202593608,"grade":0,"lapses":1,"reps":1,"review":"20220706121819946"},{"due":"20220721063148082","interval":4,"difficulty":1.2858821120416717,"stability":10.795416417371362,"retrievability":0.0033834917823108,"grade":1,"lapses":1,"reps":2,"review":"20220710063148082"}]
 interval: 20
 lapses: 1
-modified: 20220730014327777
+modified: 20221210005806771
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8226742967224161
 review: 20220730014327777
 stability: 75.48500517485587
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: hbase 自动split的两种策略
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221114065521251
+modified: 20221210005532893
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221114065521251
 stability: 2
-tags: 7203 ?
+tags: 7203DataMining数据挖掘 ?
 title: The smaller the SSE the better the clustering performance. True or False?
 type: text/vnd.tiddlywiki
 

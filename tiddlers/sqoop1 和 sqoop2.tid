@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220712074618225","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711074618224"},{"due":"20220721012903119","interval":9,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220720012903118"},{"due":"20220812021029349","interval":10,"difficulty":1,"stability":12.927424897987283,"retrievability":6.659058267886301e-7,"grade":1,"lapses":1,"reps":2,"review":"20220730021029348"}]
 interval: 18
 lapses: 1
-modified: 20220817121220703
+modified: 20221210005806780
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.863550596368518
 review: 20220817121220703
 stability: 80.89456280079534
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: sqoop1 和 sqoop2
 type: text/vnd.tiddlywiki
 

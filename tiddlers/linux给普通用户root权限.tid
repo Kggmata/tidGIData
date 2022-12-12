@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621005417790","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005417790"},{"due":"20220705103503737","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622103503734"},{"due":"20220711032438644","interval":18,"difficulty":2.068791051258356,"stability":0.07408215765534414,"retrievability":0.8687910512583555,"grade":0,"lapses":1,"reps":1,"review":"20220710032438644"},{"due":"20220714092911916","interval":3,"difficulty":2.282819958526394,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220713092911916"},{"due":"20220729052644748","interval":8,"difficulty":1.4828201723144854,"stability":7.728916550600323,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220721052644748"}]
 interval: 15
 lapses: 2
-modified: 20220805064453995
+modified: 20221210005806773
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8150711614351703
 review: 20220805064453995
 stability: 70.30757427426808
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: linux给普通用户root权限
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630133222121","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629133222121"},{"due":"20220704143847131","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014782011698955301,"grade":0,"lapses":1,"reps":1,"review":"20220703143847130"},{"due":"20220720025309824","interval":4,"difficulty":1,"stability":12.858890454366344,"retrievability":0.0033837533675606132,"grade":2,"lapses":1,"reps":2,"review":"20220707025309824"}]
 interval: 19
 lapses: 1
-modified: 20220726103114534
+modified: 20221210005806786
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8558344952149057
 review: 20220726103114534
 stability: 84.64767073080634
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 如何指定特定的python pip
 type: text/vnd.tiddlywiki
 

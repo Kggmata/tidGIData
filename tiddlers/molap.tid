@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220802035242892","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801035242892"},{"due":"20220824082204176","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220808082204176"}]
 interval: 106
 lapses: 1
-modified: 20221122135909509
+modified: 20221210010111324
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.5066112492927269
 review: 20221122135909509
 stability: 1.4816364413634358
-tags: conce ?
+tags: ? concept概念 bigData大数据
 title: MOLAP
 type: text/vnd.tiddlywiki
 

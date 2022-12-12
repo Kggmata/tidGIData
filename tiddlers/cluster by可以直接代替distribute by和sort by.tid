@@ -1,15 +1,17 @@
 created: 20220522045359077
-difficulty: 1.0926688865413943
-due: 20221209044221165
+creator: Yangqing QU
+difficulty: 1.1940596684285674
+due: 20240309005657333
 grade: 1
-history: [{"due":"20220524020316082","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020316081"},{"due":"20220524233555794","interval":0,"difficulty":2.947800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220523233555793"},{"due":"20220525231512028","interval":0,"difficulty":2.147800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":3,"review":"20220524231512028"},{"due":"20220707102851578","interval":6,"difficulty":1,"stability":37.118523502356865,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":4,"review":"20220531102851578"}]
-interval: 40
+history: [{"due":"20220524020316082","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020316081"},{"due":"20220524233555794","interval":0,"difficulty":2.947800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":2,"review":"20220523233555793"},{"due":"20220525231512028","interval":0,"difficulty":2.147800309227434,"stability":0.5750000000000001,"retrievability":1,"grade":2,"lapses":0,"reps":3,"review":"20220524231512028"},{"due":"20220707102851578","interval":6,"difficulty":1,"stability":37.118523502356865,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":4,"review":"20220531102851578"},{"due":"20221209044221165","interval":40,"difficulty":1.0926688865413943,"stability":152.23103552707514,"retrievability":0.8926688865413943,"grade":1,"lapses":0,"reps":5,"review":"20220710044221165"}]
+interval: 150
 lapses: 0
-modified: 20220710044221165
-reps: 5
-retrievability: 0.8926688865413943
-review: 20220710044221165
-stability: 152.23103552707514
+modified: 20221207005657333
+modifier: Yangqing QU
+reps: 6
+retrievability: 0.9013907818871731
+review: 20221207005657332
+stability: 458.24536921126224
 tags: hadoop hive ?
 title: cluster by可以直接代替distribute by和sort by
 type: text/vnd.tiddlywiki

@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220712072618475","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711072618475"},{"due":"20220719065430570","interval":7,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220718065430569"},{"due":"20220727090822823","interval":8,"difficulty":1.2000114480166408,"stability":0.05488119468553914,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220726090822823"},{"due":"20220813124236545","interval":8,"difficulty":1,"stability":10.165653873028125,"retrievability":2.137750772920513e-7,"grade":1,"lapses":2,"reps":2,"review":"20220803124236545"},{"due":"20220821013231732","interval":17,"difficulty":2.038455179577059,"stability":0.040656966333775045,"retrievability":0.8384551795770587,"grade":0,"lapses":3,"reps":1,"review":"20220820013231732"}]
 interval: 15
 lapses: 4
-modified: 20220904143923637
+modified: 20221210005806774
+modifier: Yangqing QU
 reps: 1
 retrievability: 1.312835246871398e-17
 review: 20220904143923636
 stability: 0.03011942145770373
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: presto coordinator作用
 type: text/vnd.tiddlywiki
 

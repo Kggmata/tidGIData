@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20220601142430082","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531142430082"},{"due":"20220628060502014","interval":5,"difficulty":1,"stability":22.531244498588748,"retrievability":0.03668351005467044,"grade":2,"lapses":0,"reps":2,"review":"20220605060502014"},{"due":"20220702085059383","interval":26,"difficulty":2.085519238104647,"stability":0.07408316441686115,"retrievability":0.8855192381046468,"grade":0,"lapses":1,"reps":1,"review":"20220701085059382"},{"due":"20220719111838074","interval":5,"difficulty":1,"stability":12.910991241876301,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220706111838074"}]
 interval: 20
 lapses: 1
-modified: 20221121091354501
+modified: 20221210011006900
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8494123040093253
 review: 20220726102335200
 stability: 88.38864318723971
-tags: 基础概念 ?
+tags: concept概念 ?
 title: tcp
 type: text/vnd.tiddlywiki
 

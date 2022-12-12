@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621002647315","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620002647315"},{"due":"20220705025854589","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622025854589"}]
 interval: 17
 lapses: 0
-modified: 20220709093135391
+modified: 20221210005806782
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8756064079789342
 review: 20220709093135388
 stability: 77.17521774511171
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 为什么项目中使用upsert的方法？
 type: text/vnd.tiddlywiki
 

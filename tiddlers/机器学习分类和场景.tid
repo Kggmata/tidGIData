@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630081015334","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629081015334"},{"due":"20220719080347499","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703080347499"}]
 interval: 20
 lapses: 0
-modified: 20220723145059829
+modified: 20221210005806790
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8770398141193532
 review: 20220723145059828
 stability: 84.7579168170496
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 机器学习分类和场景
 type: text/vnd.tiddlywiki
 

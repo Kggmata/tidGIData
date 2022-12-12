@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220617033811945","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616033811945"},{"due":"20220704005126722","interval":3,"difficulty":1,"stability":15.408484766218795,"retrievability":0.04301436359277706,"grade":1,"lapses":0,"reps":2,"review":"20220619005126722"}]
 interval: 19
 lapses: 0
-modified: 20220708125432385
+modified: 20221210012122804
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8781668521782602
 review: 20220708125432384
 stability: 81.16954052364305
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: storm框架
 type: text/vnd.tiddlywiki
 

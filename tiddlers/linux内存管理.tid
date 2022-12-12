@@ -1,0 +1,24 @@
+created: 20221206045323234
+creator: Yangqing QU
+modified: 20221206050222305
+modifier: Yangqing QU
+tags: linux ?
+title: linux内存管理
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/32952524
+
+在内存看来, 系统分为内核态和用户态
+[img[Snipaste_2022-12-06_12-55-32.png]]
+[img[Snipaste_2022-12-06_12-54-54.png]]
+内核态内部
+[img[Snipaste_2022-12-06_12-56-46.png]]
+
+1. 地址映射
+
+linux内部的地址映射过程为逻辑地址到线性地址到物理地址, 这部分就是虚拟内存原理, [[MMU]]
+
+2. 内存管理方式
+
+3. 缺页异常
+在实际需要某个虚拟内存区域之前, 和物理内存的映射关系并不会建立.

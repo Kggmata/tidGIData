@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220619063818352","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618063818352"},{"due":"20220703131437459","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":1,"lapses":0,"reps":2,"review":"20220620131437459"},{"due":"20220708001724441","interval":17,"difficulty":2.075631068030595,"stability":0.07408215765534414,"retrievability":0.8756310680305948,"grade":0,"lapses":1,"reps":1,"review":"20220707001724441"},{"due":"20220711092158797","interval":3,"difficulty":2.2896599752986333,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220710092158796"},{"due":"20220721105151543","interval":3,"difficulty":1.492813119381598,"stability":7.654883644355068,"retrievability":0.0031531440829650446,"grade":1,"lapses":2,"reps":2,"review":"20220713105151542"}]
 interval: 17
 lapses: 2
-modified: 20220730015330131
+modified: 20221210005806774
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7913736019844262
 review: 20220730015330131
 stability: 61.447092500752035
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: Lucene简介
 type: text/vnd.tiddlywiki
 

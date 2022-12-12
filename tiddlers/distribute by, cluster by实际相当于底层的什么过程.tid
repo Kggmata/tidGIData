@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220526132141042","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132141042"},{"due":"20220628102907093","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531102907093"}]
 interval: 29
 lapses: 0
-modified: 20220629063957221
+modified: 20221210011916631
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8953515186197427
 review: 20220629063957220
 stability: 121.84236594057872
-tags: mapreduce hive ?
+tags: mapReduce hive ?
 title: distribute by, cluster by实际相当于底层的什么过程
 type: text/vnd.tiddlywiki
 

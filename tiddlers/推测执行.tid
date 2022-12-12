@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220524021805899","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522021805899"},{"due":"20220602112838534","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112838534"},{"due":"20220707115924668","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606115924668"},{"due":"20220711055553088","interval":34,"difficulty":4.200038941363643,"stability":0.07408215765534414,"retrievability":0.8895462481526426,"grade":0,"lapses":1,"reps":1,"review":"20220710055553088"},{"due":"20220713014027911","interval":2,"difficulty":4.4582067312676,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712014027911"},{"due":"20220721073533894","interval":8,"difficulty":4.658206945055691,"stability":0.04065705806113247,"retrievability":2.1378809139958575e-7,"grade":0,"lapses":3,"reps":1,"review":"20220720073533894"},{"due":"20220731104004202","interval":8,"difficulty":3.858206946047434,"stability":3.131554135772404,"retrievability":9.917429036741347e-10,"grade":1,"lapses":3,"reps":2,"review":"20220728104004201"},{"due":"20220824071958301","interval":8,"difficulty":3.8222291649966342,"stability":18.70044652892132,"retrievability":0.7640222189491996,"grade":1,"lapses":3,"reps":3,"review":"20220805071958301"}]
 interval: 67
 lapses: 3
-modified: 20221011135428599
+modified: 20221210011916633
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.6855828806736718
 review: 20221011135428599
 stability: 110.91911653003436
-tags: mapreduce ?
+tags: mapReduce ?
 title: 推测执行
 type: text/vnd.tiddlywiki
 

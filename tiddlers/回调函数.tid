@@ -1,0 +1,9 @@
+created: 20221208100130490
+creator: Yangqing QU
+modified: 20221210062807126
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: 回调函数
+type: text/vnd.tiddlywiki
+
+回调函数callback function是一种 JavaScript 异步编程技术，它允许您将函数作为参数传递给其他函数，并在某个时刻执行该函数。回调函数通常用于处理异步任务的结果，例如从服务器获取数据后的响应。

@@ -1,0 +1,12 @@
+created: 20221206153025795
+creator: Yangqing QU
+modified: 20221210011338981
+modifier: Yangqing QU
+tags: ? internet网络 http(hypertextTransferProtocol)
+title: http缓存方式
+type: text/vnd.tiddlywiki
+
+首先缓存是干嘛的, 主要是帮助提升性能, 对于重复的http请求直接从本地读取.
+
+http主要两种缓存方式: 强制缓存和协商缓存.
+

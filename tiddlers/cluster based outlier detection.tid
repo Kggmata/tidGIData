@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20221111144257808","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109144257808"}]
 interval: 4
 lapses: 0
-modified: 20221113060413036
+modified: 20221210005532890
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.81
 review: 20221113060413035
 stability: 9.075440292178332
-tags: 7203 ?
+tags: 7203DataMining数据挖掘 ?
 title: cluster based outlier detection
 type: text/vnd.tiddlywiki
 

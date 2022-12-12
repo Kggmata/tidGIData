@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630104924508","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629104924508"},{"due":"20220721001432092","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":2,"lapses":0,"reps":2,"review":"20220705001432092"}]
 interval: 25
 lapses: 0
-modified: 20220730015619632
+modified: 20221210005806777
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8515701337094802
 review: 20220730015619631
 stability: 106.35191003523644
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: RFM中如何确定聚类中心？
 type: text/vnd.tiddlywiki
 

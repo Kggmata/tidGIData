@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524114235603","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114235603"},{"due":"20220530053501335","interval":7,"difficulty":5.8915901242788244,"stability":0.16205398577412577,"retrievability":0.6915901242788246,"grade":0,"lapses":1,"reps":1,"review":"20220529053501335"},{"due":"20220610142237981","interval":4,"difficulty":4.165817105522132,"stability":8.014810230509552,"retrievability":0.07422698124330701,"grade":2,"lapses":1,"reps":2,"review":"20220602142237981"},{"due":"20220711084335570","interval":11,"difficulty":3.2311828732667447,"stability":28.12571813153033,"retrievability":0.8653657677446128,"grade":2,"lapses":1,"reps":3,"review":"20220613084335570"}]
 interval: 31
 lapses: 1
-modified: 20220714011632036
+modified: 20221210011916632
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8903614843311216
 review: 20220714011632036
 stability: 83.76462679550704
-tags: mapreduce ?
+tags: mapReduce ?
 title: mr完整执行流程
 type: text/vnd.tiddlywiki
 

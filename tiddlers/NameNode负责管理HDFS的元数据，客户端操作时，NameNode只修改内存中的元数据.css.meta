@@ -5,11 +5,12 @@ grade: 2
 history: [{"due":"20220523040758753","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040758753"},{"due":"20220529003125517","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003125517"},{"due":"20220628133554178","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602133554178"}]
 interval: 29
 lapses: 0
-modified: 20220701030603793
+modified: 20221210010743382
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8881668944602166
 review: 20220701030603792
 stability: 80.25328821558121
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: NameNode负责管理HDFS的元数据，客户端操作时，NameNode只修改内存中的元数据
 type: text/css

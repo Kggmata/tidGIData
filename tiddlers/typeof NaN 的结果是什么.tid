@@ -1,0 +1,23 @@
+created: 20221208120429017
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: typeof NaN 的结果是什么
+type: text/vnd.tiddlywiki
+
+在 JavaScript 中，NaN 表示一个非数值。它与任何值都不相等，包括它本身。例如：
+
+```
+console.log(NaN === NaN);  // 输出 false
+```
+上面的代码中，我们将 NaN 与它本身进行比较，结果为 false。这是因为 NaN 与任何值都不相等。
+
+如果我们使用 typeof 操作符来检查 NaN 的数据类型，结果会是什么呢？
+
+```
+console.log(typeof NaN);  // 输出 number
+```
+上面的代码中，我们使用 typeof 操作符检查 NaN 的数据类型，结果为 number。这是因为 NaN 是一个非数值，它的数据类型是 number。
+
+总之，NaN 是一个非数值，它的数据类型是 number。它与任何值都不相等，包括它本身。

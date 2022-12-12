@@ -1,0 +1,11 @@
+created: 20221210003951953
+creator: Yangqing QU
+modified: 20221210004056596
+modifier: Yangqing QU
+tags: ? reactNative
+title: props
+type: text/vnd.tiddlywiki
+
+指的就是组件的属性, 用于在组件之间传递数据.
+
+总之，props 是 React 框架中用于在组件之间传递数据的重要方式，它可以让组件具有可配置性和可复用性。

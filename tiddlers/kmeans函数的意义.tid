@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630105247467","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105247467"},{"due":"20220720142733934","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":2,"lapses":0,"reps":2,"review":"20220704142733934"}]
 interval: 22
 lapses: 0
-modified: 20220726114756982
+modified: 20221210005806773
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8674977020971539
 review: 20220726114756981
 stability: 92.07922912361714
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: kmeans函数的意义
 type: text/vnd.tiddlywiki
 

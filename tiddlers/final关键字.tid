@@ -1,0 +1,17 @@
+created: 20221206022303304
+creator: Yangqing QU
+modified: 20221206022420252
+modifier: Yangqing QU
+tags: ? java
+title: final关键字
+type: text/vnd.tiddlywiki
+
+就是最终的意思, 
+
+修饰类, 则该类无法被继承
+
+修饰方法, 则方法无法被重写
+
+修饰属性, 则无法被隐式初始化
+
+修饰变量,则代表常量

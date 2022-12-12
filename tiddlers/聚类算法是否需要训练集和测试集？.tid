@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630105503375","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629105503375"},{"due":"20220719135501529","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":2,"lapses":0,"reps":2,"review":"20220703135501528"}]
 interval: 21
 lapses: 0
-modified: 20220724020602640
+modified: 20221210005806794
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.871305136947512
 review: 20220724020602639
 stability: 88.44264016901889
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 聚类算法是否需要训练集和测试集？
 type: text/vnd.tiddlywiki
 

@@ -1,0 +1,11 @@
+created: 20221206073340347
+creator: Yangqing QU
+modified: 20221210010410093
+modifier: Yangqing QU
+tags: ? internet网络
+title: 当键入网址后，到网页显示，其间发生了什么
+type: text/vnd.tiddlywiki
+
+https://xiaolincoding.com/network/1_base/what_happen_url.html#%E5%AD%A4%E5%8D%95%E5%B0%8F%E5%BC%9F-http
+
+http->DNS->协议栈->TCP->IP->MAC->网卡->交换机->路由器->服务器和服务端

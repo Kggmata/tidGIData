@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220524114928352","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114928351"},{"due":"20220527234643333","interval":1,"difficulty":4.148683298050514,"stability":4.03183163653078,"retrievability":0.9486832980505138,"grade":2,"lapses":0,"reps":2,"review":"20220523234643333"},{"due":"20220622005847021","interval":8,"difficulty":3.1600319838664648,"stability":21.015749968210223,"retrievability":0.8113486858159505,"grade":2,"lapses":0,"reps":3,"review":"20220601005847021"},{"due":"20220826032214437","interval":22,"difficulty":2.2556019210869556,"stability":63.73297286355271,"retrievability":0.8955699372204909,"grade":2,"lapses":0,"reps":4,"review":"20220623032214437"}]
 interval: 161
 lapses: 1
-modified: 20221201090015718
+modified: 20221210010743382
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.7663180104731206
 review: 20221201090015718
 stability: 1.4816364413634358
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: 分桶好处图解
 type: text/vnd.tiddlywiki
 

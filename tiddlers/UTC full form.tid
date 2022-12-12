@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220801114151577","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114151577"},{"due":"20220823003756571","interval":7,"difficulty":1,"stability":16.423571292705216,"retrievability":0.0006265800565729012,"grade":2,"lapses":0,"reps":2,"review":"20220807003756571"}]
 interval: 103
 lapses: 1
-modified: 20221118071731693
+modified: 20221210005221288
+modifier: Yangqing QU
 reps: 1
 retrievability: 0.516455716201446
 review: 20221118071657650
 stability: 1.4816364413634358
-tags: ? concept
+tags: ? concept概念
 title: UTC full form
 type: text/vnd.tiddlywiki
 

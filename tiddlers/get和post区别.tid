@@ -1,0 +1,13 @@
+created: 20221206152629685
+creator: Yangqing QU
+modified: 20221206152735158
+modifier: Yangqing QU
+tags: ?
+title: get和post区别
+type: text/vnd.tiddlywiki
+
+get是获取, 浏览器获取网页一般就是get
+
+post是创建, 
+
+[[GET 和 POST 方法都是安全和幂等的吗？]]

@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620131030475","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619131030474"},{"due":"20220704030114216","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621030114215"},{"due":"20220709064213100","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708064213100"},{"due":"20220722002820172","interval":3,"difficulty":1.2896353152469724,"stability":10.593979009907587,"retrievability":0.014028907268038276,"grade":1,"lapses":1,"reps":2,"review":"20220711002820172"}]
 interval: 19
 lapses: 1
-modified: 20220730024252360
+modified: 20221210005806769
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.827818718342413
 review: 20220730024252360
 stability: 72.0118376134098
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES的准实时的实现的几个点
 type: text/vnd.tiddlywiki
 

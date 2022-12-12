@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220523083213791","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521083213790"},{"due":"20220529002721703","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002721702"},{"due":"20220628053259866","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602053259866"}]
 interval: 28
 lapses: 0
-modified: 20220630021144943
+modified: 20221210010743381
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8918064933310472
 review: 20220630021144943
 stability: 78.32227625296495
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: hdfs常见压缩算法
 type: text/vnd.tiddlywiki
 

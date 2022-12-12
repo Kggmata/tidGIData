@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220620040445909","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619040445909"},{"due":"20220708113656865","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621022013922"},{"due":"20220714004150962","interval":19,"difficulty":2.0620287424446966,"stability":0.07408215765534414,"retrievability":0.8620287424446965,"grade":0,"lapses":1,"reps":1,"review":"20220710075729448"},{"due":"20220812074509940","interval":11,"difficulty":1.2620289030478602,"stability":10.995220905546141,"retrievability":1.606031638590533e-7,"grade":1,"lapses":1,"reps":2,"review":"20220721024056634"}]
 interval: 27
 lapses: 1
-modified: 20220817104017587
+modified: 20221210005806765
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.7720356269769235
 review: 20220817104017586
 stability: 115.5690987060876
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: bulk批量导入json到ES
 type: text/vnd.tiddlywiki
 

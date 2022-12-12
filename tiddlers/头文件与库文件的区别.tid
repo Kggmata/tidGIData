@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20221101092342834","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221030092342834"},{"due":"20221107113746644","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20221101113746644"}]
 interval: 8
 lapses: 0
-modified: 20221109091050228
+modified: 20221210011811342
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8707833672273995
 review: 20221109091050227
 stability: 21.752708583396142
-tags: 7231 ?
+tags: 7231ComputerSystem计算机系统 ?
 title: 头文件与库文件的区别
 type: text/vnd.tiddlywiki
 

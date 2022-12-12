@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220707031802343","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706031802343"},{"due":"20220726055919412","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":1,"lapses":0,"reps":2,"review":"20220710055919412"}]
 interval: 23
 lapses: 0
-modified: 20220802121809418
+modified: 20221210005806782
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.859946790337357
 review: 20220802121809418
 stability: 95.882214518606
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 为什么要使用数据库
 type: text/vnd.tiddlywiki
 

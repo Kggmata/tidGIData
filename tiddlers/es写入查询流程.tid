@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220620134033277","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619134033277"},{"due":"20220709071101543","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621034131701"}]
 interval: 20
 lapses: 0
-modified: 20220711004742334
+modified: 20221210011645607
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8553190686350756
 review: 20220711004742333
 stability: 85.56630724019516
-tags: Elasticsearch ?
+tags: elasticSearch ?
 title: es写入查询流程
 type: text/vnd.tiddlywiki
 

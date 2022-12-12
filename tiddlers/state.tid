@@ -1,0 +1,9 @@
+created: 20221210004126581
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript) reactNative
+title: state
+type: text/vnd.tiddlywiki
+
+state指的是组件内部的状态, 用来存储组件内部的可变数据, 可以让组件具备动态行为, 组件的state只能在组件内部被修改, 并且修改会触发rerender

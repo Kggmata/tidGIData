@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220614124037506","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613124037506"},{"due":"20220617024450684","interval":3,"difficulty":1.3433801103128513,"stability":0.07442546333264817,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616024450684"},{"due":"20220626062111177","interval":1,"difficulty":1,"stability":8.576318957033282,"retrievability":0.24276740922146145,"grade":2,"lapses":1,"reps":2,"review":"20220617062111177"},{"due":"20220629055119360","interval":11,"difficulty":2.0735974780492556,"stability":0.05488315248213783,"retrievability":0.8735974780492557,"grade":0,"lapses":2,"reps":1,"review":"20220628055119360"},{"due":"20220711141813281","interval":3,"difficulty":1,"stability":10.115582029778109,"retrievability":0.0031537199647398966,"grade":2,"lapses":2,"reps":2,"review":"20220701141813281"}]
 interval: 11
 lapses: 2
-modified: 20220712015214981
+modified: 20221210012243756
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8917474474731802
 review: 20220712015214981
 stability: 53.79741709685743
-tags: [[structed streaming]] ?
+tags: sparkStructedStreaming结构化流 ?
 title: 无界数据流
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220529141205808","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141205808"},{"due":"20220624052755725","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052755725"}]
 interval: 23
 lapses: 0
-modified: 20220625113256870
+modified: 20221210010743382
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.897843755714891
 review: 20220625113256869
 stability: 100.35422359618087
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: 压缩native什么意思
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220625131016535","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624131016535"},{"due":"20220709060333395","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220626060333395"},{"due":"20220711132356834","interval":14,"difficulty":2.096356723988689,"stability":0.07408215765534414,"retrievability":0.8963567239886889,"grade":0,"lapses":1,"reps":1,"review":"20220710132356834"},{"due":"20220713013046584","interval":2,"difficulty":2.3545245138926454,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712013046584"},{"due":"20220721072933507","interval":8,"difficulty":2.554524727680737,"stability":0.04065705806113247,"retrievability":2.1378809139958575e-7,"grade":0,"lapses":3,"reps":1,"review":"20220720072933507"},{"due":"20220729103025587","interval":8,"difficulty":2.7545247286724797,"stability":0.030119438246165517,"retrievability":9.917429036741347e-10,"grade":0,"lapses":4,"reps":1,"review":"20220728103025586"},{"due":"20220811063926692","interval":8,"difficulty":1,"stability":6.2864997657523745,"retrievability":7.020844944109744e-13,"grade":2,"lapses":4,"reps":2,"review":"20220805063926691"}]
 interval: 10
 lapses: 4
-modified: 20220815054158842
+modified: 20221210005806783
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8456936856236087
 review: 20220815054158842
 stability: 48.51609326060108
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 什么是Hadoop?
 type: text/vnd.tiddlywiki
 

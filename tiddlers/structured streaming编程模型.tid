@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220614231842935","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613231842935"},{"due":"20220630105103504","interval":2,"difficulty":1,"stability":13.570489504250556,"retrievability":0.12633427211412301,"grade":1,"lapses":0,"reps":2,"review":"20220616105103504"}]
 interval: 19
 lapses: 0
-modified: 20220705022115157
+modified: 20221210012243755
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.862849556630761
 review: 20220705022115157
 stability: 84.61770258190634
-tags: [[structed streaming]] ?
+tags: sparkStructedStreaming结构化流 ?
 title: structured streaming编程模型
 type: text/vnd.tiddlywiki
 

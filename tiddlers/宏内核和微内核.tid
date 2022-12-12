@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220712075557496","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711075557496"},{"due":"20220731133249571","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":1,"lapses":0,"reps":2,"review":"20220715133249571"},{"due":"20220806071307544","interval":21,"difficulty":2.0713039910856885,"stability":0.07408183255527093,"retrievability":0.8713039910856882,"grade":0,"lapses":1,"reps":1,"review":"20220805071307543"},{"due":"20220810040145363","interval":4,"difficulty":2.2746873984005633,"stability":0.054881164580531924,"retrievability":0.003383407314874798,"grade":0,"lapses":2,"reps":1,"review":"20220809040145363"},{"due":"20220814112752252","interval":4,"difficulty":2.4751497546228496,"stability":0.040656966333775045,"retrievability":0.00046235622228624413,"grade":0,"lapses":3,"reps":1,"review":"20220813112752252"},{"due":"20220821020425622","interval":7,"difficulty":2.675149767861126,"stability":0.03011942145770373,"retrievability":1.32382762586235e-8,"grade":0,"lapses":4,"reps":1,"review":"20220820020425622"}]
 interval: 10
 lapses: 5
-modified: 20220830064727552
+modified: 20221210005806786
+modifier: Yangqing QU
 reps: 1
 retrievability: 6.426555450991425e-16
 review: 20220830064727551
 stability: 0.02231301621225883
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 宏内核和微内核
 type: text/vnd.tiddlywiki
 

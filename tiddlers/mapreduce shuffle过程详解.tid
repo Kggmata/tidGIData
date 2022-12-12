@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220526132857499","interval":0,"difficulty":2.9854211216321387,"stability":0.3375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220525132857499"},{"due":"20220628142250505","interval":6,"difficulty":1.3390714529769896,"stability":27.64145037134405,"retrievability":0.15365033134485093,"grade":2,"lapses":0,"reps":2,"review":"20220531142250505"}]
 interval: 31
 lapses: 0
-modified: 20220701025816383
+modified: 20221210011916632
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8885518728545304
 review: 20220701025816383
 stability: 128.3109886232779
-tags: mapreduce ?
+tags: mapReduce ?
 title: mapreduce shuffle过程详解
 type: text/vnd.tiddlywiki
 

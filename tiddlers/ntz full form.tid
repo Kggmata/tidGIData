@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220801114218670","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731114218670"},{"due":"20220807235742102","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806235742102"},{"due":"20220826081448558","interval":6,"difficulty":1,"stability":12.923390933819324,"retrievability":0.00019680275038780497,"grade":2,"lapses":1,"reps":2,"review":"20220813081448558"}]
 interval: 110
 lapses: 2
-modified: 20221201140916738
+modified: 20221210010125736
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.40787403737477057
 review: 20221201140916737
 stability: 1.097623272188053
-tags: concept common ?
+tags: concept概念 common通用 ?
 title: ntz full form
 type: text/vnd.tiddlywiki
 

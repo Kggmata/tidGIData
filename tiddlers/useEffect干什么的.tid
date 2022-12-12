@@ -1,0 +1,21 @@
+created: 20221208095121633
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: js(javaScript) react
+title: useEffect干什么的
+type: text/vnd.tiddlywiki
+
+https://www.ruanyifeng.com/blog/2020/09/react-hooks-useeffect-tutorial.html#:~:text=useEffect()%20%E7%9A%84%E4%BD%9C%E7%94%A8%E5%B0%B1%E6%98%AF,%E6%95%88%E5%BA%94%E5%87%BD%E6%95%B0%E4%B9%9F%E4%BC%9A%E6%89%A7%E8%A1%8C%E3%80%82
+
+useEffect 是 React 中的一个 [[Hook]]，它用于在组件的某些变化时执行副作用操作。副作用操作包括任何不是直接渲染 UI 的操作，例如获取数据、访问浏览器缓存、设置定时器等。使用 useEffect 可以让你在函数组件中执行这些操作，并且可以自动在执行完操作后清除定时器或订阅。
+
+使用 useEffect 的一般流程如下：
+
+在组件中定义一个函数，用于执行你想要在组件更新时执行的操作。
+在组件的 return 语句中调用 useEffect，并将你定义的函数作为参数传入。
+useEffect 会在组件挂载时和更新时执行你传入的函数。
+
+useEffect一般三部分, 一个函数在deps变化时执行, deps作为判断是否执行函数, 清除函数用来执行清理操作,可以不加
+
+deps为空则在每次更新执行

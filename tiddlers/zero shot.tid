@@ -1,0 +1,9 @@
+created: 20221209082729306
+creator: Yangqing QU
+modified: 20221210010427366
+modifier: Yangqing QU
+tags: ? machineLearning机器学习
+title: zero shot
+type: text/vnd.tiddlywiki
+
+Zeroshot learning是一种机器学习方法，它能够在没有任何先前的训练数据的情况下对新的数据进行分类。在这种方法中，模型通过对数据进行预测来学习，而不是依赖于大量的预先训练的数据。这种方法对于处理那些缺乏大量标记数据的问题特别有用，因为它可以让模型学习新的信息而不需要大量预先训练的数据。

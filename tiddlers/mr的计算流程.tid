@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220524114048737","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114048737"},{"due":"20220615023259343","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529023259343"},{"due":"20220727091732623","interval":18,"difficulty":3.983494477388395,"stability":41.186951489203864,"retrievability":0.8919043531095704,"grade":1,"lapses":0,"reps":3,"review":"20220616091732623"}]
 interval: 48
 lapses: 0
-modified: 20220803123212943
+modified: 20221210011916633
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8844502583323368
 review: 20220803123212943
 stability: 95.07572575532474
-tags: mapreduce ?
+tags: mapReduce ?
 title: mr的计算流程
 type: text/vnd.tiddlywiki
 

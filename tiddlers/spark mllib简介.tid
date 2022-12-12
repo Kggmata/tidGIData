@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220626024938488","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625024938488"},{"due":"20220715044903381","interval":4,"difficulty":1,"stability":16.061313745994745,"retrievability":0.014785398243253882,"grade":1,"lapses":0,"reps":2,"review":"20220629044903381"},{"due":"20220722060705465","interval":22,"difficulty":2.065612726934808,"stability":0.07408190596496488,"retrievability":0.865612726934808,"grade":0,"lapses":1,"reps":1,"review":"20220721060705465"},{"due":"20220812031552944","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":2,"lapses":1,"reps":2,"review":"20220730031552943"}]
 interval: 18
 lapses: 1
-modified: 20220817121134480
+modified: 20221210005806778
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8635498340859799
 review: 20220817121134479
 stability: 78.02554949696935
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: spark mllib简介
 type: text/vnd.tiddlywiki
 

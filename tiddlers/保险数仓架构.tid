@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220621003156094","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620003156094"},{"due":"20220630145055198","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":2,"review":"20220621145055198"},{"due":"20220825153645024","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":3,"review":"20220702153645023"}]
 interval: 146
 lapses: 1
-modified: 20221125022532941
+modified: 20221210010815091
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.7508661689601456
 review: 20221125022532941
 stability: 1.4816364413634358
-tags: 用户画像 保险 concept ?
+tags: userProfile用户画像 insurance保险 concept概念 ?
 title: 保险数仓架构
 type: text/vnd.tiddlywiki
 

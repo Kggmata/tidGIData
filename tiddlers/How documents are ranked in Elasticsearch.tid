@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621005943622","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005943622"},{"due":"20220705090331502","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220622090331502"}]
 interval: 18
 lapses: 0
-modified: 20220710015319078
+modified: 20221210005806772
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8687910512583555
 review: 20220710015319077
 stability: 77.83147630042302
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: How documents are ranked in Elasticsearch
 type: text/vnd.tiddlywiki
 

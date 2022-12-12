@@ -1,0 +1,15 @@
+created: 20221208152658896
+creator: Yangqing QU
+modified: 20221210011244418
+modifier: Yangqing QU
+tags: ? js(javaScript) ts(typeScript)
+title: ts vs js
+type: text/vnd.tiddlywiki
+
+TypeScript 和 JavaScript 有很多相似之处，因为 TypeScript 是 JavaScript 的一个超集。但是，它们也有一些区别：
+
+TypeScript 是一种类型系统，它可以给变量和表达式分配类型，而 JavaScript 是一种动态类型语言，不支持类型定义。
+TypeScript 支持类和接口，这是 JavaScript 所不具备的面向对象编程特性。
+TypeScript 支持模块化编程，可以将代码分割成多个文件，更易于管理和维护。JavaScript 中也有模块的概念，但是它的实现方式不同。
+TypeScript 编译器可以在编译阶段捕获一些错误，而 JavaScript 在运行时才能检测到错误。
+总的来说，TypeScript 为 JavaScript 提供了更强大的编程能力，使得开发者可以更轻松地编写复杂的应用。

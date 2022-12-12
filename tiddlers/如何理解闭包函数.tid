@@ -1,0 +1,36 @@
+created: 20221208110643352
+creator: Yangqing QU
+modified: 20221210012336824
+modifier: Yangqing QU
+tags: ? programmingLanguage编程语言
+title: 如何理解闭包函数
+type: text/vnd.tiddlywiki
+
+闭包是一种特殊的 JavaScript 函数，它可以访问其他函数内部的变量。这意味着，在闭包内部定义的函数可以访问定义它的函数的参数和变量。
+
+这个概念可能有些抽象，下面是一个例子：
+
+```
+function outerFunction(x) {
+  // 定义了一个内部函数
+  function innerFunction(y) {
+    // 访问了外部函数的参数
+    return x + y;
+  }
+
+  // 返回内部函数
+  return innerFunction;
+}
+
+// 调用外部函数并存储返回值（内部函数）
+const addFive = outerFunction(5);
+
+// 调用内部函数
+const result = addFive(3);  // 返回 8
+```
+
+在上面的例子中，我们定义了一个名为 outerFunction 的函数，它接收一个参数 x。在函数内部，我们定义了另一个函数 innerFunction，它接收参数 y 并返回 x + y。然后，我们在 outerFunction 函数内部返回 innerFunction，并将它的返回值存储在变量 addFive 中。
+
+接下来，我们调用 addFive 函数并传入参数 3，它会执行内部函数 innerFunction 并返回 x + y，其中 x 是 outerFunction 函数的参数（即 5），y 是 addFive 函数的参数（即 3）。这样，我们就可以通过闭包访问外部函数的变量。
+
+总之，闭包是一种能够访问其他函数内部变量的特殊 JavaScript 函数。它允许内部函数访问外部函数的参数和变量，并且在外部函数返回内部函数时仍然可以访问。闭包可以提高代码的可重用性和可读性，并且在一些情况下可以用来模拟私有变量。

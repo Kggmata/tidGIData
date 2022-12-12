@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20221111135421123","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109135421122"}]
 interval: 4
 lapses: 0
-modified: 20221116012052008
+modified: 20221210005645771
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.81
 review: 20221113055855214
 stability: 10.268730125807526
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: AVL tree
 type: text/vnd.tiddlywiki
 

@@ -1,0 +1,36 @@
+created: 20221208113906709
+creator: Yangqing QU
+modified: 20221208114115150
+modifier: Yangqing QU
+tags: 
+title: null和undefined的区别
+type: text/vnd.tiddlywiki
+
+在 JavaScript 中，null 和 undefined 是两种特殊的值，它们都表示某种“空”的含义。它们在语义上有所区别，并且在代码中的处理方式也不同。
+
+null 是一个特殊的值，它表示“空”或“没有值”。它通常用来表示一个变量当前没有值。例如：
+
+```
+const x = null;
+上面的代码中，我们定义了一个名为 x 的变量，并将它赋值为 null。这表示 x 当前没有值，可以认为它是一个“空”的变量。
+```
+
+undefined 也是一个特殊的值，它表示“未定义”。它通常用来表示变量还没有被声明，或者函数没有返回值。例如：
+
+```
+console.log(x);  // 输出 undefined
+
+let x;
+```
+在上面的例子中，我们声明了一个名为 x 的变量，但没有给它赋值。在执行到 console.log(x) 这一行时，由于 x 变量还没有被赋值，所以它的值为 undefined。
+
+此外，如果在执行函数时忘记了指定返回值，那么函数的返回值也会是 undefined。例如：
+
+```
+function foo() {
+  // 忘记指定返回值
+}
+
+console.log(foo());  // 输出 undefined
+```
+总之，null 表示“空”或“没有值”，而 undefined 表示“未定义”。它们在语义上有所区别，在代码中的处理方式也不同。

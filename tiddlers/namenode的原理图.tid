@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524113923171","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522113923171"},{"due":"20220615053543684","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529053543684"},{"due":"20220802092004785","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616092004785"}]
 interval: 51
 lapses: 0
-modified: 20220806235708585
+modified: 20221210010743382
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8913241313900776
 review: 20220806235708584
 stability: 136.18234364390057
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: namenode的原理图
 type: text/vnd.tiddlywiki
 

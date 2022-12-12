@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220620061639468","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619061639468"},{"due":"20220704031858601","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621031858601"},{"due":"20220718070206852","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220708064600911"},{"due":"20220723114822299","interval":14,"difficulty":2.2756064102320215,"stability":0.054881225761675624,"retrievability":2.2530868927322153e-9,"grade":0,"lapses":2,"reps":1,"review":"20220722114822298"},{"due":"20220810042312824","interval":8,"difficulty":2.4756066240089583,"stability":0.04065697748494399,"retrievability":2.1377693640808248e-7,"grade":0,"lapses":3,"reps":1,"review":"20220730040157679"},{"due":"20220815081842670","interval":15,"difficulty":2.6756066240089584,"stability":0.03011942145770373,"retrievability":1.3128492437767563e-17,"grade":0,"lapses":4,"reps":1,"review":"20220814081842670"},{"due":"20220822112047822","interval":7,"difficulty":2.8756066240321636,"stability":0.02231301621225883,"retrievability":2.3205171444202523e-11,"grade":0,"lapses":5,"reps":1,"review":"20220821112047822"}]
 interval: 15
 lapses: 6
-modified: 20220905093148406
+modified: 20221210005806769
+modifier: Yangqing QU
 reps: 1
 retrievability: 1.7352956271111043e-31
 review: 20220905093148405
 stability: 0.016529888968407916
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: ES的PythonAPI
 type: text/vnd.tiddlywiki
 

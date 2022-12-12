@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221113071821359
+modified: 20221210011811341
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113071821359
 stability: 2
-tags: 7231 ?
+tags: 7231ComputerSystem计算机系统 ?
 title: copy all .c files whose name end in .c in the "${HOME}/csse2310/trunk/a4" to "data"of HOME directory
 type: text/vnd.tiddlywiki
 

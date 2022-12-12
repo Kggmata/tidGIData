@@ -1,5 +1,6 @@
 created: 20221116014127176
-modified: 20221116014143527
-tags: ? 7505
+modified: 20221210005645773
+modifier: Yangqing QU
+tags: ? 7505Algorithm
 title: If we add 1 to all the edge weights in Dijkstra, the shortest path between two nodes might not remain the same.
 type: text/vnd.tiddlywiki

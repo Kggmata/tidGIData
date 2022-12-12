@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220618143837427","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220617143837427"},{"due":"20220702021008265","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":2,"lapses":0,"reps":2,"review":"20220619021008265"}]
 interval: 17
 lapses: 0
-modified: 20220706040336769
+modified: 20221210005806793
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8756310680305948
 review: 20220706040336769
 stability: 77.17545152839092
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 用户画像场景
 type: text/vnd.tiddlywiki
 

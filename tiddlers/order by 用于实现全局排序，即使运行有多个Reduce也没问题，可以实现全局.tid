@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524011034912","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523011034912"},{"due":"20220619053836358","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529053836358"}]
 interval: 22
 lapses: 0
-modified: 20220620131908539
+modified: 20221210011916633
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8959329765306554
 review: 20220620131908539
 stability: 81.39969753492974
-tags: mapreduce ?
+tags: mapReduce ?
 title: order by 用于实现全局排序，即使运行有多个Reduce也没问题，可以实现全局
 type: text/vnd.tiddlywiki
 

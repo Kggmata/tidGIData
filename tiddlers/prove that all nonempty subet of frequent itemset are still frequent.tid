@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221113140931239
+modified: 20221210005532893
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113140931239
 stability: 2
-tags: 7203 ?
+tags: 7203DataMining数据挖掘 ?
 title: prove that all nonempty subet of frequent itemset are still frequent
 type: text/vnd.tiddlywiki
 

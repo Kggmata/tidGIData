@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630135239360","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629135239360"},{"due":"20220721000237595","interval":6,"difficulty":1,"stability":16.39358230182641,"retrievability":0.001797216149689106,"grade":1,"lapses":0,"reps":2,"review":"20220705000237595"},{"due":"20220731015523374","interval":25,"difficulty":2.0515701337094803,"stability":0.07408184304237006,"retrievability":0.8515701337094802,"grade":0,"lapses":1,"reps":1,"review":"20220730015523374"},{"due":"20220816075330317","interval":6,"difficulty":1.2517669368164699,"stability":11.054361894149821,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220805075330317"}]
 interval: 18
 lapses: 1
-modified: 20220823092333493
+modified: 20221210005806775
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8423495003259222
 review: 20220823092333492
 stability: 81.09604357941797
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: python 正则模块
 type: text/vnd.tiddlywiki
 

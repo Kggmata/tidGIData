@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220621094054662","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620094054662"},{"due":"20220623132918631","interval":2,"difficulty":1,"stability":0.07408719146292923,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622132918631"}]
 interval: 3
 lapses: 1
-modified: 20220710092346057
+modified: 20221210005806778
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.01403297475148654
 review: 20220625084341913
 stability: 12.644777089702036
-tags: 用户画像
+tags: userProfile用户画像
 title: spark on hive
 type: text/vnd.tiddlywiki
 

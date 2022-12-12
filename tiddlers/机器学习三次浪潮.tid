@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220626003813893","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625003813893"},{"due":"20220710144321122","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220627144321122"},{"due":"20220712012549992","interval":14,"difficulty":2.096356723988689,"stability":0.07408215765534414,"retrievability":0.8963567239886889,"grade":0,"lapses":1,"reps":1,"review":"20220711012549992"},{"due":"20220727025856159","interval":5,"difficulty":1.2971727545192382,"stability":10.773429611966149,"retrievability":0.0008160305305493356,"grade":1,"lapses":1,"reps":2,"review":"20220716025856158"}]
 interval: 18
 lapses: 1
-modified: 20220803031235874
+modified: 20221210005806790
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8385895195741053
 review: 20220803031235874
 stability: 81.15960259638426
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 机器学习三次浪潮
 type: text/vnd.tiddlywiki
 

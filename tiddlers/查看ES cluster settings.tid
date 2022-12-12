@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220625131404436","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624131404436"},{"due":"20220709005545396","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":1,"lapses":0,"reps":2,"review":"20220626005545395"},{"due":"20220711122926609","interval":14,"difficulty":2.096356723988689,"stability":0.07408215765534414,"retrievability":0.8963567239886889,"grade":0,"lapses":1,"reps":1,"review":"20220710122926609"},{"due":"20220712090955374","interval":1,"difficulty":2.53753671881404,"stability":0.05488141221849455,"retrievability":0.2411799948253509,"grade":0,"lapses":2,"reps":1,"review":"20220711090955374"},{"due":"20220722011733968","interval":4,"difficulty":1.7379990910573675,"stability":6.916609055845714,"retrievability":0.0004623722433273712,"grade":1,"lapses":2,"reps":2,"review":"20220715011733967"},{"due":"20220731021930426","interval":15,"difficulty":2.733729694940396,"stability":0.04065697748494399,"retrievability":0.7957306038830287,"grade":0,"lapses":3,"reps":1,"review":"20220730021930425"},{"due":"20220810065955265","interval":6,"difficulty":1.9337298716604938,"stability":5.053412606559227,"retrievability":1.7672009785144746e-7,"grade":1,"lapses":3,"reps":2,"review":"20220805065955265"},{"due":"20220814111603538","interval":8,"difficulty":2.9801029433025708,"stability":0.03011942145770373,"retrievability":0.8463730716420768,"grade":0,"lapses":4,"reps":1,"review":"20220813111603538"},{"due":"20220826014447975","interval":7,"difficulty":1.1801029433257757,"stability":5.601707784091826,"retrievability":2.3205171444202523e-11,"grade":2,"lapses":4,"reps":2,"review":"20220820014447974"}]
 interval: 103
 lapses: 5
-modified: 20221201111052573
+modified: 20221210011645607
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.1440938991912224
 review: 20221201111052573
 stability: 0.44626032029685964
-tags: 用户画像 Elasticsearch ?
+tags: userProfile用户画像 elasticSearch ?
 title: 查看ES cluster settings
 type: text/vnd.tiddlywiki
 

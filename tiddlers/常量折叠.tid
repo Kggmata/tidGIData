@@ -6,13 +6,13 @@ grade: 1
 history: [{"due":"20220620144745006","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619144745006"},{"due":"20220620235619814","interval":0,"difficulty":1,"stability":0.10005798339843751,"retrievability":1,"grade":1,"lapses":0,"reps":2,"review":"20220619235619813"},{"due":"20220630145550469","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":2,"lapses":0,"reps":3,"review":"20220621145550469"},{"due":"20220825154025620","interval":11,"difficulty":1,"stability":53.686353537936405,"retrievability":0.8770024421488429,"grade":2,"lapses":0,"reps":4,"review":"20220702154025620"}]
 interval: 146
 lapses: 0
-modified: 20221125103739544
+modified: 20221210012257752
 modifier: Yangqing QU
 reps: 5
 retrievability: 0.7508661689601456
 review: 20221125103739543
 stability: 464.54873389311336
-tags: optimization concept ?
+tags: optimization优化 concept概念 ?
 title: 常量折叠
 type: text/vnd.tiddlywiki
 

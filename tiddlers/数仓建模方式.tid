@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220524081214878","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523081214878"},{"due":"20220602112633953","interval":2,"difficulty":2.640976298811018,"stability":7.587419783831714,"retrievability":0.6931759895835838,"grade":2,"lapses":0,"reps":2,"review":"20220525112633953"},{"due":"20220719115607999","interval":12,"difficulty":1.6874852207351265,"stability":42.50129829954656,"retrievability":0.8465089219241088,"grade":2,"lapses":0,"reps":3,"review":"20220606115607999"}]
 interval: 48
 lapses: 0
-modified: 20220724023646678
+modified: 20221210011006900
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8878151066227022
 review: 20220724023646678
 stability: 185.52095947522199
-tags: 基础概念 ?
+tags: concept概念 ?
 title: 数仓建模方式
 type: text/vnd.tiddlywiki
 

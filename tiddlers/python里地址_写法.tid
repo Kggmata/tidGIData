@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220620150343625","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619150343625"},{"due":"20220622062506639","interval":2,"difficulty":1,"stability":0.07410329964720157,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220621062506639"},{"due":"20220705141403103","interval":2,"difficulty":1,"stability":11.780200635877742,"retrievability":0.05821501375612986,"grade":2,"lapses":1,"reps":2,"review":"20220623141403103"}]
 interval: 17
 lapses: 1
-modified: 20220710034229010
+modified: 20221210005806776
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.858949032118042
 review: 20220710034229009
 stability: 77.15919835906939
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: python里地址\写法
 type: text/vnd.tiddlywiki
 

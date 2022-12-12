@@ -1,0 +1,11 @@
+created: 20221209074613012
+creator: Yangqing QU
+modified: 20221210010329597
+modifier: Yangqing QU
+tags: ? deepLearning深度学习
+title: 什么是transformer?
+type: text/vnd.tiddlywiki
+
+A transformer is a type of deep learning model that is capable of performing a variety of tasks, including natural language processing and machine translation. It is called a transformer because it uses a technique called [[self-attention]] to process input data, which allows it to capture the dependencies between different elements of the input in a flexible way. This makes it very effective for tasks that require understanding complex relationships within the input, such as language translation and summarization.
+
+Transformer model是一种深度学习模型，能够执行各种任务，包括自然语言处理和机器翻译。它被称为Transformer model，因为它使用一种称为自我关注的技术来处理输入数据，这使它能够以灵活的方式捕捉输入的不同元素之间的依赖关系。这使得它对于需要理解输入中复杂关系的任务（如语言翻译和摘要）非常有效。

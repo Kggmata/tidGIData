@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20221030063344252","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221028063344252"},{"due":"20221101022732093","interval":3,"difficulty":6.0538149682454625,"stability":1.4816364413634358,"retrievability":0.8538149682454624,"grade":0,"lapses":1,"reps":1,"review":"20221031022732092"}]
 interval: 5
 lapses: 1
-modified: 20221105004744960
+modified: 20221210005645773
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.7007847152150146
 review: 20221105004744960
 stability: 9.702628129042516
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: Notation种类
 type: text/vnd.tiddlywiki
 

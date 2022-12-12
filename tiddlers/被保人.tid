@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220621004108608","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620004108608"},{"due":"20220630145417487","interval":1,"difficulty":1,"stability":8.830517274901752,"retrievability":0.348891394928074,"grade":1,"lapses":0,"reps":2,"review":"20220621145417487"},{"due":"20220703153902635","interval":11,"difficulty":2.077002442148843,"stability":0.07408316441686115,"retrievability":0.8770024421488429,"grade":0,"lapses":1,"reps":1,"review":"20220702153902635"},{"due":"20220719113252140","interval":4,"difficulty":1,"stability":12.858890454366344,"retrievability":0.0033837533675606132,"grade":2,"lapses":1,"reps":2,"review":"20220706113252139"}]
 interval: 17
 lapses: 1
-modified: 20220723091700264
+modified: 20221210005806795
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.869974757506569
 review: 20220723091700264
 stability: 77.13983269014095
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 被保人
 type: text/vnd.tiddlywiki
 

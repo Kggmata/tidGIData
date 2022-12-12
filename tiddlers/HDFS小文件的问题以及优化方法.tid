@@ -5,12 +5,13 @@ grade: 0
 history: [{"due":"20220524024151499","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522024151499"},{"due":"20220528122344997","interval":5,"difficulty":5.968433471420917,"stability":0.2500261494800798,"retrievability":0.7684334714209162,"grade":0,"lapses":1,"reps":1,"review":"20220527122344997"},{"due":"20220602061655692","interval":5,"difficulty":6.2900369228497475,"stability":0.08746685450248547,"retrievability":0.121603451428831,"grade":0,"lapses":2,"reps":1,"review":"20220601061655691"},{"due":"20220611120523052","interval":5,"difficulty":4.492459599256247,"stability":5.196231177076784,"retrievability":0.002422676406499329,"grade":2,"lapses":2,"reps":2,"review":"20220606120523052"},{"due":"20220614130024542","interval":7,"difficulty":5.560137831134749,"stability":0.04141134327240674,"retrievability":0.8676782318785015,"grade":0,"lapses":3,"reps":1,"review":"20220613130024542"},{"due":"20220617035523709","interval":3,"difficulty":5.760622168592254,"stability":0.030189278247205704,"retrievability":0.00048433745750513875,"grade":0,"lapses":4,"reps":1,"review":"20220616035523709"},{"due":"20220620102604214","interval":2,"difficulty":4.961552475827695,"stability":2.069841790233779,"retrievability":0.0009303072354408688,"grade":1,"lapses":4,"reps":2,"review":"20220618102604214"},{"due":"20220628035625586","interval":3,"difficulty":5.019932747196826,"stability":7.350054288294468,"retrievability":0.8583802713691309,"grade":1,"lapses":4,"reps":3,"review":"20220621035625586"},{"due":"20220720021241159","interval":9,"difficulty":5.09889623243557,"stability":19.52352980105248,"retrievability":0.8789634852387436,"grade":1,"lapses":4,"reps":4,"review":"20220630021241158"},{"due":"20220727110612258","interval":26,"difficulty":6.167983809286115,"stability":0.02231302864945722,"retrievability":0.8690875768505444,"grade":0,"lapses":5,"reps":1,"review":"20220726110612258"},{"due":"20220804043143459","interval":8,"difficulty":6.367983809286115,"stability":0.016529891162146766,"retrievability":3.929539539526536e-17,"grade":0,"lapses":6,"reps":1,"review":"20220803043143459"},{"due":"20220809111555068","interval":5,"difficulty":4.56798380928613,"stability":1.353293006431676,"retrievability":1.4426720631400755e-14,"grade":2,"lapses":6,"reps":2,"review":"20220808111555068"},{"due":"20220823082939424","interval":4,"difficulty":3.5003902510128864,"stability":11.109051460692834,"retrievability":0.7324064417267568,"grade":2,"lapses":6,"reps":3,"review":"20220812082939424"}]
 interval: 60
 lapses: 7
-modified: 20221011132815626
+modified: 20221210010743381
+modifier: Yangqing QU
 reps: 1
 retrievability: 0.5660616587795427
 review: 20221011132815625
 stability: 0.012245642933642305
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: HDFS小文件的问题以及优化方法
 type: text/vnd.tiddlywiki
 

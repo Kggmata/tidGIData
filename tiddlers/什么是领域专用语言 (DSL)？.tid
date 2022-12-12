@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220626000022723","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625000022723"},{"due":"20220629033923582","interval":3,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.04240087022375615,"grade":0,"lapses":1,"reps":1,"review":"20220628033923582"},{"due":"20220714141620156","interval":3,"difficulty":1,"stability":12.644453482888508,"retrievability":0.014030805349029462,"grade":1,"lapses":1,"reps":2,"review":"20220701141620155"},{"due":"20220722022934547","interval":20,"difficulty":2.046495020297031,"stability":0.054881287913948605,"retrievability":0.8464950202970309,"grade":0,"lapses":2,"reps":1,"review":"20220721022934547"},{"due":"20220809023436924","interval":9,"difficulty":1,"stability":10.165670624565559,"retrievability":3.1348333116598453e-8,"grade":2,"lapses":2,"reps":2,"review":"20220730023436924"}]
 interval: 13
 lapses: 2
-modified: 20220812080322727
+modified: 20221210005806783
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8739461813439561
 review: 20220812080322727
 stability: 61.69753041607147
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 什么是领域专用语言 (DSL)？
 type: text/vnd.tiddlywiki
 

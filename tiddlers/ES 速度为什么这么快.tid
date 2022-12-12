@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220621014651840","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620014651840"},{"due":"20220705074504939","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220622074504939"},{"due":"20220710123347879","interval":17,"difficulty":2.0756064079789343,"stability":0.07408215765534414,"retrievability":0.8756064079789342,"grade":0,"lapses":1,"reps":1,"review":"20220709123347879"},{"due":"20220712013857486","interval":2,"difficulty":2.3337741978828905,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220711013857485"},{"due":"20220803093517602","interval":6,"difficulty":1.5337841402004984,"stability":7.549405667298783,"retrievability":0.000009942317607937474,"grade":1,"lapses":2,"reps":2,"review":"20220717063000398"},{"due":"20220808010404179","interval":21,"difficulty":2.479747489245578,"stability":0.04065696741292043,"retrievability":0.7459633490450792,"grade":0,"lapses":3,"reps":1,"review":"20220807010404179"},{"due":"20220813025103208","interval":5,"difficulty":2.6797498482941995,"stability":0.030119421724187252,"retrievability":0.000002359048621483784,"grade":0,"lapses":4,"reps":1,"review":"20220812025103208"},{"due":"20220825081618399","interval":7,"difficulty":1,"stability":6.286497003464158,"retrievability":2.3205176471537944e-11,"grade":2,"lapses":4,"reps":2,"review":"20220819081618399"}]
 interval: 94
 lapses: 5
-modified: 20221121070920046
+modified: 20221210011645607
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.2069201221025047
 review: 20221121070920046
 stability: 0.44626032029685964
-tags: 用户画像 Elasticsearch ?
+tags: userProfile用户画像 elasticSearch ?
 title: ES 速度为什么这么快
 type: text/vnd.tiddlywiki
 

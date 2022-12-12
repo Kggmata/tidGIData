@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220630125716165","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629125716165"},{"due":"20220719070353658","interval":4,"difficulty":1,"stability":16.06070049428815,"retrievability":0.014782011698955301,"grade":1,"lapses":0,"reps":2,"review":"20220703070353657"},{"due":"20220724102029154","interval":20,"difficulty":2.0770398141193533,"stability":0.07408190596496488,"retrievability":0.8770398141193532,"grade":0,"lapses":1,"reps":1,"review":"20220723102029154"},{"due":"20220812234944268","interval":9,"difficulty":1.2770425750318808,"stability":10.905110569252246,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220801234944267"}]
 interval: 17
 lapses: 1
-modified: 20220819075655443
+modified: 20221210005806789
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8485326364339206
 review: 20220819075655443
 stability: 65.38009439902315
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 方差、标准差、均方差、均方误差（MSE）区别总结
 type: text/vnd.tiddlywiki
 

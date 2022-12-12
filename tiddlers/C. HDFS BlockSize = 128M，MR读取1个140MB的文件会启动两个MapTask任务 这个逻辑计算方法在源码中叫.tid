@@ -6,12 +6,13 @@ grade: 2
 history: [{"due":"20220522001151571","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001151571"},{"due":"20220528003008395","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522003008395"},{"due":"20220624141015200","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531141015200"},{"due":"20220625002010480","interval":24,"difficulty":4.254872884385773,"stability":0.07408719146292923,"retrievability":0.8990204493398125,"grade":0,"lapses":1,"reps":1,"review":"20220624002010479"},{"due":"20220629075404284","interval":1,"difficulty":2.6960761858694147,"stability":4.317337934488496,"retrievability":0.2412033014836416,"grade":2,"lapses":1,"reps":2,"review":"20220625075404284"},{"due":"20220716063601063","interval":4,"difficulty":1.803073140998294,"stability":16.79013264690614,"retrievability":0.9069969551288792,"grade":2,"lapses":1,"reps":3,"review":"20220629063601062"}]
 interval: 22
 lapses: 1
-modified: 20220721024112312
+modified: 20221210011916631
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8710523606889513
 review: 20220721024112312
 stability: 95.65969208249972
-tags: hadoop mapreduce ?
+tags: hadoop mapReduce ?
 title: C. HDFS BlockSize = 128M，MR读取1个140MB的文件会启动两个MapTask任务 这个逻辑计算方法在源码中叫
 type: text/vnd.tiddlywiki
 

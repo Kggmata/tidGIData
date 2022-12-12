@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220630104403639","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629104403639"},{"due":"20220705143727207","interval":5,"difficulty":1,"stability":0.07408249324251646,"retrievability":0.005154267178780677,"grade":0,"lapses":1,"reps":1,"review":"20220704143727207"},{"due":"20220723033818343","interval":6,"difficulty":1,"stability":12.923483695991797,"retrievability":0.00019681784697502946,"grade":1,"lapses":1,"reps":2,"review":"20220710033818343"}]
 interval: 22
 lapses: 1
-modified: 20220801101621411
+modified: 20221210005806774
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8358065523131496
 review: 20220801101621410
 stability: 95.86130921292919
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: metastore启动
 type: text/vnd.tiddlywiki
 

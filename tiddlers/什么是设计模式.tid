@@ -1,0 +1,11 @@
+created: 20221209094300489
+creator: Yangqing QU
+modified: 20221210012422676
+modifier: Yangqing QU
+tags: ? programming编程
+title: 什么是设计模式
+type: text/vnd.tiddlywiki
+
+本质上就是软件工程当中反复出现的一些解决方案
+
+比如[[工厂模式]], [[模板模式]], [[单例模式]], [[观察者模式]], [[策略模式]]

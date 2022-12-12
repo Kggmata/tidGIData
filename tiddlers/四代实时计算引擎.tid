@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220617034046451","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034046451"},{"due":"20220626024940761","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617024940761"},{"due":"20220821015300367","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628015300367"}]
 interval: 66
 lapses: 0
-modified: 20220902055450964
+modified: 20221210012122804
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.878511533076844
 review: 20220902055450964
 stability: 241.28319428651767
-tags: 用户画像web界面 ?
+tags: userProfile用户画像web ?
 title: 四代实时计算引擎
 type: text/vnd.tiddlywiki
 

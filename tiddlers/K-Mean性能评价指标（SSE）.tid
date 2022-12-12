@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220626052425255","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625052425255"},{"due":"20220630025022440","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014785398243253882,"grade":0,"lapses":1,"reps":1,"review":"20220629025022439"},{"due":"20220705121800351","interval":5,"difficulty":1.200816109392723,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704121800351"},{"due":"20220720015438954","interval":6,"difficulty":1,"stability":10.165567424338107,"retrievability":0.00000994283639911803,"grade":1,"lapses":2,"reps":2,"review":"20220710015438954"}]
 interval: 16
 lapses: 2
-modified: 20220726112934877
+modified: 20221210005806772
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8471892271731463
 review: 20220726112934877
 stability: 71.48495588254785
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: K-Mean性能评价指标（SSE）
 type: text/vnd.tiddlywiki
 

@@ -1,7 +1,8 @@
 created: 20220615060457702
 history: [{"due":"20220619021724754","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618021724754"},{"due":"20220621000213916","interval":2,"difficulty":1.0560352299673244,"stability":0.07412477722623134,"retrievability":0.12187376544351697,"grade":0,"lapses":1,"reps":1,"review":"20220620000213916"},{"due":"20220623041632520","interval":2,"difficulty":1.3142982288001035,"stability":0.054889119100343345,"retrievability":0.05826299883277926,"grade":0,"lapses":2,"reps":1,"review":"20220622041632520"},{"due":"20220626062642292","interval":3,"difficulty":1.5174539237378233,"stability":0.04065991276038159,"retrievability":0.003155694937719725,"grade":0,"lapses":3,"reps":1,"review":"20220625062642292"},{"due":"20220630000601500","interval":4,"difficulty":1.7174854386149745,"stability":0.030120512707719985,"retrievability":0.0000315148771511753,"grade":0,"lapses":4,"reps":1,"review":"20220629000601500"},{"due":"20220710095233346","interval":5,"difficulty":1,"stability":6.286679137395648,"retrievability":2.536672080776552e-8,"grade":1,"lapses":4,"reps":2,"review":"20220704095233346"},{"due":"20220712013605984","interval":7,"difficulty":2.0893047567398373,"stability":0.022313117091756884,"retrievability":0.8893047567398371,"grade":0,"lapses":5,"reps":1,"review":"20220711013605984"},{"due":"20220721062555487","interval":6,"difficulty":1.2893047567403337,"stability":4.141817163439106,"retrievability":4.963694195311939e-13,"grade":1,"lapses":5,"reps":2,"review":"20220717062555487"}]
-modified: 20220805065558955
-tags: 用户画像 !
+modified: 20221210005806793
+modifier: Yangqing QU
+tags: userProfile用户画像 !
 title: 用户画像性能需求及人员配置
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20221111094103403","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109094103402"}]
 interval: 4
 lapses: 0
-modified: 20221113064223026
+modified: 20221210005645777
+modifier: Yangqing QU
 reps: 2
 retrievability: 0.81
 review: 20221113064223025
 stability: 10.268730125807526
-tags: 7505 ?
+tags: 7505Algorithm ?
 title: 递归类型
 type: text/vnd.tiddlywiki
 

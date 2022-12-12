@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220523083739496","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521083739496"},{"due":"20220529002957168","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002957168"},{"due":"20220603074041920","interval":10,"difficulty":5.141177516867769,"stability":0.0960748629946603,"retrievability":0.8411775168677682,"grade":0,"lapses":1,"reps":1,"review":"20220602074041920"},{"due":"20220613122332660","interval":4,"difficulty":3.353620471438025,"stability":6.74717735579917,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606122332660"},{"due":"20220713061756395","interval":9,"difficulty":2.422509852047999,"stability":27.58643586331761,"retrievability":0.8688893806099739,"grade":2,"lapses":1,"reps":3,"review":"20220615061756395"},{"due":"20220722013059986","interval":36,"difficulty":3.4940491421561477,"stability":0.054881287913948605,"retrievability":0.8715392901081483,"grade":0,"lapses":2,"reps":1,"review":"20220721013059986"},{"due":"20220804025953141","interval":9,"difficulty":2.694049173504481,"stability":5.107321683801711,"retrievability":3.1348333116598453e-8,"grade":1,"lapses":2,"reps":2,"review":"20220730025953141"}]
 interval: 9
 lapses: 2
-modified: 20220808111331807
+modified: 20221210010743381
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8305527978976539
 review: 20220808111331807
 stability: 32.992436917050085
-tags: hdfs ?
+tags: [[hdfs(hadoop distributed file system)]] ?
 title: HDFS的存储机制（读写流程）
 type: text/vnd.tiddlywiki
 

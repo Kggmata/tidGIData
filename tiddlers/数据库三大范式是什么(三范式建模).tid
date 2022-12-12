@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220707032348166","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706032348166"},{"due":"20220711055311432","interval":4,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.014781165126568838,"grade":0,"lapses":1,"reps":1,"review":"20220710055311432"},{"due":"20220724013833949","interval":2,"difficulty":1,"stability":11.77841353084566,"retrievability":0.058167789903956296,"grade":1,"lapses":1,"reps":2,"review":"20220712013833949"}]
 interval: 20
 lapses: 1
-modified: 20220801235110233
+modified: 20221210005806789
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8361858131137268
 review: 20220801235110233
 stability: 88.59048662801926
-tags: 用户画像 ?
+tags: userProfile用户画像 ?
 title: 数据库三大范式是什么(三范式建模)
 type: text/vnd.tiddlywiki
 

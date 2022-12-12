@@ -1,0 +1,32 @@
+created: 20221210003617091
+creator: Yangqing QU
+modified: 20221210011507167
+modifier: Yangqing QU
+tags: ? jsx(javaScriptExtension) js(javaScript)
+title: JSX
+type: text/vnd.tiddlywiki
+
+也就是javascript extension, 
+
+JSX 是 JavaScript 语言的一种扩展，它允许在 JavaScript 中直接使用 XML 格式的语法来描述界面。它是 React 框架的一部分，并且是通过 Babel 编译器转换为 JavaScript 代码执行的。
+
+JSX 和 JavaScript 的主要区别在于语法，JSX 支持 XML 语法的描述，它的语法更像 HTML，而 JavaScript 则是一种常见的编程语言，它的语法更像 C 语言。
+
+下面是一个简单的 JSX 代码例子：
+
+```javascript
+const element = <h1>Hello, world!</h1>;
+```
+这段代码定义了一个名为 element 的变量，并为它赋值一个类似 HTML 的 JSX 表达式。JSX 表达式可以直接嵌入 JavaScript 代码中，并且它们会被编译器转换为合法的 JavaScript 代码。
+
+下面是上面 JSX 代码经过转换后的 JavaScript 代码：
+
+```javascript
+var element = React.createElement(
+  "h1",
+  null,
+  "Hello, world!"
+);
+```
+可以看到，JSX 代码被转换成了调用 React.createElement 方法的 JavaScript 代码。React.createElement 方法是 React 框架的一部分，它用于创建 React 元素。JSX 的目的是为了使代码更易于阅读和编写，而它在编译阶段被转换为 JavaScript 代码执行。
+
