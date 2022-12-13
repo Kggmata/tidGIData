@@ -1,0 +1,9 @@
+created: 20221212091319984
+creator: Yangqing QU
+modified: 20221212091338260
+modifier: Yangqing QU
+tags: 
+title: js的||
+type: text/vnd.tiddlywiki
+
+expr1 || expr2, 如果expr1正确, 返回expr1, 否则expr2

@@ -1,0 +1,21 @@
+created: 20221212033856407
+creator: Yangqing QU
+modified: 20221213023851322
+modifier: Yangqing QU
+tags: ? deepLearning深度学习 machineLearning机器学习
+title: 深度学习deep learning和传统机器学习的区别
+type: text/vnd.tiddlywiki
+
+Deep learning和传统机器学习都属于人工智能的范畴，但它们在实现方式上有一些不同。传统机器学习通常指使用经过手工特征提取的数据来训练模型，而深度学习则是让计算机自己学习抽取特征的过程。深度学习通过使用大量的数据和多层神经网络来自动学习特征，这让它能够在许多任务中取得比传统机器学习更好的结果。
+
+总的来说，深度学习和传统机器学习的区别在于深度学习能够自动从数据中提取特征，而传统机器学习则需要人工提取特征。
+
+https://www.oschina.net/translate/deep-learning-vs-machine-learning?print#:~:text=%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%BC%A0%E7%BB%9F%E7%9A%84,%E8%A7%84%E5%88%99%EF%BC%8C%E6%80%A7%E8%83%BD%E4%BC%9A%E6%AF%94%E8%BE%83%E5%A5%BD%E3%80%82
+	
+通常来说, 数据特征少的情况下, 深度学习的算法并不好, 而且需要大量的数据来完美的理解
+
+[img[Snipaste_2022-12-12_11-42-45.png]]
+
+硬件方面, 深度学习大量的依赖矩阵运算, 因此更依赖GPU
+
+假设一个多物体检测任务, 传统机器学习会将问题分解为 物体检测

@@ -1,0 +1,15 @@
+created: 20221212031958245
+creator: Yangqing QU
+modified: 20221212032557078
+modifier: Yangqing QU
+tags: ? common通用
+title: 富文本
+type: text/vnd.tiddlywiki
+
+指可以在文本当中包含多种格式, 样式或媒体元素
+
+1. 超链接, 图像, 视频, 音频等
+
+2. 文本格式化, 斜体,粗体,下划线等
+
+3. 使用html或其他格式编写

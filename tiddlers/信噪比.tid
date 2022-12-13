@@ -1,0 +1,11 @@
+created: 20221212031811557
+creator: Yangqing QU
+modified: 20221212033023035
+modifier: Yangqing QU
+tags: ? common通用
+title: 信噪比
+type: text/vnd.tiddlywiki
+
+信噪比即信号和噪声水平之间差异的指标, 代表信号强度和噪声强度之比, 信噪比越高, 信号质量越好
+
+单位DB, decibel, 10*log10(s1/s2)

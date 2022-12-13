@@ -1,0 +1,9 @@
+created: 20221212133918300
+creator: Yangqing QU
+modified: 20221212133941850
+modifier: Yangqing QU
+tags: ? internet网络
+title: webdav
+type: text/vnd.tiddlywiki
+
+WebDAV (Web Distributed Authoring and Versioning) is a protocol that allows users to access and manage files on a remote web server. It's often used to share files over the internet and can be accessed using a web browser or a specialized WebDAV client. WebDAV allows users to do things like upload and download files, create and delete directories, and manage file permissions. It's a useful tool for collaborating on files and documents with others over the internet.
