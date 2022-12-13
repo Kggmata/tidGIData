@@ -1,0 +1,9 @@
+created: 20221213131927160
+creator: Yangqing QU
+modified: 20221213131939724
+modifier: Yangqing QU
+tags: ? download下载
+title: 什么是metalink
+type: text/vnd.tiddlywiki
+
+Metalink是一种用于下载文件的协议，它可以让用户从多个来源下载文件，并利用多个网络连接来提高下载速度。Metalink还允许用户检查文件的完整性，确保下载的文件是完整的。
