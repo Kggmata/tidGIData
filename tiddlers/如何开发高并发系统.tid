@@ -1,0 +1,17 @@
+created: 20221213145610153
+creator: Yangqing QU
+modified: 20221213145715837
+modifier: Yangqing QU
+tags: ? distributedSystem分布式系统 highConcurrency高并发
+title: 如何开发高并发系统
+type: text/vnd.tiddlywiki
+
+Use a scalable architecture: The first step to building a high concurrency system is to make sure that the underlying architecture is designed to scale. This means using a distributed system that can handle a large number of concurrent users or tasks without slowing down or crashing.
+
+Optimize your database: Your database is one of the most important components of your system, and it can be a major bottleneck when it comes to concurrency. Make sure to optimize your database for high concurrency by using techniques like indexing, caching, and sharding.
+
+Use asynchronous processing: When dealing with a high number of concurrent users or tasks, it's important to use asynchronous processing whenever possible. This allows your system to handle multiple requests at the same time, rather than having to process them one at a time.
+
+Implement load balancing: In order to distribute the workload evenly across your system, you'll need to implement load balancing. This ensures that no single component of your system is overwhelmed by the high concurrency, and can help prevent bottlenecks and crashes.
+
+Monitor and tune your system: Finally, it's important to continuously monitor your system to identify any potential bottlenecks or performance issues. This will allow you to fine-tune your system and make adjustments as needed to ensure that it can handle a high level of concurrency.
