@@ -1,6 +1,6 @@
 created: 20221124061747689
 creator: Yangqing QU
-modified: 20221210005719792
+modified: 20221215000546096
 modifier: Yangqing QU
 tags: ? api接口
 title: COS
@@ -18,3 +18,4 @@ cloud object storage
 3. 可容纳海量数据
 4. 支持http/https访问
 ```
+

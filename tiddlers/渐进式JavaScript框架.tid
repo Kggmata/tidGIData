@@ -1,0 +1,9 @@
+created: 20221214033443001
+creator: Yangqing QU
+modified: 20221214033450283
+modifier: Yangqing QU
+tags: ? js(javaScript)
+title: 渐进式JavaScript框架
+type: text/vnd.tiddlywiki
+
+渐进式JavaScript框架指的是一种可以逐步增强用户界面的JavaScript框架。它们允许开发人员从最简单的静态网页开始，并逐渐添加功能和交互，以满足用户需求。渐进式JavaScript框架通常有较小的核心，可以按需引入其他组件和库，使开发人员能够自定义应用程序。与传统的JavaScript框架相比，渐进式JavaScript框架具有更快的加载速度和更简单的开发方式。

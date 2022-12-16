@@ -1,0 +1,9 @@
+created: 20221215045757187
+creator: Yangqing QU
+modified: 20221215045810600
+modifier: Yangqing QU
+tags: ? concept概念
+title: base64
+type: text/vnd.tiddlywiki
+
+Base64是一种用64个字符来表示任意二进制数据的方法。它常用于在网络上传输8Bit字节代码，例如电子邮件、HTML文件等。

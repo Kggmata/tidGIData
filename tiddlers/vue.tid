@@ -1,0 +1,11 @@
+created: 20221214032801637
+creator: Yangqing QU
+modified: 20221215000322208
+modifier: Yangqing QU
+tags: ? js(javaScript) frontEnd前端
+title: vue
+type: text/vnd.tiddlywiki
+
+Vue.js是一个[[渐进式JavaScript框架]]，用于构建用户界面。它旨在为用户提供一个简单但功能强大的工具来创建令人愉悦的用户体验。Vue.js具有轻量级的核心，允许开发人员按需引入其他组件，以满足个性化的需求。它的目标是通过提供一系列可组合的组件来实现快速、高效的开发。
+
+pronounced as 'view'
