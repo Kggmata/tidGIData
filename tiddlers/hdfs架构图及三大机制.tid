@@ -1,16 +1,17 @@
 created: 20220521235843205
-difficulty: 3.073377266655328
-due: 20220829035524037
-grade: 2
-history: [{"due":"20220524073452650","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522073452650"},{"due":"20220528121138587","interval":5,"difficulty":5.968433471420917,"stability":0.2500261494800798,"retrievability":0.7684334714209162,"grade":0,"lapses":1,"reps":1,"review":"20220527121138587"},{"due":"20220611060206288","interval":5,"difficulty":4.2900369228497475,"stability":10.299015982326148,"retrievability":0.121603451428831,"grade":2,"lapses":1,"reps":2,"review":"20220601060206288"},{"due":"20220614125215221","interval":12,"difficulty":5.374511203657121,"stability":0.055899466449811495,"retrievability":0.8844742808073737,"grade":0,"lapses":2,"reps":1,"review":"20220613125215221"},{"due":"20220620035437299","interval":3,"difficulty":3.578013051583916,"stability":4.236263021983604,"retrievability":0.0035018479267943637,"grade":2,"lapses":2,"reps":2,"review":"20220616035437299"},{"due":"20220705035546801","interval":5,"difficulty":3.661078912571946,"stability":13.759659659955746,"retrievability":0.8830658609880293,"grade":1,"lapses":2,"reps":3,"review":"20220621035546801"},{"due":"20220711013123777","interval":19,"difficulty":4.725680155960308,"stability":0.04065715014820503,"retrievability":0.8646012433883623,"grade":0,"lapses":3,"reps":1,"review":"20220710013123776"},{"due":"20220714020246724","interval":3,"difficulty":4.926100550736071,"stability":0.030119557630782685,"retrievability":0.00042039477576221086,"grade":0,"lapses":4,"reps":1,"review":"20220713020246723"},{"due":"20220723051544515","interval":8,"difficulty":4.126100550736774,"stability":2.34989877756077,"retrievability":7.021623759020026e-13,"grade":1,"lapses":4,"reps":2,"review":"20220721051544515"},{"due":"20220801064202093","interval":10,"difficulty":4.964774036378933,"stability":0.022313022332150104,"retrievability":0.6386734856421592,"grade":0,"lapses":5,"reps":1,"review":"20220731064202093"},{"due":"20220808121528569","interval":6,"difficulty":4.16477403637943,"stability":1.835231842252195,"retrievability":4.963097005164493e-13,"grade":1,"lapses":5,"reps":2,"review":"20220806121528568"}]
-interval: 6
-lapses: 5
-modified: 20221210010743381
+creator: Yangqing QU
+difficulty: 3.725765079324831
+due: 20221218095640846
+grade: 0
+history: [{"due":"20220524073452650","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522073452650"},{"due":"20220528121138587","interval":5,"difficulty":5.968433471420917,"stability":0.2500261494800798,"retrievability":0.7684334714209162,"grade":0,"lapses":1,"reps":1,"review":"20220527121138587"},{"due":"20220611060206288","interval":5,"difficulty":4.2900369228497475,"stability":10.299015982326148,"retrievability":0.121603451428831,"grade":2,"lapses":1,"reps":2,"review":"20220601060206288"},{"due":"20220614125215221","interval":12,"difficulty":5.374511203657121,"stability":0.055899466449811495,"retrievability":0.8844742808073737,"grade":0,"lapses":2,"reps":1,"review":"20220613125215221"},{"due":"20220620035437299","interval":3,"difficulty":3.578013051583916,"stability":4.236263021983604,"retrievability":0.0035018479267943637,"grade":2,"lapses":2,"reps":2,"review":"20220616035437299"},{"due":"20220705035546801","interval":5,"difficulty":3.661078912571946,"stability":13.759659659955746,"retrievability":0.8830658609880293,"grade":1,"lapses":2,"reps":3,"review":"20220621035546801"},{"due":"20220711013123777","interval":19,"difficulty":4.725680155960308,"stability":0.04065715014820503,"retrievability":0.8646012433883623,"grade":0,"lapses":3,"reps":1,"review":"20220710013123776"},{"due":"20220714020246724","interval":3,"difficulty":4.926100550736071,"stability":0.030119557630782685,"retrievability":0.00042039477576221086,"grade":0,"lapses":4,"reps":1,"review":"20220713020246723"},{"due":"20220723051544515","interval":8,"difficulty":4.126100550736774,"stability":2.34989877756077,"retrievability":7.021623759020026e-13,"grade":1,"lapses":4,"reps":2,"review":"20220721051544515"},{"due":"20220801064202093","interval":10,"difficulty":4.964774036378933,"stability":0.022313022332150104,"retrievability":0.6386734856421592,"grade":0,"lapses":5,"reps":1,"review":"20220731064202093"},{"due":"20220808121528569","interval":6,"difficulty":4.16477403637943,"stability":1.835231842252195,"retrievability":4.963097005164493e-13,"grade":1,"lapses":5,"reps":2,"review":"20220806121528568"},{"due":"20220829035524037","interval":6,"difficulty":3.073377266655328,"stability":16.869042423741238,"retrievability":0.708603230275898,"grade":2,"lapses":5,"reps":3,"review":"20220812035524037"}]
+interval: 127
+lapses: 6
+modified: 20221217095640846
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.708603230275898
-review: 20220812035524037
-stability: 16.869042423741238
+reps: 1
+retrievability: 0.4523878126695029
+review: 20221217095640846
+stability: 0.3305977764431731
 tags: [[hdfs(hadoop distributed file system)]] ?
 title: hdfs架构图及三大机制
 type: text/vnd.tiddlywiki

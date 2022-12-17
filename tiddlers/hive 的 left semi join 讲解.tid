@@ -1,15 +1,17 @@
 created: 20220524081719402
-difficulty: 2.7404973491644657
-due: 20220829142451401
-grade: 0
-history: [{"due":"20220529142855317","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142855317"},{"due":"20220624074110107","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602074110107"},{"due":"20220626124026168","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625124026168"},{"due":"20220708023841418","interval":4,"difficulty":1.5766231536640938,"stability":9.370230736253992,"retrievability":0.003384799839695139,"grade":1,"lapses":1,"reps":2,"review":"20220629023841418"},{"due":"20220819091109343","interval":11,"difficulty":1.6602804841207186,"stability":40.46389295890693,"retrievability":0.883657330456625,"grade":1,"lapses":1,"reps":3,"review":"20220710091109343"}]
-interval: 49
+creator: Yangqing QU
+difficulty: 1.9404973491644657
+due: 20221223095728545
+grade: 1
+history: [{"due":"20220529142855317","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528142855317"},{"due":"20220624074110107","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602074110107"},{"due":"20220626124026168","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625124026168"},{"due":"20220708023841418","interval":4,"difficulty":1.5766231536640938,"stability":9.370230736253992,"retrievability":0.003384799839695139,"grade":1,"lapses":1,"reps":2,"review":"20220629023841418"},{"due":"20220819091109343","interval":11,"difficulty":1.6602804841207186,"stability":40.46389295890693,"retrievability":0.883657330456625,"grade":1,"lapses":1,"reps":3,"review":"20220710091109343"},{"due":"20220829142451401","interval":49,"difficulty":2.7404973491644657,"stability":0.05488116409496729,"retrievability":0.8802168650437469,"grade":0,"lapses":2,"reps":1,"review":"20220828142451401"}]
+interval: 111
 lapses: 2
-modified: 20220828142451401
-reps: 1
-retrievability: 0.8802168650437469
-review: 20220828142451401
-stability: 0.05488116409496729
+modified: 20221217095728545
+modifier: Yangqing QU
+reps: 2
+retrievability: 2.8385907975682772e-93
+review: 20221217095728545
+stability: 6.41177797509547
 tags: hive ?
 title: hive 的 left semi join 讲解
 type: text/vnd.tiddlywiki

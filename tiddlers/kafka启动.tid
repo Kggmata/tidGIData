@@ -1,17 +1,18 @@
 created: 20220615021533041
+creator: Yangqing QU
 difficulty: 3.0564977160174074
 due: 20220829134141593
 grade: 0
 history: [{"due":"20220618145324668","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220617145324668"},{"due":"20220702022452871","interval":2,"difficulty":1,"stability":13.486356000640432,"retrievability":0.12187376544351697,"grade":1,"lapses":0,"reps":2,"review":"20220619022452870"},{"due":"20220707080009306","interval":17,"difficulty":2.075631068030595,"stability":0.07408215765534414,"retrievability":0.8756310680305948,"grade":0,"lapses":1,"reps":1,"review":"20220706080009306"},{"due":"20220711063554875","interval":4,"difficulty":2.279014559812906,"stability":0.05488141221849455,"retrievability":0.0033834917823108,"grade":0,"lapses":2,"reps":1,"review":"20220710063554874"},{"due":"20220714092633428","interval":3,"difficulty":2.482167703895871,"stability":0.04065715014820503,"retrievability":0.0031531440829650446,"grade":0,"lapses":3,"reps":1,"review":"20220713092633428"},{"due":"20220727052542883","interval":8,"difficulty":1.6821677048876602,"stability":5.567112813986924,"retrievability":9.917894733222074e-10,"grade":1,"lapses":3,"reps":2,"review":"20220721052542883"},{"due":"20220804074359664","interval":13,"difficulty":2.6640650767216902,"stability":0.03011942545495654,"retrievability":0.7818973718340301,"grade":0,"lapses":4,"reps":1,"review":"20220803074359664"},{"due":"20220812112307160","interval":5,"difficulty":1.8640651020724006,"stability":4.075880425900179,"retrievability":2.535071061321876e-8,"grade":1,"lapses":4,"reps":2,"review":"20220808112307160"},{"due":"20220818120616475","interval":9,"difficulty":2.856497716017407,"stability":0.02231301621225883,"retrievability":0.7924326139450064,"grade":0,"lapses":5,"reps":1,"review":"20220817120616474"}]
 interval: 11
 lapses: 6
-modified: 20221210005806772
+modified: 20221217095736106
 modifier: Yangqing QU
 reps: 1
 retrievability: 2.7682621394825676e-23
 review: 20220828134141593
 stability: 0.016529888968407916
-tags: userProfile用户画像 ?
+tags: userProfile用户画像
 title: kafka启动
 type: text/vnd.tiddlywiki
 
