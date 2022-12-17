@@ -1,0 +1,14 @@
+created: 20221217074757822
+creator: Yangqing QU
+modified: 20221217075243698
+modifier: Yangqing QU
+tags: ? golang
+title: golang的switch case
+type: text/vnd.tiddlywiki
+
+执行满足条件的case, 不同于c, java, php当中, 会执行后面的所有case, 而是只执行对应的case, 然后退出
+
+如果想要执行后面的case, 使用fallthrough语句, 这时会执行后面的所有case而忽略条件是否符合
+
+还有一种写法, 就是a:=1
+然后switch{case a==1 : ....}, 无条件, 类似if else更清晰的写法

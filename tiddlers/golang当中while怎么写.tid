@@ -1,0 +1,11 @@
+created: 20221217073946698
+creator: Yangqing QU
+modified: 20221217074022361
+modifier: Yangqing QU
+tags: ? golang
+title: golang当中while怎么写
+type: text/vnd.tiddlywiki
+
+while(i<1000)
+
+在golang当中就是for i<1000
