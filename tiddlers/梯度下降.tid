@@ -1,0 +1,11 @@
+created: 20221217020635361
+creator: Yangqing QU
+modified: 20221217020816660
+modifier: Yangqing QU
+tags: ? deepLearning深度学习
+title: 梯度下降
+type: text/vnd.tiddlywiki
+
+一种算法, 搜索出最佳参数, 最小化损失函数.
+
+也就是每个步骤, 梯度下降会检查每个参数, 看对参数少量变动, 会导致训练集损失向哪个方向移动, 向减少损失的方向优化参数
