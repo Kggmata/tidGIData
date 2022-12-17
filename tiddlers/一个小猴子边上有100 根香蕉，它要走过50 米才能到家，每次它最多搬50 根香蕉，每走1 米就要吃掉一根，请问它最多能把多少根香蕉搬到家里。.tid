@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220804023002109","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803023002109"},{"due":"20220824123342907","interval":5,"difficulty":1,"stability":16.30688294756679,"retrievability":0.005153779050734244,"grade":2,"lapses":0,"reps":2,"review":"20220808123342906"}]
 interval: 107
 lapses: 1
-modified: 20221210011446007
+modified: 20221217113229384
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.5009051838315501
 review: 20221123122958501
 stability: 1.4816364413634358
-tags: [[IQ(intelligent quotient)]] ?
+tags: IQ ?
 title: 一个小猴子边上有100 根香蕉，它要走过50 米才能到家，每次它最多搬50 根香蕉，每走1 米就要吃掉一根，请问它最多能把多少根香蕉搬到家里。
 type: text/vnd.tiddlywiki
 

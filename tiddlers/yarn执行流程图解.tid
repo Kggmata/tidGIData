@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220524114443854","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114443854"},{"due":"20220621030320129","interval":9,"difficulty":3.8224311118509426,"stability":20.745556735549485,"retrievability":0.6224311118509421,"grade":2,"lapses":0,"reps":2,"review":"20220531030320129"},{"due":"20220818142617200","interval":22,"difficulty":2.9167154881537805,"stability":56.51916315314439,"retrievability":0.8942843763028374,"grade":2,"lapses":0,"reps":3,"review":"20220622142617200"}]
 interval: 67
 lapses: 0
-modified: 20221210011901172
+modified: 20221217113325211
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.8825865453715194
 review: 20220828135515499
 stability: 172.5988568018847
-tags: yarn(yetAnotherResourceNegotiator) ?
+tags: yarn ?
 title: yarn执行流程图解
 type: text/vnd.tiddlywiki
 

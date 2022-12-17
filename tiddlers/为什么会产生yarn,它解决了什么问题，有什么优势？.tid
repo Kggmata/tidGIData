@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220524024002069","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522024002069"},{"due":"20220602112937996","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112937996"},{"due":"20220707115939804","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606115939803"}]
 interval: 34
 lapses: 0
-modified: 20221210011901172
+modified: 20221217113325211
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.8895462481526426
 review: 20220710055854556
 stability: 78.5325857917982
-tags: yarn(yetAnotherResourceNegotiator) ?
+tags: yarn ?
 title: 为什么会产生yarn,它解决了什么问题，有什么优势？
 type: text/vnd.tiddlywiki
 

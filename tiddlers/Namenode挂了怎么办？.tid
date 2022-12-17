@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220523104618754","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521104618754"},{"due":"20220524003203444","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523003203444"},{"due":"20220611053740597","interval":6,"difficulty":4.743660293347436,"stability":13.061487305027413,"retrievability":0.44366029334743595,"grade":2,"lapses":1,"reps":2,"review":"20220529053740597"},{"due":"20220718234535282","interval":15,"difficulty":3.8296964392196617,"stability":35.16591990152175,"retrievability":0.8860361458722255,"grade":2,"lapses":1,"reps":3,"review":"20220613234535282"}]
 interval: 42
 lapses: 1
-modified: 20221210010743382
+modified: 20221217113208667
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.8817593692324974
 review: 20220726090423890
 stability: 85.18172498313032
-tags: [[hdfs(hadoop distributed file system)]] ?
+tags: hdfs ?
 title: Namenode挂了怎么办？
 type: text/vnd.tiddlywiki
 

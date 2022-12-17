@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220523040853947","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040853947"},{"due":"20220529000448228","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523000448228"},{"due":"20220621060019200","interval":9,"difficulty":4.14195525232829,"stability":20.395966063619362,"retrievability":0.8419552523282889,"grade":2,"lapses":0,"reps":3,"review":"20220601060019200"},{"due":"20220811035044554","interval":20,"difficulty":3.2437980528424033,"stability":50.69718274897497,"retrievability":0.9018428005141127,"grade":2,"lapses":0,"reps":4,"review":"20220621035044554"},{"due":"20220815082700637","interval":54,"difficulty":4.3376415871396325,"stability":0.07408182272361549,"retrievability":0.8938435342972294,"grade":0,"lapses":1,"reps":1,"review":"20220814082700636"},{"due":"20220825044904785","interval":6,"difficulty":3.5378383897860113,"stability":5.3800319325968555,"retrievability":0.0001968026463789606,"grade":1,"lapses":1,"reps":2,"review":"20220820044904785"}]
 interval: 53
 lapses: 1
-modified: 20221210010743381
+modified: 20221217113208667
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.3541863808470084
 review: 20221012001306613
 stability: 100.32546326407862
-tags: [[hdfs(hadoop distributed file system)]] hadoop ?
+tags: hdfs hadoop ?
 title: HDFS的元数据文件通过副本机制来保证安全性
 type: text/vnd.tiddlywiki
 

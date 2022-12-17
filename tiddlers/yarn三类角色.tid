@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220524064718323","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522064718323"},{"due":"20220618025233632","interval":8,"difficulty":3.8561000000000005,"stability":18.669346285737497,"retrievability":0.6561,"grade":2,"lapses":0,"reps":2,"review":"20220530025233632"},{"due":"20220810075211723","interval":20,"difficulty":2.949366719934412,"stability":51.62479394535563,"retrievability":0.8932667199344116,"grade":2,"lapses":0,"reps":3,"review":"20220619075211722"},{"due":"20220816052521987","interval":57,"difficulty":4.039547494942042,"stability":0.07408182272361549,"retrievability":0.8901807750076297,"grade":0,"lapses":1,"reps":1,"review":"20220815052521987"}]
 interval: 8
 lapses: 1
-modified: 20221210011901172
+modified: 20221217113325210
 modifier: Yangqing QU
 reps: 2
 retrievability: 0.000011447427772950137
 review: 20220823092648816
 stability: 5.7191213838353265
-tags: yarn(yetAnotherResourceNegotiator) ?
+tags: yarn ?
 title: yarn三类角色
 type: text/vnd.tiddlywiki
 

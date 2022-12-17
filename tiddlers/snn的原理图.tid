@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220524114003183","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114003183"},{"due":"20220615054215765","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529054215765"},{"due":"20220802104554714","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616104554714"}]
 interval: 52
 lapses: 0
-modified: 20221210010743382
+modified: 20221217113208668
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.8893157252623122
 review: 20220807000503569
 stability: 137.99102630377573
-tags: [[hdfs(hadoop distributed file system)]] ?
+tags: hdfs ?
 title: snn的原理图
 type: text/vnd.tiddlywiki
 

@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220523081758627","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521081758627"},{"due":"20220529003006572","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523003006572"},{"due":"20220628074054110","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602074054110"}]
 interval: 28
 lapses: 0
-modified: 20221210010743381
+modified: 20221217113208666
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.8918064933310472
 review: 20220630021153211
 stability: 78.32227625296495
-tags: [[hdfs(hadoop distributed file system)]] ?
+tags: hdfs ?
 title: hdfs分块默认大小
 type: text/vnd.tiddlywiki
 

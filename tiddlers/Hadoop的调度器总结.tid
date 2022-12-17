@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220529141618011","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141618011"},{"due":"20220602060003190","interval":4,"difficulty":3.331064787343914,"stability":0.11806790392114878,"retrievability":0.14564366571177542,"grade":0,"lapses":1,"reps":1,"review":"20220601060003190"},{"due":"20220613120308318","interval":2,"difficulty":1.6989047413718972,"stability":9.847915401014053,"retrievability":0.16783995402798293,"grade":2,"lapses":1,"reps":2,"review":"20220603120308318"},{"due":"20220807004547160","interval":11,"difficulty":1,"stability":53.759603500938304,"retrievability":0.888974794904411,"grade":2,"lapses":1,"reps":3,"review":"20220614004547160"}]
 interval: 56
 lapses: 1
-modified: 20221210011901171
+modified: 20221217113325210
 modifier: Yangqing QU
 reps: 4
 retrievability: 0.8960569151976442
 review: 20220809042715467
 stability: 203.1060753743037
-tags: hadoop yarn(yetAnotherResourceNegotiator) ?
+tags: hadoop yarn ?
 title: Hadoop的调度器总结
 type: text/vnd.tiddlywiki
 

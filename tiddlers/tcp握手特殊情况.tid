@@ -1,16 +1,18 @@
 created: 20220713075209811
-difficulty: 1
-due: 20220828013540431
-grade: 1
-history: [{"due":"20220719144736092","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718144736091"},{"due":"20220727141459103","interval":8,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220726141459103"},{"due":"20220806063240493","interval":10,"difficulty":1.2000006658682891,"stability":0.054881171378436774,"retrievability":6.658682892024545e-7,"grade":0,"lapses":2,"reps":1,"review":"20220805063240493"},{"due":"20220812103049289","interval":6,"difficulty":1.4000106076833394,"stability":0.04065696669349018,"retrievability":0.000009941815050312982,"grade":0,"lapses":3,"reps":1,"review":"20220811103049289"}]
-interval: 9
-lapses: 3
-modified: 20220820013540431
-reps: 2
-retrievability: 7.42892932091334e-11
-review: 20220820013540431
-stability: 7.994071650927569
-tags: ?
+creator: Yangqing QU
+difficulty: 1.408378337094477
+due: 20221218113022108
+grade: 0
+history: [{"due":"20220719144736092","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718144736091"},{"due":"20220727141459103","interval":8,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00021848284249889474,"grade":0,"lapses":1,"reps":1,"review":"20220726141459103"},{"due":"20220806063240493","interval":10,"difficulty":1.2000006658682891,"stability":0.054881171378436774,"retrievability":6.658682892024545e-7,"grade":0,"lapses":2,"reps":1,"review":"20220805063240493"},{"due":"20220812103049289","interval":6,"difficulty":1.4000106076833394,"stability":0.04065696669349018,"retrievability":0.000009941815050312982,"grade":0,"lapses":3,"reps":1,"review":"20220811103049289"},{"due":"20220828013540431","interval":9,"difficulty":1,"stability":7.994071650927569,"retrievability":7.42892932091334e-11,"grade":1,"lapses":3,"reps":2,"review":"20220820013540431"}]
+interval: 119
+lapses: 4
+modified: 20221217113022108
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.208378337094477
+review: 20221217113022108
+stability: 0.6023884238244042
+tags: internet网络 ?
 title: tcp握手特殊情况
 type: text/vnd.tiddlywiki
 

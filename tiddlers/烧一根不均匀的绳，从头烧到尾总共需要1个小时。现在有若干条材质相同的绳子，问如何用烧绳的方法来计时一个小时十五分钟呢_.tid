@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220804015359235","interval":0,"difficulty":0.06011121757074328,"stability":0.10000001415610314,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220803015359235"},{"due":"20220824123045360","interval":5,"difficulty":1,"stability":16.30688294756679,"retrievability":0.005153779050734244,"grade":2,"lapses":0,"reps":2,"review":"20220808123045360"}]
 interval: 109
 lapses: 1
-modified: 20221210011446008
+modified: 20221217113229384
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.4944740217640024
 review: 20221125124504457
 stability: 1.4816364413634358
-tags: [[IQ(intelligent quotient)]] ?
+tags: IQ ?
 title: 烧一根不均匀的绳，从头烧到尾总共需要1个小时。现在有若干条材质相同的绳子，问如何用烧绳的方法来计时一个小时十五分钟呢?
 type: text/vnd.tiddlywiki
 

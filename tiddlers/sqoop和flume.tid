@@ -1,17 +1,17 @@
 created: 20220709003413538
 creator: Yangqing QU
-difficulty: 2.263550597042559
-due: 20220829135138863
+difficulty: 2.463550597042559
+due: 20221218112012008
 grade: 0
-history: [{"due":"20220712074538310","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711074538310"},{"due":"20220721012924296","interval":9,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220720012924296"},{"due":"20220812021107706","interval":10,"difficulty":1,"stability":12.927424897987283,"retrievability":6.659058267886301e-7,"grade":1,"lapses":1,"reps":2,"review":"20220730021107705"},{"due":"20220818121509961","interval":18,"difficulty":2.0635505963685183,"stability":0.05488116409496729,"retrievability":0.863550596368518,"grade":0,"lapses":2,"reps":1,"review":"20220817121509960"}]
-interval: 11
-lapses: 3
-modified: 20221217111941920
+history: [{"due":"20220712074538310","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220711074538310"},{"due":"20220721012924296","interval":9,"difficulty":1,"stability":0.07408215765534414,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220720012924296"},{"due":"20220812021107706","interval":10,"difficulty":1,"stability":12.927424897987283,"retrievability":6.659058267886301e-7,"grade":1,"lapses":1,"reps":2,"review":"20220730021107705"},{"due":"20220818121509961","interval":18,"difficulty":2.0635505963685183,"stability":0.05488116409496729,"retrievability":0.863550596368518,"grade":0,"lapses":2,"reps":1,"review":"20220817121509960"},{"due":"20220829135138863","interval":11,"difficulty":2.263550597042559,"stability":0.040656966333775045,"retrievability":6.740402982969234e-10,"grade":0,"lapses":3,"reps":1,"review":"20220828135138862"}]
+interval: 111
+lapses: 4
+modified: 20221217112012008
 modifier: Yangqing QU
 reps: 1
-retrievability: 6.740402982969234e-10
-review: 20220828135138862
-stability: 0.040656966333775045
+retrievability: 1.1878338242945895e-125
+review: 20221217112012007
+stability: 0.6023884238244042
 tags: userProfile用户画像 ?
 title: sqoop和flume
 type: text/vnd.tiddlywiki
