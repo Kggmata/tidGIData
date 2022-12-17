@@ -1,0 +1,19 @@
+created: 20221217122116306
+creator: Yangqing QU
+modified: 20221217122215174
+modifier: Yangqing QU
+tags: 
+title: html的span
+type: text/vnd.tiddlywiki
+
+用来group inline element
+
+The span element in HTML is a inline element used to group inline-level content in a document. It is often used to apply styles or to provide semantic meaning to small groups of words or phrases within a larger block of text.
+
+Here is an example of how the span element can be used:
+
+Copy code
+<p>The <span style="color:red">red</span> fox jumped over the <span style="font-style:italic">lazy</span> dog.</p>
+In this example, the span elements are used to apply different styles to the words "red" and "lazy" within the larger paragraph element. The text inside the span element will be displayed inline with the surrounding text, and any styles applied to the span element will be applied to the text within it.
+
+The span element does not introduce a new block-level element in the document, and does not affect the layout of the page in any way. It is simply used to group and apply styles to a small portion of inline text within a larger block of text.
