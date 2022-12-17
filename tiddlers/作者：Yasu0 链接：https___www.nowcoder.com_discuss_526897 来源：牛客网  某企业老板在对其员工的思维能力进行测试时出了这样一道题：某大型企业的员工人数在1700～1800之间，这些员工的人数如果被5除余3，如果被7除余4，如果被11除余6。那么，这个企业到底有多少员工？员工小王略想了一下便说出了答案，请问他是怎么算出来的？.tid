@@ -1,15 +1,17 @@
 created: 20220722014237707
-difficulty: 1
-due: 20220828080606063
-grade: 2
-history: [{"due":"20220808135659214","interval":0,"difficulty":0.04223712102797944,"stability":0.1000000017695129,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220807135659214"}]
-interval: 5
-lapses: 0
-modified: 20220812080606063
-reps: 2
-retrievability: 0.005153775687746788
-review: 20220812080606063
-stability: 16.306881415679662
+creator: Yangqing QU
+difficulty: 1.640184788292996
+due: 20221218134712503
+grade: 0
+history: [{"due":"20220808135659214","interval":0,"difficulty":0.04223712102797944,"stability":0.1000000017695129,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220807135659214"},{"due":"20220828080606063","interval":5,"difficulty":1,"stability":16.306881415679662,"retrievability":0.005153775687746788,"grade":2,"lapses":0,"reps":2,"review":"20220812080606063"}]
+interval: 127
+lapses: 1
+modified: 20221217134712503
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.4401847882929961
+review: 20221217134712503
+stability: 1.4816364413634358
 tags: ?
 title: 作者：Yasu0 链接：https://www.nowcoder.com/discuss/526897 来源：牛客网  某企业老板在对其员工的思维能力进行测试时出了这样一道题：某大型企业的员工人数在1700～1800之间，这些员工的人数如果被5除余3，如果被7除余4，如果被11除余6。那么，这个企业到底有多少员工？员工小王略想了一下便说出了答案，请问他是怎么算出来的？
 type: text/vnd.tiddlywiki

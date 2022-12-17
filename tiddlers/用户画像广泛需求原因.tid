@@ -1,16 +1,17 @@
 created: 20220614074603142
-difficulty: 2.1613190917293084
-due: 20220829141350892
-grade: 0
-history: [{"due":"20220617055028860","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616055028860"},{"due":"20220626072651286","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617072651285"},{"due":"20220818233728523","interval":11,"difficulty":1.0770110293660886,"stability":51.416362145708,"retrievability":0.8770110293660888,"grade":1,"lapses":0,"reps":3,"review":"20220628233728523"}]
-interval: 60
+creator: Yangqing QU
+difficulty: 1.3613190917293083
+due: 20221227134800605
+grade: 1
+history: [{"due":"20220617055028860","interval":0,"difficulty":0.8361549804978878,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616055028860"},{"due":"20220626072651286","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617072651285"},{"due":"20220818233728523","interval":11,"difficulty":1.0770110293660886,"stability":51.416362145708,"retrievability":0.8770110293660888,"grade":1,"lapses":0,"reps":3,"review":"20220628233728523"},{"due":"20220829141350892","interval":60,"difficulty":2.1613190917293084,"stability":0.07408182272361549,"retrievability":0.8843080623632198,"grade":0,"lapses":1,"reps":1,"review":"20220828141350892"}]
+interval: 111
 lapses: 1
-modified: 20221210012122805
+modified: 20221217134800605
 modifier: Yangqing QU
-reps: 1
-retrievability: 0.8843080623632198
-review: 20220828141350892
-stability: 0.07408182272361549
+reps: 2
+retrievability: 2.7515175020047567e-69
+review: 20221217134800605
+stability: 10.431297508078389
 tags: userProfile用户画像web ?
 title: 用户画像广泛需求原因
 type: text/vnd.tiddlywiki
