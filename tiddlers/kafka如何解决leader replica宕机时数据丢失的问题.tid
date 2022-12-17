@@ -1,17 +1,18 @@
 created: 20220628225904403
-difficulty: 2.0127681787299663
-due: 20220829114345986
+creator: Yangqing QU
+difficulty: 2.2127681787299665
+due: 20221218111112995
 grade: 0
-history: [{"due":"20220630135408974","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629135408974"},{"due":"20220720123117244","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":1,"lapses":0,"reps":2,"review":"20220704123117244"},{"due":"20220727113855154","interval":22,"difficulty":2.067497702097154,"stability":0.07408186401656833,"retrievability":0.8674977020971539,"grade":0,"lapses":1,"reps":1,"review":"20220726113855153"},{"due":"20220804074001594","interval":8,"difficulty":2.267509149597526,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220803074001594"},{"due":"20220818112152206","interval":5,"difficulty":1,"stability":10.16456942996506,"retrievability":0.00006779870516182631,"grade":2,"lapses":2,"reps":2,"review":"20220808112152205"}]
-interval: 20
-lapses: 3
-modified: 20221210005806772
+history: [{"due":"20220630135408974","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629135408974"},{"due":"20220720123117244","interval":5,"difficulty":1,"stability":16.307105289069998,"retrievability":0.005154267178780677,"grade":1,"lapses":0,"reps":2,"review":"20220704123117244"},{"due":"20220727113855154","interval":22,"difficulty":2.067497702097154,"stability":0.07408186401656833,"retrievability":0.8674977020971539,"grade":0,"lapses":1,"reps":1,"review":"20220726113855153"},{"due":"20220804074001594","interval":8,"difficulty":2.267509149597526,"stability":0.054881171378436774,"retrievability":0.000011447500371767003,"grade":0,"lapses":2,"reps":1,"review":"20220803074001594"},{"due":"20220818112152206","interval":5,"difficulty":1,"stability":10.16456942996506,"retrievability":0.00006779870516182631,"grade":2,"lapses":2,"reps":2,"review":"20220808112152205"},{"due":"20220829114345986","interval":20,"difficulty":2.0127681787299663,"stability":0.040656966333775045,"retrievability":0.8127681787299662,"grade":0,"lapses":3,"reps":1,"review":"20220828114345985"}]
+interval: 111
+lapses: 4
+modified: 20221217111146475
 modifier: Yangqing QU
 reps: 1
-retrievability: 0.8127681787299662
-review: 20220828114345985
-stability: 0.040656966333775045
-tags: userProfile用户画像 ?
+retrievability: 1.1878338242945895e-125
+review: 20221217111112995
+stability: 0.6023884238244042
+tags: ? kafka
 title: kafka如何解决leader replica宕机时数据丢失的问题
 type: text/vnd.tiddlywiki
 

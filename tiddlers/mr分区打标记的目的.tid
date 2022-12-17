@@ -1,16 +1,17 @@
 created: 20220521063606912
-difficulty: 3.269260298065778
-due: 20220829143212893
-grade: 0
-history: [{"due":"20220524053503716","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522053503716"},{"due":"20220615023306151","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529023306150"},{"due":"20220802091755929","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616091755929"},{"due":"20220807235535769","interval":51,"difficulty":4.074818608778473,"stability":0.07408182731172136,"retrievability":0.8913241313900776,"grade":0,"lapses":1,"reps":1,"review":"20220806235535768"},{"due":"20220819045840434","interval":5,"difficulty":2.2756346134335645,"stability":7.293171904562357,"retrievability":0.0008160046550921422,"grade":2,"lapses":1,"reps":2,"review":"20220812045840433"}]
-interval: 16
+creator: Yangqing QU
+difficulty: 2.469260298065778
+due: 20221222111154497
+grade: 1
+history: [{"due":"20220524053503716","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522053503716"},{"due":"20220615023306151","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529023306150"},{"due":"20220802091755929","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616091755929"},{"due":"20220807235535769","interval":51,"difficulty":4.074818608778473,"stability":0.07408182731172136,"retrievability":0.8913241313900776,"grade":0,"lapses":1,"reps":1,"review":"20220806235535768"},{"due":"20220819045840434","interval":5,"difficulty":2.2756346134335645,"stability":7.293171904562357,"retrievability":0.0008160046550921422,"grade":2,"lapses":1,"reps":2,"review":"20220812045840433"},{"due":"20220829143212893","interval":16,"difficulty":3.269260298065778,"stability":0.05488116409496729,"retrievability":0.7936256846322132,"grade":0,"lapses":2,"reps":1,"review":"20220828143212893"}]
+interval: 111
 lapses: 2
-modified: 20221210011916632
+modified: 20221217111154497
 modifier: Yangqing QU
-reps: 1
-retrievability: 0.7936256846322132
-review: 20220828143212893
-stability: 0.05488116409496729
+reps: 2
+retrievability: 2.8385907975682772e-93
+review: 20221217111154497
+stability: 5.4250444095942
 tags: mapReduce ?
 title: mr分区打标记的目的
 type: text/vnd.tiddlywiki

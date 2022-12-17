@@ -1,16 +1,18 @@
 created: 20220713151911498
+creator: Yangqing QU
 difficulty: 1
-due: 20220828045617128
-grade: 2
-history: [{"due":"20220720080855514","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719080855514"},{"due":"20220731015226789","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730015226789"},{"due":"20220807121931782","interval":7,"difficulty":1.200047464685643,"stability":0.05488116749391971,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220806121931782"},{"due":"20220813035939270","interval":6,"difficulty":1.4000574064925877,"stability":0.040656966333775045,"retrievability":0.00000994180694471686,"grade":0,"lapses":3,"reps":1,"review":"20220812035939269"}]
-interval: 8
+due: 20240111111121576
+grade: 1
+history: [{"due":"20220720080855514","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719080855514"},{"due":"20220731015226789","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730015226789"},{"due":"20220807121931782","interval":7,"difficulty":1.200047464685643,"stability":0.05488116749391971,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220806121931782"},{"due":"20220813035939270","interval":6,"difficulty":1.4000574064925877,"stability":0.040656966333775045,"retrievability":0.00000994180694471686,"grade":0,"lapses":3,"reps":1,"review":"20220812035939269"},{"due":"20220828045617128","interval":8,"difficulty":1,"stability":7.994071582730249,"retrievability":9.91696517902932e-10,"grade":2,"lapses":3,"reps":2,"review":"20220820045617128"}]
+interval: 119
 lapses: 3
-modified: 20220820045617128
-reps: 2
-retrievability: 9.91696517902932e-10
-review: 20220820045617128
-stability: 7.994071582730249
-tags: ?
+modified: 20221217111137379
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.20837833430637503
+review: 20221217111121576
+stability: 389.99379709761126
+tags: ? kafka
 title: kafka性能瓶颈
 type: text/vnd.tiddlywiki
 

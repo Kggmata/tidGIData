@@ -1,17 +1,18 @@
 created: 20220621014501993
-difficulty: 2.021136266468966
-due: 20220829143458996
-grade: 0
-history: [{"due":"20220625121809463","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121809462"},{"due":"20220709150644902","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626150644902"},{"due":"20220712010748871","interval":15,"difficulty":2.0893785641845435,"stability":0.07408215765534414,"retrievability":0.8893785641845435,"grade":0,"lapses":1,"reps":1,"review":"20220711010748871"},{"due":"20220730151712465","interval":8,"difficulty":1.2893900122011843,"stability":10.832283533589449,"retrievability":0.000011448016640964715,"grade":1,"lapses":1,"reps":2,"review":"20220719151712465"},{"due":"20220806065731148","interval":17,"difficulty":2.336986169433816,"stability":0.054881171378436774,"retrievability":0.8475961572326313,"grade":0,"lapses":2,"reps":1,"review":"20220805065731148"},{"due":"20220819073401161","interval":4,"difficulty":1,"stability":10.15826014537651,"retrievability":0.00046235666207404937,"grade":2,"lapses":2,"reps":2,"review":"20220809073401161"}]
-interval: 19
+creator: Yangqing QU
+difficulty: 1.2211362664689658
+due: 20221224111232139
+grade: 1
+history: [{"due":"20220625121809463","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220624121809462"},{"due":"20220709150644902","interval":2,"difficulty":1,"stability":13.480992008275221,"retrievability":0.12159522294586199,"grade":2,"lapses":0,"reps":2,"review":"20220626150644902"},{"due":"20220712010748871","interval":15,"difficulty":2.0893785641845435,"stability":0.07408215765534414,"retrievability":0.8893785641845435,"grade":0,"lapses":1,"reps":1,"review":"20220711010748871"},{"due":"20220730151712465","interval":8,"difficulty":1.2893900122011843,"stability":10.832283533589449,"retrievability":0.000011448016640964715,"grade":1,"lapses":1,"reps":2,"review":"20220719151712465"},{"due":"20220806065731148","interval":17,"difficulty":2.336986169433816,"stability":0.054881171378436774,"retrievability":0.8475961572326313,"grade":0,"lapses":2,"reps":1,"review":"20220805065731148"},{"due":"20220819073401161","interval":4,"difficulty":1,"stability":10.15826014537651,"retrievability":0.00046235666207404937,"grade":2,"lapses":2,"reps":2,"review":"20220809073401161"},{"due":"20220829143458996","interval":19,"difficulty":2.021136266468966,"stability":0.040656966333775045,"retrievability":0.8211362664689658,"grade":0,"lapses":3,"reps":1,"review":"20220828143458996"}]
+interval: 111
 lapses: 3
-modified: 20221210005806775
+modified: 20221217111232139
 modifier: Yangqing QU
-reps: 1
-retrievability: 0.8211362664689658
-review: 20220828143458996
-stability: 0.040656966333775045
-tags: userProfile用户画像 ?
+reps: 2
+retrievability: 1.1878338242945895e-125
+review: 20221217111232139
+stability: 6.956079696836896
+tags: userProfile用户画像 spark ?
 title: pyspark笛卡尔积
 type: text/vnd.tiddlywiki
 
