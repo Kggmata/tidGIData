@@ -1,15 +1,17 @@
 created: 20220713110938065
+creator: Yangqing QU
 difficulty: 1
-due: 20220828044854308
+due: 20240111064753644
 grade: 1
-history: [{"due":"20220720075016184","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719075016184"},{"due":"20220731014444938","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730014444938"},{"due":"20220807121325745","interval":7,"difficulty":1.200047464685643,"stability":0.05488116749391971,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220806121325745"},{"due":"20220813034949013","interval":6,"difficulty":1.4000574064925877,"stability":0.040656966333775045,"retrievability":0.00000994180694471686,"grade":0,"lapses":3,"reps":1,"review":"20220812034949013"}]
-interval: 8
+history: [{"due":"20220720075016184","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719075016184"},{"due":"20220731014444938","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730014444938"},{"due":"20220807121325745","interval":7,"difficulty":1.200047464685643,"stability":0.05488116749391971,"retrievability":0.000047464685643029425,"grade":0,"lapses":2,"reps":1,"review":"20220806121325745"},{"due":"20220813034949013","interval":6,"difficulty":1.4000574064925877,"stability":0.040656966333775045,"retrievability":0.00000994180694471686,"grade":0,"lapses":3,"reps":1,"review":"20220812034949013"},{"due":"20220828044854308","interval":8,"difficulty":1,"stability":7.994071582730249,"retrievability":9.91696517902932e-10,"grade":1,"lapses":3,"reps":2,"review":"20220820044854308"}]
+interval: 119
 lapses: 3
-modified: 20220820044854308
-reps: 2
-retrievability: 9.91696517902932e-10
-review: 20220820044854308
-stability: 7.994071582730249
+modified: 20221217064753645
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.20837833430637503
+review: 20221217064753644
+stability: 389.99379709761126
 tags: ?
 title: hc, jd, oc, bg, pr, pm, od, bp, om
 type: text/vnd.tiddlywiki
