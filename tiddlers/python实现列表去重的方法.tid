@@ -1,0 +1,11 @@
+created: 20221218145701381
+creator: Yangqing QU
+modified: 20221218145755260
+modifier: Yangqing QU
+tags: ? python
+title: python实现列表去重的方法
+type: text/vnd.tiddlywiki
+
+先通过集合去重，在转列表
+
+[img[Snipaste_2022-12-18_22-57-26.png]]

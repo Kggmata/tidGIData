@@ -1,0 +1,10 @@
+created: 20221218145840463
+creator: Yangqing QU
+modified: 20221218145851047
+modifier: Yangqing QU
+tags: ? python
+title: python2和python3的range（100）的区别
+type: text/vnd.tiddlywiki
+
+python2返回列表，python3返回迭代器，节约内存
+

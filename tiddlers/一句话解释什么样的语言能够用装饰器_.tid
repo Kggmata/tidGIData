@@ -1,0 +1,10 @@
+created: 20221218145852450
+creator: Yangqing QU
+modified: 20221218145905130
+modifier: Yangqing QU
+tags: ? python
+title: 一句话解释什么样的语言能够用装饰器?
+type: text/vnd.tiddlywiki
+
+函数可以作为参数传递的语言，可以使用装饰器
+

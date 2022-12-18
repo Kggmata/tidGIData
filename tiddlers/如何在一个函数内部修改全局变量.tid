@@ -1,9 +1,10 @@
 created: 20221210003221067
 creator: Yangqing QU
-modified: 20221210003245818
+modified: 20221218145218523
 modifier: Yangqing QU
 tags: ? python
 title: 如何在一个函数内部修改全局变量
 type: text/vnd.tiddlywiki
 
 使用global声明
+[img[Snipaste_2022-12-18_22-52-11.png]]

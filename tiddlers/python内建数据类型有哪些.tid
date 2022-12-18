@@ -1,0 +1,21 @@
+created: 20221218145944049
+creator: Yangqing QU
+modified: 20221218150013827
+modifier: Yangqing QU
+tags: ? python
+title: python内建数据类型有哪些
+type: text/vnd.tiddlywiki
+
+int
+
+string
+
+bool
+
+list
+
+dict
+
+set
+
+tuple
