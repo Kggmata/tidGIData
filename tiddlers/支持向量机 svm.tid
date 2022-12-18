@@ -1,16 +1,18 @@
 created: 20220711102000161
-difficulty: 1.2740749864121466
-due: 20220830081300530
-grade: 1
-history: [{"due":"20220713040409486","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040409486"},{"due":"20220806024042290","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721024042290"},{"due":"20220812065802780","interval":21,"difficulty":2.0740635389832214,"stability":0.07408182337905919,"retrievability":0.8740635389832213,"grade":0,"lapses":1,"reps":1,"review":"20220811065802780"}]
-interval: 8
-lapses: 1
-modified: 20220819081300530
-reps: 2
-retrievability: 0.000011447428925309354
-review: 20220819081300530
-stability: 10.922604987885917
-tags: ?
+creator: Yangqing QU
+difficulty: 1.7853190728965136
+due: 20221219133631231
+grade: 0
+history: [{"due":"20220713040409486","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220712040409486"},{"due":"20220806024042290","interval":9,"difficulty":1,"stability":16.437849569578674,"retrievability":0.00007618062030209515,"grade":1,"lapses":0,"reps":2,"review":"20220721024042290"},{"due":"20220812065802780","interval":21,"difficulty":2.0740635389832214,"stability":0.07408182337905919,"retrievability":0.8740635389832213,"grade":0,"lapses":1,"reps":1,"review":"20220811065802780"},{"due":"20220830081300530","interval":8,"difficulty":1.2740749864121466,"stability":10.922604987885917,"retrievability":0.000011447428925309354,"grade":1,"lapses":1,"reps":2,"review":"20220819081300530"}]
+interval: 121
+lapses: 2
+modified: 20221218133631231
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.311244086484367
+review: 20221218133631231
+stability: 1.097623272188053
+tags: machineLearning机器学习 ?
 title: 支持向量机 svm
 type: text/vnd.tiddlywiki
 

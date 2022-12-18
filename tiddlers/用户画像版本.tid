@@ -1,16 +1,17 @@
 created: 20220615033906013
-difficulty: 2.159503426303541
-due: 20220831000927859
+creator: Yangqing QU
+difficulty: 2.359503426303541
+due: 20221219133740490
 grade: 0
-history: [{"due":"20220619021638157","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618021638157"},{"due":"20220628094550479","interval":1,"difficulty":1,"stability":8.830737998739787,"retrievability":0.34910423292122506,"grade":2,"lapses":0,"reps":2,"review":"20220619094550479"},{"due":"20220820000827686","interval":11,"difficulty":1.0770053191377191,"stability":51.41649309613465,"retrievability":0.8770053191377192,"grade":1,"lapses":0,"reps":3,"review":"20220630000827686"}]
-interval: 61
-lapses: 1
-modified: 20221210005806794
+history: [{"due":"20220619021638157","interval":0,"difficulty":0.7341614645238075,"stability":0.10011596679687501,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618021638157"},{"due":"20220628094550479","interval":1,"difficulty":1,"stability":8.830737998739787,"retrievability":0.34910423292122506,"grade":2,"lapses":0,"reps":2,"review":"20220619094550479"},{"due":"20220820000827686","interval":11,"difficulty":1.0770053191377191,"stability":51.41649309613465,"retrievability":0.8770053191377192,"grade":1,"lapses":0,"reps":3,"review":"20220630000827686"},{"due":"20220831000927859","interval":61,"difficulty":2.159503426303541,"stability":0.07408182272361549,"retrievability":0.8824981071658218,"grade":0,"lapses":1,"reps":1,"review":"20220830000927859"}]
+interval: 110
+lapses: 2
+modified: 20221218133740490
 modifier: Yangqing QU
 reps: 1
-retrievability: 0.8824981071658218
-review: 20220830000927859
-stability: 0.07408182272361549
+retrievability: 1.1408637753007457e-68
+review: 20221218133740490
+stability: 1.097623272188053
 tags: userProfile用户画像 ?
 title: 用户画像版本
 type: text/vnd.tiddlywiki

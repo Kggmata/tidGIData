@@ -1,16 +1,18 @@
 created: 20220609080123894
-difficulty: 1.3752071722568469
-due: 20220831132124194
+creator: Yangqing QU
+difficulty: 1
+due: 20240110133653149
 grade: 1
-history: [{"due":"20220613142037164","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612142037164"},{"due":"20220616013321247","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615013321247"},{"due":"20220625110812691","interval":1,"difficulty":1,"stability":8.582608156494905,"retrievability":0.2443520960981822,"grade":2,"lapses":1,"reps":2,"review":"20220616110812691"},{"due":"20220812060624222","interval":10,"difficulty":1.0844754806146786,"stability":47.3435515656736,"retrievability":0.8844754806146786,"grade":1,"lapses":1,"reps":3,"review":"20220626060624222"},{"due":"20220818102901778","interval":52,"difficulty":2.1751972304569946,"stability":0.05488116409496729,"retrievability":0.8907217498423161,"grade":0,"lapses":2,"reps":1,"review":"20220817102901777"}]
-interval: 6
+history: [{"due":"20220613142037164","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612142037164"},{"due":"20220616013321247","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615013321247"},{"due":"20220625110812691","interval":1,"difficulty":1,"stability":8.582608156494905,"retrievability":0.2443520960981822,"grade":2,"lapses":1,"reps":2,"review":"20220616110812691"},{"due":"20220812060624222","interval":10,"difficulty":1.0844754806146786,"stability":47.3435515656736,"retrievability":0.8844754806146786,"grade":1,"lapses":1,"reps":3,"review":"20220626060624222"},{"due":"20220818102901778","interval":52,"difficulty":2.1751972304569946,"stability":0.05488116409496729,"retrievability":0.8907217498423161,"grade":0,"lapses":2,"reps":1,"review":"20220817102901777"},{"due":"20220831132124194","interval":6,"difficulty":1.3752071722568469,"stability":8.144345764217267,"retrievability":0.00000994179985232475,"grade":1,"lapses":2,"reps":2,"review":"20220823132124194"}]
+interval: 117
 lapses: 2
-modified: 20220823132124194
-reps: 2
-retrievability: 0.00000994179985232475
-review: 20220823132124194
-stability: 8.144345764217267
-tags: kafka ?
+modified: 20221218133653149
+modifier: Yangqing QU
+reps: 3
+retrievability: 0.22011887281308354
+review: 20221218133653149
+stability: 387.6029608754452
+tags: database数据库 ?
 title: 数据库，逻辑删还是物理删？
 type: text/vnd.tiddlywiki
 

@@ -1,15 +1,17 @@
 created: 20220711142846802
-difficulty: 2.0044029283203417
-due: 20220830143423589
+creator: Yangqing QU
+difficulty: 2.204402928320342
+due: 20221219132401833
 grade: 0
-history: [{"due":"20220716012601561","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715012601561"},{"due":"20220723025846228","interval":7,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220722025846227"},{"due":"20220803084334429","interval":11,"difficulty":1.2000001605946278,"stability":0.0548811791474709,"retrievability":1.6059462786757528e-7,"grade":0,"lapses":2,"reps":1,"review":"20220802084334429"},{"due":"20220818122229949","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":1,"lapses":2,"reps":2,"review":"20220808122229948"}]
-interval: 21
-lapses: 3
-modified: 20220830070034892
+history: [{"due":"20220716012601561","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715012601561"},{"due":"20220723025846228","interval":7,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0006265996821383716,"grade":0,"lapses":1,"reps":1,"review":"20220722025846227"},{"due":"20220803084334429","interval":11,"difficulty":1.2000001605946278,"stability":0.0548811791474709,"retrievability":1.6059462786757528e-7,"grade":0,"lapses":2,"reps":1,"review":"20220802084334429"},{"due":"20220818122229949","interval":6,"difficulty":1,"stability":10.165495967872308,"retrievability":0.00000994183126152159,"grade":1,"lapses":2,"reps":2,"review":"20220808122229948"},{"due":"20220830143423589","interval":21,"difficulty":2.0044029283203417,"stability":0.040656966333775045,"retrievability":0.8044029283203414,"grade":0,"lapses":3,"reps":1,"review":"20220829143423588"}]
+interval: 111
+lapses: 4
+modified: 20221218132401833
+modifier: Yangqing QU
 reps: 1
-retrievability: 0.8044029283203414
-review: 20220829143423588
-stability: 0.040656966333775045
+retrievability: 1.1878338242945895e-125
+review: 20221218132401832
+stability: 0.6023884238244042
 tags: ?
 title: TCP UDP区别
 type: text/vnd.tiddlywiki

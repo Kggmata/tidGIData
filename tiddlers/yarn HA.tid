@@ -1,16 +1,17 @@
 created: 20220521023833573
-difficulty: 3.346153866140516
-due: 20220831084655595
-grade: 2
-history: [{"due":"20220523110619761","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521110619761"},{"due":"20220524004443763","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523004443763"},{"due":"20220611073208013","interval":6,"difficulty":4.743660293347436,"stability":13.061487305027413,"retrievability":0.44366029334743595,"grade":2,"lapses":1,"reps":2,"review":"20220529073208013"},{"due":"20220615003114376","interval":16,"difficulty":5.82257797587733,"stability":0.055390315029607076,"retrievability":0.8789176825298934,"grade":0,"lapses":2,"reps":1,"review":"20220614003114376"},{"due":"20220617105704496","interval":2,"difficulty":6.044852898334449,"stability":0.04075126313635327,"retrievability":0.022274922457119053,"grade":0,"lapses":3,"reps":1,"review":"20220616105704495"},{"due":"20220625143348118","interval":3,"difficulty":5.24528090920932,"stability":2.536646099210009,"retrievability":0.0004280108748709723,"grade":1,"lapses":3,"reps":2,"review":"20220619005327260"},{"due":"20220628020205001","interval":8,"difficulty":6.1625652827196795,"stability":0.030120512707719985,"retrievability":0.717284373510359,"grade":0,"lapses":4,"reps":1,"review":"20220627020205001"},{"due":"20220708014659633","interval":4,"difficulty":5.362566121042837,"stability":1.9610841597533348,"retrievability":8.383231576661857e-7,"grade":1,"lapses":4,"reps":2,"review":"20220701090401794"},{"due":"20220730122642615","interval":9,"difficulty":4.179168549777793,"stability":19.619229457799026,"retrievability":0.616602428734955,"grade":2,"lapses":4,"reps":3,"review":"20220710122642615"},{"due":"20220806065814779","interval":26,"difficulty":5.248851149280236,"stability":0.022313019173496543,"retrievability":0.8696825995024435,"grade":0,"lapses":5,"reps":1,"review":"20220805065814779"},{"due":"20220811074551613","interval":4,"difficulty":4.44885115554879,"stability":1.7533996452364002,"retrievability":6.268553660991224e-9,"grade":1,"lapses":5,"reps":2,"review":"20220809074551613"}]
-interval: 6
+creator: Yangqing QU
+difficulty: 2.9857710086072724
+due: 20230715132430051
+grade: 1
+history: [{"due":"20220523110619761","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521110619761"},{"due":"20220524004443763","interval":2,"difficulty":6.1000000000000005,"stability":0.7778591317158038,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20220523004443763"},{"due":"20220611073208013","interval":6,"difficulty":4.743660293347436,"stability":13.061487305027413,"retrievability":0.44366029334743595,"grade":2,"lapses":1,"reps":2,"review":"20220529073208013"},{"due":"20220615003114376","interval":16,"difficulty":5.82257797587733,"stability":0.055390315029607076,"retrievability":0.8789176825298934,"grade":0,"lapses":2,"reps":1,"review":"20220614003114376"},{"due":"20220617105704496","interval":2,"difficulty":6.044852898334449,"stability":0.04075126313635327,"retrievability":0.022274922457119053,"grade":0,"lapses":3,"reps":1,"review":"20220616105704495"},{"due":"20220625143348118","interval":3,"difficulty":5.24528090920932,"stability":2.536646099210009,"retrievability":0.0004280108748709723,"grade":1,"lapses":3,"reps":2,"review":"20220619005327260"},{"due":"20220628020205001","interval":8,"difficulty":6.1625652827196795,"stability":0.030120512707719985,"retrievability":0.717284373510359,"grade":0,"lapses":4,"reps":1,"review":"20220627020205001"},{"due":"20220708014659633","interval":4,"difficulty":5.362566121042837,"stability":1.9610841597533348,"retrievability":8.383231576661857e-7,"grade":1,"lapses":4,"reps":2,"review":"20220701090401794"},{"due":"20220730122642615","interval":9,"difficulty":4.179168549777793,"stability":19.619229457799026,"retrievability":0.616602428734955,"grade":2,"lapses":4,"reps":3,"review":"20220710122642615"},{"due":"20220806065814779","interval":26,"difficulty":5.248851149280236,"stability":0.022313019173496543,"retrievability":0.8696825995024435,"grade":0,"lapses":5,"reps":1,"review":"20220805065814779"},{"due":"20220811074551613","interval":4,"difficulty":4.44885115554879,"stability":1.7533996452364002,"retrievability":6.268553660991224e-9,"grade":1,"lapses":5,"reps":2,"review":"20220809074551613"},{"due":"20220831084655595","interval":6,"difficulty":3.346153866140516,"stability":16.02487977738545,"retrievability":0.6973027105917258,"grade":2,"lapses":5,"reps":3,"review":"20220815084655595"}]
+interval: 125
 lapses: 5
-modified: 20221217113325210
+modified: 20221218132430051
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.6973027105917258
-review: 20220815084655595
-stability: 16.02487977738545
+reps: 4
+retrievability: 0.43961714246675615
+review: 20221218132430051
+stability: 208.90421733613735
 tags: yarn ?
 title: yarn HA
 type: text/vnd.tiddlywiki
