@@ -1,16 +1,18 @@
 created: 20220712074759647
-difficulty: 2.029067123031954
-due: 20220829143844665
+creator: Yangqing QU
+difficulty: 2.229067123031954
+due: 20221219131459072
 grade: 0
-history: [{"due":"20220718085202942","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085202942"},{"due":"20220727102326636","interval":9,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220726102326636"},{"due":"20220818063147765","interval":10,"difficulty":1,"stability":12.927383847753273,"retrievability":6.658682892024545e-7,"grade":1,"lapses":1,"reps":2,"review":"20220805063147765"}]
-interval: 23
-lapses: 2
-modified: 20220828143844665
+history: [{"due":"20220718085202942","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220717085202942"},{"due":"20220727102326636","interval":9,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.00007618062030209515,"grade":0,"lapses":1,"reps":1,"review":"20220726102326636"},{"due":"20220818063147765","interval":10,"difficulty":1,"stability":12.927383847753273,"retrievability":6.658682892024545e-7,"grade":1,"lapses":1,"reps":2,"review":"20220805063147765"},{"due":"20220829143844665","interval":23,"difficulty":2.029067123031954,"stability":0.05488116409496729,"retrievability":0.8290671230319536,"grade":0,"lapses":2,"reps":1,"review":"20220828143844664"}]
+interval: 112
+lapses: 3
+modified: 20221218131459072
+modifier: Yangqing QU
 reps: 1
-retrievability: 0.8290671230319536
-review: 20220828143844664
-stability: 0.05488116409496729
-tags: ?
+retrievability: 4.1624301607879036e-94
+review: 20221218131459072
+stability: 0.8131393194811983
+tags: sqoop ?
 title: sqoop导入null不匹配问题
 type: text/vnd.tiddlywiki
 

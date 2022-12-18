@@ -1,16 +1,18 @@
 created: 20220713074855739
+creator: Yangqing QU
 difficulty: 2.268451664616095
 due: 20220830143109392
 grade: 0
 history: [{"due":"20220719144643012","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220718144643012"},{"due":"20220811124634189","interval":8,"difficulty":1,"stability":16.434171711190046,"retrievability":0.00021848284249889474,"grade":1,"lapses":0,"reps":2,"review":"20220726124634189"},{"due":"20220818121551093","interval":22,"difficulty":2.068451625884813,"stability":0.07408182272361549,"retrievability":0.8684516258848127,"grade":0,"lapses":1,"reps":1,"review":"20220817121551093"}]
 interval: 12
 lapses: 2
-modified: 20220829143109392
+modified: 20221218132305630
+modifier: Yangqing QU
 reps: 1
 retrievability: 3.873128162176221e-8
 review: 20220829143109392
 stability: 0.05488116409496729
-tags: ?
+tags: ? tcp
 title: SYN full form
 type: text/vnd.tiddlywiki
 

@@ -1,15 +1,17 @@
 created: 20220609015654621
-difficulty: 1.0917503073557173
-due: 20220830124327194
-grade: 1
-history: [{"due":"20220613134716425","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612134716425"},{"due":"20220616011200927","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615011200927"},{"due":"20220625110032043","interval":1,"difficulty":1,"stability":8.582608156494905,"retrievability":0.2443520960981822,"grade":2,"lapses":1,"reps":2,"review":"20220616110032043"},{"due":"20220627020048567","interval":10,"difficulty":2.0844754806146786,"stability":0.054885141354873004,"retrievability":0.8844754806146786,"grade":0,"lapses":2,"reps":1,"review":"20220626020048566"},{"due":"20220709062605075","interval":3,"difficulty":1,"stability":10.11586518785958,"retrievability":0.0031543781993985842,"grade":2,"lapses":2,"reps":2,"review":"20220629062605075"}]
-interval: 11
-lapses: 2
-modified: 20220710124327194
-reps: 3
-retrievability: 0.8917503073557174
-review: 20220710124327194
-stability: 51.194137377537785
+creator: Yangqing QU
+difficulty: 2.0097060334070873
+due: 20221219131656116
+grade: 0
+history: [{"due":"20220613134716425","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612134716425"},{"due":"20220616011200927","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615011200927"},{"due":"20220625110032043","interval":1,"difficulty":1,"stability":8.582608156494905,"retrievability":0.2443520960981822,"grade":2,"lapses":1,"reps":2,"review":"20220616110032043"},{"due":"20220627020048567","interval":10,"difficulty":2.0844754806146786,"stability":0.054885141354873004,"retrievability":0.8844754806146786,"grade":0,"lapses":2,"reps":1,"review":"20220626020048566"},{"due":"20220709062605075","interval":3,"difficulty":1,"stability":10.11586518785958,"retrievability":0.0031543781993985842,"grade":2,"lapses":2,"reps":2,"review":"20220629062605075"},{"due":"20220830124327194","interval":11,"difficulty":1.0917503073557173,"stability":51.194137377537785,"retrievability":0.8917503073557174,"grade":1,"lapses":2,"reps":3,"review":"20220710124327194"}]
+interval: 161
+lapses: 3
+modified: 20221218131656116
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7179557260513699
+review: 20221218131656116
+stability: 0.8131393194811983
 tags: kafka ?
 title: 发布/订阅模式
 type: text/vnd.tiddlywiki

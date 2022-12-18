@@ -1,17 +1,18 @@
 created: 20220705090753447
-difficulty: 2.445205992403591
-due: 20220831002033534
+creator: Yangqing QU
+difficulty: 2.645205992403591
+due: 20221219131949261
 grade: 0
-history: [{"due":"20220707035443856","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706035443856"},{"due":"20220726063004523","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":1,"lapses":0,"reps":2,"review":"20220710063004523"},{"due":"20220803122220709","interval":23,"difficulty":2.059946790337357,"stability":0.07408184304237006,"retrievability":0.859946790337357,"grade":0,"lapses":1,"reps":1,"review":"20220802122220709"},{"due":"20220808010537923","interval":5,"difficulty":2.2607627962246006,"stability":0.054881165551661185,"retrievability":0.0008160058872433979,"grade":0,"lapses":2,"reps":1,"review":"20220807010537923"},{"due":"20220820025312447","interval":5,"difficulty":1.4608305948606668,"stability":7.808738891355963,"retrievability":0.00006779863606618303,"grade":1,"lapses":2,"reps":2,"review":"20220812025312446"}]
-interval: 18
-lapses: 3
-modified: 20221210005806768
+history: [{"due":"20220707035443856","interval":0,"difficulty":0.18883918617224638,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220706035443856"},{"due":"20220726063004523","interval":4,"difficulty":1,"stability":16.060547177433822,"retrievability":0.014781165126568838,"grade":1,"lapses":0,"reps":2,"review":"20220710063004523"},{"due":"20220803122220709","interval":23,"difficulty":2.059946790337357,"stability":0.07408184304237006,"retrievability":0.859946790337357,"grade":0,"lapses":1,"reps":1,"review":"20220802122220709"},{"due":"20220808010537923","interval":5,"difficulty":2.2607627962246006,"stability":0.054881165551661185,"retrievability":0.0008160058872433979,"grade":0,"lapses":2,"reps":1,"review":"20220807010537923"},{"due":"20220820025312447","interval":5,"difficulty":1.4608305948606668,"stability":7.808738891355963,"retrievability":0.00006779863606618303,"grade":1,"lapses":2,"reps":2,"review":"20220812025312446"},{"due":"20220831002033534","interval":18,"difficulty":2.445205992403591,"stability":0.040656966333775045,"retrievability":0.784375397542924,"grade":0,"lapses":3,"reps":1,"review":"20220830002033534"}]
+interval: 110
+lapses: 4
+modified: 20221218131949261
 modifier: Yangqing QU
 reps: 1
-retrievability: 0.784375397542924
-review: 20220830002033534
-stability: 0.040656966333775045
-tags: userProfile用户画像 ?
+retrievability: 1.585653678466185e-124
+review: 20221218131949261
+stability: 0.6023884238244042
+tags: elasticSearch ?
 title: es.write.operation
 type: text/vnd.tiddlywiki
 

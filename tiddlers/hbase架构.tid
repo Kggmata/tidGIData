@@ -1,15 +1,17 @@
 created: 20220601074614622
-difficulty: 2.2349416234975434
-due: 20220831100503890
-grade: 1
-history: [{"due":"20220605023030043","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023030043"},{"due":"20220626002725506","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002725506"},{"due":"20220630023004523","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629023004522"},{"due":"20220705114530109","interval":5,"difficulty":2.2855622183099835,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704114530108"},{"due":"20220711012723960","interval":6,"difficulty":2.485572161146383,"stability":0.04065715014820503,"retrievability":0.00000994283639911803,"grade":0,"lapses":3,"reps":1,"review":"20220710012723960"},{"due":"20220714010450806","interval":3,"difficulty":2.6859925559221454,"stability":0.030119557630782685,"retrievability":0.00042039477576221086,"grade":0,"lapses":4,"reps":1,"review":"20220713010450805"},{"due":"20220722051319650","interval":8,"difficulty":2.8859925559228476,"stability":0.022313041284071456,"retrievability":7.021623759020026e-13,"grade":0,"lapses":5,"reps":1,"review":"20220721051319650"},{"due":"20220731025223727","interval":9,"difficulty":3.085992555922848,"stability":0.016529893502134876,"retrievability":3.4965908900849533e-19,"grade":0,"lapses":6,"reps":1,"review":"20220730025223727"},{"due":"20220807075022654","interval":6,"difficulty":2.285992555922848,"stability":2.1867776892979416,"retrievability":2.4603874181491804e-17,"grade":1,"lapses":6,"reps":2,"review":"20220805075022654"}]
-interval: 6
-lapses: 6
-modified: 20220811100503890
-reps: 3
-retrievability: 0.7489490675746953
-review: 20220811100503890
-stability: 20.42260162841271
+creator: Yangqing QU
+difficulty: 2.9489514055454022
+due: 20221219132236542
+grade: 0
+history: [{"due":"20220605023030043","interval":0,"difficulty":1.4747668508725869,"stability":0.107421875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220604023030043"},{"due":"20220626002725506","interval":5,"difficulty":1,"stability":17.208100315123424,"retrievability":0.007416462463435239,"grade":2,"lapses":0,"reps":2,"review":"20220609002725506"},{"due":"20220630023004523","interval":20,"difficulty":2.0847461089172605,"stability":0.07408316441686115,"retrievability":0.8847461089172606,"grade":0,"lapses":1,"reps":1,"review":"20220629023004522"},{"due":"20220705114530109","interval":5,"difficulty":2.2855622183099835,"stability":0.05488166082758644,"retrievability":0.0008161093927229343,"grade":0,"lapses":2,"reps":1,"review":"20220704114530108"},{"due":"20220711012723960","interval":6,"difficulty":2.485572161146383,"stability":0.04065715014820503,"retrievability":0.00000994283639911803,"grade":0,"lapses":3,"reps":1,"review":"20220710012723960"},{"due":"20220714010450806","interval":3,"difficulty":2.6859925559221454,"stability":0.030119557630782685,"retrievability":0.00042039477576221086,"grade":0,"lapses":4,"reps":1,"review":"20220713010450805"},{"due":"20220722051319650","interval":8,"difficulty":2.8859925559228476,"stability":0.022313041284071456,"retrievability":7.021623759020026e-13,"grade":0,"lapses":5,"reps":1,"review":"20220721051319650"},{"due":"20220731025223727","interval":9,"difficulty":3.085992555922848,"stability":0.016529893502134876,"retrievability":3.4965908900849533e-19,"grade":0,"lapses":6,"reps":1,"review":"20220730025223727"},{"due":"20220807075022654","interval":6,"difficulty":2.285992555922848,"stability":2.1867776892979416,"retrievability":2.4603874181491804e-17,"grade":1,"lapses":6,"reps":2,"review":"20220805075022654"},{"due":"20220831100503890","interval":6,"difficulty":2.2349416234975434,"stability":20.42260162841271,"retrievability":0.7489490675746953,"grade":1,"lapses":6,"reps":3,"review":"20220811100503890"}]
+interval: 129
+lapses: 7
+modified: 20221218132236542
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.5140097820478585
+review: 20221218132236541
+stability: 0.2449128565059638
 tags: hbase ?
 title: hbase架构
 type: text/vnd.tiddlywiki

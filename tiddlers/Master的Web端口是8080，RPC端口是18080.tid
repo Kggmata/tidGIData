@@ -1,15 +1,17 @@
 created: 20220522045424501
-difficulty: 1
-due: 20220831143106911
-grade: 2
-history: [{"due":"20220524020345682","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020345682"},{"due":"20220619020028952","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529020028952"},{"due":"20220621131719033","interval":22,"difficulty":3.3767994636196015,"stability":0.07412477722623134,"retrievability":0.8959329765306554,"grade":0,"lapses":1,"reps":1,"review":"20220620131719032"},{"due":"20220630103803366","interval":2,"difficulty":1.6350624624523806,"stability":8.372720557759914,"retrievability":0.05826299883277926,"grade":2,"lapses":1,"reps":2,"review":"20220622103803366"}]
-interval: 12
-lapses: 1
-modified: 20220704143106911
-reps: 3
-retrievability: 0.8598430379351265
-review: 20220704143106910
-stability: 57.7866410677036
+creator: Yangqing QU
+difficulty: 1.937502571144243
+due: 20221219132252568
+grade: 0
+history: [{"due":"20220524020345682","interval":0,"difficulty":3.7478003092274337,"stability":0.5750000000000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220523020345682"},{"due":"20220619020028952","interval":6,"difficulty":2.2808664870889457,"stability":21.093259328526035,"retrievability":0.33306617786151194,"grade":2,"lapses":0,"reps":2,"review":"20220529020028952"},{"due":"20220621131719033","interval":22,"difficulty":3.3767994636196015,"stability":0.07412477722623134,"retrievability":0.8959329765306554,"grade":0,"lapses":1,"reps":1,"review":"20220620131719032"},{"due":"20220630103803366","interval":2,"difficulty":1.6350624624523806,"stability":8.372720557759914,"retrievability":0.05826299883277926,"grade":2,"lapses":1,"reps":2,"review":"20220622103803366"},{"due":"20220831143106911","interval":12,"difficulty":1,"stability":57.7866410677036,"retrievability":0.8598430379351265,"grade":2,"lapses":1,"reps":3,"review":"20220704143106910"}]
+interval: 167
+lapses: 2
+modified: 20221218132252568
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7375025711442431
+review: 20221218132252568
+stability: 1.097623272188053
 tags: spark ?
 title: Master的Web端口是8080，RPC端口是18080
 type: text/vnd.tiddlywiki

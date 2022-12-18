@@ -1,16 +1,17 @@
 created: 20220521140036348
-difficulty: 3.255986727708175
-due: 20220830143037816
+creator: Yangqing QU
+difficulty: 3.4559867277081753
+due: 20221219131555141
 grade: 0
-history: [{"due":"20220524065106387","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065106387"},{"due":"20220615073031306","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529073031306"},{"due":"20220802105031655","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616105031655"},{"due":"20220808002512294","interval":52,"difficulty":4.072810202650707,"stability":0.07408182468994658,"retrievability":0.8893157252623122,"grade":0,"lapses":1,"reps":1,"review":"20220807002512294"},{"due":"20220819050140897","interval":5,"difficulty":2.273626207100441,"stability":7.297634993717939,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812050140897"}]
-interval: 17
-lapses: 2
-modified: 20221210011006900
+history: [{"due":"20220524065106387","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065106387"},{"due":"20220615073031306","interval":7,"difficulty":3.8915901242788244,"stability":16.578228160326752,"retrievability":0.6915901242788246,"grade":2,"lapses":0,"reps":2,"review":"20220529073031306"},{"due":"20220802105031655","interval":18,"difficulty":2.983494477388395,"stability":46.70595537082019,"retrievability":0.8919043531095704,"grade":2,"lapses":0,"reps":3,"review":"20220616105031655"},{"due":"20220808002512294","interval":52,"difficulty":4.072810202650707,"stability":0.07408182468994658,"retrievability":0.8893157252623122,"grade":0,"lapses":1,"reps":1,"review":"20220807002512294"},{"due":"20220819050140897","interval":5,"difficulty":2.273626207100441,"stability":7.297634993717939,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812050140897"},{"due":"20220830143037816","interval":17,"difficulty":3.255986727708175,"stability":0.05488116409496729,"retrievability":0.7823605206077339,"grade":0,"lapses":2,"reps":1,"review":"20220829143037815"}]
+interval: 111
+lapses: 3
+modified: 20221218131555142
 modifier: Yangqing QU
 reps: 1
-retrievability: 0.7823605206077339
-review: 20220829143037815
-stability: 0.05488116409496729
+retrievability: 2.8385907975682772e-93
+review: 20221218131555132
+stability: 0.8131393194811983
 tags: concept概念 ?
 title: ssh协议图解
 type: text/vnd.tiddlywiki

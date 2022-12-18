@@ -1,16 +1,18 @@
 created: 20220716123832424
+creator: Yangqing QU
 difficulty: 2.0464951521155363
 due: 20220829143746570
 grade: 0
 history: [{"due":"20220725072750543","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220724072750543"},{"due":"20220818142115289","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220802142115289"}]
 interval: 26
 lapses: 1
-modified: 20220828143746570
+modified: 20221218131438361
+modifier: Yangqing QU
 reps: 1
 retrievability: 0.846495152115536
 review: 20220828143746569
 stability: 0.07408182272361549
-tags: ?
+tags: flink
 title: sqlclient模式
 type: text/vnd.tiddlywiki
 

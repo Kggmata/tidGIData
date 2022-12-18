@@ -1,16 +1,18 @@
 created: 20220714133358550
-difficulty: 2.0411020839292244
-due: 20220829133843824
+creator: Yangqing QU
+difficulty: 2.2411020839292246
+due: 20221219131407575
 grade: 0
-history: [{"due":"20220722090331199","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090331199"},{"due":"20220817101332516","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":2,"lapses":0,"reps":2,"review":"20220801101332516"}]
-interval: 27
-lapses: 1
-modified: 20220828133843824
+history: [{"due":"20220722090331199","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090331199"},{"due":"20220817101332516","interval":11,"difficulty":1,"stability":16.439534551900497,"retrievability":0.000009261508688753902,"grade":2,"lapses":0,"reps":2,"review":"20220801101332516"},{"due":"20220829133843824","interval":27,"difficulty":2.0411020839292244,"stability":0.07408182272361549,"retrievability":0.8411020839292245,"grade":0,"lapses":1,"reps":1,"review":"20220828133843824"}]
+interval: 112
+lapses: 2
+modified: 20221218131407576
+modifier: Yangqing QU
 reps: 1
-retrievability: 0.8411020839292245
-review: 20220828133843824
-stability: 0.07408182272361549
-tags: ?
+retrievability: 6.636067099109319e-70
+review: 20221218131407575
+stability: 1.097623272188053
+tags: kafka ?
 title: kafka的幂等性
 type: text/vnd.tiddlywiki
 
