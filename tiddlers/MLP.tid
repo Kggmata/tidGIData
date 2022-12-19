@@ -1,0 +1,15 @@
+created: 20221219045203485
+creator: Yangqing QU
+modified: 20221219045309965
+modifier: Yangqing QU
+tags: ? deepLearning深度学习
+title: MLP
+type: text/vnd.tiddlywiki
+
+multilayer perceptron
+
+MLP stands for "multilayer perceptron," which is a type of artificial neural network. An MLP consists of an input layer, one or more hidden layers, and an output layer. Each layer contains a set of "neurons," which are processing units that receive input from the previous layer, perform some computation on that input, and pass the result on to the next layer.
+
+In an MLP, the input layer receives the raw input data and passes it on to the hidden layers, which perform intermediate computations. The output layer produces the final output of the network, which may be a single value or a set of values depending on the task being performed.
+
+MLPs are commonly used for tasks such as image classification, language translation, and prediction. They are particularly well-suited for problems that involve multiple inputs and outputs, and they can be trained to learn complex patterns and relationships in data.
