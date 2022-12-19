@@ -1,6 +1,6 @@
 created: 20221121082416338
 creator: Yangqing QU
-modified: 20221217113219959
+modified: 20221219084901726
 modifier: Yangqing QU
 tags: ? web
 title: http
@@ -12,5 +12,14 @@ hypertext transfer protocol
 超文本传输协定
 通俗理解就是用来传输网页数据的协议
 是client和server沟通的桥梁
+```
+```
+超文本指的就是不仅仅是文本, 也可以包括图片视频超链接, html通过各种标签定义图片视频超链接, 通过浏览器的渲染, 最终呈现一个文字有画面的网页
+```
+```
+协议指的就是交流通讯的方式, 以及各种控制以及错误处理方式
+```
+```
+传输指的端到端, 两点之间传输数据
 ```
 [[http方法]]

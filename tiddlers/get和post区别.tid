@@ -1,13 +1,13 @@
 created: 20221206152629685
 creator: Yangqing QU
-modified: 20221206152735158
+modified: 20221219085711995
 modifier: Yangqing QU
-tags: ?
+tags: ? http
 title: get和post区别
 type: text/vnd.tiddlywiki
 
-get是获取, 浏览器获取网页一般就是get
+get是获取, 浏览器获取网页一般就是get, 用于从服务器获取资源, 
 
-post是创建, 
+post是根据body对资源进行处理
 
 [[GET 和 POST 方法都是安全和幂等的吗？]]

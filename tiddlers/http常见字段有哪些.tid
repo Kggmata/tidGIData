@@ -1,0 +1,18 @@
+created: 20221219085324760
+creator: Yangqing QU
+modified: 20221219085549370
+modifier: Yangqing QU
+tags: ? http
+title: http常见字段有哪些
+type: text/vnd.tiddlywiki
+
+host主机地址
+
+content-length本次response长度
+
+Connection要求http长链接
+
+content-type包含数据格式信息
+
+content-encoding压缩格式
+
