@@ -1,18 +1,18 @@
 created: 20220718131216881
 creator: Yangqing QU
-difficulty: 1
-due: 20220831114531263
-grade: 1
-history: [{"due":"20220801121429313","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121429313"},{"due":"20220808002256079","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002256079"},{"due":"20220814091526208","interval":6,"difficulty":1.2001968026909542,"stability":0.05488116409496729,"retrievability":0.00019680269095417443,"grade":0,"lapses":2,"reps":1,"review":"20220813091526208"}]
-interval: 8
-lapses: 2
-modified: 20221219145029022
+difficulty: 1.485335856268484
+due: 20221221022413464
+grade: 0
+history: [{"due":"20220801121429313","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731121429313"},{"due":"20220808002256079","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002256079"},{"due":"20220814091526208","interval":6,"difficulty":1.2001968026909542,"stability":0.05488116409496729,"retrievability":0.00019680269095417443,"grade":0,"lapses":2,"reps":1,"review":"20220813091526208"},{"due":"20220831114531263","interval":8,"difficulty":1,"stability":10.165649333901193,"retrievability":2.13773247238443e-7,"grade":1,"lapses":2,"reps":2,"review":"20220821114531262"}]
+interval: 121
+lapses: 3
+modified: 20221220022413464
 modifier: Yangqing QU
-reps: 2
-retrievability: 2.13773247238443e-7
-review: 20220821114531262
-stability: 10.165649333901193
-tags: ? spark
+reps: 1
+retrievability: 0.2853358562684839
+review: 20221220022413463
+stability: 0.8131393194811983
+tags: spark ?
 title: sparkSQL读取parquet, orc, json分区数量
 type: text/vnd.tiddlywiki
 

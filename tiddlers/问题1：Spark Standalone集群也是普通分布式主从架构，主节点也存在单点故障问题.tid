@@ -1,17 +1,27 @@
 created: 20220521005750689
-difficulty: 1.467722453958227
-due: 20220901062324140
-grade: 2
-history: [{"due":"20220523073121918","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521073121918"},{"due":"20220529002159060","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002159060"},{"due":"20220628052000789","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602052000789"},{"due":"20220701000750618","interval":28,"difficulty":4.232984010198816,"stability":0.07408316441686115,"retrievability":0.8918064933310472,"grade":0,"lapses":1,"reps":1,"review":"20220630000750618"},{"due":"20220712055036680","interval":5,"difficulty":2.433800119591539,"stability":6.961573391804018,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220705055036680"}]
-interval: 12
-lapses: 1
-modified: 20220717062324140
-reps: 3
-retrievability: 0.833922334366688
-review: 20220717062324140
-stability: 46.09428582815949
+creator: Yangqing QU
+difficulty: 2.367789829102804
+due: 20221221023922334
+grade: 0
+history: [{"due":"20220523073121918","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521073121918"},{"due":"20220529002159060","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523002159060"},{"due":"20220628052000789","interval":10,"difficulty":3.141177516867769,"stability":25.7636430941571,"retrievability":0.8411775168677682,"grade":2,"lapses":0,"reps":3,"review":"20220602052000789"},{"due":"20220701000750618","interval":28,"difficulty":4.232984010198816,"stability":0.07408316441686115,"retrievability":0.8918064933310472,"grade":0,"lapses":1,"reps":1,"review":"20220630000750618"},{"due":"20220712055036680","interval":5,"difficulty":2.433800119591539,"stability":6.961573391804018,"retrievability":0.0008161093927229343,"grade":2,"lapses":1,"reps":2,"review":"20220705055036680"},{"due":"20220901062324140","interval":12,"difficulty":1.467722453958227,"stability":46.09428582815949,"retrievability":0.833922334366688,"grade":2,"lapses":1,"reps":3,"review":"20220717062324140"}]
+interval: 156
+lapses: 2
+modified: 20221220023922334
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7000673751445766
+review: 20221220023922334
+stability: 1.097623272188053
 tags: spark ?
 title: 问题1：Spark Standalone集群也是普通分布式主从架构，主节点也存在单点故障问题
 type: text/vnd.tiddlywiki
 
-解决1：启动多个主节点，避免单点故障问题
+Apache Spark 是一个大数据处理框架，它提供了多种机制来解决单点故障问题。
+
+首先，Spark 提供了内置的高可用性机制，可以在节点故障时自动重新调度任务。Spark 使用主节点和工作节点的架构，主节点负责管理工作节点，并在工作节点故障时重新调度任务。
+
+其次，Spark 支持使用外部存储系统，如 HDFS、S3 等，来存储数据和中间结果。这样，即使节点故障，也可以从外部存储系统中恢复数据和中间结果，从而保证任务的高可用性。
+
+此外，Spark 还支持使用第三方资源管理器，如 Apache Mesos、YARN 等，来管理集群资源。这些资源管理器可以自动重新调度任务，以应对节点故障的情况。
+
+总的来说，Spark 提供了多种机制来解决单点故障问题，可以帮助你构建高可用性的大数据处理系统。

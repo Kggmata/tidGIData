@@ -1,0 +1,23 @@
+created: 20220524073630294
+creator: Yangqing QU
+difficulty: 2.6814361448975097
+due: 20221221023312755
+grade: 0
+history: [{"due":"20220529141850378","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141850378"},{"due":"20220624135702570","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602135702570"},{"due":"20220630142015942","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625235043023"},{"due":"20220706045445702","interval":9,"difficulty":2.573241117259257,"stability":0.05488141221849455,"retrievability":0.0000027634348577665566,"grade":0,"lapses":2,"reps":1,"review":"20220705045445702"},{"due":"20220717045410448","interval":5,"difficulty":1.7733089188204205,"stability":6.82490540485198,"retrievability":0.00006780156116384973,"grade":1,"lapses":2,"reps":2,"review":"20220710045410448"},{"due":"20220901030010777","interval":12,"difficulty":1.8042039354327073,"stability":40.82053241338078,"retrievability":0.8308950166122867,"grade":1,"lapses":2,"reps":3,"review":"20220722030010777"}]
+interval: 151
+lapses: 3
+modified: 20221220023312755
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.6772322094648022
+review: 20221220023312755
+stability: 0.8131393194811983
+tags: zookeeper ?
+title: ZooKeeper使用的ZAB协议与Paxos算法的异同？
+type: text/vnd.tiddlywiki
+
+zab全称zookeeper atomic broadcast, 是zookeeper内部的分布式一致性协议, 用来实现分布式高可用和强一致性
+
+它是paxos的变体. Paxos是leslie lamport在1989年提出的一种分布式一致性算法
+
+zab在paxos的基础上, 添加了若干优化和改进, 使其更适合生产环境使用

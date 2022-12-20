@@ -1,11 +1,12 @@
 created: 20220619002200908
+creator: Yangqing QU
 difficulty: 1
 due: 20220902133427999
 grade: 2
 history: [{"due":"20220621005525621","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005525621"},{"due":"20220623044214350","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622044214350"},{"due":"20220626075601937","interval":3,"difficulty":1.2140373140909089,"stability":0.054885141354873004,"retrievability":0.014037314090908812,"grade":0,"lapses":2,"reps":1,"review":"20220625075601937"},{"due":"20220709003230746","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":2,"lapses":2,"reps":2,"review":"20220629003230746"}]
 interval: 11
 lapses: 2
-modified: 20221210005806766
+modified: 20221220024349468
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.892182655006369
@@ -15,8 +16,16 @@ tags: userProfile用户画像 ?
 title: elasticsearch 倒排索引原理
 type: text/vnd.tiddlywiki
 
-https://www.infoq.cn/article/database-timestamp-02
-[img[时间序列数据库的秘密(2)——索引_数据库_陶文_InfoQ精选2022-06-22 12_39_53.jpg]]
-[img[elasticsearch 倒排索引原理 - 知乎2022-06-19 08_23_16.jpg]]
+在 Elasticsearch 中，倒排索引是一种数据结构，用于存储文档的单词和文档的关系。它的工作原理是，将文档中的每个单词映射到该单词出现的文档列表，这样就可以快速找到包含特定单词的文档。
 
-https://developer.aliyun.com/article/38228
+例如，假设你有一个包含三篇文档的索引，分别是：
+
+文档 1："The quick brown fox jumps over the lazy dog."
+文档 2："The quick brown cat jumps over the lazy dog."
+文档 3："The quick brown cat chases the lazy dog."
+倒排索引会为每个单词创建一个条目，并将单词出现的文档列举出来。例如，为 "the" 这个单词创建的条目可能如下所示：
+
+[img[Snipaste_2022-12-20_10-43-43.png]]
+这样，当你搜索包含 "the" 这个单词的文档时，Elasticsearch 就可以快速返回文档 1、2 和 3 的列表。
+
+倒排索引的一个重要优势是，它可以快速执行模糊搜索和全文搜索。例如，你可以使用倒排索引搜索包含 "quick" 或 "quickly" 这个单词的文档，

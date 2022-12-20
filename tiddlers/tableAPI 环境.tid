@@ -1,16 +1,18 @@
 created: 20220719025748220
+creator: Yangqing QU
 difficulty: 1
 due: 20220831114806994
 grade: 1
 history: [{"due":"20220801131344246","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131344246"},{"due":"20220808002710952","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002710952"},{"due":"20220814110951630","interval":6,"difficulty":1.2001968026909542,"stability":0.05488116409496729,"retrievability":0.00019680269095417443,"grade":0,"lapses":2,"reps":1,"review":"20220813110951630"}]
 interval: 8
 lapses: 2
-modified: 20220821114806994
+modified: 20221220022424118
+modifier: Yangqing QU
 reps: 2
 retrievability: 2.13773247238443e-7
 review: 20220821114806994
 stability: 10.165649333901193
-tags: ?
+tags: flink
 title: tableAPI 环境
 type: text/vnd.tiddlywiki
 
