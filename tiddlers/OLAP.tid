@@ -1,0 +1,31 @@
+created: 20220608004718815
+creator: Yangqing QU
+difficulty: 2.049593934716849
+due: 20221221034227210
+grade: 0
+history: [{"due":"20220612000224884","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220611000224884"},{"due":"20220627234608486","interval":2,"difficulty":1,"stability":13.656807435121006,"retrievability":0.13109787805002504,"grade":2,"lapses":0,"reps":2,"review":"20220613234608486"},{"due":"20220903141145834","interval":15,"difficulty":1.0907218533530696,"stability":66.44169837804645,"retrievability":0.8907218533530697,"grade":1,"lapses":0,"reps":3,"review":"20220629141145834"}]
+interval: 174
+lapses: 1
+modified: 20221220034227210
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7588720813637795
+review: 20221220034227210
+stability: 1.4816364413634358
+tags: concept概念 bigData大数据 ?
+title: OLAP
+type: text/vnd.tiddlywiki
+
+OLAP: Online Analytical Processing：联机的`分析`处理
+
+OLAP（Online Analytical Processing）是一种数据分析技术，用于快速检索和分析大型数据集中的信息。OLAP系统使用多维数据模型，可以让用户从不同的角度查看数据，并使用各种分析工具（如聚合、分组和排序）来深入了解数据。
+
+OLAP系统通常包括三个部分：
+
+数据库：存储原始数据的数据库，可以是关系数据库或其他类型的数据库。
+
+OLAP引擎：负责处理用户的分析请求，并根据请求从数据库中检索数据。
+
+用户界面：让用户可以提交分析请求并视图分析结果的界面。
+
+OLAP系统的目的是帮助用户快速掌握数据，并从中发现有用的信息。它通常用于商业智能、数据挖掘和其他需要对大型数据集进行分析的应用场景。

@@ -1,25 +1,32 @@
 created: 20220614064029815
-difficulty: 2.0802373214018735
-due: 20220902114736417
+creator: Yangqing QU
+difficulty: 2.2802373214018736
+due: 20221221035127285
 grade: 0
-history: [{"due":"20220617034011190","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034011190"},{"due":"20220626025013213","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617025013212"},{"due":"20220821020247183","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628020247183"}]
-interval: 65
-lapses: 1
-modified: 20221210012122804
+history: [{"due":"20220617034011190","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034011190"},{"due":"20220626025013213","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617025013212"},{"due":"20220821020247183","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628020247183"},{"due":"20220902114736417","interval":65,"difficulty":2.0802373214018735,"stability":0.07408182272361549,"retrievability":0.8802373214018735,"grade":0,"lapses":1,"reps":1,"review":"20220901114736417"}]
+interval: 110
+lapses: 2
+modified: 20221220035127285
 modifier: Yangqing QU
 reps: 1
-retrievability: 0.8802373214018735
-review: 20220901114736417
-stability: 0.07408182272361549
+retrievability: 1.1408637753007457e-68
+review: 20221220035127284
+stability: 1.097623272188053
 tags: userProfile用户画像web ?
 title: 什么是标签体系 标签
 type: text/vnd.tiddlywiki
 
-```
-就是用户特征符号的表示
-```
-标签
+用户画像是指关于用户的描述性信息，包括用户的年龄、性别、职业、居住地、兴趣爱好等。标签体系是用于描述用户画像的标签系统，其中的标签是用于描述用户属性或兴趣的短语。标签体系可以是结构化的，也可以是非结构化的。
+
+例如，一个用户画像标签体系可能包括如下几个标签：
 
 ```
-实现用户画像的数学模型
+年龄：20-30岁、30-40岁、40-50岁等。
+性别：男性、女性。
+职业：工程师、医生、教师等。
+居住地：中国、美国、日本等。
+兴趣爱好：运动、旅游、摄影等。
 ```
+标签体系可以帮助我们更好地了解用户，并在不同的业务场景中使用这些信息。例如，在广告投放时，可以使用用户画像中的标签来定向投放广告；在营销活动中，可以使用用户画像中的标签来精确定位目标客户。
+
+一般分为, 规则标签, 统计标签, 挖掘标签, 组合标签

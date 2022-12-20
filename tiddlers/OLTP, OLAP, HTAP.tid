@@ -1,22 +1,13 @@
 created: 20220727020306904
-modified: 20220727052317978
-tags: ? flink
+creator: Yangqing QU
+modified: 20221220034222301
+modifier: Yangqing QU
+tags: ? bigData大数据 concept概念
 title: OLTP, OLAP, HTAP
 type: text/vnd.tiddlywiki
 
-```
-OLTP 
-OLAP 
-  MOLAP Multi-dimensional OLAP
+OLTP（Online Transaction Processing）是一种数据处理技术，用于处理大量的事务性数据。OLTP系统使用关系数据库管理系统，可以快速处理大量的增删改查操作，并提供高效的事务支持。OLTP系统通常用于支持实时业务操作，如购物网站的订单处理、银行的转账处理等。
 
-  ROLAP rational OLAP
-ROLAP servers are placed between relational backend server and client front-end tools. It uses relational or extended DBMS to store and manage warehouse data. ROLAP has basically 3 main components: Database Server, ROLAP server, and Front-end tool.
+OLAP（Online Analytical Processing）是一种数据分析技术，用于快速检索和分析大型数据集中的信息。OLAP系统使用多维数据模型，可以让用户从不同的角度查看数据，并使用各种分析工具（如聚合、分组和排序）来深入了解数据。OLAP系统通常用于商业智能、数据挖掘和其他需要对大型数据集进行分析的应用场景。
 
-MOLAP multidimensional online analytical processing
-use optimized multidimensional array storage instead of relational database.
-
-HOLAP a combination of both ROLAP and MOLAP
-
-HTAP Hybrid transactional\Analytical 
-HTAP is used to describe the capability of a single database that can perform both online transaction processing (OLTP) and online analytical processing (OLAP) for the purpose of real-time operational intelligence processing. The term was created by Gartner in 2014.
-```
+HTAP（Hybrid Transaction and Analytical Processing）是一种结合OLTP和OLAP的数据处理技术。HTAP系统既可以处理实时事务性数据，又可以对数据进行分析和挖掘。HTAP系统的优势在于能够快速响应用户的分析请求，并提供实时的分析结果。HTAP系统通常用于支持实时数据分析和决策支持等应用

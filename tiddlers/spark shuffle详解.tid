@@ -1,15 +1,17 @@
 created: 20220523101748679
+creator: Yangqing QU
 difficulty: 1
-due: 20220902092558472
-grade: 2
-history: [{"due":"20220529140828573","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528140828573"},{"due":"20220624134711090","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602134711090"},{"due":"20220626145921231","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625145921231"},{"due":"20220708050022257","interval":4,"difficulty":1.5766231536640938,"stability":9.370230736253992,"retrievability":0.003384799839695139,"grade":1,"lapses":1,"reps":2,"review":"20220629050022256"}]
-interval: 11
+due: 20240514034532585
+grade: 1
+history: [{"due":"20220529140828573","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528140828573"},{"due":"20220624134711090","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602134711090"},{"due":"20220626145921231","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625145921231"},{"due":"20220708050022257","interval":4,"difficulty":1.5766231536640938,"stability":9.370230736253992,"retrievability":0.003384799839695139,"grade":1,"lapses":1,"reps":2,"review":"20220629050022256"},{"due":"20220902092558472","interval":11,"difficulty":1,"stability":53.71055864417196,"retrievability":0.883657330456625,"grade":2,"lapses":1,"reps":3,"review":"20220710092558472"}]
+interval: 163
 lapses: 1
-modified: 20220710092558472
-reps: 3
-retrievability: 0.883657330456625
-review: 20220710092558472
-stability: 53.71055864417196
+modified: 20221220034532585
+modifier: Yangqing QU
+reps: 4
+retrievability: 0.726333126845921
+review: 20221220034532584
+stability: 511.0110013412948
 tags: spark ?
 title: spark shuffle详解
 type: text/vnd.tiddlywiki

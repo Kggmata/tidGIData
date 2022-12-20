@@ -1,15 +1,17 @@
 created: 20220520043637994
-difficulty: 2.2548728843857733
-due: 20220902235054644
+creator: Yangqing QU
+difficulty: 1.218770287096041
+due: 20240415034541244
 grade: 2
-history: [{"due":"20220523040050804","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040050804"},{"due":"20220529000810749","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000810749"},{"due":"20220625103019238","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601103019237"}]
-interval: 24
+history: [{"due":"20220523040050804","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040050804"},{"due":"20220529000810749","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000810749"},{"due":"20220625103019238","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601103019237"},{"due":"20220902235054644","interval":24,"difficulty":2.2548728843857733,"stability":69.24360400515107,"retrievability":0.8990204493398125,"grade":2,"lapses":0,"reps":4,"review":"20220625235054644"}]
+interval: 177
 lapses: 0
-modified: 20220625235054645
-reps: 4
-retrievability: 0.8990204493398125
-review: 20220625235054644
-stability: 69.24360400515107
+modified: 20221220034541244
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.763897402710268
+review: 20221220034541244
+stability: 481.99422409421413
 tags: zookeeper hadoop ?
 title: Zookeeper中的存储节点可以存储数据，但是不能拥有子节点
 type: text/css

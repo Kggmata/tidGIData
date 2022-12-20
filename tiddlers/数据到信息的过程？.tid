@@ -1,16 +1,17 @@
 created: 20220614074006014
-difficulty: 2.0802373214018735
-due: 20220902115025293
+creator: Yangqing QU
+difficulty: 2.2802373214018736
+due: 20221221035500235
 grade: 0
-history: [{"due":"20220617034159957","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034159957"},{"due":"20220626025338105","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617025338105"},{"due":"20220821035357405","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628035357405"}]
-interval: 65
-lapses: 1
-modified: 20221210005806788
+history: [{"due":"20220617034159957","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616034159957"},{"due":"20220626025338105","interval":1,"difficulty":1,"stability":8.83203912975118,"retrievability":0.35037881052010367,"grade":2,"lapses":0,"reps":2,"review":"20220617025338105"},{"due":"20220821035357405","interval":11,"difficulty":1,"stability":53.68637163054417,"retrievability":0.8770222757871822,"grade":2,"lapses":0,"reps":3,"review":"20220628035357405"},{"due":"20220902115025293","interval":65,"difficulty":2.0802373214018735,"stability":0.07408182272361549,"retrievability":0.8802373214018735,"grade":0,"lapses":1,"reps":1,"review":"20220901115025292"}]
+interval: 110
+lapses: 2
+modified: 20221220035500235
 modifier: Yangqing QU
 reps: 1
-retrievability: 0.8802373214018735
-review: 20220901115025292
-stability: 0.07408182272361549
+retrievability: 1.1408637753007457e-68
+review: 20221220035500235
+stability: 1.097623272188053
 tags: userProfile用户画像 ?
 title: 数据到信息的过程？
 type: text/vnd.tiddlywiki
@@ -22,3 +23,11 @@ type: text/vnd.tiddlywiki
 ----数据挖掘
 ---有价值的信息
 ```
+
+数据和信息是两个不同的概念。
+
+数据是指原始的、未经加工或分析的、具有一定意义的事物的描述。数据可以是文字、图像、声音、视频等各种形式。例如，一个人的名字、年龄、地址等都是数据。
+
+信息是指将数据进行加工、组织、提炼后得到的有价值的结果。信息能够帮助人们更好地了解事实、做决策、解决问题等。例如，通过分析一个人的名字、年龄、地址等数据，我们可以得到这个人的基本信息，这就是信息。
+
+数据是信息的基础，信息是数据的结果。通过对数据进行加工、分析和组织，我们才能得到有价值的信息。

@@ -1,9 +1,33 @@
 created: 20221219105112268
 creator: Yangqing QU
-modified: 20221219124709093
+modified: 20221220040509194
 modifier: Yangqing QU
 tags: ? golang
 title: golang方法
 type: text/vnd.tiddlywiki
 
-method就是function加special receiver argument
+在Go语言中，方法和函数是两个不同的概念。
+
+方法是指定义在''类型内部''的函数。方法与函数相似，但它们有一个''额外的接收者参数''，它表示方法所属的类型。''方法通常用于操作类型的实例，并提供操作实例的功能。''
+
+例如，定义一个类型Person，并定义一个方法Greeting，用于向Person实例打招呼：
+
+```
+type Person struct {
+    name string
+}
+
+func (p *Person) Greeting() string {
+    return "Hello, my name is " + p.name
+}
+```
+函数是指''独立的代码块，它没有接收者参数''，不属于任何类型。函数可以接收任意数量的参数，并可以返回任意数量的结果。''函数通常用于执行独立的任务，并提供独立的功能。''
+
+例如，定义一个函数Add，用于计算两个数的和：
+
+```
+(x, y int) int {
+    return x + y
+}
+```
+总的来说，方法是定义在类型内部的函数，函数是独立的代码块。方法可以操作类型的实例，函数可以执行独立的任务

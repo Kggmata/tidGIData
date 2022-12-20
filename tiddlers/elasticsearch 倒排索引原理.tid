@@ -1,17 +1,17 @@
 created: 20220619002200908
 creator: Yangqing QU
-difficulty: 1
-due: 20220902133427999
-grade: 2
-history: [{"due":"20220621005525621","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005525621"},{"due":"20220623044214350","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622044214350"},{"due":"20220626075601937","interval":3,"difficulty":1.2140373140909089,"stability":0.054885141354873004,"retrievability":0.014037314090908812,"grade":0,"lapses":2,"reps":1,"review":"20220625075601937"},{"due":"20220709003230746","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":2,"lapses":2,"reps":2,"review":"20220629003230746"}]
-interval: 11
-lapses: 2
-modified: 20221220024349468
+difficulty: 1.9267373840384237
+due: 20221221031517021
+grade: 0
+history: [{"due":"20220621005525621","interval":0,"difficulty":0.5718632935728973,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220620005525621"},{"due":"20220623044214350","interval":2,"difficulty":1,"stability":0.07409256085768667,"retrievability":0.12172520545485727,"grade":0,"lapses":1,"reps":1,"review":"20220622044214350"},{"due":"20220626075601937","interval":3,"difficulty":1.2140373140909089,"stability":0.054885141354873004,"retrievability":0.014037314090908812,"grade":0,"lapses":2,"reps":1,"review":"20220625075601937"},{"due":"20220709003230746","interval":4,"difficulty":1,"stability":10.158844687815673,"retrievability":0.0004626135510035376,"grade":2,"lapses":2,"reps":2,"review":"20220629003230746"},{"due":"20220902133427999","interval":11,"difficulty":1,"stability":53.8041878481713,"retrievability":0.892182655006369,"grade":2,"lapses":2,"reps":3,"review":"20220710133427999"}]
+interval: 163
+lapses: 3
+modified: 20221220031517021
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.892182655006369
-review: 20220710133427999
-stability: 53.8041878481713
+reps: 1
+retrievability: 0.7267373840384238
+review: 20221220031517021
+stability: 0.8131393194811983
 tags: userProfile用户画像 ?
 title: elasticsearch 倒排索引原理
 type: text/vnd.tiddlywiki
