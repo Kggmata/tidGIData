@@ -1,17 +1,19 @@
 created: 20220521072540485
-difficulty: 3.665933493461095
-due: 20220903072017154
-grade: 1
-history: [{"due":"20220524054050649","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054050649"},{"due":"20220527013224139","interval":4,"difficulty":6.010000000000001,"stability":0.2500261494800798,"retrievability":0.81,"grade":0,"lapses":1,"reps":1,"review":"20220526013224139"},{"due":"20220601145555811","interval":5,"difficulty":6.3316034514288315,"stability":0.08746685450248547,"retrievability":0.121603451428831,"grade":0,"lapses":2,"reps":1,"review":"20220531145555811"},{"due":"20220608120501449","interval":3,"difficulty":4.558554598001328,"stability":4.95015846238424,"retrievability":0.026951146572495664,"grade":2,"lapses":2,"reps":2,"review":"20220603120501449"},{"due":"20220704063835863","interval":9,"difficulty":3.584225968109629,"stability":21.75921186183319,"retrievability":0.8256713701083009,"grade":2,"lapses":2,"reps":3,"review":"20220612063835863"}]
-interval: 26
-lapses: 2
-modified: 20220708072017154
-reps: 4
-retrievability: 0.8817075253514659
-review: 20220708072017154
-stability: 57.423516242306846
-tags: hadoop ?
-title: hadoop的四大机制
+creator: Yangqing QU
+difficulty: 4.604723495532851
+due: 20221221133212744
+grade: 0
+history: [{"due":"20220524054050649","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522054050649"},{"due":"20220527013224139","interval":4,"difficulty":6.010000000000001,"stability":0.2500261494800798,"retrievability":0.81,"grade":0,"lapses":1,"reps":1,"review":"20220526013224139"},{"due":"20220601145555811","interval":5,"difficulty":6.3316034514288315,"stability":0.08746685450248547,"retrievability":0.121603451428831,"grade":0,"lapses":2,"reps":1,"review":"20220531145555811"},{"due":"20220608120501449","interval":3,"difficulty":4.558554598001328,"stability":4.95015846238424,"retrievability":0.026951146572495664,"grade":2,"lapses":2,"reps":2,"review":"20220603120501449"},{"due":"20220704063835863","interval":9,"difficulty":3.584225968109629,"stability":21.75921186183319,"retrievability":0.8256713701083009,"grade":2,"lapses":2,"reps":3,"review":"20220612063835863"},{"due":"20220903072017154","interval":26,"difficulty":3.665933493461095,"stability":57.423516242306846,"retrievability":0.8817075253514659,"grade":1,"lapses":2,"reps":4,"review":"20220708072017154"}]
+interval: 165
+lapses: 3
+modified: 20221220133212745
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7387900020717555
+review: 20221220133212744
+stability: 0.8131393194811983
+tags: hdfs ?
+title: hdfs的四大机制
 type: text/vnd.tiddlywiki
 
 ''心跳机制''

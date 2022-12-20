@@ -1,17 +1,19 @@
 caption: {{||Question}}
 created: 20220519124350180
-difficulty: 2.2508942029413816
-due: 20220904075412071
+creator: Yangqing QU
+difficulty: 1.2193000667344263
+due: 20240417124206678
 grade: 2
-history: [{"due":"20220522000820409","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000820408"},{"due":"20220528004426598","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522004426598"},{"due":"20220624144958793","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531144958793"}]
-interval: 25
+history: [{"due":"20220522000820409","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000820408"},{"due":"20220528004426598","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522004426598"},{"due":"20220624144958793","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531144958793"},{"due":"20220904075412071","interval":25,"difficulty":2.2508942029413816,"stability":71.1902896812924,"retrievability":0.8950417678954212,"grade":2,"lapses":0,"reps":4,"review":"20220625075412071"}]
+interval: 178
 lapses: 0
-modified: 20220625075412072
-reps: 4
-retrievability: 0.8950417678954212
-review: 20220625075412071
-stability: 71.1902896812924
-tags: hadoop ?
+modified: 20221220124206678
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7684058637930447
+review: 20221220124206678
+stability: 484.0458771456284
+tags: hadoop zookeeper ?
 title: D. Zookeeper集群只有非Observer节点才能参加选举
 type: text/vnd.tiddlywiki
 

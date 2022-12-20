@@ -1,0 +1,28 @@
+caption: {{||Question}}
+created: 20220519094913282
+creator: Yangqing QU
+difficulty: 2.2508942029413816
+due: 20220904080900891
+grade: 2
+history: [{"due":"20220522000222847","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000222847"},{"due":"20220528004510836","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522004510836"},{"due":"20220624150058807","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531150058807"}]
+interval: 25
+lapses: 0
+modified: 20221220134441649
+modifier: Yangqing QU
+reps: 4
+retrievability: 0.8950417678954212
+review: 20220625080900891
+stability: 71.1902896812924
+tags: spark ?
+title: RDD
+type: text/vnd.tiddlywiki
+
+Resilient Distributed Dataset
+
+Spark RDD（Resilient Distributed Dataset）是Spark中用于表示分布式数据集的主要抽象。RDD是一种不可变的、可分区的、可并行操作的数据集，可以用于大规模数据处理。
+
+RDD可以通过两种方式创建：从外部存储系统（如HDFS、S3等）读入数据，或者从已有的RDD进行转换。一旦创建，RDD就可以进行并行操作，如map、reduce、join等。
+
+RDD的分区是Spark程序中非常重要的一环，因为它决定了并行操作的效率。当多个RDD进行操作时，Spark会尽量保证RDD的分区数相同，以便可以进行均匀的并行计算。
+
+总的来说，Spark RDD是一种非常有用的工具，可以用于大规模数据处理。它的分区机制和并行操作特性使得它在处理大数据集时非常高效。
