@@ -1,15 +1,17 @@
 created: 20220524073734214
-difficulty: 3.273165602361763
-due: 20220831140625476
+creator: Yangqing QU
+difficulty: 3.473165602361763
+due: 20221220130047241
 grade: 0
-history: [{"due":"20220529141916061","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141916061"},{"due":"20220603004738309","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602004738309"},{"due":"20220618120656584","interval":4,"difficulty":1.4878375526797638,"stability":11.844090543980142,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606120656584"},{"due":"20220806014308798","interval":13,"difficulty":1.578630691712205,"stability":48.17999104683492,"retrievability":0.8907931390324411,"grade":1,"lapses":1,"reps":3,"review":"20220619014308797"},{"due":"20220810040833118","interval":51,"difficulty":2.6730976270178677,"stability":0.054881164580531924,"retrievability":0.8944669353056625,"grade":0,"lapses":2,"reps":1,"review":"20220809040833118"},{"due":"20220815080625670","interval":5,"difficulty":2.873165425642418,"stability":0.040656966333775045,"retrievability":0.00006779862455024804,"grade":0,"lapses":3,"reps":1,"review":"20220814080625670"},{"due":"20220821143545286","interval":6,"difficulty":3.073165602361762,"stability":0.03011942145770373,"retrievability":1.7671934421049204e-7,"grade":0,"lapses":4,"reps":1,"review":"20220820143545286"}]
-interval: 10
-lapses: 5
-modified: 20220830140625476
+history: [{"due":"20220529141916061","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141916061"},{"due":"20220603004738309","interval":5,"difficulty":3.275394598109508,"stability":0.0960748629946603,"retrievability":0.08997347647736906,"grade":0,"lapses":1,"reps":1,"review":"20220602004738309"},{"due":"20220618120656584","interval":4,"difficulty":1.4878375526797638,"stability":11.844090543980142,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220606120656584"},{"due":"20220806014308798","interval":13,"difficulty":1.578630691712205,"stability":48.17999104683492,"retrievability":0.8907931390324411,"grade":1,"lapses":1,"reps":3,"review":"20220619014308797"},{"due":"20220810040833118","interval":51,"difficulty":2.6730976270178677,"stability":0.054881164580531924,"retrievability":0.8944669353056625,"grade":0,"lapses":2,"reps":1,"review":"20220809040833118"},{"due":"20220815080625670","interval":5,"difficulty":2.873165425642418,"stability":0.040656966333775045,"retrievability":0.00006779862455024804,"grade":0,"lapses":3,"reps":1,"review":"20220814080625670"},{"due":"20220821143545286","interval":6,"difficulty":3.073165602361762,"stability":0.03011942145770373,"retrievability":1.7671934421049204e-7,"grade":0,"lapses":4,"reps":1,"review":"20220820143545286"},{"due":"20220831140625476","interval":10,"difficulty":3.273165602361763,"stability":0.02231301621225883,"retrievability":6.426555450991425e-16,"grade":0,"lapses":5,"reps":1,"review":"20220830140625475"}]
+interval: 111
+lapses: 6
+modified: 20221219130047241
+modifier: Yangqing QU
 reps: 1
-retrievability: 6.426555450991425e-16
-review: 20220830140625475
-stability: 0.02231301621225883
+retrievability: 2.351601321531264e-228
+review: 20221219130047241
+stability: 0.3305977764431731
 tags: zookeeper ?
 title: 请谈谈对ZooKeeper对事务性的支持？
 type: text/vnd.tiddlywiki

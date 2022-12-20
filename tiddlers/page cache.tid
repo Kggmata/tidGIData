@@ -1,0 +1,15 @@
+created: 20221219130813484
+creator: Yangqing QU
+modified: 20221219131049042
+modifier: Yangqing QU
+tags: ? java
+title: page cache
+type: text/vnd.tiddlywiki
+
+Page cache is a ''kernel-level'' feature that is used to cache data from files on disk in main memory, to improve the performance of file I/O operations. When a file is accessed, the data is'' read from the page cache in memory'', if it is available, ''rather than reading it directly from disk''. This can significantly improve the performance of file I/O operations, as reading from main memory is much faster than reading from disk.
+
+The Java Virtual Machine (JVM) is a ''software-based virtual machine'' that executes Java bytecode and provides a runtime environment for Java programs. The JVM is responsible for executing Java programs, managing memory, and handling low-level system interactions.
+
+The JVM and page cache operate at different levels of the system, and they serve different purposes. The page cache is a kernel-level feature that is used to cache data from files on disk in main memory, while the JVM is a virtual machine that executes Java bytecode and provides a runtime environment for Java programs.
+
+Although they operate at different levels of the system, the JVM and page cache ''can'' interact with each other in some cases. For example, ''the JVM may use the page cache to cache data from files that it reads or writes'', in order to improve the performance of file I/O operations. Similarly, the page cache may cache data that is accessed by the JVM, such as data that is read from or written to Java objects in memory.

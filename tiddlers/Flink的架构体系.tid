@@ -1,16 +1,18 @@
 created: 20220714014025178
-difficulty: 2.0223256960228704
-due: 20220831062918235
+creator: Yangqing QU
+difficulty: 2.2223256960228706
+due: 20221220130256608
 grade: 0
-history: [{"due":"20220720113507443","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719113507443"},{"due":"20220731012826845","interval":11,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730012826844"},{"due":"20220819115132152","interval":7,"difficulty":1,"stability":12.926432277358748,"retrievability":0.00004746481942846522,"grade":2,"lapses":1,"reps":2,"review":"20220806115132151"}]
-interval: 24
-lapses: 2
-modified: 20220830062918235
+history: [{"due":"20220720113507443","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719113507443"},{"due":"20220731012826845","interval":11,"difficulty":1,"stability":0.07408186401656833,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730012826844"},{"due":"20220819115132152","interval":7,"difficulty":1,"stability":12.926432277358748,"retrievability":0.00004746481942846522,"grade":2,"lapses":1,"reps":2,"review":"20220806115132151"},{"due":"20220831062918235","interval":24,"difficulty":2.0223256960228704,"stability":0.05488116409496729,"retrievability":0.8223256960228704,"grade":0,"lapses":2,"reps":1,"review":"20220830062918235"}]
+interval: 111
+lapses: 3
+modified: 20221219130256608
+modifier: Yangqing QU
 reps: 1
-retrievability: 0.8223256960228704
-review: 20220830062918235
-stability: 0.05488116409496729
-tags: ?
+retrievability: 2.8385907975682772e-93
+review: 20221219130256608
+stability: 0.8131393194811983
+tags: flink ?
 title: Flink的架构体系
 type: text/vnd.tiddlywiki
 

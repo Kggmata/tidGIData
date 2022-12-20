@@ -1,15 +1,17 @@
 created: 20220528135320113
-difficulty: 1.5900747941978677
-due: 20220831070152772
-grade: 1
-history: [{"due":"20220601053019835","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053019835"},{"due":"20220604090940303","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603090940303"},{"due":"20220621004514268","interval":4,"difficulty":1,"stability":14.2835505337834,"retrievability":0.007058121659701603,"grade":2,"lapses":1,"reps":2,"review":"20220607004514268"},{"due":"20220623043422909","interval":15,"difficulty":2.0952562399448285,"stability":0.054889119100343345,"retrievability":0.8952562399448285,"grade":0,"lapses":2,"reps":1,"review":"20220622043422909"},{"due":"20220703074043913","interval":3,"difficulty":1.2984119348825482,"stability":8.4355026024099,"retrievability":0.003155694937719725,"grade":1,"lapses":2,"reps":2,"review":"20220625074043913"},{"due":"20220707115212494","interval":11,"difficulty":2.3700409221184477,"stability":0.04065715014820503,"retrievability":0.8716289872358993,"grade":0,"lapses":3,"reps":1,"review":"20220706115212494"},{"due":"20220716062436079","interval":4,"difficulty":1.5700724148076521,"stability":5.840146819115828,"retrievability":0.00003149268920435674,"grade":1,"lapses":3,"reps":2,"review":"20220710062436079"}]
-interval: 11
-lapses: 3
-modified: 20220721070152772
-reps: 3
-retrievability: 0.8200023793902156
-review: 20220721070152772
-stability: 40.934468296223756
+creator: Yangqing QU
+difficulty: 2.468042060166818
+due: 20221220125404524
+grade: 0
+history: [{"due":"20220601053019835","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531053019835"},{"due":"20220604090940303","interval":3,"difficulty":2.78530084968259,"stability":0.08507834253141604,"retrievability":0.13762030962938637,"grade":0,"lapses":1,"reps":1,"review":"20220603090940303"},{"due":"20220621004514268","interval":4,"difficulty":1,"stability":14.2835505337834,"retrievability":0.007058121659701603,"grade":2,"lapses":1,"reps":2,"review":"20220607004514268"},{"due":"20220623043422909","interval":15,"difficulty":2.0952562399448285,"stability":0.054889119100343345,"retrievability":0.8952562399448285,"grade":0,"lapses":2,"reps":1,"review":"20220622043422909"},{"due":"20220703074043913","interval":3,"difficulty":1.2984119348825482,"stability":8.4355026024099,"retrievability":0.003155694937719725,"grade":1,"lapses":2,"reps":2,"review":"20220625074043913"},{"due":"20220707115212494","interval":11,"difficulty":2.3700409221184477,"stability":0.04065715014820503,"retrievability":0.8716289872358993,"grade":0,"lapses":3,"reps":1,"review":"20220706115212494"},{"due":"20220716062436079","interval":4,"difficulty":1.5700724148076521,"stability":5.840146819115828,"retrievability":0.00003149268920435674,"grade":1,"lapses":3,"reps":2,"review":"20220710062436079"},{"due":"20220831070152772","interval":11,"difficulty":1.5900747941978677,"stability":40.934468296223756,"retrievability":0.8200023793902156,"grade":1,"lapses":3,"reps":3,"review":"20220721070152772"}]
+interval: 151
+lapses: 4
+modified: 20221219125404524
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.6779672659689502
+review: 20221219125404524
+stability: 0.6023884238244042
 tags: spark ?
 title: 自动推断类型转换DataFrame
 type: text/vnd.tiddlywiki

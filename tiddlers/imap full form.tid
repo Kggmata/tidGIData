@@ -1,16 +1,18 @@
 created: 20220715013252875
-difficulty: 2.0222878674257907
-due: 20220831064303121
+creator: Yangqing QU
+difficulty: 2.222287867425791
+due: 20221220130648241
 grade: 0
-history: [{"due":"20220722090559596","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090559596"},{"due":"20220801100729041","interval":10,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000026561715818525218,"grade":0,"lapses":1,"reps":1,"review":"20220731100729041"},{"due":"20220819125637471","interval":6,"difficulty":1,"stability":12.923393125053918,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220806125637470"}]
-interval: 24
-lapses: 2
-modified: 20220830064303121
+history: [{"due":"20220722090559596","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721090559596"},{"due":"20220801100729041","interval":10,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000026561715818525218,"grade":0,"lapses":1,"reps":1,"review":"20220731100729041"},{"due":"20220819125637471","interval":6,"difficulty":1,"stability":12.923393125053918,"retrievability":0.00019680310698987739,"grade":1,"lapses":1,"reps":2,"review":"20220806125637470"},{"due":"20220831064303121","interval":24,"difficulty":2.0222878674257907,"stability":0.05488116409496729,"retrievability":0.8222878674257905,"grade":0,"lapses":2,"reps":1,"review":"20220830064303121"}]
+interval: 111
+lapses: 3
+modified: 20221219130648241
+modifier: Yangqing QU
 reps: 1
-retrievability: 0.8222878674257905
-review: 20220830064303121
-stability: 0.05488116409496729
-tags: ?
+retrievability: 2.8385907975682772e-93
+review: 20221219130648240
+stability: 0.8131393194811983
+tags: internet网络 ?
 title: imap full form
 type: text/vnd.tiddlywiki
 

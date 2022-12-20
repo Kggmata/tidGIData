@@ -1,16 +1,18 @@
 created: 20220717064017170
+creator: Yangqing QU
 difficulty: 1
 due: 20220831122711113
 grade: 1
 history: [{"due":"20220727142334561","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142334561"},{"due":"20220805125231274","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617775707182952,"grade":0,"lapses":1,"reps":1,"review":"20220804125231273"},{"due":"20220810042444520","interval":5,"difficulty":1.200816005065809,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220809042444520"},{"due":"20220816060128623","interval":6,"difficulty":1.4008259468666744,"stability":0.040656966333775045,"retrievability":0.000009941800865523385,"grade":0,"lapses":3,"reps":1,"review":"20220815060128623"}]
 interval: 8
 lapses: 3
-modified: 20220823122711113
+modified: 20221219130118921
+modifier: Yangqing QU
 reps: 2
 retrievability: 9.91696517902932e-10
 review: 20220823122711113
 stability: 7.994071582730249
-tags: ?
+tags: flink
 title: Flink 时间属性作用
 type: text/vnd.tiddlywiki
 

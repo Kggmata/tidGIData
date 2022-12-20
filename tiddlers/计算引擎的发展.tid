@@ -1,0 +1,36 @@
+created: 20220519133857968
+creator: Yangqing QU
+difficulty: 3.4494170413132643
+due: 20230825125720231
+grade: 1
+history: [{"due":"20220522005622860","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520005622860"},{"due":"20220528005447056","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220522005447056"},{"due":"20220602015118560","interval":10,"difficulty":6.126014725196352,"stability":0.11806790392114878,"retrievability":0.826014725196352,"grade":0,"lapses":1,"reps":1,"review":"20220601015118560"},{"due":"20220611063636865","interval":4,"difficulty":4.354184975364468,"stability":6.488958967817901,"retrievability":0.028170250168115422,"grade":2,"lapses":1,"reps":2,"review":"20220605063636865"},{"due":"20220704111825856","interval":8,"difficulty":3.432372502858751,"stability":21.12375446256748,"retrievability":0.8781875274942825,"grade":2,"lapses":1,"reps":3,"review":"20220613111825856"},{"due":"20220831020721019","interval":24,"difficulty":3.5195532191168075,"stability":55.20683945934578,"retrievability":0.8871807162580564,"grade":1,"lapses":1,"reps":4,"review":"20220707020721018"}]
+interval: 165
+lapses: 1
+modified: 20221219125720231
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7298638221964566
+review: 20221219125720231
+stability: 248.7979182114646
+tags: spark ?
+title: 计算引擎的发展
+type: text/vnd.tiddlywiki
+
+```markdown
+- 第一代计算引擎：MapReduce，现在很少直接使用，不写MapReduce代码了，性能太差了，只会间接使用Sqoop、Oozie
+  - 目的：能够解决大数据计算问题
+```
+```markdown
+- 第二代计算引擎：Tez，基于MapReduce封装了Tez，引入DAG思想，底层还是MR，性能比MR快10倍以上，相对比较少见
+  - 目的：提升Mapreduce计算性能，主要用Hvie做计算
+```
+
+```markdown
+- 第三代计算引擎：Spark，内存式计算引擎，Presto、Impala、Spark都是类似产品
+  - 目的：更快的解决大数据计算问题
+```
+
+```markdown
+- 第四代计算引擎：Flink，实时计算引擎
+  - 目的：针对于每条数据进行实时计算，获取数据价值最大化
+```

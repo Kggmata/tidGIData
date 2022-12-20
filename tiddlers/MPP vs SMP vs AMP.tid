@@ -1,15 +1,17 @@
 created: 20220716141333646
-difficulty: 1
-due: 20220831131610627
-grade: 1
-history: [{"due":"20220727050456656","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726050456656"},{"due":"20220805134105788","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220804134105788"},{"due":"20220810073333990","interval":5,"difficulty":1.200816005065809,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220809073333990"},{"due":"20220816084432918","interval":6,"difficulty":1.4008259468666744,"stability":0.040656966333775045,"retrievability":0.000009941800865523385,"grade":0,"lapses":3,"reps":1,"review":"20220815084432918"}]
-interval: 8
-lapses: 3
-modified: 20220823131610627
-reps: 2
-retrievability: 9.91696517902932e-10
-review: 20220823131610627
-stability: 7.994071582730249
+creator: Yangqing QU
+difficulty: 1.4111429038814762
+due: 20221220132520754
+grade: 0
+history: [{"due":"20220727050456656","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726050456656"},{"due":"20220805134105788","interval":9,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220804134105788"},{"due":"20220810073333990","interval":5,"difficulty":1.200816005065809,"stability":0.054881164580531924,"retrievability":0.000816005065809079,"grade":0,"lapses":2,"reps":1,"review":"20220809073333990"},{"due":"20220816084432918","interval":6,"difficulty":1.4008259468666744,"stability":0.040656966333775045,"retrievability":0.000009941800865523385,"grade":0,"lapses":3,"reps":1,"review":"20220815084432918"},{"due":"20220831131610627","interval":8,"difficulty":1,"stability":7.994071582730249,"retrievability":9.91696517902932e-10,"grade":1,"lapses":3,"reps":2,"review":"20220823131610627"}]
+interval: 118
+lapses: 4
+modified: 20221219132520754
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.2111429038814762
+review: 20221219132520754
+stability: 0.6023884238244042
 tags: ?
 title: MPP vs SMP vs AMP
 type: text/vnd.tiddlywiki

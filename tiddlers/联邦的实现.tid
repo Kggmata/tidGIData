@@ -1,15 +1,17 @@
 created: 20220521024504184
-difficulty: 3.500646315629875
-due: 20220831021204627
+creator: Yangqing QU
+difficulty: 3.429924819790739
+due: 20230826124747833
 grade: 1
-history: [{"due":"20220523114421018","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521114421018"},{"due":"20220529002031156","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523002031155"},{"due":"20220602134604381","interval":9,"difficulty":6.14195525232829,"stability":0.0960748629946603,"retrievability":0.8419552523282889,"grade":0,"lapses":1,"reps":1,"review":"20220601134604381"},{"due":"20220611063646571","interval":4,"difficulty":4.354398206898546,"stability":5.63599723217256,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220605063646571"},{"due":"20220704112001513","interval":8,"difficulty":3.4154904204429277,"stability":20.728103544039232,"retrievability":0.861092213544381,"grade":2,"lapses":1,"reps":3,"review":"20220613112001513"}]
-interval: 24
+history: [{"due":"20220523114421018","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521114421018"},{"due":"20220529002031156","interval":2,"difficulty":5.1000000000000005,"stability":5.512139752431654,"retrievability":0.9,"grade":1,"lapses":0,"reps":2,"review":"20220523002031155"},{"due":"20220602134604381","interval":9,"difficulty":6.14195525232829,"stability":0.0960748629946603,"retrievability":0.8419552523282889,"grade":0,"lapses":1,"reps":1,"review":"20220601134604381"},{"due":"20220611063646571","interval":4,"difficulty":4.354398206898546,"stability":5.63599723217256,"retrievability":0.012442954570255769,"grade":2,"lapses":1,"reps":2,"review":"20220605063646571"},{"due":"20220704112001513","interval":8,"difficulty":3.4154904204429277,"stability":20.728103544039232,"retrievability":0.861092213544381,"grade":2,"lapses":1,"reps":3,"review":"20220613112001513"},{"due":"20220831021204627","interval":24,"difficulty":3.500646315629875,"stability":55.06654415193249,"retrievability":0.8851558951869469,"grade":1,"lapses":1,"reps":4,"review":"20220707021204626"}]
+interval: 165
 lapses: 1
-modified: 20220707021204627
-reps: 4
-retrievability: 0.8851558951869469
-review: 20220707021204626
-stability: 55.06654415193249
+modified: 20221219124747833
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.729278504160864
+review: 20221219124747832
+stability: 249.51158634312202
 tags: hadoop ?
 title: 联邦的实现
 type: text/vnd.tiddlywiki

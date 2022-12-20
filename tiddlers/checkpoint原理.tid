@@ -1,18 +1,18 @@
 created: 20220715035622907
 creator: Yangqing QU
-difficulty: 2.0223256595695953
-due: 20220831001214880
-grade: 0
-history: [{"due":"20220722091753583","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721091753583"},{"due":"20220731035612855","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220730035612854"},{"due":"20220819111048634","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806111048634"}]
-interval: 24
+difficulty: 1
+due: 20221229130105237
+grade: 2
+history: [{"due":"20220722091753583","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721091753583"},{"due":"20220731035612855","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220730035612854"},{"due":"20220819111048634","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806111048634"},{"due":"20220831001214880","interval":24,"difficulty":2.0223256595695953,"stability":0.05488116409496729,"retrievability":0.8223256595695952,"grade":0,"lapses":2,"reps":1,"review":"20220830001214879"}]
+interval: 111
 lapses: 2
-modified: 20221122140249541
+modified: 20221219130105237
 modifier: Yangqing QU
-reps: 1
-retrievability: 0.8223256595695952
-review: 20220830001214879
-stability: 0.05488116409496729
-tags: ?
+reps: 2
+retrievability: 2.8385907975682772e-93
+review: 20221219130105237
+stability: 10.165652753205016
+tags: flink ?
 title: checkpoint原理
 type: text/vnd.tiddlywiki
 

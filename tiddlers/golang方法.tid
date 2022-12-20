@@ -1,0 +1,9 @@
+created: 20221219105112268
+creator: Yangqing QU
+modified: 20221219124709093
+modifier: Yangqing QU
+tags: ? golang
+title: golang方法
+type: text/vnd.tiddlywiki
+
+method就是function加special receiver argument

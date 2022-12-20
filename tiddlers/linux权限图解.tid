@@ -1,15 +1,17 @@
 created: 20220521140514904
-difficulty: 1.7715352568029636
-due: 20220901001647051
-grade: 2
-history: [{"due":"20220524065210001","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065210001"},{"due":"20220530015342952","interval":7,"difficulty":5.8915901242788244,"stability":0.16205398577412577,"retrievability":0.6915901242788246,"grade":0,"lapses":1,"reps":1,"review":"20220529015342952"},{"due":"20220603140416960","interval":4,"difficulty":6.165817105522132,"stability":0.07117400905594407,"retrievability":0.07422698124330701,"grade":0,"lapses":2,"reps":1,"review":"20220602140416960"},{"due":"20220610123822116","interval":4,"difficulty":4.368498839708095,"stability":4.487146145825672,"retrievability":0.002681734185962407,"grade":2,"lapses":2,"reps":2,"review":"20220606123822116"},{"due":"20220614070102804","interval":7,"difficulty":5.416932293275679,"stability":0.04141134327240674,"retrievability":0.8484334535675848,"grade":0,"lapses":3,"reps":1,"review":"20220613070102803"},{"due":"20220619061454110","interval":3,"difficulty":3.6174166307331843,"stability":3.320320031892644,"retrievability":0.00048433745750513875,"grade":2,"lapses":3,"reps":2,"review":"20220616061454110"},{"due":"20220703130927755","interval":4,"difficulty":2.6982135906752074,"stability":13.223412137463814,"retrievability":0.8807969599420231,"grade":2,"lapses":3,"reps":3,"review":"20220620130927755"}]
-interval: 17
+creator: Yangqing QU
+difficulty: 1.7049319854751326
+due: 20231226132332792
+grade: 1
+history: [{"due":"20220524065210001","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522065210001"},{"due":"20220530015342952","interval":7,"difficulty":5.8915901242788244,"stability":0.16205398577412577,"retrievability":0.6915901242788246,"grade":0,"lapses":1,"reps":1,"review":"20220529015342952"},{"due":"20220603140416960","interval":4,"difficulty":6.165817105522132,"stability":0.07117400905594407,"retrievability":0.07422698124330701,"grade":0,"lapses":2,"reps":1,"review":"20220602140416960"},{"due":"20220610123822116","interval":4,"difficulty":4.368498839708095,"stability":4.487146145825672,"retrievability":0.002681734185962407,"grade":2,"lapses":2,"reps":2,"review":"20220606123822116"},{"due":"20220614070102804","interval":7,"difficulty":5.416932293275679,"stability":0.04141134327240674,"retrievability":0.8484334535675848,"grade":0,"lapses":3,"reps":1,"review":"20220613070102803"},{"due":"20220619061454110","interval":3,"difficulty":3.6174166307331843,"stability":3.320320031892644,"retrievability":0.00048433745750513875,"grade":2,"lapses":3,"reps":2,"review":"20220616061454110"},{"due":"20220703130927755","interval":4,"difficulty":2.6982135906752074,"stability":13.223412137463814,"retrievability":0.8807969599420231,"grade":2,"lapses":3,"reps":3,"review":"20220620130927755"},{"due":"20220901001647051","interval":17,"difficulty":1.7715352568029636,"stability":56.06659815158189,"retrievability":0.8733216661277565,"grade":2,"lapses":3,"reps":4,"review":"20220707001647051"}]
+interval: 165
 lapses: 3
-modified: 20220707001647051
-reps: 4
-retrievability: 0.8733216661277565
-review: 20220707001647051
-stability: 56.06659815158189
+modified: 20221219132332792
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.733396728672169
+review: 20221219132332792
+stability: 372.2672339900882
 tags: linux ?
 title: linux权限图解
 type: text/vnd.tiddlywiki

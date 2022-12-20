@@ -1,15 +1,17 @@
 created: 20220520045627419
-difficulty: 2.2548728843857733
-due: 20220902124325343
+creator: Yangqing QU
+difficulty: 1.218770287096041
+due: 20240414130616987
 grade: 2
-history: [{"due":"20220523041020854","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521041020854"},{"due":"20220529000503009","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000503009"},{"due":"20220625063525293","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601063525293"}]
-interval: 24
+history: [{"due":"20220523041020854","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521041020854"},{"due":"20220529000503009","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000503009"},{"due":"20220625063525293","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601063525293"},{"due":"20220902124325343","interval":24,"difficulty":2.2548728843857733,"stability":69.24360400515107,"retrievability":0.8990204493398125,"grade":2,"lapses":0,"reps":4,"review":"20220625124325343"}]
+interval: 177
 lapses: 0
-modified: 20220625124325343
-reps: 4
-retrievability: 0.8990204493398125
-review: 20220625124325343
-stability: 69.24360400515107
+modified: 20221219130616987
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.763897402710268
+review: 20221219130616987
+stability: 481.99422409421413
 tags: hadoop hive ?
 title: Hive中两张大表可以自动走Map Join来实现
 type: text/vnd.tiddlywiki

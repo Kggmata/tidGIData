@@ -1,15 +1,17 @@
 created: 20220520045708798
-difficulty: 2.2548728843857733
-due: 20220902124330276
-grade: 2
-history: [{"due":"20220523061311761","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521061311760"},{"due":"20220529000521665","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000521665"},{"due":"20220625063532512","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601063532512"}]
-interval: 24
+creator: Yangqing QU
+difficulty: 2.2187702870960413
+due: 20231125130444311
+grade: 1
+history: [{"due":"20220523061311761","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521061311760"},{"due":"20220529000521665","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000521665"},{"due":"20220625063532512","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601063532512"},{"due":"20220902124330276","interval":24,"difficulty":2.2548728843857733,"stability":69.24360400515107,"retrievability":0.8990204493398125,"grade":2,"lapses":0,"reps":4,"review":"20220625124330276"}]
+interval: 177
 lapses: 0
-modified: 20220625124330276
-reps: 4
-retrievability: 0.8990204493398125
-review: 20220625124330276
-stability: 69.24360400515107
+modified: 20221219130444311
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.763897402710268
+review: 20221219130444311
+stability: 340.60895594606615
 tags: hadoop hive ?
 title: Hive中一张表不能既分区也分桶
 type: text/vnd.tiddlywiki
