@@ -1,16 +1,17 @@
 created: 20220521053123635
-difficulty: 1.9685928835976199
-due: 20220902103639591
-grade: 2
-history: [{"due":"20220524023540715","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023540715"},{"due":"20220602112238382","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112238382"},{"due":"20220704070755908","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605070755908"},{"due":"20220708025150681","interval":32,"difficulty":4.210762220839748,"stability":0.07408215765534414,"retrievability":0.8891545006575367,"grade":0,"lapses":1,"reps":1,"review":"20220707025150681"},{"due":"20220711074047942","interval":3,"difficulty":4.4247911281077865,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220710074047942"},{"due":"20220713011633148","interval":2,"difficulty":4.646293970787939,"stability":0.04065715014820503,"retrievability":0.02150284268015211,"grade":0,"lapses":3,"reps":1,"review":"20220712011633148"},{"due":"20220723015926809","interval":8,"difficulty":3.846293971779729,"stability":3.1382580507720927,"retrievability":9.917894733222074e-10,"grade":1,"lapses":3,"reps":2,"review":"20220720015926809"},{"due":"20220731033138799","interval":10,"difficulty":4.761110557273302,"stability":0.030119429718692865,"retrievability":0.7148165854935726,"grade":0,"lapses":4,"reps":1,"review":"20220730033138799"},{"due":"20220808071715730","interval":6,"difficulty":2.961110558040291,"stability":2.9563248262623274,"retrievability":7.669895653844982e-10,"grade":2,"lapses":4,"reps":2,"review":"20220805071715730"}]
-interval: 6
-lapses: 4
-modified: 20221210011916633
+creator: Yangqing QU
+difficulty: 2.699937851824636
+due: 20221221090312643
+grade: 0
+history: [{"due":"20220524023540715","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522023540715"},{"due":"20220602112238382","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112238382"},{"due":"20220704070755908","interval":11,"difficulty":3.1216077201822117,"stability":28.697770226081012,"retrievability":0.8677927519367488,"grade":2,"lapses":0,"reps":3,"review":"20220605070755908"},{"due":"20220708025150681","interval":32,"difficulty":4.210762220839748,"stability":0.07408215765534414,"retrievability":0.8891545006575367,"grade":0,"lapses":1,"reps":1,"review":"20220707025150681"},{"due":"20220711074047942","interval":3,"difficulty":4.4247911281077865,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220710074047942"},{"due":"20220713011633148","interval":2,"difficulty":4.646293970787939,"stability":0.04065715014820503,"retrievability":0.02150284268015211,"grade":0,"lapses":3,"reps":1,"review":"20220712011633148"},{"due":"20220723015926809","interval":8,"difficulty":3.846293971779729,"stability":3.1382580507720927,"retrievability":9.917894733222074e-10,"grade":1,"lapses":3,"reps":2,"review":"20220720015926809"},{"due":"20220731033138799","interval":10,"difficulty":4.761110557273302,"stability":0.030119429718692865,"retrievability":0.7148165854935726,"grade":0,"lapses":4,"reps":1,"review":"20220730033138799"},{"due":"20220808071715730","interval":6,"difficulty":2.961110558040291,"stability":2.9563248262623274,"retrievability":7.669895653844982e-10,"grade":2,"lapses":4,"reps":2,"review":"20220805071715730"},{"due":"20220902103639591","interval":6,"difficulty":1.9685928835976199,"stability":21.827093601790924,"retrievability":0.8074823255573291,"grade":2,"lapses":4,"reps":3,"review":"20220811103639591"}]
+interval: 131
+lapses: 5
+modified: 20221220090312643
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.8074823255573291
-review: 20220811103639591
-stability: 21.827093601790924
+reps: 1
+retrievability: 0.5313449682270159
+review: 20221220090312643
+stability: 0.44626032029685964
 tags: mapReduce ?
 title: 请描述mapReduce中shuffle阶段的工作流程，如何优化shuffle阶段？
 type: text/vnd.tiddlywiki
