@@ -1,16 +1,18 @@
 caption: {{||Question}}
 created: 20220519125055164
-difficulty: 2.2508942029413816
-due: 20220904081954920
+creator: Yangqing QU
+difficulty: 1.2181636791954686
+due: 20240421105421856
 grade: 2
-history: [{"due":"20220522001421953","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001421953"},{"due":"20220528004539071","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522004539071"},{"due":"20220624150113160","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531150113160"}]
-interval: 25
+history: [{"due":"20220522001421953","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520001421953"},{"due":"20220528004539071","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522004539071"},{"due":"20220624150113160","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531150113160"},{"due":"20220904081954920","interval":25,"difficulty":2.2508942029413816,"stability":71.1902896812924,"retrievability":0.8950417678954212,"grade":2,"lapses":0,"reps":4,"review":"20220625081954920"}]
+interval: 179
 lapses: 0
-modified: 20220625081954920
-reps: 4
-retrievability: 0.8950417678954212
-review: 20220625081954920
-stability: 71.1902896812924
+modified: 20221221105421856
+modifier: Yangqing QU
+reps: 5
+retrievability: 0.7672694762540871
+review: 20221221105421856
+stability: 486.58764108698904
 tags: hadoop ?
 title: ResourceManager不可以有多个，NodeManager可以有多个、
 type: text/vnd.tiddlywiki
