@@ -1,0 +1,18 @@
+caption: {{||Question}}
+created: 20220519092350821
+creator: Yangqing QU
+difficulty: 3.218163679195469
+due: 20221222133328986
+grade: 0
+history: [{"due":"20220522000142007","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220520000142007"},{"due":"20220528002428009","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220522002428009"},{"due":"20220624143915367","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220531143915367"},{"due":"20220904055620622","interval":25,"difficulty":2.2508942029413816,"stability":71.1902896812924,"retrievability":0.8950417678954212,"grade":2,"lapses":0,"reps":4,"review":"20220625055620622"}]
+interval: 179
+lapses: 1
+modified: 20221221133328987
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7672694762540871
+review: 20221221133328986
+stability: 1.4816364413634358
+tags: bigData大数据 ?
+title: 大数据开发流程
+type: text/plain

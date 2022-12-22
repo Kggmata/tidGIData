@@ -1,0 +1,9 @@
+created: 20221221131440102
+creator: Yangqing QU
+modified: 20221221131603654
+modifier: Yangqing QU
+tags: ? SQL
+title: 18、数据表student有id,name,score,city字段，其中name中的名字可有重复，需要消除重复行,请写sql语句
+type: text/vnd.tiddlywiki
+
+select distinct name from student

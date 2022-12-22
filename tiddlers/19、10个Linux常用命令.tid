@@ -1,0 +1,9 @@
+created: 20221221131609036
+creator: Yangqing QU
+modified: 20221221131645593
+modifier: Yangqing QU
+tags: ? linux
+title: 19、10个Linux常用命令
+type: text/vnd.tiddlywiki
+
+ls pwd cd touch rm mkdir tree cp mv cat more grep echo

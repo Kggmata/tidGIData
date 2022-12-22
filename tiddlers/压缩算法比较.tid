@@ -1,15 +1,17 @@
 created: 20220524061754457
-difficulty: 2.073196879901413
-due: 20220903055718118
+creator: Yangqing QU
+difficulty: 2.273196879901413
+due: 20221222133239004
 grade: 0
-history: [{"due":"20220529141158834","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141158834"},{"due":"20220624052748585","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052748585"},{"due":"20220626113249717","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625113249717"},{"due":"20220629233634947","interval":3,"difficulty":2.5872713285758855,"stability":0.05488315248213783,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220628233634946"},{"due":"20220710145413716","interval":4,"difficulty":1.7877338134178744,"stability":6.782590611822643,"retrievability":0.0004624848419891039,"grade":1,"lapses":2,"reps":2,"review":"20220703145413716"},{"due":"20220821013433913","interval":8,"difficulty":1,"stability":41.18248566493979,"retrievability":0.883139851432101,"grade":2,"lapses":2,"reps":3,"review":"20220711013433912"}]
-interval: 53
-lapses: 3
-modified: 20220902055718118
+history: [{"due":"20220529141158834","interval":0,"difficulty":2.9854211216321387,"stability":0.21875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220528141158834"},{"due":"20220624052748585","interval":5,"difficulty":1.2753945981095078,"stability":22.488023971305275,"retrievability":0.08997347647736906,"grade":2,"lapses":0,"reps":2,"review":"20220602052748585"},{"due":"20220626113249717","interval":23,"difficulty":2.373238353824399,"stability":0.07408719146292923,"retrievability":0.897843755714891,"grade":0,"lapses":1,"reps":1,"review":"20220625113249717"},{"due":"20220629233634947","interval":3,"difficulty":2.5872713285758855,"stability":0.05488315248213783,"retrievability":0.01403297475148654,"grade":0,"lapses":2,"reps":1,"review":"20220628233634946"},{"due":"20220710145413716","interval":4,"difficulty":1.7877338134178744,"stability":6.782590611822643,"retrievability":0.0004624848419891039,"grade":1,"lapses":2,"reps":2,"review":"20220703145413716"},{"due":"20220821013433913","interval":8,"difficulty":1,"stability":41.18248566493979,"retrievability":0.883139851432101,"grade":2,"lapses":2,"reps":3,"review":"20220711013433912"},{"due":"20220903055718118","interval":53,"difficulty":2.073196879901413,"stability":0.040656966333775045,"retrievability":0.8731968799014128,"grade":0,"lapses":3,"reps":1,"review":"20220902055718118"}]
+interval: 110
+lapses: 4
+modified: 20221221133239004
+modifier: Yangqing QU
 reps: 1
-retrievability: 0.8731968799014128
-review: 20220902055718118
-stability: 0.040656966333775045
+retrievability: 1.585653678466185e-124
+review: 20221221133239004
+stability: 0.6023884238244042
 tags: hadoop ?
 title: 压缩算法比较
 type: text/vnd.tiddlywiki

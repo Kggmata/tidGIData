@@ -1,0 +1,9 @@
+created: 20221221125949154
+creator: Yangqing QU
+modified: 20221221130640909
+modifier: Yangqing QU
+tags: ? python
+title: 13、列表[1,2,3,4,5],请使用map()函数输出[1,4,9,16,25]，并使用列表推导式提取出大于10的数，最终输出[16,25]
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-12-21_21-00-04.png]]
