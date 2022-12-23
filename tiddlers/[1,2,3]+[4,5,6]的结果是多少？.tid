@@ -1,0 +1,9 @@
+created: 20221223064115752
+creator: Yangqing QU
+modified: 20221223064235883
+modifier: Yangqing QU
+tags: ? python
+title: [1,2,3]+[4,5,6]的结果是多少？
+type: text/vnd.tiddlywiki
+
+两个列表相加，等价于extend

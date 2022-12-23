@@ -1,0 +1,11 @@
+created: 20221223063128909
+creator: Yangqing QU
+modified: 20221223063138631
+modifier: Yangqing QU
+tags: ? python
+title: 用python删除文件和用linux命令删除文件方法
+type: text/vnd.tiddlywiki
+
+python：os.remove(文件名)
+
+linux: rm 文件名
