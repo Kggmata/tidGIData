@@ -1,0 +1,25 @@
+created: 20221223023257048
+creator: Yangqing QU
+modified: 20221223055120039
+modifier: Yangqing QU
+tags: ? hive
+title: hive窗口函数
+type: text/vnd.tiddlywiki
+
+sum(列) over(partition by 列 order by 列 rows between 节点 and 节点) as 列
+
+				节点：    CURRENT ROW     当前行
+						  数字 PRECEDING   前几行
+						  数字 FOLLOWING   后几行
+						  UNBOUNDED  意思为无界，即到头
+						  
+```
+如果不指定ROWS BETWEEN,默认为从起点到当前行;
+	如果不指定ORDER BY，则将分组内所有值累加;
+	关键是理解ROWS BETWEEN含义,也叫做WINDOW子句：
+	PRECEDING：往前
+	FOLLOWING：往后
+	CURRENT ROW：当前行
+	UNBOUNDED：起点，UNBOUNDED PRECEDING 表示从前面的起点， UNBOUNDED FOLLOWING：表示到后面的终点
+	–其他AVG，MIN，MAX，和SUM用法一样。
+```

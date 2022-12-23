@@ -1,0 +1,9 @@
+created: 20221223054049661
+creator: Yangqing QU
+modified: 20221223054116219
+modifier: Yangqing QU
+tags: ? python
+title: 字符串a = "not 404 found 张三 99 深圳"，每个词中间是空格，用正则过滤掉英文和数字，最终输出"张三 深圳"
+type: text/vnd.tiddlywiki
+
+[img[Snipaste_2022-12-23_13-41-02.png]]

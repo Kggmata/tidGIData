@@ -1,0 +1,9 @@
+created: 20221223055054239
+creator: Yangqing QU
+modified: 20221223055115791
+modifier: Yangqing QU
+tags: ? python
+title: 正则re.complie作用
+type: text/vnd.tiddlywiki
+
+将正则表达式编译, 便于后续使用
