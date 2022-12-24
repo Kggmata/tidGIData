@@ -1,0 +1,30 @@
+created: 20221223082904663
+creator: Yangqing QU
+modified: 20221223083128226
+modifier: Yangqing QU
+tags: ? programmingPattern设计模式
+title: 单例模式
+type: text/vnd.tiddlywiki
+
+单例模式是设计模式中的一种，它保证一个类只有一个实例，并提供一个全局访问点来访问这个实例。这种模式通常用于全局配置类，数据库连接池等。
+
+下面是一个简单的 Python 实现：
+
+```
+class Singleton:
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+```
+使用单例模式的一个简单示例：
+
+```
+s1 = Singleton()
+s2 = Singleton()
+```
+
+print(s1 is s2)  # True
+注意，单例模式有一些限制和局限性。它可能会影响测试和系统的可扩展性。因此，在使用时应谨慎考虑。

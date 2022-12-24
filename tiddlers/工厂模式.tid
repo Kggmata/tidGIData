@@ -1,0 +1,64 @@
+created: 20221223083347446
+creator: Yangqing QU
+modified: 20221224003854227
+modifier: Yangqing QU
+title: 工厂模式
+type: text/vnd.tiddlywiki
+
+单例模式是设计模式中的一种，它保证一个类只有一个实例，并提供一个全局访问点来访问这个实例。这种模式通常用于全局配置类，数据库连接池等。
+
+下面是一个简单的 Python 实现：
+
+Copy code
+class Singleton:
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+使用单例模式的一个简单示例：
+
+Copy code
+s1 = Singleton()
+s2 = Singleton()
+
+print(s1 is s2)  # True
+注意，单例模式有一些限制和局限性。它可能会影响测试和系统的可扩展性。因此，在使用时应谨慎考虑。
+
+
+
+工厂模式
+工厂模式是一种创建型设计模式，它提供了一种创建对象的方法，而无需直接使用 new 操作符来创建对象。
+
+这种模式使得我们可以将对象的创建和使用分离开来，这样可以更加灵活地控制对象的创建过程。
+
+下面是一个简单的 Python 工厂模式的示例：
+
+Copy code
+class Dog:
+    def __init__(self, name):
+        self._name = name
+
+    def speak(self):
+        return "Woof!"
+
+class Cat:
+    def __init__(self, name):
+        self._name = name
+
+    def speak(self):
+        return "Meow!"
+
+def get_pet(pet="dog"):
+    pets = dict(dog=Dog("Hope"), cat=Cat("Peace"))
+    return pets[pet]
+
+d = get_pet("dog")
+print(d.speak())  # Woof!
+
+c = get_pet("cat")
+print(c.speak())  # Meow!
+在这个示例中，我们定义了两种类型的动物：狗和猫。然后，我们定义了一个 get_pet 函数，它根据所需的动物类型返回一个实例。这就是一个简单的工厂模式的实现。
+
+注意，在编写代码时，通常应该避免使用工厂模式，因为它可能会使代码变得复杂，并且难以理解和维护。但是，在某些情况下，如果你需要在运行时动态创建对象，或者如果你需要更好地控制对象的创建过程，则可
