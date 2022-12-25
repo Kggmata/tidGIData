@@ -1,16 +1,17 @@
 created: 20220614150053298
-difficulty: 2.0785115112537254
-due: 20220903055637352
-grade: 0
-history: [{"due":"20220617121706344","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121706344"},{"due":"20220626062119022","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617062119021"},{"due":"20220821055216954","interval":11,"difficulty":1,"stability":53.686361334377686,"retrievability":0.8770110293660888,"grade":2,"lapses":0,"reps":3,"review":"20220628055216954"}]
-interval: 66
+creator: Yangqing QU
+difficulty: 1.2785115112537253
+due: 20230105125527709
+grade: 1
+history: [{"due":"20220617121706344","interval":0,"difficulty":0.7341614645238075,"stability":0.10023193359375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616121706344"},{"due":"20220626062119022","interval":1,"difficulty":1,"stability":8.831176120485253,"retrievability":0.3495295586291377,"grade":2,"lapses":0,"reps":2,"review":"20220617062119021"},{"due":"20220821055216954","interval":11,"difficulty":1,"stability":53.686361334377686,"retrievability":0.8770110293660888,"grade":2,"lapses":0,"reps":3,"review":"20220628055216954"},{"due":"20220903055637352","interval":66,"difficulty":2.0785115112537254,"stability":0.07408182272361549,"retrievability":0.8785115112537252,"grade":0,"lapses":1,"reps":1,"review":"20220902055637351"}]
+interval: 114
 lapses: 1
-modified: 20221210005806790
+modified: 20221225125527709
 modifier: Yangqing QU
-reps: 1
-retrievability: 0.8785115112537252
-review: 20220902055637351
-stability: 0.07408182272361549
+reps: 2
+retrievability: 3.860003928363062e-71
+review: 20221225125527708
+stability: 10.896435563956578
 tags: userProfile用户画像 ?
 title: 显式反馈 隐式反馈
 type: text/vnd.tiddlywiki

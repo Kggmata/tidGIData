@@ -1,16 +1,18 @@
 created: 20220711233316667
-difficulty: 2.2495877227437417
-due: 20220902114653343
+creator: Yangqing QU
+difficulty: 2.449587722743742
+due: 20221226125056687
 grade: 0
-history: [{"due":"20220716055955609","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715055955609"},{"due":"20220722141936492","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721141936492"},{"due":"20220812033323516","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730033323516"},{"due":"20220820080856225","interval":20,"difficulty":2.049587722729248,"stability":0.05488116409496729,"retrievability":0.8495877227292477,"grade":0,"lapses":2,"reps":1,"review":"20220819080856225"}]
-interval: 13
-lapses: 3
-modified: 20220901114653343
+history: [{"due":"20220716055955609","interval":0,"difficulty":0.11508963897169677,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220715055955609"},{"due":"20220722141936492","interval":6,"difficulty":1,"stability":0.07408190596496488,"retrievability":0.0017970617608469364,"grade":0,"lapses":1,"reps":1,"review":"20220721141936492"},{"due":"20220812033323516","interval":9,"difficulty":1,"stability":12.927347112349734,"retrievability":0.0000027609125273187787,"grade":1,"lapses":1,"reps":2,"review":"20220730033323516"},{"due":"20220820080856225","interval":20,"difficulty":2.049587722729248,"stability":0.05488116409496729,"retrievability":0.8495877227292477,"grade":0,"lapses":2,"reps":1,"review":"20220819080856225"},{"due":"20220902114653343","interval":13,"difficulty":2.2495877227437417,"stability":0.040656966333775045,"retrievability":1.4493530897507229e-11,"grade":0,"lapses":3,"reps":1,"review":"20220901114653343"}]
+interval: 115
+lapses: 4
+modified: 20221225125056687
+modifier: Yangqing QU
 reps: 1
-retrievability: 1.4493530897507229e-11
-review: 20220901114653343
-stability: 0.040656966333775045
-tags: ?
+retrievability: 3.740632837856223e-130
+review: 20221225125056687
+stability: 0.6023884238244042
+tags: machineLearning机器学习 machineLearning机器学习 ?
 title: 如何防止过拟合
 type: text/vnd.tiddlywiki
 
@@ -22,6 +24,16 @@ type: text/vnd.tiddlywiki
 
 4 L1/L2正则化
 
+L1 regularization, also known as Lasso regularization, adds a penalty to the model's loss function that is proportional to the absolute value of the model's weights. This results in a model with fewer non-zero weights, which can be interpreted as a form of feature selection. L1 regularization can be used with any machine learning algorithm, but it is most commonly used with linear models such as linear regression or logistic regression.
+
+L2 regularization, also known as Ridge regularization, adds a penalty to the model's loss function that is proportional to the square of the model's weights. This results in a model with smaller weights, which can help to prevent overfitting and improve generalization. L2 regularization is often used with neural networks and other non-linear models.
+
 5 Dropout
+
+Dropout is a regularization technique for reducing overfitting in neural networks. It works by randomly setting a fraction of the input units to zero during training. This prevents the network from relying too heavily on any one input unit, and encourages it to learn a more robust representation of the input data.
+
+Dropout is typically applied to the hidden layers of a neural network, but it can also be applied to the input layer or the output layer. To use dropout, you will need to specify a dropout rate, which is the fraction of units that will be set to zero. For example, if the dropout rate is set to 0.2, then 20% of the units in the layer will be set to zero during each training iteration.
+
+Dropout can be implemented in most deep learning frameworks, and is often used in combination with other regularization techniques, such as weight decay and early stopping. It is an effective way to prevent overfitting and improve the generalization performance of neural networks.
 
 6 Early stopping
