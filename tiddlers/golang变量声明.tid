@@ -1,0 +1,13 @@
+created: 20221225024148779
+creator: Yangqing QU
+modified: 20221225024225488
+modifier: Yangqing QU
+tags: ? golang
+title: golang变量声明
+type: text/vnd.tiddlywiki
+
+var x="no"
+
+var x int
+
+x:="no"
