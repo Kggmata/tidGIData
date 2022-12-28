@@ -1,0 +1,11 @@
+created: 20221228030818764
+creator: Yangqing QU
+modified: 20221228031000492
+modifier: Yangqing QU
+tags: ? pandas
+title: iloc and loc
+type: text/vnd.tiddlywiki
+
+loc is label-based
+
+iloc means integer index-based
