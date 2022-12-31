@@ -1,0 +1,12 @@
+created: 20221231075636946
+creator: Yangqing QU
+modified: 20221231075657900
+modifier: Yangqing QU
+title: rule-provider
+type: text/vnd.tiddlywiki
+
+[[Bug]: Clash 在无法更新订阅和Providers[Cloudflare CDN订阅] · Issue #3319 · Fndroid/clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg/issues/3319)
+
+
+>反正就是别用provider，没什么好处一大堆不方便的，给自己找麻烦，老老实实一条条规则写
+
