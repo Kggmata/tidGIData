@@ -1,11 +1,12 @@
 created: 20221028130642112
+creator: Yangqing QU
 difficulty: 5
 due: 20221115091934643
 grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221210005532891
+modified: 20221231024726893
 modifier: Yangqing QU
 reps: 1
 retrievability: 1
@@ -19,10 +20,11 @@ type: text/vnd.tiddlywiki
 also called prototype-based clustering
 
 Initialization:
-randomly pick k points as the initial centroids
+- randomly pick k points as the initial centroids
+
 Repeat the following 
-update belonging objects: assign all point class according to the closest centroid
-update the centroids: the mean of all points in the cluster
+- update belonging objects: assign all point class according to the closest centroid
+- update the centroids: the mean of all points in the cluster
 ```
 ```
 To set K:
@@ -38,5 +40,6 @@ pros:
 kmeans work well on spherical distributed data
 
 cons:
-kmeans
+1. 高cost, 因为需要计算distance, curse of dimensionality
+2. 数据要是正态分布Gaussian distribution
 ```
