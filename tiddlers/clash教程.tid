@@ -1,6 +1,6 @@
 created: 20221231063239410
 creator: Yangqing QU
-modified: 20221231075700950
+modified: 20230101054621637
 modifier: Yangqing QU
 tags: vpn
 title: clash教程
@@ -10,4 +10,10 @@ type: text/vnd.tiddlywiki
 
 [Subscription Converter](https://sub-web.wcc.best/)
 
-[[rule-provider]]
+[TUN 模式 | Clash for Windows](https://docs.cfw.lbyczf.com/contents/tun.html#windows)
+
+[Loyalsoldier/clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 客户端。](https://github.com/Loyalsoldier/clash-rules)
+
+[[Bug]: Clash 在无法更新订阅和Providers[Cloudflare CDN订阅] · Issue #3319 · Fndroid/clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg/issues/3319)
+
+[使用 Clash DNS 分流解析与加密 DNS 防止 DNS 劫持 - xkww3n's site](https://www.xkww3n.cyou/2022/02/08/use-clash-dns-anti-dns-hijacking/)
