@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220616063027302","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615063027302"},{"due":"20220625112142423","interval":1,"difficulty":1,"stability":8.833712762545648,"retrievability":0.3520717289715242,"grade":2,"lapses":0,"reps":2,"review":"20220616112142423"},{"due":"20220815061921031","interval":10,"difficulty":1,"stability":49.62822026164281,"retrievability":0.8875672975622791,"grade":2,"lapses":0,"reps":3,"review":"20220626061921031"},{"due":"20220822111713018","interval":56,"difficulty":2.087907437135308,"stability":0.07408182272361549,"retrievability":0.8879074371353078,"grade":0,"lapses":1,"reps":1,"review":"20220821111713016"}]
 interval: 15
 lapses: 1
-modified: 20230102012724459
+modified: 20230102013813600
 modifier: Yangqing QU
 reps: 2
 retrievability: 5.433470770278863e-10
 review: 20220905004515150
 stability: 12.927391603425345
-tags: stream实时/sparkStructedStreaming结构化流 ?
+tags: spark/StructedStreaming结构化流 ?
 title: 有/无状态计算
 type: text/vnd.tiddlywiki
 

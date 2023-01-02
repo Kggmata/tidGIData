@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220616070101338","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615070101338"},{"due":"20220701004602333","interval":2,"difficulty":1,"stability":13.526011926209534,"retrievability":0.12395450234099842,"grade":1,"lapses":0,"reps":2,"review":"20220617004602333"}]
 interval: 18
 lapses: 0
-modified: 20230102012724457
+modified: 20230102013813598
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8691752299029826
 review: 20220705091420012
 stability: 80.90041734593629
-tags: stream实时/sparkStructedStreaming结构化流 ?
+tags: spark/StructedStreaming结构化流 ?
 title: spark structed streaming从Kafka中读取数据
 type: text/vnd.tiddlywiki
 

@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220615090222969","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220614090222968"},{"due":"20220617104954393","interval":2,"difficulty":1.2801254823962773,"stability":0.07425364270040997,"retrievability":0.12395450234099842,"grade":0,"lapses":1,"reps":1,"review":"20220616104954392"},{"due":"20220619150918670","interval":2,"difficulty":1.5386766373737528,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618150918670"},{"due":"20220630135827810","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":1,"lapses":2,"reps":2,"review":"20220620135827810"}]
 interval: 15
 lapses: 2
-modified: 20230102012724457
+modified: 20230102013813597
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8514734796021072
 review: 20220705003941272
 stability: 67.55400154832964
-tags: stream实时/sparkStructedStreaming结构化流 ?
+tags: spark/StructedStreaming结构化流 ?
 title: Socket Source
 type: text/vnd.tiddlywiki
 

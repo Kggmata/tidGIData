@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220617112455315","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615062830743"},{"due":"20220621001120211","interval":3,"difficulty":1.199811856008279,"stability":0.07412477722623134,"retrievability":0.043640875953000154,"grade":0,"lapses":1,"reps":1,"review":"20220618101902207"},{"due":"20220705085230594","interval":4,"difficulty":1,"stability":12.864457324828322,"retrievability":0.0033945770329884373,"grade":2,"lapses":1,"reps":2,"review":"20220622085230594"},{"due":"20220710143554136","interval":17,"difficulty":2.07002719750835,"stability":0.05488141221849455,"retrievability":0.8700271975083502,"grade":0,"lapses":2,"reps":1,"review":"20220709143554136"},{"due":"20220719063424685","interval":2,"difficulty":1.2915300401885024,"stability":8.223439888089022,"retrievability":0.02150284268015211,"grade":1,"lapses":2,"reps":2,"review":"20220711063424684"}]
 interval: 14
 lapses: 2
-modified: 20230102012724455
+modified: 20230102013813595
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8357957023844241
 review: 20220725125545579
 stability: 55.60819480487735
-tags: stream实时/sparkStructedStreaming结构化流 ?
+tags: spark/StructedStreaming结构化流 ?
 title: flume读取文件数据
 type: text/vnd.tiddlywiki
 

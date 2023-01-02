@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220616065358880","interval":0,"difficulty":0.956170980055279,"stability":0.10092773437500001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220615065358880"},{"due":"20220701004405590","interval":2,"difficulty":1,"stability":13.526011926209534,"retrievability":0.12395450234099842,"grade":1,"lapses":0,"reps":2,"review":"20220617004405589"}]
 interval: 18
 lapses: 0
-modified: 20230102012724457
+modified: 20230102013813597
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8691752299029826
 review: 20220705074442380
 stability: 77.8185726124576
-tags: stream实时/sparkStructedStreaming结构化流 ?
+tags: spark/StructedStreaming结构化流 ?
 title: spark structed streaming sink检查点路径设置
 type: text/vnd.tiddlywiki
 

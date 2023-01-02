@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220614124043779","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613124043779"},{"due":"20220702025353584","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616025353583"}]
 interval: 20
 lapses: 0
-modified: 20230102012724459
+modified: 20230102013813601
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8731304672290258
 review: 20220706053948674
 stability: 88.3647639214822
-tags: stream实时/sparkStructedStreaming结构化流 ?
+tags: spark/StructedStreaming结构化流 ?
 title: 有界数据集和无界数据流
 type: text/vnd.tiddlywiki
 

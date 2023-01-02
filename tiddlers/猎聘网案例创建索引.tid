@@ -1,17 +1,18 @@
 created: 20220617060918525
+creator: Yangqing QU
 difficulty: 1.8321957863754867
 due: 20220904075546731
 grade: 1
 history: [{"due":"20220620022734883","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220619022734882"},{"due":"20220704011624151","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":1,"lapses":0,"reps":2,"review":"20220621011624150"},{"due":"20220708021814930","interval":16,"difficulty":2.0824752287483905,"stability":0.07408215765534414,"retrievability":0.8824752287483904,"grade":0,"lapses":1,"reps":1,"review":"20220707021814929"},{"due":"20220711073840481","interval":3,"difficulty":2.296504136016429,"stability":0.05488141221849455,"retrievability":0.014028907268038276,"grade":0,"lapses":2,"reps":1,"review":"20220710073840481"},{"due":"20220719010911150","interval":2,"difficulty":1.518006978696581,"stability":7.3499090752694975,"retrievability":0.02150284268015211,"grade":1,"lapses":2,"reps":2,"review":"20220712010911150"},{"due":"20220725020730124","interval":12,"difficulty":2.559969904836352,"stability":0.040657012017596195,"retrievability":0.8419629261397705,"grade":0,"lapses":3,"reps":1,"review":"20220724020730124"},{"due":"20220807092823813","interval":9,"difficulty":1.759969904910643,"stability":5.394927966713273,"retrievability":7.429122478194591e-11,"grade":1,"lapses":3,"reps":2,"review":"20220802092823813"}]
 interval: 7
 lapses: 3
-modified: 20221210005806792
+modified: 20230102013541969
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8722258814648439
 review: 20220809075546731
 stability: 26.008038793608257
-tags: userProfile用户画像 ?
+tags: elasticSearch
 title: 猎聘网案例创建索引
 type: text/vnd.tiddlywiki
 
