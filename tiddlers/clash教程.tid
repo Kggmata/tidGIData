@@ -1,8 +1,8 @@
 created: 20221231063239410
 creator: Yangqing QU
-modified: 20230101054621637
+modified: 20230102000245927
 modifier: Yangqing QU
-tags: vpn
+tags: vpn clash
 title: clash教程
 type: text/vnd.tiddlywiki
 
@@ -17,3 +17,5 @@ type: text/vnd.tiddlywiki
 [[Bug]: Clash 在无法更新订阅和Providers[Cloudflare CDN订阅] · Issue #3319 · Fndroid/clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg/issues/3319)
 
 [使用 Clash DNS 分流解析与加密 DNS 防止 DNS 劫持 - xkww3n's site](https://www.xkww3n.cyou/2022/02/08/use-clash-dns-anti-dns-hijacking/)
+
+[[proxy group]]
