@@ -1,17 +1,17 @@
 created: 20220519140335006
 creator: Yangqing QU
-difficulty: 2.2508942029413816
-due: 20220905005232961
-grade: 2
-history: [{"due":"20220523040039093","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040039093"},{"due":"20220529000818328","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000818328"},{"due":"20220625103250391","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601103250391"}]
-interval: 25
-lapses: 0
-modified: 20230102025746319
+difficulty: 3.2057737903545354
+due: 20230103082030271
+grade: 0
+history: [{"due":"20220523040039093","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040039093"},{"due":"20220529000818328","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000818328"},{"due":"20220625103250391","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601103250391"},{"due":"20220905005232961","interval":25,"difficulty":2.2508942029413816,"stability":71.1902896812924,"retrievability":0.8950417678954212,"grade":2,"lapses":0,"reps":4,"review":"20220626005232960"}]
+interval: 190
+lapses: 1
+modified: 20230102082030271
 modifier: Yangqing QU
-reps: 4
-retrievability: 0.8950417678954212
-review: 20220626005232960
-stability: 71.1902896812924
+reps: 1
+retrievability: 0.7548795874131536
+review: 20230102082030270
+stability: 1.4816364413634358
 tags: spark ?
 title: spark 工作中，将代码开发好以后，如何提交运行？
 type: text/vnd.tiddlywiki
