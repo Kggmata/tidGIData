@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20220802033952208","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801033952208"},{"due":"20220809085029799","interval":7,"difficulty":1,"stability":0.07408182337905919,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220808085029799"}]
 interval: 7
 lapses: 1
-modified: 20221217113042192
+modified: 20230102012832568
 modifier: Yangqing QU
 reps: 2
 retrievability: 0.000047464560219457106
 review: 20220815052432121
 stability: 12.9264266018794
-tags: flink
+tags: stream实时/flink
 title: update和append区别
 type: text/vnd.tiddlywiki
 

@@ -1,6 +1,7 @@
 created: 20220830070545593
-modified: 20220830070625548
-tags: ? flink
+modified: 20230102012832568
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: TCP半连接队列和SYN flood的关系
 type: text/vnd.tiddlywiki
 

@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220731040802909","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730040802909"},{"due":"20220807111615832","interval":7,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220806111615832"},{"due":"20220825032518663","interval":6,"difficulty":1,"stability":12.92339166423087,"retrievability":0.00019680286925510766,"grade":2,"lapses":1,"reps":2,"review":"20220812032518663"}]
 interval: 106
 lapses: 2
-modified: 20221126052345960
+modified: 20230102012832562
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.4213944114608254
 review: 20221126052345960
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: flink窗口
 type: text/vnd.tiddlywiki
 

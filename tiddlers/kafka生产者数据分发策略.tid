@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20220614110411228","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613110411228"},{"due":"20220617052418566","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616052418566"},{"due":"20220630115905309","interval":2,"difficulty":1,"stability":11.792887567465318,"retrievability":0.05855115497747565,"grade":2,"lapses":1,"reps":2,"review":"20220618115905309"},{"due":"20220705140843451","interval":16,"difficulty":2.0667992472295853,"stability":0.05488166082758644,"retrievability":0.866799247229585,"grade":0,"lapses":2,"reps":1,"review":"20220704140843451"},{"due":"20220720032003733","interval":6,"difficulty":1,"stability":10.165567424338107,"retrievability":0.00000994283639911803,"grade":2,"lapses":2,"reps":2,"review":"20220710032003732"},{"due":"20220727114656903","interval":16,"difficulty":2.0471892271731464,"stability":0.04065698899582806,"retrievability":0.8471892271731463,"grade":0,"lapses":3,"reps":1,"review":"20220726114656903"},{"due":"20220810083058439","interval":8,"difficulty":1.2471892281648544,"stability":6.854641952494806,"retrievability":9.917079777346664e-10,"grade":1,"lapses":3,"reps":2,"review":"20220803083058439"},{"due":"20220815084623455","interval":11,"difficulty":2.2916326911129863,"stability":0.03011942145770373,"retrievability":0.8444434629481314,"grade":0,"lapses":4,"reps":1,"review":"20220814084623455"},{"due":"20220827113618957","interval":7,"difficulty":1,"stability":6.286496958914711,"retrievability":2.3205171444202523e-11,"grade":2,"lapses":4,"reps":2,"review":"20220821113618957"}]
 interval: 102
 lapses: 4
-modified: 20221201140810779
+modified: 20230102012807708
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.18095607409673242
 review: 20221201140810778
 stability: 337.50189635411954
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka生产者数据分发策略
 type: text/vnd.tiddlywiki
 

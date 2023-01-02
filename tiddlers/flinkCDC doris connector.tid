@@ -1,6 +1,7 @@
 created: 20220731011125957
-modified: 20220731011134887
-tags: ? flink
+modified: 20230102012832560
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: flinkCDC doris connector
 type: text/vnd.tiddlywiki
 

@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220827143130582","interval":0,"difficulty":0.025386988635295055,"stability":0.10000000088475645,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220826143130582"}]
 interval: 97
 lapses: 1
-modified: 20221201121703537
+modified: 20230102012832561
 modifier: Yangqing QU
 reps: 1
 retrievability: 4.1232014016533527e-45
 review: 20221201121703537
 stability: 1.4816364413634358
-tags: flink ?
+tags: stream实时/flink ?
 title: flinkCDC2.0无锁算法实现细节
 type: text/vnd.tiddlywiki
 

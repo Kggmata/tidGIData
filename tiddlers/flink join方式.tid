@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220802060433531","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801060433531"},{"due":"20220808011024020","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807011024020"},{"due":"20220825081022900","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":1,"lapses":1,"reps":2,"review":"20220812081022900"}]
 interval: 106
 lapses: 2
-modified: 20221126025206738
+modified: 20230102012832559
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.421039577746367
 review: 20221126025206737
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: flink join方式
 type: text/vnd.tiddlywiki
 

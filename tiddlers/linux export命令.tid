@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220614111020931","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613111020931"},{"due":"20220702034940823","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616034940823"},{"due":"20220707082742176","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706082742176"},{"due":"20220723063741002","interval":4,"difficulty":1,"stability":12.858755755983243,"retrievability":0.0033834917823108,"grade":2,"lapses":1,"reps":2,"review":"20220710063741002"}]
 interval: 22
 lapses: 1
-modified: 20220801101429891
+modified: 20230102012807709
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8350522880297407
 review: 20220801101429890
 stability: 95.87572485349409
-tags: kafka ?
+tags: stream实时/kafka ?
 title: linux export命令
 type: text/vnd.tiddlywiki
 

@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220614101617119","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613101617119"},{"due":"20220617044437762","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616044437762"},{"due":"20220630113025796","interval":2,"difficulty":1,"stability":11.792887567465318,"retrievability":0.05855115497747565,"grade":2,"lapses":1,"reps":2,"review":"20220618113025796"}]
 interval: 16
 lapses: 1
-modified: 20220704124239198
+modified: 20230102012807706
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.866799247229585
 review: 20220704124239198
 stability: 73.33880426530696
-tags: kafka ?
+tags: stream实时/kafka ?
 title: Kafka Python API库名字
 type: text/vnd.tiddlywiki
 

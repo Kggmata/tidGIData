@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220801132214529","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731132214529"},{"due":"20220807125016931","interval":6,"difficulty":1,"stability":0.07408182731172136,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220806125016931"},{"due":"20220825032120791","interval":6,"difficulty":1,"stability":12.923390933819324,"retrievability":0.00019680275038780497,"grade":1,"lapses":1,"reps":2,"review":"20220812032120791"}]
 interval: 106
 lapses: 2
-modified: 20221126030540956
+modified: 20230102012832560
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.4213943908788452
 review: 20221126030540956
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: flink state类型从管理角度
 type: text/vnd.tiddlywiki
 

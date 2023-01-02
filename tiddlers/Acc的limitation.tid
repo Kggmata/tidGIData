@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20221111132006682","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221109132006682"}]
 interval: 4
 lapses: 0
-modified: 20221210005532889
+modified: 20230102012902176
 modifier: Yangqing QU
 reps: 2
 retrievability: 0.81
 review: 20221113054331274
 stability: 10.268730125807526
-tags: ? 7203DataMining数据挖掘
+tags: ? machineLearning机器学习/7203DataMining数据挖掘
 title: Acc的limitation
 type: text/vnd.tiddlywiki
 

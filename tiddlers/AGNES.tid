@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20221101104305550","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20221030104305550"},{"due":"20221102134143619","interval":2,"difficulty":6.1000000000000005,"stability":1.4816364413634358,"retrievability":0.9,"grade":0,"lapses":1,"reps":1,"review":"20221101134143619"},{"due":"20221106143222960","interval":4,"difficulty":7.052432761332063,"stability":1.097623272188053,"retrievability":0.752432761332062,"grade":0,"lapses":2,"reps":1,"review":"20221105143222959"},{"due":"20221110084340488","interval":4,"difficulty":7.933592283856648,"stability":0.8131393194811983,"retrievability":0.681159522524585,"grade":0,"lapses":3,"reps":1,"review":"20221109084340487"},{"due":"20221114042600725","interval":4,"difficulty":8.729130269617182,"stability":0.6023884238244042,"retrievability":0.5955379857605332,"grade":0,"lapses":4,"reps":1,"review":"20221113042600724"}]
 interval: 1
 lapses: 4
-modified: 20221210005532889
+modified: 20230102012902176
 modifier: Yangqing QU
 reps: 2
 retrievability: 0.8395370957663117
 review: 20221114063955800
 stability: 2.1253311970779625
-tags: 7203DataMining数据挖掘 ?
+tags: machineLearning机器学习/7203DataMining数据挖掘 ?
 title: AGNES
 type: text/vnd.tiddlywiki
 

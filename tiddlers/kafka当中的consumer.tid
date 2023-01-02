@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220613142658260","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612142658260"},{"due":"20220616062133101","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615062133101"},{"due":"20220625112912217","interval":1,"difficulty":1,"stability":8.582608156494905,"retrievability":0.2443520960981822,"grade":2,"lapses":1,"reps":2,"review":"20220616112912217"},{"due":"20220815144136527","interval":10,"difficulty":1,"stability":49.607567089721854,"retrievability":0.8844754806146786,"grade":2,"lapses":1,"reps":3,"review":"20220626144136526"}]
 interval: 56
 lapses: 1
-modified: 20220821113557790
+modified: 20230102012807707
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8878634897551124
 review: 20220821113557790
 stability: 211.38363839298506
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka当中的consumer
 type: text/vnd.tiddlywiki
 

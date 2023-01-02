@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220727142343814","interval":0,"difficulty":0.0720454596653259,"stability":0.10000005662441254,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726142343814"},{"due":"20220806063053922","interval":10,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.000026561557352673388,"grade":0,"lapses":1,"reps":1,"review":"20220805063053919"},{"due":"20220824102717355","interval":6,"difficulty":1,"stability":12.92339166423087,"retrievability":0.00019680286925510766,"grade":2,"lapses":1,"reps":2,"review":"20220811102717355"}]
 interval: 104
 lapses: 2
-modified: 20221123121422455
+modified: 20230102012832567
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.42832173754486635
 review: 20221123121422455
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: SQL 指定时间属性的两种方式
 type: text/vnd.tiddlywiki
 

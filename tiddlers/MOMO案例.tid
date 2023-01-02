@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614123445563","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613123445563"},{"due":"20220707091048934","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616064107089"},{"due":"20220711065539282","interval":24,"difficulty":2.04975743163401,"stability":0.07408215765534414,"retrievability":0.8497574316340097,"grade":0,"lapses":1,"reps":1,"review":"20220710065539282"},{"due":"20220724105816874","interval":3,"difficulty":1.263786338902048,"stability":10.744139764408533,"retrievability":0.014028907268038276,"grade":1,"lapses":1,"reps":2,"review":"20220713105816873"}]
 interval: 20
 lapses: 1
-modified: 20220802000230760
+modified: 20230102012807709
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8219082731044799
 review: 20220802000230760
 stability: 76.29550570389316
-tags: kafka ?
+tags: stream实时/kafka ?
 title: MOMO案例
 type: text/vnd.tiddlywiki
 

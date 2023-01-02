@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614102116056","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102116056"},{"due":"20220617052054450","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616052054450"},{"due":"20220619114810570","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618114810570"},{"due":"20220630125336190","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620125336190"}]
 interval: 14
 lapses: 2
-modified: 20220704125629278
+modified: 20230102012807709
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8606496253758356
 review: 20220704125629278
 stability: 63.40697725150013
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka获取到发送的反馈信息
 type: text/vnd.tiddlywiki
 

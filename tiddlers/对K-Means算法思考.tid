@@ -1,17 +1,18 @@
 created: 20220624091816541
-difficulty: 1.0982194665518623
-due: 20220904092521303
+creator: Yangqing QU
+difficulty: 1.0137338324310103
+due: 20240623012657427
 grade: 1
-history: [{"due":"20220626051735400","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625051735400"},{"due":"20220628052728583","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220627052728582"},{"due":"20220711143248101","interval":2,"difficulty":1,"stability":11.778612134693832,"retrievability":0.05817303643692872,"grade":1,"lapses":1,"reps":2,"review":"20220629143248101"}]
-interval: 12
+history: [{"due":"20220626051735400","interval":0,"difficulty":0.4015068894836844,"stability":0.1000072479248047,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220625051735400"},{"due":"20220628052728583","interval":2,"difficulty":1,"stability":0.07408450676555052,"retrievability":0.12159522294586199,"grade":0,"lapses":1,"reps":1,"review":"20220627052728582"},{"due":"20220711143248101","interval":2,"difficulty":1,"stability":11.778612134693832,"retrievability":0.05817303643692872,"grade":1,"lapses":1,"reps":2,"review":"20220629143248101"},{"due":"20220904092521303","interval":12,"difficulty":1.0982194665518623,"stability":55.07958726971091,"retrievability":0.8982194665518624,"grade":1,"lapses":1,"reps":3,"review":"20220711092521302"}]
+interval: 175
 lapses: 1
-modified: 20221210005806787
+modified: 20230102012657427
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.8982194665518624
-review: 20220711092521302
-stability: 55.07958726971091
-tags: userProfile用户画像 ?
+reps: 4
+retrievability: 0.715514365879148
+review: 20230102012657427
+stability: 538.2453726266194
+tags: machineLearning机器学习/clustering聚类 ?
 title: 对K-Means算法思考
 type: text/vnd.tiddlywiki
 
@@ -20,7 +21,7 @@ type: text/vnd.tiddlywiki
 ```
 K-Means将簇中所有的点均值作为新质心，若簇中含有异常点，将导致均值偏离严重，如下面数据
 （1，2，3，4，100）均值22，距离大多数点1，2，3距离较远
-改为求数组的中位数3，在该实例中比较稳妥，这也是下面的K-Mediods聚类。
+改为求数组的中位数3，在该实例中比较稳妥，这也是下面的K-Medoids聚类。
 ```
 （2）初值的选定
 

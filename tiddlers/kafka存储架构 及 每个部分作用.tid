@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220619234642275","interval":0,"difficulty":0.6469164138781576,"stability":0.10005798339843751,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220618234642275"},{"due":"20220709073408926","interval":2,"difficulty":1,"stability":13.483496769392643,"retrievability":0.12172520545485727,"grade":2,"lapses":0,"reps":2,"review":"20220621060821777"},{"due":"20220712010049057","interval":20,"difficulty":2.0553190686350757,"stability":0.07408215765534414,"retrievability":0.8553190686350756,"grade":0,"lapses":1,"reps":1,"review":"20220711010049056"},{"due":"20220729010111895","interval":7,"difficulty":1.2553665353275318,"stability":11.034940136309137,"retrievability":0.00004746669245620781,"grade":1,"lapses":1,"reps":2,"review":"20220718010111895"}]
 interval: 18
 lapses: 1
-modified: 20220805064431481
+modified: 20230102012807707
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8420951911536942
 review: 20220805064431480
 stability: 69.42462042388443
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka存储架构 及 每个部分作用
 type: text/vnd.tiddlywiki
 

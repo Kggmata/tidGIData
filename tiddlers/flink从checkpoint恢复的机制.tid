@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220802092200005","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220801092200005"},{"due":"20220808004919163","interval":6,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220807004919163"},{"due":"20220825051307280","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":1,"lapses":1,"reps":2,"review":"20220812051307279"}]
 interval: 111
 lapses: 2
-modified: 20221201054059108
+modified: 20230102012832561
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.4042055799598912
 review: 20221201054059107
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: flink从checkpoint恢复的机制
 type: text/vnd.tiddlywiki
 

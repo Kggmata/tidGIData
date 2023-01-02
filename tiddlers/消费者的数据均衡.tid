@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220614110709039","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613110709039"},{"due":"20220702024556287","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024556286"}]
 interval: 19
 lapses: 0
-modified: 20220705103151559
+modified: 20230102012807711
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8790734948134195
 review: 20220705103151559
 stability: 84.74278121619727
-tags: kafka ?
+tags: stream实时/kafka ?
 title: 消费者的数据均衡
 type: text/vnd.tiddlywiki
 

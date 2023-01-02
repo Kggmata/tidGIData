@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614100321142","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100321142"},{"due":"20220702025410855","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616025410854"},{"due":"20220707054432931","interval":20,"difficulty":2.073130467229026,"stability":0.07408215765534414,"retrievability":0.8731304672290258,"grade":0,"lapses":1,"reps":1,"review":"20220706054432931"},{"due":"20220721062531319","interval":4,"difficulty":1.2765139590113368,"stability":10.850433613439773,"retrievability":0.0033834917823108,"grade":1,"lapses":1,"reps":2,"review":"20220710062531319"}]
 interval: 19
 lapses: 1
-modified: 20220729144347322
+modified: 20230102012807705
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8315241704671053
 review: 20220729144347322
 stability: 72.29872534912465
-tags: kafka ?
+tags: stream实时/kafka ?
 title: ack机制（确认机制）
 type: text/vnd.tiddlywiki
 

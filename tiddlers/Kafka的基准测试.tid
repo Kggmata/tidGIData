@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614101605871","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613101605871"},{"due":"20220619113740478","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616051842133"},{"due":"20220708001336257","interval":4,"difficulty":1,"stability":12.88168845296203,"retrievability":0.0034282377491963714,"grade":2,"lapses":1,"reps":2,"review":"20220620001456117"},{"due":"20220711091848083","interval":20,"difficulty":2.049097005155021,"stability":0.05488141221849455,"retrievability":0.8490970051550207,"grade":0,"lapses":2,"reps":1,"review":"20220710091848083"},{"due":"20220722063634592","interval":3,"difficulty":1.2522501492379858,"stability":8.649641641840255,"retrievability":0.0031531440829650446,"grade":1,"lapses":2,"reps":2,"review":"20220713063634592"}]
 interval: 17
 lapses: 2
-modified: 20220730030806555
+modified: 20230102012807709
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8129582788723304
 review: 20220730030806555
 stability: 67.45586048455796
-tags: kafka ?
+tags: stream实时/kafka ?
 title: Kafka的基准测试
 type: text/vnd.tiddlywiki
 

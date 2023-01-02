@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220731042310430","interval":0,"difficulty":0.06578124647966406,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220730042310430"},{"due":"20220806080845748","interval":6,"difficulty":1,"stability":0.07408183255527093,"retrievability":0.0017970135161932011,"grade":0,"lapses":1,"reps":1,"review":"20220805080845747"},{"due":"20220810075643015","interval":4,"difficulty":1.2033834073148748,"stability":0.054881164580531924,"retrievability":0.003383407314874798,"grade":0,"lapses":2,"reps":1,"review":"20220809075643015"},{"due":"20220825054009904","interval":6,"difficulty":1,"stability":10.165493806888515,"retrievability":0.000009941800865523385,"grade":1,"lapses":2,"reps":2,"review":"20220815054009904"}]
 interval: 108
 lapses: 3
-modified: 20221201084958140
+modified: 20230102012832569
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.32648583676241605
 review: 20221201084958140
 stability: 0.8131393194811983
-tags: flink ?
+tags: stream实时/flink ?
 title: 内存state
 type: text/vnd.tiddlywiki
 

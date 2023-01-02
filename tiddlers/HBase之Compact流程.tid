@@ -1,15 +1,17 @@
 created: 20220605092145549
-difficulty: 1.0839227621571068
-due: 20220904021027607
-grade: 1
-history: [{"due":"20220609132624298","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608132624297"},{"due":"20220613074710679","interval":4,"difficulty":1.4859391209733,"stability":0.07545638712607733,"retrievability":0.01718665362921924,"grade":0,"lapses":1,"reps":1,"review":"20220612074710679"},{"due":"20220628060417669","interval":3,"difficulty":1,"stability":12.80868935150994,"retrievability":0.01516249539961304,"grade":2,"lapses":1,"reps":2,"review":"20220615060417668"}]
-interval: 15
-lapses: 1
-modified: 20220630021027607
-reps: 3
-retrievability: 0.883922762157107
-review: 20220630021027607
-stability: 66.49367948740202
+creator: Yangqing QU
+difficulty: 2.028662414278787
+due: 20230103012135807
+grade: 0
+history: [{"due":"20220609132624298","interval":0,"difficulty":1.2687524673440806,"stability":0.1037109375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220608132624297"},{"due":"20220613074710679","interval":4,"difficulty":1.4859391209733,"stability":0.07545638712607733,"retrievability":0.01718665362921924,"grade":0,"lapses":1,"reps":1,"review":"20220612074710679"},{"due":"20220628060417669","interval":3,"difficulty":1,"stability":12.80868935150994,"retrievability":0.01516249539961304,"grade":2,"lapses":1,"reps":2,"review":"20220615060417668"},{"due":"20220904021027607","interval":15,"difficulty":1.0839227621571068,"stability":66.49367948740202,"retrievability":0.883922762157107,"grade":1,"lapses":1,"reps":3,"review":"20220630021027607"}]
+interval: 186
+lapses: 2
+modified: 20230102012135807
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.7447396521216799
+review: 20230102012135807
+stability: 1.097623272188053
 tags: hbase ?
 title: HBase之Compact流程
 type: text/vnd.tiddlywiki

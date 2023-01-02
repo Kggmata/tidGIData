@@ -1,6 +1,7 @@
 created: 20220726032904819
-modified: 20220726033008034
-tags: ? flink
+modified: 20230102012832568
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: 为什么mysql推荐使用自增的id而不是uuid作为主键
 type: text/vnd.tiddlywiki
 

@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220727050415710","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726050415710"},{"due":"20220820123321484","interval":9,"difficulty":1,"stability":16.43780488763927,"retrievability":0.00007617816609952556,"grade":1,"lapses":0,"reps":2,"review":"20220804123321484"},{"due":"20220831140907802","interval":26,"difficulty":2.0464951521155363,"stability":0.07408182272361549,"retrievability":0.846495152115536,"grade":0,"lapses":1,"reps":1,"review":"20220830140907802"}]
 interval: 112
 lapses: 2
-modified: 20221220023620559
+modified: 20230102012832569
 modifier: Yangqing QU
 reps: 1
 retrievability: 6.636067099109319e-70
 review: 20221220023620559
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: 任务（Tasks）和任务槽（Task Slots）
 type: text/vnd.tiddlywiki
 

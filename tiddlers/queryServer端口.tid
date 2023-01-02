@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220617031617137","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031617137"},{"due":"20220702144253164","interval":2,"difficulty":1,"stability":13.503436503233734,"retrievability":0.1227653108614827,"grade":2,"lapses":0,"reps":2,"review":"20220618144253164"}]
 interval: 18
 lapses: 0
-modified: 20221210012243752
+modified: 20230102012724456
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8689715122532491
 review: 20220706095217740
 stability: 77.82539154345864
-tags: sparkStructedStreaming结构化流 ?
+tags: stream实时/sparkStructedStreaming结构化流 ?
 title: queryServer端口
 type: text/vnd.tiddlywiki
 

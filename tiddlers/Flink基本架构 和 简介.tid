@@ -6,13 +6,13 @@ grade: 2
 history: [{"due":"20220720112307224","interval":0,"difficulty":0.10459372128306473,"stability":0.1000004529953003,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220719112307224"},{"due":"20220731013415327","interval":11,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.000009261873369942817,"grade":0,"lapses":1,"reps":1,"review":"20220730013415327"},{"due":"20220819115320313","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806115320313"},{"due":"20220831063839798","interval":24,"difficulty":2.0223256595695953,"stability":0.05488116409496729,"retrievability":0.8223256595695952,"grade":0,"lapses":2,"reps":1,"review":"20220830063839798"}]
 interval: 111
 lapses: 2
-modified: 20221219130238637
+modified: 20230102012832562
 modifier: Yangqing QU
 reps: 2
 retrievability: 2.8385907975682772e-93
 review: 20221219130238637
 stability: 10.165652753205016
-tags: flink ?
+tags: stream实时/flink ?
 title: Flink基本架构 和 简介
 type: text/vnd.tiddlywiki
 

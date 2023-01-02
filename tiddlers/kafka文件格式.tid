@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220613132321631","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612132321631"},{"due":"20220616234820337","interval":3,"difficulty":1.3433801103128513,"stability":0.07442546333264817,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615234820337"},{"due":"20220619135849269","interval":2,"difficulty":1.6023161252929519,"stability":0.05491298557316543,"retrievability":0.05893601498010052,"grade":0,"lapses":2,"reps":1,"review":"20220618135849269"},{"due":"20220630130825415","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620130825415"}]
 interval: 14
 lapses: 2
-modified: 20220704141005150
+modified: 20230102012807707
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8606496253758356
 review: 20220704141005150
 stability: 65.66143979122012
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka文件格式
 type: text/vnd.tiddlywiki
 

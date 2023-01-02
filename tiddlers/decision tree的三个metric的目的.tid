@@ -5,13 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221210005532890
+modified: 20230102012902177
 modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221113073326810
 stability: 2
-tags: 7203DataMining数据挖掘 ?
+tags: machineLearning机器学习/7203DataMining数据挖掘 ?
 title: decision tree的三个metric的目的
 type: text/vnd.tiddlywiki
 

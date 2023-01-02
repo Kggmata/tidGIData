@@ -5,12 +5,13 @@ grade: -1
 history: []
 interval: 0
 lapses: 0
-modified: 20221011143628207
+modified: 20230102012832561
+modifier: Yangqing QU
 reps: 1
 retrievability: 1
 review: 20221011143628207
 stability: 0.10000000088475645
-tags: flink ?
+tags: stream实时/flink ?
 title: flinkSQL 性能调优
 type: text/vnd.tiddlywiki
 

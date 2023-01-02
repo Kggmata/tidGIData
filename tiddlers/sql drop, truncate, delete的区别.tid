@@ -1,6 +1,7 @@
 created: 20220812081432081
-modified: 20220812081626557
-tags: ? flink
+modified: 20230102012832567
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: sql drop, truncate, delete的区别
 type: text/vnd.tiddlywiki
 

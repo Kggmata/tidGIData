@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220801131513853","interval":0,"difficulty":0.06011121757074328,"stability":0.10000002831220628,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220731131513853"},{"due":"20220808002551173","interval":7,"difficulty":1,"stability":0.07408182468994658,"retrievability":0.0006265800565729012,"grade":0,"lapses":1,"reps":1,"review":"20220807002551173"},{"due":"20220825081334885","interval":5,"difficulty":1,"stability":12.910806318862917,"retrievability":0.0008160044497337299,"grade":2,"lapses":1,"reps":2,"review":"20220812081334885"}]
 interval: 106
 lapses: 2
-modified: 20221126030159745
+modified: 20230102012832560
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.421039577746367
 review: 20221126030159744
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: flink standalone模式下包含的部署方式
 type: text/vnd.tiddlywiki
 

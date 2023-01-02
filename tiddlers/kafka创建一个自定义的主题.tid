@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614100918240","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613100918240"},{"due":"20220617051729688","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616051729688"},{"due":"20220619113435085","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618113435085"},{"due":"20220630001448651","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620001448651"},{"due":"20220705124421129","interval":14,"difficulty":2.0606496253758357,"stability":0.04065733432235013,"retrievability":0.8606496253758356,"grade":0,"lapses":3,"reps":1,"review":"20220704124421129"},{"due":"20220717015455656","interval":6,"difficulty":1.2606498021200514,"stability":6.8036750489187865,"retrievability":1.7674421584076485e-7,"grade":1,"lapses":3,"reps":2,"review":"20220710015455656"}]
 interval: 12
 lapses: 3
-modified: 20220722015433018
+modified: 20230102012807706
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8304148445979092
 review: 20220722015433018
 stability: 49.79844008600565
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka创建一个自定义的主题
 type: text/vnd.tiddlywiki
 

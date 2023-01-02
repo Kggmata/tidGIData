@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220630130030712","interval":0,"difficulty":0.2875876480092351,"stability":0.10000181198120117,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220629130030712"},{"due":"20220704144205172","interval":4,"difficulty":1,"stability":0.07408316441686115,"retrievability":0.014782011698955301,"grade":0,"lapses":1,"reps":1,"review":"20220703144205172"},{"due":"20220720025330759","interval":4,"difficulty":1,"stability":12.858890454366344,"retrievability":0.0033837533675606132,"grade":1,"lapses":1,"reps":2,"review":"20220707025330759"},{"due":"20220727103134885","interval":19,"difficulty":2.055834495214906,"stability":0.05488119468553914,"retrievability":0.8558344952149057,"grade":0,"lapses":2,"reps":1,"review":"20220726103134885"},{"due":"20220812032037471","interval":8,"difficulty":1.255834708989983,"stability":8.675364374638685,"retrievability":2.137750772920513e-7,"grade":1,"lapses":2,"reps":2,"review":"20220803032037471"},{"due":"20220818094829539","interval":14,"difficulty":2.2994766457418843,"stability":0.040656966333775045,"retrievability":0.8436419367519011,"grade":0,"lapses":3,"reps":1,"review":"20220817094829538"},{"due":"20220829131916411","interval":6,"difficulty":1.4994768224612283,"stability":6.030227344527113,"retrievability":1.7671934421049204e-7,"grade":1,"lapses":3,"reps":2,"review":"20220823131916411"}]
 interval: 116
 lapses: 4
-modified: 20221217124104482
+modified: 20230102012807710
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.13176182041603787
 review: 20221217124104481
 stability: 0.6023884238244042
-tags: userProfile用户画像 kafka ?
+tags: userProfile用户画像 stream实时/kafka ?
 title: 什么是消息
 type: text/vnd.tiddlywiki
 

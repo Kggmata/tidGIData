@@ -5,13 +5,13 @@ grade: 1
 history: [{"due":"20220617031603332","interval":0,"difficulty":0.8361549804978878,"stability":0.1004638671875,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220616031603332"},{"due":"20220622140414993","interval":3,"difficulty":1.079169344090665,"stability":0.07412477722623134,"retrievability":0.04301436359277706,"grade":0,"lapses":1,"reps":1,"review":"20220619004956576"},{"due":"20220711070839259","interval":5,"difficulty":1,"stability":12.91673461051365,"retrievability":0.0008193738239399371,"grade":1,"lapses":1,"reps":2,"review":"20220624004746957"}]
 interval: 20
 lapses: 1
-modified: 20221210012243755
+modified: 20230102012724458
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8494739488250409
 review: 20220714024526828
 stability: 85.87948484041016
-tags: sparkStructedStreaming结构化流 ?
+tags: stream实时/sparkStructedStreaming结构化流 ?
 title: spark structured streaming小案例
 type: text/vnd.tiddlywiki
 

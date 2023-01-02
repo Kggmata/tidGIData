@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220803142336047","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220725125251275"},{"due":"20220824090323784","interval":14,"difficulty":1,"stability":16.439763804276993,"retrievability":3.9260748606056117e-7,"grade":1,"lapses":0,"reps":2,"review":"20220808090323784"}]
 interval: 109
 lapses: 1
-modified: 20221210005221286
+modified: 20230102012832562
 modifier: Yangqing QU
 reps: 1
 retrievability: 0.4972968239599528
 review: 20221125103919241
 stability: 1.4816364413634358
-tags: flink concept概念 ?
+tags: stream实时/flink concept概念 ?
 title: flink的并行度（Parallelism）
 type: text/vnd.tiddlywiki
 

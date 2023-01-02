@@ -6,13 +6,13 @@ grade: 0
 history: [{"due":"20220727070604826","interval":0,"difficulty":0.07897385645727227,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220726070604826"},{"due":"20220819133040957","interval":8,"difficulty":1,"stability":16.43412713750255,"retrievability":0.00021847658599824263,"grade":2,"lapses":0,"reps":2,"review":"20220803133040957"},{"due":"20220830144105771","interval":26,"difficulty":2.046463583221378,"stability":0.07408182272361549,"retrievability":0.8464635832213778,"grade":0,"lapses":1,"reps":1,"review":"20220829144105770"}]
 interval: 111
 lapses: 2
-modified: 20221218133725907
+modified: 20230102012832571
 modifier: Yangqing QU
 reps: 1
 retrievability: 2.7515175020047567e-69
 review: 20221218133725906
 stability: 1.097623272188053
-tags: flink ?
+tags: stream实时/flink ?
 title: 流批处理的异同点
 type: text/vnd.tiddlywiki
 

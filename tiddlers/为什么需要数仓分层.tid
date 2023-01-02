@@ -1,6 +1,7 @@
 created: 20220830135752463
-modified: 20220830135805263
-tags: ? flink
+modified: 20230102012832568
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: 为什么需要数仓分层
 type: text/vnd.tiddlywiki
 

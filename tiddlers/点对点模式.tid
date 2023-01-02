@@ -5,12 +5,13 @@ grade: 2
 history: [{"due":"20220613134712474","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612134712474"},{"due":"20220701010950114","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220615010950114"}]
 interval: 20
 lapses: 0
-modified: 20220705050443817
+modified: 20230102012807711
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8731304672290258
 review: 20220705050443817
 stability: 88.3647639214822
-tags: kafka ?
+tags: stream实时/kafka ?
 title: 点对点模式
 type: text/vnd.tiddlywiki
 

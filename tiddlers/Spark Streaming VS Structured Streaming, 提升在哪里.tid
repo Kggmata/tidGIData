@@ -5,13 +5,13 @@ grade: 2
 history: [{"due":"20220614123921951","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613123921951"},{"due":"20220617064914869","interval":3,"difficulty":1.3433801103128513,"stability":0.07425364270040997,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220616064914868"},{"due":"20220619151101887","interval":2,"difficulty":1.6019312652903268,"stability":0.05491298557316543,"retrievability":0.05855115497747565,"grade":0,"lapses":2,"reps":1,"review":"20220618151101887"},{"due":"20220630140534251","interval":2,"difficulty":1,"stability":9.829205553538575,"retrievability":0.021550365655700003,"grade":2,"lapses":2,"reps":2,"review":"20220620140534251"}]
 interval: 15
 lapses: 2
-modified: 20221210012243754
+modified: 20230102012724457
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.8514734796021072
 review: 20220705004415547
 stability: 69.61819775972178
-tags: sparkStructedStreaming结构化流 ?
+tags: stream实时/sparkStructedStreaming结构化流 ?
 title: Spark Streaming VS Structured Streaming, 提升在哪里
 type: text/vnd.tiddlywiki
 

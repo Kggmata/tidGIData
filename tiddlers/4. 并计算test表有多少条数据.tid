@@ -1,6 +1,7 @@
 created: 20220908133310744
-modified: 20220908133320488
-tags: ? flink
+modified: 20230102012832554
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: 4. 并计算test表有多少条数据
 type: text/vnd.tiddlywiki
 

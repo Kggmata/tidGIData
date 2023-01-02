@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220613135142178","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220612135142178"},{"due":"20220616062506444","interval":3,"difficulty":1.3433801103128513,"stability":0.07476910459712456,"retrievability":0.04490366339741324,"grade":0,"lapses":1,"reps":1,"review":"20220615062506444"},{"due":"20220629002344887","interval":2,"difficulty":1,"stability":11.836102036103545,"retrievability":0.05970794686757527,"grade":1,"lapses":1,"reps":2,"review":"20220617002344887"}]
 interval: 15
 lapses: 1
-modified: 20220702111732585
+modified: 20230102012807708
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8750061694178737
 review: 20220702111732585
 stability: 66.66933635574435
-tags: kafka ?
+tags: stream实时/kafka ?
 title: kafka的优势
 type: text/vnd.tiddlywiki
 

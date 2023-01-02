@@ -6,13 +6,13 @@ grade: 1
 history: [{"due":"20220722085406667","interval":0,"difficulty":0.0866458138005247,"stability":0.10000011324882507,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220721085406667"},{"due":"20220731033540202","interval":9,"difficulty":1,"stability":0.07408184304237006,"retrievability":0.00007617816609952556,"grade":0,"lapses":1,"reps":1,"review":"20220730033540202"},{"due":"20220819105852861","interval":7,"difficulty":1,"stability":12.926429348079163,"retrievability":0.000047464685643029425,"grade":1,"lapses":1,"reps":2,"review":"20220806105852861"},{"due":"20220830144345884","interval":23,"difficulty":2.0290556473375507,"stability":0.05488116409496729,"retrievability":0.8290556473375507,"grade":0,"lapses":2,"reps":1,"review":"20220829144345884"}]
 interval: 111
 lapses: 2
-modified: 20221218132519289
+modified: 20230102012832570
 modifier: Yangqing QU
 reps: 2
 retrievability: 2.8385907975682772e-93
 review: 20221218132519288
 stability: 8.806415816542671
-tags: spark flink ?
+tags: spark stream实时/flink ?
 title: 如何选择Spark和Flink
 type: text/vnd.tiddlywiki
 

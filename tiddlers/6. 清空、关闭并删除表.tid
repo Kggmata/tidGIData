@@ -1,6 +1,7 @@
 created: 20220908133345178
-modified: 20220908133353216
-tags: ? flink
+modified: 20230102012832554
+modifier: Yangqing QU
+tags: ? stream实时/flink
 title: 6. 清空、关闭并删除表
 type: text/vnd.tiddlywiki
 

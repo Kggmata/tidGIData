@@ -5,12 +5,13 @@ grade: 1
 history: [{"due":"20220614102544066","interval":0,"difficulty":1.0984764469154382,"stability":0.10185546875000001,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220613102544066"},{"due":"20220711044149847","interval":3,"difficulty":1,"stability":15.531848239754114,"retrievability":0.04490366339741324,"grade":2,"lapses":0,"reps":2,"review":"20220616024503094"},{"due":"20220713112059605","interval":26,"difficulty":2.0383066006611736,"stability":0.07408215765534414,"retrievability":0.8383066006611735,"grade":0,"lapses":1,"reps":1,"review":"20220712112059605"},{"due":"20220721090617265","interval":8,"difficulty":2.2383180486778147,"stability":0.054881287913948605,"retrievability":0.000011448016640964715,"grade":0,"lapses":2,"reps":1,"review":"20220720090617265"},{"due":"20220729105040743","interval":8,"difficulty":2.4383182624584694,"stability":0.04065698899582806,"retrievability":2.137806546823325e-7,"grade":0,"lapses":3,"reps":1,"review":"20220728105040742"},{"due":"20220811064017378","interval":8,"difficulty":1.6383182634501774,"stability":5.670224425144512,"retrievability":9.917079777346664e-10,"grade":1,"lapses":3,"reps":2,"review":"20220805064017378"}]
 interval: 10
 lapses: 3
-modified: 20220815055025220
+modified: 20230102012807711
+modifier: Yangqing QU
 reps: 3
 retrievability: 0.8304283221220949
 review: 20220815055025220
 stability: 36.71966085921569
-tags: kafka ?
+tags: stream实时/kafka ?
 title: 消费者代码
 type: text/vnd.tiddlywiki
 

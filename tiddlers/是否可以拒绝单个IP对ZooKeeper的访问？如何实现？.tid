@@ -1,15 +1,17 @@
 created: 20220521060451948
-difficulty: 2.594679307098663
-due: 20220903235041511
-grade: 2
-history: [{"due":"20220524032237127","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032237127"},{"due":"20220602112532202","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112532202"},{"due":"20220707115326845","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606115326845"},{"due":"20220711055234785","interval":34,"difficulty":4.200038941363643,"stability":0.07408215765534414,"retrievability":0.8895462481526426,"grade":0,"lapses":1,"reps":1,"review":"20220710055234784"},{"due":"20220713013433388","interval":2,"difficulty":4.4582067312676,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712013433387"},{"due":"20220724073347713","interval":8,"difficulty":3.6582069450556913,"stability":4.133357631672803,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220720073347713"}]
-interval: 12
-lapses: 2
-modified: 20220801235041511
-reps: 3
-retrievability: 0.7364723620429718
-review: 20220801235041511
-stability: 33.016303069457706
+creator: Yangqing QU
+difficulty: 3.4083796855316297
+due: 20230103013103935
+grade: 0
+history: [{"due":"20220524032237127","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522032237127"},{"due":"20220602112532202","interval":3,"difficulty":4.0538149682454625,"stability":8.17310579005002,"retrievability":0.8538149682454624,"grade":2,"lapses":0,"reps":2,"review":"20220525112532202"},{"due":"20220707115326845","interval":12,"difficulty":3.1104926932110004,"stability":30.606133349741924,"retrievability":0.8566777249655377,"grade":2,"lapses":0,"reps":3,"review":"20220606115326845"},{"due":"20220711055234785","interval":34,"difficulty":4.200038941363643,"stability":0.07408215765534414,"retrievability":0.8895462481526426,"grade":0,"lapses":1,"reps":1,"review":"20220710055234784"},{"due":"20220713013433388","interval":2,"difficulty":4.4582067312676,"stability":0.05488141221849455,"retrievability":0.058167789903956296,"grade":0,"lapses":2,"reps":1,"review":"20220712013433387"},{"due":"20220724073347713","interval":8,"difficulty":3.6582069450556913,"stability":4.133357631672803,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220720073347713"},{"due":"20220903235041511","interval":12,"difficulty":2.594679307098663,"stability":33.016303069457706,"retrievability":0.7364723620429718,"grade":2,"lapses":2,"reps":3,"review":"20220801235041511"}]
+interval: 153
+lapses: 3
+modified: 20230102013103935
+modifier: Yangqing QU
+reps: 1
+retrievability: 0.6137003784329662
+review: 20230102013103934
+stability: 0.8131393194811983
 tags: zookeeper ?
 title: 是否可以拒绝单个IP对ZooKeeper的访问？如何实现？
 type: text/vnd.tiddlywiki
