@@ -1,20 +1,22 @@
 created: 20220519140335006
+creator: Yangqing QU
 difficulty: 2.2508942029413816
 due: 20220905005232961
 grade: 2
 history: [{"due":"20220523040039093","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220521040039093"},{"due":"20220529000818328","interval":2,"difficulty":4.1000000000000005,"stability":6.091873624375545,"retrievability":0.9,"grade":2,"lapses":0,"reps":2,"review":"20220523000818328"},{"due":"20220625103250391","interval":9,"difficulty":3.1558524350459605,"stability":23.754479101787563,"retrievability":0.8558524350459593,"grade":2,"lapses":0,"reps":3,"review":"20220601103250391"}]
 interval: 25
 lapses: 0
-modified: 20220626005232961
+modified: 20230102025746319
+modifier: Yangqing QU
 reps: 4
 retrievability: 0.8950417678954212
 review: 20220626005232960
 stability: 71.1902896812924
 tags: spark ?
-title: **问题**：工作中，将代码开发好以后，如何提交运行？
+title: spark 工作中，将代码开发好以后，如何提交运行？
 type: text/vnd.tiddlywiki
 
-使用spark-submit
+*使用spark-submit
 
 通过一个Spark程序实现圆周率的计算
 /export/server/spark/bin/spark-submit \

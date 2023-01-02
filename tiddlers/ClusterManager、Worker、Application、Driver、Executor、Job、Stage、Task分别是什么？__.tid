@@ -1,17 +1,17 @@
 created: 20220526133219629
 creator: Yangqing QU
-difficulty: 1.4008933803544183
-due: 20220905122852227
-grade: 1
-history: [{"due":"20220601030714630","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531030714629"},{"due":"20220622021716189","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603021716189"},{"due":"20220624030654976","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623030654976"},{"due":"20220709125744887","interval":2,"difficulty":1.3535029461238979,"stability":9.54388636710972,"retrievability":0.05817903264660851,"grade":1,"lapses":1,"reps":2,"review":"20220625091557324"}]
-interval: 15
-lapses: 1
-modified: 20230102014219920
+difficulty: 2.3233209289371244
+due: 20230103025725309
+grade: 0
+history: [{"due":"20220601030714630","interval":0,"difficulty":2.4476805400532036,"stability":0.159375,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220531030714629"},{"due":"20220622021716189","interval":3,"difficulty":1,"stability":19.05775353020881,"retrievability":0.13762030962938637,"grade":2,"lapses":0,"reps":2,"review":"20220603021716189"},{"due":"20220624030654976","interval":20,"difficulty":2.0953239134772894,"stability":0.07408719146292923,"retrievability":0.8953239134772895,"grade":0,"lapses":1,"reps":1,"review":"20220623030654976"},{"due":"20220709125744887","interval":2,"difficulty":1.3535029461238979,"stability":9.54388636710972,"retrievability":0.05817903264660851,"grade":1,"lapses":1,"reps":2,"review":"20220625091557324"},{"due":"20220905122852227","interval":15,"difficulty":1.4008933803544183,"stability":57.032529607165074,"retrievability":0.8473904342305205,"grade":1,"lapses":1,"reps":3,"review":"20220710122852227"}]
+interval: 176
+lapses: 2
+modified: 20230102025725309
 modifier: Yangqing QU
-reps: 3
-retrievability: 0.8473904342305205
-review: 20220710122852227
-stability: 57.032529607165074
+reps: 1
+retrievability: 0.7224275485827056
+review: 20230102025725309
+stability: 1.097623272188053
 tags: spark ?
 title: ClusterManager、Worker、Application、Driver、Executor、Job、Stage、Task分别是什么？**
 type: text/vnd.tiddlywiki
