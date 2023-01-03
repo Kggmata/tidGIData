@@ -1,0 +1,18 @@
+created: 20230103054150316
+creator: Yangqing QU
+modified: 20230103054226371
+modifier: Yangqing QU
+title: syncthing
+type: text/vnd.tiddlywiki
+
+[syncthing 配合 obsidian 实现多设备同步 - 知乎](https://zhuanlan.zhihu.com/p/588911750)
+
+```
+windows 设置开启启动
+保存 syncthing.bat 脚本文件
+打开 “记事本” 软件，将以下代码复制进去，另存为 syncthing.bat。
+start "Syncthing" syncthing.exe -no-console -no-browser
+复制脚本文件到 syncthing.exe 同级目录 找到 syncthing.exe 所在目录，将 syncthing.bat 脚本文件复制到该目录。
+
+将脚本文件快捷方式添加到 “启动” 菜单 选中 syncthing.bat 脚本文件，右键创建快捷方式 按下 win + R，输入 “shell:startup” 打开 “启动” 文件夹 将快捷方式复制到 “启动” 文件夹
+```
