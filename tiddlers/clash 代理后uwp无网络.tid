@@ -1,0 +1,12 @@
+created: 20230102235320632
+creator: Yangqing QU
+modified: 20230102235413265
+modifier: Yangqing QU
+tags: clash vpn
+title: clash 代理后uwp无网络
+type: text/vnd.tiddlywiki
+
+[开启代理后 Windows Store 无法访问 · Issue #103 · Fndroid/clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg/issues/103)
+
+>原因是这些是UWP应用，默认不允许loopback代理
+>General里的EnableLoopback.exe就是为了解决这个问题而加的
