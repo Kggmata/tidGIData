@@ -6,14 +6,14 @@ grade: 2
 history: [{"due":"20220524114653037","interval":0,"difficulty":5,"stability":2,"retrievability":1,"grade":-1,"lapses":0,"reps":1,"review":"20220522114653037"},{"due":"20220529033141525","interval":6,"difficulty":5.929,"stability":0.16205398577412577,"retrievability":0.7290000000000001,"grade":0,"lapses":1,"reps":1,"review":"20220528033141525"},{"due":"20220610132652760","interval":5,"difficulty":4.167743803026746,"stability":8.48189993445585,"retrievability":0.03874380302674565,"grade":2,"lapses":1,"reps":2,"review":"20220602132652760"},{"due":"20220711065655945","interval":11,"difficulty":3.240028111655123,"stability":28.335264272310244,"retrievability":0.8722843086283765,"grade":2,"lapses":1,"reps":3,"review":"20220613065655945"},{"due":"20220714020503177","interval":30,"difficulty":4.334474251177942,"stability":0.05488141221849455,"retrievability":0.8944461395228188,"grade":0,"lapses":2,"reps":1,"review":"20220713020503176"},{"due":"20220725051917099","interval":8,"difficulty":3.534474464966033,"stability":4.232784189566389,"retrievability":2.1378809139958575e-7,"grade":1,"lapses":2,"reps":2,"review":"20220721051917099"}]
 interval: 12
 lapses: 2
-modified: 20230104031226537
+modified: 20230201113505972
 modifier: Yangqing QU
 reps: 3
 retrievability: 0.7417830408916706
 review: 20220802120903512
 stability: 33.95333290381645
 tags: hive ?
-title: hive架构图解释
+title: hive架构图解释q
 type: text/vnd.tiddlywiki
 
 [img[Snipaste_2022-05-22_08-12-54.jpg]]
